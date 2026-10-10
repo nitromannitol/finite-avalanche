@@ -17,7 +17,7 @@ Two former external inputs, wired hitting probability equals voltage and recurre
 
 ## Verification
 
-This release candidate is awaiting its final independent public-metadata audit and hosted checks. It must not yet be presented as a completed public release.
+The release source passed independent review, a fresh warning-free build and the main-theorem comparator with Lean and NanoDa replay. These checks verify the proof relative to the 26 listed external inputs.
 
 CI builds the production library with warnings treated as errors and checks all 4,737 requested axiom reports against the exact external-input registry. The two proved replacements and their providers and consumers must use only Lean's three logical axioms.
 

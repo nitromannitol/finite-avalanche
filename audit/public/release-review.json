@@ -277,7 +277,7 @@
   "reviewed_furniture": [
     {
       "path": "README.md",
-      "sha256": "e3a9cf809c784e917ad92fc15491b96458ac5ed5410fcd059a8e9c99593e8ba8"
+      "sha256": "d15b77ab23878e3c9f464a9c300396b514891bf432db44273d062b7355f8bb2e"
     },
     {
       "path": "CONTRIBUTING.md",
@@ -289,7 +289,7 @@
     },
     {
       "path": "formalization.yaml",
-      "sha256": "c4c7449bbf95e0175873c06e2fa4f26fa0d9ea38286c3af87d17bc936b2b0563"
+      "sha256": "3f1715b661652e25ac994f5de647eb8505e024b508eb0f58b23b0cfde9424455"
     },
     {
       "path": "CITATION.cff",
@@ -316,5 +316,23 @@
     "public_standalone_build": "PENDING",
     "genuine_main_comparator": "PENDING",
     "new_kernel_or_DAG_replay": false
+  },
+  "status_verification_addendum": {
+    "path": "audit/public/status-verification-addendum.md",
+    "sha256": "22902a6fd3257e3438e9e3266c3f662853077835d21f644773c3f69811b12b99",
+    "independent": true,
+    "scope": "STATUS_ONLY_ACTUAL_TESTED_SOURCE_EVIDENCE",
+    "verified_source_commit": "6696f7cde7e1676c0f34095f2378dc8a39f1dbc1",
+    "verified_tree": "b424cf240c5a725a454c4f9f10c57b5415189587",
+    "execution_repository_id": 1412157464,
+    "public_repository_id": 1413743876,
+    "ci_run": 38091012963,
+    "comparator_run": 38091014254,
+    "ci_independent_receipt_sha256": "ee3f79084b67d650eab28093e41552efa0c339b92722f880e5c668b0fcc2cfae",
+    "comparator_independent_receipt_sha256": "7d3146290a738ff1daabae0ff5599c5ad4201d14964b24465ad01c4d7fcd2db2",
+    "original_approval_sha256": "c6bbc0fc07934af23ba047c1cd9c0ca46370e9af2cc183d8e04badf57019cc51",
+    "original_execution_status_preserved_as_historical_snapshot": true,
+    "new_public_repository_jobs_success_claim": false,
+    "new_status_commit_tested_as_6696_claim": false
   }
 }

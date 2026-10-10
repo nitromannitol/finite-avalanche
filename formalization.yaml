@@ -2,7 +2,7 @@ title: "Sandpile avalanches in two dimensions are finite"
 author: "Ahmed Bou-Rabee"
 language: "Lean 4"
 toolchain: "leanprover/lean4:v4.32.0"
-status: "release_candidate_verification_pending"
+status: "proved_relative_to_external_inputs"
 manuscript_statements: 16
 proved_current_applicable_formulations: 16
 distinct_source_declarations: 15
@@ -14,7 +14,10 @@ paper_commit: "d2fc033fa59b56deff4c7b543387bdcbabfec82d"
 production_lean_files: 841
 production_physical_lines: 88755
 axiom_reports_required: 4737
-standalone_release_build_verified: false
-independent_main_comparator_verified: false
+standalone_release_build_verified: true
+independent_main_comparator_verified: true
 license_status: "unspecified; vendored Mathlib mirrors retain Apache-2.0"
 automation: "AI-assisted development under human direction; complete model and cost census unconfirmed"
+verified_source_commit: "6696f7cde7e1676c0f34095f2378dc8a39f1dbc1"
+verified_ci_run: 38091012963
+verified_comparator_run: 38091014254
