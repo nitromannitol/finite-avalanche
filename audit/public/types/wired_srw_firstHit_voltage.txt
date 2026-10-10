@@ -1,0 +1,4 @@
+ (N : ℕ) (S : Finset (Active N)) (x : Site 2) :
+    walkLaw (hitBefore (↑(S.image site) : Set (Site 2)) (box 2 N)ᶜ x) =
+      ENNReal.ofReal (FiniteAvalanches.Needle.voltage N S
+        (if hx : inBox N x then some (activeOfSite N x hx) else none))

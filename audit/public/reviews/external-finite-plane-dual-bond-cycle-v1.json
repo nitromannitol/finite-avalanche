@@ -1,0 +1,23 @@
+{
+  "schema_version": 1,
+  "kind": "PROJECTION_OF_EXISTING_INDEPENDENT_REVIEW_METADATA",
+  "subject_id": "external:finite-plane-dual-bond-cycle:v1",
+  "baseline_row_sha256": "9cc998a9d9eb93fc248a4a4b1da2a56171f796ede6feddf9f2b9b13795934e0c",
+  "declaration_sha256": "0a47f284574f325cd99eb86a9d2bc8f94ae31ac9dab3bc3a0a54510f139d9699",
+  "current_semantics_sha256": "ee1f43dfdcf79c72a802c87a9d560242da20dd7d5874b669e1d84c212bf72e5c",
+  "original_reviews": [
+    {
+      "original_sha256": "46d26f0ed1c77b9ee4fcf238b446a03c65b7cc3abee62cb458f2656e13bdf26c",
+      "recorded_verdict": "PASS",
+      "recorded_independent": true
+    },
+    {
+      "original_sha256": "5014e856a8158ef8f1d037b3d4991bdbd4da866757723125efd46fc0dfc8f90f",
+      "recorded_verdict": "PASS",
+      "recorded_independent": true
+    }
+  ],
+  "new_independent_review": false,
+  "original_reports_included": false,
+  "scope": "Existing recorded independent PASS metadata and private-original hash commitments; this projection is not a fresh mathematical review or a compiler result."
+}

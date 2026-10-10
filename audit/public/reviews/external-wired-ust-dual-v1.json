@@ -1,0 +1,28 @@
+{
+  "schema_version": 1,
+  "kind": "PROJECTION_OF_EXISTING_INDEPENDENT_REVIEW_METADATA",
+  "subject_id": "external:wired-ust-dual:v1",
+  "baseline_row_sha256": "fb3da91757831cb21505e8492ffb46b7f577d89f05be614568e46625cd27a778",
+  "declaration_sha256": "0944eb2264be49430afa35a5a6f1de66e40147b22522352f9ce4a9c0f9367789",
+  "current_semantics_sha256": "5881e8a76e6ed57507e73012d62b2698cdfeab16e971c10173279f471487a9cf",
+  "original_reviews": [
+    {
+      "original_sha256": "e0bb6598ef7e171d6e92e5fb0b082980765801da61abe4600c11b88aff77152d",
+      "recorded_verdict": "PASS",
+      "recorded_independent": true
+    },
+    {
+      "original_sha256": "1878cadef7e8773653b1ee61ccb4561e137e702e205fcb21281d2e80e16f8164",
+      "recorded_verdict": "PASS",
+      "recorded_independent": true
+    },
+    {
+      "original_sha256": "cc23b2cc31492287923c4805d87e4ecf6df1f011a22b449860a9bc09c55546fc",
+      "recorded_verdict": "PASS",
+      "recorded_independent": true
+    }
+  ],
+  "new_independent_review": false,
+  "original_reports_included": false,
+  "scope": "Existing recorded independent PASS metadata and private-original hash commitments; this projection is not a fresh mathematical review or a compiler result."
+}

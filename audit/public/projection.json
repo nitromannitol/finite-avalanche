@@ -1,0 +1,239 @@
+{
+  "schema_version": 1,
+  "kind": "DETERMINISTIC_PUBLIC_PROJECTION_NOT_NEW_PROOF_OR_REVIEW",
+  "baseline_registry_sha256": "9f05dc01bf69c57ac6cd64240b6fa0614ce59ca9cfc0c2c70131b78e5f49d26c",
+  "registry": {
+    "path": "audit/trusted-inputs.json",
+    "sha256": "ae613dadb8b053438ce1c8cd92a173a1eb481e3898bfd1c697ef59ca8f6203b4"
+  },
+  "proved_inputs": {
+    "path": "audit/public/proved-inputs.json",
+    "sha256": "fe2bb12e8b617b64d74b28d6f1089a5d4eeb4f368d4eedd389a1494f96bcfc5f"
+  },
+  "current_statements": {
+    "path": "audit/public/current-statements.json",
+    "sha256": "cc3320e6670d3894d57e726be2c22b4934e13f106f36a3abc9eaaa002db8f379"
+  },
+  "production_sources": {
+    "path": "audit/public/source-files.json",
+    "sha256": "b0988cc1dc7e11065da2251232bde341e2542ef4164fe03525ad929d4cdaf942"
+  },
+  "baseline_provenance_sha256": "505f109142a68c6b8ce8154a386ef5027e7646bb46785c1ff91a417bd3af8884",
+  "approved_semantic_revision": {
+    "id": "external-proof-batch:v1",
+    "version": 1,
+    "from_lp": "2cad808c821285cb20f217717e2ad3ecc16c09fb",
+    "to_lp": "30752e06f26692a2a44bcbf629db9d8d187c5e68",
+    "owner_changes": [
+      {
+        "owner_id": "external:sandpile-law:v1",
+        "path": "lake-manifest.json",
+        "before": "5090679df43edd4d2272aa282c624ad86d0ef8490fe4a0ddddb6467af5dbe4e2",
+        "after": "a4da42de07723a55c86c19e80e328bb0f0bd06b070812ab7ff511b9faa8ba02a"
+      },
+      {
+        "owner_id": "external:all-minors:v1",
+        "path": "lake-manifest.json",
+        "before": "5090679df43edd4d2272aa282c624ad86d0ef8490fe4a0ddddb6467af5dbe4e2",
+        "after": "a4da42de07723a55c86c19e80e328bb0f0bd06b070812ab7ff511b9faa8ba02a"
+      },
+      {
+        "owner_id": "external:wilson:v1",
+        "path": "lake-manifest.json",
+        "before": "5090679df43edd4d2272aa282c624ad86d0ef8490fe4a0ddddb6467af5dbe4e2",
+        "after": "a4da42de07723a55c86c19e80e328bb0f0bd06b070812ab7ff511b9faa8ba02a"
+      },
+      {
+        "owner_id": "external:wired-ust-limit:v1",
+        "path": "lake-manifest.json",
+        "before": "5090679df43edd4d2272aa282c624ad86d0ef8490fe4a0ddddb6467af5dbe4e2",
+        "after": "a4da42de07723a55c86c19e80e328bb0f0bd06b070812ab7ff511b9faa8ba02a"
+      },
+      {
+        "owner_id": "external:wired-ust-one-end:v1",
+        "path": "lake-manifest.json",
+        "before": "5090679df43edd4d2272aa282c624ad86d0ef8490fe4a0ddddb6467af5dbe4e2",
+        "after": "a4da42de07723a55c86c19e80e328bb0f0bd06b070812ab7ff511b9faa8ba02a"
+      },
+      {
+        "owner_id": "external:wired-ust-dual:v1",
+        "path": "lake-manifest.json",
+        "before": "5090679df43edd4d2272aa282c624ad86d0ef8490fe4a0ddddb6467af5dbe4e2",
+        "after": "a4da42de07723a55c86c19e80e328bb0f0bd06b070812ab7ff511b9faa8ba02a"
+      },
+      {
+        "owner_id": "external:colored-wilson:v1",
+        "path": "lake-manifest.json",
+        "before": "5090679df43edd4d2272aa282c624ad86d0ef8490fe4a0ddddb6467af5dbe4e2",
+        "after": "a4da42de07723a55c86c19e80e328bb0f0bd06b070812ab7ff511b9faa8ba02a"
+      },
+      {
+        "owner_id": "external:nested-projection-dpp:v1",
+        "path": "lake-manifest.json",
+        "before": "5090679df43edd4d2272aa282c624ad86d0ef8490fe4a0ddddb6467af5dbe4e2",
+        "after": "a4da42de07723a55c86c19e80e328bb0f0bd06b070812ab7ff511b9faa8ba02a"
+      },
+      {
+        "owner_id": "external:barlow-masson-adjacent-path:v1",
+        "path": "lake-manifest.json",
+        "before": "5090679df43edd4d2272aa282c624ad86d0ef8490fe4a0ddddb6467af5dbe4e2",
+        "after": "a4da42de07723a55c86c19e80e328bb0f0bd06b070812ab7ff511b9faa8ba02a"
+      },
+      {
+        "owner_id": "external:disk-alternation:v1",
+        "path": "lake-manifest.json",
+        "before": "5090679df43edd4d2272aa282c624ad86d0ef8490fe4a0ddddb6467af5dbe4e2",
+        "after": "a4da42de07723a55c86c19e80e328bb0f0bd06b070812ab7ff511b9faa8ba02a"
+      },
+      {
+        "owner_id": "external:classical-beurling-srw-z2:v1",
+        "path": "lake-manifest.json",
+        "before": "5090679df43edd4d2272aa282c624ad86d0ef8490fe4a0ddddb6467af5dbe4e2",
+        "after": "a4da42de07723a55c86c19e80e328bb0f0bd06b070812ab7ff511b9faa8ba02a"
+      },
+      {
+        "owner_id": "external:kenyon-wilson-pairing-groves:v1",
+        "path": "lake-manifest.json",
+        "before": "5090679df43edd4d2272aa282c624ad86d0ef8490fe4a0ddddb6467af5dbe4e2",
+        "after": "a4da42de07723a55c86c19e80e328bb0f0bd06b070812ab7ff511b9faa8ba02a"
+      },
+      {
+        "owner_id": "external:recurrent-ray-seeded-wilson:v1",
+        "path": "FiniteAvalanches/External/PolyaSquareLattice.lean",
+        "before": "b5dbf900d6a94e3b774a09640ce9aec7da21daebfd8e404fccf50c0c8f986c82",
+        "after": "44732cf296f576c34caea28acb1ffe03cde50f8b7df957247e37e4a200d9e8ca"
+      },
+      {
+        "owner_id": "external:recurrent-ray-seeded-wilson:v1",
+        "path": "lake-manifest.json",
+        "before": "5090679df43edd4d2272aa282c624ad86d0ef8490fe4a0ddddb6467af5dbe4e2",
+        "after": "a4da42de07723a55c86c19e80e328bb0f0bd06b070812ab7ff511b9faa8ba02a"
+      },
+      {
+        "owner_id": "external:bsst-intrinsic-square-tiling:v1",
+        "path": "lake-manifest.json",
+        "before": "5090679df43edd4d2272aa282c624ad86d0ef8490fe4a0ddddb6467af5dbe4e2",
+        "after": "a4da42de07723a55c86c19e80e328bb0f0bd06b070812ab7ff511b9faa8ba02a"
+      },
+      {
+        "owner_id": "external:kirchhoff-mean-tree-path-current:v1",
+        "path": "lake-manifest.json",
+        "before": "5090679df43edd4d2272aa282c624ad86d0ef8490fe4a0ddddb6467af5dbe4e2",
+        "after": "a4da42de07723a55c86c19e80e328bb0f0bd06b070812ab7ff511b9faa8ba02a"
+      },
+      {
+        "owner_id": "external:plane-vertex-face-star:v1",
+        "path": "lake-manifest.json",
+        "before": "5090679df43edd4d2272aa282c624ad86d0ef8490fe4a0ddddb6467af5dbe4e2",
+        "after": "a4da42de07723a55c86c19e80e328bb0f0bd06b070812ab7ff511b9faa8ba02a"
+      },
+      {
+        "owner_id": "external:finite-plane-two-pole-topology:v1",
+        "path": "lake-manifest.json",
+        "before": "5090679df43edd4d2272aa282c624ad86d0ef8490fe4a0ddddb6467af5dbe4e2",
+        "after": "a4da42de07723a55c86c19e80e328bb0f0bd06b070812ab7ff511b9faa8ba02a"
+      },
+      {
+        "owner_id": "external:parametrized-plane-arc-straightening:v1",
+        "path": "lake-manifest.json",
+        "before": "5090679df43edd4d2272aa282c624ad86d0ef8490fe4a0ddddb6467af5dbe4e2",
+        "after": "a4da42de07723a55c86c19e80e328bb0f0bd06b070812ab7ff511b9faa8ba02a"
+      },
+      {
+        "owner_id": "external:outer-face-simple-path-disk-redrawing:v1",
+        "path": "lake-manifest.json",
+        "before": "5090679df43edd4d2272aa282c624ad86d0ef8490fe4a0ddddb6467af5dbe4e2",
+        "after": "a4da42de07723a55c86c19e80e328bb0f0bd06b070812ab7ff511b9faa8ba02a"
+      },
+      {
+        "owner_id": "external:finite-plane-geometric-dual:v1",
+        "path": "lake-manifest.json",
+        "before": "5090679df43edd4d2272aa282c624ad86d0ef8490fe4a0ddddb6467af5dbe4e2",
+        "after": "a4da42de07723a55c86c19e80e328bb0f0bd06b070812ab7ff511b9faa8ba02a"
+      }
+    ],
+    "projected_independent_reviews": [
+      {
+        "original_sha256": "cae8f2e5739a673421ab0de54c40ecd12cc03d729dede23310e24b4cd627c8bf",
+        "prior_independent_review_sha256": "d130bde31ab4aa8fc20fdfe7d6754a586486333f3a40aa2a881eba0e296cad6a",
+        "recorded_independent": true,
+        "recorded_verdict": "PASS",
+        "unchanged_frozen_type_body_verdict": "PASS",
+        "current_semantics_verdict": "PASS",
+        "exact_lp_commit_verdict": "PASS"
+      }
+    ]
+  },
+  "dependency_manifest": {
+    "path": "lake-manifest.json",
+    "sha256": "a4da42de07723a55c86c19e80e328bb0f0bd06b070812ab7ff511b9faa8ba02a"
+  },
+  "lakefile": {
+    "path": "lakefile.lean",
+    "sha256": "f71eb5d0790a10b005cb7c3e1b2055368b0721803cdcf115d7acc6a8a893e993"
+  },
+  "toolchain": {
+    "path": "lean-toolchain",
+    "sha256": "2773c517aa90b66ea8a2c52bddddf84393157797f8341be0df45294fff7fd32e"
+  },
+  "packages": [
+    {
+      "name": "lattice-probability",
+      "rev": "30752e06f26692a2a44bcbf629db9d8d187c5e68",
+      "url": "https://github.com/nitromannitol/Lattice-Probability"
+    },
+    {
+      "name": "mathlib",
+      "rev": "81a5d257c8e410db227a6665ed08f64fea08e997",
+      "url": "https://github.com/leanprover-community/mathlib4"
+    },
+    {
+      "name": "plausible",
+      "rev": "e12c1910fe855cbfc38803cd4e55543906d5fa62",
+      "url": "https://github.com/leanprover-community/plausible"
+    },
+    {
+      "name": "LeanSearchClient",
+      "rev": "c5d5b8fe6e5158def25cd28eb94e4141ad97c843",
+      "url": "https://github.com/leanprover-community/LeanSearchClient"
+    },
+    {
+      "name": "importGraph",
+      "rev": "7e9612bf0b9ee66db3cb5b9988a35afc706f5a12",
+      "url": "https://github.com/leanprover-community/import-graph"
+    },
+    {
+      "name": "proofwidgets",
+      "rev": "6e311e2a844da9b2cc3971187df2fe0066947b93",
+      "url": "https://github.com/leanprover-community/ProofWidgets4"
+    },
+    {
+      "name": "aesop",
+      "rev": "a7dbf0c63b694e47f425f3dcddbc0e178bb432d3",
+      "url": "https://github.com/leanprover-community/aesop"
+    },
+    {
+      "name": "Qq",
+      "rev": "38d591e778f100aec9762bb582f9c7f55f50e9dc",
+      "url": "https://github.com/leanprover-community/quote4"
+    },
+    {
+      "name": "batteries",
+      "rev": "023ce7d62a0531e22a5331e20b587817a80d49ff",
+      "url": "https://github.com/leanprover-community/batteries"
+    },
+    {
+      "name": "Cli",
+      "rev": "88679d088c9720c27ebdf2ba4dafe17341747f94",
+      "url": "https://github.com/leanprover/lean4-cli"
+    }
+  ],
+  "axiom_report_source": {
+    "path": "FiniteAvalanches/Meta/AxiomsAudit.lean",
+    "sha256": "d809913ef8c89b12c6ae0e8cd472e2fbc1dc0730eece36631b8438c411559ec9"
+  },
+  "expected_direct_reports": 4737,
+  "new_compilation_claim": false,
+  "new_independent_review": false,
+  "historical_originals_included": false
+}

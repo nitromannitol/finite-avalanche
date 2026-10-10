@@ -1,0 +1,28 @@
+{
+  "schema_version": 1,
+  "kind": "PROJECTION_OF_EXISTING_INDEPENDENT_REVIEW_METADATA",
+  "subject_id": "external:finite-plane-dual-connected:v1",
+  "baseline_row_sha256": "c26fe7d2cee0ff961d1cfbed271b96cd51e3214fcfdc941b1f2f1347dd89944b",
+  "declaration_sha256": "780d15ed7c264cfdfcc4a803867898122013e06f8996cbae316bac8b704897c8",
+  "current_semantics_sha256": "7981409490ec70e53884af440c0b44b32a4bbecdf0164fe88709d9be38bcfb3a",
+  "original_reviews": [
+    {
+      "original_sha256": "7f8318fe415f6cca005c7fe51bd18ad4d432c82ec95f35d54ee7af279b79511c",
+      "recorded_verdict": "PASS",
+      "recorded_independent": true
+    },
+    {
+      "original_sha256": "911c9861e8e1e411e089fc9028c4652ed9f0f1291dbae34daecd97b9b90ef137",
+      "recorded_verdict": "PASS",
+      "recorded_independent": true
+    },
+    {
+      "original_sha256": "c3ac3939ff6c153a1fe4acf4450aac28fae7160e98574b65b61ce6f7181ef6b3",
+      "recorded_verdict": "PASS",
+      "recorded_independent": true
+    }
+  ],
+  "new_independent_review": false,
+  "original_reports_included": false,
+  "scope": "Existing recorded independent PASS metadata and private-original hash commitments; this projection is not a fresh mathematical review or a compiler result."
+}

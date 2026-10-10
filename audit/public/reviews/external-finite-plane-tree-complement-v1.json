@@ -1,0 +1,23 @@
+{
+  "schema_version": 1,
+  "kind": "PROJECTION_OF_EXISTING_INDEPENDENT_REVIEW_METADATA",
+  "subject_id": "external:finite-plane-tree-complement:v1",
+  "baseline_row_sha256": "64a42ca28f777419e33995c1b68c3ad8ea4f878c17001b4a8000175ec96526dc",
+  "declaration_sha256": "7dc8760a826d0e2841dcfae6f16e2a6c2116a0f983562a89cb04217125f6500b",
+  "current_semantics_sha256": "2db2ac6b57da6c93145b37430eb098564f5ce3f2456564ea584d9382384ddcd0",
+  "original_reviews": [
+    {
+      "original_sha256": "5f6c2ab7359a81f91acc3612b5ee2c18cea22b4fb43b12a8123edf67241f9ce2",
+      "recorded_verdict": "PASS",
+      "recorded_independent": true
+    },
+    {
+      "original_sha256": "97f912f144bf3cf78b2b5e5516db7783d5e51718e76930f9ff791391a17317fd",
+      "recorded_verdict": "PASS",
+      "recorded_independent": true
+    }
+  ],
+  "new_independent_review": false,
+  "original_reports_included": false,
+  "scope": "Existing recorded independent PASS metadata and private-original hash commitments; this projection is not a fresh mathematical review or a compiler result."
+}

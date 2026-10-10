@@ -1,0 +1,60 @@
+{
+  "schema_version": 1,
+  "version": 1,
+  "approval_scope": "REGISTRY_VIEW_PROJECTION_ONLY_PAIR_TYPE_SOURCES_DATA_UNCHANGED",
+  "pairs": [
+    {
+      "pair": "MainOrigin",
+      "approval_scope": "PAIR_SOURCE_SEMANTICS_AND_ACTUAL_STRICT_CHECKS_NOT_COMPARATOR_EXECUTION",
+      "challenge_module_sha256": "98497575dc28f7a6a30d2a9046ede16a7d861549a7a366b28a473a185fb8f7eb",
+      "solution_module_sha256": "cceb917b08c0527c7dfd06137c067629cbe3fbbae4c88edfcdd35fa9380cc264",
+      "configuration_sha256": "9a3334928fd5f428321baf17510a13e00accdedf8d98d6a89aa9080a9cd65ed6",
+      "target_sha256": "0d6dc648008b49e42af9f294bef8c040247b4f047d67f8d1bea633a0b0011dec",
+      "semantic_files": [
+        {
+          "path": "FiniteAvalanchesAudit/MainOrigin/semantic-data/SUMMARY.json",
+          "sha256": "8b7b1ae439fdfdfc784c09675c43e11617b94650fb4ec4c32455158277f6bca9",
+          "bytes": 12883
+        },
+        {
+          "path": "FiniteAvalanchesAudit/MainOrigin/semantic-data/boundary.json",
+          "sha256": "57379b27101e433ca1745dcba626380ea50fb3cb6978277d0285ca5b783d2fa7",
+          "bytes": 219121
+        },
+        {
+          "path": "FiniteAvalanchesAudit/MainOrigin/semantic-data/declarations.jsonl",
+          "sha256": "969d37557870c05b24a10393af643c37034a8bba68dc1f62dec603cef2e9babb",
+          "bytes": 1025744
+        },
+        {
+          "path": "FiniteAvalanchesAudit/MainOrigin/semantic-data/main-type-nodes.jsonl",
+          "sha256": "94e0e182fb6e3378861da701c7c3b81fe88ef8240290ac9b11dabfaa6e338a63",
+          "bytes": 6634
+        },
+        {
+          "path": "FiniteAvalanchesAudit/MainOrigin/semantic-data/main-type.json",
+          "sha256": "24c5c859617746207d1446aed5f73d004fa4db4a7409742744c8d5523248758a",
+          "bytes": 1872
+        },
+        {
+          "path": "FiniteAvalanchesAudit/MainOrigin/semantic-data/nodes.jsonl",
+          "sha256": "ce407f2b6a0ca8666c1f01f92e1af9ffabbcef597517105a47cca3b14bb84845",
+          "bytes": 2749266
+        }
+      ],
+      "sole_intentional_challenge_hole": true,
+      "whole_main_type_and_all_657_meanings_and_26_assertions_checked": true,
+      "comparator_pass": false,
+      "nanoda_pass": false,
+      "pair_source_review": "PROJECTED_EXISTING_INDEPENDENT_PASS",
+      "original_pair_review_sha256": "0d152deba8f5c530196136a85d5ee847136dce0937ede05d48c9c94adc25e228",
+      "original_report_sha256": "832352862a1793bb08319a11db0fce343577b2c3eec58c6cad8c1e4af7926630",
+      "original_catalog_sha256": "63a084e403784c06b0f1d099c22564b11ff8a994c8e691f38e1635f05ce1feab",
+      "trusted_input_registry_sha256": "ae613dadb8b053438ce1c8cd92a173a1eb481e3898bfd1c697ef59ca8f6203b4",
+      "baseline_trusted_input_registry_sha256": "9f05dc01bf69c57ac6cd64240b6fa0614ce59ca9cfc0c2c70131b78e5f49d26c",
+      "public_projection_sha256": "acb7875ff05d3e5bce617f26cdc61f98729fd8d8041543599f1f83057fef5c32",
+      "new_independent_review": false
+    }
+  ],
+  "current_semantic_identity_sha256": "6d4fe4753b344fabbf54774f3efc6c52cd290bb3238a9f247d8598cbd7c5670a"
+}

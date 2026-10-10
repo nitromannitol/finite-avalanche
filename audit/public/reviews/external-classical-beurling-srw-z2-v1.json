@@ -1,0 +1,38 @@
+{
+  "schema_version": 1,
+  "kind": "PROJECTION_OF_EXISTING_INDEPENDENT_REVIEW_METADATA",
+  "subject_id": "external:classical-beurling-srw-z2:v1",
+  "baseline_row_sha256": "7a3970b7e3c748147ed71fcfc9675ae7cf92d8c86582df3ecad96bd1ff20b4a5",
+  "declaration_sha256": "f6eeed5081e4e90afc76231b73af671a97db26b6b1ed181b141b45534cb3f3ca",
+  "current_semantics_sha256": "7058f4234b992d4f0238e5710fa2b8a98f8221cab128301e546f1d964c5e1eee",
+  "original_reviews": [
+    {
+      "original_sha256": "9f666d12077be338f790f0d73099fb84e5d5b431bc49598182113aeec2fc261c",
+      "recorded_verdict": "PASS",
+      "recorded_independent": true
+    },
+    {
+      "original_sha256": "61e517dce2694e6c1ce7242cf0b3dcab7780e7a5c8635998fa3992f8fed0b548",
+      "recorded_verdict": "PASS",
+      "recorded_independent": true
+    },
+    {
+      "original_sha256": "49b2d13ad7db8e0f202e289081d8c9d335b6980cce5759e82cca80a93f7336c3",
+      "recorded_verdict": "PASS",
+      "recorded_independent": true
+    },
+    {
+      "original_sha256": "85c52fb70f506d6576231e130cd1d190241d590c9eeeb7e3b8a50582fea0e507",
+      "recorded_verdict": "PASS",
+      "recorded_independent": true
+    },
+    {
+      "original_sha256": "68712672019e9bdd9f3b8ee8bb5c522ae53cdc906c61872a22b505e868e09358",
+      "recorded_verdict": "PASS",
+      "recorded_independent": true
+    }
+  ],
+  "new_independent_review": false,
+  "original_reports_included": false,
+  "scope": "Existing recorded independent PASS metadata and private-original hash commitments; this projection is not a fresh mathematical review or a compiler result."
+}

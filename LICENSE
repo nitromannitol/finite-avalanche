@@ -1,0 +1,7 @@
+The original Lean development and the accompanying paper have no specified
+publication license in this repository.
+
+The four unmodified Mathlib source mirrors under
+audit/tree-complement-dictionary-7c/meaning/Mathlib/ retain their original
+copyright and author notices and are distributed under Apache License 2.0.
+See LICENSES/Apache-2.0.txt and THIRD_PARTY_NOTICES.md.

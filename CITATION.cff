@@ -1,0 +1,8 @@
+cff-version: 1.2.0
+message: "Please cite the accompanying paper when using this development."
+title: "Sandpile avalanches in two dimensions are finite"
+authors:
+  - family-names: "Bou-Rabee"
+    given-names: "Ahmed"
+type: software
+repository-code: "https://github.com/nitromannitol/finite-avalanche"

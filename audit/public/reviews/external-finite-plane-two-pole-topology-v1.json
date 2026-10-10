@@ -1,0 +1,18 @@
+{
+  "schema_version": 1,
+  "kind": "PROJECTION_OF_EXISTING_INDEPENDENT_REVIEW_METADATA",
+  "subject_id": "external:finite-plane-two-pole-topology:v1",
+  "baseline_row_sha256": "cd3388d7230485718d4be476603c0e1b2b43541e8947e509494e5410e5d6d5c7",
+  "declaration_sha256": "53ff3a2c116a31303804c300ae25d5f54ecb312aced45aec09ac0756881313e4",
+  "current_semantics_sha256": "ba6a861263fd0eb281216b400cca97c183ec9ca74c4fe4c2620736881a5e8528",
+  "original_reviews": [
+    {
+      "original_sha256": "95290a476de0f72778374f7a6c3dd2f0dbf42e4050f897d90b8359fa110292ca",
+      "recorded_verdict": "PASS",
+      "recorded_independent": true
+    }
+  ],
+  "new_independent_review": false,
+  "original_reports_included": false,
+  "scope": "Existing recorded independent PASS metadata and private-original hash commitments; this projection is not a fresh mathematical review or a compiler result."
+}

@@ -1,0 +1,40 @@
+{
+  "challenge_module": "FiniteAvalanchesAudit.MainOrigin.Challenge",
+  "solution_module": "FiniteAvalanchesAudit.MainOrigin.Solution",
+  "theorem_names": [
+    "FiniteAvalanchesAudit.MainOrigin.finite_avalanches_origin"
+  ],
+  "definition_names": [],
+  "permitted_axioms": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound",
+    "FiniteAvalanches.External.BarlowMasson2011.adjacent_ust_path_euclidean_tail",
+    "FiniteAvalanches.External.SandpileLimit.exists_infiniteVolumeLaw",
+    "FiniteAvalanches.External.allMinors_matrixTree",
+    "FiniteAvalanches.External.bsst_square_tiling",
+    "FiniteAvalanches.External.disk_alternation_impossible",
+    "FiniteAvalanches.External.finite_plane_dual_bond_cycle",
+    "FiniteAvalanches.External.finite_plane_dual_connected",
+    "FiniteAvalanches.External.finite_plane_geometric_dual",
+    "FiniteAvalanches.External.finite_plane_tree_complement",
+    "FiniteAvalanches.External.finite_plane_two_pole_topology",
+    "FiniteAvalanches.External.kenyonWilson_pairingGroves_resistanceMinor",
+    "FiniteAvalanches.External.kirchhoff_meanTreePathCurrent",
+    "FiniteAvalanches.External.lawler_limic_beurling_srw_Z2",
+    "FiniteAvalanches.External.lyons_nestedProjectionDomination",
+    "FiniteAvalanches.External.outer_face_simple_path_disk_redrawing",
+    "FiniteAvalanches.External.parametrized_plane_arc_straightening",
+    "FiniteAvalanches.External.plane_edge_chart_incidence",
+    "FiniteAvalanches.External.plane_punctured_chart_face_transport",
+    "FiniteAvalanches.External.plane_punctured_face_transport",
+    "FiniteAvalanches.External.plane_vertex_face_star",
+    "FiniteAvalanches.External.square_lattice_ray_seeded_wilson",
+    "FiniteAvalanches.External.square_lattice_ust_dual_law",
+    "FiniteAvalanches.External.square_lattice_wired_ust_one_tree_one_end",
+    "FiniteAvalanches.External.square_lattice_wired_ust_weak_limit",
+    "FiniteAvalanches.External.wilson_classical_tree_probability",
+    "FiniteAvalanches.External.wilson_two_color_law_existsUnique"
+  ],
+  "enable_nanoda": true
+}

@@ -1,0 +1,33 @@
+{
+  "schema_version": 1,
+  "kind": "PROJECTION_OF_EXISTING_INDEPENDENT_REVIEW_METADATA",
+  "subject_id": "external:colored-wilson:v1",
+  "baseline_row_sha256": "77a2986cb32a30c2c0ef6b0fae17d7bd214feb7b2ba76bf8a7c272a909c0ab15",
+  "declaration_sha256": "0aaa9ad0dee2e7aa41eb2b4b115e7cca3c804b62169d533fdf50d7045304b626",
+  "current_semantics_sha256": "b887a5b998960cbd79847973ca3cad3715c71403fa4f5ff141109a912b06ea3c",
+  "original_reviews": [
+    {
+      "original_sha256": "e8cab163093ccce7d61ea4e95521a02280f93d6d0dc4ad8de37aa2e431cdb399",
+      "recorded_verdict": "PASS",
+      "recorded_independent": true
+    },
+    {
+      "original_sha256": "4883ddaa8c635c983723172f8a313d3b41c7528643a55888063947872ca23459",
+      "recorded_verdict": "PASS",
+      "recorded_independent": true
+    },
+    {
+      "original_sha256": "cab8acf63fa69de5e1ae675cac44685e9c56c98f57807c2540f9b940820ebee9",
+      "recorded_verdict": "PASS",
+      "recorded_independent": true
+    },
+    {
+      "original_sha256": "7bf42795b1057dfa08e8fb4d0310e14bab056aa6aa84836bfdb6779318dd63b1",
+      "recorded_verdict": "PASS",
+      "recorded_independent": true
+    }
+  ],
+  "new_independent_review": false,
+  "original_reports_included": false,
+  "scope": "Existing recorded independent PASS metadata and private-original hash commitments; this projection is not a fresh mathematical review or a compiler result."
+}

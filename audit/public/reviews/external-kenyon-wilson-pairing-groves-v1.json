@@ -1,0 +1,18 @@
+{
+  "schema_version": 1,
+  "kind": "PROJECTION_OF_EXISTING_INDEPENDENT_REVIEW_METADATA",
+  "subject_id": "external:kenyon-wilson-pairing-groves:v1",
+  "baseline_row_sha256": "bca5bdf64e9a95839db676fb800e8b6b4e73b144ef0cc1629192e3a8e5673de3",
+  "declaration_sha256": "b8654ad0cd1480ac52d604d86755286da987e751751e3ba37801e13e8a7e2d3a",
+  "current_semantics_sha256": "0efa4bd8ec20cabb25bea8c06286e90b704f6ae9d8cf47a4fbbc599743bcb59d",
+  "original_reviews": [
+    {
+      "original_sha256": "658ca1df88cc16f5f7b3bec9094749112d6e0ca776517b5383b461de6225b0a8",
+      "recorded_verdict": "PASS",
+      "recorded_independent": true
+    }
+  ],
+  "new_independent_review": false,
+  "original_reports_included": false,
+  "scope": "Existing recorded independent PASS metadata and private-original hash commitments; this projection is not a fresh mathematical review or a compiler result."
+}

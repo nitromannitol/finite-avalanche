@@ -1,0 +1,18 @@
+{
+  "schema_version": 1,
+  "kind": "PROJECTION_OF_EXISTING_INDEPENDENT_REVIEW_METADATA",
+  "subject_id": "external:outer-face-simple-path-disk-redrawing:v1",
+  "baseline_row_sha256": "1d0742dd25d135f218bad0e953a6cfb89ebfbd7298be917e3086d9b1eefd6283",
+  "declaration_sha256": "f8ae39db554f4af2e5721b1828a3df124e23d1bfac90403968b76eddc29569d0",
+  "current_semantics_sha256": "ac8d8d7f05769e6b81816665cab9e9a3da352ef7613a160d7025623f2ff4fc5d",
+  "original_reviews": [
+    {
+      "original_sha256": "1d795946e6ec2d7197099aed0dba6c4c369508ca0da087784be2fbbe9f726218",
+      "recorded_verdict": "PASS",
+      "recorded_independent": true
+    }
+  ],
+  "new_independent_review": false,
+  "original_reports_included": false,
+  "scope": "Existing recorded independent PASS metadata and private-original hash commitments; this projection is not a fresh mathematical review or a compiler result."
+}

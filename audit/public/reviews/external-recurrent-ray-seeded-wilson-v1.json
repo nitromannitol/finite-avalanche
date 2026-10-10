@@ -1,0 +1,18 @@
+{
+  "schema_version": 1,
+  "kind": "PROJECTION_OF_EXISTING_INDEPENDENT_REVIEW_METADATA",
+  "subject_id": "external:recurrent-ray-seeded-wilson:v1",
+  "baseline_row_sha256": "1782bc07dd7758665eae0f50c0ce727bfdd195596759d1068bbd35a96b1e7953",
+  "declaration_sha256": "5f055d38fdbae7d12c1dd0e273dc6299a360a705a07712c4de15bb32a039bcf5",
+  "current_semantics_sha256": "6dfdeab93f431c27f2fe59f549bd0afb860fe70cd2b36d1ea582d51ce18dde97",
+  "original_reviews": [
+    {
+      "original_sha256": "b79db69d9493c7bd1e3a50ff1114cd8a78031966f801e2312747ddb2482235e2",
+      "recorded_verdict": "PASS",
+      "recorded_independent": true
+    }
+  ],
+  "new_independent_review": false,
+  "original_reports_included": false,
+  "scope": "Existing recorded independent PASS metadata and private-original hash commitments; this projection is not a fresh mathematical review or a compiler result."
+}

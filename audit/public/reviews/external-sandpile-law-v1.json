@@ -1,0 +1,28 @@
+{
+  "schema_version": 1,
+  "kind": "PROJECTION_OF_EXISTING_INDEPENDENT_REVIEW_METADATA",
+  "subject_id": "external:sandpile-law:v1",
+  "baseline_row_sha256": "de0ae6dcee770b0eb74ccc429f05cbbe0baf887bbad684e48d716259ccbb8812",
+  "declaration_sha256": "702532a6d081fc17bf7da939bf195b9ac8965f72afb514a5475f171788a4b456",
+  "current_semantics_sha256": "f3d45e8bec37e6afa9e168248664e2997692e445e933080be2a2e6d7d244df03",
+  "original_reviews": [
+    {
+      "original_sha256": "67e278623e6a033ca47b485c60ffc50dc60d7f9d949de055bbbb907c1163e9bc",
+      "recorded_verdict": "PASS",
+      "recorded_independent": true
+    },
+    {
+      "original_sha256": "8cbd27b80d99dc76fcc0c9798f5c9f18bcaf694473369dd0841d23b3bdf14b56",
+      "recorded_verdict": "PASS",
+      "recorded_independent": true
+    },
+    {
+      "original_sha256": "baea9488a79c87219c79b9a32353af770bf1362f291f4e017b0b4d90d9cb1228",
+      "recorded_verdict": "PASS",
+      "recorded_independent": true
+    }
+  ],
+  "new_independent_review": false,
+  "original_reports_included": false,
+  "scope": "Existing recorded independent PASS metadata and private-original hash commitments; this projection is not a fresh mathematical review or a compiler result."
+}

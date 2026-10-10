@@ -1,0 +1,28 @@
+{
+  "schema_version": 1,
+  "kind": "PROJECTION_OF_EXISTING_INDEPENDENT_REVIEW_METADATA",
+  "subject_id": "external:barlow-masson-adjacent-path:v1",
+  "baseline_row_sha256": "58361bb734b8e61c308d2a37ba61cf4a79f6235a89bc82cb8585ca7a756a7eef",
+  "declaration_sha256": "af45e7e1740528f8673abae26a8c1253fb98749540d3ce23d792e437fb2d6fb3",
+  "current_semantics_sha256": "b3589a811f22f154cb619d10a1f9d235c0efdd05af1bdc470c396c7a594a8a4e",
+  "original_reviews": [
+    {
+      "original_sha256": "fa707d351b106725ff5168ff353b66e2a2e1724f2863133bf8cb4f3b551958d9",
+      "recorded_verdict": "PASS",
+      "recorded_independent": true
+    },
+    {
+      "original_sha256": "2beed2a2db84cfc54d3f5f4e73f8389a66d25057521ffa2757559936d7d9a021",
+      "recorded_verdict": "PASS",
+      "recorded_independent": true
+    },
+    {
+      "original_sha256": "f215d3434c8353807ae065494057e07db4de98a2c6ab9be97a4ac0970bc9b2b1",
+      "recorded_verdict": "PASS",
+      "recorded_independent": true
+    }
+  ],
+  "new_independent_review": false,
+  "original_reports_included": false,
+  "scope": "Existing recorded independent PASS metadata and private-original hash commitments; this projection is not a fresh mathematical review or a compiler result."
+}
