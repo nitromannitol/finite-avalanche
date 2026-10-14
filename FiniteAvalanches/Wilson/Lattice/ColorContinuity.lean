@@ -90,8 +90,8 @@ theorem colorCylinder_tendsto_of_local_roots (Rj : ℕ → RootPair) (R : RootPa
   simp_rw [hprob]
   exact samplerEvent_measure_tendsto_of_local_roots Rj R hl F.toList ∅ F (fun _ => false) pc
 
-/-- The full source ct:continuity conclusion with limiting nonemptiness DERIVED
-from the specified common roots. This is a provider, not a new frozen anchor. -/
+                                                                               
+                                                                                
 theorem colorCylinder_tendsto_of_fixed_roots (Rj : ℕ → RootPair)
     (A C : Set (Site 2)) (hAC : Disjoint A C) (a b : Site 2)
     (ha : ∀ j, a ∈ (Rj j).zero) (hb : ∀ j, b ∈ (Rj j).one)

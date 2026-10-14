@@ -5,7 +5,7 @@ import re
 import sys
 
 def check(data):
-    if re.search(r"warning:|\berror(?:\([^)]*\))?:|sorryAx|declaration uses\s+['`\"]?\s*sorry\b", data, re.I):
+    if re.search(r"warning(?:\([^)]*\))?:|\berror(?:\([^)]*\))?:|sorryAx|declaration uses\s+['`\"]?\s*sorry\b", data, re.I):
         raise ValueError("Compiler emitted a warning, error or proof-hole diagnostic")
 
 if __name__ == "__main__":

@@ -1,15 +1,13 @@
 import Mathlib
-import FiniteAvalanchesFrozen.MainOriginV3
+import FiniteAvalanchesCurrent.RegisteredPast.Main
 import FiniteAvalanches.External.AllMinorsMatrixTree
 import FiniteAvalanches.External.ArcStraightening
-import FiniteAvalanches.External.BSST
 import FiniteAvalanches.External.BarlowMassonAdjacentPath
 import FiniteAvalanches.External.ClassicalBeurling
 import FiniteAvalanches.External.ColoredWilson
 import FiniteAvalanches.External.DiskAlternation
 import FiniteAvalanches.External.GeometricDual
 import FiniteAvalanches.External.KenyonWilsonPairingGroves
-import FiniteAvalanches.External.KirchhoffTreePathCurrent
 import FiniteAvalanches.External.LyonsProjectionDomination
 import FiniteAvalanches.External.OuterFaceRedrawing
 import FiniteAvalanches.External.PlaneDualBondCycle
@@ -19,22 +17,18 @@ import FiniteAvalanches.External.PlanePuncturedChartFaceTransport
 import FiniteAvalanches.External.PlanePuncturedFaceTransport
 import FiniteAvalanches.External.PlaneTreeComplement
 import FiniteAvalanches.External.PlaneVertexFaceStar
-import FiniteAvalanches.External.RecurrentRayWilson
 import FiniteAvalanches.External.SandpileLimit
 import FiniteAvalanches.External.TwoPoleTopology
-import FiniteAvalanches.External.Wilson
 import FiniteAvalanches.External.WiredUstDualLaw
 import FiniteAvalanches.External.WiredUstOneEnd
 import FiniteAvalanches.External.WiredUstWeakLimit
 
-/- Inline elaboration tool: MainComparatorLiteral.lean; SHA256 d3b78b6dd9a9a22e1c074c42d93537a9d5a705ce6f731480e783ae957db9c0b6. -/
 
 /-!
 Literal kernel data for the independent MAIN comparator.
-The structural expression encoder/decoder is adapted from the campaign's
-accepted ExprDagAuditSupport and ExprDagRoundtripSupport captures. No semantic
-constant is synthesized here. Every serialized node is immediately decoded
-and checked using Expr.equal (including binder names and metadata).
+The structural expression encoder/decoder preserves the captured kernel data.
+No semantic constant is synthesized here. Every serialized node is immediately
+decoded and checked using Expr.equal (including binder names and metadata).
 -/
 
 open Lean Elab Command
@@ -409,7 +403,6 @@ def declarationOf (infos : Std.HashMap Name ConstantInfo) (ci : ConstantInfo) :
 
 end MainComparatorLiteral
 
-/- Inline elaboration tool: ReplayMainSemanticDagSupport.lean; SHA256 d38fef214ecadef3881eaa400f7bf562011f8aef07f174dabb75749e2632b4e8. -/
 
 /-!
 Mathlib-boundary preflight for the literal MAIN semantics, without a MAIN proof
@@ -428,7 +421,7 @@ def captureDirectory : System.FilePath :=
 def outputDirectory : System.FilePath :=
   "audit/main-comparator/challenge-replay"
 
-def mainName : Name := `FiniteAvalanchesFrozen.Main.finite_avalanches_origin_v3
+def mainName : Name := `FiniteAvalanchesCurrent.RegisteredPast.Main.finite_avalanches_origin
 
 def primitives : Array Name := #[`propext, `Classical.choice, `Quot.sound]
 
@@ -519,4 +512,4 @@ elab (name := mainLiteralStatement) "literal_main_statement" : term => do
   return result
 
 theorem FiniteAvalanchesAudit.MainOrigin.finite_avalanches_origin : literal_main_statement := by
-  exact FiniteAvalanchesFrozen.Main.finite_avalanches_origin_v3
+  exact FiniteAvalanchesCurrent.RegisteredPast.Main.finite_avalanches_origin

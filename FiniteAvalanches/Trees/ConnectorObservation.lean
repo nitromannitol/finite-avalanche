@@ -19,8 +19,8 @@ private theorem span_path_copies (t : G.SpanningTree) (S : Set V) (hS : S.Nonemp
   pathCopies_subset_internal G t x y (G.span t S)
     (connectingSubtree_convex (G.toSimple_isTree t.property) S hS x hx y hy)
 
-/-- Containment of the original minimal branch copies preserves the literal minimal
-vertex span and every original internal branch copy. -/
+                                                                                   
+                                                       
 theorem span_and_branch_of_copy_subset (t₀ t : G.SpanningTree) (S : Set V)
     (hS : S.Nonempty) (h : G.internalEdges (G.span t₀ S) t₀.val ⊆ t.val) :
     G.span t S = G.span t₀ S ∧

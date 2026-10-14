@@ -18,7 +18,7 @@ theorem actual_fixed_cut_probability_limit (o : Site 2) (f : LatticeEdge) (M : �
   let AN : Bool → (N : ℕ) → Set (WiredTrees.graph N).SpanningTree := fun b N =>
     if b then finiteCutEscape o f M N else (finiteCutEscape o f M N)ᶜ
   -- Open unions of actual finite-coordinate cylinders whose local determination
-  -- is valid in both genuine carriers. These are internal approximation sets;
+                                                                              
   -- every source-tree witness is constructed from the proved certificates below.
   let G : Bool → ℕ → Set EdgeField := fun b R =>
     ⋃ F : Finset LatticeEdge, ⋃ p : F → Bool,

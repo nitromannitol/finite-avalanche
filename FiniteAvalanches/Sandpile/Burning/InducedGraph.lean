@@ -4,9 +4,9 @@ public import FiniteAvalanches.Sandpile.Burning.Degrees
 
 @[expose] public section
 
-/-! Induction retains original edge copies. Held contraction retains internal
-copies and boundary copies at held vertices, and contracts every outside vertex
-to one sink. The original sink is outside A, including when A is empty. -/
+                                                                             
+                                                                               
+                                                                          
 namespace FiniteAvalanches.Sandpile.Burning
 open FiniteAvalanches.Trees
 open scoped Classical

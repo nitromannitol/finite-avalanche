@@ -1,6 +1,6 @@
 import FiniteAvalanches.Sandpile.Components.Graphs
 
-/-! Internal degrees of every forbidden subset are restrictions of the actual component graph. -/
+                                                                                                 
 namespace FiniteAvalanches.Sandpile.Components
 open LatticeProb FiniteAvalanches.Sandpile
 open scoped Classical

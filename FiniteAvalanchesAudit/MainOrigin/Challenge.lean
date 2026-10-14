@@ -1,13 +1,11 @@
 import Mathlib
 
-/- Inline elaboration tool: MainComparatorLiteral.lean; SHA256 d3b78b6dd9a9a22e1c074c42d93537a9d5a705ce6f731480e783ae957db9c0b6. -/
 
 /-!
 Literal kernel data for the independent MAIN comparator.
-The structural expression encoder/decoder is adapted from the campaign's
-accepted ExprDagAuditSupport and ExprDagRoundtripSupport captures. No semantic
-constant is synthesized here. Every serialized node is immediately decoded
-and checked using Expr.equal (including binder names and metadata).
+The structural expression encoder/decoder preserves the captured kernel data.
+No semantic constant is synthesized here. Every serialized node is immediately
+decoded and checked using Expr.equal (including binder names and metadata).
 -/
 
 open Lean Elab Command
@@ -382,7 +380,6 @@ def declarationOf (infos : Std.HashMap Name ConstantInfo) (ci : ConstantInfo) :
 
 end MainComparatorLiteral
 
-/- Inline elaboration tool: ReplayMainSemanticDagSupport.lean; SHA256 d38fef214ecadef3881eaa400f7bf562011f8aef07f174dabb75749e2632b4e8. -/
 
 /-!
 Mathlib-boundary preflight for the literal MAIN semantics, without a MAIN proof
@@ -401,7 +398,7 @@ def captureDirectory : System.FilePath :=
 def outputDirectory : System.FilePath :=
   ".lake/main-comparator/challenge-replay"
 
-def mainName : Name := `FiniteAvalanchesFrozen.Main.finite_avalanches_origin_v3
+def mainName : Name := `FiniteAvalanchesCurrent.RegisteredPast.Main.finite_avalanches_origin
 
 def primitives : Array Name := #[`propext, `Classical.choice, `Quot.sound]
 
@@ -474,7 +471,6 @@ def declarationDependencies (d : Declaration) : Array Name := Id.run do
 end MainComparatorReplay
 
 
-/- Inline elaboration tool: ReplayMainSemanticDagProgram.lean; SHA256 4cfc91df05c952eda65cb48b4e35bef5ad2452ae613f5b88dc91fd3f7c752d1a. -/
 
 open Lean Elab Command
 open MainComparatorLiteral
@@ -493,23 +489,23 @@ def runReplay : CommandElabM Unit := do
   let schema ← liftIO <| IO.ofExcept (summary.getObjValAs? String "schema")
   unless schema == "main-comparator-full-constantinfo-dag-v1" do throwError "REPLAY_SCHEMA_MISMATCH"
   let retainedCount ← liftIO <| IO.ofExcept (summary.getObjValAs? Nat "retained_count")
-  unless retainedCount == 26 do throwError "REPLAY_RETAINED_COUNT_NOT_26"
+  unless retainedCount == 22 do throwError "REPLAY_RETAINED_COUNT_NOT_22"
   let proofSerialized ← liftIO <| IO.ofExcept (summary.getObjValAs? Bool "main_proof_serialized")
   if proofSerialized then throwError "REPLAY_CAPTURE_INCLUDES_MAIN_PROOF"
   let retainedTargets ← liftIO <| IO.ofExcept (summary.getObjValAs? (Array Json) "retained_targets")
   let retained ← liftIO <| IO.ofExcept <| retainedTargets.mapM fun row => do
     MainComparatorLiteral.decodeName (← row.getObjVal? "name")
-  unless retained.size == 26 && (Std.HashSet.ofArray retained).size == 26 do
-    throwError "REPLAY_RETAINED_TARGETS_NOT_26_DISTINCT_NAMES"
+  unless retained.size == 22 && (Std.HashSet.ofArray retained).size == 22 do
+    throwError "REPLAY_RETAINED_TARGETS_NOT_22_DISTINCT_NAMES"
   let nodes ← liftIO <| MainComparatorReplay.readNodes (MainComparatorReplay.captureDirectory / "nodes.jsonl")
   let (constants, byName) ← liftIO <| MainComparatorReplay.readConstants
     (MainComparatorReplay.captureDirectory / "declarations.jsonl") nodes
   for ci in constants do
     if initial.contains ci.name then throwError "OWNED_LITERAL_NAME_ALREADY_IN_MATHLIB {ci.name}"
-    if ci.isAxiom && !retained.contains ci.name then throwError "LITERAL_AXIOM_OUTSIDE_RETAINED_26 {ci.name}"
+    if ci.isAxiom && !retained.contains ci.name then throwError "LITERAL_AXIOM_OUTSIDE_RETAINED_22 {ci.name}"
   let capturedAxioms := constants.filter ConstantInfo.isAxiom |>.map ConstantInfo.name
   unless capturedAxioms.qsort Name.lt == retained.qsort Name.lt do
-    throwError "REPLAY_CAPTURED_AXIOM_SET_DIFFERS_FROM_RETAINED_26"
+    throwError "REPLAY_CAPTURED_AXIOM_SET_DIFFERS_FROM_RETAINED_22"
   let boundaryRaw ← liftIO <| IO.FS.readFile (MainComparatorReplay.captureDirectory / "boundary.json")
   let boundary ← liftIO <| IO.ofExcept <| (← liftIO <| IO.ofExcept (Json.parse boundaryRaw)).getArr?
   for row in boundary do
@@ -568,7 +564,7 @@ def runReplay : CommandElabM Unit := do
     let axioms ← collectAxioms ci.name
     for ax in axioms do
       unless MainComparatorReplay.primitives.contains ax || retained.contains ax do
-        throwError "REPLAY_AXIOM_OUTSIDE_PRIMITIVES_PLUS_EXACT_26 {ci.name} {ax}"
+        throwError "REPLAY_AXIOM_OUTSIDE_PRIMITIVES_PLUS_EXACT_22 {ci.name} {ax}"
       axiomUnion := axiomUnion.insert ax
   let mainRoot ← liftIO <| IO.ofExcept (summary.getObjValAs? Nat "main_type_root")
   let mainType ← liftIO <| IO.ofExcept (MainComparatorLiteral.expression nodes (toJson mainRoot))
@@ -597,7 +593,7 @@ def runReplay : CommandElabM Unit := do
     ("comparator_pair_constructed", toJson false), ("comparator_pass", toJson false)]
   liftIO <| IO.FS.createDirAll MainComparatorReplay.outputDirectory
   liftIO <| IO.FS.writeFile (MainComparatorReplay.outputDirectory / "SUMMARY.json") (report.pretty ++ "\n")
-  logInfo m!"MAIN_LITERAL_KERNEL_REPLAY whole_constants={constants.size}; retained_types=26; whole main type checked; actual comparator pending"
+  logInfo m!"MAIN_LITERAL_KERNEL_REPLAY whole_constants={constants.size}; retained_types=22; whole main type checked; actual comparator pending"
 
 end MainComparatorReplay
 

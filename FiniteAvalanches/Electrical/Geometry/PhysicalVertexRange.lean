@@ -90,8 +90,8 @@ theorem incident_copy_card_le_degree {V E : Type} [Fintype E]
   intro e _
   by_cases ha : J.left e=x <;> by_cases hb : J.right e=x <;> norm_num [ha,hb]
 
-/-- INTERNAL numerical application on the actual physical faces. The only link premise
-is actual original-edge face-star reachability, not a range estimate or cyclic order. -/
+                                                                                      
+                                                                                        
 theorem internal_physical_pair_le_degree {V E : Type} [Fintype V] [Fintype E]
     (J : CopiedGraph V E) (D : Source.PlaneEmbedding J) (alpha beta : V)
     (A : Source.OuterArc D alpha beta) (phi : V → ℝ) (psi : A.embedding.Face → ℝ)
@@ -125,8 +125,8 @@ theorem internal_physical_pair_le_degree {V E : Type} [Fintype V] [Fintype E]
   exact (linked_values_le_copy_card a b psi s hs hstep F G hl).trans
     (mul_le_mul_of_nonneg_right (incident_copy_card_le_degree J x) hs)
 
-/-- INTERNAL exact physical range bound, after the finite connected incident star is supplied.
-No minimum, maximum, range bound or drawing-to-Euler conclusion is a premise. -/
+                                                                                              
+                                                                                
 theorem internal_physical_span_le_four_largest {V E : Type} [Fintype V] [Fintype E]
     (J : CopiedGraph V E) (D : Source.PlaneEmbedding J) (alpha beta : V)
     (A : Source.OuterArc D alpha beta) (phi : V → ℝ) (psi : A.embedding.Face → ℝ)

@@ -1,8 +1,8 @@
 {
   "schema": "literal-main-type-subdag-v1",
-  "root": 199,
+  "root": 194,
   "levels": [],
-  "original_root": 199,
+  "original_root": 194,
   "original_node_indices": [
     0,
     1,
@@ -198,12 +198,7 @@
     191,
     192,
     193,
-    194,
-    195,
-    196,
-    197,
-    198,
-    199
+    194
   ],
   "only_numeric_child_indices_rewritten": true
 }

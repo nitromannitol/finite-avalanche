@@ -9,8 +9,8 @@ open FiniteAvalanches.Trees.Lattice TreeMeasurability11
 open FiniteAvalanches.Sandpile FiniteAvalanches.Wilson.Lattice
 noncomputable section
 
-/-- All original lattice edges incident to a finite component, including every
-absent boundary edge and every internal original edge. -/
+                                                                              
+                                                         
 def incidentOriginalEdges (A : Set (Site 2)) : Set LatticeEdge :=
   {e | ∃ x ∈ A, ∃ y, e.val = s(x, y)}
 

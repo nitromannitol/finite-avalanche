@@ -7,7 +7,7 @@ open LatticeProb StatementGeometry Source BSST Plane.SourceLattice LatticeDrawin
 open scoped Classical BigOperators
 noncomputable section
 
-/-- At each internal original path face, the complete indicator boundary has exactly two terms. -/
+                                                                                                  
 theorem original_star_internal_residual (D : Finset (Site 2)) (P : OneSet D)
     (marked : MarkedCopy D P) (Q : Drawing (LatticeDrawing.primalGraph D P))
     (charts : ∀ e, EdgeChart Q e) {m : ℕ}

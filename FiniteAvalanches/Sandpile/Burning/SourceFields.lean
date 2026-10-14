@@ -5,9 +5,9 @@ public import FiniteAvalanches.Sandpile.Burning.ForbiddenTransport
 
 @[expose] public section
 
-/-! Specialize the deterministic packet to one literal sink: every vertex other
-than s is active and retains its original degree. Shapes are finite subsets of
-that actual carrier. Their exclusion of s is derived, not added to a paper claim. -/
+                                                                               
+                                                                              
+                                                                                    
 namespace FiniteAvalanches.Sandpile.Burning
 open FiniteAvalanches.Trees
 open scoped Classical

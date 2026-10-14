@@ -51,8 +51,8 @@ abbrev InteriorEdge (N : ℕ) :=
 abbrev ExitEdge (N : ℕ) :=
   {p : Active N × Direction // ¬inBox N (site p.1 + step p.2)}
 
-/-- Each internal edge occurs in its positive-coordinate orientation once.
-An exit copy remembers both its active endpoint and its outward direction. -/
+                                                                          
+                                                                             
 abbrev Edge (N : ℕ) := InteriorEdge N ⊕ ExitEdge N
 
 abbrev Vertex (N : ℕ) := Option (Active N)

@@ -161,8 +161,8 @@ theorem domain_hitting_le_annulus (r : ℕ)
     exact hx (hDbox hxD)
   · exact hPbox
 
-/-- Full unwanted-contact expectation on the actual local root law.
-The geometric premises of this internal lemma are produced by the source constructor. -/
+                                                                   
+                                                                                        
 theorem expectation_le_sixteen (r : ℕ) (hr : 1 ≤ r)
     (D : Finset (Site 2)) (P : FiniteAvalanches.Electrical.Plane.SourceLattice.OneSet D)
     (A : Set (Site 2))

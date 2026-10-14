@@ -1,7 +1,7 @@
 import LatticeProb.Walk.RecurrenceHitting
 import FiniteAvalanches.Wilson.Lattice.BeurlingGeometry
 
-/-! Exact driver-law replacement for the frozen arbitrary-site Pólya input. -/
+                                                                              
 namespace FiniteAvalanches.ProvedStandards
 
 open LatticeProb MeasureTheory FiniteAvalanches.Wilson.Lattice

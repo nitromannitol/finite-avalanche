@@ -1,10 +1,10 @@
 import FiniteAvalanches.Sandpile.Waves.SourceExtension
 import FiniteAvalanches.Sandpile.Waves.Cycles
 
-/-! The source-minus-one core determines the two literal height restrictions.
-Internal degrees count neighbors in C. The complementary induced wired graph
-retains all sink exits, so its active degree is four minus the degree into C.
-This is deterministic forbidden-subconfiguration mathematics, prior to any tree law. -/
+                                                                             
+                                                                            
+                                                                             
+                                                                                       
 namespace FiniteAvalanches.Sandpile.Components
 open LatticeProb LatticeProb.Sandpile FiniteAvalanches.Sandpile
 open FiniteAvalanches.Sandpile.Waves

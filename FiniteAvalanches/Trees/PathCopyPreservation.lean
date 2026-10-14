@@ -55,7 +55,7 @@ theorem path_data_of_copy_subset (t₀ t : G.SpanningTree) (x y : V)
     obtain ⟨_, hfe⟩ := Finset.mem_filter.mp hf
     exact Finset.mem_filter.mpr ⟨h hf, by rwa [he]⟩
 
-/-- Every original path copy stays internal when the entire path support does. -/
+                                                                                 
 theorem pathCopies_subset_internal (t : G.SpanningTree) (x y : V) (K : Set V)
     (hk : ∀ z ∈ (path (G.toSimple_isTree t.property) x y).support, z ∈ K) :
     G.rootPathCopies t x y ⊆ G.internalEdges K t.val := by

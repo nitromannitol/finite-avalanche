@@ -1,0 +1,269 @@
+import Checks.AdditiveApplications
+import CurrentRootConsumers.PastTail
+import CurrentSource.CurrentSplitAssembly
+import CurrentSource.FullIntegerLaw
+import CurrentSource.FullIntegerRadius
+import CurrentSource.ReferenceMomentCurrent
+import FiniteAvalanches.Electrical.Dirichlet
+import FiniteAvalanches.Electrical.Energy
+import FiniteAvalanches.Electrical.Geometry.ArcCollapse
+import FiniteAvalanches.Electrical.Geometry.BSST
+import FiniteAvalanches.Electrical.Geometry.BSSTStream
+import FiniteAvalanches.Electrical.Geometry.CellCases
+import FiniteAvalanches.Electrical.Geometry.Charging
+import FiniteAvalanches.Electrical.Geometry.ComplementFaces
+import FiniteAvalanches.Electrical.Geometry.ConnectedDrawingQuotient
+import FiniteAvalanches.Electrical.Geometry.DeletedArcFace
+import FiniteAvalanches.Electrical.Geometry.DiskDrawing
+import FiniteAvalanches.Electrical.Geometry.DrawingContraction
+import FiniteAvalanches.Electrical.Geometry.DrawingProperness
+import FiniteAvalanches.Electrical.Geometry.EdgeCharts
+import FiniteAvalanches.Electrical.Geometry.FiniteConnectedSpan
+import FiniteAvalanches.Electrical.Geometry.FiniteLatticeDrawing
+import FiniteAvalanches.Electrical.Geometry.IncidenceApplication
+import FiniteAvalanches.Electrical.Geometry.OrientedDrawing
+import FiniteAvalanches.Electrical.Geometry.PolarDual
+import FiniteAvalanches.Electrical.Geometry.PolarElectrical
+import FiniteAvalanches.Electrical.Geometry.PolarStream
+import FiniteAvalanches.Electrical.Geometry.SourceAlphaBond
+import FiniteAvalanches.Electrical.Geometry.SourceAlphaCopies
+import FiniteAvalanches.Electrical.Geometry.SourceChartApplication
+import FiniteAvalanches.Electrical.Geometry.SourceDualFaceMerger
+import FiniteAvalanches.Electrical.Geometry.SourceDualPath
+import FiniteAvalanches.Electrical.Geometry.SourceFacePlacementApplication
+import FiniteAvalanches.Electrical.Geometry.SourceHDual
+import FiniteAvalanches.Electrical.Geometry.SourceMarkedFace
+import FiniteAvalanches.Electrical.Geometry.SourcePrimalDrawing
+import FiniteAvalanches.Electrical.Geometry.SourceRetainedPathBoundary
+import FiniteAvalanches.Electrical.Geometry.SourceVoltage
+import FiniteAvalanches.Electrical.Geometry.UnitSegments
+import FiniteAvalanches.Electrical.Green.Grounded
+import FiniteAvalanches.Electrical.MaximumPrinciple
+import FiniteAvalanches.Electrical.Network
+import FiniteAvalanches.Electrical.PairContact.Current
+import FiniteAvalanches.Electrical.Plane.ArcCycles
+import FiniteAvalanches.Electrical.Plane.AuxiliaryArc
+import FiniteAvalanches.Electrical.Plane.Darts
+import FiniteAvalanches.Electrical.Plane.Incidence
+import FiniteAvalanches.Electrical.Plane.Orbits
+import FiniteAvalanches.Electrical.Plane.TerminalEnumeration
+import FiniteAvalanches.Electrical.Reference.Connected
+import FiniteAvalanches.Electrical.Reference.CutConnectivity
+import FiniteAvalanches.Electrical.Reference.Lattice
+import FiniteAvalanches.Electrical.Reference.NoBridges
+import FiniteAvalanches.Electrical.Reference.Voltage
+import FiniteAvalanches.Electrical.Response
+import FiniteAvalanches.Electrical.Trees.PairingGroves
+import FiniteAvalanches.External.AllMinorsMatrixTree
+import FiniteAvalanches.External.ArcStraightening
+import FiniteAvalanches.External.BSST
+import FiniteAvalanches.External.BarlowMassonAdjacentPath
+import FiniteAvalanches.External.ClassicalBeurling
+import FiniteAvalanches.External.ColoredWilson
+import FiniteAvalanches.External.DiskAlternation
+import FiniteAvalanches.External.GeometricDual
+import FiniteAvalanches.External.KenyonWilsonPairingGroves
+import FiniteAvalanches.External.KilledWiredVoltage
+import FiniteAvalanches.External.KilledWiredVoltageProof
+import FiniteAvalanches.External.KirchhoffTreePathCurrent
+import FiniteAvalanches.External.LyonsProjectionDomination
+import FiniteAvalanches.External.OuterFaceRedrawing
+import FiniteAvalanches.External.PlaneDualBondCycle
+import FiniteAvalanches.External.PlaneDualConnected
+import FiniteAvalanches.External.PlaneEdgeChartIncidence
+import FiniteAvalanches.External.PlanePuncturedChartFaceTransport
+import FiniteAvalanches.External.PlanePuncturedFaceTransport
+import FiniteAvalanches.External.PlaneTreeComplement
+import FiniteAvalanches.External.PlaneVertexFaceStar
+import FiniteAvalanches.External.PolyaSquareLattice
+import FiniteAvalanches.External.PolyaSquareLatticeProof
+import FiniteAvalanches.External.ProvedPolyaConsumer
+import FiniteAvalanches.External.ProvedWiredVoltageConsumer
+import FiniteAvalanches.External.RecurrentRayWilson
+import FiniteAvalanches.External.SandpileLimit
+import FiniteAvalanches.External.TwoPoleTopology
+import FiniteAvalanches.External.Wilson
+import FiniteAvalanches.External.WiredUstDualLaw
+import FiniteAvalanches.External.WiredUstOneEnd
+import FiniteAvalanches.External.WiredUstWeakLimit
+import FiniteAvalanches.Model.FiniteWired
+import FiniteAvalanches.Model.LegalLists
+import FiniteAvalanches.Model.WiredLaplacian
+import FiniteAvalanches.Model.WiredTreeExistence
+import FiniteAvalanches.Model.WiredTrees
+import FiniteAvalanches.Paper.Current.ConditionalExtendedContacts
+import FiniteAvalanches.Paper.Current.FiniteExtendedContactLaw
+import FiniteAvalanches.Paper.Revision4498.PastTail
+import FiniteAvalanches.Probability.FieldCylinders
+import FiniteAvalanches.Probability.Radius.Cylinders
+import FiniteAvalanches.Probability.Radius.Limits
+import FiniteAvalanches.Probability.Radius.Tails
+import FiniteAvalanches.Probability.Radius.WiredLimits
+import FiniteAvalanches.Probability.UniformMap
+import FiniteAvalanches.Sandpile.ExtendedObservables
+import FiniteAvalanches.Sandpile.Law.BoxLimit
+import FiniteAvalanches.Sandpile.Law.Characterization
+import FiniteAvalanches.Sandpile.Law.CharacterizationIff
+import FiniteAvalanches.Sandpile.Law.ExistenceUnique
+import FiniteAvalanches.Sandpile.Law.FiniteVolume
+import FiniteAvalanches.Sandpile.Law.InfiniteVolume
+import FiniteAvalanches.Sandpile.Law.Properties
+import FiniteAvalanches.Sandpile.Law.Translation
+import FiniteAvalanches.Sandpile.Law.Uniqueness
+import FiniteAvalanches.Sandpile.Observables
+import FiniteAvalanches.Sandpile.TreeLaw
+import FiniteAvalanches.Sandpile.Waves.Forbidden
+import FiniteAvalanches.Sandpile.Waves.SourceExtension
+import FiniteAvalanches.Sandpile.WiredTermination
+import FiniteAvalanches.Trees.Ancestors
+import FiniteAvalanches.Trees.CopiedEdges
+import FiniteAvalanches.Trees.CutComponents
+import FiniteAvalanches.Trees.Existence
+import FiniteAvalanches.Trees.ForestProjection.Incidence
+import FiniteAvalanches.Trees.ForestProjection.Uniform
+import FiniteAvalanches.Trees.Joining
+import FiniteAvalanches.Trees.JoiningCounts
+import FiniteAvalanches.Trees.Lattice.BundledRays
+import FiniteAvalanches.Trees.Lattice.Dual
+import FiniteAvalanches.Trees.Lattice.EuclideanPaths
+import FiniteAvalanches.Trees.Lattice.InfiniteLaw
+import FiniteAvalanches.Trees.Lattice.InfiniteLawProperties
+import FiniteAvalanches.Trees.Lattice.RayDirection
+import FiniteAvalanches.Trees.Lattice.SimpleRays
+import FiniteAvalanches.Trees.Lattice.SourceObjects
+import FiniteAvalanches.Trees.Lattice.Space
+import FiniteAvalanches.Trees.Lattice.Topology
+import FiniteAvalanches.Trees.Lattice.TreeContinuityMeasurability
+import FiniteAvalanches.Trees.Lattice.TreeContinuityObjects
+import FiniteAvalanches.Trees.Lattice.WiredLaw
+import FiniteAvalanches.Trees.Measure
+import FiniteAvalanches.Trees.Partition
+import FiniteAvalanches.Trees.Past
+import FiniteAvalanches.Trees.PathCopies
+import FiniteAvalanches.Trees.Positivity
+import FiniteAvalanches.Trees.Reciprocal
+import FiniteAvalanches.Trees.ReciprocalBounds
+import FiniteAvalanches.Trees.RootedForests
+import FiniteAvalanches.Trees.RootedPaths
+import FiniteAvalanches.Wilson.Branches
+import FiniteAvalanches.Wilson.ClassicalOrder
+import FiniteAvalanches.Wilson.ClassicalProtocol
+import FiniteAvalanches.Wilson.ClassicalTrees
+import FiniteAvalanches.Wilson.CopiedWalk
+import FiniteAvalanches.Wilson.FreshRows
+import FiniteAvalanches.Wilson.Kernel
+import FiniteAvalanches.Wilson.Lattice.ColoredForests
+import FiniteAvalanches.Wilson.Lattice.CurrentForestJoint
+import FiniteAvalanches.Wilson.Lattice.HittingTimes
+import FiniteAvalanches.Wilson.Lattice.Paths
+import FiniteAvalanches.Wilson.Lattice.RaySeeded
+import FiniteAvalanches.Wilson.Lattice.Sampler
+import FiniteAvalanches.Wilson.Lattice.SamplerEvents
+import FiniteAvalanches.Wilson.Lattice.SimpleWalk
+import FiniteAvalanches.Wilson.Lattice.WiredForestLaw
+import FiniteAvalanches.Wilson.LoopErasure
+import FiniteAvalanches.Wilson.Markov
+import FiniteAvalanches.Wilson.Measurability
+import FiniteAvalanches.Wilson.NonemptyQuotient
+import FiniteAvalanches.Wilson.PrefixLaw
+import FiniteAvalanches.Wilson.PrefixTransport
+import FiniteAvalanches.Wilson.RootContraction.Equivalence
+import FiniteAvalanches.Wilson.RootContraction.Forests
+import FiniteAvalanches.Wilson.RootContraction.Subsets
+import FiniteAvalanches.Wilson.RootContraction.Trees
+import FiniteAvalanches.Wilson.SpanningTrees
+import FiniteAvalanches.Wilson.StoppedLaw
+import FiniteAvalanches.Wilson.UniformLetters
+import FiniteAvalanchesCurrent.ArcMomentV7
+import FiniteAvalanchesCurrent.ForestReciprocalV5
+import FiniteAvalanchesCurrent.GlobalMonotonicity
+import FiniteAvalanchesCurrent.HeldBurningV1
+import FiniteAvalanchesCurrent.InverseWavesV1
+import FiniteAvalanchesCurrent.OutflowV1
+import FiniteAvalanchesCurrent.RegisteredPast.Consumers.Main
+import FiniteAvalanchesCurrent.RegisteredPast.Consumers.Reduction
+import FiniteAvalanchesCurrent.RegisteredPast.Main
+import FiniteAvalanchesCurrent.RegisteredPast.Reduction
+import FiniteAvalanchesCurrent.SplitEstimateV1
+import FiniteAvalanchesCurrentRegisteredPastSelectedMain
+import FiniteAvalanchesFrozen.NeedlePathV5
+import FiniteAvalanches.Electrical.Geometry.CurrentSourceVoltage
+import FiniteAvalanches.Electrical.CurrentVoltageApplicability
+
+import FiniteAvalanches.Electrical.Reference.ConjugateMeans
+import FiniteAvalanches.Electrical.Reference.BoundaryMeans
+import FiniteAvalanches.Electrical.Source.BoundaryExpectation
+import FiniteAvalanchesCurrent.ArcMomentExpectations
+import FiniteAvalanchesCurrent.SplitEstimateExpectations
+import FiniteAvalanchesCurrent.BoundaryMeanApplication
+
+#print axioms CurrentRegisteredPastChecks.actual_legal_stabilization
+#print axioms CurrentRegisteredPastChecks.entire_integer_main
+#print axioms CurrentRegisteredPastChecks.same_witness_two_real_thresholds
+#print axioms FiniteAvalanches.Electrical.CurrentSourceRoots.arc_variance
+#print axioms FiniteAvalanches.Electrical.CurrentSourceRoots.split_estimate
+#print axioms FiniteAvalanches.Electrical.CurrentVoltageApplicability.actual_grounded_source_voltage_eq_legacy
+#print axioms FiniteAvalanches.Electrical.CurrentVoltageApplicability.actual_legacy_pullback_spec
+#print axioms FiniteAvalanches.Electrical.CurrentVoltageApplicability.actual_source_voltage_eq_repair8
+#print axioms FiniteAvalanches.Electrical.Source.CurrentDomain.source_spec_iff_eq_source_voltage
+#print axioms FiniteAvalanches.Electrical.Source.CurrentDomain.source_voltage_eq_voltage
+#print axioms FiniteAvalanches.Electrical.Source.CurrentDomain.source_voltage_spec
+#print axioms FiniteAvalanches.Electrical.Source.Reference.reference_moment_current
+#print axioms FiniteAvalanches.Electrical.Source.pair_contact_current
+#print axioms FiniteAvalanches.External.BarlowMasson2011.adjacent_ust_path_euclidean_tail
+#print axioms FiniteAvalanches.External.ProvedConsumers.polya_exact_type
+#print axioms FiniteAvalanches.External.ProvedConsumers.voltage_exact_type
+#print axioms FiniteAvalanches.External.SandpileLimit.exists_infiniteVolumeLaw
+#print axioms FiniteAvalanches.External.allMinors_matrixTree
+#print axioms FiniteAvalanches.External.bsst_square_tiling
+#print axioms FiniteAvalanches.External.disk_alternation_impossible
+#print axioms FiniteAvalanches.External.finite_plane_dual_bond_cycle
+#print axioms FiniteAvalanches.External.finite_plane_dual_connected
+#print axioms FiniteAvalanches.External.finite_plane_geometric_dual
+#print axioms FiniteAvalanches.External.finite_plane_tree_complement
+#print axioms FiniteAvalanches.External.finite_plane_two_pole_topology
+#print axioms FiniteAvalanches.External.kenyonWilson_pairingGroves_resistanceMinor
+#print axioms FiniteAvalanches.External.kirchhoff_meanTreePathCurrent
+#print axioms FiniteAvalanches.External.lawler_limic_beurling_srw_Z2
+#print axioms FiniteAvalanches.External.lyons_nestedProjectionDomination
+#print axioms FiniteAvalanches.External.outer_face_simple_path_disk_redrawing
+#print axioms FiniteAvalanches.External.parametrized_plane_arc_straightening
+#print axioms FiniteAvalanches.External.plane_edge_chart_incidence
+#print axioms FiniteAvalanches.External.plane_punctured_chart_face_transport
+#print axioms FiniteAvalanches.External.plane_punctured_face_transport
+#print axioms FiniteAvalanches.External.plane_vertex_face_star
+#print axioms FiniteAvalanches.External.polya_square_lattice_hits_every_site
+#print axioms FiniteAvalanches.External.square_lattice_ray_seeded_wilson
+#print axioms FiniteAvalanches.External.square_lattice_ust_dual_law
+#print axioms FiniteAvalanches.External.square_lattice_wired_ust_one_tree_one_end
+#print axioms FiniteAvalanches.External.square_lattice_wired_ust_weak_limit
+#print axioms FiniteAvalanches.External.wilson_classical_tree_probability
+#print axioms FiniteAvalanches.External.wilson_two_color_law_existsUnique
+#print axioms FiniteAvalanches.External.wired_srw_firstHit_voltage
+#print axioms FiniteAvalanches.Paper.Current.finite_conditional_extended_contact_law
+#print axioms FiniteAvalanches.Paper.CurrentRootConsumers.registered_past_complement_bound
+#print axioms FiniteAvalanches.Paper.CurrentSource.forest_reciprocal_cofinite
+#print axioms FiniteAvalanches.Paper.CurrentSource.global_monotonicity
+#print axioms FiniteAvalanches.Paper.RegisteredPast.FullInteger.reciprocal_reduction_limsup
+#print axioms FiniteAvalanches.Paper.Revision4498.past_outside_origin_box_bound
+#print axioms FiniteAvalanches.ProvedStandards.polya_square_lattice_hits_every_site
+#print axioms FiniteAvalanches.Sandpile.FullInteger.radius
+#print axioms FiniteAvalanches.Sandpile.FullInteger.sourceLaw
+#print axioms FiniteAvalanches.Sandpile.FullInteger.sourceLaw_real_radius_tail_eq
+#print axioms FiniteAvalanches.Sandpile.FullInteger.sourceLaw_stabilizes_ae_of_nn
+#print axioms FiniteAvalanches.Wilson.Lattice.CurrentForestJoint.local_and_revealed
+#print axioms FiniteAvalanches.WiredHitting.wired_srw_firstHit_voltage
+#print axioms FiniteAvalanchesCurrent.HeldBurning.held_burning
+#print axioms FiniteAvalanchesCurrent.Punctured.inverse_waves
+#print axioms FiniteAvalanchesCurrent.Punctured.outflow
+#print axioms FiniteAvalanchesCurrent.RegisteredPast.Consumers.finite_avalanches_origin_application
+#print axioms FiniteAvalanchesCurrent.RegisteredPast.Consumers.reciprocal_reduction_limsup_application
+#print axioms FiniteAvalanchesCurrent.RegisteredPast.Main.finite_avalanches_origin
+#print axioms FiniteAvalanchesFrozen.NeedlePathV5.needle_path
+
+#print axioms FiniteAvalanches.Electrical.Plane.SourceLattice.ReferenceMoment.boundary_means_on_source_drawing
+#print axioms FiniteAvalanches.Electrical.Plane.SourceLattice.ReferenceMoment.boundary_means
+#print axioms FiniteAvalanches.Electrical.Source.original_boundary_expectation
+#print axioms FiniteAvalanches.Electrical.CurrentSourceRoots.arc_variance_expectations
+#print axioms FiniteAvalanches.Electrical.CurrentSourceRoots.split_estimate_expectations
+#print axioms FiniteAvalanches.Electrical.CurrentSourceRoots.boundary_expectation_log_factor

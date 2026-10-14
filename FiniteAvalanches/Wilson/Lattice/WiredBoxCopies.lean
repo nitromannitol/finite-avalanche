@@ -74,8 +74,8 @@ theorem originalCopyEdge_direction {N : ℕ} (x : FiniteWired.Active N)
   · simp only [FiniteWired.directionEdge]
     split_ifs <;> rfl
 
-/-- An exit in the small box becomes its same directional copy in the large
-box. Its large-box representative may be internal, so no sink-exit is dropped. -/
+                                                                           
+                                                                                 
 def copyInLarger {N M : ℕ} (hNM : N ≤ M) : FiniteWired.Edge N → FiniteWired.Edge M
   | .inl e => .inl ⟨(activeEmbedding hNM e.val.1,activeEmbedding hNM e.val.2),
       by simpa only [site_activeEmbedding] using e.property⟩

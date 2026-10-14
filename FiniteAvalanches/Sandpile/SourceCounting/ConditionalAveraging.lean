@@ -2,7 +2,7 @@ import FiniteAvalanches.MeasureTheory.FinitePartitionAveraging
 import FiniteAvalanches.Sandpile.SourceCounting.ConditionalReciprocal
 import FiniteAvalanches.Trees.Lattice.ReciprocalExpectationLimit
 
-/-! Internal conditional assembly of the finite source reciprocal expectation. -/
+                                                                                 
 namespace FiniteAvalanches.ConditioningConsumer
 open LatticeProb FiniteAvalanches.Trees FiniteAvalanches.Sandpile MeasureTheory
 open FiniteAvalanches.Sandpile.WiredTrees FiniteAvalanches.Sandpile.SourceCounting
@@ -22,10 +22,10 @@ theorem copiedConnectorObservation_equivalence {V E : Type} [Fintype V] [Fintype
     exact ⟨h'.1.trans h.1, h'.2.1.trans h.2.1, h'.2.2.1.trans h.2.2.1,
       h'.2.2.2.1.trans h.2.2.2.1, h'.2.2.2.2.trans h.2.2.2.2⟩
 
-/-- Conditional internal averaging: a single nonnegative bound on the ordinary
-conditional expectation at every actual nonsink whole observation bounds the
-unconditional finite source expectation. The conditional estimate is an explicit
-input to this helper; sink atoms, integrability and partition facts are derived. -/
+                                                                              
+                                                                            
+                                                                                
+                                                                                   
 theorem source_marks_finiteZN_integral_le_of_conditional_bound {N r : ℕ}
     (hr : 2 ≤ r) (hrN : r ≤ N) (B : ℝ) (hB : 0 ≤ B)
     (hbound : ∀ t₀ : (graph N).SpanningTree,

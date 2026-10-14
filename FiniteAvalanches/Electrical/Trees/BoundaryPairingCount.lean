@@ -29,8 +29,8 @@ theorem boundary_copies_ne (m : ℕ) (p : Fin (m+1) → V) (hp : Function.Inject
     omega
   · have h := congrArg Fin.val (hp (bi.symm.trans bj)); exact (ne_of_lt hij) (Fin.ext h)
 
-/-- Source two-contact counting on the full literal original tree carrier.
-The geometric angular data are explicit internal inputs; path order is proved. -/
+                                                                          
+                                                                                 
 theorem boundary_pair_contact_count (D : Drawing J)
     (hvertices : ∀ x, D.point x ∈ disk) (hedges : ∀ e t, D.curve e t ∈ disk)
     (m : ℕ) (p : Fin (m+1) → V) (hp : Function.Injective p)

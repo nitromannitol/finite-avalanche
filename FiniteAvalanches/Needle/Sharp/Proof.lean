@@ -151,7 +151,7 @@ lemma path_target_budget (h L : ℕ) (hh : 10 ≤ h) (p : InBoxVertices h L)
     32+64*(Nat.log2 h : ℝ) ≤ 32+64*(Real.log h/Real.log 2)).trans
       (Needle107Numeric.source_dyadic_bound h hh))
 
-/-- Exact literal type of ct:needle:v3; no quarantined frozen import. -/
+                                                                        
 theorem connected_set_conductance_107 :
     ∀ h : ℕ, 10 ≤ h → ∀ w : Point, radius w = 2 * h →
     ∃ Z : Finset Point, ((lattice 2).induce (Z : Set Point)).Connected ∧

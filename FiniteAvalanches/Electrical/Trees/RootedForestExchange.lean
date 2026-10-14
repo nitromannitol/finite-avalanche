@@ -7,7 +7,7 @@ open scoped Classical
 noncomputable section
 variable {V E : Type}
 
-/-- Replacing a path copy by an internal component copy preserves the rooted forest. -/
+                                                                                       
 theorem twoRootForest_exchange (J : CopiedGraph V E) (u v : V)
     (F : J.TwoRootForest u v) (e c : E) (he : e ∈ F.val)
     (hc : J.reaches F.val (J.left c) (J.right c))

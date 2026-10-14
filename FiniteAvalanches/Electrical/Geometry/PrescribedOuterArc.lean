@@ -28,8 +28,8 @@ theorem prescribed_auxiliary_endpoints (D : Drawing J) (F : Face D)
     change D.point beta ∈ closure (faceRegion D F)
     simpa only [A.point_eq] using h
 
-/-- Package the supplied auxiliary drawing and supplied augmented charts as an OuterArc.
-Unboundedness is an explicit internal premise of this packaging lemma. -/
+                                                                                        
+                                                                         
 theorem outerArc_of_prescribed_auxiliary (D : Drawing J)
     (hloop : ∀ e, J.left e ≠ J.right e) (alpha beta : V) (hne : alpha ≠ beta)
     (F : Face D) (A : AuxiliaryArc D F alpha beta)

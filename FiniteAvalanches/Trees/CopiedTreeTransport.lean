@@ -1,8 +1,8 @@
 import FiniteAvalanches.Trees.Joining
 
-/-! Ordinary tree transport retains a bijection of individual copied edges.
-The unordered endpoint condition permits the orientation reversal of negative
-lattice exits when they become internal copies in a larger wired box. -/
+                                                                           
+                                                                             
+                                                                        
 set_option autoImplicit false
 namespace FiniteAvalanches.Trees.Multigraph
 open scoped Classical

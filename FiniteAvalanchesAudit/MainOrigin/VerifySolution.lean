@@ -16,8 +16,8 @@ run_cmd do
   let targets ← liftIO <| IO.ofExcept (summary.getObjValAs? (Array Json) "retained_targets")
   let retained ← liftIO <| IO.ofExcept <| targets.mapM fun row => do
     MainComparatorLiteral.decodeName (← row.getObjVal? "name")
-  unless retained.size == 26 && (Std.HashSet.ofArray retained).size == 26 do
-    throwError "PAIR_RETAINED_TARGETS_NOT_EXACT_26"
+  unless retained.size == 22 && (Std.HashSet.ofArray retained).size == 22 do
+    throwError "PAIR_RETAINED_TARGETS_NOT_EXACT_22"
   let targetName := `FiniteAvalanchesAudit.MainOrigin.finite_avalanches_origin
   let some (.thmInfo target) := env.find? targetName | throwError "PAIR_TARGET_NOT_THEOREM"
   unless target.levelParams == levels && target.type.equal mainType do
@@ -42,7 +42,7 @@ run_cmd do
     let axs ← collectAxioms ci.name
     for ax in axs do
       unless MainComparatorReplay.primitives.contains ax || retained.contains ax do
-        throwError "PAIR_SEMANTIC_AXIOM_OUTSIDE_PRIMITIVES_PLUS_26 {ci.name} {ax}"
+        throwError "PAIR_SEMANTIC_AXIOM_OUTSIDE_PRIMITIVES_PLUS_22 {ci.name} {ax}"
       semanticUnion := semanticUnion.insert ax
   unless (semanticUnion.toArray.map Name.toString).qsort (· < ·) == semanticAxioms.qsort (· < ·) do
     throwError "PAIR_SEMANTIC_AXIOM_UNION_DIFFERS_FROM_ACTUAL_CAPTURE"
@@ -64,6 +64,8 @@ run_cmd do
   for ax in targetAxioms do
     unless MainComparatorReplay.primitives.contains ax || retained.contains ax do
       throwError "PAIR_TARGET_UNEXPECTED_AXIOM {ax}"
+  unless (targetAxioms.map Name.toString).qsort (· < ·) == (← liftIO <| IO.ofExcept (summary.getObjValAs? (Array String) "actual_main_axioms")).qsort (· < ·) do
+    throwError "SOLUTION_AXIOMS_DIFFER_FROM_CAPTURED_CURRENT_MAIN"
   let result := Json.mkObj [
     ("status", toJson "PAIR_TYPE_AND_SEMANTIC_KERNEL_CHECK_ONLY_NOT_COMPARATOR_APPROVAL"),
     ("mode", toJson "SOLUTION"), ("full_main_type_equal", toJson true),
@@ -76,6 +78,6 @@ run_cmd do
   let output : System.FilePath := "audit/main-comparator/verify-solution"
   liftIO <| IO.FS.createDirAll output
   liftIO <| IO.FS.writeFile (output / "SUMMARY.json") (result.pretty ++ "\n")
-  logInfo m!"PAIR_SOLUTION_KERNEL_CHECK full MAIN type and657 meaning declarations match; all26 assertions; comparator pending"
+  logInfo m!"PAIR_SOLUTION_KERNEL_CHECK full MAIN type and complete meaning declarations match; all22 assertions; comparator pending"
 
 #print axioms FiniteAvalanchesAudit.MainOrigin.finite_avalanches_origin

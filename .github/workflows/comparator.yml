@@ -1,4 +1,4 @@
-name: Comparator audit
+name: Current Main comparator (22 inputs)
 
 on:
   workflow_dispatch:
@@ -72,6 +72,7 @@ jobs:
           name: comparator-${{ github.sha }}-${{ github.run_attempt }}
           path: |
             .lake/comparator-logs/
+            audit/main-comparator/
             ${{ runner.temp }}/finite-avalanche-tools/tool-receipt.json
             ${{ runner.temp }}/finite-avalanche-tools/*-build.log
           if-no-files-found: error

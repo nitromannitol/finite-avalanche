@@ -1,2 +1,0 @@
- (x a : Site 2) :
-    walkLaw {ξ | ∃ t : ℕ, position x ξ t = a} = 1

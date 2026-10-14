@@ -65,7 +65,7 @@ theorem original_green_sub_current_le_weightedEnergy22 :
   rw [← hdiagonal] at hbound
   exact hbound
 
-/-- Internal full-source composition conditional only on the whole original physical trial statement. -/
+                                                                                                        
 theorem internal_split_of_whole_trial22
     (htrial :
   ∀ (D : Finset (Site 2)) (P : OneSet D)

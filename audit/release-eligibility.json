@@ -1,0 +1,41 @@
+{
+  "schema_version": 1,
+  "status": "REVIEWED_SOURCE_ELIGIBLE",
+  "manuscript_revision": "2ff7e75e9b6d626dc6c6243fa3d25fd179b34cf2",
+  "manuscript_sha256": "d2a875c154db9ff913ec6b25cf38e8da134ca977f6a24fd9c036cd8873b1082a",
+  "candidate_source_inventory_sha256": "e43605eea6961f49a79cf43a452131b7fdc33318c5f1af397b7c461a4d7adb5a",
+  "final_statement_and_proof_review": {
+    "verdict": "PASS",
+    "independent": true,
+    "reviewer": "geometry",
+    "evidence_sha256": "3ccceb290afabd24b9beadcd49757984c251814baf4aed258f11af9866ecd44a",
+    "statement_count": 17,
+    "complete_proof_block_count": 16,
+    "scope": "Exact current statements, expanded binders, source meanings, characterization and consumed proof routes"
+  },
+  "final_source_meaning_and_input_review": {
+    "verdict": "PASS",
+    "independent": true,
+    "reviewer": "probability",
+    "evidence_sha256": "60bc52184b374c0c67e5c218c78a1fd9ad4e81865f261bcc67bc253067febce0",
+    "registered_inputs": 25,
+    "main_inputs": 22,
+    "scope": "Actual current definitions, standard assumption applicability and all current consumers"
+  },
+  "projection_independent_review": {
+    "verdict": "PASS",
+    "independent": true,
+    "reviewer": "count-frontend-review",
+    "evidence_sha256": "06bff1e8449f0b977e5eebf86bafbca4c527c989ce84b2d7685695931918c18b",
+    "scope": "Exact current source projection, new exports, verification scripts and inventory"
+  },
+  "runtime_results_are_separate": true,
+  "status_only_inventory_transport": {
+    "reviewer": "count-frontend-review",
+    "independent": true,
+    "evidence_sha256": "d57476de54846efaf9498aa5a74526bc3fd8de232357d6cca9c8fc7ba42fa76c",
+    "reviewed_base_inventory_sha256": "5e6e8b08a17594a11a68f4843c831d4ad1f2429713f9d74854c2991c68ca19a9",
+    "transport_sha256": "8d28518905a297dbf9484781752fbad4701c94469b80d964ad22b76e3118d792",
+    "production_and_verification_code_unchanged": true
+  }
+}

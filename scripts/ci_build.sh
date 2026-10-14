@@ -1,29 +1,25 @@
 #!/usr/bin/env bash
-# No project-object cache is restored: all project warning checks execute afresh.
+# Fresh project build and actual direct axiom reports; no project-object cache.
 set -euo pipefail
 root=$(cd "$(dirname "$0")/.." && pwd)
 cd "$root"
 unset LEAN_PATH
 mkdir -p .lake/verification-logs
 test "$(cat lean-toolchain)" = 'leanprover/lean4:v4.32.0'
-# The proposed Lake patch removes this package-wide suppression. Fail rather
-# than describe a suppressed diagnostic as a warning-free build.
-if grep -Fq 'warn.classDefReducibility' lakefile.lean; then
-  echo 'Remove the classDefReducibility suppression before this verification run.' >&2
+if grep -Eq 'maxHeartbeats|warn\.classDefReducibility' lakefile.lean; then
+  echo 'Unsupported resource or diagnostic override in Lakefile.' >&2
   exit 1
 fi
+python3 -B scripts/lint_public.py . | tee .lake/verification-logs/privacy.log
 lake env lean --version | tee .lake/verification-logs/toolchain.log
 python3 -B scripts/check_public_inputs.py | tee .lake/verification-logs/trusted-inputs.log
 lake --no-ansi --wfail build 2>&1 | tee .lake/verification-logs/build.log
 python3 -B scripts/check_clean_log.py .lake/verification-logs/build.log
-# A direct invocation guarantees fresh reports even when the audit target is cached.
 lake env lean \
-  -DwarningAsError=true \
-  -DautoImplicit=false -DrelaxedAutoImplicit=false \
+  -DwarningAsError=true -DautoImplicit=false -DrelaxedAutoImplicit=false \
   -Dlinter.unusedVariables=true -Dlinter.unusedSectionVars=true \
   -Dlinter.unusedSimpArgs=true -Dlinter.unnecessarySimpa=true \
-  -Dlinter.deprecated=true \
-  FiniteAvalanches/Meta/AxiomsAudit.lean \
+  -Dlinter.deprecated=true PublicVerification/Axioms.lean \
   2>&1 | tee .lake/verification-logs/axioms.log
 python3 -B scripts/check_clean_log.py .lake/verification-logs/axioms.log
 python3 -B scripts/check_public_axioms.py .lake/verification-logs/axioms.log \

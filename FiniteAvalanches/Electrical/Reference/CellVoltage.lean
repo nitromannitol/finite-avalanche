@@ -33,7 +33,7 @@ theorem free_copy_degree (x : {x : D // x ∉ P.val}) :
     Geometry.degree (copyA D P marked) (copyB D P marked) (.inr x) = 4 :=
   free_degree D P marked x
 
-/-- An internal lattice step is a retained original copied edge, or a collapsed P step. -/
+                                                                                          
 theorem internal_adj_projection {x y : Site 2} (hx : x ∈ D) (hy : y ∈ D)
     (hxy : (lattice 2).Adj x y) :
     project D P x = project D P y ∨

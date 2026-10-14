@@ -2,22 +2,31 @@ title: "Sandpile avalanches in two dimensions are finite"
 author: "Ahmed Bou-Rabee"
 language: "Lean 4"
 toolchain: "leanprover/lean4:v4.32.0"
-status: "proved_relative_to_external_inputs"
-manuscript_statements: 16
-proved_current_applicable_formulations: 16
-distinct_source_declarations: 15
-standard_external_inputs: 26
+status: "COMPLETE_MODULO_EXTERNAL_INPUTS_FOR_NUMBERED_STATEMENTS"
+completion_status_after_gates: "COMPLETE_MODULO_EXTERNAL_INPUTS"
+main_export: "FiniteAvalanchesCurrent.RegisteredPast.Main.finite_avalanches_origin"
+main_carrier: "all integer fields"
+manuscript_statements: 17
+manuscript_proof_blocks: 16
+distinct_source_declarations: 16
+registered_standard_assumptions: 25
+main_used_standard_assumptions: 22
+external_proofs_deferred: true
 external_input_registry: "audit/trusted-inputs.json"
-proved_external_successors: 2
-current_statement_map: "audit/public/current-statements.json"
-paper_commit: "d2fc033fa59b56deff4c7b543387bdcbabfec82d"
-production_lean_files: 841
-production_physical_lines: 88755
-axiom_reports_required: 4737
-standalone_release_build_verified: true
-independent_main_comparator_verified: true
-license_status: "unspecified; vendored Mathlib mirrors retain Apache-2.0"
-automation: "AI-assisted development under human direction; complete model and cost census unconfirmed"
-verified_source_commit: "6696f7cde7e1676c0f34095f2378dc8a39f1dbc1"
-verified_ci_run: 38091012963
-verified_comparator_run: 38091014254
+current_statement_map: "audit/current-statements.json"
+paper_commit: "2ff7e75e9b6d626dc6c6243fa3d25fd179b34cf2"
+paper_parent: "85a84fa1519eac9d9eaa0242cd7539d736e7090b"
+paper_source_sha256: "d2a875c154db9ff913ec6b25cf38e8da134ca977f6a24fd9c036cd8873b1082a"
+production_and_direct_verification_lean_files: 894
+production_default_targets: 893
+axiom_reports_required: 69
+final_source_review: "PASS"
+standalone_release_build: "PASS_WARM_EXTENSION_OF_OWN_PUBLIC_PROJECT_ARTIFACTS"
+direct_axiom_replay: "PASS_69_ACTUAL_REPORTS"
+independent_main_comparator: "PASS_ACTUAL_MATCHING_LEAN_NANODA_AND_BOTH_FULL_ENVIRONMENT_QUERIES"
+hosted_ci: "PENDING"
+hosted_comparator: "PENDING"
+verified_public_commit: null
+verified_ci_run: null
+verified_comparator_run: null
+additional_finite_volume_overview_corollary: "ORDINARY_LEAN_CONSUMER_PENDING"

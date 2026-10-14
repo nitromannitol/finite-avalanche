@@ -7,11 +7,11 @@ set_option autoImplicit false
 namespace FiniteAvalanches.External
 open FiniteAvalanches.Wilson.Lattice
 
-/-- Full JOINT finite-query Wilson characterization, including present/absent
-original lattice edges, and convergence of the actual copied wired forest laws.
-Primary sources: Lyons–Peres (2016), Theorem 4.1 and §4.2; BLPS (2001), Proposition
-5.6. Arbitrary nonempty root sets use ordinary recurrent lattice walks, never an
-infinite-degree contracted walk. The exact input is registered in audit/trusted-inputs.json. -/
+                                                                             
+                                                                               
+                                                                                   
+                                                                                
+                                                                                               
 axiom wilson_two_color_law_existsUnique (R : RootPair) :
     (∃! ν : MeasureTheory.ProbabilityMeasure ForestField, IsWilsonLaw R ν) ∧
     ∀ ν : MeasureTheory.ProbabilityMeasure ForestField, IsWilsonLaw R ν →

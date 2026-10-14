@@ -38,8 +38,8 @@ theorem reaches_rootPathCopies_support (t : G.SpanningTree) (a r : V)
   exact Finset.mem_filter.mpr ⟨hft,
     (path (G.toSimple_isTree t.property) a r).edges_takeUntil_subset_edges hx hf⟩
 
-/-- Every pair of vertices in the true marked span is connected by its original
-internal tree copies, including a singleton marked set. -/
+                                                                               
+                                                          
 theorem reaches_internalEdges_span (t : G.SpanningTree) (S : Set V)
     (hS : S.Nonempty) {x y : V} (hx : x ∈ G.span t S) (hy : y ∈ G.span t S) :
     G.reaches (G.internalEdges (G.span t S) t.val) x y := by

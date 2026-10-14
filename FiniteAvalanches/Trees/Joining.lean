@@ -9,12 +9,12 @@ public import Mathlib.Tactic
 
 @[expose] public section
 
-/-!
-Internal elementary infrastructure for copied-edge joining. Edges are elements of a finite
-carrier, not endpoint pairs. A forest is an edge subset in which deleting any edge separates
-its endpoints (the ordinary undirected forest criterion, including parallel-edge cycles).
-No sandpile, burning, ancestor, or probability conclusion is assumed here.
--/
+   
+                                                                                          
+                                                                                            
+                                                                                         
+                                                                          
+  
 namespace FiniteAvalanches.Trees
 
 structure Multigraph (V E : Type*) [Fintype V] [Fintype E] where
@@ -114,7 +114,7 @@ theorem reaches_mem_iff {C : Set V} {s : Finset E}
     · exact ih.trans (by simpa [← h.1, ← h.2] using hs e he)
     · exact ih.trans (by simpa [← h.1, ← h.2] using (hs e he).symm)
 
-/-- The two internal edge subsets contain no crossing copies. -/
+                                                                
 theorem supported_union_same_side {C : Set V} {s t : Finset E}
     (hs : G.supported C s) (ht : G.supported Cᶜ t) :
     ∀ e ∈ s ∪ t, G.left e ∈ C ↔ G.right e ∈ C := by

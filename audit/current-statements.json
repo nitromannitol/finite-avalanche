@@ -1,0 +1,352 @@
+{
+  "schema_version": 1,
+  "manuscript_revision": "2ff7e75e9b6d626dc6c6243fa3d25fd179b34cf2",
+  "manuscript_parent": "85a84fa1519eac9d9eaa0242cd7539d736e7090b",
+  "manuscript_sha256": "d2a875c154db9ff913ec6b25cf38e8da134ca977f6a24fd9c036cd8873b1082a",
+  "numbered_statement_count": 17,
+  "complete_proof_block_count": 16,
+  "correspondence_status": "REVIEWED_SOURCE_FAITHFUL_MODULO_REGISTERED_STANDARD_INPUTS",
+  "statements": [
+    {
+      "label": "th:main",
+      "module": "FiniteAvalanchesCurrent.RegisteredPast.Main",
+      "export": "FiniteAvalanchesCurrent.RegisteredPast.Main.finite_avalanches_origin",
+      "source_statement_sha256": "3d2ffea3ce0bc6c489791b938c0c6b0d8bb05844ff44ae4db8e0accd02166c4c",
+      "source_statement_range": [
+        51,
+        56
+      ],
+      "source_proof_sha256": "86a68428991ef7df8f0a0e74a3756c9536d6bef23ee0192c03e7ebcefcb66f33",
+      "source_proof_range": [
+        281,
+        287
+      ],
+      "declaration_path": "FiniteAvalanchesCurrent/RegisteredPast/Main.lean",
+      "declaration_sha256": "2a76713afb80a7f5234fcc6e1abd5a65fd01fa7db1e38cbdbb61281980052f90",
+      "declaration_code_sha256": "c6bd747aee6d2ab194b277a1219e24bbcb1605a19844c6a9256e8424af292dbe",
+      "final_statement_and_proof_review": "PASS"
+    },
+    {
+      "label": "fv:held-burning",
+      "module": "FiniteAvalanchesCurrent.HeldBurningV1",
+      "export": "FiniteAvalanchesCurrent.HeldBurning.held_burning",
+      "source_statement_sha256": "2cea5df7a969fec9c8d71eb290c2a9eaa395af4f5ebafb05b8e9f72a864d3c92",
+      "source_statement_range": [
+        205,
+        207
+      ],
+      "source_proof_sha256": null,
+      "source_proof_range": null,
+      "declaration_path": "FiniteAvalanchesCurrent/HeldBurningV1.lean",
+      "declaration_sha256": "bfdd520f2157eac2ace798e7050560d34f5dfa8e5c71d3d49663180a32e7722c",
+      "declaration_code_sha256": "064059a9161f676bba212cdf618ab16c06c9f727f4beb930369ca40c8a0bcd02",
+      "final_statement_and_proof_review": "PASS"
+    },
+    {
+      "label": "fo:lattice-monotonicity",
+      "module": "FiniteAvalanchesCurrent.GlobalMonotonicity",
+      "export": "FiniteAvalanches.Paper.CurrentSource.global_monotonicity",
+      "source_statement_sha256": "8011972d391480c6354671aaa43b9f0933a5b17bf28974feaed332645f12cda4",
+      "source_statement_range": [
+        227,
+        229
+      ],
+      "source_proof_sha256": "0c1b2fe5ff053a5144b6d63c056f8953904711f575d6ec98f393cdffd8869c28",
+      "source_proof_range": [
+        231,
+        233
+      ],
+      "declaration_path": "FiniteAvalanchesCurrent/GlobalMonotonicity.lean",
+      "declaration_sha256": "841d1ea2337b02a5ae4ba7f98b1c5ecd1ed3afda84a3384898bbb4b3362a1646",
+      "declaration_code_sha256": "9b311e1a32bd3c90508718cce8ce73b1a82d526b50a815b479ea19bab6618801",
+      "final_statement_and_proof_review": "PASS"
+    },
+    {
+      "label": "sp:reciprocal-reduction",
+      "module": "FiniteAvalanchesCurrent.RegisteredPast.Reduction",
+      "export": "FiniteAvalanches.Paper.RegisteredPast.FullInteger.reciprocal_reduction_limsup",
+      "source_statement_sha256": "ff2af2e27fd4f0260a37f5d34a2c14b631af162d3dde7487be533d930fde6d5a",
+      "source_statement_range": [
+        253,
+        258
+      ],
+      "source_proof_sha256": "96c02dbe2ead98f7776116185d22685594f693b43f2003dda997b6279038a96f",
+      "source_proof_range": [
+        382,
+        392
+      ],
+      "declaration_path": "FiniteAvalanchesCurrent/RegisteredPast/Reduction.lean",
+      "declaration_sha256": "792d78e085859e765c5ab7b35b1958fee65159bfb0184e4bc9ae5ca06508dfb4",
+      "declaration_code_sha256": "fb314a61028f57308ac819ca4fc3d05be6e9dc20be38142c72049eb116f7a3f1",
+      "final_statement_and_proof_review": "PASS"
+    },
+    {
+      "label": "ct:reciprocal",
+      "module": "FiniteAvalanchesCurrent.ForestReciprocalV5",
+      "export": "FiniteAvalanches.Paper.CurrentSource.forest_reciprocal_cofinite",
+      "source_statement_sha256": "dd4ff3c1f8dfa172fb2ceb53cc6a997e93d3c6203284225d70782343203cc042",
+      "source_statement_range": [
+        262,
+        267
+      ],
+      "source_proof_sha256": "49b76af3c9f1de07c81883b3f0d88a749c121653f91dd58d15dc13c2903e409b",
+      "source_proof_range": [
+        491,
+        517
+      ],
+      "declaration_path": "FiniteAvalanchesCurrent/ForestReciprocalV5.lean",
+      "declaration_sha256": "674b8c3102e999ac95378d7f856d2d3a021c5b57e3f1436e0487dd2fdb8a4802",
+      "declaration_code_sha256": "674b8c3102e999ac95378d7f856d2d3a021c5b57e3f1436e0487dd2fdb8a4802",
+      "final_statement_and_proof_review": "PASS"
+    },
+    {
+      "label": "rd:conditional-law",
+      "module": "FiniteAvalanches.Paper.Current.ConditionalExtendedContacts",
+      "export": "FiniteAvalanches.Paper.Current.finite_conditional_extended_contact_law",
+      "source_statement_sha256": "d5ee5d9809a473dbee911a36a27938fa1022e879d48fb0d46c341494826a837f",
+      "source_statement_range": [
+        271,
+        273
+      ],
+      "source_proof_sha256": "08b75fab257a6d858e6b5be229132b921ff7e65ed2c74c9913b6616989da5dc5",
+      "source_proof_range": [
+        275,
+        277
+      ],
+      "declaration_path": "FiniteAvalanches/Paper/Current/ConditionalExtendedContacts.lean",
+      "declaration_sha256": "d32e741a5d836f58d27c85daca6ab4be14edc75cd8dc113fcb7b20145194d391",
+      "declaration_code_sha256": "3cfa266621d0f3d988d3833e67a56dc7408b69303cc63350908a17012b593128",
+      "final_statement_and_proof_review": "PASS"
+    },
+    {
+      "label": "fv:inverse-waves",
+      "module": "FiniteAvalanchesCurrent.InverseWavesV1",
+      "export": "FiniteAvalanchesCurrent.Punctured.inverse_waves",
+      "source_statement_sha256": "17894103a6effa156542a0fee6c3f0f4e376c11ccdb293e032c68e5cd25811ff",
+      "source_statement_range": [
+        300,
+        302
+      ],
+      "source_proof_sha256": "2f2b5293c7ac308e1b1012c6902cc2fa0736993068e3186de878c559b4fdb116",
+      "source_proof_range": [
+        304,
+        310
+      ],
+      "declaration_path": "FiniteAvalanchesCurrent/InverseWavesV1.lean",
+      "declaration_sha256": "e7016e0c829620129fd9062a8456f622c87a0e4b000813d25f28a5c94364ca27",
+      "declaration_code_sha256": "a24567844587910fbc59cbc1e50257df6dc11abd8f5dff6b6670a8bd37566180",
+      "final_statement_and_proof_review": "PASS"
+    },
+    {
+      "label": "fv:outflow",
+      "module": "FiniteAvalanchesCurrent.OutflowV1",
+      "export": "FiniteAvalanchesCurrent.Punctured.outflow",
+      "source_statement_sha256": "6116234600d8c8ea075b27df68b7f3229620fce52790a15cfb5bf6b3edd785d5",
+      "source_statement_range": [
+        343,
+        348
+      ],
+      "source_proof_sha256": "501c268b32710a62a128ddad7cfdbd9610e1a1bed94ed0c67b7746613ce26bd8",
+      "source_proof_range": [
+        350,
+        366
+      ],
+      "declaration_path": "FiniteAvalanchesCurrent/OutflowV1.lean",
+      "declaration_sha256": "0bd3a241ff10d2e0ae5078e7a12947b127a98e0fcf50c8b86b6cc1fa54e6172e",
+      "declaration_code_sha256": "f962eaab0c72db442b935eafe582ef791443f763ad380dea69feeb1bb5e2bc46",
+      "final_statement_and_proof_review": "PASS"
+    },
+    {
+      "label": "rd:past-tail",
+      "module": "FiniteAvalanches.Paper.Revision4498.PastTail",
+      "export": "FiniteAvalanches.Paper.Revision4498.past_outside_origin_box_bound",
+      "source_statement_sha256": "0d3fa546043395d4a61afc2acd107d188b73bb537c8bba73ca721ceaafa93e9c",
+      "source_statement_range": [
+        372,
+        374
+      ],
+      "source_proof_sha256": "4f84ba62262264e695b17e209aad670a85b5be30f1df58d860ba5fc04aef9ebd",
+      "source_proof_range": [
+        376,
+        378
+      ],
+      "declaration_path": "FiniteAvalanches/Paper/Revision4498/PastTail.lean",
+      "declaration_sha256": "4707c8e35b6997223e011e6a4e407b315a70f7b8ae3a97575a156a950113e517",
+      "declaration_code_sha256": "4707c8e35b6997223e011e6a4e407b315a70f7b8ae3a97575a156a950113e517",
+      "final_statement_and_proof_review": "PASS"
+    },
+    {
+      "label": "fo:local-comparison",
+      "module": "FiniteAvalanches.Wilson.Lattice.CurrentForestJoint",
+      "export": "FiniteAvalanches.Wilson.Lattice.CurrentForestJoint.local_and_revealed",
+      "source_statement_sha256": "72069b9ead30ba56981db34ef683920dde4ac758de5cdf9e51a6d19bbd1368bc",
+      "source_statement_range": [
+        398,
+        403
+      ],
+      "source_proof_sha256": "c5ca48a711fb48191be02686372c83775a906b07ddc7d5d3f33b182603dbd560",
+      "source_proof_range": [
+        421,
+        447
+      ],
+      "declaration_path": "FiniteAvalanches/Wilson/Lattice/CurrentForestJoint.lean",
+      "declaration_sha256": "91928c77deb9cf887c9b84382df55377576be04808ec90b9c33ef1488ed654dc",
+      "declaration_code_sha256": "d546dc6d3ff80fc8fc3650505f37f6ac9f8243f1614c4fde6a594620500f3edf",
+      "final_statement_and_proof_review": "PASS"
+    },
+    {
+      "label": "el:reference-moment",
+      "module": "CurrentSource.ReferenceMomentCurrent",
+      "export": "FiniteAvalanches.Electrical.Source.Reference.reference_moment_current",
+      "source_statement_sha256": "9046751092eaab34778bff77641cc487e4d9ac3e05ab2b8fd465d9a1be7367eb",
+      "source_statement_range": [
+        414,
+        419
+      ],
+      "source_proof_sha256": "eea13f9f31c1ba654a49af9962fd9708a6e7634cef3852cf46a6000fb402b775",
+      "source_proof_range": [
+        756,
+        770
+      ],
+      "declaration_path": "CurrentSource/ReferenceMomentCurrent.lean",
+      "declaration_sha256": "715aa94973221da9020feda7e167b071fcca07c2851cfe533f7eea99e143e23c",
+      "declaration_code_sha256": "97416fd48999c875300693b8550699168e909581c7168573de404c11af6c2e54",
+      "final_statement_and_proof_review": "PASS"
+    },
+    {
+      "label": "ct:needle",
+      "module": "FiniteAvalanchesFrozen.NeedlePathV5",
+      "export": "FiniteAvalanchesFrozen.NeedlePathV5.needle_path",
+      "source_statement_sha256": "6b3c5249c2fb37cb59fa03572f9d138ba1a7a4d5454dd45d867df5d13ae9d064",
+      "source_statement_range": [
+        457,
+        459
+      ],
+      "source_proof_sha256": "95f72f63517b9670b3d5e5c2b5f1f9845213123fb7cb181fd5caafe64ecb9c7a",
+      "source_proof_range": [
+        461,
+        469
+      ],
+      "declaration_path": "FiniteAvalanchesFrozen/NeedlePathV5.lean",
+      "declaration_sha256": "6fe454bd1f910a9e31c5eede9afb868905c598e9cdb90b43ad741bcfaa2bc493",
+      "declaration_code_sha256": "6fe454bd1f910a9e31c5eede9afb868905c598e9cdb90b43ad741bcfaa2bc493",
+      "final_statement_and_proof_review": "PASS"
+    },
+    {
+      "label": "ct:revealed-roots",
+      "module": "FiniteAvalanches.Wilson.Lattice.CurrentForestJoint",
+      "export": "FiniteAvalanches.Wilson.Lattice.CurrentForestJoint.local_and_revealed",
+      "source_statement_sha256": "6f781beb2ac8b837b155ee683303c9d7ad0c355da7685dba8044abb51bec9fa4",
+      "source_statement_range": [
+        471,
+        473
+      ],
+      "source_proof_sha256": "5bfc5d84e63119c256ddd20c7fd166b24978f7b3bf31cac73ec2b724b02f8b40",
+      "source_proof_range": [
+        475,
+        487
+      ],
+      "declaration_path": "FiniteAvalanches/Wilson/Lattice/CurrentForestJoint.lean",
+      "declaration_sha256": "91928c77deb9cf887c9b84382df55377576be04808ec90b9c33ef1488ed654dc",
+      "declaration_code_sha256": "d546dc6d3ff80fc8fc3650505f37f6ac9f8243f1614c4fde6a594620500f3edf",
+      "final_statement_and_proof_review": "PASS"
+    },
+    {
+      "label": "el:means",
+      "module": "FiniteAvalanches.Electrical.Reference.BoundaryMeans",
+      "export": "FiniteAvalanches.Electrical.Plane.SourceLattice.ReferenceMoment.boundary_means",
+      "source_statement_sha256": "f26b2a8618ab64b94f88b28f00e86019ecc4fab9a2f72c1a18aac82cf5f02e55",
+      "source_statement_range": [
+        557,
+        571
+      ],
+      "source_proof_sha256": "41e9610bd20859ee8ecd60ce7fcaf41226a87f21e9e1ab71633da828130f80fa",
+      "source_proof_range": [
+        573,
+        579
+      ],
+      "declaration_path": "FiniteAvalanches/Electrical/Reference/BoundaryMeans.lean",
+      "declaration_sha256": "fb337533f627f7d0af3f2a20fbfbe4cec9b649f11ba6647cc474983e63d6d734",
+      "declaration_code_sha256": "c79985537a93f9839a725d1eabdeb3e3d22c8862a42ecf59937532f82f3b1e05",
+      "final_statement_and_proof_review": "PASS",
+      "semantic_unit_companion": {
+        "module": "FiniteAvalanches.Electrical.Reference.ConjugateMeans",
+        "export": "FiniteAvalanches.Electrical.Plane.SourceLattice.ReferenceMoment.boundary_means_on_source_drawing",
+        "declaration_path": "FiniteAvalanches/Electrical/Reference/ConjugateMeans.lean",
+        "declaration_sha256": "9c34ae78ba7acabc45942d1285e5639a7119963a9bef191540e45ca39b26b2bb"
+      }
+    },
+    {
+      "label": "el:pair-contact",
+      "module": "FiniteAvalanches.Electrical.PairContact.Current",
+      "export": "FiniteAvalanches.Electrical.Source.pair_contact_current",
+      "source_statement_sha256": "d258df5afe1b5c992f3af8c1f9d3fdf18365f566395a593e31df6e2ff17684c6",
+      "source_statement_range": [
+        583,
+        592
+      ],
+      "source_proof_sha256": "3d14ab6f32d9534ceb5b3a3f3f6e32f27865549260fe5ff17ade5a36e4c0b1a2",
+      "source_proof_range": [
+        594,
+        629
+      ],
+      "declaration_path": "FiniteAvalanches/Electrical/PairContact/Current.lean",
+      "declaration_sha256": "334cbbe3bb1cb5646cb298fedbc4f1c3bcaf29ce9762a7545f1e6b8331a59a0f",
+      "declaration_code_sha256": "04fd2aebdb018386ee5e4b6c1148420cc27fc6b5fb8479cbc1756431f46b117f",
+      "final_statement_and_proof_review": "PASS"
+    },
+    {
+      "label": "el:arc-moment",
+      "module": "FiniteAvalanchesCurrent.ArcMomentExpectations",
+      "export": "FiniteAvalanches.Electrical.CurrentSourceRoots.arc_variance_expectations",
+      "source_statement_sha256": "a8f7838307f366dea87ee0c7836cdc0754720683cd67616870ffdfb8e8e9eb40",
+      "source_statement_range": [
+        633,
+        638
+      ],
+      "source_proof_sha256": "a6f4e4108355ec31123736f583a69ee11560be28ba10c22e51973df8a6ea0d08",
+      "source_proof_range": [
+        640,
+        658
+      ],
+      "declaration_path": "FiniteAvalanchesCurrent/ArcMomentExpectations.lean",
+      "declaration_sha256": "15400038d3a8221e9217f2de1a8a97c178093ec78158cb8398620b5260e5eec0",
+      "declaration_code_sha256": "2fadd19008bc6a09af49d3e810647423846cedcdde39e274111a72de58a6c870",
+      "final_statement_and_proof_review": "PASS"
+    },
+    {
+      "label": "el:split-estimate",
+      "module": "FiniteAvalanchesCurrent.SplitEstimateExpectations",
+      "export": "FiniteAvalanches.Electrical.CurrentSourceRoots.split_estimate_expectations",
+      "source_statement_sha256": "dc78a98d6a667542ea6b5facec90d8f936aaf0310fc8948d37561599f1b96686",
+      "source_statement_range": [
+        683,
+        688
+      ],
+      "source_proof_sha256": "4fb9da3b5bf278e19f793b38e5c58b982b84675ffd5a75f5522e15ab07333bb8",
+      "source_proof_range": [
+        690,
+        754
+      ],
+      "declaration_path": "FiniteAvalanchesCurrent/SplitEstimateExpectations.lean",
+      "declaration_sha256": "ce7cf21ae302526ca48b59378fe6ee5bce0943b5c163406a3f82fea591e78f9a",
+      "declaration_code_sha256": "792011ebb5399e6d9b3579defd60a58e59c2029a779b71577672b5ef2ccefa72",
+      "final_statement_and_proof_review": "PASS"
+    }
+  ],
+  "source_transition": {
+    "parent_revision": "85a84fa1519eac9d9eaa0242cd7539d736e7090b",
+    "statement_labels_added": [
+      "el:means"
+    ],
+    "statement_labels_reexpressed": [
+      "el:pair-contact",
+      "el:arc-moment",
+      "el:split-estimate"
+    ],
+    "remaining_statement_texts_unchanged": 13,
+    "standing_meanings_and_current_proof_routes_review": "PENDING",
+    "exact_type_characterization_consumption_and_axiom_review": "PENDING",
+    "earlier_receipts_retain_original_context": true
+  }
+}

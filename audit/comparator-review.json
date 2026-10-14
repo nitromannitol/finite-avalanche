@@ -1,0 +1,72 @@
+{
+  "schema_version": 1,
+  "status": "REVIEWED_CURRENT_PAIR",
+  "target_export": "FiniteAvalanchesCurrent.RegisteredPast.Main.finite_avalanches_origin",
+  "independent": true,
+  "producer_role": "finite-wilson",
+  "reviewer_role": "count-frontend-review",
+  "whole_integer_carrier": true,
+  "joint_constants_before_all_real_scales": true,
+  "source_characterizations_checked": true,
+  "exact_type_and_bodies_checked": true,
+  "source_inventory_sha256": "e43605eea6961f49a79cf43a452131b7fdc33318c5f1af397b7c461a4d7adb5a",
+  "bindings": [
+    {
+      "path": "FiniteAvalanchesAudit/MainOrigin/Challenge.lean",
+      "sha256": "bb748640d90a030511a1398b9ee6ee9dd41ec9e92704906553c512ae27e28f42"
+    },
+    {
+      "path": "FiniteAvalanchesAudit/MainOrigin/Solution.lean",
+      "sha256": "d800a6cf19e960ac21fb4b31ad7b630cbc609051d0e6c43a56e63f7bb4f899ea"
+    },
+    {
+      "path": "FiniteAvalanchesAudit/MainOrigin/VerifyChallenge.lean",
+      "sha256": "ef6ee72219cf0bdd6abcfe6f96caab4386cdc65a778977cd8512fb86ffb6c252"
+    },
+    {
+      "path": "FiniteAvalanchesAudit/MainOrigin/VerifySolution.lean",
+      "sha256": "1cffe27c48ac67f281648fbf888e9f888569ff9df32f36b92acfe0e3eb2c5f77"
+    },
+    {
+      "path": "FiniteAvalanchesAudit/MainOrigin/comparator.json",
+      "sha256": "a7b9687da8cfd00e9c20126b44804816ef2dd73bcb7e0ab91fdf2426c68d2f48"
+    },
+    {
+      "path": "FiniteAvalanchesAudit/MainOrigin/semantic-data/SUMMARY.json",
+      "sha256": "1bdca7da171bb721c1154cbb6c18fcde532c03213e1dd6011609a96acc5cb095"
+    },
+    {
+      "path": "FiniteAvalanchesAudit/MainOrigin/semantic-data/boundary.json",
+      "sha256": "6a5b14480c04f5c2da6d749dcc44dd8a11f1904573156e6f83d82896af27ecc3"
+    },
+    {
+      "path": "FiniteAvalanchesAudit/MainOrigin/semantic-data/declarations.jsonl",
+      "sha256": "737d020edb0b708bc10f6e09bd4046337aff52cef28cd0080c4b9a6f1e372fb9"
+    },
+    {
+      "path": "FiniteAvalanchesAudit/MainOrigin/semantic-data/main-type-nodes.jsonl",
+      "sha256": "7bb3b4eff6ed63be8e16198e58c1af3f9fac3753408be67aafd934d7f385a445"
+    },
+    {
+      "path": "FiniteAvalanchesAudit/MainOrigin/semantic-data/main-type.json",
+      "sha256": "560f178cce8d530f519f246fa66553d61fc792e050ecd62e18f2b9cb4229be79"
+    },
+    {
+      "path": "FiniteAvalanchesAudit/MainOrigin/semantic-data/nodes.jsonl",
+      "sha256": "f73a48dc2d2caf542dcf36cb32ed0db0acc311dba74babd13866ea8e7463d32e"
+    }
+  ],
+  "manuscript_revision": "2ff7e75e9b6d626dc6c6243fa3d25fd179b34cf2",
+  "actual_replay_status": "PASS_ACTUAL_LOCAL_COMPARATOR_LEAN_NANODA_AND_BOTH_FULL_ENVIRONMENT_QUERIES",
+  "independent_original_pair_review_sha256": "1bebb516f60754b36fff0260ff9d88ba7927a06897b550bd7f147c4470259809",
+  "independent_comments_only_projection_review_sha256": "d5e0627b4a1ecad635f15267d293bd96d9de6626ee5577e6fadeb5ef66a27df9",
+  "current_source_meaning_review_sha256": "60bc52184b374c0c67e5c218c78a1fd9ad4e81865f261bcc67bc253067febce0",
+  "current_statement_and_proof_review_sha256": "3ccceb290afabd24b9beadcd49757984c251814baf4aed258f11af9866ecd44a",
+  "current_static_projection_review_sha256": "06bff1e8449f0b977e5eebf86bafbca4c527c989ce84b2d7685695931918c18b",
+  "status_only_metadata_transport_review_sha256": "d57476de54846efaf9498aa5a74526bc3fd8de232357d6cca9c8fc7ba42fa76c",
+  "actual_replay_receipt_sha256": "eb225dfb58a4ab3c6ba33175ae059feceb7faf29d28951ebf60b5882b29820f8",
+  "actual_replay_log_sha256": "a5dbf4d39b82e87c6faea030406f99de55ee9dddbf5b3d34b34abe6c23accc57",
+  "actual_replay_inventory_sha256": "5e6e8b08a17594a11a68f4843c831d4ad1f2429713f9d74854c2991c68ca19a9",
+  "metadata_only_since_actual_replay": true,
+  "actual_replay_additional_namespace_sandbox": true
+}

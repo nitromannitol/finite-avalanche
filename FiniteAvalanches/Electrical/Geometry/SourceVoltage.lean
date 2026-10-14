@@ -15,7 +15,8 @@ theorem two_terminal_reachable (J : CopiedGraph V E) (alpha beta : V)
     ∀ x, ∃ y ∈ ({alpha,beta} : Finset V), (supportGraph J.left J.right).Reachable x y :=
   fun x => ⟨alpha,by simp,hc x alpha⟩
 
-/-- The actual unique zero/one Dirichlet voltage of the original copied network. -/
+/-- The unique harmonic extension of terminal boundary data: one at beta and zero
+at other boundary vertices. Distinct poles give the normalized source voltage. -/
 def voltage (J : CopiedGraph V E) (alpha beta : V)
     (hc : (supportGraph J.left J.right).Preconnected) : V → ℝ :=
   harmonicExtension J.left J.right {alpha,beta} (two_terminal_reachable J alpha beta hc)

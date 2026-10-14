@@ -28,8 +28,8 @@ private theorem eventually_internal_representative (f : LatticeEdge) :
     · exact ⟨⟨(FiniteWired.activeOfSite N v hv, FiniteWired.activeOfSite N u hu), k, h⟩,
         Subtype.ext Sym2.eq_swap⟩
 
-/-- No exit copy can represent a fully internal original edge. Original exit
-IDs are retained; the conclusion follows from their actual outside endpoint. -/
+                                                                            
+                                                                               
 theorem originalCopyEdge_eq_internal {N : ℕ} (i : FiniteWired.InteriorEdge N)
     (e : FiniteWired.Edge N) (he : originalCopyEdge e = interiorEdge i) : e = .inl i := by
   cases e with

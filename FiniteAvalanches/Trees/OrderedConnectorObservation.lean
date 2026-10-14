@@ -21,8 +21,8 @@ def orderedAncestorDirections (t : G.SpanningTree) (r : V) (S : Set V)
   let p := path (G.toSimple_isTree t.property) (G.ancestorOf t r S hS) r
   p.support.zip p.support.tail
 
-/-- Equality of the true marked span, all its original internal copies, the
-common ancestor, the ordered strict tail, and every original outgoing path copy. -/
+                                                                           
+                                                                                   
 def copiedConnectorObservation (t₀ t : G.SpanningTree) (r : V) (S : Set V)
     (hS : S.Nonempty) : Prop :=
   G.span t S = G.span t₀ S ∧

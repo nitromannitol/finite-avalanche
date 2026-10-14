@@ -93,7 +93,7 @@ def inducedHeightsEquiv (C : Finset V) :
       ((v : InducedVertex C) → Fin (degreeInto G C v.val)) :=
   Equiv.piCongrRight fun v => Equiv.cast (congrArg Fin (degree_induced_graph G C v))
 
-/-- Held vertices retain original degree; unheld vertices use the internal degree. -/
+                                                                                     
 def heldHeightsEquiv (s : V) (A B : Finset V) (hs : s ∉ A) (hBA : B ⊆ A) :
     ((v : InducedVertex A) → Fin (degree (heldGraph G s A B hs hBA) (some v))) ≃
       ((v : InducedVertex A) → Fin

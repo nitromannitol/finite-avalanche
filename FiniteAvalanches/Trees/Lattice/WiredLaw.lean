@@ -2,15 +2,15 @@ import FiniteAvalanches.Trees.Lattice.Space
 import FiniteAvalanches.Sandpile.TreeLaw
 import Mathlib.MeasureTheory.Measure.ProbabilityMeasure
 
-/-! Genuine finite wired trees mapped to their literal internal lattice-edge
-indicators. Every original sink-exit copy is retained in the source law and has
-no lattice-edge image. This is a finite law; no infinite UST law is selected. -/
+                                                                            
+                                                                               
+                                                                                
 namespace FiniteAvalanches.Trees.Lattice
 open LatticeProb FiniteAvalanches.Sandpile MeasureTheory
 open scoped Classical ENNReal
 noncomputable section
 
-/-- An original internal wired copy is its actual unordered lattice edge. -/
+                                                                            
 def interiorEdge {N : ℕ} (e : FiniteWired.InteriorEdge N) : LatticeEdge :=
   ⟨s(FiniteWired.site e.val.1, FiniteWired.site e.val.2),
     by obtain ⟨i, hi⟩ := e.property; exact ⟨i, Or.inl hi⟩⟩
@@ -39,8 +39,8 @@ theorem copyEdge_internal {N : ℕ} (e : FiniteWired.InteriorEdge N) :
 theorem copyEdge_exit {N : ℕ} (e : FiniteWired.ExitEdge N) :
     copyEdge (.inr e) = none := rfl
 
-/-- Presence means an actual internal original copy belongs to the wired tree.
-Absent coordinates, including all edges without an internal representative, are false. -/
+                                                                              
+                                                                                         
 def wiredField {N : ℕ} (t : (WiredTrees.graph N).SpanningTree) : EdgeField :=
   fun e => decide (∃ i : FiniteWired.InteriorEdge N,
     Sum.inl i ∈ t.val ∧ interiorEdge i = e)

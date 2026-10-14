@@ -49,7 +49,7 @@ theorem original_split_geometry22 :
   exact ⟨q, hq, Q, hpoint, hcurve, charts, finiteFaces,
     m, vertices, hinj, copies, hpath, hmarked⟩
 
-/-- Internal composition conditional on the two entire still-open original electrical statements. -/
+                                                                                                    
 theorem internal_split_of_whole_diagonal_and_trial22
     (hdiagonal :
   ∀ (D : Finset (Site 2)) (P : OneSet D)

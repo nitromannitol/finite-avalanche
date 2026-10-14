@@ -112,8 +112,8 @@ theorem measure_eq_of_patterns (μ ν : Measure ColorField) [IsFiniteMeasure μ]
     measurable_pi_lambda _ (fun x => measurable_pi_apply x.val)
   simpa only [Measure.map_apply hf hA, cylinder] using congrArg (fun m => m A) (hm F)
 
-/-- Exact law equality for every RootPair and shift, using the campaign's unique
-Wilson law and all original sites. Covariance is a conclusion, never a premise. -/
+                                                                                
+                                                                                  
 theorem wilsonColorLaw_map (R : RootPair) (z : Site 2) :
     (wilsonColorLaw R).map (colors z) = wilsonColorLaw (roots R z) := by
   apply measure_eq_of_patterns

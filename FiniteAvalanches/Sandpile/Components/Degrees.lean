@@ -87,7 +87,7 @@ theorem card_outer_incident_copies {N : ℕ}
   rw [outerIncidentCopies, Finset.card_image_of_injective _ (direction_edge_injective x.val)]
   exact card_outer_directions C.val (FiniteWired.site x.val)
 
-/-- Internal original copies incident to a C-vertex; source edges remain present. -/
+                                                                                    
 def innerIncidentCopies {N : ℕ} {o : FiniteWired.Active N} (C : ComponentShape o)
     (x : {x : FiniteWired.Active N // FiniteWired.site x ∈ C.val}) : Finset (FiniteWired.Edge N) :=
   (innerDirections C.val (FiniteWired.site x.val)).image

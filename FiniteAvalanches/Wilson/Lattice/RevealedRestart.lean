@@ -1,6 +1,6 @@
 import FiniteAvalanches.Wilson.Lattice.RestartGeometry
 
-/-! An internal application of a universal revealed-root bound to actual histories. -/
+                                                                                      
 set_option autoImplicit false
 set_option relaxedAutoImplicit false
 namespace FiniteAvalanches.Wilson.Lattice.ActualRevealedRestart

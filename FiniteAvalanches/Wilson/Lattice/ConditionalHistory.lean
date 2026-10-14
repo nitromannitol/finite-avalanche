@@ -269,8 +269,8 @@ theorem conditional_continuation_color_law (R : RootPair) (L Q : List (Site 2))
   rw [hcs, hce, hd, hmass] at hc
   exact hc
 
-/-- A genuine consumer: the sole lower-bound premise is a clearly internal
-predecessor on the actual enlarged-root law; the conditional bridge is discharged. -/
+                                                                          
+                                                                                     
 theorem history_success_mass_of_root_law_lower_bound (R : RootPair)
     (L Q : List (Site 2)) (ξ₀ : Rows) (out : SamplerState)
     (hs : samplerRun (initialSampler R) L ξ₀ = some out)

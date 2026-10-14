@@ -132,7 +132,7 @@ theorem induced_degree_eq_graph_degree {N : ℕ}
   rw [← Fintype.card_congr (inducedIncidentEquiv V x)]
   exact (Fintype.card_coe _).symm
 
-/-- The forbidden-set internal degree also counts the same literal induced edge copies. -/
+                                                                                          
 theorem internal_copy_degree {N : ℕ} {A : Finset Site2} (hA : A ⊆ boxSites N)
     (x : FiniteWired.Active N) (hx : FiniteWired.site x ∈ A) :
     inducedDegree {v | insideVertex A v} x = degree A (FiniteWired.site x) := by
