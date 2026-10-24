@@ -1,24 +1,23 @@
-# Verification scope
+# Verification
 
-This source tree targets final round61 (`2ff7e75e9b6d626dc6c6243fa3d25fd179b34cf2`; manuscript SHA256 `d2a875c154db9ff913ec6b25cf38e8da134ca977f6a24fd9c036cd8873b1082a`). The inventory has 894 production and direct-verification Lean files, 893 production default targets, 17 numbered source statements, 16 manuscript proof blocks and 69 direct axiom queries.
+What the checks of this repository establish, and how to run them.
 
-| Check for this exact tree | Status |
+| Check | How |
 | --- | --- |
-| Independent statement, binder, definition and characterization review | PASS |
-| Actual current proof-route and consumer review | PASS |
-| Current applicability of the 25 registered / 22 Main assumptions | PASS |
-| Standalone production build with zero compiler or linter warnings | PASS |
-| All 69 fresh direct axiom reports | PASS |
-| Current Main matching, Lean/NanoDa replay and complete environment queries | PASS |
-| Hosted source CI | PENDING |
-| Hosted comparator workflow | PENDING |
+| Every module builds with warnings treated as errors | `bash scripts/ci_build.sh` (`lake --wfail build`, then `scripts/check_clean_log.py`) |
+| The registry of external inputs matches the Lean axioms, and the statement map and source inventory match the files | `python3 scripts/check_public_inputs.py` |
+| The 69 axiom reports of `PublicVerification/Axioms.lean`: Theorem 1.1 uses exactly the 22 registered axioms of its proof and `propext`, `Classical.choice`, `Quot.sound`; every other report lists only standard and registered axioms | `scripts/check_public_axioms.py`, run by `scripts/ci_build.sh` |
+| No `sorry`, `admit` or `native_decide` in the production files | `scripts/check_public_inputs.py` |
+| No reference to a local machine in any file | `python3 scripts/lint_public.py .` |
+| The comparator accepts the solution of the Theorem 1.1 challenge, with the Lean kernel and the nanoda kernel | `scripts/build_comparator_tools.sh`, `scripts/run_comparators.sh` |
 
-The release eligibility and comparator review records bind the exact source inventory. The required independent reviews have passed. A reviewed status-only metadata update preserves every production and verification-code identity used by the actual local runs. `check_public_inputs.py --static` checks inventory and assumptions only; it does not approve the source or establish a build result. Missing reviews or current comparator artifacts fail the verification workflows.
+The continuous integration runs the first five checks on every push (`build.yml`) and the
+comparator in a separate workflow (`comparator.yml`).
 
-The 25 standard inputs stay external assumptions. Main must use exactly the selected 22, in addition to `propext`, `Classical.choice` and `Quot.sound`. Seven separately queried replacement/provider/consumer exports must use only these logical axioms. A source or literature audit does not prove an external input.
+The inventory has 894 Lean files: 893 production modules and the axiom query
+`PublicVerification/Axioms.lean`. The statement map covers the 17 numbered statements of the
+paper.
 
-Earlier 885-file, 16-statement, 63-query checks belong to their historical source revisions. They provide no current build, review, comparator or hosted CI result. Badges are served by the actual GitHub workflows; successful outcomes must be tied to the exact public commit.
-
-The local production check was a warm extension of authenticated objects built from this isolated public tree. No private project objects were used. Hosted workflows restore dependency artifacts only and compile fresh project objects.
-
-The statement map covers the 17 numbered statements. The additional finite-volume radius bound mentioned in overview prose has a checked mathematical corollary argument; its separate ordinary Lean consumer remains pending and receives no formalization credit here.
+The 22 external results are axioms. Checking their Lean statements against the cited sources is
+a reading, recorded with page references in `audit/trusted-inputs.json`; the checks above do not
+prove them.

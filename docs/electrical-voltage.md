@@ -6,8 +6,8 @@ The manuscript uses disjoint nonempty terminal sets, whose contracted vertices a
 
 The reference network uses `Repair8.voltage`, with internally proved connectivity and distinct false/true terminals. Its full specification and uniqueness identify it with `CurrentDomain.source_voltage`. The original extension is zero outside D and one on P through the proved projection identities. Strict interior grounded splits likewise produce connected networks with distinct poles.
 
-Energy sums each original copied edge once. Literal loops contribute zero, and parallel edges keep their identities. The grounded Green kernel is the unit-current Poisson solution. The round61 means theorem joins all-edge absolute conjugacy, signed boundary voltage and indicator means, and total mean equal to the grounded diagonal and original energy.
+Energy sums each original copied edge once. Literal loops contribute zero, and parallel edges keep their identities. The grounded Green kernel is the unit-current Poisson solution. The means theorem (Lemma 7.1) joins the conjugacy identity on every edge copy, the signed boundary voltage and indicator means, and the total mean, equal to the grounded diagonal and the original energy.
 
-The registered BSST assumption requires distinct poles. Transport through `source_voltage_eq_voltage` preserves its normalized specification and uses the assumption; it does not prove that standard theorem. The historical claim of simultaneous zero/one values for the general constructor at coincident poles fails on that domain and is not used as a source characterization.
+The registered BSST assumption requires distinct poles. Transport through `source_voltage_eq_voltage` preserves its normalized specification and uses the assumption; it does not prove that standard theorem.
 
 See the [source-domain module](../FiniteAvalanches/Electrical/Geometry/CurrentSourceVoltage.lean), [reference voltage](../FiniteAvalanches/Electrical/Reference/Voltage.lean), [actual-network transports](../FiniteAvalanches/Electrical/CurrentVoltageApplicability.lean), and [means theorem](../FiniteAvalanches/Electrical/Reference/BoundaryMeans.lean).

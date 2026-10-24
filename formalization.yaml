@@ -1,32 +1,230 @@
-title: "Sandpile avalanches in two dimensions are finite"
-author: "Ahmed Bou-Rabee"
-language: "Lean 4"
-toolchain: "leanprover/lean4:v4.32.0"
-status: "COMPLETE_MODULO_EXTERNAL_INPUTS_FOR_NUMBERED_STATEMENTS"
-completion_status_after_gates: "COMPLETE_MODULO_EXTERNAL_INPUTS"
-main_export: "FiniteAvalanchesCurrent.RegisteredPast.Main.finite_avalanches_origin"
-main_carrier: "all integer fields"
-manuscript_statements: 17
-manuscript_proof_blocks: 16
-distinct_source_declarations: 16
-registered_standard_assumptions: 25
-main_used_standard_assumptions: 22
-external_proofs_deferred: true
-external_input_registry: "audit/trusted-inputs.json"
-current_statement_map: "audit/current-statements.json"
-paper_commit: "2ff7e75e9b6d626dc6c6243fa3d25fd179b34cf2"
-paper_parent: "85a84fa1519eac9d9eaa0242cd7539d736e7090b"
-paper_source_sha256: "d2a875c154db9ff913ec6b25cf38e8da134ca977f6a24fd9c036cd8873b1082a"
-production_and_direct_verification_lean_files: 894
-production_default_targets: 893
-axiom_reports_required: 69
-final_source_review: "PASS"
-standalone_release_build: "PASS_WARM_EXTENSION_OF_OWN_PUBLIC_PROJECT_ARTIFACTS"
-direct_axiom_replay: "PASS_69_ACTUAL_REPORTS"
-independent_main_comparator: "PASS_ACTUAL_MATCHING_LEAN_NANODA_AND_BOTH_FULL_ENVIRONMENT_QUERIES"
-hosted_ci: "PENDING"
-hosted_comparator: "PENDING"
-verified_public_commit: null
-verified_ci_run: null
-verified_comparator_run: null
-additional_finite_volume_overview_corollary: "ORDINARY_LEAN_CONSUMER_PENDING"
+version: "v0.4"
+project:
+  name: "finite-avalanche"
+  description: >-
+    A Lean formalization of the paper "Sandpile avalanches in two dimensions are
+    finite" by Ahmed Bou-Rabee: under the stationary law of the abelian sandpile
+    on Z^2, adding one grain at the origin causes finitely many topplings almost
+    surely, and the radius of the avalanche has a logarithmic tail (Theorem
+    1.1). All 17 numbered statements of the paper are formalized. The proofs use
+    22 standard results from the literature, which enter as named Lean axioms.
+    Theorem 1.1 is independently checked using the comparator pair
+    FiniteAvalanchesAudit/MainOrigin/.
+  authors:
+    - "Ahmed Bou-Rabee"
+  license: "Apache-2.0"
+
+sources:
+  - title: "Sandpile avalanches in two dimensions are finite"
+    authors:
+      - "Ahmed Bou-Rabee"
+    id: "arXiv:2610.13940"
+    url: "https://arxiv.org/abs/2610.13940"
+    type: "preprint"
+    relationship: "formalizes"
+    note: >-
+      The paper under formalization, arXiv v2 (main.tex SHA-256
+      d2a875c154db9ff913ec6b25cf38e8da134ca977f6a24fd9c036cd8873b1082a). Every
+      numbered statement is formalized; see status.scope.
+    license: "arXiv non-exclusive distribution license 1.0"
+    author_endorsement: "n/a"   # the formalizer is the author of the source
+
+related_formalizations:
+  - id: "https://github.com/nitromannitol/Lattice-Probability"
+    relationship: "builds-on"
+    note: >-
+      Lattice-Probability (LatticeProb), a separate library shared by several
+      formalizations, pinned as a git dependency at commit 8557b91.
+
+automation:
+  methods:
+    - method: "agent"
+      models:
+        - "Claude Opus 5.5"
+      framework: >-
+        Claude Code (Anthropic), directing Claude models; the author supervised the work and is
+        responsible for the formalization.
+      tool_setup: >-
+        Lake builds under the pinned Lean toolchain and Mathlib revision. Every change is gated by
+        the warning-free build, the registry of external inputs and the axiom reports, and the
+        public CI runs the comparator pair against leanprover/comparator, lean4export, nanoda and
+        landrun at the revisions recorded in audit/comparator-tool-pins.json.
+      cost:
+        spend_usd: "not separately tracked (subscription and API accounts)"
+        hardware: "one workstation"
+      prompting_notes: >-
+        Human-directed agent work, closely supervised by the author. The mathematics of the paper
+        was developed with OpenAI GPT models, as the paper's statement on the use of artificial
+        intelligence describes.
+
+status:
+  scope: >-
+    A Lean 4 / Mathlib formalization of the 17 numbered statements of the paper:
+    Theorem 1.1 (finite avalanches and the logarithmic radius tail) and the
+    lemmas and propositions of Sections 2 to 7 behind it. SCOPE BOUNDARY: the
+    proofs use 22 standard results from the literature (uniform spanning trees,
+    Wilson's algorithm, determinantal domination, the Beurling estimate,
+    pairing groves, the infinite-volume sandpile law and the topology of finite
+    plane graphs), declared as axioms in FiniteAvalanches/External/ and
+    registered with their sources in audit/trusted-inputs.json; the registry
+    holds three further results that Theorem 1.1 does not use. Not formalized:
+    the finite-volume radius bound mentioned in the overview, the figures and
+    the survey of related work.
+  sorry_count: 0
+  sorry_count_scope: "production library"
+  comparator_challenge_sorry_count: 1
+  sorry_in_definitions: 0
+  axioms:
+    - "propext"
+    - "Classical.choice"
+    - "Quot.sound"
+  external_axioms:
+    - "FiniteAvalanches.External.BarlowMasson2011.adjacent_ust_path_euclidean_tail"
+    - "FiniteAvalanches.External.SandpileLimit.exists_infiniteVolumeLaw"
+    - "FiniteAvalanches.External.allMinors_matrixTree"
+    - "FiniteAvalanches.External.disk_alternation_impossible"
+    - "FiniteAvalanches.External.finite_plane_dual_bond_cycle"
+    - "FiniteAvalanches.External.finite_plane_dual_connected"
+    - "FiniteAvalanches.External.finite_plane_geometric_dual"
+    - "FiniteAvalanches.External.finite_plane_tree_complement"
+    - "FiniteAvalanches.External.finite_plane_two_pole_topology"
+    - "FiniteAvalanches.External.kenyonWilson_pairingGroves_resistanceMinor"
+    - "FiniteAvalanches.External.lawler_limic_beurling_srw_Z2"
+    - "FiniteAvalanches.External.lyons_nestedProjectionDomination"
+    - "FiniteAvalanches.External.outer_face_simple_path_disk_redrawing"
+    - "FiniteAvalanches.External.parametrized_plane_arc_straightening"
+    - "FiniteAvalanches.External.plane_edge_chart_incidence"
+    - "FiniteAvalanches.External.plane_punctured_chart_face_transport"
+    - "FiniteAvalanches.External.plane_punctured_face_transport"
+    - "FiniteAvalanches.External.plane_vertex_face_star"
+    - "FiniteAvalanches.External.square_lattice_ust_dual_law"
+    - "FiniteAvalanches.External.square_lattice_wired_ust_one_tree_one_end"
+    - "FiniteAvalanches.External.square_lattice_wired_ust_weak_limit"
+    - "FiniteAvalanches.External.wilson_two_color_law_existsUnique"
+  main_results:
+    - declaration: "FiniteAvalanchesCurrent.RegisteredPast.Main.finite_avalanches_origin"
+      file: "FiniteAvalanchesCurrent/RegisteredPast/Main.lean"
+      sorry_count: 0
+      axioms: ["propext", "Classical.choice", "Quot.sound", "the 22 external axioms above"]
+      comparator_config: "FiniteAvalanchesAudit/MainOrigin/comparator.json"
+      literature_dependencies:
+        - "FiniteAvalanches.External.SandpileLimit.exists_infiniteVolumeLaw"
+        - "FiniteAvalanches.External.allMinors_matrixTree"
+        - "FiniteAvalanches.External.square_lattice_wired_ust_weak_limit"
+        - "FiniteAvalanches.External.square_lattice_wired_ust_one_tree_one_end"
+        - "FiniteAvalanches.External.square_lattice_ust_dual_law"
+        - "FiniteAvalanches.External.wilson_two_color_law_existsUnique"
+        - "FiniteAvalanches.External.lyons_nestedProjectionDomination"
+        - "FiniteAvalanches.External.BarlowMasson2011.adjacent_ust_path_euclidean_tail"
+        - "FiniteAvalanches.External.disk_alternation_impossible"
+        - "FiniteAvalanches.External.lawler_limic_beurling_srw_Z2"
+        - "FiniteAvalanches.External.kenyonWilson_pairingGroves_resistanceMinor"
+        - "FiniteAvalanches.External.plane_vertex_face_star"
+        - "FiniteAvalanches.External.finite_plane_two_pole_topology"
+        - "FiniteAvalanches.External.parametrized_plane_arc_straightening"
+        - "FiniteAvalanches.External.outer_face_simple_path_disk_redrawing"
+        - "FiniteAvalanches.External.finite_plane_geometric_dual"
+        - "FiniteAvalanches.External.finite_plane_dual_bond_cycle"
+        - "FiniteAvalanches.External.plane_punctured_face_transport"
+        - "FiniteAvalanches.External.plane_edge_chart_incidence"
+        - "FiniteAvalanches.External.finite_plane_dual_connected"
+        - "FiniteAvalanches.External.finite_plane_tree_complement"
+        - "FiniteAvalanches.External.plane_punctured_chart_face_transport"
+
+fidelity:
+  divergences: >-
+    CORRESPONDENCE.md records how the Lean statements read the paper. In
+    summary: the stationary law is a measure on all integer fields Z^2 -> Z,
+    and Theorem 1.1 quantifies over all of them; its constants a and C are
+    chosen before every real threshold; Proposition 5.1 and Lemma 6.2 are one
+    declaration sharing the constant epsilon; electrical networks keep every
+    copy of a parallel edge, and the voltage is defined for distinct terminals.
+    The 22 external results are axioms whose Lean statements render the cited
+    theorems; that they do so faithfully is a reading, recorded with page
+    references in audit/trusted-inputs.json.
+
+review:
+  status: "author-verified"
+  reviewers:
+    - "Ahmed Bou-Rabee"
+  notes: >-
+    Correctness of every proof is guaranteed by the Lean kernel and Mathlib
+    relative to the 22 registered axioms (no sorry, no other axiom). The
+    statements were additionally reviewed against the paper by independent
+    model reviewers, and Theorem 1.1 is checked by the Lean comparator. This
+    is not external peer review.
+
+alignment:
+  namespace: "FiniteAvalanches"
+  statements:
+    - source: "Theorem 1.1 (th:main)"
+      lean: "FiniteAvalanchesCurrent.RegisteredPast.Main.finite_avalanches_origin"
+      module: "FiniteAvalanchesCurrent.RegisteredPast.Main"
+      status: "proved"
+    - source: "Lemma 2.1 (fv:held-burning)"
+      lean: "FiniteAvalanchesCurrent.HeldBurning.held_burning"
+      module: "FiniteAvalanchesCurrent.HeldBurningV1"
+      status: "proved"
+    - source: "Lemma 2.2 (fo:lattice-monotonicity)"
+      lean: "FiniteAvalanches.Paper.CurrentSource.global_monotonicity"
+      module: "FiniteAvalanchesCurrent.GlobalMonotonicity"
+      status: "proved"
+    - source: "Proposition 3.1 (sp:reciprocal-reduction)"
+      lean: "FiniteAvalanches.Paper.RegisteredPast.FullInteger.reciprocal_reduction_limsup"
+      module: "FiniteAvalanchesCurrent.RegisteredPast.Reduction"
+      status: "proved"
+    - source: "Proposition 3.2 (ct:reciprocal)"
+      lean: "FiniteAvalanches.Paper.CurrentSource.forest_reciprocal_cofinite"
+      module: "FiniteAvalanchesCurrent.ForestReciprocalV5"
+      status: "proved"
+    - source: "Lemma 3.3 (rd:conditional-law)"
+      lean: "FiniteAvalanches.Paper.Current.finite_conditional_extended_contact_law"
+      module: "FiniteAvalanches.Paper.Current.ConditionalExtendedContacts"
+      status: "proved"
+    - source: "Lemma 4.1 (fv:inverse-waves)"
+      lean: "FiniteAvalanchesCurrent.Punctured.inverse_waves"
+      module: "FiniteAvalanchesCurrent.InverseWavesV1"
+      status: "proved"
+    - source: "Lemma 4.2 (fv:outflow)"
+      lean: "FiniteAvalanchesCurrent.Punctured.outflow"
+      module: "FiniteAvalanchesCurrent.OutflowV1"
+      status: "proved"
+    - source: "Lemma 4.3 (rd:past-tail)"
+      lean: "FiniteAvalanches.Paper.Revision4498.past_outside_origin_box_bound"
+      module: "FiniteAvalanches.Paper.Revision4498.PastTail"
+      status: "proved"
+    - source: "Proposition 5.1 (fo:local-comparison)"
+      lean: "FiniteAvalanches.Wilson.Lattice.CurrentForestJoint.local_and_revealed"
+      module: "FiniteAvalanches.Wilson.Lattice.CurrentForestJoint"
+      status: "proved"
+    - source: "Proposition 5.2 (el:reference-moment)"
+      lean: "FiniteAvalanches.Electrical.Source.Reference.reference_moment_current"
+      module: "CurrentSource.ReferenceMomentCurrent"
+      status: "proved"
+    - source: "Lemma 6.1 (ct:needle)"
+      lean: "FiniteAvalanchesFrozen.NeedlePathV5.needle_path"
+      module: "FiniteAvalanchesFrozen.NeedlePathV5"
+      status: "proved"
+    - source: "Lemma 6.2 (ct:revealed-roots)"
+      lean: "FiniteAvalanches.Wilson.Lattice.CurrentForestJoint.local_and_revealed"
+      module: "FiniteAvalanches.Wilson.Lattice.CurrentForestJoint"
+      status: "proved"
+    - source: "Lemma 7.1 (el:means)"
+      lean: "FiniteAvalanches.Electrical.Plane.SourceLattice.ReferenceMoment.boundary_means"
+      module: "FiniteAvalanches.Electrical.Reference.BoundaryMeans"
+      status: "proved"
+    - source: "Lemma 7.2 (el:pair-contact)"
+      lean: "FiniteAvalanches.Electrical.Source.pair_contact_current"
+      module: "FiniteAvalanches.Electrical.PairContact.Current"
+      status: "proved"
+    - source: "Lemma 7.3 (el:arc-moment)"
+      lean: "FiniteAvalanches.Electrical.CurrentSourceRoots.arc_variance_expectations"
+      module: "FiniteAvalanchesCurrent.ArcMomentExpectations"
+      status: "proved"
+    - source: "Lemma 7.4 (el:split-estimate)"
+      lean: "FiniteAvalanches.Electrical.CurrentSourceRoots.split_estimate_expectations"
+      module: "FiniteAvalanchesCurrent.SplitEstimateExpectations"
+      status: "proved"
+
+acknowledgements: >-
+  Built on Lean 4, Mathlib, Lake, Lattice-Probability and leanprover/comparator.

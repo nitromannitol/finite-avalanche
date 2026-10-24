@@ -1,9 +1,36 @@
 cff-version: 1.2.0
-message: "Please cite the accompanying paper when using this development."
-title: "Sandpile avalanches in two dimensions are finite"
-authors:
-  - family-names: "Bou-Rabee"
-    given-names: "Ahmed"
+message: "If you use this formalization, please cite it as below, and cite the paper."
+title: "finite-avalanche: a Lean 4 formalization of Sandpile avalanches in two dimensions are finite"
+abstract: >-
+  A machine-checked Lean 4 / mathlib formalization of the paper "Sandpile
+  avalanches in two dimensions are finite" (Bou-Rabee): under the stationary
+  law of the abelian sandpile on Z^2, adding one grain at the origin causes
+  finitely many topplings almost surely, and the radius of the avalanche
+  satisfies P(radius > M) <= C (log(M + 2))^(-a). All 17 numbered statements
+  of the paper are proved; the proofs use 22 standard results from the
+  literature, which enter as named axioms.
 type: software
+authors:
+  - family-names: Bou-Rabee
+    given-names: Ahmed
+keywords:
+  - Lean
+  - mathlib
+  - formal verification
+  - abelian sandpile
+  - uniform spanning tree
+  - probability
+license: Apache-2.0
 repository-code: "https://github.com/nitromannitol/finite-avalanche"
-version: "round61"
+references:
+  - type: article
+    title: "Sandpile avalanches in two dimensions are finite"
+    authors:
+      - family-names: Bou-Rabee
+        given-names: Ahmed
+    year: 2026
+    url: "https://arxiv.org/abs/2610.13940"
+    identifiers:
+      - type: other
+        value: "arXiv:2610.13940"
+    notes: "The paper formalized by this repository (arXiv v2)."
