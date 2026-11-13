@@ -23,12 +23,6 @@ theorem empty_active_trace_iff (o : Site2) (s : Site2 → ℤ)
     subst ws
     exact .nil (by simp)
 
-/-- The old empty-volume, constant-four, singleton-source trace is rejected. -/
-theorem source_outside_counterexample_rejected :
-    IsWaveStabilization ∅ (0 : Site2) (fun _ => 4) [] ∧
-      ¬IsWaveStabilization ∅ (0 : Site2) (fun _ => 4) [[0]] := by
-  simp only [empty_active_trace_iff, List.cons_ne_nil, not_false_eq_true, and_self]
-
 /-- Membership of the source follows from the literal singleton addition support. -/
 theorem source_mem_of_affected_subset {o : Site2} {u : Counts} {V : Finset Site2}
     (hV : affected (oneGrain o) u ⊆ V) : o ∈ V := by

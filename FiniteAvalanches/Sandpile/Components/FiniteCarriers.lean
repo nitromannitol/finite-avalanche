@@ -1,6 +1,6 @@
 import FiniteAvalanches.Sandpile.Components.Fields
 
-/-! The corrected source-shape and whole height carriers are genuinely finite. -/
+/-! The source-shape and whole height carriers are finite. -/
 namespace FiniteAvalanches.Sandpile.Components
 open LatticeProb FiniteAvalanches.Sandpile
 open scoped Classical

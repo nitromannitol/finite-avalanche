@@ -2235,9 +2235,9 @@
     },
     {
       "path": "FiniteAvalanches/Needle/Sharp/Numeric.lean",
-      "sha256": "f2ecddf283a722f8a202be6cf4303b414c59eca33f0d9092fb5b8ce1a3e28b32",
-      "code_sha256": "37433e753be4acbd561bc12db03fb5e7a7a79a0fcb448f4aac5d12f9f368296e",
-      "bytes": 2461
+      "sha256": "8c38110cb246acc138510cb4e8c4db6c6cc4f04c809b66f23d868fc815c5149e",
+      "code_sha256": "a13b5c27c04373f6b224e1d064cd9e2ea303b12ba9a94570fde1b7977c2091d0",
+      "bytes": 1567
     },
     {
       "path": "FiniteAvalanches/Needle/Sharp/Path.lean",
@@ -2943,9 +2943,9 @@
     },
     {
       "path": "FiniteAvalanches/Sandpile/Components/FiniteCarriers.lean",
-      "sha256": "ae7771545f0d87085541186770aad543c94b33d963d6ad5677aadd79a509455c",
-      "code_sha256": "101b826f397b71e1bf26de275a876a485af992628c5d3bb17abab9d21214faf5",
-      "bytes": 1212
+      "sha256": "b574ae4d3970019490a4c10b7e29a39dbba69d8d6e326fb09e3a43822645b84d",
+      "code_sha256": "325ebf674c8334d571af0547964960fe790edc555fbf7f2c7cb942ce8de6c25e",
+      "bytes": 1192
     },
     {
       "path": "FiniteAvalanches/Sandpile/Components/ForwardEdgeInsertion.lean",
@@ -3495,9 +3495,9 @@
     },
     {
       "path": "FiniteAvalanches/Sandpile/Waves/FiniteDetermination.lean",
-      "sha256": "3210e3578917ecec232f8e88fa819752ed3f61979af554011beb817e2e3a3c15",
-      "code_sha256": "4dcbe5ec82f4aeaa0d21fb7c62fdf4bd864630d144405c7b1964ed7ba0f7ea36",
-      "bytes": 6566
+      "sha256": "17f07fd0ff33286c8f5ca783a2f6be31a18eb0fe88bd95cc5147b57b2c15624b",
+      "code_sha256": "1e67cd998afd6ace2b8c1dc0628b4431b08170cce70ba1bc9a6da4a2c4448ab5",
+      "bytes": 6223
     },
     {
       "path": "FiniteAvalanches/Sandpile/Waves/FiniteRadius.lean",
@@ -4455,9 +4455,9 @@
     },
     {
       "path": "FiniteAvalanches/Wilson/Lattice/CurrentSource/RevealedContactComparison.lean",
-      "sha256": "3105f3cc8a692720697754798969918ffe7fa04d43efa7cb57dab0bb54494ae7",
-      "code_sha256": "089c3692ee5194ebe7edec8ff146eaa354b5204933e1d55e1c4edffc7f59f54e",
-      "bytes": 3524
+      "sha256": "32cf262da6ebbc37bfd49e25da0cc4ab3dfa63971c07656483815cff270b5026",
+      "code_sha256": "405b4b16c382dca59b60307498036901e3143d46258616bb84ce54304b60cc84",
+      "bytes": 3514
     },
     {
       "path": "FiniteAvalanches/Wilson/Lattice/CurrentSource/RevealedGeometry.lean",
@@ -5725,8 +5725,8 @@
     },
     {
       "path": "audit/trusted-inputs.json",
-      "sha256": "17ed66fae69e8bfd1859d6da5e21236cd33ffae3e7b934e7f59fc27a03be138b",
-      "bytes": 289326
+      "sha256": "a2e86ee8164e314bcf318831556ef08e4eb7c0383dcf6c171e6decc46e167ab5",
+      "bytes": 288454
     },
     {
       "path": "lake-manifest.json",

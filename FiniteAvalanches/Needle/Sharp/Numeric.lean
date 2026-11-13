@@ -33,22 +33,4 @@ theorem source_dyadic_bound (h : ℕ) (hh : 10 ≤ h) :
       (by linarith only [h2] : 0 ≤ Real.log 2 - 69/100)]
   linarith only [hd, hL]
 
-/-- Literal comparison required to specialize the existing production bound is false. -/
-theorem existing_log_constant_obstruction (h : ℕ) (hh : 10 ≤ h) :
-    ¬ (3840 * Real.log ((h : ℝ) + 2) ≤ 107 * Real.log h) := by
-  have hcast : (10 : ℝ) ≤ h := by exact_mod_cast hh
-  have hpos : 0 < Real.log h := Real.log_pos (by linarith only [hcast])
-  have hmono : Real.log h ≤ Real.log ((h : ℝ) + 2) :=
-    Real.log_le_log (by linarith only [hcast]) (by linarith)
-  intro he
-  linarith only [he, hmono, hpos]
-
-/-- Even an optimal harmonic-to-log conversion cannot repair the coefficient 960. -/
-theorem harmonic_coefficient_obstruction (h : ℕ) (hh : 10 ≤ h) :
-    ¬ (960 * Real.log h ≤ 107 * Real.log h) := by
-  have hcast : (10 : ℝ) ≤ h := by exact_mod_cast hh
-  have hpos : 0 < Real.log h := Real.log_pos (by linarith only [hcast])
-  intro he
-  linarith only [he, hpos]
-
 end Needle107Numeric

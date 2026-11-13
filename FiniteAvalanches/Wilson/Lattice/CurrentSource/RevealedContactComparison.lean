@@ -10,7 +10,7 @@ open scoped Classical
 noncomputable section
 
 /-- The same actual infinite-component root witness supplies every geometric
-hypothesis and the corrected contact comparison, before any threshold is chosen. -/
+hypothesis and the contact comparison, before any threshold is chosen. -/
 theorem exists_revealed_roots_with_contact_comparison (κ : ℕ) (hκ : 30 ≤ κ)
     (K : Finset (Site 2)) (γ : Set (Site 2))
     (hK : ((lattice 2).induce (K : Set (Site 2))).Connected)

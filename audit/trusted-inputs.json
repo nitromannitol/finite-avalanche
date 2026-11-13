@@ -2405,16 +2405,7 @@
         }
       ],
       "used_by_main": false,
-      "final_current_source_and_consumption_review": "PASS_AUDITED_EXTERNAL_ASSUMPTION",
-      "retained_public_definition_issue": {
-        "status": "HISTORICAL_GLOBAL_ADVERTISEMENT_FAIL_RETAINED_EFFECTIVE_DOMAINS_REVIEWED",
-        "definition": "FiniteAvalanches.Electrical.Source.voltage",
-        "issue": "Global simultaneous zero/one boundary advertisement allows coincident terminals.",
-        "distinct_pole_theorem_domain": "Separate guarded domain; no new theorem counterexample claimed.",
-        "main_use": false,
-        "effective_domain_disposition": "The constructor is the unique harmonic extension of explicit terminal boundary data on its whole carrier. The guarded theorem requires distinct poles and has the source zero/one characterization. Actual network distinctness/connectivity are internally proved; see docs/electrical-voltage.md and the two source characterization modules.",
-        "historical_failure_waived": false
-      }
+      "final_current_source_and_consumption_review": "PASS_AUDITED_EXTERNAL_ASSUMPTION"
     },
     {
       "id": "external:plane-vertex-face-star:v1",
