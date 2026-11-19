@@ -31,6 +31,7 @@ def stackExplore (head : (v : V) → A v → V) (σ : Stacks A) :
       stackExplore head σ out.1 out.2 xs
 
 
+omit [Fintype V] in
 /-- Every successful stack step attaches its query using legal cycle pops. -/
 theorem stackStep_of_some (R : Set V) (head : (v : V) → A v → V)
     (σ : Stacks A) (k : Cursor V) (x : V) (S : Set V) (l : Cursor V)
@@ -51,6 +52,7 @@ theorem stackStep_of_some (R : Set V) (head : (v : V) → A v → V)
   · simp only [stackStep, dif_neg hh] at hs
     cases hs
 
+omit [Fintype V] in
 /-- Any successful finite stack exploration covers its queries and performs a
 legal cycle-pop run for the original root set. -/
 theorem stackExplore_of_some (R : Set V) (head : (v : V) → A v → V)
