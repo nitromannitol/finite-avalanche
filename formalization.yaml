@@ -82,7 +82,6 @@ status:
     - "FiniteAvalanches.External.BarlowMasson2011.adjacent_ust_path_euclidean_tail"
     - "FiniteAvalanches.External.SandpileLimit.exists_infiniteVolumeLaw"
     - "FiniteAvalanches.External.finite_plane_dual_bond_cycle"
-    - "FiniteAvalanches.External.finite_plane_dual_connected"
     - "FiniteAvalanches.External.finite_plane_geometric_dual"
     - "FiniteAvalanches.External.finite_plane_tree_complement"
     - "FiniteAvalanches.External.finite_plane_two_pole_topology"
@@ -90,7 +89,6 @@ status:
     - "FiniteAvalanches.External.lawler_limic_beurling_srw_Z2"
     - "FiniteAvalanches.External.outer_face_simple_path_disk_redrawing"
     - "FiniteAvalanches.External.parametrized_plane_arc_straightening"
-    - "FiniteAvalanches.External.plane_edge_chart_incidence"
     - "FiniteAvalanches.External.plane_vertex_face_star"
     - "FiniteAvalanches.External.square_lattice_ust_dual_law"
     - "FiniteAvalanches.External.square_lattice_wired_ust_one_tree_one_end"
@@ -100,7 +98,7 @@ status:
     - declaration: "FiniteAvalanchesCurrent.RegisteredPast.Main.finite_avalanches_origin"
       file: "FiniteAvalanchesCurrent/RegisteredPast/Main.lean"
       sorry_count: 0
-      axioms: ["propext", "Classical.choice", "Quot.sound", "the 17 external axioms above"]
+      axioms: ["propext", "Classical.choice", "Quot.sound", "the 15 external axioms above"]
       comparator_config: "FiniteAvalanchesAudit/MainOrigin/comparator.json"
       literature_dependencies:
         - "FiniteAvalanches.External.SandpileLimit.exists_infiniteVolumeLaw"
@@ -134,9 +132,8 @@ fidelity:
     chosen before every real threshold; Proposition 5.1 and Lemma 6.2 are one
     declaration sharing the constant epsilon; electrical networks keep every
     copy of a parallel edge, and the voltage is defined for distinct terminals.
-    The 17 external results are axioms. Available source references are recorded
-    in audit/trusted-inputs.json; no specific source has been identified for
-    plane_edge_chart_incidence. Five formerly assumed results are now proved.
+    The 15 external results are axioms. Available source references are recorded
+    in audit/trusted-inputs.json. Seven formerly assumed results are now proved.
 
 review:
   status: "review-pending"
@@ -144,7 +141,7 @@ review:
     - "Ahmed Bou-Rabee"
   notes: >-
     Correctness of every proof is guaranteed by the Lean kernel and Mathlib
-    relative to the 17 registered axioms (no sorry, no other axiom). The
+    relative to the 15 registered axioms (no sorry, no other axiom). The
     statements were reviewed against the paper for the earlier source inventory.
     The recorded comparator review also covers that earlier inventory; renewed
     review is pending for the current source.

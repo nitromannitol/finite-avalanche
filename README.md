@@ -75,12 +75,12 @@ and records how the Lean statements read the paper.
 
 ## Standing assumptions and scope
 
-1. **Results from the literature.** Seventeen results enter as named Lean axioms in
+1. **Results from the literature.** Fifteen results enter as named Lean axioms in
    [`FiniteAvalanches/External/`](FiniteAvalanches/External/). The axiom report of Theorem 1.1
-   consists of these 17 axioms and `propext`, `Classical.choice` and `Quot.sound`. The registry
+   consists of these 15 axioms and `propext`, `Classical.choice` and `Quot.sound`. The registry
    [`audit/trusted-inputs.json`](audit/trusted-inputs.json) records their exact Lean statements,
    hashes and available source references. Some plane-graph inputs have no citation in their
-   module docstrings; no specific source has been identified for `plane_edge_chart_incidence`.
+   module docstrings.
 
    *Uniform spanning trees, sandpiles and random walk (8).*
 
@@ -95,7 +95,7 @@ and records how the Lean statements read the paper.
    | The Beurling estimate for simple random walk on `ℤ²` (Lawler–Limic 2004, Theorem 1) | `lawler_limic_beurling_srw_Z2` |
    | Pairing groves and response-matrix minors (Kenyon–Wilson 2009, Theorems 8.1 and B.3) | `kenyonWilson_pairingGroves_resistanceMinor` |
 
-   *Topology of finite plane graphs (9).* Available references include Mohar–Thomassen,
+   *Topology of finite plane graphs (7).* Available references include Mohar–Thomassen,
    *Graphs on Surfaces*, Diestel, *Graph Theory*, and Hatcher, *Algebraic Topology*. The
    inputs are the face star of a vertex
    (`plane_vertex_face_star`), the faces of a two-pole plane network
@@ -103,12 +103,11 @@ and records how the Lean statements read the paper.
    (`parametrized_plane_arc_straightening`), redrawing a path of the outer face on the boundary of
    a disk (`outer_face_simple_path_disk_redrawing`), the geometric dual
    (`finite_plane_geometric_dual`), bonds as dual cycles (`finite_plane_dual_bond_cycle`),
-   connectedness of the dual (`finite_plane_dual_connected`), complementary spanning trees
-   (`finite_plane_tree_complement`), the faces on both sides of an edge
-   (`plane_edge_chart_incidence`).
+   and complementary spanning trees (`finite_plane_tree_complement`).
 
    The all-minors matrix-tree theorem, nested projection domination, disk alternation, and punctured face and chart-face transport
-   are proved using Lattice-Probability. The registry contains three further axioms that
+   are proved using Lattice-Probability. Dual connectivity and edge-chart incidence are proved
+   using a formalization of the Jordan–Schönflies theorem. The registry contains three further axioms that
    Theorem 1.1 does not use: Wilson's
    algorithm on a finite network, ray-seeded Wilson sampling on `ℤ²` (van Engelenburg–Hutchcroft)
    and the square tiling of Brooks, Smith, Stone and Tutte.

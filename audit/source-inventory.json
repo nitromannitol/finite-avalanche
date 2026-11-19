@@ -89,7 +89,7 @@
       "path": "CurrentSource/CurrentSplitAssembly.lean",
       "sha256": "05cdc33c9426a8bad4b4c0856db184679890257e24c8557f439878a6f6445ccb",
       "code_sha256": "4255cb92bb98d5d9568470d92de1d2a3f435d76f511ca8ac4ad49df18f216a7e",
-      "bytes": 13609
+      "bytes": 13685
     },
     {
       "path": "CurrentSource/FullIntegerLaw.lean",
@@ -209,7 +209,7 @@
       "path": "CurrentSource/SplitWeightedEnergy.lean",
       "sha256": "3feab7cd7bedbb2074e8dfd016e8bc888c7d47b193cf17e0fd12b8ab609dde60",
       "code_sha256": "899aead2f738cf8a62a3968d678278cd99fb24051049a93990299c5112fd8946",
-      "bytes": 3431
+      "bytes": 3449
     },
     {
       "path": "CurrentSource/TerminalCornerPlacement.lean",
@@ -227,7 +227,7 @@
       "path": "CurrentSource/WholeMinimumTrial.lean",
       "sha256": "d65ba810ebbf0fbf558a29f09e5d06bba0d06b1231590c48b49b99056edc4db5",
       "code_sha256": "493cc7b151671dd926ca0127b389da11e0e41a863e3d0dac2caa8a8b8e729c26",
-      "bytes": 13845
+      "bytes": 13921
     },
     {
       "path": "DualCurrentIntegration.lean",
@@ -335,13 +335,13 @@
       "path": "FiniteAvalanches/Electrical/Geometry/ActualSourceDiskDrawingConsumer.lean",
       "sha256": "e0ab661f042767888cbb28b8f0c6b35d0ceb00aa79e03396987f62b0dbcc69de",
       "code_sha256": "0e4e5831c9905d18e3f9439d17fc76c3193967d4ef60d902d784eafa78c2ca7b",
-      "bytes": 7190
+      "bytes": 7203
     },
     {
       "path": "FiniteAvalanches/Electrical/Geometry/ActualSourceOuterFaceConsumer.lean",
       "sha256": "dd9e3627c181c050f3d7ab6233af987831428668a358aa8f74bd00d1fed0e7de",
       "code_sha256": "2b9483fc61eaa07b9ede5997087a0098d339dbf70a1f73c17c256189d4a41b39",
-      "bytes": 11008
+      "bytes": 11021
     },
     {
       "path": "FiniteAvalanches/Electrical/Geometry/Angular.lean",
@@ -539,7 +539,7 @@
       "path": "FiniteAvalanches/Electrical/Geometry/FiniteLatticeDrawing.lean",
       "sha256": "0181048afe68f03160121abb174652a08ee45f6603e5540579e9ec82e1beb779",
       "code_sha256": "adf8187262e3d10f023d7428a6b32e5944138701d2f9108a302b8dd5c7413d07",
-      "bytes": 4352
+      "bytes": 4409
     },
     {
       "path": "FiniteAvalanches/Electrical/Geometry/FullFaceInversion.lean",
@@ -725,49 +725,49 @@
       "path": "FiniteAvalanches/Electrical/Geometry/SourceDualFaceMerger.lean",
       "sha256": "8c63f989a270cdabce59b65f9937783d151869300e1378028ac8160a492435fa",
       "code_sha256": "e69c74497b4a43517644b6fb266195a74648a877440faf299f1ef36f3ce7494c",
-      "bytes": 15710
+      "bytes": 15723
     },
     {
       "path": "FiniteAvalanches/Electrical/Geometry/SourceDualPath.lean",
       "sha256": "7d971ce8f5a772f17e1689ba2d0f414a77a0f1f7e9626a8de04b2ad63640322f",
       "code_sha256": "56709dec77a908950c43a0dbea5ab53f4c344f451c3a561ae1791f12cfe5ab5f",
-      "bytes": 8089
+      "bytes": 8102
     },
     {
       "path": "FiniteAvalanches/Electrical/Geometry/SourceFacePlacementApplication.lean",
       "sha256": "93184e6b36835a7679cdc315d34e698cfd346207dd67cd34f593349baa34db3d",
       "code_sha256": "137d08a5938a40b2934e70fd4e22c06c0b8b2f47fa9a8090d68e73c484154cd2",
-      "bytes": 12037
+      "bytes": 12050
     },
     {
       "path": "FiniteAvalanches/Electrical/Geometry/SourceHDual.lean",
       "sha256": "63acaa05c79a39a0ac2f1250b9a890018dd42aea69a76b371a51f7d7171d339b",
       "code_sha256": "da2fd343f01a35bef1a68c49b92e05f9992102a3c50c232f511ae2c92a2a3838",
-      "bytes": 7430
+      "bytes": 7501
     },
     {
       "path": "FiniteAvalanches/Electrical/Geometry/SourceMarkedFace.lean",
       "sha256": "77071d6ab6c89224ec2942492ace90ea26d113f104564e4b1b26f381097c932b",
       "code_sha256": "fcb587d0ec3b18b7dd2802715ab7f6fc7e5ba7b8386c47e823569eb7eeabb8ac",
-      "bytes": 7369
+      "bytes": 7382
     },
     {
       "path": "FiniteAvalanches/Electrical/Geometry/SourceOuterFacePath.lean",
       "sha256": "fc143db930a02a7cf70dd3b63fa3b347f8012663de3a46a37f4169e0ce887781",
       "code_sha256": "9cea6eb0a6c5077162030f01652f79c7595b25429157608d9dd87f1e0c307da3",
-      "bytes": 12489
+      "bytes": 12502
     },
     {
       "path": "FiniteAvalanches/Electrical/Geometry/SourcePrimalDrawing.lean",
       "sha256": "c26711d9a4eb3e378c424aa54cbb0fe38ee00c9c82a010d37fcf64f1ef8ca549",
       "code_sha256": "e9b89863354559aa80420b12b5f09b64f314e8b7b0d8c0daafd49a65db3b6e6d",
-      "bytes": 10446
+      "bytes": 10519
     },
     {
       "path": "FiniteAvalanches/Electrical/Geometry/SourceRetainedPathBoundary.lean",
       "sha256": "fb4174eaf7f6c0e9cd7d3381621fc9dfc754a827b79aa237595c05031242e2d4",
       "code_sha256": "1d715a4310ecc96e44682fe66981a3a48d25cbc8c22da7f199d92cc42a027eb0",
-      "bytes": 9645
+      "bytes": 9658
     },
     {
       "path": "FiniteAvalanches/Electrical/Geometry/SourceVoltage.lean",
@@ -923,7 +923,7 @@
       "path": "FiniteAvalanches/Electrical/PairContact/ActualSourceTreeTwoContact.lean",
       "sha256": "699b3721df3c853037e06523f23cfeabbbd52901808ee57b628fda8424529de3",
       "code_sha256": "14a19e213edcdf47281c103b5a8688dd3e52d30a3dbc4d5e1d940680d1d0b9a0",
-      "bytes": 6036
+      "bytes": 6049
     },
     {
       "path": "FiniteAvalanches/Electrical/PairContact/Combinatorics.lean",
@@ -1319,7 +1319,7 @@
       "path": "FiniteAvalanches/Electrical/Ratio/OriginalDiagonal.lean",
       "sha256": "d7d1958a85f389687c86ca22497fa3df6bc9a79ca862f525db5fc05bcf02cc65",
       "code_sha256": "fe3fb5745296464afb3e056fbdf1b80d230c695288312c6f9f57202f52a1cdb0",
-      "bytes": 4838
+      "bytes": 4909
     },
     {
       "path": "FiniteAvalanches/Electrical/Reference/BoundaryCardinality.lean",
@@ -1331,7 +1331,7 @@
       "path": "FiniteAvalanches/Electrical/Reference/BoundaryMeans.lean",
       "sha256": "680f06b56f7c85c4c1501930a5da86a0de37f02e53bf239778715b19d2ba684a",
       "code_sha256": "7a80415eb58fb1a060f9ba5e4f1d5a3339ea49adfe4ee641754021058c77faa6",
-      "bytes": 4457
+      "bytes": 4533
     },
     {
       "path": "FiniteAvalanches/Electrical/Reference/BoundarySum.lean",
@@ -1439,7 +1439,7 @@
       "path": "FiniteAvalanches/Electrical/Reference/ReferenceMomentOfSplit.lean",
       "sha256": "7baeaa94171b69d240d4c2e8f16a8be2a5bad7c9fb196cb4318900a1fef8caf9",
       "code_sha256": "683e75981d8247f07f5604e4703ec66802632d519869d45ee1aa0c520113d513",
-      "bytes": 8747
+      "bytes": 8818
     },
     {
       "path": "FiniteAvalanches/Electrical/Reference/SplitVarianceAssembly.lean",
@@ -1469,7 +1469,7 @@
       "path": "FiniteAvalanches/Electrical/Source/ArcVariance.lean",
       "sha256": "45a7f5f1ae366c84a8375f235ee5cd9053831983112cd912e761961c27db645c",
       "code_sha256": "397671a041b715ce9317c487ba5c20f3d96dbb664364a68b46a746ce58304e58",
-      "bytes": 9336
+      "bytes": 9407
     },
     {
       "path": "FiniteAvalanches/Electrical/Source/BoundaryExpectation.lean",
@@ -1535,7 +1535,7 @@
       "path": "FiniteAvalanches/Electrical/SplitStep/OriginalAssembly22.lean",
       "sha256": "2913a1f08ae7b2ba0ca21bd359f274ba2f492b5acc1ef2e31c99b0dbfc227d32",
       "code_sha256": "87f14038391a1d5112e3f9d38d24c382b71356d1d6183c03a87dfd278b8e34b7",
-      "bytes": 13167
+      "bytes": 13243
     },
     {
       "path": "FiniteAvalanches/Electrical/SplitStep/OriginalBoundaryDrawing.lean",
@@ -1583,19 +1583,19 @@
       "path": "FiniteAvalanches/Electrical/SplitStep/OriginalGreenAssembly22.lean",
       "sha256": "aa0de298af8471d43496d0ce8436fcf766a7553f6e24d02741f2b6677cc71360",
       "code_sha256": "4cb812e28e6b95ccdec254f5dc3ceb242184114680911cf8afbd7d9605529ff0",
-      "bytes": 11143
+      "bytes": 11219
     },
     {
       "path": "FiniteAvalanches/Electrical/SplitStep/OriginalMarkedAuxiliary.lean",
       "sha256": "cd3a5303de38118be33b3022d1831bb74fdf3c739eaaa55e58fb84b5aa843a36",
       "code_sha256": "5d4c4d10f53939906e0fbe41131452f57381575aab4d44a613196add956e699e",
-      "bytes": 10444
+      "bytes": 10520
     },
     {
       "path": "FiniteAvalanches/Electrical/SplitStep/OriginalMarkedCharts.lean",
       "sha256": "179ba9abc243cfffed6c20c28f5426907c4178bd73e9c833481a70f1ef1434e8",
       "code_sha256": "412e87a0b1490df932d5678a09b2e2c5d2aa674225a3b8f5f6f177f0c01ec5dd",
-      "bytes": 3583
+      "bytes": 3659
     },
     {
       "path": "FiniteAvalanches/Electrical/SplitStep/OriginalMarkedCopy.lean",
@@ -1607,7 +1607,7 @@
       "path": "FiniteAvalanches/Electrical/SplitStep/OriginalMarkedInversion.lean",
       "sha256": "a1edbc22fda29a0a5108eb04f2339302ab837ff973496ae7611c4bb39dd49864",
       "code_sha256": "b004839011a5ea7139349e1ea8841e87f325fe4f7914324d6247073024e039aa",
-      "bytes": 6369
+      "bytes": 6445
     },
     {
       "path": "FiniteAvalanches/Electrical/SplitStep/OriginalMarkedOuterFace.lean",
@@ -1625,13 +1625,13 @@
       "path": "FiniteAvalanches/Electrical/SplitStep/OriginalPhysicalCarrier.lean",
       "sha256": "bc443d5777eea98ec61d5338ed5b058d24679d5efc9a4f35a28aca24779d39ba",
       "code_sha256": "43de149134e14aa0ca68b85a34e2618db1948705bb7f738e640fcb0a9f1003fa",
-      "bytes": 4309
+      "bytes": 4385
     },
     {
       "path": "FiniteAvalanches/Electrical/SplitStep/OriginalPhysicalCopy.lean",
       "sha256": "9ee460bb7b9114427c5a541bf7f839067671debeadcaf9b0b5775a9b8ab173f5",
       "code_sha256": "9153e761b0bcf9ad8e6ec7c827aa112f07e98ab0b3f041029c742394dbf064ce",
-      "bytes": 7182
+      "bytes": 7258
     },
     {
       "path": "FiniteAvalanches/Electrical/SplitStep/OriginalPhysicalGeometry.lean",
@@ -1691,7 +1691,7 @@
       "path": "FiniteAvalanches/Electrical/SplitStep/ReversedChart.lean",
       "sha256": "f472e89404998a71a4346c27677a0d12d446930f8481b9a28e86bee238270db6",
       "code_sha256": "3c780a50c836531b626d2eeb5b7f6bf72a3eb1031cc7465961f1ce99048e55eb",
-      "bytes": 6075
+      "bytes": 6151
     },
     {
       "path": "FiniteAvalanches/Electrical/SplitStep/SignedAngularOscillation.lean",
@@ -1901,7 +1901,7 @@
       "path": "FiniteAvalanches/External/AllMinorsMatrixTree.lean",
       "sha256": "a39f5013b8b6bc9f6d4f7a2bb3b5d98b8403b6cc97b33d97d2feaebed47ea54c",
       "code_sha256": "e61bfe02bac72230482cbbb41d46dee618f4b9928451506f56b89d3891c6ea43",
-      "bytes": 2097
+      "bytes": 3072
     },
     {
       "path": "FiniteAvalanches/External/ArcStraightening.lean",
@@ -1937,7 +1937,7 @@
       "path": "FiniteAvalanches/External/DiskAlternation.lean",
       "sha256": "af01af5b8112493000ca44e4d8e3d66a8515b9d860c89eb5c43b978a4468ee86",
       "code_sha256": "fdc8e4fb9a0d3d8226df817fb11737d4c6be64ce440e1611e494422fe04c7777",
-      "bytes": 1614
+      "bytes": 1833
     },
     {
       "path": "FiniteAvalanches/External/GeometricDual.lean",
@@ -1973,7 +1973,7 @@
       "path": "FiniteAvalanches/External/LyonsProjectionDomination.lean",
       "sha256": "893e874b78c549d869025fb447986d903af1c3ff1370ca0b9da8a182120ecfa2",
       "code_sha256": "3b659b243112276c7bdbfa9d3a4cff41b7821bafe860c28ecbf1e8b96cf527ee",
-      "bytes": 1730
+      "bytes": 2003
     },
     {
       "path": "FiniteAvalanches/External/OuterFaceRedrawing.lean",
@@ -1989,15 +1989,15 @@
     },
     {
       "path": "FiniteAvalanches/External/PlaneDualConnected.lean",
-      "sha256": "780d15ed7c264cfdfcc4a803867898122013e06f8996cbae316bac8b704897c8",
-      "code_sha256": "86987003f5c7dd71c3e2bf9a169d2a90cb71ae558e21d3a7b07c7a1d02b1ab6d",
-      "bytes": 856
+      "sha256": "3da0923af22277478a00e6ce27867fd514c1b5f4dc381930bd455eab0fe52776",
+      "code_sha256": "e036dded04e549b6ca570fa6781fe7081de66b97339e58fe18770834201d8ba4",
+      "bytes": 1162
     },
     {
       "path": "FiniteAvalanches/External/PlaneEdgeChartIncidence.lean",
-      "sha256": "1e8d4b087f902d1f76a532dff8383df47a949d13acc4ceb64d1bd5dd250ac38c",
-      "code_sha256": "b7fbdf0ff4dc7252f236fa7c325db187b0caa68d86b985cddd21da46f77c3fb3",
-      "bytes": 698
+      "sha256": "fba277f0118407eff49a4eedb2f74a98bea039acbcdc69e284674e971a42c1a9",
+      "code_sha256": "4798f06404902ea85dd71ebd64835e480a672d674697af4f922ca2584ea828db",
+      "bytes": 983
     },
     {
       "path": "FiniteAvalanches/External/PlanePuncturedChartFaceTransport.lean",
@@ -3626,10 +3626,28 @@
       "bytes": 2653
     },
     {
+      "path": "FiniteAvalanches/Support/Plane/ArcLocalStraightening.lean",
+      "sha256": "9c21254a85afb1bf023e87c8511cc5bbc3cd27f2da03dc574f3da406f62a4035",
+      "code_sha256": "8cff372ee6bed9aa8ff68b2ff2f2e61a19de4d1d90cf7d0ae4d3eaf649dcdbd9",
+      "bytes": 3554
+    },
+    {
       "path": "FiniteAvalanches/Support/Plane/ArcRemoval.lean",
       "sha256": "deae3962989684586505936ab48e978997770ac7d1032758d1ae4096cb71834b",
       "code_sha256": "845964df2547af3dc056cfe8d0b280c647d52a93519b042427fd18fb83c98f04",
       "bytes": 9963
+    },
+    {
+      "path": "FiniteAvalanches/Support/Plane/ArcStraightHomeomorph.lean",
+      "sha256": "8a599ac3df444110432c0cab39361273d2347cf2f1a9d07f06856c08012a2072",
+      "code_sha256": "8df060645e1dd5e4c798fa095f1e5c7bfcb8e6daae947ed9bed223bb47518e46",
+      "bytes": 2898
+    },
+    {
+      "path": "FiniteAvalanches/Support/Plane/BoundaryArcJoin.lean",
+      "sha256": "f32a70c4fa5412e0d4e30ba50692e90f33d6b776bdc153fc8bd03837808666d4",
+      "code_sha256": "ff04a17aea717730bb1ed1bfdf2c26bdb470c3d7dbb49988e60021d2c3142180",
+      "bytes": 4906
     },
     {
       "path": "FiniteAvalanches/Support/Plane/ChartConstruction.lean",
@@ -3686,6 +3704,24 @@
       "bytes": 2844
     },
     {
+      "path": "FiniteAvalanches/Support/Plane/DualConnectedIncidence.lean",
+      "sha256": "3dc178616da82f605d34ee8cb78bdc825a0a7e6491585a330d54fa542868c300",
+      "code_sha256": "3f406a21a113fe9c7bf2b63dcecc352fbba256bcf16ffde6d3a18a0ad037b9f1",
+      "bytes": 7458
+    },
+    {
+      "path": "FiniteAvalanches/Support/Plane/DualFaceCoverage.lean",
+      "sha256": "a30fae8c1590461d5987a89066fe6892e8fa556c217a380c367b14009f0727e9",
+      "code_sha256": "1dd8f9d19fe72b9d2830f5ef252a9a692713240dd7bcbf23542007f9fbd7c602",
+      "bytes": 2074
+    },
+    {
+      "path": "FiniteAvalanches/Support/Plane/EdgeFaceIncidence.lean",
+      "sha256": "56ad22393f738bf71a76dbb725979aa28793587cac87d0d45e7c6dc371481904",
+      "code_sha256": "41b155d73d64988351e7c7cf5f6e352d160146ffc04e2bf274395d2faa238240",
+      "bytes": 3841
+    },
+    {
       "path": "FiniteAvalanches/Support/Plane/FinitePointComplement.lean",
       "sha256": "7c63ae36c27b89f0638714e2f3f3a8e372068bf598a38b3832935988b05f8de8",
       "code_sha256": "e508749730f58bebe46ead17948c1cfeeec3974bc42fa3fb391fc86da22871a3",
@@ -3696,6 +3732,18 @@
       "sha256": "fa48ff04d4ef16d7fad8e76440f18c9a52830e43c6aac9ba197f9f93f238edc7",
       "code_sha256": "eab58b5d8420c6fa5c93442240c5e003e7785f52a7118e18670921e5e47ace1f",
       "bytes": 57086
+    },
+    {
+      "path": "FiniteAvalanches/Support/Plane/HalfOpenLocalStraightening.lean",
+      "sha256": "3489b6be678764353ca984d9d43ae8bf4c0c90c27a95c55428720dc2231bfb2e",
+      "code_sha256": "b0bf73e6f902d7926a5f55a2d8c44552827e013d13048901d9fef72636c44107",
+      "bytes": 4765
+    },
+    {
+      "path": "FiniteAvalanches/Support/Plane/JordanLoopExtension.lean",
+      "sha256": "41ab8b0572918db24f34875ce8b3162a5b76d45bb538105ef8f3bb5632e20351",
+      "code_sha256": "22419de017203fe77dd36a3e62c7368f7ee603dfc296f2f67963c8b691b7d35f",
+      "bytes": 2275
     },
     {
       "path": "FiniteAvalanches/Support/Plane/LocalFaceIncidence.lean",
@@ -3720,6 +3768,18 @@
       "sha256": "47607564e261597b8aa8bb5b85f6a247c2e75158b7a47e415a7c4a6abe3655c5",
       "code_sha256": "bb6dbde37da1618cb3ae1b8b99ae61846ea4ec5c2d32401af97edb32935e8ca3",
       "bytes": 43914
+    },
+    {
+      "path": "FiniteAvalanches/Support/Plane/StraightModel.lean",
+      "sha256": "b96d7405b955afbb9ad5d2354e95d0e5cdae673bdf001878c9f2012c1db66a01",
+      "code_sha256": "447dece68ca64c9257934619bdd22dcb7a5a1c4139943bbf1156f9c1f405ec85",
+      "bytes": 2687
+    },
+    {
+      "path": "FiniteAvalanches/Support/Plane/SubarcCompletion.lean",
+      "sha256": "5e17f3fbbfcea6a7d676e1215ec993b1783232e8307a45ffaf0c89617a6e7504",
+      "code_sha256": "0e611bb2fc129a3ec9539b2c44724f5ee474a2deaddea8bdeeaed97148cec280",
+      "bytes": 4491
     },
     {
       "path": "FiniteAvalanches/Support/Plane/TopoDegree.lean",
@@ -3756,6 +3816,774 @@
       "sha256": "a3b0d22cc75633965983a303c96eeaa326b12dd2f4f40333c71262b9c5f29aca",
       "code_sha256": "7a650622728fe7e7794d876e12d8e88561b354f529752ebfa253ff56aecde566",
       "bytes": 105402
+    },
+    {
+      "path": "FiniteAvalanches/Support/Schoenflies/Accessible.lean",
+      "sha256": "4341110792abde1f29c5dd568d9a5a2513e25b7088d1d036714a0e12e23e7120",
+      "code_sha256": "ef6bedf6177dd820e38b8dfae738a28cca6d1a98876d9721712073b6af8b6680",
+      "bytes": 8033
+    },
+    {
+      "path": "FiniteAvalanches/Support/Schoenflies/AccessibleJoin.lean",
+      "sha256": "05a106331a1c75d4efbc0d3047afe27244992b90453b793f194616dc37ac5532",
+      "code_sha256": "e26858217051683c1d57a20dd2ad5b5b68f9e7d4eb01ae77a6e72e6528c5fd37",
+      "bytes": 12867
+    },
+    {
+      "path": "FiniteAvalanches/Support/Schoenflies/AlternatingCrosscuts.lean",
+      "sha256": "91f6e93c0364fafb4f0c398779643032f223bde6e1fff1be322a799b1bb7d7a9",
+      "code_sha256": "77503fa0ed6c7683229e7d9119728da01d8a8d2d45dbcb75dd02af9089b329da",
+      "bytes": 6382
+    },
+    {
+      "path": "FiniteAvalanches/Support/Schoenflies/ArcCollars.lean",
+      "sha256": "01c799a72477ed6edea7b65cd346ef0aea0bbb983b8e70b49f62aba1e36a1691",
+      "code_sha256": "592ad956046053830441307987e3542c3d5fd98b6112cbb7bf9200304714dea4",
+      "bytes": 74100
+    },
+    {
+      "path": "FiniteAvalanches/Support/Schoenflies/ArcComplement.lean",
+      "sha256": "2de60ee4bfd56335e2e17054268fd81a3d7b15084bb431583b7bc546a689e1e3",
+      "code_sha256": "f03b204a28d9cfe5c697212a0b7d0ba22157ebcc640e5d9c0288b61596080204",
+      "bytes": 29041
+    },
+    {
+      "path": "FiniteAvalanches/Support/Schoenflies/ArcComplementPrep.lean",
+      "sha256": "2105ab57696cb46642b3a8b7ae7bb9278b3862ca1d59b2015aaeb083cfcdc785",
+      "code_sha256": "c29cb1f94ddbb6c89f8d7d245d6de4131f1d90bac0f99aa2b827843cc68de020",
+      "bytes": 41006
+    },
+    {
+      "path": "FiniteAvalanches/Support/Schoenflies/ArcMonotone.lean",
+      "sha256": "ca0dfc8c00b1a80c9f81076d8b1baf4b84d1a5119bb7b49f0f2c6b72ed7ded36",
+      "code_sha256": "ab55978c50b50146713843979ffb44e23c05633ef3c7df53debd44cc45b719e5",
+      "bytes": 8590
+    },
+    {
+      "path": "FiniteAvalanches/Support/Schoenflies/BoundaryAnchors.lean",
+      "sha256": "54fcb9c2557ce80f722707b6834f2673eb2b1425c429ede19465f41eb39eedbe",
+      "code_sha256": "a1657bf1fdde58984d76c7329996ddd28edc6f34b82663f54fc9600f1e130844",
+      "bytes": 40455
+    },
+    {
+      "path": "FiniteAvalanches/Support/Schoenflies/BoundaryContinuity.lean",
+      "sha256": "a45620078c07ebcc59a9a516e5d44163c4287487aa34915bd3c9980c1adcc6d3",
+      "code_sha256": "92933c46f0bbe286e01fe08b2f86e273a28aa0ed136087676a613766f7246490",
+      "bytes": 23251
+    },
+    {
+      "path": "FiniteAvalanches/Support/Schoenflies/BoundaryContinuity2.lean",
+      "sha256": "154c7a52de45a8067076311d52c20469510603b80ded031d44063ebe3699f26b",
+      "code_sha256": "fca8ba833d3218ad35bb0b3e46d72c5c42dd3dd3a9252c69cd404d5f9246fe0c",
+      "bytes": 26005
+    },
+    {
+      "path": "FiniteAvalanches/Support/Schoenflies/BoundaryCycles.lean",
+      "sha256": "36d5ee504063864cd4f2988eb5d3c771c033e17be6414f76507c5059ecfca231",
+      "code_sha256": "1b1ca0a404c56f30600d98234384fa627f72a0ca2f0ab68db80f64636ac63564",
+      "bytes": 7915
+    },
+    {
+      "path": "FiniteAvalanches/Support/Schoenflies/BoundaryCyclesGenerated.lean",
+      "sha256": "15f45db87f9ea4575d3154d6f79a8f07bce079e62ba4fc55a2cecfc82e20ee95",
+      "code_sha256": "e502481b53cfe677f3321443dab6179cb5180d83f5354d866d54f9c17f14bfb0",
+      "bytes": 31032
+    },
+    {
+      "path": "FiniteAvalanches/Support/Schoenflies/Bounded.lean",
+      "sha256": "d4edbb81a334c3c8202a3eb3a0adf142c9df5b1a608346b7fc2b5d7a76473a38",
+      "code_sha256": "678344e099c15cb245166002ca06a18aaefb1d47e78ebeb941997038f09ddae9",
+      "bytes": 2094
+    },
+    {
+      "path": "FiniteAvalanches/Support/Schoenflies/CellulationInvariants.lean",
+      "sha256": "7fe3ffa283599354a580803b6002cdcb26931e4477c5eefa0c7321844921aa84",
+      "code_sha256": "d52171e94dd6891662235a58f093a2681f750887630bfe9b94533a381d5a2869",
+      "bytes": 28452
+    },
+    {
+      "path": "FiniteAvalanches/Support/Schoenflies/CombinatorialInvariance.lean",
+      "sha256": "e83e8db6936b38178dc741ea3a96885508756e6f1d6f05649ea5055c0fcea8fa",
+      "code_sha256": "4403be5314c659d10dc5065483d36afdeea2098bab912f541a1a2a5b2e7640a8",
+      "bytes": 13716
+    },
+    {
+      "path": "FiniteAvalanches/Support/Schoenflies/CommonSubdivision.lean",
+      "sha256": "9dc11a1f80b44606059cd18d6668c257672bcd7aa50495b3fe45d03a244e7cfd",
+      "code_sha256": "1679b222da57a9f2b510fd157e105717acf66477eb1742394d0a41ad10763d25",
+      "bytes": 69278
+    },
+    {
+      "path": "FiniteAvalanches/Support/Schoenflies/Concatenate.lean",
+      "sha256": "803b2bf87dfb5d94d2689fc398d8af503b806cddfcf82862c712a8266cdf9def",
+      "code_sha256": "ad5ebba814b81ff64f2f6f36690018bdb2e3ced94024c7bcf3d0317d691ce852",
+      "bytes": 9491
+    },
+    {
+      "path": "FiniteAvalanches/Support/Schoenflies/CrosscutAtMostTwo.lean",
+      "sha256": "10b3f7f84b465e0fe547d1c7df9ecd83b7e1b6c2d754b8c0f46574d6e103b420",
+      "code_sha256": "dfa3321d006b2a7025d80a45b0bf88f8d0c7bda47088c32efee8e0e1771b4465",
+      "bytes": 21769
+    },
+    {
+      "path": "FiniteAvalanches/Support/Schoenflies/CrosscutCells.lean",
+      "sha256": "8e2c6730d7efc19373d9cac81a31fe13cc5c38382d9987e42ab6b6619c2558c6",
+      "code_sha256": "a61d05f53b17bca28dcb23ff07656eb1410e56d336582964a9539fa9fe289e16",
+      "bytes": 13898
+    },
+    {
+      "path": "FiniteAvalanches/Support/Schoenflies/CrosscutEncloses.lean",
+      "sha256": "c0b322b31ea9868c6e8499eb6e6af9c776b5cc2053a3df51a67a05c89693ea96",
+      "code_sha256": "9d347688f71057db18df84b4e6b7ecd34e1178c0dc59d2c69141029fd224b2e9",
+      "bytes": 19009
+    },
+    {
+      "path": "FiniteAvalanches/Support/Schoenflies/CrosscutExists.lean",
+      "sha256": "40ac82ae64fbb1877f811ed496a561e546bfd31f53ad7d07451ead261a6b83a3",
+      "code_sha256": "784edc374c1d64ac8eb099b829277400385a92c6382efba321af82031aa6e2d9",
+      "bytes": 18305
+    },
+    {
+      "path": "FiniteAvalanches/Support/Schoenflies/Curve.lean",
+      "sha256": "9e7467e24ab851eeb66c51c2dd2f889c10b3746f1293a7227cb352eb53dfe93f",
+      "code_sha256": "d6eb587e1618c32fd2635657608a0da5c946f09500b9dd0031478fee9be521aa",
+      "bytes": 3884
+    },
+    {
+      "path": "FiniteAvalanches/Support/Schoenflies/Direction.lean",
+      "sha256": "abf2c78839f66a0597fc9b8f5a0aa99bfa5b9c8991e054740abe2b9228570472",
+      "code_sha256": "b5125b80c17e38f76aef775e590864955635ac4e826572f335f6e0768d2783f1",
+      "bytes": 12918
+    },
+    {
+      "path": "FiniteAvalanches/Support/Schoenflies/Endgame.lean",
+      "sha256": "3f813c55b540b952ca5a301db55b3163fffe5bd44612b48fb51d9fa239e80b22",
+      "code_sha256": "f31ef1d482c2fa0019f83f8a9f2aa8ca715eb2bcfb70c2e747d6f759657109bf",
+      "bytes": 15183
+    },
+    {
+      "path": "FiniteAvalanches/Support/Schoenflies/FaceCycles.lean",
+      "sha256": "91df9bb4ccb242ccc782d7c2c38443c91b7efb857f883888a50805440506c58e",
+      "code_sha256": "95f2e205c6ffc96dd64bd07bf2574f2b229e2686866798fb6e7c1c5ecfbd2374",
+      "bytes": 18027
+    },
+    {
+      "path": "FiniteAvalanches/Support/Schoenflies/FaceCyclesLand.lean",
+      "sha256": "44c31eac9fbab11c7bbeed1659fa1aa4de7d51c78f6b8581e6045d7e499cb9ed",
+      "code_sha256": "5bc1ec565f51e0f7b514f0b23f2b6da1745d3638f94b30c105f2e9ff5e80843d",
+      "bytes": 17109
+    },
+    {
+      "path": "FiniteAvalanches/Support/Schoenflies/FaceCyclesProof.lean",
+      "sha256": "7b76033e5932373057e057f05f10767e6a02c80a6560a6b72546e4d103c64714",
+      "code_sha256": "7861cf6073398466ac35842dd42c5c2c2c583295dc6eda9b827d343a0fd0c042",
+      "bytes": 34677
+    },
+    {
+      "path": "FiniteAvalanches/Support/Schoenflies/FiniteTransfer.lean",
+      "sha256": "4e1ebb782045a28a3effbd77a3f9b4e269b7fdc774f733ac2ffbee264a38006b",
+      "code_sha256": "a86da9e8e4c2294c068d966a26d1eaadbded53ccdf9f045d786768b689380988",
+      "bytes": 61141
+    },
+    {
+      "path": "FiniteAvalanches/Support/Schoenflies/FiniteTransferTarget.lean",
+      "sha256": "bb088407a45db7b7c67e95dfa046900ee66a7e5fdfd952dc70f16815631c312d",
+      "code_sha256": "d0ab8434e3dbcd7aba20bce8165326925075423ec99ceb44c9d74ac2082b2f80",
+      "bytes": 80810
+    },
+    {
+      "path": "FiniteAvalanches/Support/Schoenflies/FiniteTransferTargetMesh.lean",
+      "sha256": "aa59448c5df0cdb5000a6eabb629c4f4e24c81842a4d2ba0666f5bf8147107e7",
+      "code_sha256": "34b6678142c02d99beca99d4d109133cd484d6f2f373127f82fda488d0a8f886",
+      "bytes": 20014
+    },
+    {
+      "path": "FiniteAvalanches/Support/Schoenflies/FreshAccess.lean",
+      "sha256": "37e962ef7248f1521335770ed0a5ff95bc8ebdc8911e1124a3eee5d4f1190f51",
+      "code_sha256": "4739fa73ce45bd84d07c55f23cede13ca498b8466bf814fa8fd9c1d45d46c64e",
+      "bytes": 7339
+    },
+    {
+      "path": "FiniteAvalanches/Support/Schoenflies/FreshDenseSelection.lean",
+      "sha256": "159cac8174a13e87d78a579b107caa1304cc420ff74eac52062e2bc1e8527a94",
+      "code_sha256": "934b41d2ad7da26024ab18726d627bca0b7609608ed60b7149afc4828f6f4da1",
+      "bytes": 22551
+    },
+    {
+      "path": "FiniteAvalanches/Support/Schoenflies/GeneralCrosscut.lean",
+      "sha256": "4cfdadf997c225afeef0b58501c868f8ebcad413b8f700a77c8c6609e831373d",
+      "code_sha256": "cd1ebd95268608f926a3169407d5429430f1c529fd3da1ec9b68061e86958e5e",
+      "bytes": 18116
+    },
+    {
+      "path": "FiniteAvalanches/Support/Schoenflies/GeneratedStructure.lean",
+      "sha256": "ae9ac9701f62a63e84a65726c13cb356207b46b82eab4d66111db14e4a75a550",
+      "code_sha256": "d993d29ef7f234f54d33222398364a526e59c4e9d6679fa685c3778bc72d49db",
+      "bytes": 69578
+    },
+    {
+      "path": "FiniteAvalanches/Support/Schoenflies/Graph/Component.lean",
+      "sha256": "55c9cb502b30bc4eaf7d8c53cf790320cf41edc8a75b9c85cfd49d420e56c432",
+      "code_sha256": "29b77f41b930f0ad94662035ca43b5fac654d139d1b1044223ded45ab869f3e2",
+      "bytes": 11094
+    },
+    {
+      "path": "FiniteAvalanches/Support/Schoenflies/Graph/Cycle.lean",
+      "sha256": "b1e84999bf5e1f32400416cdb402d4235a84547322689ced42ff099a216c45c9",
+      "code_sha256": "6e7a4c8072ae594a430cd87c87ce86752bd801b02a2e36228206d05232aa29cb",
+      "bytes": 7464
+    },
+    {
+      "path": "FiniteAvalanches/Support/Schoenflies/Graph/CycleJordan.lean",
+      "sha256": "b331cc68cb39b5cf304eb8c521fbd27338647c8f7eec3956a1223275c632c0a8",
+      "code_sha256": "c7e4b050703564759eb300df119491e27510d024518987c2b8bc8fe2c3dc0654",
+      "bytes": 6044
+    },
+    {
+      "path": "FiniteAvalanches/Support/Schoenflies/Graph/Degree.lean",
+      "sha256": "fdb360b5bce04c7676c141e7f9532d1394ccfab093de9818230519c08ad7ddcf",
+      "code_sha256": "2f8bc64bc094cbed50a5f4b43fe0cfe27bfbfecfb6477305b7b5a8bc9e2e2dd9",
+      "bytes": 10926
+    },
+    {
+      "path": "FiniteAvalanches/Support/Schoenflies/Graph/Drawing.lean",
+      "sha256": "afa1ab88608eaddd3c785f40762b61fee1a8a18f2dd6a9c1047ddf7e17736098",
+      "code_sha256": "14d08bbb7fc426db14a196d5aab9432c4d07d920b36b95db54b8cc4ea84a0f63",
+      "bytes": 5066
+    },
+    {
+      "path": "FiniteAvalanches/Support/Schoenflies/Graph/Ear.lean",
+      "sha256": "2cd20f37c75784f49e649c4161e8cfe842d0d956328410a4b2bc288613c7f99a",
+      "code_sha256": "457568f9d72c67219c4360441ed81ad560ec5cd1d5e5d072a845bf85611e5eee",
+      "bytes": 10419
+    },
+    {
+      "path": "FiniteAvalanches/Support/Schoenflies/Graph/K33.lean",
+      "sha256": "4105ff7254c2e24c951f19573ea79209353f9b40b814619715367892a96f9ca9",
+      "code_sha256": "00fd01b5035ebc5dbe880864f4d8aeecf14860953c39f29ea79f8849b7896383",
+      "bytes": 19815
+    },
+    {
+      "path": "FiniteAvalanches/Support/Schoenflies/Graph/K33Closed.lean",
+      "sha256": "6846e761bbfa137a0e71508b0a22660f9fe3a35c374bda8ad63ef768ac7ed375",
+      "code_sha256": "a5b63a81ef48d89201b3bc89be7acd142bbe0e83694582a7f3dde9cbbc7696a6",
+      "bytes": 32534
+    },
+    {
+      "path": "FiniteAvalanches/Support/Schoenflies/Graph/K33Land.lean",
+      "sha256": "c71ba4f2be2f23bbcf752fe6572656eae8cbad29c9321a8b7694b7dd360703c4",
+      "code_sha256": "6a72f8211687027cc98303794579574a2a2b3e012361ffc42e1b796e296f07a4",
+      "bytes": 35201
+    },
+    {
+      "path": "FiniteAvalanches/Support/Schoenflies/Graph/K33Planar.lean",
+      "sha256": "c7c6eeb8e8b1dedb29f338215dd7e9653484b27248f9b6c7e84120f0d422f244",
+      "code_sha256": "f654064061b8ae02a7985ee7be1899284e62b40a4861b0ce3db694ebebc9fbc8",
+      "bytes": 16531
+    },
+    {
+      "path": "FiniteAvalanches/Support/Schoenflies/Graph/OuterFace.lean",
+      "sha256": "705b39ead47529ebb538418a7074f5fdffe9afbffae5764db4f2485686ce214b",
+      "code_sha256": "0bc931428c69b70e2fc0099f14be17d7c9d3e6a61017a4683d14f34e0541603d",
+      "bytes": 5215
+    },
+    {
+      "path": "FiniteAvalanches/Support/Schoenflies/Graph/PathGraph.lean",
+      "sha256": "18804df8e5d9b35dfdb2c20c007e9e4a2ce39b88767a1026580caea733d5ada0",
+      "code_sha256": "2ddd928d4d583b150171a4e6807c69bdc3f63eb1928696683efe52eb5e51c36c",
+      "bytes": 9033
+    },
+    {
+      "path": "FiniteAvalanches/Support/Schoenflies/Graph/Redrawing.lean",
+      "sha256": "b0a054b837a410a0cef84ee2aec5591b358207024ca86a840eac35f427b39ba3",
+      "code_sha256": "e633afb0757f03e5e6fcb5d3b4657dc869f59832349285d4a426ea5abc194e17",
+      "bytes": 25274
+    },
+    {
+      "path": "FiniteAvalanches/Support/Schoenflies/Graph/Relabel.lean",
+      "sha256": "98435fe9fb266ef73692b104d8c881a6bd0b7a030116ffeb41d75f213b044b64",
+      "code_sha256": "f1881d8404cec6eb95eed7d7ba61cd71d17ff869028c91496856e8100a3d2a63",
+      "bytes": 8821
+    },
+    {
+      "path": "FiniteAvalanches/Support/Schoenflies/Graph/RelativeEar.lean",
+      "sha256": "3b7361178925356eeca8a5ca9b1d0262251f18358510ef42764bb7a1aa8213b2",
+      "code_sha256": "93cc5f6eafcd415978417059ed17ec3d5a45f6957c93498b82b7c495a8041895",
+      "bytes": 6535
+    },
+    {
+      "path": "FiniteAvalanches/Support/Schoenflies/Graph/Tree.lean",
+      "sha256": "d82aedee673ec20dd627c9ca9a5a49ead8d164f061130890e6f019518163b1ad",
+      "code_sha256": "3c8c1575020b79c7f4c8f9d62fdbe4f09cdc6b2a126cca8741110d0b2940600c",
+      "bytes": 12559
+    },
+    {
+      "path": "FiniteAvalanches/Support/Schoenflies/Graph/TwoConnected.lean",
+      "sha256": "cddbdc7384c453e8f4e9531c61ebfc0e0129d7b2ce4f6a7a1b2f1d6954d1409e",
+      "code_sha256": "5dfa7397fb533f1d0f5a9294f6dba251a03d89c9136956fb2625eee4627a7cf7",
+      "bytes": 9927
+    },
+    {
+      "path": "FiniteAvalanches/Support/Schoenflies/Graph/TwoPaths.lean",
+      "sha256": "1e97c861b1f03253e1d0f6f402f3ac138c9ce5c3eecce10b3a5705eb60393f92",
+      "code_sha256": "16f624b78bc15ba7c662a7251c65ffd0621fc224c50cd655a5f40f8269a974f0",
+      "bytes": 3328
+    },
+    {
+      "path": "FiniteAvalanches/Support/Schoenflies/Graph/VertexSquares.lean",
+      "sha256": "46c38d92e59fa79341c0828453e1c795752013664289638d243cc27d12e52a4c",
+      "code_sha256": "e4215f029a44543d212086ee5333e0770fdfdbd3ab3bdb6150ab39ab9edc0499",
+      "bytes": 14683
+    },
+    {
+      "path": "FiniteAvalanches/Support/Schoenflies/Graph/Walk.lean",
+      "sha256": "311f9e8636be531d1f558eb208eaca50e1f88dddeb7e1c257d92519480d8557c",
+      "code_sha256": "11cf8ff8dd0ac23a04825e49b2de44b3b1aac4a170904fcfd012a5b54a47a557",
+      "bytes": 15877
+    },
+    {
+      "path": "FiniteAvalanches/Support/Schoenflies/GridAttach.lean",
+      "sha256": "76860358ba9f698039ac4c9aab3e6deec356fa5dac8a002d3ab9922f230caf9b",
+      "code_sha256": "8477ad21a90063000bc1f8cfff68342b71e7d0e9c622c51264c8a643e92cbb4e",
+      "bytes": 21129
+    },
+    {
+      "path": "FiniteAvalanches/Support/Schoenflies/InitialGenerated.lean",
+      "sha256": "cdae83c90da7f64948dec31602564df386db191298b29db0d9640f69f137b9ac",
+      "code_sha256": "8f48250fbd94f049fb058cb0ac2bc6972d30fec207e6a4461dd7cf7c4b38bf24",
+      "bytes": 30362
+    },
+    {
+      "path": "FiniteAvalanches/Support/Schoenflies/InitialOuterCycle.lean",
+      "sha256": "04b8efa82a6f5db5f5742d409031292be68ecb022c9be2cfa17b0f40ec10fb48",
+      "code_sha256": "51a78340b9fd084dc1f16a3655de2345fbddcbbfcc3dbd512145934046ca84e4",
+      "bytes": 2317
+    },
+    {
+      "path": "FiniteAvalanches/Support/Schoenflies/InitialPair.lean",
+      "sha256": "07e2b6ead04c0cb71a8de5a136d95978f7f0ff55cfcc943d41033c5fb388444e",
+      "code_sha256": "6cc62574f2cdc89b8c20baab0840afbb1076b6513bd10755791a0f227bf529c5",
+      "bytes": 68418
+    },
+    {
+      "path": "FiniteAvalanches/Support/Schoenflies/InitialPairFixed.lean",
+      "sha256": "d9d66c1968ec70bb876efc517b88c0538980d0cf59538a6bd3c6ea94fc75a694",
+      "code_sha256": "84757b1f3fb6b0f163d7182969a0de25abb737895cc424fb6743785a9b5e7954",
+      "bytes": 26411
+    },
+    {
+      "path": "FiniteAvalanches/Support/Schoenflies/InteriorHomeomorphism.lean",
+      "sha256": "ec21c2399237b7517eef5bb111fdd8ae0d8127e8f4c8a2ecdbbf49a0c907d916",
+      "code_sha256": "dd1e0d11f17eaddd9ed8162834fc8b24db6fa056ced1b725427fab96be95d24e",
+      "bytes": 4283
+    },
+    {
+      "path": "FiniteAvalanches/Support/Schoenflies/Inversion.lean",
+      "sha256": "2e128d5ea137965b5f6a54b9db5e4e7aa541cdf01975932ca8d689d70fc9f654",
+      "code_sha256": "97adcb93dda2d1bed55c25cdef8908653bf01373a925586bd0fd084340a06f75",
+      "bytes": 21752
+    },
+    {
+      "path": "FiniteAvalanches/Support/Schoenflies/Jordan.lean",
+      "sha256": "50d8a25a89015fb6fb1b58b74d980f0a71c223fcc448d5e934fcbee903760f83",
+      "code_sha256": "db2f7aff038a56ed67311d2f47632b970872ec613098f92cb30dba63afdca281",
+      "bytes": 35270
+    },
+    {
+      "path": "FiniteAvalanches/Support/Schoenflies/JordanClosed.lean",
+      "sha256": "505b3beb504c8ce0081f636b78b78c08470ab2dc208ea05746420c70c5dd462d",
+      "code_sha256": "70463086afebf6ccba9669ae1866004d82eecb0bd2a1969eb1905b9757bd0add",
+      "bytes": 2037
+    },
+    {
+      "path": "FiniteAvalanches/Support/Schoenflies/JordanSchoenflies.lean",
+      "sha256": "ee9539dfa242de589afe60a35619a8bd2c3e1ef03126bae738a5eb9e6ee0852c",
+      "code_sha256": "f2453e622ad70c117fe686e508fdf04ccadc5202c75960085fd5468600dc931e",
+      "bytes": 1811
+    },
+    {
+      "path": "FiniteAvalanches/Support/Schoenflies/JordanSeparates.lean",
+      "sha256": "37f4b6751c31cbc8fe38bfbeff71bff034138bd5ecd147578b85fd190b699389",
+      "code_sha256": "b9b2f6c5448706dfe35600207b59e1a011cb7641f4c6a0e192f96bc2a30281de",
+      "bytes": 26316
+    },
+    {
+      "path": "FiniteAvalanches/Support/Schoenflies/LimitMap.lean",
+      "sha256": "26d2b27ed27f32f95e33c62ab381237770d101d74e7789e597251e61a0e9dc31",
+      "code_sha256": "9fa22e2e427b9b8ed69db5c9f9498c4aeffdc0b163c4e489dd6f524f56351c8f",
+      "bytes": 31242
+    },
+    {
+      "path": "FiniteAvalanches/Support/Schoenflies/Line.lean",
+      "sha256": "9a0ba6f098c74b6cd6ea91dd9b3a55d97a7a8496ce968b4637674fae7a8b6162",
+      "code_sha256": "8f38fac38bc43729a159421f6b56526e2ca86fc163382d75005019ff3cd5a2da",
+      "bytes": 11470
+    },
+    {
+      "path": "FiniteAvalanches/Support/Schoenflies/LocalGrid.lean",
+      "sha256": "6395609f728f49b62ec2895ddd8d645e2b816edb19fdec571bb29b7eb8951e6c",
+      "code_sha256": "532e26fd1e15096b444c9224a9790ba819de3d5b37cfe38501fd879d9477064c",
+      "bytes": 23584
+    },
+    {
+      "path": "FiniteAvalanches/Support/Schoenflies/LocallyPolygonal.lean",
+      "sha256": "b488b80e5a1210f2af58fc45cebd5dba7cd923143ae60f4ec5d60d40ba81b23f",
+      "code_sha256": "5a9980072accf2c2c83af63cf6c39249e4bb831442083fe1b7fe5090c47edf00",
+      "bytes": 12746
+    },
+    {
+      "path": "FiniteAvalanches/Support/Schoenflies/MatchedArc.lean",
+      "sha256": "4aa3c004d5847079b3a2d8aacc0bb0cc62a1e5e418c25ec5792ba4f3816fdfcb",
+      "code_sha256": "a5198e6ba66318f780de494f5d8b5f414c70fc7864553507abbfa155efd7f95e",
+      "bytes": 10185
+    },
+    {
+      "path": "FiniteAvalanches/Support/Schoenflies/MatchedSplit.lean",
+      "sha256": "d951d6b023c2812cf8267262e42892675f53ec06bb579cd78a17ff7f8575282f",
+      "code_sha256": "e59abc69071a53938823558706afc364b0a2de38f150661ac7e575d89ddbda7e",
+      "bytes": 14843
+    },
+    {
+      "path": "FiniteAvalanches/Support/Schoenflies/ModelCurve.lean",
+      "sha256": "48437e9d50b30e12a8bfd1a87ab53c93b996bdf5ea02cb5b7427d40046b3f7d4",
+      "code_sha256": "007b42158641d7e1a440e8587153bd9f574854f25f50e34cecd3a0e750dcc54c",
+      "bytes": 14895
+    },
+    {
+      "path": "FiniteAvalanches/Support/Schoenflies/OuterChain.lean",
+      "sha256": "6d119de2831b5a5e1923b2a2914fe44bb4000043bd35848ccfef3b808d08e180",
+      "code_sha256": "4bacda02ef239caba4108c21b7e75f08b349fc404d3fb8f76f03ff2c45d45834",
+      "bytes": 24673
+    },
+    {
+      "path": "FiniteAvalanches/Support/Schoenflies/OuterChainClosed.lean",
+      "sha256": "4cfc3a5db0df4989ccc404887c0c414fe1d29dbcd0483b395a7b106b239f8f7b",
+      "code_sha256": "556139404b41fe2d9458a69196608783c700998b171188568cd9ccfbef155208",
+      "bytes": 975
+    },
+    {
+      "path": "FiniteAvalanches/Support/Schoenflies/Overlay.lean",
+      "sha256": "e9176d90aab712b000440d817a282e86cd2ba445c339c581d19a357b57919401",
+      "code_sha256": "884ccb8c1ab41c3242807200a4e8a383f487db6418dc2ea9199785beaa47dfdc",
+      "bytes": 10374
+    },
+    {
+      "path": "FiniteAvalanches/Support/Schoenflies/OverlayExtension.lean",
+      "sha256": "efb23fada9b617044bb4de3a938defec203e7e010d644582afafeee94f4b18aa",
+      "code_sha256": "2386500df6c9bc13fda1f74d8f9568ab9ec735426cfa005917985f18bc1cb58f",
+      "bytes": 8950
+    },
+    {
+      "path": "FiniteAvalanches/Support/Schoenflies/OverlayGraph.lean",
+      "sha256": "236d2da037721428c7bbf704fb8d31af86d937cac284237038833cd53d064eb7",
+      "code_sha256": "ffc31d7414d90968f0d535cbdb8e99f9a9b554badbdab74afa9fce6e20b15be5",
+      "bytes": 13125
+    },
+    {
+      "path": "FiniteAvalanches/Support/Schoenflies/Parity.lean",
+      "sha256": "6b161d350f7543a35202255ddfef97fea84647fe379fe4dbcb0e9993ed4c82fe",
+      "code_sha256": "fcf5ce70a8d63cc9a1bcd396a02fcae1617c4cb825918a935b968a2fbf92902a",
+      "bytes": 39823
+    },
+    {
+      "path": "FiniteAvalanches/Support/Schoenflies/ParitySplitting.lean",
+      "sha256": "f48a726a307a44082a8e6274cfdf4a95b7152e33bb20824ebe86d46973b78c9d",
+      "code_sha256": "4883f03790fac7a07713ad48eb02a3553f1783475d006dc8ad4f31a955951532",
+      "bytes": 17430
+    },
+    {
+      "path": "FiniteAvalanches/Support/Schoenflies/Plane.lean",
+      "sha256": "d9ac3f818304ca1dbb6c347bf706d9fb421e9a5f01b4a801cda9b132ea2a709b",
+      "code_sha256": "cda583f6fc50555fe27f282870bbfd2510cfd880c2859fbb113a6f86c7bf3470",
+      "bytes": 7220
+    },
+    {
+      "path": "FiniteAvalanches/Support/Schoenflies/PolyArcRealize.lean",
+      "sha256": "16eb8727368a54ef314c79de82265b5ce396c1717cd5518c1c1b5145fea91d7b",
+      "code_sha256": "86d2cda2a3070a1db3ee7a41154fad3a3a043ed00282a5608cad5fab20792b4f",
+      "bytes": 28262
+    },
+    {
+      "path": "FiniteAvalanches/Support/Schoenflies/PolyLocal.lean",
+      "sha256": "357c4de7f01a0437c27725fd7474cfa177979c0a126ffbc36666d8be88c87ad6",
+      "code_sha256": "9f7436c618935c9f4dd37da8b92c1a0926b0cec25ff5d8564041d66bfc6597bd",
+      "bytes": 12947
+    },
+    {
+      "path": "FiniteAvalanches/Support/Schoenflies/PolyPath.lean",
+      "sha256": "59c7b4e5372c9f53597835913c948383e29537f56a3654a1c65532a20a45167f",
+      "code_sha256": "6fa6f66f1d2c03723873ae2b0d12249da22972fde082508aaf3175f2562b8d8b",
+      "bytes": 5791
+    },
+    {
+      "path": "FiniteAvalanches/Support/Schoenflies/PolygonBridge.lean",
+      "sha256": "d4ad6dcb9dfee3d79ab4181f9de0e89007f76bcd66edc4eb32bbe05c4a2d8675",
+      "code_sha256": "9c19f1aa82c7ba0e5e2b8093aa729a765d23ba774653850984beddc23a2af752",
+      "bytes": 17906
+    },
+    {
+      "path": "FiniteAvalanches/Support/Schoenflies/Polygonal.lean",
+      "sha256": "c652365e11b50d74e8777c7e91ec2d04e034b4d4b66d57178da57af204944a50",
+      "code_sha256": "f7b0d117ddb3dd81ab2800529a7239a0d738444dbc4152cc968a55e24b6cc8e9",
+      "bytes": 6916
+    },
+    {
+      "path": "FiniteAvalanches/Support/Schoenflies/PolygonalCarrier.lean",
+      "sha256": "106cd393bc2d8c81ad181123187afe4b88fb4ee2189f6ad81997c0f41ea0d4ca",
+      "code_sha256": "3fc162e52dd778c10d5c1effeaa4e47409ffc235b4bbe1be86a3b855a150f488",
+      "bytes": 6525
+    },
+    {
+      "path": "FiniteAvalanches/Support/Schoenflies/PolygonalCrosscut.lean",
+      "sha256": "1722956975e6c9c6a4107ad3d1238cf7202233f6bc17cbdf559c73ba24f2583e",
+      "code_sha256": "4e60f6374a3efedc39da56916e96cade23e5d3da15ab21a188572058d842bbe3",
+      "bytes": 22133
+    },
+    {
+      "path": "FiniteAvalanches/Support/Schoenflies/PolygonalJordan.lean",
+      "sha256": "edfba147a921deb36ae34852444a06e2307a5ddf47c210b08b0954dd1e8d1b14",
+      "code_sha256": "f2cb2c19284df75b87b619b238acb11789ee1de879a04230b30cafab7f9e12fd",
+      "bytes": 24872
+    },
+    {
+      "path": "FiniteAvalanches/Support/Schoenflies/PrePolygonArc.lean",
+      "sha256": "672380e116087a9bcd7c114714115e5deec5cae85a0264248ee0e854dc3f0806",
+      "code_sha256": "74dd614b193cfb5921c146bf425a63bf59d4d393c3b219d01b70d22b3480a1d6",
+      "bytes": 36291
+    },
+    {
+      "path": "FiniteAvalanches/Support/Schoenflies/PrePolygonSep.lean",
+      "sha256": "a569d57612103ec8b0052682f674d4ee9acc26686729a3b34516994e1f326502",
+      "code_sha256": "872cd1c5a4851c662db27c6ebe06a4f513d6e239ccab9641567872da6ecd7976",
+      "bytes": 15422
+    },
+    {
+      "path": "FiniteAvalanches/Support/Schoenflies/QuantitativeForwardStages.lean",
+      "sha256": "9c67d16e04f8c93681a10a6fc958a2a0aeceee641ff855da295ba7bd12c3062e",
+      "code_sha256": "ed9fea10624ab206f981bf71bbecec1570436360768c13a1cf1aefdbb0a4970b",
+      "bytes": 11326
+    },
+    {
+      "path": "FiniteAvalanches/Support/Schoenflies/QuantitativeRecursion.lean",
+      "sha256": "03c2b04a5bf7b4319ef7825a0db228df5dd57af07fe15749ebbd1653d5859b79",
+      "code_sha256": "ecb4eb379ab2d9c0ce679a680be794f3bf4b6a0027ca92ababca4b4e86c219e1",
+      "bytes": 10355
+    },
+    {
+      "path": "FiniteAvalanches/Support/Schoenflies/QuantitativeStages.lean",
+      "sha256": "24485ec0bc0fa2b3885f2b05e04b8335ae25ea901e4ed1fc7d2746ffd31146e4",
+      "code_sha256": "9e1bd50d35e6fc65626af724dbd517585214d5f2c79687794049090060e13f30",
+      "bytes": 3549
+    },
+    {
+      "path": "FiniteAvalanches/Support/Schoenflies/Realization.lean",
+      "sha256": "f997a33c446a45436b2bd19dfec148e9021ce2be7282cad2b57ea0a4bca172a9",
+      "code_sha256": "ff89cf394aaf1ce1135724572ef05660e70e8137d73d838ab43a0183cb615699",
+      "bytes": 62639
+    },
+    {
+      "path": "FiniteAvalanches/Support/Schoenflies/RealizeSplit.lean",
+      "sha256": "c798de0463611987bb34501c097cfca4a3b16da4609abb1fa4154e4cf695f3ca",
+      "code_sha256": "d5b775a524e90f598fbfa9af586cc3608ffa353f796e29489543075442fce909",
+      "bytes": 39528
+    },
+    {
+      "path": "FiniteAvalanches/Support/Schoenflies/RealizeSubdiv.lean",
+      "sha256": "2b77b0e40b5959c82aa8bdb64cfcfebeaf4b371a25e27b2279a98adc4d34464a",
+      "code_sha256": "1386d82f02da75b6eae9025db0f9782859d2c332ade1fe07dcdef555bcc0a18d",
+      "bytes": 40352
+    },
+    {
+      "path": "FiniteAvalanches/Support/Schoenflies/RealizeSubdivHomeo.lean",
+      "sha256": "046381220a0d007a2965f6ea31572870812d18898c4629af476c99be973a573e",
+      "code_sha256": "86d9a0169b78c0f0f4af3aa85a75eda74a7ed1199cce02eb7e072ac3b3c4710a",
+      "bytes": 5694
+    },
+    {
+      "path": "FiniteAvalanches/Support/Schoenflies/RefinementStars.lean",
+      "sha256": "d3c27f890039140b14b81163a521e03b62adb3bc192b641363c6a0bb3b754992",
+      "code_sha256": "e019e95a4f2cb53650540b072e7afb3d055f5cf5cfc585ed0ef417d96445eeab",
+      "bytes": 22989
+    },
+    {
+      "path": "FiniteAvalanches/Support/Schoenflies/SegmentCut.lean",
+      "sha256": "f5021cd740bcc06738465c71a646fff5821ea15f9237101793558ab21128e793",
+      "code_sha256": "d9e70941daa34a08396c6c4b6c34887413aaa06a5c87c2da2a029a02cb6d13a1",
+      "bytes": 3261
+    },
+    {
+      "path": "FiniteAvalanches/Support/Schoenflies/SegmentMeet.lean",
+      "sha256": "e71c65b64f0ca05ce453d293083ff457cbde30ab46f84c6815115f1f9e8ec675",
+      "code_sha256": "db87aeb2ea1857f26781f7d4c02aeac53714f090e7eaaf85807b4cffe85566c1",
+      "bytes": 2094
+    },
+    {
+      "path": "FiniteAvalanches/Support/Schoenflies/SegmentOrder.lean",
+      "sha256": "3117c8a9d17ef727f48082bb04b97908676151509989c413bf659ca55e1a2b1e",
+      "code_sha256": "da17baed20ce07dd09776949195a067a6ef0ac3481a1819d5a0c363491a292f2",
+      "bytes": 12093
+    },
+    {
+      "path": "FiniteAvalanches/Support/Schoenflies/SimpleArc.lean",
+      "sha256": "a9c729adb4ca54b1ec181204e147d0b5b795a923aab66c3049a836f4179d44b0",
+      "code_sha256": "0d621c209394871d19320def438ebd1c268fb2999db7fe6fa9a74dd3a8b74384",
+      "bytes": 17442
+    },
+    {
+      "path": "FiniteAvalanches/Support/Schoenflies/SkeletonAccess.lean",
+      "sha256": "3d1cb659c89142fefd99373efe18b363302d92ca61647c890936d7af43c66073",
+      "code_sha256": "8455341ee6d7fd06c018e717a2018c4b839c7b33025c8596236928a61fcba0ed",
+      "bytes": 29304
+    },
+    {
+      "path": "FiniteAvalanches/Support/Schoenflies/SkeletonLocal.lean",
+      "sha256": "d8d8d598f10d725735a4fb0871ec0286eeda43a6f182d1c939e033800977fff1",
+      "code_sha256": "5151a863261d6b187638607ebfea83f369165644e74095a1b0a0adb02180f75b",
+      "bytes": 23600
+    },
+    {
+      "path": "FiniteAvalanches/Support/Schoenflies/SkeletonSectors.lean",
+      "sha256": "126e89aa89c79e126f08de6da90c62ebbe69270db3f1b5fbee252dce3da63b05",
+      "code_sha256": "e7f246b8f0557a32c2e2621d4abe74ab4e23ba13a0d9a9e327905f99787aa098",
+      "bytes": 43037
+    },
+    {
+      "path": "FiniteAvalanches/Support/Schoenflies/SourceAttachment.lean",
+      "sha256": "46d7684e4db7d9d33e3c2bcdceb11e5a7660e98e5203f29528d9279fcd402ada",
+      "code_sha256": "317490d10f01c5cd7163adb50d5a6f9bc635ce318149389b5627d885999e3c43",
+      "bytes": 66735
+    },
+    {
+      "path": "FiniteAvalanches/Support/Schoenflies/SourceJoining.lean",
+      "sha256": "e2e457702aba03b59ec6126f0ff75a7251e7ffdfedddaaab1f8fd3f221b059b3",
+      "code_sha256": "5c568f24a93e003f953fdc1216537fe82196fbf14f7558bd51a7ced3c0a92b4b",
+      "bytes": 59575
+    },
+    {
+      "path": "FiniteAvalanches/Support/Schoenflies/SourceOverlay.lean",
+      "sha256": "be936ef4c31766f14b0eff4ff4add04afd2abcdb614092a7955c00ff70b952a0",
+      "code_sha256": "f32e0d472b86d283b8cda99920071542414f3a903a8fe384c3b77e487d0ccd32",
+      "bytes": 49084
+    },
+    {
+      "path": "FiniteAvalanches/Support/Schoenflies/Square.lean",
+      "sha256": "2abc094a537bf29e72cf76cc6b004854a4954b85ee6cd368e0356e2a9c219a5c",
+      "code_sha256": "de18d59474038246f5a8d11db6f465afac4b71a851e1fb8b8d8d59b81060909b",
+      "bytes": 9644
+    },
+    {
+      "path": "FiniteAvalanches/Support/Schoenflies/SquareCycle.lean",
+      "sha256": "3f061db977fb8650b16d6761031994c0d500673f62dbeae87cf6ba704e3f0a9c",
+      "code_sha256": "9c017afc36e325af28641bd2ccdb80714a11836469dbad411e1f319fde5b53bd",
+      "bytes": 40585
+    },
+    {
+      "path": "FiniteAvalanches/Support/Schoenflies/SquareMesh.lean",
+      "sha256": "3827c681296769a171bbf7b32a832ae06174d4bdb47caa24df0026fc49c7f095",
+      "code_sha256": "d167aa5d7025287f87cac6d74a7d976129f37dca696def0491c56356a4b3dc2b",
+      "bytes": 48045
+    },
+    {
+      "path": "FiniteAvalanches/Support/Schoenflies/SquareMeshClosed.lean",
+      "sha256": "357d6fac18a002f0bc7676bc51ac3e4385b9b52d886cc7117d8e3f4375ced069",
+      "code_sha256": "10580cb49952ec538eac648b3f72c388abb0ed22d7429609581731f7a13b9c36",
+      "bytes": 51493
+    },
+    {
+      "path": "FiniteAvalanches/Support/Schoenflies/SquareMeshConnected.lean",
+      "sha256": "64ee13437ddd525384ae14c7e6c3ed894fda9c74cb5624bbfe0f47db9e26d1d4",
+      "code_sha256": "da5de9e50a24e7122401ae0915fc7a21c016f44d7c3662667f420df0810ab991",
+      "bytes": 45868
+    },
+    {
+      "path": "FiniteAvalanches/Support/Schoenflies/SquareMeshFixed.lean",
+      "sha256": "56a49b0fc1159239005cc4dbdfeb989e146c9ba37b4698c718caf830bb145ff9",
+      "code_sha256": "5b53e1d982227519369d06f7dacb885a45c687c6fdaf07ad63b6a774075d6204",
+      "bytes": 40326
+    },
+    {
+      "path": "FiniteAvalanches/Support/Schoenflies/SquareMover.lean",
+      "sha256": "1facd9e4f120a76c015b0088e56795c819b77dc6713f6241cda43a5f81905490",
+      "code_sha256": "c94b86ad9db3727e32873940fe6433a9ddb9fd584c9077f0899f88440d164225",
+      "bytes": 22198
+    },
+    {
+      "path": "FiniteAvalanches/Support/Schoenflies/StageTower.lean",
+      "sha256": "cfc8146f781900e1aadc7efcc49bd55024ffbf70da1e9c5c870553535bab8e0f",
+      "code_sha256": "2d0738d835c9714f5cf818f816c30efad6cf4f947aad7231ae5b717adce4db84",
+      "bytes": 4492
+    },
+    {
+      "path": "FiniteAvalanches/Support/Schoenflies/StageTransition.lean",
+      "sha256": "eb2fecc44f4b0f7e2c7e58082d27d4444c9d15a02592b7cd22f3196c138bab13",
+      "code_sha256": "396145e23db0a156a1aede61cbf73c607b99d2e54575fb78f4fc3a218c88bd46",
+      "bytes": 3321
+    },
+    {
+      "path": "FiniteAvalanches/Support/Schoenflies/Strip.lean",
+      "sha256": "efbde351cce1141dd9a37d55164b880097acd2e1bc948d2eb1e7aca706d58774",
+      "code_sha256": "e7ad828b95172219809aad264dbcdf3216e1e8f91d5d22cbd28094a165a01b54",
+      "bytes": 35353
+    },
+    {
+      "path": "FiniteAvalanches/Support/Schoenflies/StripConnected.lean",
+      "sha256": "461dc79e498e2ad6ed7c39c885d84fb3068b5f7f99130aa4e169de4f24b6975f",
+      "code_sha256": "898b27a9f84cd0f287fe665220ac0e6ef7322207cbd6a6b9dce38afca341641c",
+      "bytes": 16548
+    },
+    {
+      "path": "FiniteAvalanches/Support/Schoenflies/StripConstants.lean",
+      "sha256": "ac35447dd078e1a6b6348923b9f2b00d60ab41e83b78b5677651843ec51f1a95",
+      "code_sha256": "762f75c5535b103335531ec6965efa68c8378a8aaca1cda45a4d3b0df6064e8b",
+      "bytes": 10283
+    },
+    {
+      "path": "FiniteAvalanches/Support/Schoenflies/StripLocal.lean",
+      "sha256": "080469f4d4a509ccfab45febd3ea9057fb7513e1a40fc789f2ec0405c3374761",
+      "code_sha256": "dfb4731040a7e5c82d38f25e3d0232f1f8750bb64460af4f7e28da2af6c93c0f",
+      "bytes": 18149
+    },
+    {
+      "path": "FiniteAvalanches/Support/Schoenflies/Subarc.lean",
+      "sha256": "e74459993219c34eff370a1a6bd1ea460b4135db6350941ce4bb1bca3cfddf3e",
+      "code_sha256": "21b4645a1899951fc9fc599bb138c792c33ad898d96d960714261d3c9ed738b3",
+      "bytes": 9560
+    },
+    {
+      "path": "FiniteAvalanches/Support/Schoenflies/Subdivide.lean",
+      "sha256": "8a8074f8dfcc83dd9014f4c832dabde454be8b7aad164e7e49231c8e25dd7fcc",
+      "code_sha256": "f2d1eaf702dafec0029808d4cc8bd8d1fab0e276fee85483a9aa5d440eae3a23",
+      "bytes": 6598
+    },
+    {
+      "path": "FiniteAvalanches/Support/Schoenflies/TargetOverlay.lean",
+      "sha256": "49ebc8885b5c181e9ddf2d8e3e74af80902984f3282d42b6f7908710eaff759c",
+      "code_sha256": "fd35fca46a650909ef8c50ee0c0efb84c42b54bea82027c5346250454a05a35e",
+      "bytes": 64675
+    },
+    {
+      "path": "FiniteAvalanches/Support/Schoenflies/Topology.lean",
+      "sha256": "6ad35d448b33f736718c9e1fc9a54f6c738eb01cdfd845d5475cca8120e3b700",
+      "code_sha256": "52f0506502855abb315914cb2c287f36832549c2a6965240ed05f59839cd49aa",
+      "bytes": 1907
+    },
+    {
+      "path": "FiniteAvalanches/Support/Schoenflies/TwoArcs.lean",
+      "sha256": "84b6e5a7dc0c228860caa7acb95d696d6a7111e07364c583de642c4cc15ffb2f",
+      "code_sha256": "76a59f0871ae622ce0828b47d05202f36f1f46df4d127bfc25d34528c64c37e4",
+      "bytes": 9192
+    },
+    {
+      "path": "FiniteAvalanches/Support/Schoenflies/UniformBound.lean",
+      "sha256": "f92c0080645c0564d555251bcaceaa012ecd6aedc4a5e3565fb88d99d6056b3f",
+      "code_sha256": "821660dca2a3725988738788ff2865248bdf0da1bb44321fa5b17b2edaf2171b",
+      "bytes": 1503
+    },
+    {
+      "path": "FiniteAvalanches/Support/Schoenflies/Windows.lean",
+      "sha256": "1046917118b98a9b3e8c381252bef869f48c376017003541cbbbb0a0c6f6a302",
+      "code_sha256": "39644bc39bc865724da48e4ab4b0ef08eed47f8f95d91d1041af1fad230bb0b4",
+      "bytes": 7548
     },
     {
       "path": "FiniteAvalanches/Trees/AmbientContactCount.lean",
@@ -5321,13 +6149,13 @@
       "path": "FiniteAvalanchesCurrent/ArcMomentExpectations.lean",
       "sha256": "6ba682bb31a9010794074fd520963aa5bbd7ec0b5bae6df3efc0bae70ec68081",
       "code_sha256": "d1f1b2d4e334429dca0a2a2c365e0c75ab3ef9f0114d7c0fc4b89ceb06486108",
-      "bytes": 6153
+      "bytes": 6224
     },
     {
       "path": "FiniteAvalanchesCurrent/ArcMomentV7.lean",
       "sha256": "68010ccc79a7e089b3e25e2126670a2f3f1082ff79df9908ac092734dde7b474",
       "code_sha256": "c2dbfee458868687cd10284a508cfba95ab2c7dc2aecf49af56f035c1f32f288",
-      "bytes": 5919
+      "bytes": 5990
     },
     {
       "path": "FiniteAvalanchesCurrent/BoundaryMeanApplication.lean",
@@ -5393,13 +6221,13 @@
       "path": "FiniteAvalanchesCurrent/SplitEstimateExpectations.lean",
       "sha256": "d728d86bfb1a3e29193abfc6e1d1aff03e98fb2abba92fabdc37b5432a35acf5",
       "code_sha256": "b8fff8e8ad3c117b755d374311f1ead1f5f0b09167d03a77d49d1774e027af8f",
-      "bytes": 5549
+      "bytes": 5625
     },
     {
       "path": "FiniteAvalanchesCurrent/SplitEstimateV1.lean",
       "sha256": "e488ca5b1dfeb7b0e3e9863bce41d29e1315982f7899ced527d8d0b50cf76c1c",
       "code_sha256": "57478ca5673e6bb1492ce758ca3dbf4395899bff79920bcf792cf39b4280ddc9",
-      "bytes": 4690
+      "bytes": 4766
     },
     {
       "path": "FiniteAvalanchesCurrentRegisteredPastSelectedMain.lean",
@@ -5503,7 +6331,6 @@
     "FiniteAvalanches.External.BarlowMasson2011.adjacent_ust_path_euclidean_tail",
     "FiniteAvalanches.External.SandpileLimit.exists_infiniteVolumeLaw",
     "FiniteAvalanches.External.finite_plane_dual_bond_cycle",
-    "FiniteAvalanches.External.finite_plane_dual_connected",
     "FiniteAvalanches.External.finite_plane_geometric_dual",
     "FiniteAvalanches.External.finite_plane_tree_complement",
     "FiniteAvalanches.External.finite_plane_two_pole_topology",
@@ -5511,7 +6338,6 @@
     "FiniteAvalanches.External.lawler_limic_beurling_srw_Z2",
     "FiniteAvalanches.External.outer_face_simple_path_disk_redrawing",
     "FiniteAvalanches.External.parametrized_plane_arc_straightening",
-    "FiniteAvalanches.External.plane_edge_chart_incidence",
     "FiniteAvalanches.External.plane_vertex_face_star",
     "FiniteAvalanches.External.square_lattice_ust_dual_law",
     "FiniteAvalanches.External.square_lattice_wired_ust_one_tree_one_end",
@@ -5629,7 +6455,9 @@
     "FiniteAvalanches.External.lyons_nestedProjectionDomination",
     "FiniteAvalanches.External.disk_alternation_impossible",
     "FiniteAvalanches.External.plane_punctured_face_transport",
-    "FiniteAvalanches.External.plane_punctured_chart_face_transport"
+    "FiniteAvalanches.External.plane_punctured_chart_face_transport",
+    "FiniteAvalanches.External.finite_plane_dual_connected",
+    "FiniteAvalanches.External.plane_edge_chart_incidence"
   ],
   "production_import_roots": [
     "Checks.AdditiveApplications",
@@ -5828,7 +6656,145 @@
     "FiniteAvalanches.Electrical.Source.BoundaryExpectation",
     "FiniteAvalanchesCurrent.ArcMomentExpectations",
     "FiniteAvalanchesCurrent.SplitEstimateExpectations",
-    "FiniteAvalanchesCurrent.BoundaryMeanApplication"
+    "FiniteAvalanchesCurrent.BoundaryMeanApplication",
+    "FiniteAvalanches.Support.Plane.ArcLocalStraightening",
+    "FiniteAvalanches.Support.Plane.ArcStraightHomeomorph",
+    "FiniteAvalanches.Support.Plane.BoundaryArcJoin",
+    "FiniteAvalanches.Support.Plane.DualConnectedIncidence",
+    "FiniteAvalanches.Support.Plane.DualFaceCoverage",
+    "FiniteAvalanches.Support.Plane.EdgeFaceIncidence",
+    "FiniteAvalanches.Support.Plane.HalfOpenLocalStraightening",
+    "FiniteAvalanches.Support.Plane.JordanLoopExtension",
+    "FiniteAvalanches.Support.Plane.StraightModel",
+    "FiniteAvalanches.Support.Plane.SubarcCompletion",
+    "FiniteAvalanches.Support.Schoenflies.Accessible",
+    "FiniteAvalanches.Support.Schoenflies.AccessibleJoin",
+    "FiniteAvalanches.Support.Schoenflies.AlternatingCrosscuts",
+    "FiniteAvalanches.Support.Schoenflies.ArcCollars",
+    "FiniteAvalanches.Support.Schoenflies.ArcComplement",
+    "FiniteAvalanches.Support.Schoenflies.ArcComplementPrep",
+    "FiniteAvalanches.Support.Schoenflies.ArcMonotone",
+    "FiniteAvalanches.Support.Schoenflies.BoundaryAnchors",
+    "FiniteAvalanches.Support.Schoenflies.BoundaryContinuity",
+    "FiniteAvalanches.Support.Schoenflies.BoundaryContinuity2",
+    "FiniteAvalanches.Support.Schoenflies.BoundaryCycles",
+    "FiniteAvalanches.Support.Schoenflies.BoundaryCyclesGenerated",
+    "FiniteAvalanches.Support.Schoenflies.Bounded",
+    "FiniteAvalanches.Support.Schoenflies.CellulationInvariants",
+    "FiniteAvalanches.Support.Schoenflies.CombinatorialInvariance",
+    "FiniteAvalanches.Support.Schoenflies.CommonSubdivision",
+    "FiniteAvalanches.Support.Schoenflies.Concatenate",
+    "FiniteAvalanches.Support.Schoenflies.CrosscutAtMostTwo",
+    "FiniteAvalanches.Support.Schoenflies.CrosscutCells",
+    "FiniteAvalanches.Support.Schoenflies.CrosscutEncloses",
+    "FiniteAvalanches.Support.Schoenflies.CrosscutExists",
+    "FiniteAvalanches.Support.Schoenflies.Curve",
+    "FiniteAvalanches.Support.Schoenflies.Direction",
+    "FiniteAvalanches.Support.Schoenflies.Endgame",
+    "FiniteAvalanches.Support.Schoenflies.FaceCycles",
+    "FiniteAvalanches.Support.Schoenflies.FaceCyclesLand",
+    "FiniteAvalanches.Support.Schoenflies.FaceCyclesProof",
+    "FiniteAvalanches.Support.Schoenflies.FiniteTransfer",
+    "FiniteAvalanches.Support.Schoenflies.FiniteTransferTarget",
+    "FiniteAvalanches.Support.Schoenflies.FiniteTransferTargetMesh",
+    "FiniteAvalanches.Support.Schoenflies.FreshAccess",
+    "FiniteAvalanches.Support.Schoenflies.FreshDenseSelection",
+    "FiniteAvalanches.Support.Schoenflies.GeneralCrosscut",
+    "FiniteAvalanches.Support.Schoenflies.GeneratedStructure",
+    "FiniteAvalanches.Support.Schoenflies.Graph.Component",
+    "FiniteAvalanches.Support.Schoenflies.Graph.Cycle",
+    "FiniteAvalanches.Support.Schoenflies.Graph.CycleJordan",
+    "FiniteAvalanches.Support.Schoenflies.Graph.Degree",
+    "FiniteAvalanches.Support.Schoenflies.Graph.Drawing",
+    "FiniteAvalanches.Support.Schoenflies.Graph.Ear",
+    "FiniteAvalanches.Support.Schoenflies.Graph.K33",
+    "FiniteAvalanches.Support.Schoenflies.Graph.K33Closed",
+    "FiniteAvalanches.Support.Schoenflies.Graph.K33Land",
+    "FiniteAvalanches.Support.Schoenflies.Graph.K33Planar",
+    "FiniteAvalanches.Support.Schoenflies.Graph.OuterFace",
+    "FiniteAvalanches.Support.Schoenflies.Graph.PathGraph",
+    "FiniteAvalanches.Support.Schoenflies.Graph.Redrawing",
+    "FiniteAvalanches.Support.Schoenflies.Graph.Relabel",
+    "FiniteAvalanches.Support.Schoenflies.Graph.RelativeEar",
+    "FiniteAvalanches.Support.Schoenflies.Graph.Tree",
+    "FiniteAvalanches.Support.Schoenflies.Graph.TwoConnected",
+    "FiniteAvalanches.Support.Schoenflies.Graph.TwoPaths",
+    "FiniteAvalanches.Support.Schoenflies.Graph.VertexSquares",
+    "FiniteAvalanches.Support.Schoenflies.Graph.Walk",
+    "FiniteAvalanches.Support.Schoenflies.GridAttach",
+    "FiniteAvalanches.Support.Schoenflies.InitialGenerated",
+    "FiniteAvalanches.Support.Schoenflies.InitialOuterCycle",
+    "FiniteAvalanches.Support.Schoenflies.InitialPair",
+    "FiniteAvalanches.Support.Schoenflies.InitialPairFixed",
+    "FiniteAvalanches.Support.Schoenflies.InteriorHomeomorphism",
+    "FiniteAvalanches.Support.Schoenflies.Inversion",
+    "FiniteAvalanches.Support.Schoenflies.Jordan",
+    "FiniteAvalanches.Support.Schoenflies.JordanClosed",
+    "FiniteAvalanches.Support.Schoenflies.JordanSchoenflies",
+    "FiniteAvalanches.Support.Schoenflies.JordanSeparates",
+    "FiniteAvalanches.Support.Schoenflies.LimitMap",
+    "FiniteAvalanches.Support.Schoenflies.Line",
+    "FiniteAvalanches.Support.Schoenflies.LocalGrid",
+    "FiniteAvalanches.Support.Schoenflies.LocallyPolygonal",
+    "FiniteAvalanches.Support.Schoenflies.MatchedArc",
+    "FiniteAvalanches.Support.Schoenflies.MatchedSplit",
+    "FiniteAvalanches.Support.Schoenflies.ModelCurve",
+    "FiniteAvalanches.Support.Schoenflies.OuterChain",
+    "FiniteAvalanches.Support.Schoenflies.OuterChainClosed",
+    "FiniteAvalanches.Support.Schoenflies.Overlay",
+    "FiniteAvalanches.Support.Schoenflies.OverlayExtension",
+    "FiniteAvalanches.Support.Schoenflies.OverlayGraph",
+    "FiniteAvalanches.Support.Schoenflies.Parity",
+    "FiniteAvalanches.Support.Schoenflies.ParitySplitting",
+    "FiniteAvalanches.Support.Schoenflies.Plane",
+    "FiniteAvalanches.Support.Schoenflies.PolyArcRealize",
+    "FiniteAvalanches.Support.Schoenflies.PolyLocal",
+    "FiniteAvalanches.Support.Schoenflies.PolyPath",
+    "FiniteAvalanches.Support.Schoenflies.PolygonBridge",
+    "FiniteAvalanches.Support.Schoenflies.Polygonal",
+    "FiniteAvalanches.Support.Schoenflies.PolygonalCarrier",
+    "FiniteAvalanches.Support.Schoenflies.PolygonalCrosscut",
+    "FiniteAvalanches.Support.Schoenflies.PolygonalJordan",
+    "FiniteAvalanches.Support.Schoenflies.PrePolygonArc",
+    "FiniteAvalanches.Support.Schoenflies.PrePolygonSep",
+    "FiniteAvalanches.Support.Schoenflies.QuantitativeForwardStages",
+    "FiniteAvalanches.Support.Schoenflies.QuantitativeRecursion",
+    "FiniteAvalanches.Support.Schoenflies.QuantitativeStages",
+    "FiniteAvalanches.Support.Schoenflies.Realization",
+    "FiniteAvalanches.Support.Schoenflies.RealizeSplit",
+    "FiniteAvalanches.Support.Schoenflies.RealizeSubdiv",
+    "FiniteAvalanches.Support.Schoenflies.RealizeSubdivHomeo",
+    "FiniteAvalanches.Support.Schoenflies.RefinementStars",
+    "FiniteAvalanches.Support.Schoenflies.SegmentCut",
+    "FiniteAvalanches.Support.Schoenflies.SegmentMeet",
+    "FiniteAvalanches.Support.Schoenflies.SegmentOrder",
+    "FiniteAvalanches.Support.Schoenflies.SimpleArc",
+    "FiniteAvalanches.Support.Schoenflies.SkeletonAccess",
+    "FiniteAvalanches.Support.Schoenflies.SkeletonLocal",
+    "FiniteAvalanches.Support.Schoenflies.SkeletonSectors",
+    "FiniteAvalanches.Support.Schoenflies.SourceAttachment",
+    "FiniteAvalanches.Support.Schoenflies.SourceJoining",
+    "FiniteAvalanches.Support.Schoenflies.SourceOverlay",
+    "FiniteAvalanches.Support.Schoenflies.Square",
+    "FiniteAvalanches.Support.Schoenflies.SquareCycle",
+    "FiniteAvalanches.Support.Schoenflies.SquareMesh",
+    "FiniteAvalanches.Support.Schoenflies.SquareMeshClosed",
+    "FiniteAvalanches.Support.Schoenflies.SquareMeshConnected",
+    "FiniteAvalanches.Support.Schoenflies.SquareMeshFixed",
+    "FiniteAvalanches.Support.Schoenflies.SquareMover",
+    "FiniteAvalanches.Support.Schoenflies.StageTower",
+    "FiniteAvalanches.Support.Schoenflies.StageTransition",
+    "FiniteAvalanches.Support.Schoenflies.Strip",
+    "FiniteAvalanches.Support.Schoenflies.StripConnected",
+    "FiniteAvalanches.Support.Schoenflies.StripConstants",
+    "FiniteAvalanches.Support.Schoenflies.StripLocal",
+    "FiniteAvalanches.Support.Schoenflies.Subarc",
+    "FiniteAvalanches.Support.Schoenflies.Subdivide",
+    "FiniteAvalanches.Support.Schoenflies.TargetOverlay",
+    "FiniteAvalanches.Support.Schoenflies.Topology",
+    "FiniteAvalanches.Support.Schoenflies.TwoArcs",
+    "FiniteAvalanches.Support.Schoenflies.UniformBound",
+    "FiniteAvalanches.Support.Schoenflies.Windows"
   ],
   "verification_status": {
     "runtime_status_record": "docs/verification.md",
@@ -5857,7 +6823,7 @@
     },
     {
       "path": "audit/trusted-inputs.json",
-      "sha256": "b2e9691928980f9fbc8eadaff7067ac46a75ad51e580bee8bf4126ac9ee44f52",
+      "sha256": "62ea4937176b2ae6b0c2b65f02a33ae0f0092661cc45470350563d82dbb8825e",
       "bytes": 288454
     },
     {
