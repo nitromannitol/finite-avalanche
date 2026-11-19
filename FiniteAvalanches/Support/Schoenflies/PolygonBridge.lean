@@ -1,0 +1,620 @@
+/-
+Copyright (c) 2026 Álvaro Begué. All rights reserved.
+Released under the Apache License, Version 2.0.
+Source: https://github.com/alonamaloh/schoenflies-lean, commit 05a43d29cde026618777db3d4e4316204ccca237, Schoenflies/PolygonBridge.lean.
+-/
+import FiniteAvalanches.Support.Schoenflies.Strip
+import FiniteAvalanches.Support.Schoenflies.Parity
+import FiniteAvalanches.Support.Schoenflies.Polygonal
+import FiniteAvalanches.Support.Schoenflies.Concatenate
+
+/-! Plane geometry for the Jordan–Schönflies theorem. -/
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+open Metric Set
+
+namespace Schoenflies
+
+open Plane
+
+variable {m : ℕ}
+
+ 
+
+
+
+
+
+ 
+
+
+theorem segment_inter_shared {a b c : Plane} (h : det (b - a) (c - b) ≠ 0) :
+    segment ℝ a b ∩ segment ℝ b c ⊆ {b} := by
+  rintro z ⟨hz1, hz2⟩
+  rw [segment_eq_image' ℝ a b] at hz1
+  rw [segment_eq_image' ℝ b c] at hz2
+  obtain ⟨s, -, hs⟩ := hz1
+  obtain ⟨t, -, ht⟩ := hz2
+  simp only at hs ht
+  have hvec : t • (c - b) = (s - 1) • (b - a) := by
+    have hz := ht.trans hs.symm
+    linear_combination (norm := module) hz
+  have key : t * det (b - a) (c - b) = 0 := by
+    have h2 : det (b - a) (t • (c - b)) = det (b - a) ((s - 1) • (b - a)) := by rw [hvec]
+    rw [det_smul_right, det_smul_right, det_self, mul_zero] at h2
+    exact h2
+  have ht0 : t = 0 := by
+    rcases mul_eq_zero.1 key with h0 | h0
+    · exact h0
+    · exact absurd h0 h
+  simp only [mem_singleton_iff]
+  rw [← ht, ht0, zero_smul, add_zero]
+
+ 
+
+
+
+
+
+
+section Triangle
+
+variable {a b c : Plane}
+
+ 
+private theorem det_rot₁ (a b c : Plane) : det (b - a) (c - b) = det (b - a) (c - a) := by
+  simp only [Plane.det, Plane.sub_apply]; ring
+
+ 
+private theorem det_rot₂ (a b c : Plane) : det (c - b) (a - c) = det (b - a) (c - a) := by
+  simp only [Plane.det, Plane.sub_apply]; ring
+
+ 
+private theorem det_rot₃ (a b c : Plane) : det (a - c) (b - a) = det (b - a) (c - a) := by
+  simp only [Plane.det, Plane.sub_apply]; ring
+
+ 
+
+
+def triangle (h : det (b - a) (c - a) ≠ 0) : ClosedPolygon 0 where
+  vertex := ![a, b, c]
+  vertex_inj := by
+    have hab : a ≠ b := by
+      rintro rfl
+      exact h (by simp [Plane.det])
+    have hbc : b ≠ c := by
+      rintro rfl
+      exact h (det_self _)
+    have hac : a ≠ c := by
+      rintro rfl
+      exact h (by simp [Plane.det])
+    intro i j hij
+    have hi : ∀ i : ZMod 3, i = 0 ∨ i = 1 ∨ i = 2 := by decide
+    rcases hi i with rfl | rfl | rfl <;> rcases hi j with rfl | rfl | rfl
+    · rfl
+    · exact absurd (show a = b from hij) hab
+    · exact absurd (show a = c from hij) hac
+    · exact absurd (show a = b from hij.symm) hab
+    · rfl
+    · exact absurd (show b = c from hij) hbc
+    · exact absurd (show a = c from hij.symm) hac
+    · exact absurd (show b = c from hij.symm) hbc
+    · rfl
+  edges_meet := by
+    have mab : segment ℝ a b ∩ segment ℝ b c ⊆ {b} :=
+      segment_inter_shared (by rw [det_rot₁]; exact h)
+    have mbc : segment ℝ b c ∩ segment ℝ c a ⊆ {c} :=
+      segment_inter_shared (by rw [det_rot₂]; exact h)
+    have mca : segment ℝ c a ∩ segment ℝ a b ⊆ {a} :=
+      segment_inter_shared (by rw [det_rot₃]; exact h)
+    intro i j hij
+    have hi : ∀ i : ZMod 3, i = 0 ∨ i = 1 ∨ i = 2 := by decide
+    rcases hi i with rfl | rfl | rfl <;> rcases hi j with rfl | rfl | rfl
+    · exact absurd rfl hij
+    · change segment ℝ a b ∩ segment ℝ b c ⊆ {a, b}
+      exact subset_trans mab (by simp)
+    · change segment ℝ a b ∩ segment ℝ c a ⊆ {a, b}
+      rw [Set.inter_comm]
+      exact subset_trans mca (by simp)
+    · change segment ℝ b c ∩ segment ℝ a b ⊆ {b, c}
+      rw [Set.inter_comm]
+      exact subset_trans mab (by simp)
+    · exact absurd rfl hij
+    · change segment ℝ b c ∩ segment ℝ c a ⊆ {b, c}
+      exact subset_trans mbc (by simp)
+    · change segment ℝ c a ∩ segment ℝ a b ⊆ {c, a}
+      exact subset_trans mca (by simp)
+    · change segment ℝ c a ∩ segment ℝ b c ⊆ {c, a}
+      rw [Set.inter_comm]
+      exact subset_trans mbc (by simp)
+    · exact absurd rfl hij
+  corner := by
+    intro i
+    have hi : ∀ i : ZMod 3, i = 0 ∨ i = 1 ∨ i = 2 := by decide
+    rcases hi i with rfl | rfl | rfl
+    · change det (c - a) (b - a) ≠ 0
+      intro hc
+      apply h
+      simp only [Plane.det, Plane.sub_apply] at hc ⊢
+      linarith
+    · change det (a - b) (c - b) ≠ 0
+      intro hc
+      apply h
+      simp only [Plane.det, Plane.sub_apply] at hc ⊢
+      linarith
+    · change det (b - c) (a - c) ≠ 0
+      intro hc
+      apply h
+      simp only [Plane.det, Plane.sub_apply] at hc ⊢
+      linarith
+
+@[simp] theorem triangle_vertex_zero (h : det (b - a) (c - a) ≠ 0) :
+    (triangle h).vertex 0 = a := rfl
+
+@[simp] theorem triangle_vertex_one (h : det (b - a) (c - a) ≠ 0) :
+    (triangle h).vertex 1 = b := rfl
+
+@[simp] theorem triangle_vertex_two (h : det (b - a) (c - a) ≠ 0) :
+    (triangle h).vertex 2 = c := rfl
+
+end Triangle
+
+ 
+
+def unitTriangle : ClosedPolygon 0 :=
+  triangle (a := mk 0 0) (b := mk 1 0) (c := mk 0 1)
+    (by norm_num [Plane.det, Plane.sub_apply])
+
+ 
+
+ 
+
+theorem sum_range_boundary (g : ℕ → ZMod 2) :
+    ∀ n : ℕ, ((List.range n).map fun j => g j + g (j + 1)).sum = g 0 + g n
+  | 0 => by simpa using (add_self_zmod_two (g 0)).symm
+  | n + 1 => by
+    rw [List.range_succ, List.map_append, List.sum_append, sum_range_boundary g n]
+    simp only [List.map_cons, List.map_nil, List.sum_cons, List.sum_nil, add_zero]
+    linear_combination add_self_zmod_two (g n)
+
+namespace ClosedPolygon
+
+ 
+
+
+
+
+
+ 
+theorem natCast_inj {j k : ℕ} (hj : j < m + 3) (hk : k < m + 3)
+    (h : (j : ZMod (m + 3)) = (k : ZMod (m + 3))) : j = k := by
+  have hval := congrArg ZMod.val h
+  rwa [ZMod.val_cast_of_lt hj, ZMod.val_cast_of_lt hk] at hval
+
+ 
+theorem natCast_succ (j : ℕ) : ((j + 1 : ℕ) : ZMod (m + 3)) = (j : ZMod (m + 3)) + 1 := by
+  push_cast; ring
+
+variable {P : ClosedPolygon m}
+
+ 
+theorem vertex_natCast_ne {j k : ℕ} (hj : j < m + 3) (hk : k < m + 3) (hjk : j ≠ k) :
+    P.vertex (j : ZMod (m + 3)) ≠ P.vertex (k : ZMod (m + 3)) :=
+  fun heq => hjk (natCast_inj hj hk (P.vertex_inj heq))
+
+ 
+
+
+
+
+theorem edge_meet_earlier {j k : ℕ} (hjk : j < k) (hk : k + 1 < m + 3) {z : Plane}
+    (hzj : z ∈ P.edge (j : ZMod (m + 3))) (hzk : z ∈ P.edge (k : ZMod (m + 3))) :
+    z = P.vertex (k : ZMod (m + 3)) := by
+  have hjn : j < m + 3 := by omega
+  have hkn : k < m + 3 := by omega
+  have hne : (k : ZMod (m + 3)) ≠ (j : ZMod (m + 3)) :=
+    fun heq => (by omega : k ≠ j) (natCast_inj hkn hjn heq)
+  have hmem := P.edges_meet _ _ hne (Set.mem_inter hzk hzj)
+  simp only [Set.mem_insert_iff, Set.mem_singleton_iff] at hmem
+  rcases hmem with hmem | hmem
+  · exact hmem
+  
+  exfalso
+  have hmem2 := P.edges_meet _ _ (Ne.symm hne) (Set.mem_inter hzj hzk)
+  simp only [Set.mem_insert_iff, Set.mem_singleton_iff] at hmem2
+  rw [← natCast_succ] at hmem
+  rcases hmem2 with hmem2 | hmem2
+  · have : k + 1 = j := natCast_inj hk hjn (P.vertex_inj (hmem ▸ hmem2))
+    omega
+  · rw [← natCast_succ] at hmem2
+    have : k + 1 = j + 1 := natCast_inj hk (by omega) (P.vertex_inj (hmem ▸ hmem2))
+    omega
+
+ 
+
+
+
+theorem edge_meet_last {j : ℕ} (hj : j < m + 2) {z : Plane}
+    (hzj : z ∈ P.edge (j : ZMod (m + 3)))
+    (hz : z ∈ P.edge ((m + 2 : ℕ) : ZMod (m + 3))) :
+    z = P.vertex 0 ∨ z = P.vertex ((m + 2 : ℕ) : ZMod (m + 3)) := by
+  have hne : ((m + 2 : ℕ) : ZMod (m + 3)) ≠ (j : ZMod (m + 3)) :=
+    fun heq => (by omega : m + 2 ≠ j) (natCast_inj (by omega) (by omega) heq)
+  have hlast : ((m + 2 : ℕ) : ZMod (m + 3)) + 1 = 0 := by
+    rw [← natCast_succ]
+    exact ZMod.natCast_self (m + 3)
+  have hmem := P.edges_meet _ _ hne (Set.mem_inter hz hzj)
+  simp only [Set.mem_insert_iff, Set.mem_singleton_iff] at hmem
+  rcases hmem with hmem | hmem
+  · exact Or.inr hmem
+  · rw [hlast] at hmem
+    exact Or.inl hmem
+
+ 
+
+
+
+
+
+
+ 
+
+def pieces (P : ClosedPolygon m) : List Piece :=
+  (List.range (m + 3)).map fun j : ℕ =>
+    (P.vertex (j : ZMod (m + 3)), P.vertex ((j : ZMod (m + 3)) + 1))
+
+ 
+theorem mem_pieces (P : ClosedPolygon m) (i : ZMod (m + 3)) :
+    (P.vertex i, P.vertex (i + 1)) ∈ P.pieces := by
+  refine List.mem_map.2 ⟨i.val, List.mem_range.2 (ZMod.val_lt i), ?_⟩
+  rw [ZMod.natCast_rightInverse i]
+
+ 
+theorem exists_of_mem_pieces {P : ClosedPolygon m} {Q : Piece} (hQ : Q ∈ P.pieces) :
+    ∃ i : ZMod (m + 3), Q = (P.vertex i, P.vertex (i + 1)) := by
+  obtain ⟨j, -, rfl⟩ := List.mem_map.1 hQ
+  exact ⟨(j : ZMod (m + 3)), rfl⟩
+
+ 
+theorem pieces_nondeg (P : ClosedPolygon m) : ∀ Q ∈ P.pieces, Q.Nondeg := by
+  intro Q hQ
+  obtain ⟨i, rfl⟩ := exists_of_mem_pieces hQ
+  exact P.vertex_ne i
+
+ 
+
+
+theorem isClosedChain_pieces (P : ClosedPolygon m) : IsClosedChain P.pieces := by
+  intro f
+  have hmap : (P.pieces.map fun Q => f Q.1 + f Q.2)
+      = (List.range (m + 3)).map fun j : ℕ =>
+        f (P.vertex (j : ZMod (m + 3))) + f (P.vertex ((j + 1 : ℕ) : ZMod (m + 3))) := by
+    rw [pieces, List.map_map]
+    refine List.map_congr_left fun j _ => ?_
+    simp only [Function.comp_apply, natCast_succ]
+  rw [hmap]
+  have key := sum_range_boundary (fun k : ℕ => f (P.vertex (k : ZMod (m + 3)))) (m + 3)
+  rw [key, Nat.cast_zero, ZMod.natCast_self]
+  exact add_self_zmod_two _
+
+ 
+
+
+theorem cover_pieces (P : ClosedPolygon m) : cover P.pieces = P.carrier := by
+  apply Set.Subset.antisymm
+  · rw [cover]
+    refine Set.iUnion₂_subset fun Q hQ => ?_
+    obtain ⟨i, rfl⟩ := exists_of_mem_pieces hQ
+    exact Set.subset_iUnion (fun i => P.edge i) i
+  · refine Set.iUnion_subset fun i => ?_
+    exact fun z hz => mem_cover (P.mem_pieces i) hz
+
+ 
+
+
+
+
+
+ 
+def chain (P : ClosedPolygon m) : ℕ → Set Plane
+  | 0 => P.edge 0
+  | k + 1 => chain P k ∪ P.edge ((k + 1 : ℕ) : ZMod (m + 3))
+
+theorem mem_chain_iff {z : Plane} {k : ℕ} :
+    z ∈ P.chain k ↔ ∃ j ≤ k, z ∈ P.edge (j : ZMod (m + 3)) := by
+  induction k with
+  | zero =>
+    constructor
+    · intro hz
+      exact ⟨0, le_rfl, by simpa [chain] using hz⟩
+    · rintro ⟨j, hj, hzj⟩
+      obtain rfl : j = 0 := Nat.le_zero.1 hj
+      simpa [chain] using hzj
+  | succ k ih =>
+    simp only [chain, Set.mem_union]
+    constructor
+    · rintro (hz | hz)
+      · obtain ⟨j, hj, hzj⟩ := ih.1 hz
+        exact ⟨j, le_trans hj (Nat.le_succ k), hzj⟩
+      · exact ⟨k + 1, le_rfl, hz⟩
+    · rintro ⟨j, hj, hzj⟩
+      rcases Nat.lt_or_ge j (k + 1) with hlt | hge
+      · exact Or.inl (ih.2 ⟨j, Nat.lt_succ_iff.1 hlt, hzj⟩)
+      · obtain rfl : j = k + 1 := le_antisymm hj hge
+        exact Or.inr hzj
+
+ 
+theorem chain_eq_carrier (P : ClosedPolygon m) : P.chain (m + 2) = P.carrier := by
+  ext z
+  rw [mem_chain_iff]
+  constructor
+  · rintro ⟨j, -, hzj⟩
+    exact Set.mem_iUnion.2 ⟨_, hzj⟩
+  · intro hz
+    obtain ⟨i, hzi⟩ := Set.mem_iUnion.1 hz
+    refine ⟨i.val, ?_, ?_⟩
+    · have := ZMod.val_lt i
+      omega
+    · rwa [ZMod.natCast_rightInverse i]
+
+ 
+
+
+theorem isArcBetween_chain (P : ClosedPolygon m) :
+    ∀ k : ℕ, k + 1 < m + 3 →
+      IsArcBetween (P.chain k) (P.vertex 0) (P.vertex ((k + 1 : ℕ) : ZMod (m + 3))) := by
+  intro k
+  induction k with
+  | zero =>
+    intro _
+    rw [natCast_succ]
+    exact isArcBetween_segment (P.vertex_ne 0)
+  | succ k ih =>
+    intro hk
+    have hA := ih (by omega)
+    have hB : IsArcBetween (P.edge ((k + 1 : ℕ) : ZMod (m + 3)))
+        (P.vertex ((k + 1 : ℕ) : ZMod (m + 3)))
+        (P.vertex ((k + 1 + 1 : ℕ) : ZMod (m + 3))) := by
+      rw [natCast_succ (k + 1)]
+      exact isArcBetween_segment (P.vertex_ne _)
+    have hmeet : ∀ z ∈ P.chain k, z ∈ P.edge ((k + 1 : ℕ) : ZMod (m + 3)) →
+        z = P.vertex ((k + 1 : ℕ) : ZMod (m + 3)) := by
+      intro z hz hze
+      obtain ⟨j, hj, hzj⟩ := mem_chain_iff.1 hz
+      exact edge_meet_earlier (by omega) (by omega) hzj hze
+    exact hA.concatenate hB hmeet
+
+ 
+
+
+theorem isJordanCurve_carrier (P : ClosedPolygon m) : IsJordanCurve P.carrier := by
+  have hlast : ((m + 2 : ℕ) : ZMod (m + 3)) + 1 = 0 := by
+    rw [← natCast_succ]
+    exact ZMod.natCast_self (m + 3)
+  have hA : IsArcBetween (P.chain (m + 1)) (P.vertex 0)
+      (P.vertex ((m + 2 : ℕ) : ZMod (m + 3))) := P.isArcBetween_chain (m + 1) (by omega)
+  have hedge : P.edge ((m + 2 : ℕ) : ZMod (m + 3))
+      = segment ℝ (P.vertex ((m + 2 : ℕ) : ZMod (m + 3))) (P.vertex 0) := by
+    rw [edge, hlast]
+  have hB : IsArcBetween (P.edge ((m + 2 : ℕ) : ZMod (m + 3)))
+      (P.vertex ((m + 2 : ℕ) : ZMod (m + 3))) (P.vertex 0) := by
+    rw [hedge]
+    refine isArcBetween_segment ?_
+    rw [← hlast]
+    exact P.vertex_ne _
+  have hmeet : ∀ z ∈ P.chain (m + 1), z ∈ P.edge ((m + 2 : ℕ) : ZMod (m + 3)) →
+      z = P.vertex 0 ∨ z = P.vertex ((m + 2 : ℕ) : ZMod (m + 3)) := by
+    intro z hz hze
+    obtain ⟨j, hj, hzj⟩ := mem_chain_iff.1 hz
+    exact edge_meet_last (by omega) hzj hze
+  have hcurve := IsJordanCurve.of_two_arcs hA hB hmeet
+  have hsplit : P.chain (m + 2)
+      = P.chain (m + 1) ∪ P.edge ((m + 2 : ℕ) : ZMod (m + 3)) := rfl
+  rwa [← hsplit, chain_eq_carrier] at hcurve
+
+ 
+
+
+
+
+ 
+def vlist (P : ClosedPolygon m) : ℕ → List Plane
+  | 0 => [P.vertex 0, P.vertex ((1 : ℕ) : ZMod (m + 3))]
+  | k + 1 => vlist P k ++ [P.vertex ((k + 1 + 1 : ℕ) : ZMod (m + 3))]
+
+theorem vlist_ne_nil (P : ClosedPolygon m) (k : ℕ) : P.vlist k ≠ [] := by
+  cases k <;> simp [vlist]
+
+theorem getLast_vlist (P : ClosedPolygon m) (k : ℕ) :
+    (P.vlist k).getLast (P.vlist_ne_nil k) = P.vertex ((k + 1 : ℕ) : ZMod (m + 3)) := by
+  cases k with
+  | zero => simp [vlist]
+  | succ k => simp [vlist]
+
+theorem poly_vlist (P : ClosedPolygon m) (k : ℕ) : poly (P.vlist k) = P.chain k := by
+  induction k with
+  | zero =>
+    rw [vlist, poly_pair, chain, edge, natCast_succ]
+    norm_num
+  | succ k ih =>
+    rw [vlist, poly_concat (P.vlist_ne_nil k), getLast_vlist, ih, chain, edge,
+      natCast_succ (k + 1)]
+
+ 
+
+theorem isPolygonal_carrier (P : ClosedPolygon m) : IsPolygonal P.carrier :=
+  ⟨P.vlist (m + 2), by rw [poly_vlist, chain_eq_carrier]⟩
+
+ 
+
+
+
+ 
+
+theorem exists_direction_pieces (P : ClosedPolygon m) :
+    ∃ u : Plane, Plane.IsDirection u ∧ ∀ Q ∈ P.pieces, hgt u Q.1 ≠ hgt u Q.2 :=
+  exists_direction_hgt_ne P.pieces P.pieces_nondeg
+
+ 
+
+theorem parity_eq_of_mem_connectedComponentIn_carrier (P : ClosedPolygon m) {u : Plane}
+    (hu : Plane.IsDirection u) (hL : ∀ Q ∈ P.pieces, hgt u Q.1 ≠ hgt u Q.2) {x y : Plane}
+    (hx : x ∉ P.carrier) (hy : y ∈ connectedComponentIn P.carrierᶜ x) :
+    parity u P.pieces y = parity u P.pieces x := by
+  rw [← P.cover_pieces] at hx hy
+  exact parity_eq_of_mem_connectedComponentIn hu hL P.isClosedChain_pieces hx hy
+
+ 
+
+
+
+
+
+
+
+ 
+
+theorem exists_of_mem_cover {L : List Piece} {z : Plane} (hz : z ∈ cover L) :
+    ∃ R ∈ L, z ∈ R.seg := by
+  rw [cover] at hz
+  simpa using hz
+
+ 
+
+theorem notMem_edge_of_mem_openSegment {i j : ZMod (m + 3)} (hij : j ≠ i) {p : Plane}
+    (hp : p ∈ openSegment ℝ (P.vertex i) (P.vertex (i + 1))) : p ∉ P.edge j := by
+  intro hpj
+  have hmem := P.edges_meet i j (Ne.symm hij)
+    (Set.mem_inter (openSegment_subset_segment ℝ _ _ hp) hpj)
+  simp only [Set.mem_insert_iff, Set.mem_singleton_iff] at hmem
+  rcases hmem with rfl | rfl
+  · exact P.vertex_ne i (left_mem_openSegment_iff.1 hp)
+  · exact P.vertex_ne i (right_mem_openSegment_iff.1 hp)
+
+ 
+theorem pieces_nodup (P : ClosedPolygon m) : P.pieces.Nodup := by
+  rw [pieces]
+  refine List.Nodup.map_on (fun j hj k hk heq => ?_) List.nodup_range
+  exact natCast_inj (List.mem_range.1 hj) (List.mem_range.1 hk)
+    (P.vertex_inj (congrArg Prod.fst heq))
+
+ 
+
+
+theorem parity_flip_carrier (P : ClosedPolygon m) {u : Plane} (hu : Plane.IsDirection u)
+    (hL : ∀ Q ∈ P.pieces, hgt u Q.1 ≠ hgt u Q.2) (i : ZMod (m + 3)) {p : Plane}
+    (hp : p ∈ openSegment ℝ (P.vertex i) (P.vertex (i + 1))) :
+    ∃ δ > 0, ∀ t : ℝ, 0 < t → t < δ →
+      p - t • u ∉ P.carrier ∧ p + t • u ∉ P.carrier ∧
+        parity u P.pieces (p - t • u) = parity u P.pieces (p + t • u) + 1 := by
+  obtain ⟨L₁, L₂, hsplit⟩ := List.append_of_mem (P.mem_pieces i)
+  
+  have hnodup := P.pieces_nodup
+  rw [hsplit, List.nodup_append] at hnodup
+  obtain ⟨-, hnd2, hdisj⟩ := hnodup
+  have hQ₁ : (P.vertex i, P.vertex (i + 1)) ∉ L₁ := fun hmem => hdisj _ hmem _ (by simp) rfl
+  have hQ₂ : (P.vertex i, P.vertex (i + 1)) ∉ L₂ := (List.nodup_cons.1 hnd2).1
+  have hmiss : ∀ R ∈ L₁ ++ L₂, p ∉ Piece.seg R := by
+    intro R hR
+    have hRne : R ≠ (P.vertex i, P.vertex (i + 1)) := by
+      rcases List.mem_append.1 hR with h | h
+      · exact fun heq => hQ₁ (heq ▸ h)
+      · exact fun heq => hQ₂ (heq ▸ h)
+    have hRmem : R ∈ P.pieces := by
+      rw [hsplit]
+      rcases List.mem_append.1 hR with h | h
+      · exact List.mem_append_left _ h
+      · exact List.mem_append_right _ (List.mem_cons_of_mem _ h)
+    obtain ⟨j, rfl⟩ := exists_of_mem_pieces hRmem
+    exact notMem_edge_of_mem_openSegment (fun heq => hRne (by rw [heq])) hp
+  have h1 : p ∉ cover L₁ := by
+    intro hmem
+    obtain ⟨R, hR, hpR⟩ := exists_of_mem_cover hmem
+    exact hmiss R (List.mem_append_left _ hR) hpR
+  have h2 : p ∉ cover L₂ := by
+    intro hmem
+    obtain ⟨R, hR, hpR⟩ := exists_of_mem_cover hmem
+    exact hmiss R (List.mem_append_right _ hR) hpR
+  have hL' : ∀ R ∈ L₁ ++ (P.vertex i, P.vertex (i + 1)) :: L₂, hgt u R.1 ≠ hgt u R.2 := by
+    rw [← hsplit]; exact hL
+  obtain ⟨δ, hδ, hmain⟩ := parity_flip hu hL' hp h1 h2
+  refine ⟨δ, hδ, fun t ht htδ => ?_⟩
+  obtain ⟨ha, hb, hc⟩ := hmain t ht htδ
+  rw [← hsplit] at ha hb hc
+  rw [P.cover_pieces] at ha hb
+  exact ⟨ha, hb, hc⟩
+
+end ClosedPolygon
+
+end Schoenflies
