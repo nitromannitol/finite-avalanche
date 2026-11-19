@@ -146,9 +146,9 @@ def inspect_contents(root, dependencies=False):
         else:
             proved.add(name)
         ids.add(e['id'])
-    require(len(assumptions) == 22 and len(proved) == 3, 'Expected 22 assumptions and 3 proved results')
+    require(len(assumptions) == 20 and len(proved) == 5, 'Expected 20 assumptions and 5 proved results')
     require(names == set(inventory['registered_external_inputs']), 'Registered identity set differs')
-    require(len(used) == 19 and used == set(inventory['main_external_inputs']), 'Expected 19 Main inputs')
+    require(len(used) == 17 and used == set(inventory['main_external_inputs']), 'Expected 17 Main inputs')
     # Count actual declarations, not strings in doc comments or registry summaries.
     actual_axiom_owners = {e['path'] for e in entries if re.search(r'^\s*(?:axiom|constant)\s+', residue(regular(root,e['path']).read_text()), re.M)}
     require(actual_axiom_owners == owners, 'Unlisted production axiom/constant')
@@ -160,7 +160,7 @@ def inspect_contents(root, dependencies=False):
     require(all(e['export'] in queries and e['declaration_path'] in paths for e in statements['statements']), 'Statement omitted from replay')
     require(MAIN in queries and names <= set(queries), 'Main or external declaration omitted from replay')
     primitive_only = set(inventory['primitive_only_exports'])
-    require(len(primitive_only) == 10 and primitive_only <= set(queries) and not primitive_only & assumptions and proved <= primitive_only,
+    require(len(primitive_only) == 12 and primitive_only <= set(queries) and not primitive_only & assumptions and proved <= primitive_only,
             'Proved replacements/providers/consumers must be separate from assumptions')
     manifest = read_json(regular(root, 'lake-manifest.json'))
     packages = {p['name'].strip('«»'): p['rev'] for p in manifest['packages']}
@@ -195,8 +195,8 @@ def require_reviewed(root):
                 re.fullmatch(r'[0-9a-f]{64}', r.get('evidence_sha256','')),
                 'Missing independent exact-subject review: ' + key)
     require(record['final_source_meaning_and_input_review'].get('registered_inputs') == 25 and
-            record['final_source_meaning_and_input_review'].get('main_inputs') == 19,
-            'Review does not cover current 25-result, 19-input boundary')
+            record['final_source_meaning_and_input_review'].get('main_inputs') == 17,
+            'Review does not cover current 25-result, 17-input boundary')
 
 
 def registered_inputs(root):
@@ -227,7 +227,7 @@ def parse_reports(contents, raw):
         if name in contents['primitive_only']:
             require(axioms <= PRIMITIVES, 'Former input proof depends on a nonprimitive axiom: ' + name)
         if name == MAIN:
-            require(axioms - PRIMITIVES == contents['main_inputs'], 'Main does not use the 19 named assumptions')
+            require(axioms - PRIMITIVES == contents['main_inputs'], 'Main does not use the 17 named assumptions')
         if name in contents['registered']:
             expected = {name} | ASSERTION_TYPE_INPUTS.get(name, set())
             require(axioms - PRIMITIVES == expected,
@@ -247,6 +247,6 @@ if __name__ == '__main__':
         if not args.static:
             require_reviewed(args.root)
         print('STATIC INVENTORY ONLY' if args.static else 'REVIEWED SOURCE INVENTORY')
-        print('25 registered results; 22 assumptions, 19 used by Main, and 3 proved results. No build/comparator result asserted.')
+        print('25 registered results; 20 assumptions, 17 used by Main, and 5 proved results. No build/comparator result asserted.')
     except (ValueError, KeyError, TypeError, OSError, StopIteration, subprocess.CalledProcessError) as error:
         raise SystemExit('Invalid current release disclosure: ' + str(error)) from error

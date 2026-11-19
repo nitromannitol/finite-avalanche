@@ -3280,14 +3280,14 @@
     },
     {
       "id": "external:plane-punctured-face-transport:v1",
-      "state": "EXTERNAL_ASSUMPTION",
+      "state": "PROVED",
       "kind": "STANDARD",
       "declaration": {
         "path": "FiniteAvalanches/External/PlanePuncturedFaceTransport.lean",
         "export": "FiniteAvalanches.External.plane_punctured_face_transport",
-        "sha256": "45721bb1dc88134e33ac12a501fe2e51024e4bc82d38a36d3f7451c240b4bc8a",
-        "code_sha256": "0309ce244a0184bc13889b3caacf42a24a6c44d09e718993b5d821468a9c3c74",
-        "complete_file": "import FiniteAvalanches.Electrical.Geometry.ConnectedDrawingQuotient\nimport FiniteAvalanches.Electrical.Geometry.BSST\n\nset_option autoImplicit false\n\nopen FiniteAvalanches.Electrical.StatementGeometry\nopen FiniteAvalanches.Electrical.Source (Plane drawingTrace)\nopen FiniteAvalanches.Electrical.BSST (Face faceRegion incident)\nopen FiniteAvalanches.Electrical.DrawingContraction (restrictDrawing)\n\nnamespace FiniteAvalanches.External\n\n/-- Punctured-plane inversion transports all copied curves and complement faces. -/\naxiom plane_punctured_face_transport : (\n  ∀ {V E E₀ : Type} [Fintype V] [Fintype E] [Fintype E₀]\n    (J : CopiedGraph V E) (K : CopiedGraph V E₀) (D : Drawing J)\n    (i : E₀ → E) (hi : Function.Injective i)\n    (hl : ∀ e, J.left (i e) = K.left e)\n    (hr : ∀ e, J.right (i e) = K.right e)\n    (F : Face (restrictDrawing D i hi hl hr)),\n  let R := restrictDrawing D i hi hl hr\n  ∃ p : Plane, ∃ hp : p ∉ drawingTrace D,\n    p ∈ faceRegion R F ∧\n    ∃ c : {z : Plane // z ≠ p} ≃ₜ {z : Plane // z ≠ (0, 0)},\n      (∀ z : {z : Plane // z ≠ p},\n        (c z).val =\n          ((z.val.1 - p.1) / ((z.val.1 - p.1)^2 + (z.val.2 - p.2)^2),\n           -(z.val.2 - p.2) / ((z.val.1 - p.1)^2 + (z.val.2 - p.2)^2))) ∧\n      ∃ D' : Drawing J,\n        (∀ v, D'.point v = (c ⟨D.point v, by\n          intro heq\n          apply hp\n          exact heq ▸ (Or.inl (Set.mem_range_self v) : D.point v ∈ drawingTrace D)⟩).val) ∧\n        (∀ e t, D'.curve e t = (c ⟨D.curve e t, by\n          intro heq\n          apply hp\n          exact heq ▸ (Or.inr (Set.mem_iUnion.mpr ⟨e, Set.mem_range_self t⟩) :\n            D.curve e t ∈ drawingTrace D)⟩).val) ∧\n        let R' := restrictDrawing D' i hi hl hr\n        ∃ faces : Face R ≃ Face R',\n          (∀ G : Face R, ∀ z : {z : Plane // z ≠ p},\n            z.val ∈ faceRegion R G ↔ (c z).val ∈ faceRegion R' (faces G)) ∧\n          (∀ G : Face R, ∀ z : {z : Plane // z ≠ p},\n            z.val ∈ closure (faceRegion R G) ↔\n              (c z).val ∈ closure (faceRegion R' (faces G))) ∧\n          (∀ G : Face R, ∀ v : V, incident R v G ↔ incident R' v (faces G)) ∧\n          (∀ e : E, ∀ S : Set ArcParameter, ∀ t : ArcParameter,\n            D.curve e t ∈ closure (D.curve e '' S) ↔\n              D'.curve e t ∈ closure (D'.curve e '' S)) ∧\n          ¬Bornology.IsBounded (faceRegion R' (faces F))\n  )\n\nend FiniteAvalanches.External\n"
+        "sha256": "d50f115691aa6b6cf05cc6d05d361c4d8cc4aeea30ed77b3768599e772e7aab9",
+        "code_sha256": "a3aa71f37a8bece992553cbee805d2052061f923705a14e6da186e92305c2422",
+        "complete_file": "import FiniteAvalanches.Support.Plane.PuncturedTransport\nimport FiniteAvalanches.Electrical.Geometry.ConnectedDrawingQuotient\nimport FiniteAvalanches.Electrical.Geometry.BSST\n\nset_option autoImplicit false\n\nopen FiniteAvalanches.Electrical.StatementGeometry\nopen FiniteAvalanches.Electrical.Source (Plane drawingTrace)\nopen FiniteAvalanches.Electrical.BSST (Face faceRegion incident)\nopen FiniteAvalanches.Electrical.DrawingContraction (restrictDrawing)\n\nnamespace FiniteAvalanches.External\n\n/-- Punctured-plane inversion transports all copied curves and complement faces. -/\ntheorem plane_punctured_face_transport : (\n  ∀ {V E E₀ : Type} [Fintype V] [Fintype E] [Fintype E₀]\n    (J : CopiedGraph V E) (K : CopiedGraph V E₀) (D : Drawing J)\n    (i : E₀ → E) (hi : Function.Injective i)\n    (hl : ∀ e, J.left (i e) = K.left e)\n    (hr : ∀ e, J.right (i e) = K.right e)\n    (F : Face (restrictDrawing D i hi hl hr)),\n  let R := restrictDrawing D i hi hl hr\n  ∃ p : Plane, ∃ hp : p ∉ drawingTrace D,\n    p ∈ faceRegion R F ∧\n    ∃ c : {z : Plane // z ≠ p} ≃ₜ {z : Plane // z ≠ (0, 0)},\n      (∀ z : {z : Plane // z ≠ p},\n        (c z).val =\n          ((z.val.1 - p.1) / ((z.val.1 - p.1)^2 + (z.val.2 - p.2)^2),\n           -(z.val.2 - p.2) / ((z.val.1 - p.1)^2 + (z.val.2 - p.2)^2))) ∧\n      ∃ D' : Drawing J,\n        (∀ v, D'.point v = (c ⟨D.point v, by\n          intro heq\n          apply hp\n          exact heq ▸ (Or.inl (Set.mem_range_self v) : D.point v ∈ drawingTrace D)⟩).val) ∧\n        (∀ e t, D'.curve e t = (c ⟨D.curve e t, by\n          intro heq\n          apply hp\n          exact heq ▸ (Or.inr (Set.mem_iUnion.mpr ⟨e, Set.mem_range_self t⟩) :\n            D.curve e t ∈ drawingTrace D)⟩).val) ∧\n        let R' := restrictDrawing D' i hi hl hr\n        ∃ faces : Face R ≃ Face R',\n          (∀ G : Face R, ∀ z : {z : Plane // z ≠ p},\n            z.val ∈ faceRegion R G ↔ (c z).val ∈ faceRegion R' (faces G)) ∧\n          (∀ G : Face R, ∀ z : {z : Plane // z ≠ p},\n            z.val ∈ closure (faceRegion R G) ↔\n              (c z).val ∈ closure (faceRegion R' (faces G))) ∧\n          (∀ G : Face R, ∀ v : V, incident R v G ↔ incident R' v (faces G)) ∧\n          (∀ e : E, ∀ S : Set ArcParameter, ∀ t : ArcParameter,\n            D.curve e t ∈ closure (D.curve e '' S) ↔\n              D'.curve e t ∈ closure (D'.curve e '' S)) ∧\n          ¬Bornology.IsBounded (faceRegion R' (faces F))\n  ) := by\n  intro V E E₀ _ _ _ J K D i hi hl hr F\n  exact D.punctured_face_transport i hi hl hr F\n\nend FiniteAvalanches.External\n"
       },
       "sources": [
         {
@@ -3647,10 +3647,20 @@
           "path": "FiniteAvalanches/Electrical/Geometry/SourceRetainedPathBoundary.lean",
           "sha256": "fb4174eaf7f6c0e9cd7d3381621fc9dfc754a827b79aa237595c05031242e2d4",
           "code_sha256": "1d715a4310ecc96e44682fe66981a3a48d25cbc8c22da7f199d92cc42a027eb0"
+        },
+        {
+          "path": "FiniteAvalanches/Support/Plane/FinitePointComplement.lean",
+          "sha256": "7c63ae36c27b89f0638714e2f3f3a8e372068bf598a38b3832935988b05f8de8",
+          "code_sha256": "e508749730f58bebe46ead17948c1cfeeec3974bc42fa3fb391fc86da22871a3"
+        },
+        {
+          "path": "FiniteAvalanches/Support/Plane/PuncturedTransport.lean",
+          "sha256": "47607564e261597b8aa8bb5b85f6a247c2e75158b7a47e415a7c4a6abe3655c5",
+          "code_sha256": "bb6dbde37da1618cb3ae1b8b99ae61846ea4ec5c2d32401af97edb32935e8ca3"
         }
       ],
       "used_by_main": true,
-      "final_current_source_and_consumption_review": "PASS_AUDITED_EXTERNAL_ASSUMPTION"
+      "final_current_source_and_consumption_review": "STATEMENT_REVIEWED_AS_EXTERNAL_ASSUMPTION"
     },
     {
       "id": "external:plane-edge-chart-incidence:v1",
@@ -4805,14 +4815,14 @@
     },
     {
       "id": "external:plane-punctured-chart-face-transport:v1",
-      "state": "EXTERNAL_ASSUMPTION",
+      "state": "PROVED",
       "kind": "STANDARD",
       "declaration": {
         "path": "FiniteAvalanches/External/PlanePuncturedChartFaceTransport.lean",
         "export": "FiniteAvalanches.External.plane_punctured_chart_face_transport",
-        "sha256": "41af63b35eeb45f6f661a7cfb372e6cd98e45f86bd9a30406612caebd0110af2",
-        "code_sha256": "1885fe02f5ddb5658f3db8ceb8bcd5a85a0bd725acf31387ee2359e30b266fc5",
-        "complete_file": "import FiniteAvalanches.Electrical.Geometry.BSST\n\nset_option autoImplicit false\n\nopen FiniteAvalanches.Electrical.StatementGeometry\nopen FiniteAvalanches.Electrical.Source (Plane drawingTrace EdgeChart)\nopen FiniteAvalanches.Electrical.BSST (Face faceRegion negativeChartFace positiveChartFace)\n\nnamespace FiniteAvalanches.External\n\n/-- Explicit holomorphic puncture transport preserves both actual oriented chart faces. -/\naxiom plane_punctured_chart_face_transport : (∀ {V E : Type} [Fintype V] [Fintype E]\n    (J : CopiedGraph V E) (Q : Drawing J)\n    (p : Plane) (hp : p ∉ drawingTrace Q)\n    (c : {z : Plane // z ≠ p} ≃ₜ {z : Plane // z ≠ (0, 0)})\n    (_hformula : ∀ z : {z : Plane // z ≠ p},\n      (c z).val =\n        ((z.val.1 - p.1) / ((z.val.1 - p.1)^2 + (z.val.2 - p.2)^2),\n         -(z.val.2 - p.2) / ((z.val.1 - p.1)^2 + (z.val.2 - p.2)^2)))\n    (Q' : Drawing J)\n    (_hcurve : ∀ e t, Q'.curve e t = (c ⟨Q.curve e t, by\n      intro heq\n      apply hp\n      exact heq ▸ (Or.inr (Set.mem_iUnion.mpr ⟨e, Set.mem_range_self t⟩) :\n        Q.curve e t ∈ drawingTrace Q)⟩).val)\n    (faces : Face Q ≃ Face Q')\n    (_hregion : ∀ F : Face Q, ∀ z : {z : Plane // z ≠ p},\n      z.val ∈ faceRegion Q F ↔ (c z).val ∈ faceRegion Q' (faces F))\n    (e : E) (original : EdgeChart Q e) (transported : EdgeChart Q' e),\n    faces (negativeChartFace Q e original) = negativeChartFace Q' e transported ∧\n    faces (positiveChartFace Q e original) = positiveChartFace Q' e transported)\n\nend FiniteAvalanches.External\n"
+        "sha256": "56782650ff71c88d8c7a328c39caa0c8788a1e79a6504d1c55da9985cde3ba05",
+        "code_sha256": "2c5eadbaf844e67d8079c0e97316366a2d4a1a05b8e84fdc8ebcd151a5a2f49e",
+        "complete_file": "import FiniteAvalanches.Support.Plane.ChartFaceTransport\nimport FiniteAvalanches.Electrical.Geometry.BSST\n\nset_option autoImplicit false\n\nopen FiniteAvalanches.Electrical.StatementGeometry\nopen FiniteAvalanches.Electrical.Source (Plane drawingTrace EdgeChart)\nopen FiniteAvalanches.Electrical.BSST (Face faceRegion negativeChartFace positiveChartFace)\n\nnamespace FiniteAvalanches.External\n\n/-- Explicit holomorphic puncture transport preserves both actual oriented chart faces. -/\ntheorem plane_punctured_chart_face_transport : (∀ {V E : Type} [Fintype V] [Fintype E]\n    (J : CopiedGraph V E) (Q : Drawing J)\n    (p : Plane) (hp : p ∉ drawingTrace Q)\n    (c : {z : Plane // z ≠ p} ≃ₜ {z : Plane // z ≠ (0, 0)})\n    (_hformula : ∀ z : {z : Plane // z ≠ p},\n      (c z).val =\n        ((z.val.1 - p.1) / ((z.val.1 - p.1)^2 + (z.val.2 - p.2)^2),\n         -(z.val.2 - p.2) / ((z.val.1 - p.1)^2 + (z.val.2 - p.2)^2)))\n    (Q' : Drawing J)\n    (_hcurve : ∀ e t, Q'.curve e t = (c ⟨Q.curve e t, by\n      intro heq\n      apply hp\n      exact heq ▸ (Or.inr (Set.mem_iUnion.mpr ⟨e, Set.mem_range_self t⟩) :\n        Q.curve e t ∈ drawingTrace Q)⟩).val)\n    (faces : Face Q ≃ Face Q')\n    (_hregion : ∀ F : Face Q, ∀ z : {z : Plane // z ≠ p},\n      z.val ∈ faceRegion Q F ↔ (c z).val ∈ faceRegion Q' (faces F))\n    (e : E) (original : EdgeChart Q e) (transported : EdgeChart Q' e),\n    faces (negativeChartFace Q e original) = negativeChartFace Q' e transported ∧\n    faces (positiveChartFace Q e original) = positiveChartFace Q' e transported) := by\n  intro V E _ _ J Q p hp c hformula Q' hcurve faces hregion e original transported\n  exact Q.punctured_chart_face_transport Q' hp c hformula hcurve faces hregion e original transported\n\nend FiniteAvalanches.External\n"
       },
       "sources": [
         {
@@ -4838,10 +4848,40 @@
           "path": "FiniteAvalanches/Electrical/Geometry/OrientedDrawing.lean",
           "sha256": "e35be4510b6e6c66759cbfe0816114389ae9a588152d734dcedd2c002b587113",
           "code_sha256": "d9608c9e0228a58bf8ea338178891db77ac7c0660f4b556e13058a9d57359f4b"
+        },
+        {
+          "path": "FiniteAvalanches/Support/Plane/FinitePointComplement.lean",
+          "sha256": "7c63ae36c27b89f0638714e2f3f3a8e372068bf598a38b3832935988b05f8de8",
+          "code_sha256": "e508749730f58bebe46ead17948c1cfeeec3974bc42fa3fb391fc86da22871a3"
+        },
+        {
+          "path": "FiniteAvalanches/Support/Plane/PuncturedTransport.lean",
+          "sha256": "47607564e261597b8aa8bb5b85f6a247c2e75158b7a47e415a7c4a6abe3655c5",
+          "code_sha256": "bb6dbde37da1618cb3ae1b8b99ae61846ea4ec5c2d32401af97edb32935e8ca3"
+        },
+        {
+          "path": "FiniteAvalanches/Support/Plane/TopoDegree.lean",
+          "sha256": "6f089aa05be25b0ede406fbc44461b3b39d18e2edffa16844287b56ed50315f9",
+          "code_sha256": "50332139178e32f6fd839bda7c7d7f9f1f91fcbfe3b93fb3cb066d8b0e631002"
+        },
+        {
+          "path": "FiniteAvalanches/Support/Plane/ChartOrientation.lean",
+          "sha256": "8dd37740eb80ca0da6725c0462ed8d6d72efc0a1eaafebed1aee5ee7f23ac73a",
+          "code_sha256": "e1a9e19d90f78cfa5e28d4e7af3efc1b52421e1f918f017300f9907cfd845aed"
+        },
+        {
+          "path": "FiniteAvalanches/Support/Plane/LocalFaceIncidence.lean",
+          "sha256": "bc0d9d7a1249f4ff642e7a3cb8a659ffe30d4c2a77f14e06e874574f29abd413",
+          "code_sha256": "1615e7a28e4cff72bea0d64570348ec483e28713792f525f2f3d7f560b5766d4"
+        },
+        {
+          "path": "FiniteAvalanches/Support/Plane/ChartFaceTransport.lean",
+          "sha256": "fc0c5a0c1363c5692135f1622dd652d8890769aced690d25c8e9850de6d13010",
+          "code_sha256": "dc6a66c93b428d475c0c964b03feadff23d73c11e6c40acd82f384f1f7b69683"
         }
       ],
       "used_by_main": true,
-      "final_current_source_and_consumption_review": "PASS_AUDITED_EXTERNAL_ASSUMPTION"
+      "final_current_source_and_consumption_review": "STATEMENT_REVIEWED_AS_EXTERNAL_ASSUMPTION"
     }
   ]
 }
