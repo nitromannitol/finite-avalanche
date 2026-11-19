@@ -46,4 +46,53 @@ theorem crossing_arms_inter_subset_of_ne_face {V E : Type}
       have hzfacej : z ∈ faceRegion D (dualSideFace D charts j) := ht ▸ hface j t ht1
       exact (Set.disjoint_left.mp (faceRegion_disjoint D hne) hzfacei hzfacej).elim
 
+/-- Facewise separation of parametrized crossing arms yields the geometric dual. -/
+theorem exists_geometric_dual_of_facewise_separated_arms {V E : Type}
+    [Fintype V] [Fintype E] [Nonempty E] {J : CopiedGraph V E}
+    (D : Drawing J) [Fintype (Face D)] (charts : ∀ e, EdgeChart D e)
+    (hconn : (supportGraph J.left J.right).Preconnected)
+    (point : Face D → Plane) (hpoint : Function.Injective point)
+    (hpointface : ∀ F, point F ∈ faceRegion D F) (crossing : E → Plane)
+    (arm : ∀ i : E × Bool, Path (point (dualSideFace D charts i)) (crossing i.1))
+    (harm : ∀ i, Function.Injective (arm i))
+    (havoid : ∀ i t, t ≠ 0 → arm i t ∉ range point)
+    (hface : ∀ i t, t ≠ 1 → arm i t ∈ faceRegion D (dualSideFace D charts i))
+    (hcross : ∀ e f s, D.curve f s = crossing e ↔ f = e ∧ s.val = 1 / 2)
+    (radius : E → ℝ) (hradius : ∀ e, 0 < radius e)
+    (hchart : ∀ i t, 1 - 2 * radius i.1 < t.val →
+      (charts i.1).chart.map (arm i t) =
+        if i.2 then (1 / 2, (1 - t.val) / 2) else (1 / 2, (t.val - 1) / 2))
+    (hseparate : ∀ i j, i ≠ j → dualSideFace D charts i = dualSideFace D charts j →
+      range (arm i) ∩ range (arm j) ⊆
+        {z | z = point (dualSideFace D charts i)} ∪
+        {z | z = crossing i.1 ∧ i.1 = j.1}) :
+    let J' : CopiedGraph (Face D) E :=
+      ⟨fun e => negativeChartFace D e (charts e), fun e => positiveChartFace D e (charts e)⟩
+    ∃ D' : Drawing J', ∃ dualCharts : ∀ e, EdgeChart D' e,
+      ∃ vertexFace : V ≃ Face D',
+      (∀ F, D'.point F ∈ faceRegion D F) ∧
+      (∀ v, D.point v ∈ faceRegion D' (vertexFace v)) ∧
+      (∀ e f s t, D.curve e s = D'.curve f t ↔
+        e = f ∧ s.val = 1 / 2 ∧ t.val = 1 / 2) ∧
+      (∀ e t, (t.val < 1 / 2 → D'.curve e t ∈ faceRegion D (J'.left e)) ∧
+        (1 / 2 < t.val → D'.curve e t ∈ faceRegion D (J'.right e))) ∧
+      (∀ e, ∃ r : ℝ, 0 < r ∧ r < (charts e).radius ∧
+        ∀ t, |t.val - 1 / 2| < r →
+          (charts e).chart.map (D'.curve e t) = (1 / 2, t.val - 1 / 2)) ∧
+      (∀ e, positiveChartFace D' e (dualCharts e) = vertexFace (J.left e) ∧
+        negativeChartFace D' e (dualCharts e) = vertexFace (J.right e)) := by
+  refine exists_geometric_dual_of_separated_arms D charts hconn point hpoint hpointface
+    crossing arm harm ?_ havoid hface hcross radius hradius ?_ ?_
+  · intro i j hij z hz
+    by_cases hsame : dualSideFace D charts i = dualSideFace D charts j
+    · rcases hseparate i j hij hsame hz with h | h
+      · exact Or.inl ⟨h, hsame⟩
+      · exact Or.inr h
+    · exact Or.inr (crossing_arms_inter_subset_of_ne_face D charts point crossing arm
+        hface hcross hsame hz)
+  · intro e t ht
+    exact hchart (e, false) t ht
+  · intro e t ht
+    exact hchart (e, true) t ht
+
 end FiniteAvalanches.Electrical.StatementGeometry
