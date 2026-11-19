@@ -126,6 +126,6 @@ theorem path_trans_subpath_reparam_terminal {X : Type*} [TopologicalSpace X]
   have hden : (1 : ℝ) - ((u : ℝ) + 1) / 2 = (1 - (u : ℝ)) / 2 := by ring
   rw [hden]
   field_simp [hne]
-  <;> ring
+  ring
 
 end FiniteAvalanches.Electrical.StatementGeometry
