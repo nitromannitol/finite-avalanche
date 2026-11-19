@@ -1,4 +1,5 @@
 import FiniteAvalanches.External.ColoredWilson
+import FiniteAvalanches.Wilson.Lattice.SamplerTermination
 
 /-! The source law is selected only after the full unique-existence declaration.
 All results are relative to that registered standard input. -/
@@ -48,18 +49,16 @@ theorem wilsonColorLaw_apply_sampler (R : RootPair) (L : List (Site 2)) (D : Fin
   simpa only [jointEvent, samplerEvent, Finset.notMem_empty, IsEmpty.forall_iff,
     implies_true, forall_const, true_and, Set.preimage_setOf_eq] using h
 
-/-- Termination is DERIVED from the empty observation of the full joint law, not a premise. -/
-theorem wilson_sampler_success_mass_one (R : RootPair) (L : List (Site 2)) :
-    wilsonRows {ξ | ∃ st, samplerRun (initialSampler R) L ξ = some st} = 1 := by
-  have h := (wilsonLaw_isWilsonLaw R).2 L ∅ ∅ (fun _ => false) (fun _ => true) (by simp) (by simp)
-  simpa [jointEvent, samplerEvent] using h.symm
-
-/-- Actual almost-everywhere success: open-event measurability is proved above,
-so this is stronger than an unqualified outer-measure-one assertion. -/
+/-- Every finite Wilson exploration succeeds almost surely. -/
 theorem wilson_sampler_success_conull (R : RootPair) (L : List (Site 2)) :
     ∀ᵐ ξ ∂wilsonRows, ∃ st, samplerRun (initialSampler R) L ξ = some st :=
-  (mem_ae_iff_prob_eq_one (measurableSet_sampler_success (initialSampler R) L)).mpr
-    (wilson_sampler_success_mass_one R L)
+  samplerRun_ae_success R L
+
+/-- Every finite Wilson exploration has success probability one. -/
+theorem wilson_sampler_success_mass_one (R : RootPair) (L : List (Site 2)) :
+    wilsonRows {ξ | ∃ st, samplerRun (initialSampler R) L ξ = some st} = 1 :=
+  (mem_ae_iff_prob_eq_one (measurableSet_sampler_success (initialSampler R) L)).mp
+    (wilson_sampler_success_conull R L)
 
 /-- Every original root, not only the queried ones, has its source color. -/
 theorem wilsonLaw_ae_root_colors (R : RootPair) :
