@@ -1,5 +1,6 @@
 import FiniteAvalanches.External.ColoredWilson
 import FiniteAvalanches.Wilson.Lattice.SamplerTermination
+import FiniteAvalanches.Wilson.Lattice.LawUniqueness
 
 /-! The source law is selected only after the full unique-existence declaration.
 All results are relative to that registered standard input. -/
@@ -19,7 +20,7 @@ theorem wilsonLaw_isWilsonLaw (R : RootPair) : IsWilsonLaw R (wilsonLaw R) :=
 
 theorem wilsonLaw_unique (R : RootPair) {ν : ProbabilityMeasure ForestField}
     (h : IsWilsonLaw R ν) : ν = wilsonLaw R :=
-  (FiniteAvalanches.External.wilson_two_color_law_existsUnique R).1.unique h (wilsonLaw_isWilsonLaw R)
+  isWilsonLaw_unique R h (wilsonLaw_isWilsonLaw R)
 
 theorem finiteForestProbability_tendsto (R : RootPair) :
     Filter.Tendsto (finiteForestProbability R) Filter.atTop (nhds (wilsonLaw R)) :=
