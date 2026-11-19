@@ -108,5 +108,18 @@ theorem terminal_mono_roots (R S : Set V) (head : (v : V) → A v → V)
   exact ⟨hc.nonempty, fun v hv hr => hc.avoids_roots v hv (hRS hr),
     hc.maps_to, hc.reachable⟩
 
+
+/-- A legal run for a larger root set is legal for every smaller root set. -/
+theorem pop_run_of_larger_roots (R S : Set V) (head : (v : V) → A v → V)
+    (σ : Stacks A) (hRS : R ⊆ S) {k l : Cursor V}
+    (hrun : Relation.ReflTransGen (pop_step S head σ) k l) :
+    Relation.ReflTransGen (pop_step R head σ) k l := by
+  induction hrun with
+  | refl => exact .refl
+  | @tail m l hkm hml ih =>
+    obtain ⟨c, hc, rfl⟩ := hml
+    exact ih.tail ⟨c, ⟨hc.nonempty, fun v hv hr => hc.avoids_roots v hv (hRS hr),
+      hc.maps_to, hc.reachable⟩, rfl⟩
+
 end
 end FiniteAvalanches.Wilson.CyclePopping
