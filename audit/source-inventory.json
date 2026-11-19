@@ -236,12 +236,6 @@
       "bytes": 3670
     },
     {
-      "path": "FiniteAvalanches.lean",
-      "sha256": "bd9a04e25f33f72933d4a31d95e098e28e83e07429af75c4469964beb3ef6291",
-      "code_sha256": "bd9a04e25f33f72933d4a31d95e098e28e83e07429af75c4469964beb3ef6291",
-      "bytes": 9780
-    },
-    {
       "path": "FiniteAvalanches/Electrical/ChordSplit/AllEdgeQuotient.lean",
       "sha256": "c1d1e4f9dfdd0a8f6a0a712b8963373e79aea7ac3d0250d1cfb0f98c64be2a98",
       "code_sha256": "16c0b36fcfe89040538d30b2697133cb9bdd5bd7230a1321008aa195bcdaa87c",
@@ -2013,9 +2007,9 @@
     },
     {
       "path": "FiniteAvalanches/External/PlaneTreeComplement.lean",
-      "sha256": "7dc8760a826d0e2841dcfae6f16e2a6c2116a0f983562a89cb04217125f6500b",
-      "code_sha256": "4ab2a91ddab4e3ca78b8008b01b9a65172cf57877d6b7a5fd162eea80d71a5ed",
-      "bytes": 1886
+      "sha256": "fab7990207abc55cf5727722b36a61613cf134145bf833e1cd683c5b8b871c4f",
+      "code_sha256": "470bc39f4e50ee03f3cc5a586f176a757ba9682ef821e07e07a9eec02b2e2826",
+      "bytes": 2486
     },
     {
       "path": "FiniteAvalanches/External/PlaneVertexFaceStar.lean",
@@ -3840,6 +3834,24 @@
       "sha256": "87cc21bfd77e4a6b1e6b83f0eb11cc5314c3ee8d4abc26b2bc2b8d959e6e5ac0",
       "code_sha256": "e964dcc437d9554cce23a32bfc0e43113bb495598a43a6c21e38bcd45f1bf97c",
       "bytes": 4206
+    },
+    {
+      "path": "FiniteAvalanches/Support/Plane/SelectedDrawing.lean",
+      "sha256": "5732cd1e58acc0facb757031ff66c2e9338ea531fa8e2d1a783713e13be72fdb",
+      "code_sha256": "3cdef6bfb54223656101927345613008ef469f5da0a7d7286b7d9cd3a69dda00",
+      "bytes": 5480
+    },
+    {
+      "path": "FiniteAvalanches/Support/Plane/SelectedGraph.lean",
+      "sha256": "0d11341767a14d0ff15733381f350bd20b3005a93620595793acfd8d8173a4d5",
+      "code_sha256": "e44bda3e7607c39683339ec3934172db47da8799cc8f0bab15ca258ee49d6ae3",
+      "bytes": 2050
+    },
+    {
+      "path": "FiniteAvalanches/Support/Plane/SelectedSimplePath.lean",
+      "sha256": "e89098a84460d93ceb8f06d96ccddf0cbcd185e82f25774cf5bdde9c933fd719",
+      "code_sha256": "e4cc94ad34987ea938b7e9d2a87f915ec15e66034105cd43a850a5ede0dae56a",
+      "bytes": 3422
     },
     {
       "path": "FiniteAvalanches/Support/Plane/SimplePathDuality.lean",
@@ -6242,6 +6254,12 @@
       "bytes": 3940
     },
     {
+      "path": "FiniteAvalanches.lean",
+      "sha256": "bd9a04e25f33f72933d4a31d95e098e28e83e07429af75c4469964beb3ef6291",
+      "code_sha256": "bd9a04e25f33f72933d4a31d95e098e28e83e07429af75c4469964beb3ef6291",
+      "bytes": 9780
+    },
+    {
       "path": "FiniteAvalanchesCurrent/ArcMomentExpectations.lean",
       "sha256": "6ba682bb31a9010794074fd520963aa5bbd7ec0b5bae6df3efc0bae70ec68081",
       "code_sha256": "d1f1b2d4e334429dca0a2a2c365e0c75ab3ef9f0114d7c0fc4b89ceb06486108",
@@ -6428,7 +6446,6 @@
     "FiniteAvalanches.External.SandpileLimit.exists_infiniteVolumeLaw",
     "FiniteAvalanches.External.finite_plane_dual_bond_cycle",
     "FiniteAvalanches.External.finite_plane_geometric_dual",
-    "FiniteAvalanches.External.finite_plane_tree_complement",
     "FiniteAvalanches.External.finite_plane_two_pole_topology",
     "FiniteAvalanches.External.kenyonWilson_pairingGroves_resistanceMinor",
     "FiniteAvalanches.External.lawler_limic_beurling_srw_Z2",
@@ -6542,18 +6559,19 @@
   "primitive_only_exports": [
     "FiniteAvalanches.External.ProvedConsumers.polya_exact_type",
     "FiniteAvalanches.External.ProvedConsumers.voltage_exact_type",
+    "FiniteAvalanches.External.allMinors_matrixTree",
+    "FiniteAvalanches.External.disk_alternation_impossible",
+    "FiniteAvalanches.External.finite_plane_dual_connected",
+    "FiniteAvalanches.External.finite_plane_tree_complement",
     "FiniteAvalanches.External.kirchhoff_meanTreePathCurrent",
+    "FiniteAvalanches.External.lyons_nestedProjectionDomination",
+    "FiniteAvalanches.External.plane_edge_chart_incidence",
+    "FiniteAvalanches.External.plane_punctured_chart_face_transport",
+    "FiniteAvalanches.External.plane_punctured_face_transport",
     "FiniteAvalanches.External.polya_square_lattice_hits_every_site",
     "FiniteAvalanches.External.wired_srw_firstHit_voltage",
     "FiniteAvalanches.ProvedStandards.polya_square_lattice_hits_every_site",
-    "FiniteAvalanches.WiredHitting.wired_srw_firstHit_voltage",
-    "FiniteAvalanches.External.allMinors_matrixTree",
-    "FiniteAvalanches.External.lyons_nestedProjectionDomination",
-    "FiniteAvalanches.External.disk_alternation_impossible",
-    "FiniteAvalanches.External.plane_punctured_face_transport",
-    "FiniteAvalanches.External.plane_punctured_chart_face_transport",
-    "FiniteAvalanches.External.finite_plane_dual_connected",
-    "FiniteAvalanches.External.plane_edge_chart_incidence"
+    "FiniteAvalanches.WiredHitting.wired_srw_firstHit_voltage"
   ],
   "production_import_roots": [
     "Checks.AdditiveApplications",
@@ -6935,8 +6953,8 @@
     },
     {
       "path": "audit/trusted-inputs.json",
-      "sha256": "4d0f7f6102f3032ba741682ad53d4fff0297303aad7b785d6000bf7fe6a7f190",
-      "bytes": 288454
+      "sha256": "a8ee8bb7aad2b56ed5443e465799424855a1c2916eb8d2ea5d65a93d9df56034",
+      "bytes": 425046
     },
     {
       "path": "lake-manifest.json",
