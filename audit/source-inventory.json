@@ -3692,10 +3692,22 @@
       "bytes": 19373
     },
     {
+      "path": "FiniteAvalanches/Support/Plane/CrossingBoundaryAccess.lean",
+      "sha256": "86a3a2b1fa7c647819daee00da88f143f0459cd535507eb5ea276ecfc59aaaf2",
+      "code_sha256": "0eb7ae98b833f1298ebad58a157982ca638172fc81c7861713c3b3630a8ba9df",
+      "bytes": 8271
+    },
+    {
       "path": "FiniteAvalanches/Support/Plane/CrossingDrawing.lean",
       "sha256": "fe53458ae74596cbbfc01d1c92af9965d7cf5f1110c38deee4f28580f183ab82",
       "code_sha256": "c4b1e65a1e77d2c072ff00268ab42563c9551054a7f653b03716f07e4a03079c",
       "bytes": 5872
+    },
+    {
+      "path": "FiniteAvalanches/Support/Plane/CrossingStubs.lean",
+      "sha256": "c4ad1bdcc732217bd06f506932b1a489cadf21fde8f90c3360343dff038336c6",
+      "code_sha256": "354cbb0635cd503eb0d13eb2474876a092368ae32678bd3eeac0eae307e2bb53",
+      "bytes": 4344
     },
     {
       "path": "FiniteAvalanches/Support/Plane/DeletedDualConnectivity.lean",
@@ -3732,6 +3744,12 @@
       "sha256": "3dc178616da82f605d34ee8cb78bdc825a0a7e6491585a330d54fa542868c300",
       "code_sha256": "3f406a21a113fe9c7bf2b63dcecc352fbba256bcf16ffde6d3a18a0ad037b9f1",
       "bytes": 7458
+    },
+    {
+      "path": "FiniteAvalanches/Support/Plane/DualDrawingFromArms.lean",
+      "sha256": "0966fbffd618ae249c4a66dd3341d43836910dd35946e78c362ceb5496632278",
+      "code_sha256": "09eb02c15b3f367df54164ff0fd44b736e32e05ca44ab8432c08d81f0d7153a3",
+      "bytes": 5390
     },
     {
       "path": "FiniteAvalanches/Support/Plane/DualDrawingFromPaths.lean",
@@ -3830,6 +3848,12 @@
       "bytes": 13636
     },
     {
+      "path": "FiniteAvalanches/Support/Plane/ParametrizedBoundaryAccess.lean",
+      "sha256": "bcd71355d0fc31429c7293ce357b07d687ad8c4017b53ef8e0d7e6b49a661fd3",
+      "code_sha256": "9a13b146ee719f67f9f93a5bd2d2976355852bf9651269e6900671396882fac4",
+      "bytes": 5138
+    },
+    {
       "path": "FiniteAvalanches/Support/Plane/PathEdgeIncidence.lean",
       "sha256": "dc6a1b002193a03e19c6512b9adb3abdb1c9bcf59f9fc4ff060475e9d022c241",
       "code_sha256": "10b485c7b752b3a26d94c3c231c59c21dfb4cd9ef229e542d942d6ead5308bc7",
@@ -3894,6 +3918,12 @@
       "sha256": "5e17f3fbbfcea6a7d676e1215ec993b1783232e8307a45ffaf0c89617a6e7504",
       "code_sha256": "0e611bb2fc129a3ec9539b2c44724f5ee474a2deaddea8bdeeaed97148cec280",
       "bytes": 4491
+    },
+    {
+      "path": "FiniteAvalanches/Support/Plane/TerminalReparam.lean",
+      "sha256": "7aebf09cddcd537a1f740fd770f31eccc9235626fc80038974667b4e8f9524df",
+      "code_sha256": "6b0d2a373149db116a3044f6c29e461aea71ca28914a9062a5f10107cc50ff10",
+      "bytes": 5002
     },
     {
       "path": "FiniteAvalanches/Support/Plane/ThreeCompactSeparation.lean",
@@ -6719,9 +6749,12 @@
     "FiniteAvalanches.Support.Plane.ArcStraightHomeomorph",
     "FiniteAvalanches.Support.Plane.BoundaryArcJoin",
     "FiniteAvalanches.Support.Plane.CopiedTreeCardinality",
+    "FiniteAvalanches.Support.Plane.CrossingBoundaryAccess",
+    "FiniteAvalanches.Support.Plane.CrossingStubs",
     "FiniteAvalanches.Support.Plane.DeletedDualConnectivity",
     "FiniteAvalanches.Support.Plane.DeletedEdgeFaces",
     "FiniteAvalanches.Support.Plane.DualConnectedIncidence",
+    "FiniteAvalanches.Support.Plane.DualDrawingFromArms",
     "FiniteAvalanches.Support.Plane.DualDrawingFromPaths",
     "FiniteAvalanches.Support.Plane.DualFaceCoverage",
     "FiniteAvalanches.Support.Plane.DualVertexInjective",
@@ -6734,12 +6767,14 @@
     "FiniteAvalanches.Support.Plane.JordanDrawingFaces",
     "FiniteAvalanches.Support.Plane.JordanLoopExtension",
     "FiniteAvalanches.Support.Plane.LoopEdgeJordan",
+    "FiniteAvalanches.Support.Plane.ParametrizedBoundaryAccess",
     "FiniteAvalanches.Support.Plane.PathEdgeIncidence",
     "FiniteAvalanches.Support.Plane.ReachabilityPath",
     "FiniteAvalanches.Support.Plane.ReachabilityTrace",
     "FiniteAvalanches.Support.Plane.SimplePathDuality",
     "FiniteAvalanches.Support.Plane.StraightModel",
     "FiniteAvalanches.Support.Plane.SubarcCompletion",
+    "FiniteAvalanches.Support.Plane.TerminalReparam",
     "FiniteAvalanches.Support.Plane.ThreeCompactSeparation",
     "FiniteAvalanches.Support.Plane.TreeComplementReduction",
     "FiniteAvalanches.Support.Plane.TwoArcJordan",
