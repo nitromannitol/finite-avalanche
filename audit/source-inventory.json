@@ -3758,6 +3758,12 @@
       "bytes": 3876
     },
     {
+      "path": "FiniteAvalanches/Support/Plane/FiniteFaceFrontier.lean",
+      "sha256": "38fd3226ec38a382ea5e2a9f57360ffdded5d0ccf48958f7ab4f081a1c023e1d",
+      "code_sha256": "c61f3edcecf44f5e8dd9574c07d6cdf67b073eb0a69494fb3220c8d747a25dde",
+      "bytes": 3001
+    },
+    {
       "path": "FiniteAvalanches/Support/Plane/FinitePointComplement.lean",
       "sha256": "7c63ae36c27b89f0638714e2f3f3a8e372068bf598a38b3832935988b05f8de8",
       "code_sha256": "e508749730f58bebe46ead17948c1cfeeec3974bc42fa3fb391fc86da22871a3",
@@ -3776,6 +3782,12 @@
       "bytes": 4765
     },
     {
+      "path": "FiniteAvalanches/Support/Plane/JordanDrawingFaces.lean",
+      "sha256": "0cec5f98608d081d64777b01f49f3ec540d069257e47b4706e1203edaa8d5919",
+      "code_sha256": "e1fc4e7a312653789e7787b74a77fae98ae3b0a5696d68893c2fca7d4f431791",
+      "bytes": 7270
+    },
+    {
       "path": "FiniteAvalanches/Support/Plane/JordanLoopExtension.lean",
       "sha256": "41ab8b0572918db24f34875ce8b3162a5b76d45bb538105ef8f3bb5632e20351",
       "code_sha256": "22419de017203fe77dd36a3e62c7368f7ee603dfc296f2f67963c8b691b7d35f",
@@ -3786,6 +3798,12 @@
       "sha256": "bc0d9d7a1249f4ff642e7a3cb8a659ffe30d4c2a77f14e06e874574f29abd413",
       "code_sha256": "1615e7a28e4cff72bea0d64570348ec483e28713792f525f2f3d7f560b5766d4",
       "bytes": 6991
+    },
+    {
+      "path": "FiniteAvalanches/Support/Plane/LoopEdgeJordan.lean",
+      "sha256": "3ae15b8bf9be08c776d74b2e23019f6c0a39d3d360f6c8da3ef2b8bf79c02e15",
+      "code_sha256": "1c94f7cfb7f4f53454df2e1e2c4b6aa6823b1aa17adda0107a55d1d2aec42b10",
+      "bytes": 2447
     },
     {
       "path": "FiniteAvalanches/Support/Plane/LoopPaths.lean",
@@ -3822,6 +3840,12 @@
       "sha256": "87cc21bfd77e4a6b1e6b83f0eb11cc5314c3ee8d4abc26b2bc2b8d959e6e5ac0",
       "code_sha256": "e964dcc437d9554cce23a32bfc0e43113bb495598a43a6c21e38bcd45f1bf97c",
       "bytes": 4206
+    },
+    {
+      "path": "FiniteAvalanches/Support/Plane/SimplePathDuality.lean",
+      "sha256": "da749ec82029d8801d8f4b1a26c622e2ccc1c1a69f0ab5c15c454cab4d2201f5",
+      "code_sha256": "f5b23a5317d8c4183911f9895b9f3ffa830f49fe7a3277c84bca047400b7eced",
+      "bytes": 4278
     },
     {
       "path": "FiniteAvalanches/Support/Plane/StraightModel.lean",
@@ -3882,6 +3906,12 @@
       "sha256": "a3b0d22cc75633965983a303c96eeaa326b12dd2f4f40333c71262b9c5f29aca",
       "code_sha256": "7a650622728fe7e7794d876e12d8e88561b354f529752ebfa253ff56aecde566",
       "bytes": 105402
+    },
+    {
+      "path": "FiniteAvalanches/Support/Plane/TwoArcJordan.lean",
+      "sha256": "35ace87a0c899869924badad4ee6f745d86b63338852f9aab373f0c385e8c46c",
+      "code_sha256": "e09565cda24af7f76679c6313fb48093cc0bc4aa6ea49a5def0371b1f5b6cf67",
+      "bytes": 2090
     },
     {
       "path": "FiniteAvalanches/Support/Schoenflies/Accessible.lean",
@@ -6660,15 +6690,20 @@
     "FiniteAvalanches.Support.Plane.EdgeFaceIncidence",
     "FiniteAvalanches.Support.Plane.EdgeNoPathFaces",
     "FiniteAvalanches.Support.Plane.EdgePathDualityReduction",
+    "FiniteAvalanches.Support.Plane.FiniteFaceFrontier",
     "FiniteAvalanches.Support.Plane.HalfOpenLocalStraightening",
+    "FiniteAvalanches.Support.Plane.JordanDrawingFaces",
     "FiniteAvalanches.Support.Plane.JordanLoopExtension",
+    "FiniteAvalanches.Support.Plane.LoopEdgeJordan",
     "FiniteAvalanches.Support.Plane.PathEdgeIncidence",
     "FiniteAvalanches.Support.Plane.ReachabilityPath",
     "FiniteAvalanches.Support.Plane.ReachabilityTrace",
+    "FiniteAvalanches.Support.Plane.SimplePathDuality",
     "FiniteAvalanches.Support.Plane.StraightModel",
     "FiniteAvalanches.Support.Plane.SubarcCompletion",
     "FiniteAvalanches.Support.Plane.ThreeCompactSeparation",
     "FiniteAvalanches.Support.Plane.TreeComplementReduction",
+    "FiniteAvalanches.Support.Plane.TwoArcJordan",
     "FiniteAvalanches.Support.Schoenflies.Accessible",
     "FiniteAvalanches.Support.Schoenflies.AccessibleJoin",
     "FiniteAvalanches.Support.Schoenflies.AlternatingCrosscuts",
