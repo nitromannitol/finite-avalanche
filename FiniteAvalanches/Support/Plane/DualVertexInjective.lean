@@ -58,4 +58,22 @@ theorem vertexFace_injective_of_dual_drawing {V E : Type} [Fintype V] [Fintype E
   exact ((Fintype.bijective_iff_surjective_and_card vertexFace).mpr
     ⟨vertexFace_surjective Q dualCharts vertexFace hinc, hcard⟩).1
 
+/-- The oriented incidences of a dual drawing determine a vertex-face equivalence. -/
+theorem exists_vertexFace_equiv_of_dual_drawing {V E : Type} [Fintype V] [Fintype E]
+    [Nonempty E] (J : CopiedGraph V E) (D : Drawing J)
+    (charts : ∀ e, EdgeChart D e) [Fintype (Face D)]
+    (hconn : (supportGraph J.left J.right).Preconnected)
+    (Q : Drawing (⟨fun e => negativeChartFace D e (charts e),
+      fun e => positiveChartFace D e (charts e)⟩ : CopiedGraph (Face D) E))
+    (dualCharts : ∀ e, EdgeChart Q e) (vertexFace : V → Face Q)
+    (hinc : ∀ e, positiveChartFace Q e (dualCharts e) = vertexFace (J.left e) ∧
+      negativeChartFace Q e (dualCharts e) = vertexFace (J.right e)) :
+    ∃ equiv : V ≃ Face Q, (∀ v, equiv v = vertexFace v) ∧
+      ∀ e, positiveChartFace Q e (dualCharts e) = equiv (J.left e) ∧
+        negativeChartFace Q e (dualCharts e) = equiv (J.right e) := by
+  let equiv := Equiv.ofBijective vertexFace
+    ⟨vertexFace_injective_of_dual_drawing J D charts hconn Q dualCharts vertexFace hinc,
+      vertexFace_surjective Q dualCharts vertexFace hinc⟩
+  exact ⟨equiv, fun _ => rfl, hinc⟩
+
 end FiniteAvalanches.Electrical.StatementGeometry
