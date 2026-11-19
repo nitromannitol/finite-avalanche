@@ -63,28 +63,22 @@ theorem exists_distinct_faces_at_jordan {V E : Type} [Fintype V] [Fintype E] [No
     exact H.injective he ▸ hx
   exact ⟨F, K, hne, hF', hK', hin, hout⟩
 
-/-- The chart sides of a loop remain distinct in every subdrawing that retains
-the whole loop. -/
-theorem loop_projected_chart_faces_ne {V E W F : Type}
+/-- A Jordan curve retained by a subdrawing and passing through an edge's
+midpoint separates the projected chart faces of that edge. -/
+theorem projected_chart_faces_ne_of_jordan {V E W F : Type}
     [Fintype V] [Fintype E] [Nonempty E] [Fintype W] [Fintype F]
     {G : CopiedGraph V E} {K : CopiedGraph W F} (D : Drawing G) (R : Drawing K)
     (htrace : drawingTrace R ⊆ drawingTrace D) (charts : ∀ e, EdgeChart D e)
-    (e : E) (hloop : G.left e = G.right e)
-    (hretain : ∀ t, D.curve e t ∈ drawingTrace R) :
+    (e : E) (C : Set Schoenflies.Plane) (hC : Schoenflies.IsSeparating C)
+    (hCR : C ⊆ euclideanPlaneHomeomorph '' drawingTrace R)
+    (hmC : euclideanPlaneHomeomorph (D.curve e ⟨1 / 2, by constructor <;> norm_num⟩) ∈ C) :
     faceProjection D R htrace (negativeChartFace D e (charts e)) ≠
       faceProjection D R htrace (positiveChartFace D e (charts e)) := by
   let H := euclideanPlaneHomeomorph
-  let C := H '' range (D.curve e)
   let m : ArcParameter := ⟨1 / 2, by constructor <;> norm_num⟩
-  have hCD : C ⊆ H '' drawingTrace D := by
-    rintro _ ⟨x, ⟨t, rfl⟩, rfl⟩
-    exact ⟨D.curve e t, htrace (hretain t), rfl⟩
-  have hCR : C ⊆ H '' drawingTrace R := by
-    rintro _ ⟨x, ⟨t, rfl⟩, rfl⟩
-    exact ⟨D.curve e t, hretain t, rfl⟩
-  have hmC : H (D.curve e m) ∈ C := ⟨_, ⟨m, rfl⟩, rfl⟩
+  have hCD : C ⊆ H '' drawingTrace D := hCR.trans (image_mono htrace)
   obtain ⟨A, B, hAB, hAm, hBm, hin, hout⟩ :=
-    exists_distinct_faces_at_jordan D charts C (D.loop_isSeparating e hloop) hCD hmC
+    exists_distinct_faces_at_jordan D charts C hC hCD hmC
   have hA := (mem_closure_faceRegion_iff_chart_face D e (charts e) A m
     (by simpa [m] using (charts e).radius_pos)).mp hAm
   have hB := (mem_closure_faceRegion_iff_chart_face D e (charts e) B m
@@ -113,6 +107,22 @@ theorem loop_projected_chart_faces_ne {V E W F : Type}
   · rw [hA, hB]; exact heq.symm
   · rw [hA, hB]; exact heq
   · rw [hA, hB]
+
+/-- The chart sides of a loop remain distinct in every subdrawing that retains
+the whole loop. -/
+theorem loop_projected_chart_faces_ne {V E W F : Type}
+    [Fintype V] [Fintype E] [Nonempty E] [Fintype W] [Fintype F]
+    {G : CopiedGraph V E} {K : CopiedGraph W F} (D : Drawing G) (R : Drawing K)
+    (htrace : drawingTrace R ⊆ drawingTrace D) (charts : ∀ e, EdgeChart D e)
+    (e : E) (hloop : G.left e = G.right e)
+    (hretain : ∀ t, D.curve e t ∈ drawingTrace R) :
+    faceProjection D R htrace (negativeChartFace D e (charts e)) ≠
+      faceProjection D R htrace (positiveChartFace D e (charts e)) := by
+  apply projected_chart_faces_ne_of_jordan D R htrace charts e
+    (euclideanPlaneHomeomorph '' range (D.curve e)) (D.loop_isSeparating e hloop)
+  · rintro _ ⟨x, ⟨t, rfl⟩, rfl⟩
+    exact ⟨D.curve e t, hretain t, rfl⟩
+  · exact ⟨_, ⟨⟨1 / 2, by constructor <;> norm_num⟩, rfl⟩, rfl⟩
 
 /-- Edge-path duality holds for a loop edge. -/
 theorem edge_path_duality_of_loop {V E : Type} [Fintype V] [Fintype E] [Nonempty E]
