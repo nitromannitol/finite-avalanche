@@ -12,7 +12,7 @@ open scoped Classical
 
 noncomputable section
 
-variable {V E : Type*} [Fintype V] [Fintype E] [DecidableEq E]
+variable {V E : Type*} [Fintype V] [Fintype E]
 
 /-- A finite initial orbit segment avoiding the roots is a copied-edge walk. -/
 theorem reaches_iterate_before_root (G : Multigraph V E) (F : Finset E)

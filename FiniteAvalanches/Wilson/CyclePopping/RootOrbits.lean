@@ -27,9 +27,9 @@ theorem firstRoot_of_mem (R : Set V) (f : V → V) (h : ∀ v, ∃ n, f^[n] v �
   have hn : Nat.find (h v) = 0 := Nat.eq_zero_of_le_zero (Nat.find_min' (h v) hv)
   simp only [firstRoot, hn, Function.iterate_zero, id_eq]
 
-/-- At a nonroot, the first visited root is unchanged by following one arrow. -/
-theorem firstRoot_succ (R : Set V) (f : V → V) (h : ∀ v, ∃ n, f^[n] v ∈ R)
-    {v : V} (hv : v ∉ R) : firstRoot R f h v = firstRoot R f h (f v) := by
+/-- Following a nonroot arrow decreases the first-root hitting time by one. -/
+theorem firstRootTime_succ (R : Set V) (f : V → V) (h : ∀ v, ∃ n, f^[n] v ∈ R)
+    {v : V} (hv : v ∉ R) : Nat.find (h (f v)) + 1 = Nat.find (h v) := by
   let n := Nat.find (h v)
   let m := Nat.find (h (f v))
   have hn : 0 < n := by
@@ -56,9 +56,27 @@ theorem firstRoot_succ (R : Set V) (f : V → V) (h : ∀ v, ∃ n, f^[n] v ∈ 
     apply hmiss
     rw [Function.iterate_succ_apply]
     exact Nat.find_spec (h (f v))
-  have he : m + 1 = n := Nat.le_antisymm hmle hnle
-  change f^[n] v = f^[m] (f v)
-  rw [← he, Function.iterate_succ_apply]
+  exact Nat.le_antisymm hmle hnle
+
+/-- At a nonroot, the first visited root is unchanged by following one arrow. -/
+theorem firstRoot_succ (R : Set V) (f : V → V) (h : ∀ v, ∃ n, f^[n] v ∈ R)
+    {v : V} (hv : v ∉ R) : firstRoot R f h v = firstRoot R f h (f v) := by
+  unfold firstRoot
+  rw [← firstRootTime_succ R f h hv, Function.iterate_succ_apply]
+
+/-- Before the first root, iteration decreases the first-root time by the number of steps. -/
+theorem firstRootTime_iterate (R : Set V) (f : V → V) (h : ∀ v, ∃ n, f^[n] v ∈ R)
+    (v : V) (n : ℕ) (hn : n ≤ Nat.find (h v)) :
+    Nat.find (h (f^[n] v)) + n = Nat.find (h v) := by
+  induction n with
+  | zero => simp
+  | succ n ih =>
+    have hlt : n < Nat.find (h v) := Nat.lt_of_succ_le hn
+    have hnot : f^[n] v ∉ R := Nat.find_min (h v) hlt
+    have hs := firstRootTime_succ R f h hnot
+    have hi := ih (Nat.le_of_lt hlt)
+    rw [Function.iterate_succ_apply']
+    omega
 
 
 /-- An undirected edge induced by one nonroot arrow. -/
