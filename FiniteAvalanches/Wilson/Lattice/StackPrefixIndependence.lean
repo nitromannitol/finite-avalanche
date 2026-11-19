@@ -115,5 +115,30 @@ theorem directionStackLaw_restrict_prefix_map (head : V → FiniteWired.Directio
   rw [heq]
   exact directionStackLaw_prefix_inter_reading V head x k τ w n
 
+
+/-- Every measurable event of the next read driver is independent of a fixed
+finite stack-prefix history. -/
+theorem directionStackLaw_prefix_indep_event (head : V → FiniteWired.Direction → V)
+    (x : V) (k : Cursor V) (τ : V × ℕ → FiniteWired.Direction)
+    (A : Set WalkDriver) (hA : MeasurableSet A) :
+    directionStackLaw V {σ | (∀ v i, i < k v → σ (v, i) = τ (v, i)) ∧
+      readingLetter head x k σ ∈ A} =
+    directionStackLaw V {σ | ∀ v i, i < k v → σ (v, i) = τ (v, i)} * walkLaw A := by
+  let H : Set (V × ℕ → FiniteWired.Direction) :=
+    {σ | ∀ v i, i < k v → σ (v, i) = τ (v, i)}
+  let f : (V × ℕ → FiniteWired.Direction) → WalkDriver :=
+    fun σ => readingLetter head x k σ
+  have hm : Measurable f := measurable_readingDriver V head x k
+  have h := congrArg (fun μ : Measure WalkDriver => μ A)
+    (directionStackLaw_restrict_prefix_map V head x k τ)
+  change ((directionStackLaw V).restrict H).map f A = _ at h
+  rw [Measure.map_apply hm hA, Measure.restrict_apply (hm hA), Measure.smul_apply, smul_eq_mul] at h
+  have he : {σ | (∀ v i, i < k v → σ (v, i) = τ (v, i)) ∧
+      readingLetter head x k σ ∈ A} = f ⁻¹' A ∩ H := by
+    ext σ
+    simp only [H, f, Set.mem_setOf_eq, Set.mem_preimage, Set.mem_inter_iff, and_comm]
+  rw [he]
+  exact h
+
 end
 end FiniteAvalanches.Wilson.Lattice
