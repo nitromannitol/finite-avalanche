@@ -52,5 +52,41 @@ theorem directionStackLaw_exploration_eq (R : RootPair) (N : ℕ)
   rw [he]
   exact directionStackLaw_forestEvent_eq R N k S
 
+
+/-- The forest read from successful full stack exploration has the uniform law. -/
+theorem directionStackLaw_stackExplore_eq (R : RootPair) (N : ℕ)
+    (k : Cursor (FiniteWired.Vertex N)) (L : List (FiniteWired.Vertex N))
+    (hL : ∀ v, v ∈ L) (S : Set (FiniteForest R N)) :
+    directionStackLaw (FiniteWired.Vertex N)
+      {σ | ∃ (t : Cursor (FiniteWired.Vertex N))
+          (ht : terminal (wiredRoots R N).val (wiredHead N) (fun v i => σ (v, i)) t),
+        stackExplore (wiredHead N) (fun v i => σ (v, i)) (wiredRoots R N).val k L =
+          some (Set.univ, t) ∧
+        wiredArrowForest R N ⟨fun v => σ (v, t v), ht⟩ ∈ S} =
+      finiteUniformLaw R N S := by
+  have he : {σ : FiniteWired.Vertex N × ℕ → FiniteWired.Direction |
+      ∃ (t : Cursor (FiniteWired.Vertex N))
+          (ht : terminal (wiredRoots R N).val (wiredHead N) (fun v i => σ (v, i)) t),
+        stackExplore (wiredHead N) (fun v i => σ (v, i)) (wiredRoots R N).val k L =
+          some (Set.univ, t) ∧
+        wiredArrowForest R N ⟨fun v => σ (v, t v), ht⟩ ∈ S} =
+      {σ : FiniteWired.Vertex N × ℕ → FiniteWired.Direction |
+      ∃ (t : Cursor (FiniteWired.Vertex N))
+          (ht : terminal (wiredRoots R N).val (wiredHead N) (fun v i => σ (v, i)) t),
+        Relation.ReflTransGen (pop_step (wiredRoots R N).val (wiredHead N)
+            (fun v i => σ (v, i))) k t ∧
+        stackExplore (wiredHead N) (fun v i => σ (v, i)) (wiredRoots R N).val k L =
+          some (Set.univ, t) ∧
+        wiredArrowForest R N ⟨fun v => σ (v, t v), ht⟩ ∈ S} := by
+    ext σ
+    constructor
+    · rintro ⟨t, ht, hexplore, hS⟩
+      have hrun := (stackExplore_of_some _ _ _ k L Set.univ t hexplore).2.2
+      exact ⟨t, ht, hrun, hexplore, hS⟩
+    · rintro ⟨t, ht, _, hexplore, hS⟩
+      exact ⟨t, ht, hexplore, hS⟩
+  rw [he]
+  exact directionStackLaw_exploration_eq R N k L hL S
+
 end
 end FiniteAvalanches.Wilson.Lattice
