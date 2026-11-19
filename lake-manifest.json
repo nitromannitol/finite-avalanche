@@ -7,10 +7,10 @@
    "type": "git",
    "subDir": null,
    "scope": "",
-   "rev": "8557b91360e23d51d779a05d8313974b403658b2",
+   "rev": "68722ce2d464119e90b373829d2761624b1f6a75",
    "name": "«lattice-probability»",
    "manifestFile": "lake-manifest.json",
-   "inputRev": "8557b91360e23d51d779a05d8313974b403658b2",
+   "inputRev": "68722ce2d464119e90b373829d2761624b1f6a75",
    "inherited": false,
    "configFile": "lakefile.lean"
   },

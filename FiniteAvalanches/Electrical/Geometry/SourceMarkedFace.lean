@@ -4,7 +4,7 @@ import FiniteAvalanches.Electrical.Geometry.SourcePrimalDrawing
 /-! The original marked lattice arc in the actual contracted source drawing. -/
 set_option autoImplicit false
 namespace FiniteAvalanches.Electrical.LatticeDrawing
-open LatticeProb
+open LatticeProb hiding Plane
 open FiniteAvalanches.Electrical.StatementGeometry
 open FiniteAvalanches.Electrical.Source
 open FiniteAvalanches.Electrical.BSST

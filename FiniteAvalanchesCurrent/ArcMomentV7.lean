@@ -1,8 +1,10 @@
 import FiniteAvalanches.Electrical.Source.ArcVariance
 
+/-! Electrical estimates for finite lattice networks. -/
+
 set_option autoImplicit false
 namespace FiniteAvalanches.Electrical.CurrentSourceRoots
-open LatticeProb
+open LatticeProb hiding Plane
 open FiniteAvalanches.Electrical.LatticeDrawing
 open FiniteAvalanches.Electrical
 open FiniteAvalanches.Electrical.StatementGeometry

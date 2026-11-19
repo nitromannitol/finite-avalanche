@@ -3,6 +3,8 @@ import FiniteAvalanches.Electrical.Geometry.UnitSegments
 import FiniteAvalanches.Electrical.Reference.Lattice
 import Mathlib.Tactic.Rify
 
+/-! Finite lattice drawings by unit segments. -/
+
 set_option autoImplicit false
 namespace FiniteAvalanches.Electrical.LatticeDrawing
 open LatticeProb
@@ -16,7 +18,7 @@ noncomputable section
 theorem segment_injective (p : Site 2) (i : Fin 2) :
     Function.Injective (unitSegment p i) := by
   intro s t h
-  have hi := congrArg (fun z : Plane => if i = 0 then z.1 else z.2) h
+  have hi := congrArg (fun z : Source.Plane => if i = 0 then z.1 else z.2) h
   fin_cases i <;> norm_num [unitSegment, unit, Pi.single_apply, Fin.ext_iff] at hi
   all_goals exact hi
 

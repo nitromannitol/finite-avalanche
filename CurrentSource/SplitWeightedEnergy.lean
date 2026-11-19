@@ -3,7 +3,8 @@ import FiniteAvalanches.Electrical.SplitStep.OriginalGreenAssembly22
 /-! The original copied-graph weighted-energy step used by the current split proof. -/
 
 namespace FiniteAvalanches.Electrical.Source.CurrentSplit
-open LatticeProb StatementGeometry Source BSST Plane.SourceLattice LatticeDrawing ChordSplit
+open LatticeProb hiding Plane
+open StatementGeometry Source BSST Plane.SourceLattice LatticeDrawing ChordSplit
 open FiniteAvalanches.Electrical.SplitStep
 open FiniteAvalanches.Electrical.LatticeCell
 open FiniteAvalanches.Wilson.CopiedNetwork

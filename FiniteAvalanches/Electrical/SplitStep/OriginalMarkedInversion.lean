@@ -1,9 +1,12 @@
 import FiniteAvalanches.Electrical.SplitStep.OriginalMarkedOuterFace
 import FiniteAvalanches.Electrical.Geometry.PrescribedOuterArc
 
+/-! Electrical estimates for finite lattice networks. -/
+
 set_option autoImplicit false
 namespace FiniteAvalanches.Electrical.SplitStep
-open LatticeProb StatementGeometry Source BSST Plane.SourceLattice LatticeDrawing
+open LatticeProb hiding Plane
+open StatementGeometry Source BSST Plane.SourceLattice LatticeDrawing
 open ComplementFaces PunctureTransport ChartExistence
 open scoped Classical
 noncomputable section

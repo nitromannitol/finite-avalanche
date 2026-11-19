@@ -1,8 +1,11 @@
+import LatticeProb.Prob.DPP.NestedProjectionDomination
 import Mathlib.LinearAlgebra.Matrix.ToLin
 import Mathlib.LinearAlgebra.Matrix.Symmetric
 import Mathlib.LinearAlgebra.Matrix.Determinant.Basic
 import Mathlib.Data.Fintype.Powerset
 import Mathlib.Data.Real.Basic
+
+/-! Finite domination for nested projection determinantal processes. -/
 
 set_option autoImplicit false
 namespace FiniteAvalanches.External
@@ -12,7 +15,7 @@ open scoped BigOperators
 Event domination: Lyons (2003), Theorem 6.2, p.183.
 Coupling: derived finite corollary of Edwards (1978), Theorem 7.3, pp.76–77
 (equivalently Theorem 4.1, p.59, plus finite layer-cake). -/
-axiom lyons_nestedProjectionDomination
+theorem lyons_nestedProjectionDomination
     {E : Type*} [Fintype E] [DecidableEq E]
     (Q₁ Q₂ : Matrix E E ℝ)
     (hQ₁s : Q₁.IsSymm) (hQ₁i : Q₁ * Q₁ = Q₁)
@@ -30,6 +33,8 @@ axiom lyons_nestedProjectionDomination
       (∀ S, ∑ T, q S T = p₁ S) ∧
       (∀ T, ∑ S, q S T = p₂ T) ∧
       (∑ S, ∑ T, q S T) = 1 ∧
-      (∀ S T, ¬ S ⊆ T → q S T = 0))
+      (∀ S T, ¬ S ⊆ T → q S T = 0)) := by
+  exact LatticeProb.DPP.nested_projection_domination Q₁ Q₂ hQ₁s hQ₁i hQ₂s hQ₂i
+    hle p₁ p₂ hp₁ hp₂ hdet₁ hdet₂
 
 end FiniteAvalanches.External

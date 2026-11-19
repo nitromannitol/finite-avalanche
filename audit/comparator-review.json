@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "status": "REVIEWED_CURRENT_PAIR",
+  "status": "PENDING_CURRENT_SOURCE_REVIEW",
   "target_export": "FiniteAvalanchesCurrent.RegisteredPast.Main.finite_avalanches_origin",
   "independent": true,
   "producer_role": "finite-wilson",

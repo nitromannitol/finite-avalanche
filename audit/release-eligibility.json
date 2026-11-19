@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "status": "REVIEWED_SOURCE_ELIGIBLE",
+  "status": "PENDING_CURRENT_SOURCE_REVIEW",
   "manuscript_revision": "2ff7e75e9b6d626dc6c6243fa3d25fd179b34cf2",
   "manuscript_sha256": "d2a875c154db9ff913ec6b25cf38e8da134ca977f6a24fd9c036cd8873b1082a",
   "candidate_source_inventory_sha256": "9f5c5b5d02d7901b4e16755e35a51a3fa0e1e00fcb7dfa7f358512dd4f071f95",

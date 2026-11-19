@@ -4,7 +4,7 @@ import FiniteAvalanches.Electrical.Reference.Connected
 /-! Conditional placement of the actual source drawing and its marked common face. -/
 set_option autoImplicit false
 namespace FiniteAvalanches.Electrical.LatticeDrawing
-open LatticeProb
+open LatticeProb hiding Plane
 open FiniteAvalanches.Electrical.StatementGeometry
 open FiniteAvalanches.Electrical.Source (Plane drawingTrace EdgeChart OuterArc)
 open FiniteAvalanches.Electrical.BSST (Face faceRegion incident)

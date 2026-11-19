@@ -1,8 +1,11 @@
 import CurrentSource.WholeMinimumTrial
 import FiniteAvalanches.Electrical.SplitStep.OriginalGreenAssembly22
 
+/-! Electrical estimates for finite lattice networks. -/
+
 namespace FiniteAvalanches.Electrical.SplitStep
-open LatticeProb StatementGeometry Source BSST Plane.SourceLattice LatticeDrawing ChordSplit
+open LatticeProb hiding Plane
+open StatementGeometry Source BSST Plane.SourceLattice LatticeDrawing ChordSplit
 open FiniteAvalanches.Electrical.LatticeCell
 open FiniteAvalanches.Electrical.Source.CurrentSplit
 open scoped Classical BigOperators

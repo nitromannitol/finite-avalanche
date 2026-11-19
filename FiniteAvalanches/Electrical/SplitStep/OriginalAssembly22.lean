@@ -4,9 +4,12 @@ import FiniteAvalanches.Electrical.Geometry.SourceDualPath
 import FiniteAvalanches.External.PlaneDualBondCycle
 import FiniteAvalanches.External.PlaneDualConnected
 
+/-! Electrical estimates for finite lattice networks. -/
+
 set_option autoImplicit false
 namespace FiniteAvalanches.Electrical.SplitStep
-open LatticeProb StatementGeometry Source BSST Plane.SourceLattice LatticeDrawing ChordSplit
+open LatticeProb hiding Plane
+open StatementGeometry Source BSST Plane.SourceLattice LatticeDrawing ChordSplit
 open FiniteAvalanches.Electrical.LatticeCell
 open FiniteAvalanches.Wilson.CopiedNetwork
 open scoped Classical BigOperators

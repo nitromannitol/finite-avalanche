@@ -10,7 +10,7 @@ import FiniteAvalanches.External.OuterFaceRedrawing
 /-! A disk drawing of the actual marked-copy-deleted source dual and its boundary path. -/
 set_option autoImplicit false
 namespace FiniteAvalanches.Electrical.LatticeDrawing
-open LatticeProb
+open LatticeProb hiding Plane
 open FiniteAvalanches.Electrical
 open FiniteAvalanches.Electrical.StatementGeometry
 open FiniteAvalanches.Electrical.Source

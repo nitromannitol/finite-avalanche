@@ -14,7 +14,7 @@ package finiteAvalanches where
 
 require «lattice-probability» from git
   "https://github.com/nitromannitol/Lattice-Probability" @
-  "8557b91360e23d51d779a05d8313974b403658b2"
+  "68722ce2d464119e90b373829d2761624b1f6a75"
 
 @[default_target]
 lean_lib FiniteAvalanches where

@@ -1,9 +1,12 @@
 import FiniteAvalanches.Electrical.SplitStep.OriginalMarkedAuxiliary
 
+/-! Electrical estimates for finite lattice networks. -/
+
 set_option autoImplicit false
 
 namespace FiniteAvalanches.Electrical.SplitStep
-open LatticeProb StatementGeometry Source BSST Plane.SourceLattice LatticeDrawing
+open LatticeProb hiding Plane
+open StatementGeometry Source BSST Plane.SourceLattice LatticeDrawing
 open scoped Classical
 noncomputable section
 

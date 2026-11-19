@@ -87,8 +87,8 @@
     },
     {
       "path": "CurrentSource/CurrentSplitAssembly.lean",
-      "sha256": "c5a4debee5e144e00ff33900e48ea6704a9a14a6b9e6e4fdcdf14a4e3b7466f1",
-      "code_sha256": "1a208ccf5339c9ba7eeadf6e13579aca9b9969276fdfcc2c7b021ecaefa2ce94",
+      "sha256": "05cdc33c9426a8bad4b4c0856db184679890257e24c8557f439878a6f6445ccb",
+      "code_sha256": "4255cb92bb98d5d9568470d92de1d2a3f435d76f511ca8ac4ad49df18f216a7e",
       "bytes": 13609
     },
     {
@@ -207,8 +207,8 @@
     },
     {
       "path": "CurrentSource/SplitWeightedEnergy.lean",
-      "sha256": "deac17acea4b972eabfd047231896c7e3ba6962907ba4a628bae2c2a32369fb9",
-      "code_sha256": "b6b829fd4fbf69ff04fb12d2c057ff79522749274d97c8829b51212074703cb3",
+      "sha256": "3feab7cd7bedbb2074e8dfd016e8bc888c7d47b193cf17e0fd12b8ab609dde60",
+      "code_sha256": "899aead2f738cf8a62a3968d678278cd99fb24051049a93990299c5112fd8946",
       "bytes": 3431
     },
     {
@@ -225,8 +225,8 @@
     },
     {
       "path": "CurrentSource/WholeMinimumTrial.lean",
-      "sha256": "cfb3cb7e202763d527016c8619dbf48aeee3974ce320d257d5fd05718825972c",
-      "code_sha256": "8350b41b3080c726d0f1e6bea42fe55ebb8cecb7e2fc85962702f8d4ec70670b",
+      "sha256": "d65ba810ebbf0fbf558a29f09e5d06bba0d06b1231590c48b49b99056edc4db5",
+      "code_sha256": "493cc7b151671dd926ca0127b389da11e0e41a863e3d0dac2caa8a8b8e729c26",
       "bytes": 13845
     },
     {
@@ -333,14 +333,14 @@
     },
     {
       "path": "FiniteAvalanches/Electrical/Geometry/ActualSourceDiskDrawingConsumer.lean",
-      "sha256": "30c15805b2554509025865591aff5fe7b631caa1d960aefa8ad7092e84e4f293",
-      "code_sha256": "5c879169ede665c0287e14638b66dcfc41b4ad262519b862ae1572ea0281d06e",
+      "sha256": "e0ab661f042767888cbb28b8f0c6b35d0ceb00aa79e03396987f62b0dbcc69de",
+      "code_sha256": "0e4e5831c9905d18e3f9439d17fc76c3193967d4ef60d902d784eafa78c2ca7b",
       "bytes": 7190
     },
     {
       "path": "FiniteAvalanches/Electrical/Geometry/ActualSourceOuterFaceConsumer.lean",
-      "sha256": "3e1119ea9f23ef367a4c3c4281d94e4f81589a86ea21d932b6da952a294963fe",
-      "code_sha256": "678c98db603257f6c09cfbb6e7303911c9f21282372730e63388d6e960d84d9d",
+      "sha256": "dd9e3627c181c050f3d7ab6233af987831428668a358aa8f74bd00d1fed0e7de",
+      "code_sha256": "2b9483fc61eaa07b9ede5997087a0098d339dbf70a1f73c17c256189d4a41b39",
       "bytes": 11008
     },
     {
@@ -537,8 +537,8 @@
     },
     {
       "path": "FiniteAvalanches/Electrical/Geometry/FiniteLatticeDrawing.lean",
-      "sha256": "db9264179b11f91de3d1dc2d1a2b4d6b75ba68345bdeb19e4e50913960486d46",
-      "code_sha256": "db9264179b11f91de3d1dc2d1a2b4d6b75ba68345bdeb19e4e50913960486d46",
+      "sha256": "0181048afe68f03160121abb174652a08ee45f6603e5540579e9ec82e1beb779",
+      "code_sha256": "adf8187262e3d10f023d7428a6b32e5944138701d2f9108a302b8dd5c7413d07",
       "bytes": 4352
     },
     {
@@ -723,50 +723,50 @@
     },
     {
       "path": "FiniteAvalanches/Electrical/Geometry/SourceDualFaceMerger.lean",
-      "sha256": "3beef6e11f0521d31fc2f7b8ec0d7f83a69232fa4f6366b97d8640e24385932f",
-      "code_sha256": "84055a1bada3097cd4096a303b13ed7ad4b3d533966d2ed62802ba074f49b36f",
+      "sha256": "8c63f989a270cdabce59b65f9937783d151869300e1378028ac8160a492435fa",
+      "code_sha256": "e69c74497b4a43517644b6fb266195a74648a877440faf299f1ef36f3ce7494c",
       "bytes": 15710
     },
     {
       "path": "FiniteAvalanches/Electrical/Geometry/SourceDualPath.lean",
-      "sha256": "c6c77f66e0661c82e86f0746cf925c7e13e43fba99ede9675153f9c1f3e18fe8",
-      "code_sha256": "33f8342847a469a6ea13bdb244404f66127b570d26f03d3e9a5349f2e28b7892",
+      "sha256": "7d971ce8f5a772f17e1689ba2d0f414a77a0f1f7e9626a8de04b2ad63640322f",
+      "code_sha256": "56709dec77a908950c43a0dbea5ab53f4c344f451c3a561ae1791f12cfe5ab5f",
       "bytes": 8089
     },
     {
       "path": "FiniteAvalanches/Electrical/Geometry/SourceFacePlacementApplication.lean",
-      "sha256": "f1166a30b4f0d7e86cb3d2d774160a42a88363f8151e781f91d030d19aab9b2c",
-      "code_sha256": "c5eb6c2569decde233fe16a98eeaf1f891631e75bf6b013bfa6a4f1dc7566b70",
+      "sha256": "93184e6b36835a7679cdc315d34e698cfd346207dd67cd34f593349baa34db3d",
+      "code_sha256": "137d08a5938a40b2934e70fd4e22c06c0b8b2f47fa9a8090d68e73c484154cd2",
       "bytes": 12037
     },
     {
       "path": "FiniteAvalanches/Electrical/Geometry/SourceHDual.lean",
-      "sha256": "ce04ffa0e5d76e2e8dfe765deb29191860d9b53758c37f80d1fab18295478ea8",
-      "code_sha256": "dd231e880836a073df7202052ebe2d463d03ded5bc24eae1d9d0ccda06ea76de",
+      "sha256": "63acaa05c79a39a0ac2f1250b9a890018dd42aea69a76b371a51f7d7171d339b",
+      "code_sha256": "da2fd343f01a35bef1a68c49b92e05f9992102a3c50c232f511ae2c92a2a3838",
       "bytes": 7430
     },
     {
       "path": "FiniteAvalanches/Electrical/Geometry/SourceMarkedFace.lean",
-      "sha256": "c3521c146eb64d33f9e32a3ece83ef390811c926af2b03f4c4905f728094d388",
-      "code_sha256": "c255c4d15b5f529b9ad1b915a640f243bea265cbd527fb4a5ff79150095e0255",
+      "sha256": "77071d6ab6c89224ec2942492ace90ea26d113f104564e4b1b26f381097c932b",
+      "code_sha256": "fcb587d0ec3b18b7dd2802715ab7f6fc7e5ba7b8386c47e823569eb7eeabb8ac",
       "bytes": 7369
     },
     {
       "path": "FiniteAvalanches/Electrical/Geometry/SourceOuterFacePath.lean",
-      "sha256": "2242cda0e87102f702bbacdd02529477673a2b273146ee8338c604aa6d842536",
-      "code_sha256": "12102d25ee99e389ede0acab14cbf8836fc7be028bfc200dded67384ff283fea",
+      "sha256": "fc143db930a02a7cf70dd3b63fa3b347f8012663de3a46a37f4169e0ce887781",
+      "code_sha256": "9cea6eb0a6c5077162030f01652f79c7595b25429157608d9dd87f1e0c307da3",
       "bytes": 12489
     },
     {
       "path": "FiniteAvalanches/Electrical/Geometry/SourcePrimalDrawing.lean",
-      "sha256": "7165cf450a67f306b00c771f2566b1fa71a44836a94127bc65075c27abce2c11",
-      "code_sha256": "7165cf450a67f306b00c771f2566b1fa71a44836a94127bc65075c27abce2c11",
+      "sha256": "c26711d9a4eb3e378c424aa54cbb0fe38ee00c9c82a010d37fcf64f1ef8ca549",
+      "code_sha256": "e9b89863354559aa80420b12b5f09b64f314e8b7b0d8c0daafd49a65db3b6e6d",
       "bytes": 10446
     },
     {
       "path": "FiniteAvalanches/Electrical/Geometry/SourceRetainedPathBoundary.lean",
-      "sha256": "5810e54e10598b390ef9d9810bfdc724b244c45698a7e6a3969d3d39d32b108f",
-      "code_sha256": "1d0d26c28ac5ee4e598656971260eb3352d66eb20f02080cff8103ed23b20738",
+      "sha256": "fb4174eaf7f6c0e9cd7d3381621fc9dfc754a827b79aa237595c05031242e2d4",
+      "code_sha256": "1d715a4310ecc96e44682fe66981a3a48d25cbc8c22da7f199d92cc42a027eb0",
       "bytes": 9645
     },
     {
@@ -921,8 +921,8 @@
     },
     {
       "path": "FiniteAvalanches/Electrical/PairContact/ActualSourceTreeTwoContact.lean",
-      "sha256": "e8989f59c400add0948c1fb131866502d1e91cfd23a04b2255e76add062ebfdb",
-      "code_sha256": "1e0694356e7cc9f91ad4c86b37b824a1721d55364ee627eb1118a70c7c99015c",
+      "sha256": "699b3721df3c853037e06523f23cfeabbbd52901808ee57b628fda8424529de3",
+      "code_sha256": "14a19e213edcdf47281c103b5a8688dd3e52d30a3dbc4d5e1d940680d1d0b9a0",
       "bytes": 6036
     },
     {
@@ -1317,8 +1317,8 @@
     },
     {
       "path": "FiniteAvalanches/Electrical/Ratio/OriginalDiagonal.lean",
-      "sha256": "59e404531eec3ce1807b0d02dd6c077a5bb9d8caaef0db057d391782888026de",
-      "code_sha256": "59e404531eec3ce1807b0d02dd6c077a5bb9d8caaef0db057d391782888026de",
+      "sha256": "d7d1958a85f389687c86ca22497fa3df6bc9a79ca862f525db5fc05bcf02cc65",
+      "code_sha256": "fe3fb5745296464afb3e056fbdf1b80d230c695288312c6f9f57202f52a1cdb0",
       "bytes": 4838
     },
     {
@@ -1329,8 +1329,8 @@
     },
     {
       "path": "FiniteAvalanches/Electrical/Reference/BoundaryMeans.lean",
-      "sha256": "fb337533f627f7d0af3f2a20fbfbe4cec9b649f11ba6647cc474983e63d6d734",
-      "code_sha256": "c79985537a93f9839a725d1eabdeb3e3d22c8862a42ecf59937532f82f3b1e05",
+      "sha256": "680f06b56f7c85c4c1501930a5da86a0de37f02e53bf239778715b19d2ba684a",
+      "code_sha256": "7a80415eb58fb1a060f9ba5e4f1d5a3339ea49adfe4ee641754021058c77faa6",
       "bytes": 4457
     },
     {
@@ -1437,8 +1437,8 @@
     },
     {
       "path": "FiniteAvalanches/Electrical/Reference/ReferenceMomentOfSplit.lean",
-      "sha256": "6cec4e5275ef680e72ecf9fcdeae147d3a01754fba4f03afb30440170e8a9808",
-      "code_sha256": "10e3acd9520d7f6e37390556c0c19e6ae0996d328d57ba5e92e618ad213221d5",
+      "sha256": "7baeaa94171b69d240d4c2e8f16a8be2a5bad7c9fb196cb4318900a1fef8caf9",
+      "code_sha256": "683e75981d8247f07f5604e4703ec66802632d519869d45ee1aa0c520113d513",
       "bytes": 8747
     },
     {
@@ -1467,8 +1467,8 @@
     },
     {
       "path": "FiniteAvalanches/Electrical/Source/ArcVariance.lean",
-      "sha256": "f5a28ed57a8e93e0fc2c1d0eb8d6371010fe3e21eabd51a00d416166ab9a16e4",
-      "code_sha256": "79daf249e3ee2514b77a4287fec75856f3a951833468759bc548a4576869d351",
+      "sha256": "45a7f5f1ae366c84a8375f235ee5cd9053831983112cd912e761961c27db645c",
+      "code_sha256": "397671a041b715ce9317c487ba5c20f3d96dbb664364a68b46a746ce58304e58",
       "bytes": 9336
     },
     {
@@ -1533,8 +1533,8 @@
     },
     {
       "path": "FiniteAvalanches/Electrical/SplitStep/OriginalAssembly22.lean",
-      "sha256": "739692c39e7d9c10c10d8f64faed12b46e2868a3e04e136e2fbdd674df6b585c",
-      "code_sha256": "e0072e15d776a559e0fb9ddccac62361ab85f4aafa7d62a95d35bebbb164992e",
+      "sha256": "2913a1f08ae7b2ba0ca21bd359f274ba2f492b5acc1ef2e31c99b0dbfc227d32",
+      "code_sha256": "87f14038391a1d5112e3f9d38d24c382b71356d1d6183c03a87dfd278b8e34b7",
       "bytes": 13167
     },
     {
@@ -1581,20 +1581,20 @@
     },
     {
       "path": "FiniteAvalanches/Electrical/SplitStep/OriginalGreenAssembly22.lean",
-      "sha256": "9d44e95345013849751c449f039ca9639a776c0551a1d26319b256342b2929fb",
-      "code_sha256": "16285fa8b06e74d18c27062d1e236ba7f1d55618c6b598567e45ddc32ba2cf5f",
+      "sha256": "aa0de298af8471d43496d0ce8436fcf766a7553f6e24d02741f2b6677cc71360",
+      "code_sha256": "4cb812e28e6b95ccdec254f5dc3ceb242184114680911cf8afbd7d9605529ff0",
       "bytes": 11143
     },
     {
       "path": "FiniteAvalanches/Electrical/SplitStep/OriginalMarkedAuxiliary.lean",
-      "sha256": "0cec42faeb36b525d5ff5410c15d8109e201da3d9685e63bd5ab6f2a85db1b8c",
-      "code_sha256": "a6fb7f2e0eb21403c8eb1f396737754e25b00152c9bdeadfaf1630740ab6366d",
+      "sha256": "cd3a5303de38118be33b3022d1831bb74fdf3c739eaaa55e58fb84b5aa843a36",
+      "code_sha256": "5d4c4d10f53939906e0fbe41131452f57381575aab4d44a613196add956e699e",
       "bytes": 10444
     },
     {
       "path": "FiniteAvalanches/Electrical/SplitStep/OriginalMarkedCharts.lean",
-      "sha256": "c310ac40e9672b0c78a86d8b02b721da764facc8cdd5ddc782af6e7d40aeba4d",
-      "code_sha256": "abaf58be209195a85b0b877fba86ad291a0974f6fbbc6468ecadccf72a62fb3a",
+      "sha256": "179ba9abc243cfffed6c20c28f5426907c4178bd73e9c833481a70f1ef1434e8",
+      "code_sha256": "412e87a0b1490df932d5678a09b2e2c5d2aa674225a3b8f5f6f177f0c01ec5dd",
       "bytes": 3583
     },
     {
@@ -1605,8 +1605,8 @@
     },
     {
       "path": "FiniteAvalanches/Electrical/SplitStep/OriginalMarkedInversion.lean",
-      "sha256": "fff15ea6b58837295d722df9754eac4bd2b2938ce441b79a3bdee7a52de39c63",
-      "code_sha256": "52da0c6dbcff9f78d0b9ecbbd32a14def100a03f3a1b96914f07537f59966398",
+      "sha256": "a1edbc22fda29a0a5108eb04f2339302ab837ff973496ae7611c4bb39dd49864",
+      "code_sha256": "b004839011a5ea7139349e1ea8841e87f325fe4f7914324d6247073024e039aa",
       "bytes": 6369
     },
     {
@@ -1623,14 +1623,14 @@
     },
     {
       "path": "FiniteAvalanches/Electrical/SplitStep/OriginalPhysicalCarrier.lean",
-      "sha256": "d46b2ef7977160e18b548d41dda11006b08f7e660cd1d9262f582ec170025607",
-      "code_sha256": "e412d1bfee046c8e83e185ef5389dbcad3935ec28accf56c0a796fd96d22c36c",
+      "sha256": "bc443d5777eea98ec61d5338ed5b058d24679d5efc9a4f35a28aca24779d39ba",
+      "code_sha256": "43de149134e14aa0ca68b85a34e2618db1948705bb7f738e640fcb0a9f1003fa",
       "bytes": 4309
     },
     {
       "path": "FiniteAvalanches/Electrical/SplitStep/OriginalPhysicalCopy.lean",
-      "sha256": "237f68d8ba4bc2360219f16ef6f799da67c585505d0ce2f04b43b90dc8c7f432",
-      "code_sha256": "133cf25243ba784fe171a4d85fc8148f7e0defc258be09f946423d15551679ad",
+      "sha256": "9ee460bb7b9114427c5a541bf7f839067671debeadcaf9b0b5775a9b8ab173f5",
+      "code_sha256": "9153e761b0bcf9ad8e6ec7c827aa112f07e98ab0b3f041029c742394dbf064ce",
       "bytes": 7182
     },
     {
@@ -1689,8 +1689,8 @@
     },
     {
       "path": "FiniteAvalanches/Electrical/SplitStep/ReversedChart.lean",
-      "sha256": "3cd07fb0f93228fa9efb6be489e380ebaec234305ceec88c41cdf81ba00325e8",
-      "code_sha256": "e17c6bd9995255e3c6ce98e383824c58272145540b6be3170efbbaf44139d7ca",
+      "sha256": "f472e89404998a71a4346c27677a0d12d446930f8481b9a28e86bee238270db6",
+      "code_sha256": "3c780a50c836531b626d2eeb5b7f6bf72a3eb1031cc7465961f1ce99048e55eb",
       "bytes": 6075
     },
     {
@@ -1899,8 +1899,8 @@
     },
     {
       "path": "FiniteAvalanches/External/AllMinorsMatrixTree.lean",
-      "sha256": "aee6445401df533441750e869e8360ef3153c700275067b8884acaa07bd3b926",
-      "code_sha256": "ae303eb1da5eb26ced9c893f2017484cb57a0bf52e4534ea886d61ebbdfb1194",
+      "sha256": "a39f5013b8b6bc9f6d4f7a2bb3b5d98b8403b6cc97b33d97d2feaebed47ea54c",
+      "code_sha256": "e61bfe02bac72230482cbbb41d46dee618f4b9928451506f56b89d3891c6ea43",
       "bytes": 2097
     },
     {
@@ -1935,8 +1935,8 @@
     },
     {
       "path": "FiniteAvalanches/External/DiskAlternation.lean",
-      "sha256": "b303d9e5c132e699c0e07133bc57cb53171d11074b5227f1f7ca91086a07f8c0",
-      "code_sha256": "474e90ebedde269229bea13becdb0678e0184ecf6379feded132e3a7c6ed6b87",
+      "sha256": "af01af5b8112493000ca44e4d8e3d66a8515b9d860c89eb5c43b978a4468ee86",
+      "code_sha256": "fdc8e4fb9a0d3d8226df817fb11737d4c6be64ce440e1611e494422fe04c7777",
       "bytes": 1614
     },
     {
@@ -1971,8 +1971,8 @@
     },
     {
       "path": "FiniteAvalanches/External/LyonsProjectionDomination.lean",
-      "sha256": "2d9311c224af22ee323c217eb7e028c000abb7f3c5567a7b5784bac0803af9ed",
-      "code_sha256": "6c50ee7c13cbe1f2035d3e0e70dcb754265b80f465e2d334913531384ba0545d",
+      "sha256": "893e874b78c549d869025fb447986d903af1c3ff1370ca0b9da8a182120ecfa2",
+      "code_sha256": "3b659b243112276c7bdbfa9d3a4cff41b7821bafe860c28ecbf1e8b96cf527ee",
       "bytes": 1730
     },
     {
@@ -5187,14 +5187,14 @@
     },
     {
       "path": "FiniteAvalanchesCurrent/ArcMomentExpectations.lean",
-      "sha256": "15400038d3a8221e9217f2de1a8a97c178093ec78158cb8398620b5260e5eec0",
-      "code_sha256": "2fadd19008bc6a09af49d3e810647423846cedcdde39e274111a72de58a6c870",
+      "sha256": "6ba682bb31a9010794074fd520963aa5bbd7ec0b5bae6df3efc0bae70ec68081",
+      "code_sha256": "d1f1b2d4e334429dca0a2a2c365e0c75ab3ef9f0114d7c0fc4b89ceb06486108",
       "bytes": 6153
     },
     {
       "path": "FiniteAvalanchesCurrent/ArcMomentV7.lean",
-      "sha256": "34e56b2c9f6102f21a5db345a377c91605bd9c90f04ad46fd46d818cf23cc1b1",
-      "code_sha256": "dce2af3b34ade868066876f0b7b9525a5376997ed2e271b21980a1ad6a987c61",
+      "sha256": "68010ccc79a7e089b3e25e2126670a2f3f1082ff79df9908ac092734dde7b474",
+      "code_sha256": "c2dbfee458868687cd10284a508cfba95ab2c7dc2aecf49af56f035c1f32f288",
       "bytes": 5919
     },
     {
@@ -5259,14 +5259,14 @@
     },
     {
       "path": "FiniteAvalanchesCurrent/SplitEstimateExpectations.lean",
-      "sha256": "ce7cf21ae302526ca48b59378fe6ee5bce0943b5c163406a3f82fea591e78f9a",
-      "code_sha256": "792011ebb5399e6d9b3579defd60a58e59c2029a779b71577672b5ef2ccefa72",
+      "sha256": "d728d86bfb1a3e29193abfc6e1d1aff03e98fb2abba92fabdc37b5432a35acf5",
+      "code_sha256": "b8fff8e8ad3c117b755d374311f1ead1f5f0b09167d03a77d49d1774e027af8f",
       "bytes": 5549
     },
     {
       "path": "FiniteAvalanchesCurrent/SplitEstimateV1.lean",
-      "sha256": "cf64d67bfcb5407dbf1aed57422afdc7ad4e459829899e898ac7f5c8ceb5cd6c",
-      "code_sha256": "a0527a0a802c0d20f41a5604cae15b29b87869c8206a79af88cb596e311a8c07",
+      "sha256": "e488ca5b1dfeb7b0e3e9863bce41d29e1315982f7899ced527d8d0b50cf76c1c",
+      "code_sha256": "57478ca5673e6bb1492ce758ca3dbf4395899bff79920bcf792cf39b4280ddc9",
       "bytes": 4690
     },
     {
@@ -5370,8 +5370,6 @@
   "main_external_inputs": [
     "FiniteAvalanches.External.BarlowMasson2011.adjacent_ust_path_euclidean_tail",
     "FiniteAvalanches.External.SandpileLimit.exists_infiniteVolumeLaw",
-    "FiniteAvalanches.External.allMinors_matrixTree",
-    "FiniteAvalanches.External.disk_alternation_impossible",
     "FiniteAvalanches.External.finite_plane_dual_bond_cycle",
     "FiniteAvalanches.External.finite_plane_dual_connected",
     "FiniteAvalanches.External.finite_plane_geometric_dual",
@@ -5379,7 +5377,6 @@
     "FiniteAvalanches.External.finite_plane_two_pole_topology",
     "FiniteAvalanches.External.kenyonWilson_pairingGroves_resistanceMinor",
     "FiniteAvalanches.External.lawler_limic_beurling_srw_Z2",
-    "FiniteAvalanches.External.lyons_nestedProjectionDomination",
     "FiniteAvalanches.External.outer_face_simple_path_disk_redrawing",
     "FiniteAvalanches.External.parametrized_plane_arc_straightening",
     "FiniteAvalanches.External.plane_edge_chart_incidence",
@@ -5497,7 +5494,10 @@
     "FiniteAvalanches.External.polya_square_lattice_hits_every_site",
     "FiniteAvalanches.External.wired_srw_firstHit_voltage",
     "FiniteAvalanches.ProvedStandards.polya_square_lattice_hits_every_site",
-    "FiniteAvalanches.WiredHitting.wired_srw_firstHit_voltage"
+    "FiniteAvalanches.WiredHitting.wired_srw_firstHit_voltage",
+    "FiniteAvalanches.External.allMinors_matrixTree",
+    "FiniteAvalanches.External.lyons_nestedProjectionDomination",
+    "FiniteAvalanches.External.disk_alternation_impossible"
   ],
   "production_import_roots": [
     "Checks.AdditiveApplications",
@@ -5705,12 +5705,12 @@
   "verification_files": [
     {
       "path": ".github/workflows/build.yml",
-      "sha256": "d785d16b15a0d28bcabd8919a438225112f04b3b1b8e2ef2c68cd859994a0c3d",
+      "sha256": "f220f8cf5abd91c5a81bc9b2404398d783b91e91d5fbd2ddf4459d59da9e5807",
       "bytes": 2067
     },
     {
       "path": ".github/workflows/comparator.yml",
-      "sha256": "4f86c755bed390e953164150ee20502ab09783c1d42baf9ee1e5b348b508667c",
+      "sha256": "298fb4eb605a01548d4d8af1604844b96a88d8b800411a9f837842770842defe",
       "bytes": 2573
     },
     {
@@ -5720,22 +5720,22 @@
     },
     {
       "path": "audit/current-statements.json",
-      "sha256": "3a0c3fa5823aa20d44a2564320c68230bcb142e4503ee93fe7f7c43464ed02d1",
+      "sha256": "4ae7ddf80203e13599592bb57edaaadeee8371a5fbfbb448e5c9d30615f23bb8",
       "bytes": 15706
     },
     {
       "path": "audit/trusted-inputs.json",
-      "sha256": "a2e86ee8164e314bcf318831556ef08e4eb7c0383dcf6c171e6decc46e167ab5",
+      "sha256": "e1dafac70e927d92e7f24865405bc1bcd4ec6f80ac39ecef0348d7a031c2d3d0",
       "bytes": 288454
     },
     {
       "path": "lake-manifest.json",
-      "sha256": "eea9d05e629922cd4593ea1950701d21973f95195496e59e6e437baf4cb695f3",
+      "sha256": "587b1884c8cb1b75626debe43cececfb47b5e7aa6741c8e53a10c55467757220",
       "bytes": 3608
     },
     {
       "path": "lakefile.lean",
-      "sha256": "6e9baf829a9dcaf38eda264c215cff3e1588e4a86f84519ce2e659d888d9a3f3",
+      "sha256": "61f5a6eb26c219c9d5e97f3feb64d32a3ae407205da469f3000c9cd2817b8187",
       "bytes": 5738
     },
     {
@@ -5760,12 +5760,12 @@
     },
     {
       "path": "scripts/check_public_axioms.py",
-      "sha256": "bf80794b83f9a5e12ae4a47c99715fd8981fa285824604bc0da8e64fc6df8299",
+      "sha256": "3211e433edc0b87f584558b3e5b21cda45b94e1d379b7e84b93b635836da67a1",
       "bytes": 582
     },
     {
       "path": "scripts/check_public_inputs.py",
-      "sha256": "5c44134897ae778fb4364e45a03bb91e03ebd135ae0f3d8bc8a38cc9bd03da01",
+      "sha256": "4ab7405d611373c0157c9e8d9fab702bc687c6241fd91af866cf5d2818c7dff8",
       "bytes": 13478
     },
     {
@@ -5785,7 +5785,7 @@
     },
     {
       "path": "scripts/lint_public.py",
-      "sha256": "50c674bb662f32e86afa7ff4eef7ceff4a4cc012f9090d46ac4376145e466178",
+      "sha256": "2851deee6ef115cad084a57d873760d37b6cca0f0260e5b5e35bad5ea2f6bb81",
       "bytes": 2394
     },
     {

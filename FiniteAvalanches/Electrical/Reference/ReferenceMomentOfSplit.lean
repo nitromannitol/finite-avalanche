@@ -4,9 +4,11 @@ import FiniteAvalanches.Electrical.Reference.BoundaryCardinality
 import FiniteAvalanches.Electrical.Reference.PathProbabilities
 import FiniteAvalanches.Electrical.Reference.SplitVarianceAssembly
 
+/-! Electrical estimates for finite lattice networks. -/
+
 set_option autoImplicit false
 namespace FiniteAvalanches.Electrical.Source.Reference
-open LatticeProb
+open LatticeProb hiding Plane
 open FiniteAvalanches.Electrical.LatticeDrawing
 open FiniteAvalanches.Electrical
 open FiniteAvalanches.Electrical.StatementGeometry

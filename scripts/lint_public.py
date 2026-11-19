@@ -31,7 +31,7 @@ def lint(root):
             if (base/d).is_symlink():
                 paths.append(base/d)
                 dirs.remove(d)
-        paths.extend(base/f for f in sorted(files))
+        paths.extend(base/f for f in sorted(files) if f != '.git')
     for path in paths:
         relative = path.relative_to(root)
         if path.is_symlink():

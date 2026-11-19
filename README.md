@@ -9,7 +9,7 @@ A machine-checked **Lean 4** formalization of the paper
 The formalized text is the arXiv v2 source (`main.tex`, SHA-256
 `d2a875c154db9ff913ec6b25cf38e8da134ca977f6a24fd9c036cd8873b1082a`). All 17 numbered
 statements of the paper are stated and proved in Lean, the main theorem among them. The proofs
-use 22 standard results from the literature, which enter as named Lean axioms (see
+use 19 standard results from the literature as named Lean axioms (see
 [Standing assumptions and scope](#standing-assumptions-and-scope)).
 
 The development is built on [mathlib](https://github.com/leanprover-community/mathlib4) and the
@@ -75,31 +75,29 @@ and records how the Lean statements read the paper.
 
 ## Standing assumptions and scope
 
-1. **Results from the literature.** Twenty-two standard results enter as named Lean axioms in
-   [`FiniteAvalanches/External/`](FiniteAvalanches/External/), each with its source in the
-   docstring. The axiom report of Theorem 1.1 consists of exactly these 22 axioms and
-   `propext`, `Classical.choice` and `Quot.sound`. The registry
-   [`audit/trusted-inputs.json`](audit/trusted-inputs.json) records, for each, its exact Lean
-   statement and hash and its sources with page references.
+1. **Results from the literature.** Nineteen results enter as named Lean axioms in
+   [`FiniteAvalanches/External/`](FiniteAvalanches/External/). The axiom report of Theorem 1.1
+   consists of these 19 axioms and `propext`, `Classical.choice` and `Quot.sound`. The registry
+   [`audit/trusted-inputs.json`](audit/trusted-inputs.json) records their exact Lean statements,
+   hashes and available source references. Some plane-graph inputs have no citation in their
+   module docstrings; no specific source has been identified for `plane_edge_chart_incidence`.
 
-   *Uniform spanning trees, sandpiles and random walk (10).*
+   *Uniform spanning trees, sandpiles and random walk (8).*
 
    | Result | Lean axiom |
    | --- | --- |
    | Existence of the infinite-volume sandpile law on `ℤ²` (Athreya–Járai 2004, with the 2006 correction; Járai–Werning 2014) | `SandpileLimit.exists_infiniteVolumeLaw` |
-   | The all-minors matrix-tree theorem (Chaiken 1982) | `allMinors_matrixTree` |
    | Weak convergence of the wired uniform spanning trees of the boxes (Pemantle; Häggström; BLPS; Lyons–Peres §10.1; Járai 2012) | `square_lattice_wired_ust_weak_limit` |
    | The wired uniform spanning tree of `ℤ²` is one tree with one end (BLPS Theorem 12.4; Lyons–Peres Theorems 10.30, 10.36, 10.41) | `square_lattice_wired_ust_one_tree_one_end` |
    | Planar duality of the uniform spanning tree (BLPS Theorem 12.2; Lyons–Peres §10.3) | `square_lattice_ust_dual_law` |
    | Wilson's algorithm with two root sets (Lyons–Peres Theorem 4.1 and §4.2) | `wilson_two_color_law_existsUnique` |
-   | Domination of nested projection determinantal processes (Lyons 2003, Theorem 6.2) | `lyons_nestedProjectionDomination` |
    | The tail of the tree path between adjacent sites (Barlow–Masson 2011, Lemma 2.6) | `BarlowMasson2011.adjacent_ust_path_euclidean_tail` |
    | The Beurling estimate for simple random walk on `ℤ²` (Lawler–Limic 2004, Theorem 1) | `lawler_limic_beurling_srw_Z2` |
    | Pairing groves and response-matrix minors (Kenyon–Wilson 2009, Theorems 8.1 and B.3) | `kenyonWilson_pairingGroves_resistanceMinor` |
 
-   *Topology of finite plane graphs (12)*, from Mohar–Thomassen, *Graphs on Surfaces*, Diestel,
-   *Graph Theory*, Thomassen (1992) and Hatcher, *Algebraic Topology*: the impossibility of
-   alternating crosscuts of a disk (`disk_alternation_impossible`), the face star of a vertex
+   *Topology of finite plane graphs (11).* Available references include Mohar–Thomassen,
+   *Graphs on Surfaces*, Diestel, *Graph Theory*, and Hatcher, *Algebraic Topology*. The
+   inputs are the face star of a vertex
    (`plane_vertex_face_star`), the faces of a two-pole plane network
    (`finite_plane_two_pole_topology`), extension and straightening of plane arcs
    (`parametrized_plane_arc_straightening`), redrawing a path of the outer face on the boundary of
@@ -110,7 +108,9 @@ and records how the Lean statements read the paper.
    (`plane_edge_chart_incidence`), and transport of faces under inversion of the punctured plane
    (`plane_punctured_face_transport`, `plane_punctured_chart_face_transport`).
 
-   The registry contains three further standard results that Theorem 1.1 does not use: Wilson's
+   The all-minors matrix-tree theorem, nested projection domination, and disk alternation
+   are proved using Lattice-Probability. The registry contains three further axioms that
+   Theorem 1.1 does not use: Wilson's
    algorithm on a finite network, ray-seeded Wilson sampling on `ℤ²` (van Engelenburg–Hutchcroft)
    and the square tiling of Brooks, Smith, Stone and Tutte.
 2. **The model.** Sandpiles are integer fields on `ℤ²`; the stationary law is a probability
@@ -132,19 +132,20 @@ and records how the Lean statements read the paper.
   contains one intentional statement-level `sorry`, which the solution proves.
 - **Exact axiom boundary.** [`PublicVerification/Axioms.lean`](PublicVerification/Axioms.lean)
   prints 69 axiom reports, and [`scripts/check_public_axioms.py`](scripts/check_public_axioms.py)
-  checks each of them: Theorem 1.1 uses exactly the 22 axioms above and the three standard
-  axioms, and every other report lists only standard and registered axioms.
+  checks each of them: Theorem 1.1 uses exactly the 19 axioms above and the three standard
+  axioms, and every other report lists only standard and registered axioms. The review-gated
+  check requires a current source review.
 - **Warning-free build.** The continuous-integration build compiles every module with warnings
   treated as errors.
 - **Independent check of the statement.** The challenge in
   [`FiniteAvalanchesAudit/MainOrigin/`](FiniteAvalanchesAudit/MainOrigin/) imports mathlib alone
-  and rebuilds Theorem 1.1, with every definition it uses, from recorded kernel data.
-  [leanprover/comparator](https://github.com/leanprover/comparator) checks that the solution
-  proves exactly this statement with only the three standard axioms and the 22 registered ones,
-  through the Lean kernel and the independent nanoda kernel.
+  and rebuilds Theorem 1.1 from recorded kernel data. The recorded
+  [leanprover/comparator](https://github.com/leanprover/comparator) check used the Lean and
+  nanoda kernels for the earlier 22-input source snapshot. The current source requires renewed
+  review before the comparator check can run.
 - **Pinned toolchain and dependencies.** Lean `v4.32.0`, mathlib
   `81a5d257c8e410db227a6665ed08f64fea08e997` and Lattice-Probability
-  `8557b91360e23d51d779a05d8313974b403658b2`, recorded in [`lake-manifest.json`](lake-manifest.json).
+  `68722ce2d464119e90b373829d2761624b1f6a75`, recorded in [`lake-manifest.json`](lake-manifest.json).
 - **Pinned statements and inputs.** [`audit/current-statements.json`](audit/current-statements.json)
   records, for each numbered statement, the line range and SHA-256 of its source in the paper and
   the hash of its Lean declaration; [`audit/source-inventory.json`](audit/source-inventory.json)
@@ -185,7 +186,8 @@ bash scripts/build_comparator_tools.sh <tools-dir>
 COMPARATOR_TOOLS=<tools-dir> bash scripts/run_comparators.sh
 ```
 
-The first command builds `leanprover/comparator`, `lean4export`, nanoda and landrun at the pinned
+The comparator run requires a current review of the source inventory. The first command builds
+`leanprover/comparator`, `lean4export`, nanoda and landrun at the pinned
 revisions; the second checks the pair and expects `Your solution is okay!`. The workflow
 [`comparator.yml`](.github/workflows/comparator.yml) runs the same steps.
 

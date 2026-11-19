@@ -1,3 +1,4 @@
+import LatticeProb.Graph.CopiedGraph.AllMinorsMatrixTree
 import FiniteAvalanches.Trees.RootedForests
 import Mathlib.LinearAlgebra.Matrix.Determinant.Basic
 import Mathlib.GroupTheory.Perm.Sign
@@ -22,7 +23,7 @@ namespace FiniteAvalanches.External
 open FiniteAvalanches.Trees
 open scoped BigOperators Classical
 
-axiom allMinors_matrixTree {n k : ℕ} {E : Type} [Fintype E]
+theorem allMinors_matrixTree {n k : ℕ} {E : Type} [Fintype E]
     (G : Multigraph (Fin n) E) (I J : Finset (Fin n)) (hI : I.card = k) (hJ : J.card = k) (hk : 1 ≤ k) :
     ((Matrix.of (fun x y : Fin n => ∑ e : E,
           ((if x = G.left e then (1 : ℝ) else 0) - (if x = G.right e then (1 : ℝ) else 0)) *
@@ -33,6 +34,27 @@ axiom allMinors_matrixTree {n k : ℕ} {E : Type} [Fintype E]
       (-1 : ℝ) ^ ((∑ x ∈ I, (x : ℕ)) + (∑ y ∈ J, (y : ℕ))) *
         ∑ π : Equiv.Perm (Fin k), ((Equiv.Perm.sign π : ℤ) : ℝ) *
           (Nat.card {F : Finset E // G.is_rooted_forest (I : Set (Fin n)) F ∧
-            ∀ r : Fin k, G.reaches F (I.orderEmbOfFin hI r) (J.orderEmbOfFin hJ (π r))} : ℝ)
+            ∀ r : Fin k, G.reaches F (I.orderEmbOfFin hI r) (J.orderEmbOfFin hJ (π r))} : ℝ) := by
+  have hcard : I.card ≤ n := by simpa using I.card_le_univ
+  have hkn : k ≤ n := by
+    have := hk
+    omega
+  obtain ⟨d, hd⟩ := Nat.exists_eq_add_of_le hkn
+  have hn : n = d + k := by omega
+  clear hd
+  subst n
+  let H : LatticeProb.Graph.CopiedGraph (Fin (d + k)) E := ⟨G.left, G.right⟩
+  have h := H.det_laplacian_minor (R := ℝ) I J hI hJ
+  let minor (m : ℕ) (hI' : Iᶜ.card = m) (hJ' : Jᶜ.card = m) : ℝ :=
+    ((Matrix.of (fun x y : Fin (d + k) => ∑ e : E,
+      ((if x = G.left e then (1 : ℝ) else 0) - (if x = G.right e then 1 else 0)) *
+      ((if y = G.left e then (1 : ℝ) else 0) - (if y = G.right e then 1 else 0))) :
+        Matrix (Fin (d + k)) (Fin (d + k)) ℝ).submatrix
+          (Iᶜ.orderEmbOfFin hI') (Jᶜ.orderEmbOfFin hJ')).det
+  change minor ((d + k) - k) _ _ = _
+  change minor d _ _ = _ at h
+  convert h using 1
+  · simp only [Nat.add_sub_cancel]
+  · rfl
 
 end FiniteAvalanches.External

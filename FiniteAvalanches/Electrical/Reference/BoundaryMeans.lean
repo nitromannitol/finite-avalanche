@@ -1,10 +1,13 @@
 import FiniteAvalanches.Electrical.Reference.ConjugateMeans
 
+/-! Electrical estimates for finite lattice networks. -/
+
 set_option autoImplicit false
 set_option relaxedAutoImplicit false
 
 namespace FiniteAvalanches.Electrical.Plane.SourceLattice.ReferenceMoment
-open LatticeProb StatementGeometry Source BSST Plane.SourceLattice LatticeDrawing SplitStep
+open LatticeProb hiding Plane
+open StatementGeometry Source BSST Plane.SourceLattice LatticeDrawing SplitStep
 open LatticeCell
 open scoped Classical BigOperators
 noncomputable section

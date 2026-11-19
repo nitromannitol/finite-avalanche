@@ -1,10 +1,13 @@
 import CurrentSource.CurrentSplitAssembly
 
+/-! Electrical estimates for finite lattice networks. -/
+
 set_option autoImplicit false
 set_option relaxedAutoImplicit false
 
 namespace FiniteAvalanches.Electrical.CurrentSourceRoots
-open LatticeProb StatementGeometry Source BSST Plane.SourceLattice LatticeDrawing ChordSplit
+open LatticeProb hiding Plane
+open StatementGeometry Source BSST Plane.SourceLattice LatticeDrawing ChordSplit
 open FiniteAvalanches.Electrical.LatticeCell
 open FiniteAvalanches.Electrical.Source.CurrentSplit
 open scoped Classical BigOperators

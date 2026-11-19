@@ -2,6 +2,8 @@ import FiniteAvalanches.Electrical.Geometry.FiniteLatticeDrawing
 import FiniteAvalanches.Electrical.Geometry.FiniteConnectedSpan
 import FiniteAvalanches.Electrical.Geometry.SourceChartApplication
 
+/-! Planar drawings of the contracted lattice network. -/
+
 set_option autoImplicit false
 namespace FiniteAvalanches.Electrical.LatticeDrawing
 open LatticeProb
@@ -53,7 +55,7 @@ theorem source_primal_realization (D : Finset (Site 2)) (P : OneSet D)
     (hDc : ((lattice 2).induce (↑D : Set (Site 2))ᶜ).Connected)
     (hP : ((lattice 2).induce (↑(P.val.image Subtype.val) : Set (Site 2))).Connected)
     (marked : MarkedCopy D P) :
-    ∃ q : Plane → Plane, Continuous q ∧ ∃ Q : Drawing
+    ∃ q : Source.Plane → Source.Plane, Continuous q ∧ ∃ Q : Drawing
       (⟨fun e : ↥((domainCopies D).filter (fun e =>
       project D P (originalA e) ≠ project D P (originalB e))) => project D P (originalA e.val),
       fun e => project D P (originalB e.val)⟩ :

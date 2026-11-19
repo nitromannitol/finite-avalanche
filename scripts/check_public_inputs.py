@@ -92,28 +92,37 @@ def inspect_contents(root, dependencies=False):
     for e in config_pins:
         checked(root,e)
     registry = read_json(regular(root, 'audit/trusted-inputs.json'))
-    require(registry['schema_version'] == 3 and registry['kind'] == 'STANDARD_EXTERNAL_ASSUMPTIONS', 'Wrong registry schema')
+    require(registry['schema_version'] == 4 and registry['kind'] == 'STANDARD_EXTERNAL_RESULTS', 'Wrong registry schema')
     require(len(registry['inputs']) == 25, 'Expected exact25 registered declarations')
     names = set()
     owners = set()
+    paths_owned = set()
+    assumptions = set()
+    proved = set()
     ids = set()
     used = set()
     for e in registry['inputs']:
         d = e['declaration']
         name = d['export']
-        require(name not in names and d['path'] not in owners and e['id'] not in ids, 'Duplicate external ownership')
-        require(e['state'] == 'EXTERNAL_ASSUMPTION' and e['kind'] == 'STANDARD', 'External input misclassified')
+        require(name not in names and d['path'] not in paths_owned and e['id'] not in ids, 'Duplicate external ownership')
+        require(e['state'] in {'EXTERNAL_ASSUMPTION', 'PROVED'} and e['kind'] == 'STANDARD',
+                'External result misclassified')
+        is_assumption = e['state'] == 'EXTERNAL_ASSUMPTION'
         raw = checked(root, d)
         require(raw == d['complete_file'].encode() and d['path'] in paths, 'Incomplete external source pin')
         require(digest(residue(raw.decode()).encode()) == d['code_sha256'], 'External code pin differs')
         leaf = name.rsplit('.', 1)[-1]
         commands = re.findall(r'^\s*(?:noncomputable\s+)?(axiom|constant|def|theorem|lemma|abbrev|structure|class)\s+(\S+)', residue(raw.decode()), re.M)
-        require(commands == [('axiom', leaf)], 'Input must own its one exact registered axiom')
+        require(commands == [('axiom' if is_assumption else 'theorem', leaf)],
+                'Input must own its one exact registered declaration')
         namespaces = re.findall(r'^\s*namespace\s+(\S+)\s*$',residue(raw.decode()),re.M)
         require(len(namespaces) == 1 and namespaces[0]+'.'+leaf == name, 'External fully qualified identity differs')
-        require(e['sources'] and e['semantic_files'], 'Missing source citations or meaning pins')
+        require(e['sources'] and e['semantic_files'], 'Missing source records or meaning pins')
+        require(all(s.get('url') or (s.get('status') == 'SOURCE_NOT_IDENTIFIED' and s.get('scope'))
+                    for s in e['sources']), 'Empty source record')
         if e['used_by_main'] is True:
-            used.add(name)
+            if is_assumption:
+                used.add(name)
         else:
             require(e['used_by_main'] is False, 'Main-use flag must be boolean')
         for s in e['semantic_files']:
@@ -130,10 +139,16 @@ def inspect_contents(root, dependencies=False):
                         'Meaning source outside production closure')
                 checked(root, s)
         names.add(name)
-        owners.add(d['path'])
+        paths_owned.add(d['path'])
+        if is_assumption:
+            assumptions.add(name)
+            owners.add(d['path'])
+        else:
+            proved.add(name)
         ids.add(e['id'])
+    require(len(assumptions) == 22 and len(proved) == 3, 'Expected 22 assumptions and 3 proved results')
     require(names == set(inventory['registered_external_inputs']), 'Registered identity set differs')
-    require(len(used) == 22 and used == set(inventory['main_external_inputs']), 'Expected exact22 Main inputs')
+    require(len(used) == 19 and used == set(inventory['main_external_inputs']), 'Expected 19 Main inputs')
     # Count actual declarations, not strings in doc comments or registry summaries.
     actual_axiom_owners = {e['path'] for e in entries if re.search(r'^\s*(?:axiom|constant)\s+', residue(regular(root,e['path']).read_text()), re.M)}
     require(actual_axiom_owners == owners, 'Unlisted production axiom/constant')
@@ -145,20 +160,20 @@ def inspect_contents(root, dependencies=False):
     require(all(e['export'] in queries and e['declaration_path'] in paths for e in statements['statements']), 'Statement omitted from replay')
     require(MAIN in queries and names <= set(queries), 'Main or external declaration omitted from replay')
     primitive_only = set(inventory['primitive_only_exports'])
-    require(len(primitive_only) == 7 and primitive_only <= set(queries) and not primitive_only & names,
+    require(len(primitive_only) == 10 and primitive_only <= set(queries) and not primitive_only & assumptions and proved <= primitive_only,
             'Proved replacements/providers/consumers must be separate from assumptions')
     manifest = read_json(regular(root, 'lake-manifest.json'))
     packages = {p['name'].strip('«»'): p['rev'] for p in manifest['packages']}
-    require(packages['lattice-probability'] == '8557b91360e23d51d779a05d8313974b403658b2' and
+    require(packages['lattice-probability'] == '68722ce2d464119e90b373829d2761624b1f6a75' and
             packages['mathlib'] == '81a5d257c8e410db227a6665ed08f64fea08e997', 'Dependency revision differs')
     require(regular(root,'lean-toolchain').read_bytes() == b'leanprover/lean4:v4.32.0\n', 'Toolchain differs')
-    require('8557b91360e23d51d779a05d8313974b403658b2' in regular(root,'lakefile.lean').read_text(), 'Lakefile dependency differs')
+    require('68722ce2d464119e90b373829d2761624b1f6a75' in regular(root,'lakefile.lean').read_text(), 'Lakefile dependency differs')
     if dependencies:
         for name, rev in packages.items():
             directory = root / '.lake/packages' / name
             actual_head = subprocess.check_output(['git', '-C', str(directory), 'rev-parse', 'HEAD'], text=True).strip()
             require(actual_head == rev, 'Dependency HEAD differs: ' + name)
-    return {'registered': names, 'main_inputs': used, 'requests': set(queries), 'inventory': inventory,
+    return {'registered': assumptions, 'main_inputs': used, 'requests': set(queries), 'inventory': inventory,
             'primitive_only':primitive_only}
 
 
@@ -180,8 +195,8 @@ def require_reviewed(root):
                 re.fullmatch(r'[0-9a-f]{64}', r.get('evidence_sha256','')),
                 'Missing independent exact-subject review: ' + key)
     require(record['final_source_meaning_and_input_review'].get('registered_inputs') == 25 and
-            record['final_source_meaning_and_input_review'].get('main_inputs') == 22,
-            'Review does not cover current25/22 boundary')
+            record['final_source_meaning_and_input_review'].get('main_inputs') == 19,
+            'Review does not cover current 25-result, 19-input boundary')
 
 
 def registered_inputs(root):
@@ -212,7 +227,7 @@ def parse_reports(contents, raw):
         if name in contents['primitive_only']:
             require(axioms <= PRIMITIVES, 'Former input proof depends on a nonprimitive axiom: ' + name)
         if name == MAIN:
-            require(axioms - PRIMITIVES == contents['main_inputs'], 'Main does not use exact22 named assumptions')
+            require(axioms - PRIMITIVES == contents['main_inputs'], 'Main does not use the 19 named assumptions')
         if name in contents['registered']:
             expected = {name} | ASSERTION_TYPE_INPUTS.get(name, set())
             require(axioms - PRIMITIVES == expected,
@@ -232,6 +247,6 @@ if __name__ == '__main__':
         if not args.static:
             require_reviewed(args.root)
         print('STATIC INVENTORY ONLY' if args.static else 'REVIEWED SOURCE INVENTORY')
-        print('25 registered external ASSUMPTIONS; exact22 selected Main inputs. No build/comparator result asserted.')
+        print('25 registered results; 22 assumptions, 19 used by Main, and 3 proved results. No build/comparator result asserted.')
     except (ValueError, KeyError, TypeError, OSError, StopIteration, subprocess.CalledProcessError) as error:
         raise SystemExit('Invalid current release disclosure: ' + str(error)) from error

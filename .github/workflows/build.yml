@@ -1,4 +1,4 @@
-name: Current source CI (22 inputs)
+name: Current source CI (19 inputs)
 
 on:
   workflow_dispatch:

@@ -3,7 +3,7 @@ import FiniteAvalanches.Electrical.Geometry.SourceAlphaCopies
 /-! Original-copy source path in the dual of H, conditional on one closed classical formula. -/
 set_option autoImplicit false
 namespace FiniteAvalanches.Electrical.LatticeDrawing
-open LatticeProb
+open LatticeProb hiding Plane
 open FiniteAvalanches.Electrical.StatementGeometry
 open FiniteAvalanches.Electrical.Source
 open FiniteAvalanches.Electrical.BSST

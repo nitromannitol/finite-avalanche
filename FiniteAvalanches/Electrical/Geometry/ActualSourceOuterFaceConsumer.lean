@@ -3,7 +3,7 @@ import FiniteAvalanches.Electrical.Geometry.SourceOuterFacePath
 /-! Actual bare-source consumer with all original retained IDs and the whole path trace. -/
 set_option autoImplicit false
 namespace FiniteAvalanches.Electrical.LatticeDrawing
-open LatticeProb
+open LatticeProb hiding Plane
 open FiniteAvalanches.Electrical.StatementGeometry
 open FiniteAvalanches.Electrical.Source
 open FiniteAvalanches.Electrical.BSST

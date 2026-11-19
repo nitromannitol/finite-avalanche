@@ -266,8 +266,8 @@
         579
       ],
       "declaration_path": "FiniteAvalanches/Electrical/Reference/BoundaryMeans.lean",
-      "declaration_sha256": "fb337533f627f7d0af3f2a20fbfbe4cec9b649f11ba6647cc474983e63d6d734",
-      "declaration_code_sha256": "c79985537a93f9839a725d1eabdeb3e3d22c8862a42ecf59937532f82f3b1e05",
+      "declaration_sha256": "680f06b56f7c85c4c1501930a5da86a0de37f02e53bf239778715b19d2ba684a",
+      "declaration_code_sha256": "7a80415eb58fb1a060f9ba5e4f1d5a3339ea49adfe4ee641754021058c77faa6",
       "final_statement_and_proof_review": "PASS",
       "semantic_unit_companion": {
         "module": "FiniteAvalanches.Electrical.Reference.ConjugateMeans",
@@ -310,8 +310,8 @@
         658
       ],
       "declaration_path": "FiniteAvalanchesCurrent/ArcMomentExpectations.lean",
-      "declaration_sha256": "15400038d3a8221e9217f2de1a8a97c178093ec78158cb8398620b5260e5eec0",
-      "declaration_code_sha256": "2fadd19008bc6a09af49d3e810647423846cedcdde39e274111a72de58a6c870",
+      "declaration_sha256": "6ba682bb31a9010794074fd520963aa5bbd7ec0b5bae6df3efc0bae70ec68081",
+      "declaration_code_sha256": "d1f1b2d4e334429dca0a2a2c365e0c75ab3ef9f0114d7c0fc4b89ceb06486108",
       "final_statement_and_proof_review": "PASS"
     },
     {
@@ -329,8 +329,8 @@
         754
       ],
       "declaration_path": "FiniteAvalanchesCurrent/SplitEstimateExpectations.lean",
-      "declaration_sha256": "ce7cf21ae302526ca48b59378fe6ee5bce0943b5c163406a3f82fea591e78f9a",
-      "declaration_code_sha256": "792011ebb5399e6d9b3579defd60a58e59c2029a779b71577672b5ef2ccefa72",
+      "declaration_sha256": "d728d86bfb1a3e29193abfc6e1d1aff03e98fb2abba92fabdc37b5432a35acf5",
+      "declaration_code_sha256": "b8fff8e8ad3c117b755d374311f1ead1f5f0b09167d03a77d49d1774e027af8f",
       "final_statement_and_proof_review": "PASS"
     }
   ],

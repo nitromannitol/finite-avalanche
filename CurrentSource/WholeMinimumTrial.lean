@@ -6,8 +6,11 @@ import CurrentSource.SplitWeightedEnergy
 import FiniteAvalanches.Electrical.SplitStep.OriginalSignedTrial
 import ActualS7Consumer
 
+/-! Electrical estimates for finite lattice networks. -/
+
 namespace FiniteAvalanches.Electrical.SplitStep
-open LatticeProb StatementGeometry Source BSST Plane.SourceLattice LatticeDrawing ChordSplit Geometry
+open LatticeProb hiding Plane
+open StatementGeometry Source BSST Plane.SourceLattice LatticeDrawing ChordSplit Geometry
 open FiniteAvalanches.Electrical.LatticeCell
 open FiniteAvalanches.Electrical.Plane.SourceLattice.CurrentMinimumCorners
 open FiniteAvalanches.Electrical.Source.CurrentTerminalHeight

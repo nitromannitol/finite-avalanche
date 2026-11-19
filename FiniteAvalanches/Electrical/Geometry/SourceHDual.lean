@@ -3,9 +3,11 @@ import FiniteAvalanches.Electrical.Reference.Connected
 import FiniteAvalanches.Electrical.Reference.CutConnectivity
 import FiniteAvalanches.External.GeometricDual
 
+/-! Electrical estimates for finite lattice networks. -/
+
 set_option autoImplicit false
 namespace FiniteAvalanches.Electrical.LatticeDrawing
-open LatticeProb
+open LatticeProb hiding Plane
 open FiniteAvalanches.Electrical.StatementGeometry
 open FiniteAvalanches.Electrical.Source
 open FiniteAvalanches.Electrical.BSST

@@ -7,9 +7,11 @@ import FiniteAvalanches.Electrical.Green.Grounded
 import FiniteAvalanches.External.PlaneDualBondCycle
 import FiniteAvalanches.External.PlaneDualConnected
 
+/-! Electrical estimates for finite lattice networks. -/
+
 set_option autoImplicit false
 namespace FiniteAvalanches.Electrical.Ratio
-open LatticeProb
+open LatticeProb hiding Plane
 open FiniteAvalanches.Electrical.LatticeDrawing
 open FiniteAvalanches.Electrical
 open FiniteAvalanches.Electrical.StatementGeometry

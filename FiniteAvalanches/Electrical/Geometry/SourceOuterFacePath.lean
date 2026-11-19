@@ -3,7 +3,7 @@ import FiniteAvalanches.Electrical.Geometry.PunctureTransport
 /-! Full-H dual redrawing with the entire retained alpha-star path on an unbounded face. -/
 set_option autoImplicit false
 namespace FiniteAvalanches.Electrical.LatticeDrawing
-open LatticeProb
+open LatticeProb hiding Plane
 open FiniteAvalanches.Electrical.StatementGeometry
 open FiniteAvalanches.Electrical.Source
 open FiniteAvalanches.Electrical.BSST
