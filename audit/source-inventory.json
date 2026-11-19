@@ -5790,12 +5790,12 @@
     },
     {
       "path": "scripts/prepare_public_comparators.py",
-      "sha256": "7319cd0355a0fd6042b89512f5f36fcb31abdb276c0f523f345a7adb3ce47358",
+      "sha256": "5a3e5e9af71f6cfef3f8ee6931349cc63d2d90d63490092821889f27716abfc1",
       "bytes": 9189
     },
     {
       "path": "scripts/run_comparators.sh",
-      "sha256": "6ac9dbf6edef10dde1eeb19412f054f2a0ba9f86334eb3e4311bb7d12ef5b154",
+      "sha256": "7fa12c580587c0b7130d4251eec4ef787387750cc005b70cfe282b2183b32281",
       "bytes": 6288
     }
   ]

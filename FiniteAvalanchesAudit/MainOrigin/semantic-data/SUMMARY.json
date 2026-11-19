@@ -1,4 +1,4 @@
-{"whole_types_roundtripped": 957,
+{"whole_types_roundtripped": 954,
  "whole_bodies_roundtripped": 897,
  "syntax_metadata": 0,
  "status": "ACTUAL_DAG_CAPTURE_ONLY_NOT_COMPARATOR_APPROVAL",
@@ -6,8 +6,6 @@
  ["propext",
   "Classical.choice",
   "Quot.sound",
-  "FiniteAvalanches.External.allMinors_matrixTree",
-  "FiniteAvalanches.External.disk_alternation_impossible",
   "FiniteAvalanches.External.finite_plane_dual_bond_cycle",
   "FiniteAvalanches.External.finite_plane_dual_connected",
   "FiniteAvalanches.External.finite_plane_geometric_dual",
@@ -15,7 +13,6 @@
   "FiniteAvalanches.External.finite_plane_two_pole_topology",
   "FiniteAvalanches.External.kenyonWilson_pairingGroves_resistanceMinor",
   "FiniteAvalanches.External.lawler_limic_beurling_srw_Z2",
-  "FiniteAvalanches.External.lyons_nestedProjectionDomination",
   "FiniteAvalanches.External.outer_face_simple_path_disk_redrawing",
   "FiniteAvalanches.External.parametrized_plane_arc_straightening",
   "FiniteAvalanches.External.plane_edge_chart_incidence",
@@ -30,7 +27,7 @@
   "FiniteAvalanches.External.SandpileLimit.exists_infiniteVolumeLaw"],
  "schema": "main-comparator-full-constantinfo-dag-v1",
  "retained_targets":
- [{"type_root": 33540,
+ [{"type_root": 32589,
    "name":
    ["str",
     ["str",
@@ -40,7 +37,7 @@
    "levels": [],
    "display_name":
    "FiniteAvalanches.External.BarlowMasson2011.adjacent_ust_path_euclidean_tail"},
-  {"type_root": 34347,
+  {"type_root": 33396,
    "name":
    ["str",
     ["str",
@@ -50,56 +47,42 @@
    "levels": [],
    "display_name":
    "FiniteAvalanches.External.SandpileLimit.exists_infiniteVolumeLaw"},
-  {"type_root": 11611,
-   "name":
-   ["str",
-    ["str", ["str", ["anonymous"], "FiniteAvalanches"], "External"],
-    "allMinors_matrixTree"],
-   "levels": [],
-   "display_name": "FiniteAvalanches.External.allMinors_matrixTree"},
-  {"type_root": 11734,
-   "name":
-   ["str",
-    ["str", ["str", ["anonymous"], "FiniteAvalanches"], "External"],
-    "disk_alternation_impossible"],
-   "levels": [],
-   "display_name": "FiniteAvalanches.External.disk_alternation_impossible"},
-  {"type_root": 12262,
+  {"type_root": 11617,
    "name":
    ["str",
     ["str", ["str", ["anonymous"], "FiniteAvalanches"], "External"],
     "finite_plane_dual_bond_cycle"],
    "levels": [],
    "display_name": "FiniteAvalanches.External.finite_plane_dual_bond_cycle"},
-  {"type_root": 12352,
+  {"type_root": 11707,
    "name":
    ["str",
     ["str", ["str", ["anonymous"], "FiniteAvalanches"], "External"],
     "finite_plane_dual_connected"],
    "levels": [],
    "display_name": "FiniteAvalanches.External.finite_plane_dual_connected"},
-  {"type_root": 12729,
+  {"type_root": 12104,
    "name":
    ["str",
     ["str", ["str", ["anonymous"], "FiniteAvalanches"], "External"],
     "finite_plane_geometric_dual"],
    "levels": [],
    "display_name": "FiniteAvalanches.External.finite_plane_geometric_dual"},
-  {"type_root": 12888,
+  {"type_root": 12267,
    "name":
    ["str",
     ["str", ["str", ["anonymous"], "FiniteAvalanches"], "External"],
     "finite_plane_tree_complement"],
    "levels": [],
    "display_name": "FiniteAvalanches.External.finite_plane_tree_complement"},
-  {"type_root": 13363,
+  {"type_root": 12742,
    "name":
    ["str",
     ["str", ["str", ["anonymous"], "FiniteAvalanches"], "External"],
     "finite_plane_two_pole_topology"],
    "levels": [],
    "display_name": "FiniteAvalanches.External.finite_plane_two_pole_topology"},
-  {"type_root": 13583,
+  {"type_root": 12998,
    "name":
    ["str",
     ["str", ["str", ["anonymous"], "FiniteAvalanches"], "External"],
@@ -107,22 +90,14 @@
    "levels": [],
    "display_name":
    "FiniteAvalanches.External.kenyonWilson_pairingGroves_resistanceMinor"},
-  {"type_root": 13705,
+  {"type_root": 13121,
    "name":
    ["str",
     ["str", ["str", ["anonymous"], "FiniteAvalanches"], "External"],
     "lawler_limic_beurling_srw_Z2"],
    "levels": [],
    "display_name": "FiniteAvalanches.External.lawler_limic_beurling_srw_Z2"},
-  {"type_root": 14093,
-   "name":
-   ["str",
-    ["str", ["str", ["anonymous"], "FiniteAvalanches"], "External"],
-    "lyons_nestedProjectionDomination"],
-   "levels": [["str", ["anonymous"], "u_1"]],
-   "display_name":
-   "FiniteAvalanches.External.lyons_nestedProjectionDomination"},
-  {"type_root": 14219,
+  {"type_root": 13252,
    "name":
    ["str",
     ["str", ["str", ["anonymous"], "FiniteAvalanches"], "External"],
@@ -130,7 +105,7 @@
    "levels": [],
    "display_name":
    "FiniteAvalanches.External.outer_face_simple_path_disk_redrawing"},
-  {"type_root": 14248,
+  {"type_root": 13281,
    "name":
    ["str",
     ["str", ["str", ["anonymous"], "FiniteAvalanches"], "External"],
@@ -138,14 +113,14 @@
    "levels": [],
    "display_name":
    "FiniteAvalanches.External.parametrized_plane_arc_straightening"},
-  {"type_root": 14309,
+  {"type_root": 13346,
    "name":
    ["str",
     ["str", ["str", ["anonymous"], "FiniteAvalanches"], "External"],
     "plane_edge_chart_incidence"],
    "levels": [],
    "display_name": "FiniteAvalanches.External.plane_edge_chart_incidence"},
-  {"type_root": 14690,
+  {"type_root": 13727,
    "name":
    ["str",
     ["str", ["str", ["anonymous"], "FiniteAvalanches"], "External"],
@@ -153,28 +128,28 @@
    "levels": [],
    "display_name":
    "FiniteAvalanches.External.plane_punctured_chart_face_transport"},
-  {"type_root": 15225,
+  {"type_root": 14262,
    "name":
    ["str",
     ["str", ["str", ["anonymous"], "FiniteAvalanches"], "External"],
     "plane_punctured_face_transport"],
    "levels": [],
    "display_name": "FiniteAvalanches.External.plane_punctured_face_transport"},
-  {"type_root": 15359,
+  {"type_root": 14396,
    "name":
    ["str",
     ["str", ["str", ["anonymous"], "FiniteAvalanches"], "External"],
     "plane_vertex_face_star"],
    "levels": [],
    "display_name": "FiniteAvalanches.External.plane_vertex_face_star"},
-  {"type_root": 15479,
+  {"type_root": 14516,
    "name":
    ["str",
     ["str", ["str", ["anonymous"], "FiniteAvalanches"], "External"],
     "square_lattice_ust_dual_law"],
    "levels": [],
    "display_name": "FiniteAvalanches.External.square_lattice_ust_dual_law"},
-  {"type_root": 15525,
+  {"type_root": 14563,
    "name":
    ["str",
     ["str", ["str", ["anonymous"], "FiniteAvalanches"], "External"],
@@ -182,7 +157,7 @@
    "levels": [],
    "display_name":
    "FiniteAvalanches.External.square_lattice_wired_ust_one_tree_one_end"},
-  {"type_root": 15528,
+  {"type_root": 14566,
    "name":
    ["str",
     ["str", ["str", ["anonymous"], "FiniteAvalanches"], "External"],
@@ -190,7 +165,7 @@
    "levels": [],
    "display_name":
    "FiniteAvalanches.External.square_lattice_wired_ust_weak_limit"},
-  {"type_root": 15606,
+  {"type_root": 14644,
    "name":
    ["str",
     ["str", ["str", ["anonymous"], "FiniteAvalanches"], "External"],
@@ -198,21 +173,18 @@
    "levels": [],
    "display_name":
    "FiniteAvalanches.External.wilson_two_color_law_existsUnique"}],
- "retained_count": 22,
+ "retained_count": 19,
  "recursor_rules": 14,
  "primitive_axioms": ["propext", "Classical.choice", "Quot.sound"],
- "owned_constants": 957,
+ "owned_constants": 954,
  "owned_axioms":
- ["FiniteAvalanches.External.allMinors_matrixTree",
-  "FiniteAvalanches.External.disk_alternation_impossible",
-  "FiniteAvalanches.External.finite_plane_dual_bond_cycle",
+ ["FiniteAvalanches.External.finite_plane_dual_bond_cycle",
   "FiniteAvalanches.External.finite_plane_dual_connected",
   "FiniteAvalanches.External.finite_plane_geometric_dual",
   "FiniteAvalanches.External.finite_plane_tree_complement",
   "FiniteAvalanches.External.finite_plane_two_pole_topology",
   "FiniteAvalanches.External.kenyonWilson_pairingGroves_resistanceMinor",
   "FiniteAvalanches.External.lawler_limic_beurling_srw_Z2",
-  "FiniteAvalanches.External.lyons_nestedProjectionDomination",
   "FiniteAvalanches.External.outer_face_simple_path_disk_redrawing",
   "FiniteAvalanches.External.parametrized_plane_arc_straightening",
   "FiniteAvalanches.External.plane_edge_chart_incidence",
@@ -225,7 +197,7 @@
   "FiniteAvalanches.External.wilson_two_color_law_existsUnique",
   "FiniteAvalanches.External.BarlowMasson2011.adjacent_ust_path_euclidean_tail",
   "FiniteAvalanches.External.SandpileLimit.exists_infiniteVolumeLaw"],
- "nodes": 153562,
+ "nodes": 152636,
  "nested_inductives": 0,
  "main_type_root": 194,
  "main_proof_serialized": false,
@@ -244,13 +216,11 @@
  "eliminated_inputs": [],
  "declaration_identity":
  "all ConstantInfo fields; Expr.equal for every type/body/rule",
- "boundary_constants": 1463,
+ "boundary_constants": 1440,
  "actual_main_axioms":
  ["propext",
   "Classical.choice",
   "Quot.sound",
-  "FiniteAvalanches.External.allMinors_matrixTree",
-  "FiniteAvalanches.External.disk_alternation_impossible",
   "FiniteAvalanches.External.finite_plane_dual_bond_cycle",
   "FiniteAvalanches.External.finite_plane_dual_connected",
   "FiniteAvalanches.External.finite_plane_geometric_dual",
@@ -258,7 +228,6 @@
   "FiniteAvalanches.External.finite_plane_two_pole_topology",
   "FiniteAvalanches.External.kenyonWilson_pairingGroves_resistanceMinor",
   "FiniteAvalanches.External.lawler_limic_beurling_srw_Z2",
-  "FiniteAvalanches.External.lyons_nestedProjectionDomination",
   "FiniteAvalanches.External.outer_face_simple_path_disk_redrawing",
   "FiniteAvalanches.External.parametrized_plane_arc_straightening",
   "FiniteAvalanches.External.plane_edge_chart_incidence",

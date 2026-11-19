@@ -22,4 +22,4 @@ Nineteen external results used by Theorem 1.1 remain axioms. Three additional re
 in Lean using Lattice-Probability. Source references, where identified, are recorded in
 `audit/trusted-inputs.json`; no specific source has been identified for the edge-chart incidence
 statement. The release review binds the earlier source inventory and must be renewed. The
-comparator pair requires regeneration and review for the current source before its check can pass.
+regenerated comparator pair awaits review for the current source before its check can pass.

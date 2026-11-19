@@ -9,7 +9,7 @@ project:
     1.1). All 17 numbered statements of the paper are formalized. The proofs use
     19 standard results from the literature, which enter as named Lean axioms.
     The comparator pair FiniteAvalanchesAudit/MainOrigin/ was checked for the earlier
-    source inventory; the pair requires regeneration and review for the current source.
+    source inventory; the regenerated pair awaits review for the current source.
   authors:
     - "Ahmed Bou-Rabee"
   license: "Apache-2.0"
@@ -145,8 +145,8 @@ review:
     Correctness of every proof is guaranteed by the Lean kernel and Mathlib
     relative to the 19 registered axioms (no sorry, no other axiom). The
     statements were reviewed against the paper for the earlier source inventory.
-    The recorded comparator review also covers that earlier inventory; the pair
-    requires regeneration and review for the current source.
+    The recorded comparator review also covers that earlier inventory; the regenerated
+    pair awaits review for the current source.
 
 alignment:
   namespace: "FiniteAvalanches"
