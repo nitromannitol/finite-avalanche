@@ -1,6 +1,8 @@
 import FiniteAvalanches.Electrical.Geometry.SourceHDual
 import FiniteAvalanches.Support.Plane.EdgeFaceIncidence
 import FiniteAvalanches.Support.Plane.HalfOpenLocalStraightening
+
+/-! Chart-side incidence along a plane edge, proved from local straightening. -/
 open FiniteAvalanches.Electrical.StatementGeometry
 open FiniteAvalanches.Electrical.Source
 open FiniteAvalanches.Electrical.BSST

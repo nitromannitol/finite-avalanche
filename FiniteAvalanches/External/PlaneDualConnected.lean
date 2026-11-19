@@ -2,6 +2,8 @@ import FiniteAvalanches.Electrical.Geometry.BSST
 import FiniteAvalanches.Support.Plane.HalfOpenLocalStraightening
 import FiniteAvalanches.Support.Plane.DualConnectedIncidence
 
+/-! Connectivity of the chart-defined dual of a finite plane graph. -/
+
 set_option autoImplicit false
 open FiniteAvalanches.Electrical
 open FiniteAvalanches.Electrical.StatementGeometry

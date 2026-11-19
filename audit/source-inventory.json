@@ -1989,15 +1989,15 @@
     },
     {
       "path": "FiniteAvalanches/External/PlaneDualConnected.lean",
-      "sha256": "3da0923af22277478a00e6ce27867fd514c1b5f4dc381930bd455eab0fe52776",
-      "code_sha256": "e036dded04e549b6ca570fa6781fe7081de66b97339e58fe18770834201d8ba4",
-      "bytes": 1162
+      "sha256": "ef3751a5e71fc108d7c6c9e132f3b78e6db97ba727992fd60e1a73554e956028",
+      "code_sha256": "daf3baa2e349731e25e4317938155692ab43bc92e6f8ebf3232a299ea9a94b76",
+      "bytes": 1234
     },
     {
       "path": "FiniteAvalanches/External/PlaneEdgeChartIncidence.lean",
-      "sha256": "fba277f0118407eff49a4eedb2f74a98bea039acbcdc69e284674e971a42c1a9",
-      "code_sha256": "4798f06404902ea85dd71ebd64835e480a672d674697af4f922ca2584ea828db",
-      "bytes": 983
+      "sha256": "6834b46f776818621ce2142c8cd7670fa8e951e80b275a3bcb5878843a0c98b7",
+      "code_sha256": "13537f42a32a1d003401c48bd3c9892c33381a19ad8ad1cd938cc98aba4d1213",
+      "bytes": 1065
     },
     {
       "path": "FiniteAvalanches/External/PlanePuncturedChartFaceTransport.lean",
@@ -6823,7 +6823,7 @@
     },
     {
       "path": "audit/trusted-inputs.json",
-      "sha256": "62ea4937176b2ae6b0c2b65f02a33ae0f0092661cc45470350563d82dbb8825e",
+      "sha256": "4d0f7f6102f3032ba741682ad53d4fff0297303aad7b785d6000bf7fe6a7f190",
       "bytes": 288454
     },
     {
