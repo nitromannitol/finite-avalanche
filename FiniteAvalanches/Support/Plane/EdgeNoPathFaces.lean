@@ -120,4 +120,16 @@ theorem chart_faces_eq_of_not_reaches {V E : Type} [Fintype V] [Fintype E]
   exact (face_eq_of_mem _ _ _ y hy' hxy'').trans
     (face_eq_of_mem _ _ _ x hx' hx'').symm
 
+/-- If the endpoints of an omitted edge are not connected by selected edges,
+its chart faces are joined by dual edges outside the selected set and the edge. -/
+theorem dual_reaches_of_not_primal_reaches {V E : Type} [Fintype V] [Fintype E]
+    [Nonempty E] {G : CopiedGraph V E} (D : Drawing G)
+    (charts : ∀ e, EdgeChart D e) (A : Finset E) (e : E) (he : e ∉ A)
+    (hnot : ¬ G.reaches A (G.left e) (G.right e)) :
+    (⟨fun e => negativeChartFace D e (charts e),
+      fun e => positiveChartFace D e (charts e)⟩ : CopiedGraph (Face D) E).reaches
+        (Aᶜ.erase e) (negativeChartFace D e (charts e)) (positiveChartFace D e (charts e)) :=
+  (edge_dual_reaches_iff_projected_faces_eq D charts A e).mpr
+    (chart_faces_eq_of_not_reaches D A e (charts e) he hnot)
+
 end FiniteAvalanches.Electrical.StatementGeometry
