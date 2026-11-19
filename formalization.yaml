@@ -9,7 +9,7 @@ project:
     1.1). All 17 numbered statements of the paper are formalized. The proofs use
     19 standard results from the literature, which enter as named Lean axioms.
     The comparator pair FiniteAvalanchesAudit/MainOrigin/ was checked for the earlier
-    source inventory; the current source awaits renewed review.
+    source inventory; the pair requires regeneration and review for the current source.
   authors:
     - "Ahmed Bou-Rabee"
   license: "Apache-2.0"
@@ -106,14 +106,11 @@ status:
       comparator_config: "FiniteAvalanchesAudit/MainOrigin/comparator.json"
       literature_dependencies:
         - "FiniteAvalanches.External.SandpileLimit.exists_infiniteVolumeLaw"
-        - "FiniteAvalanches.External.allMinors_matrixTree"
         - "FiniteAvalanches.External.square_lattice_wired_ust_weak_limit"
         - "FiniteAvalanches.External.square_lattice_wired_ust_one_tree_one_end"
         - "FiniteAvalanches.External.square_lattice_ust_dual_law"
         - "FiniteAvalanches.External.wilson_two_color_law_existsUnique"
-        - "FiniteAvalanches.External.lyons_nestedProjectionDomination"
         - "FiniteAvalanches.External.BarlowMasson2011.adjacent_ust_path_euclidean_tail"
-        - "FiniteAvalanches.External.disk_alternation_impossible"
         - "FiniteAvalanches.External.lawler_limic_beurling_srw_Z2"
         - "FiniteAvalanches.External.kenyonWilson_pairingGroves_resistanceMinor"
         - "FiniteAvalanches.External.plane_vertex_face_star"
@@ -148,8 +145,8 @@ review:
     Correctness of every proof is guaranteed by the Lean kernel and Mathlib
     relative to the 19 registered axioms (no sorry, no other axiom). The
     statements were reviewed against the paper for the earlier source inventory.
-    The recorded comparator review also covers that earlier inventory; renewed
-    review is pending for the current source.
+    The recorded comparator review also covers that earlier inventory; the pair
+    requires regeneration and review for the current source.
 
 alignment:
   namespace: "FiniteAvalanches"
