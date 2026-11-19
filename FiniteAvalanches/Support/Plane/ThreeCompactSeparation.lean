@@ -1,4 +1,4 @@
-import FiniteAvalanches.Support.Plane.TopoJaniszewski
+import FiniteAvalanches.Support.Plane.PlanarCore
 
 /-!
 # Joining compact plane sets without creating separation
@@ -10,7 +10,7 @@ three compact sets when each successive intersection is preconnected.
 namespace LatticeProb.PlaneTopology
 
 open Set
-open QuantumZipper.CA.Topo
+open QuantumZipper.CA.Topo MatedCRTHarmonic.Topology
 
 /-- If two points remain connected outside a compact set and outside the union
 of two other compact sets, then they remain connected outside all three when
@@ -32,5 +32,19 @@ theorem connectedComponentIn_compl_union_three
   have hconnAK : b ∈ connectedComponentIn (A ∪ K)ᶜ a :=
     janiszewski hA hK hAK haAK hbAK hconnA hconnK
   exact janiszewski (hA.union hK) hL hAKL ha hb hconnAK hconnL
+
+/-- Adding an arc between two compact pieces preserves the component relation
+when the two successive intersections are preconnected. -/
+theorem connectedComponentIn_compl_union_arc_two
+    {A K L : Set ℂ} {a b : ℂ}
+    (hA : IsArcSet A) (hK : IsCompact K) (hL : IsCompact L)
+    (hAK : IsPreconnected (A ∩ K)) (hAKL : IsPreconnected ((A ∪ K) ∩ L))
+    (ha : a ∉ (A ∪ K) ∪ L) (hb : b ∉ (A ∪ K) ∪ L)
+    (hconnKL : b ∈ connectedComponentIn (K ∪ L)ᶜ a) :
+    b ∈ connectedComponentIn ((A ∪ K) ∪ L)ᶜ a := by
+  have haA : a ∉ A := fun h => ha (Or.inl (Or.inl h))
+  have hbA : b ∉ A := fun h => hb (Or.inl (Or.inl h))
+  exact connectedComponentIn_compl_union_three hA.isCompact hK hL hAK hAKL ha hb
+    (mem_connectedComponentIn_compl_of_isArcSet hA haA hbA) hconnKL
 
 end LatticeProb.PlaneTopology
