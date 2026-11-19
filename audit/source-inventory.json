@@ -3692,6 +3692,18 @@
       "bytes": 19373
     },
     {
+      "path": "FiniteAvalanches/Support/Plane/CrossingArms.lean",
+      "sha256": "27c971185a0aabd8c2fa109ac791bd1993ed70c0239d860cd4c69aa804dde811",
+      "code_sha256": "adec5601e9daea7466a1ad03ed77682253ce275b92616ffc1834998147c9ca2d",
+      "bytes": 3700
+    },
+    {
+      "path": "FiniteAvalanches/Support/Plane/CrossingArmsSeparation.lean",
+      "sha256": "3862b7dfc7e7422d39384d66128513024655573df37b3a2388062f78214e23da",
+      "code_sha256": "dbaf0e740de7f677caac186bbe987f9ca519c7698f82bd59802abea773ad4756",
+      "bytes": 5404
+    },
+    {
       "path": "FiniteAvalanches/Support/Plane/CrossingBoundaryAccess.lean",
       "sha256": "86a3a2b1fa7c647819daee00da88f143f0459cd535507eb5ea276ecfc59aaaf2",
       "code_sha256": "0eb7ae98b833f1298ebad58a157982ca638172fc81c7861713c3b3630a8ba9df",
@@ -3708,6 +3720,12 @@
       "sha256": "c4ad1bdcc732217bd06f506932b1a489cadf21fde8f90c3360343dff038336c6",
       "code_sha256": "354cbb0635cd503eb0d13eb2474876a092368ae32678bd3eeac0eae307e2bb53",
       "bytes": 4344
+    },
+    {
+      "path": "FiniteAvalanches/Support/Plane/CrossingTailChart.lean",
+      "sha256": "ff8bc06f2b1011270a78f328e178c02c526f4b02e44e12c270340f8b2399a8ca",
+      "code_sha256": "31b2224bf3dbc1d08153cfd646aaebe2269c8a4a3c1d2116f5836ed265144c6b",
+      "bytes": 2540
     },
     {
       "path": "FiniteAvalanches/Support/Plane/DeletedDualConnectivity.lean",
@@ -6749,8 +6767,11 @@
     "FiniteAvalanches.Support.Plane.ArcStraightHomeomorph",
     "FiniteAvalanches.Support.Plane.BoundaryArcJoin",
     "FiniteAvalanches.Support.Plane.CopiedTreeCardinality",
+    "FiniteAvalanches.Support.Plane.CrossingArms",
+    "FiniteAvalanches.Support.Plane.CrossingArmsSeparation",
     "FiniteAvalanches.Support.Plane.CrossingBoundaryAccess",
     "FiniteAvalanches.Support.Plane.CrossingStubs",
+    "FiniteAvalanches.Support.Plane.CrossingTailChart",
     "FiniteAvalanches.Support.Plane.DeletedDualConnectivity",
     "FiniteAvalanches.Support.Plane.DeletedEdgeFaces",
     "FiniteAvalanches.Support.Plane.DualConnectedIncidence",
