@@ -1,4 +1,5 @@
 import FiniteAvalanches.Support.Plane.GeometricDual
+import FiniteAvalanches.Support.Plane.HalfOpenLocalStraightening
 import FiniteAvalanches.Electrical.Geometry.ComplementFaces
 import FiniteAvalanches.Electrical.Geometry.ConnectedDrawingQuotient
 
@@ -83,6 +84,28 @@ theorem chart_faces_merge_of_omitted_edge {V E F : Type}
   chart_faces_merge_of_midpoint_off_trace D (restrictDrawing D i hi hl hr)
     (drawingTrace_restrictDrawing_subset D i hi hl hr) e c
     (midpoint_off_restrictDrawing D i hi hl hr e he)
+
+/-- An interior edge point is incident exactly to the two faces named by its
+midpoint chart, allowing the two faces to coincide. -/
+theorem mem_closure_faceRegion_iff_chart_face_of_interior
+    (D : Drawing J) (e : E) (c : EdgeChart D e) (A : Face D)
+    (t : ArcParameter) (ht0 : 0 < t.val) (ht1 : t.val < 1) :
+    D.curve e t ∈ closure (faceRegion D A) ↔
+      A = positiveChartFace D e c ∨ A = negativeChartFace D e c := by
+  have hcharts : ∀ (s : ArcParameter), 0 < s.val → s.val < 1 →
+      ∃ (h : Plane ≃ₜ Plane) (r : ℝ), 0 < r ∧
+        (∀ z ∈ LatticeProb.PlaneTopology.axisBox s.val r,
+          h.symm z ∈ drawingTrace D ↔ z.2 = 0) ∧
+        (∀ u : ArcParameter, |u.val - s.val| < r → h (D.curve e u) = (u.val, 0)) := by
+    intro s hs0 hs1
+    obtain ⟨h, δ, hδ, hs⟩ := D.exists_interior_straightening e s hs0 hs1
+    obtain ⟨r, hr, htrace, hparam⟩ :=
+      exists_trace_box_of_straightened_subarc D e s hs0 hs1 h δ hδ hs
+    exact ⟨h, r, hr, htrace, hparam⟩
+  let m : ArcParameter := ⟨1 / 2, by constructor <;> norm_num⟩
+  exact (closure_incidence_of_local_charts D e A hcharts t m ht0 ht1
+    (by norm_num [m]) (by norm_num [m])).trans
+      (mem_closure_faceRegion_iff_chart_face D e c A m (by simpa [m] using c.radius_pos))
 
 /-- The map on faces induced by inclusion of drawing complements. -/
 def faceProjection (D : Drawing J) (R : Drawing K)
