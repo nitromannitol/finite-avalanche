@@ -3716,6 +3716,12 @@
       "bytes": 5872
     },
     {
+      "path": "FiniteAvalanches/Support/Plane/CrossingStarAssembly.lean",
+      "sha256": "5b2c24784b1ef0cf169a21c07890f091218e4b2eb92d536dcc9e8eed689bc36f",
+      "code_sha256": "60589910e3fa67cb91e55c7ada5da00d554499ae305e3a6a47a27d9402e68ef4",
+      "bytes": 3511
+    },
+    {
       "path": "FiniteAvalanches/Support/Plane/CrossingStubs.lean",
       "sha256": "c4ad1bdcc732217bd06f506932b1a489cadf21fde8f90c3360343dff038336c6",
       "code_sha256": "354cbb0635cd503eb0d13eb2474876a092368ae32678bd3eeac0eae307e2bb53",
@@ -6770,6 +6776,7 @@
     "FiniteAvalanches.Support.Plane.CrossingArms",
     "FiniteAvalanches.Support.Plane.CrossingArmsSeparation",
     "FiniteAvalanches.Support.Plane.CrossingBoundaryAccess",
+    "FiniteAvalanches.Support.Plane.CrossingStarAssembly",
     "FiniteAvalanches.Support.Plane.CrossingStubs",
     "FiniteAvalanches.Support.Plane.CrossingTailChart",
     "FiniteAvalanches.Support.Plane.DeletedDualConnectivity",
