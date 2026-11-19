@@ -22,7 +22,7 @@ theorem reverse_reverse (d : Direction) : reverse (reverse d) = d := by
 theorem step_reverse (d : Direction) : step (reverse d) = -step d := by
   rcases d with ⟨i,b⟩
   cases b
-  · simp only [reverse,step,Bool.not_false,Bool.false_eq_true,if_false,if_true,neg_neg]
+  · simp only [reverse,FiniteWired.step,Bool.not_false,Bool.false_eq_true,if_false,if_true,neg_neg]
   · rfl
 
 /-- An exterior-origin incidence with an active neighbor, retaining its direction. -/
