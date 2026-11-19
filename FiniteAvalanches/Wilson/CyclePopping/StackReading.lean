@@ -32,6 +32,13 @@ theorem wordState_cursor_mono (head : V → D → V) (x : V) (k : Cursor V) (w :
   intro n
   exact le_pop _ _
 
+
+/-- A read coordinate is never below the initial cursor at its vertex. -/
+theorem wordAddress_depth_ge (head : V → D → V) (x : V) (k : Cursor V)
+    (w : ℕ → D) (n : ℕ) :
+    k (wordAddress head x k w n).1 ≤ (wordAddress head x k w n).2 := by
+  exact wordState_cursor_mono head x k w (Nat.zero_le n) (wordState head x k w n).1
+
 /-- A chronological exploration never reads the same stack coordinate twice. -/
 theorem wordAddress_injective (head : V → D → V) (x : V) (k : Cursor V) (w : ℕ → D) :
     Function.Injective (wordAddress head x k w) := by
