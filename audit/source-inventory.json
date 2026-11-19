@@ -236,6 +236,12 @@
       "bytes": 3670
     },
     {
+      "path": "FiniteAvalanches.lean",
+      "sha256": "bd9a04e25f33f72933d4a31d95e098e28e83e07429af75c4469964beb3ef6291",
+      "code_sha256": "bd9a04e25f33f72933d4a31d95e098e28e83e07429af75c4469964beb3ef6291",
+      "bytes": 9780
+    },
+    {
       "path": "FiniteAvalanches/Electrical/ChordSplit/AllEdgeQuotient.lean",
       "sha256": "c1d1e4f9dfdd0a8f6a0a712b8963373e79aea7ac3d0250d1cfb0f98c64be2a98",
       "code_sha256": "16c0b36fcfe89040538d30b2697133cb9bdd5bd7230a1321008aa195bcdaa87c",
@@ -3674,6 +3680,12 @@
       "bytes": 32564
     },
     {
+      "path": "FiniteAvalanches/Support/Plane/CopiedTreeCardinality.lean",
+      "sha256": "8acf7e3b7187d0c708d51589bde68592240b44cfe460ec77fe74ab5a228b11b2",
+      "code_sha256": "c4346c79915ffb55e27c2b178985cab23fe9c70abaf870396192339d02f66fa1",
+      "bytes": 1248
+    },
+    {
       "path": "FiniteAvalanches/Support/Plane/CrossingAccess.lean",
       "sha256": "5653727b7be9a1fbbdb67cc8b763d6982299b24eed9d9d3b3b7aaba70227c654",
       "code_sha256": "135b4ee50f3865bd6dd988332d8c8c217077109f44de6a30dbc66a341ea76661",
@@ -3722,10 +3734,22 @@
       "bytes": 7458
     },
     {
+      "path": "FiniteAvalanches/Support/Plane/DualDrawingFromPaths.lean",
+      "sha256": "076c7523cacca008ff894729554c02a29a4cacd1a63de3937b7140b7908ddb33",
+      "code_sha256": "6b3543650f95589c20f8c831dc68329f99957375cc5b03c1f496918a7fb842ee",
+      "bytes": 3795
+    },
+    {
       "path": "FiniteAvalanches/Support/Plane/DualFaceCoverage.lean",
       "sha256": "a30fae8c1590461d5987a89066fe6892e8fa556c217a380c367b14009f0727e9",
       "code_sha256": "1dd8f9d19fe72b9d2830f5ef252a9a692713240dd7bcbf23542007f9fbd7c602",
       "bytes": 2074
+    },
+    {
+      "path": "FiniteAvalanches/Support/Plane/DualVertexInjective.lean",
+      "sha256": "0a20981c7406e5a4249171cdf74b092d85f2ee83414923604a0ac3fa01d99592",
+      "code_sha256": "c20d2c6333f0293774173c0d3d52c7eb7ec3091e164f5c89de9e947f514e00f2",
+      "bytes": 4307
     },
     {
       "path": "FiniteAvalanches/Support/Plane/EdgeComponentIncidence.lean",
@@ -6254,12 +6278,6 @@
       "bytes": 3940
     },
     {
-      "path": "FiniteAvalanches.lean",
-      "sha256": "bd9a04e25f33f72933d4a31d95e098e28e83e07429af75c4469964beb3ef6291",
-      "code_sha256": "bd9a04e25f33f72933d4a31d95e098e28e83e07429af75c4469964beb3ef6291",
-      "bytes": 9780
-    },
-    {
       "path": "FiniteAvalanchesCurrent/ArcMomentExpectations.lean",
       "sha256": "6ba682bb31a9010794074fd520963aa5bbd7ec0b5bae6df3efc0bae70ec68081",
       "code_sha256": "d1f1b2d4e334429dca0a2a2c365e0c75ab3ef9f0114d7c0fc4b89ceb06486108",
@@ -6700,10 +6718,13 @@
     "FiniteAvalanches.Support.Plane.ArcLocalStraightening",
     "FiniteAvalanches.Support.Plane.ArcStraightHomeomorph",
     "FiniteAvalanches.Support.Plane.BoundaryArcJoin",
+    "FiniteAvalanches.Support.Plane.CopiedTreeCardinality",
     "FiniteAvalanches.Support.Plane.DeletedDualConnectivity",
     "FiniteAvalanches.Support.Plane.DeletedEdgeFaces",
     "FiniteAvalanches.Support.Plane.DualConnectedIncidence",
+    "FiniteAvalanches.Support.Plane.DualDrawingFromPaths",
     "FiniteAvalanches.Support.Plane.DualFaceCoverage",
+    "FiniteAvalanches.Support.Plane.DualVertexInjective",
     "FiniteAvalanches.Support.Plane.EdgeComponentIncidence",
     "FiniteAvalanches.Support.Plane.EdgeFaceIncidence",
     "FiniteAvalanches.Support.Plane.EdgeNoPathFaces",

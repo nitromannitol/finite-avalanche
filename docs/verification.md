@@ -14,7 +14,7 @@ What the checks of this repository establish, and how to run them.
 The continuous integration runs the first five checks on every push (`build.yml`) and the
 comparator in a separate workflow (`comparator.yml`).
 
-The inventory has 1073 Lean files: 1072 production modules and the axiom query
+The inventory has 1076 Lean files: 1075 production modules and the axiom query
 `PublicVerification/Axioms.lean`. The statement map covers the 17 numbered statements of the
 paper.
 
