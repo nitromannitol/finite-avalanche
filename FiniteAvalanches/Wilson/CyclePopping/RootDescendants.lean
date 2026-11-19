@@ -31,6 +31,22 @@ theorem successor_not_mem_rootDescendants (R : Set V) (f : V → V)
   have ht := firstRootTime_succ R f h hu
   omega
 
+
+/-- No root is a descendant of a nonroot vertex before the first root. -/
+theorem root_not_mem_rootDescendants (R : Set V) (f : V → V)
+    (h : ∀ v, ∃ n, f^[n] v ∈ R) {u r : V} (hu : u ∉ R) (hr : r ∈ R) :
+    r ∉ rootDescendants R f h u := by
+  have hu_pos : 0 < Nat.find (h u) := by
+    by_contra hzero
+    have he : Nat.find (h u) = 0 := Nat.eq_zero_of_not_pos hzero
+    have hs := Nat.find_spec (h u)
+    rw [he, Function.iterate_zero, id_eq] at hs
+    exact hu hs
+  have hr_zero : Nat.find (h r) = 0 := Nat.eq_zero_of_le_zero (Nat.find_min' (h r) hr)
+  rintro ⟨n, _, hn⟩
+  rw [hr_zero] at hn
+  omega
+
 /-- At any other nonroot, a vertex and its successor lie on the same side
 of the descendant cut. -/
 theorem mem_rootDescendants_iff_successor (R : Set V) (f : V → V)

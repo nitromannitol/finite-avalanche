@@ -19,6 +19,26 @@ variable {V E : Type} [Fintype V] [Fintype E]
 def rootwardCopies (R : Set V) (edge : V → E) : Finset E :=
   (Finset.univ.filter (fun v => v ∉ R)).image edge
 
+/-- Erasing a selected nonroot edge leaves every other copy on one side of
+the descendant cut of its source. -/
+theorem rootwardCopies_descendant_cut (G : Multigraph V E) (R : Set V) (f : V → V)
+    (edge : V → E) (hhit : ∀ v, ∃ n, f^[n] v ∈ R)
+    (hend : ∀ v ∉ R, (G.left (edge v) = v ∧ G.right (edge v) = f v) ∨
+      (G.right (edge v) = v ∧ G.left (edge v) = f v)) (u : V) :
+    ∀ j ∈ (rootwardCopies R edge).erase (edge u),
+      G.left j ∈ rootDescendants R f hhit u ↔ G.right j ∈ rootDescendants R f hhit u := by
+  intro j hj
+  obtain ⟨hju, hj⟩ := Finset.mem_erase.mp hj
+  obtain ⟨v, hv, rfl⟩ := Finset.mem_image.mp hj
+  have hvR : v ∉ R := (Finset.mem_filter.mp hv).2
+  have hvu : v ≠ u := fun h => hju (congrArg edge h)
+  have hiff := mem_rootDescendants_iff_successor R f hhit hvR hvu
+  rcases hend v hvR with ⟨hl, hr⟩ | ⟨hr, hl⟩
+  · rw [hl, hr]
+    exact hiff
+  · rw [hl, hr]
+    exact hiff.symm
+
 /-- When each arrow points along its selected copy and every orbit reaches a root,
 the selected copied-edge set is acyclic. Parallel copies are retained. -/
 theorem rootwardCopies_is_forest (G : Multigraph V E) (R : Set V) (f : V → V)
@@ -31,18 +51,7 @@ theorem rootwardCopies_is_forest (G : Multigraph V E) (R : Set V) (f : V → V)
   have huR : u ∉ R := (Finset.mem_filter.mp hu).2
   let D := rootDescendants R f hhit u
   have hcut : ∀ j ∈ (rootwardCopies R edge).erase (edge u),
-      G.left j ∈ D ↔ G.right j ∈ D := by
-    intro j hj
-    obtain ⟨hju, hj⟩ := Finset.mem_erase.mp hj
-    obtain ⟨v, hv, rfl⟩ := Finset.mem_image.mp hj
-    have hvR : v ∉ R := (Finset.mem_filter.mp hv).2
-    have hvu : v ≠ u := fun h => hju (congrArg edge h)
-    have hiff := mem_rootDescendants_iff_successor R f hhit hvR hvu
-    rcases hend v hvR with ⟨hl, hr⟩ | ⟨hr, hl⟩
-    · rw [hl, hr]
-      exact hiff
-    · rw [hl, hr]
-      exact hiff.symm
+      G.left j ∈ D ↔ G.right j ∈ D := rootwardCopies_descendant_cut G R f edge hhit hend u
   have hin : u ∈ D := mem_rootDescendants_self R f hhit u
   have hout : f u ∉ D := successor_not_mem_rootDescendants R f hhit huR
   intro hreaches
