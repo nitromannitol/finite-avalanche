@@ -1,3 +1,4 @@
+import FiniteAvalanches.Support.Plane.ChartFaceTransport
 import FiniteAvalanches.Electrical.Geometry.BSST
 
 set_option autoImplicit false
@@ -9,7 +10,7 @@ open FiniteAvalanches.Electrical.BSST (Face faceRegion negativeChartFace positiv
 namespace FiniteAvalanches.External
 
 /-- Explicit holomorphic puncture transport preserves both actual oriented chart faces. -/
-axiom plane_punctured_chart_face_transport : (∀ {V E : Type} [Fintype V] [Fintype E]
+theorem plane_punctured_chart_face_transport : (∀ {V E : Type} [Fintype V] [Fintype E]
     (J : CopiedGraph V E) (Q : Drawing J)
     (p : Plane) (hp : p ∉ drawingTrace Q)
     (c : {z : Plane // z ≠ p} ≃ₜ {z : Plane // z ≠ (0, 0)})
@@ -28,6 +29,8 @@ axiom plane_punctured_chart_face_transport : (∀ {V E : Type} [Fintype V] [Fint
       z.val ∈ faceRegion Q F ↔ (c z).val ∈ faceRegion Q' (faces F))
     (e : E) (original : EdgeChart Q e) (transported : EdgeChart Q' e),
     faces (negativeChartFace Q e original) = negativeChartFace Q' e transported ∧
-    faces (positiveChartFace Q e original) = positiveChartFace Q' e transported)
+    faces (positiveChartFace Q e original) = positiveChartFace Q' e transported) := by
+  intro V E _ _ J Q p hp c hformula Q' hcurve faces hregion e original transported
+  exact Q.punctured_chart_face_transport Q' hp c hformula hcurve faces hregion e original transported
 
 end FiniteAvalanches.External
