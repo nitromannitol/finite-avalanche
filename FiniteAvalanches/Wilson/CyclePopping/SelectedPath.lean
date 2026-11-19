@@ -23,16 +23,15 @@ theorem follows_vertex_reaches_end (f : V → V) {a b : V} (p : Path a b)
   rw [← he, ← Function.iterate_add_apply, Nat.sub_add_cancel hn]
   exact follows_iterate_end f p hp
 
-/-- The vertices of a root-ending selected path remain rootward under cycle pops. -/
-theorem selected_path_cursor_preserved (R : Set V) (σ : ArrowStacks (V := V))
-    {k l : Cursor V} {a b : V} (p : Path a b) (hp : selected σ k p) (hb : b ∈ R)
-    (hrun : Relation.ReflTransGen (pop_step R (fun _ s => s.1) σ) k l) :
-    ∀ v ∈ p.vertices, l v = k v := by
-  let f : V → V := next (fun _ s => s.1) σ k
-  let B : Set V := R ∪ {v | v ∈ p.vertices}
-  have hf : follows f p := selected_follows σ k p hp
-  have hclosed : ∀ v ∈ B, v ∉ R → f v ∈ B := by
-    intro v hv hroot
+omit [DecidableEq V] in
+/-- A path following a function stays in the union of its vertices and the roots
+until it reaches a root. -/
+theorem follows_rootward_set (R : Set V) (f : V → V) {a b : V} (p : Path a b)
+    (hp : follows f p) (hb : b ∈ R) :
+    (∀ v ∈ R ∪ {v | v ∈ p.vertices}, v ∉ R → f v ∈ R ∪ {v | v ∈ p.vertices}) ∧
+    (∀ v ∈ R ∪ {v | v ∈ p.vertices}, ∃ n, f^[n] v ∈ R) := by
+  constructor
+  · intro v hv hroot
     rcases hv with hv | hv
     · exact (hroot hv).elim
     · change v ∈ p.vertices at hv
@@ -43,15 +42,30 @@ theorem selected_path_cursor_preserved (R : Set V) (σ : ArrowStacks (V := V))
         · exact hh
         · have he := List.mem_singleton.mp hh
           exact (hroot (he ▸ hb)).elim
-      exact Or.inr (follows_successor_mem f p hf hdep)
-  have hreach : ∀ v ∈ B, ∃ n, f^[n] v ∈ R := by
-    intro v hv
+      exact Or.inr (follows_successor_mem f p hp hdep)
+  · intro v hv
     rcases hv with hv | hv
     · exact ⟨0, hv⟩
-    · obtain ⟨n, hn⟩ := follows_vertex_reaches_end f p hf hv
+    · obtain ⟨n, hn⟩ := follows_vertex_reaches_end f p hp hv
       exact ⟨n, hn.symm ▸ hb⟩
+
+/-- The vertices of a root-ending selected path remain rootward under cycle pops. -/
+theorem selected_path_cursor_preserved (R : Set V) (σ : ArrowStacks (V := V))
+    {k l : Cursor V} {a b : V} (p : Path a b) (hp : selected σ k p) (hb : b ∈ R)
+    (hrun : Relation.ReflTransGen (pop_step R (fun _ s => s.1) σ) k l) :
+    ∀ v ∈ p.vertices, l v = k v := by
+  have h := follows_rootward_set R _ p (selected_follows σ k p hp) hb
   intro v hv
-  exact pop_run_preserves_rootward_set R B _ σ hclosed hreach hrun v (Or.inr hv)
+  exact pop_run_preserves_rootward_set R (R ∪ {v | v ∈ p.vertices}) _ σ
+    h.1 h.2 hrun v (Or.inr hv)
+
+/-- A selected root-ending path can be added to the roots for the rest of a legal run. -/
+theorem selected_path_pop_run_with_roots (R : Set V) (σ : ArrowStacks (V := V))
+    {k l : Cursor V} {a b : V} (p : Path a b) (hp : selected σ k p) (hb : b ∈ R)
+    (hrun : Relation.ReflTransGen (pop_step R (fun _ s => s.1) σ) k l) :
+    Relation.ReflTransGen (pop_step (R ∪ {v | v ∈ p.vertices}) (fun _ s => s.1) σ) k l := by
+  have h := follows_rootward_set R _ p (selected_follows σ k p hp) hb
+  exact pop_run_with_rootward_set R (R ∪ {v | v ∈ p.vertices}) _ σ h.1 h.2 hrun
 
 /-- A root-ending selected path retains every original arrow during later pops. -/
 theorem selected_path_preserved (R : Set V) (σ : ArrowStacks (V := V))

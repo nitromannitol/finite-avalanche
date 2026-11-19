@@ -77,5 +77,36 @@ theorem top_eq_of_pop_run_on_rootward_set (R B : Set V)
     top σ l v = top σ k v := by
   simp only [top, pop_run_preserves_rootward_set R B head σ hclosed hreaches hrun v hv]
 
+
+/-- A legal run can regard a protected rootward set as additional roots. -/
+theorem pop_run_with_rootward_set (R B : Set V) (head : (v : V) → A v → V)
+    (σ : Stacks A) {k l : Cursor V}
+    (hclosed : ∀ v ∈ B, v ∉ R → next head σ k v ∈ B)
+    (hreaches : ∀ v ∈ B, ∃ n, (next head σ k)^[n] v ∈ R)
+    (hrun : Relation.ReflTransGen (pop_step R head σ) k l) :
+    Relation.ReflTransGen (pop_step B head σ) k l := by
+  induction hrun with
+  | refl => exact .refl
+  | @tail m l hkm hml ih =>
+    have hm := pop_run_preserves_rootward_set R B head σ hclosed hreaches hkm
+    have hl := pop_run_preserves_rootward_set R B head σ hclosed hreaches (hkm.tail hml)
+    obtain ⟨c, hc, rfl⟩ := hml
+    have hav : ∀ v ∈ c, v ∉ B := by
+      intro v hvc hvB
+      have he := hl v hvB
+      rw [pop_apply_of_mem m c hvc, hm v hvB] at he
+      exact Nat.succ_ne_self _ he
+    exact ih.tail ⟨c, ⟨hc.nonempty, hav, hc.maps_to, hc.reachable⟩, rfl⟩
+
+omit [DecidableEq V] in
+/-- Enlarging the root set preserves terminality. -/
+theorem terminal_mono_roots (R S : Set V) (head : (v : V) → A v → V)
+    (σ : Stacks A) (k : Cursor V) (hRS : R ⊆ S)
+    (ht : terminal R head σ k) : terminal S head σ k := by
+  intro c hc
+  apply ht c
+  exact ⟨hc.nonempty, fun v hv hr => hc.avoids_roots v hv (hRS hr),
+    hc.maps_to, hc.reachable⟩
+
 end
 end FiniteAvalanches.Wilson.CyclePopping
