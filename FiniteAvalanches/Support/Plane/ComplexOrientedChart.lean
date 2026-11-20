@@ -68,4 +68,34 @@ theorem exists_orientedChart_of_circle_homeomorph
     refine ⟨y, ?_, hang⟩
     rw [orientedChartOfComplexIsotopy_map, hy]
 
+/-- An increasing circle homeomorphism extends to an oriented chart whose
+radial action is explicit outside the disk of radius two. -/
+theorem exists_orientedChart_with_radial_action
+    (F : AddCircle (1 : ℝ) ≃ₜ AddCircle (1 : ℝ))
+    (hinc : StrictMono (circleCutMap (normalizedCircleHomeomorph F)
+      (normalizedCircleHomeomorph_zero F))) :
+    ∃ c : OrientedChart,
+      (∀ z : ℂ, ‖z‖ ≤ 1 → c.map (Complex.equivRealProdCLM z) = Complex.equivRealProdCLM z) ∧
+      (∀ z : ℂ, ‖Complex.equivRealProdCLM.symm (c.map (Complex.equivRealProdCLM z))‖ = ‖z‖) ∧
+      (∀ (x : ({0}ᶜ : Set ℂ)), 2 ≤ ‖(x : ℂ)‖ →
+        c.map (Complex.equivRealProdCLM x) = Complex.equivRealProdCLM
+          (puncturedPolarCoordinates.symm
+            ((puncturedPolarCoordinates x).1, F (puncturedPolarCoordinates x).2) : ℂ)) := by
+  obtain ⟨c, hfix, hnorm, hangle⟩ := exists_orientedChart_of_circle_homeomorph F hinc
+  refine ⟨c, hfix, hnorm, ?_⟩
+  intro x hx
+  obtain ⟨y, hy, hang⟩ := hangle x hx
+  rw [hy]
+  congr 1
+  apply congrArg Subtype.val
+  apply puncturedPolarCoordinates.injective
+  apply Prod.ext
+  · simp only [Homeomorph.apply_symm_apply, Prod.fst]
+    apply Subtype.ext
+    rw [puncturedPolarCoordinates_radius, puncturedPolarCoordinates_radius]
+    have h := hnorm (x : ℂ)
+    rw [hy, Complex.equivRealProdCLM.symm_apply_apply] at h
+    exact h
+  · simpa only [Homeomorph.apply_symm_apply, Prod.snd] using hang
+
 end FiniteAvalanches.Electrical.StatementGeometry
