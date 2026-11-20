@@ -49,6 +49,28 @@ theorem loopDeg_sub_const_eq_of_path (γ : C(unitInterval, ℂ)) (hc : γ 0 = γ
   · exact h0.symm
   · exact h1.symm
 
+/-- The winding degree of a closed loop is constant on each component of its
+complement. -/
+theorem loopDeg_sub_const_eq_of_connectedComponentIn
+    (γ : C(unitInterval, ℂ)) (hc : γ 0 = γ 1) {a b : ℂ}
+    (ha : a ∉ Set.range γ)
+    (hb : b ∈ connectedComponentIn (Set.range γ)ᶜ a) :
+    loopDeg (γ - ContinuousMap.const unitInterval a)
+        (fun t => sub_ne_zero.mpr (fun h => ha ⟨t, h⟩)) =
+      loopDeg (γ - ContinuousMap.const unitInterval b)
+        (fun t => sub_ne_zero.mpr
+          (fun h => connectedComponentIn_subset _ _ hb ⟨t, h⟩)) := by
+  let U := (Set.range γ)ᶜ
+  let C := connectedComponentIn U a
+  have hU : IsOpen U := (isCompact_range γ.continuous).isClosed.isOpen_compl
+  have hC : IsConnected C := isConnected_connectedComponentIn_iff.mpr ha
+  have hpath : IsPathConnected C := (hU.connectedComponentIn).isConnected_iff_isPathConnected.mp hC
+  have haC : a ∈ C := mem_connectedComponentIn ha
+  obtain ⟨p, hp⟩ := hpath.joinedIn a haC b hb
+  apply loopDeg_sub_const_eq_of_path γ hc p
+  intro s t h
+  exact connectedComponentIn_subset U a (hp s) ⟨t, h⟩
+
 /-- A circle around a point, followed through an isotopy and recentered. -/
 def Source.OrientedChart.isotopyCircle (chart : Source.OrientedChart) (q : ℂ) (r : ℝ) :
     C(unitInterval × unitInterval, ℂ) where
