@@ -3837,9 +3837,9 @@
     },
     {
       "path": "FiniteAvalanches/Support/Plane/ComplexOrientedChart.lean",
-      "sha256": "509a135b83a3b50316f96b56b940bebf3df509f9c0c32f31b54a45fe6bc58336",
-      "code_sha256": "06ad47905991e66d11c83246d102d9a622ec8e09a24747a577aa3acc7216aadc",
-      "bytes": 3540
+      "sha256": "afa5ee720993e9ed86a8f2453b5767aeb5e6ec4a9e1c75777ab66ce6edda6464",
+      "code_sha256": "389cb1b21e06ae38e8d0d6ad127886e0c84ff58ae51efae879df2d1fe0a9099c",
+      "bytes": 5008
     },
     {
       "path": "FiniteAvalanches/Support/Plane/CopiedSimplePath.lean",
@@ -3944,6 +3944,12 @@
       "bytes": 529
     },
     {
+      "path": "FiniteAvalanches/Support/Plane/DiskBoundaryCoordinates.lean",
+      "sha256": "b2a7ca58bf5d973c05fb3ba0f4d95232c549a7fe7dbe9df24c2ca5c1e7a396e6",
+      "code_sha256": "b682e83c2bfd943b950d33a687b68326b65c528ba90a616d5e837fdd900001cd",
+      "bytes": 7477
+    },
+    {
       "path": "FiniteAvalanches/Support/Plane/DualAssembly.lean",
       "sha256": "115b77cc87743e3ec3067cae0d3af1d8a71286188853fc136ffaf05cbee394d0",
       "code_sha256": "24fd71651e80f52c784879b62c83880ff270558e632307ca6e4c96b02ffb2510",
@@ -4040,6 +4046,12 @@
       "bytes": 4765
     },
     {
+      "path": "FiniteAvalanches/Support/Plane/HomeomorphPasting.lean",
+      "sha256": "0bc47b8e5b4619de2363e7d6cece380ce0678ad79aa8d47a98fe3e4d8c561334",
+      "code_sha256": "ab1f123e9b5ba4ac1980b172e712ca4752b75754ea60ccbc007b3148a2c5d262",
+      "bytes": 4358
+    },
+    {
       "path": "FiniteAvalanches/Support/Plane/InfiniteEndpointPath.lean",
       "sha256": "c47be274e1e5e323e259f9f82a67268255ed711f949be08da26d2e6c60c8f49b",
       "code_sha256": "6e14e238c6b80db7527f0bdf59b2dbf85f015629d21957425969dfb02124ae7a",
@@ -4116,6 +4128,12 @@
       "sha256": "cb2beee606fcffd548a07b93bac77b6585a5978a031df5f6df965f56f9074d14",
       "code_sha256": "96f2080415c835db110adcb36799807ac1ad09e6dc0a26e535531d1c1cd31aa2",
       "bytes": 5861
+    },
+    {
+      "path": "FiniteAvalanches/Support/Plane/OrientedDiskPasting.lean",
+      "sha256": "269499a86a6bde8c3bcb3b6b073560372240175497ade69b0ba7d5226ea20f30",
+      "code_sha256": "314b79ccdd2d4cc0fe38265dac82e7dee27424d560328def390a0eccbfc4c995",
+      "bytes": 3484
     },
     {
       "path": "FiniteAvalanches/Support/Plane/ParametrizedBoundaryAccess.lean",
