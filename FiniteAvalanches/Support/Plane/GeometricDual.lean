@@ -16,6 +16,7 @@ namespace FiniteAvalanches.Electrical.StatementGeometry
 
 open FiniteAvalanches.Electrical
 open LatticeProb
+open QuantumZipper.CA.Topo
 open Source BSST Set
 
 private theorem nowhereDense_union {s t : Set Plane} (hs : IsNowhereDense s)
@@ -128,6 +129,67 @@ theorem chart_complex_offsets_mem_faces (D : Drawing J) (e : E) (c : EdgeChart D
         ((1 / 2 : ℂ) + -(a : ℂ) / Complex.I)) ∈ _
     rw [hpos]
     exact hp.2.2 ha
+
+/-- A horizontal crossing in an edge chart has a signed winding jump between
+points in the two chart faces, expressed relative to the image of the midpoint. -/
+theorem edge_chart_winding_jump (D : Drawing J) (e : E) (c : EdgeChart D e)
+    (γ : C(unitInterval, ℂ)) (hclosed : γ 0 = γ 1)
+    {u v w : ℝ} (hu : 0 < u) (huv : u < v) (hvw : v < w) (hw : w < 1)
+    (hzero : ∀ t : unitInterval, γ t = 0 ↔ (t : ℝ) = v)
+    (hcross : (∀ t : unitInterval, u ≤ (t : ℝ) → (t : ℝ) < v → 0 < (γ t).re) ∧
+        (∀ t : unitInterval, v < (t : ℝ) → (t : ℝ) ≤ w → (γ t).re < 0) ∨
+      (∀ t : unitInterval, u ≤ (t : ℝ) → (t : ℝ) < v → (γ t).re < 0) ∧
+        (∀ t : unitInterval, v < (t : ℝ) → (t : ℝ) ≤ w → 0 < (γ t).re)) :
+    ∃ (a : ℝ) (_ : 0 < a) (_ : a < c.radius),
+      let chart := c.chart.symm
+      let q : ℂ := 1 / 2
+      let p := chart.complexMap (q + (a : ℂ) / Complex.I) - chart.complexMap q
+      let n := chart.complexMap (q + -(a : ℂ) / Complex.I) - chart.complexMap q
+      ∃ (hp : ∀ t, chart.mapLoop q γ t ≠ p) (hn : ∀ t, chart.mapLoop q γ t ≠ n),
+        Complex.equivRealProdCLM (p + chart.complexMap q) ∈
+          faceRegion D (negativeChartFace D e c) ∧
+        Complex.equivRealProdCLM (n + chart.complexMap q) ∈
+          faceRegion D (positiveChartFace D e c) ∧
+        ((loopDeg (chart.mapLoop q γ - ContinuousMap.const unitInterval p)
+              (fun t => sub_ne_zero.mpr (hp t)) -
+            loopDeg (chart.mapLoop q γ - ContinuousMap.const unitInterval n)
+              (fun t => sub_ne_zero.mpr (hn t)) = 1 ∧
+            ∀ t : unitInterval, u ≤ (t : ℝ) → (t : ℝ) < v → 0 < (γ t).re) ∨
+          (loopDeg (chart.mapLoop q γ - ContinuousMap.const unitInterval p)
+              (fun t => sub_ne_zero.mpr (hp t)) -
+            loopDeg (chart.mapLoop q γ - ContinuousMap.const unitInterval n)
+              (fun t => sub_ne_zero.mpr (hn t)) = -1 ∧
+            ∀ t : unitInterval, u ≤ (t : ℝ) → (t : ℝ) < v → (γ t).re < 0)) := by
+  let chart := c.chart.symm
+  let q : ℂ := 1 / 2
+  have avoid (z : ℂ) (hz : ∀ t, γ t ≠ z) :
+      ∀ t, chart.mapLoop q γ t ≠ chart.complexMap (q + z) - chart.complexMap q := by
+    intro t he
+    rw [chart.mapLoop_apply] at he
+    change chart.complexMap (q + γ t) - chart.complexMap q =
+      chart.complexMap (q + z) - chart.complexMap q at he
+    have h : chart.complexMap (q + γ t) = chart.complexMap (q + z) := by
+      linear_combination he
+    exact hz t (add_left_cancel (chart.complexMap.injective h))
+  rcases hcross with ⟨hpos, hneg⟩ | ⟨hneg, hpos⟩
+  · obtain ⟨a, ha, har, hp, hn, hd⟩ :=
+      exists_winding_jump_of_horizontal_crossing γ hclosed c.radius_pos hu huv hvw hw
+        hzero hpos hneg
+    refine ⟨a, ha, har, avoid _ hp, avoid _ hn, ?_, ?_, Or.inl ⟨?_, hpos⟩⟩
+    · simpa [chart, q] using (chart_complex_offsets_mem_faces D e c ha har).1
+    · simpa [chart, q] using (chart_complex_offsets_mem_faces D e c ha har).2
+    · rw [chart.loopDeg_mapLoop_sub_const q _ γ hclosed hp,
+        chart.loopDeg_mapLoop_sub_const q _ γ hclosed hn]
+      exact hd
+  · obtain ⟨a, ha, har, hp, hn, hd⟩ :=
+      exists_winding_jump_of_reverse_horizontal_crossing γ hclosed c.radius_pos hu huv hvw hw
+        hzero hneg hpos
+    refine ⟨a, ha, har, avoid _ hp, avoid _ hn, ?_, ?_, Or.inr ⟨?_, hneg⟩⟩
+    · simpa [chart, q] using (chart_complex_offsets_mem_faces D e c ha har).1
+    · simpa [chart, q] using (chart_complex_offsets_mem_faces D e c ha har).2
+    · rw [chart.loopDeg_mapLoop_sub_const q _ γ hclosed hp,
+        chart.loopDeg_mapLoop_sub_const q _ γ hclosed hn]
+      exact hd
 
 /-- The chart crossing meets exactly the corresponding edge at its midpoint. -/
 theorem curve_eq_chart_vertical_crossing (D : Drawing J) (e f : E)
