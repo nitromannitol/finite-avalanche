@@ -6,7 +6,7 @@ set_option autoImplicit false
 
 namespace FiniteAvalanches.Wilson.Lattice
 
-open LatticeProb FiniteAvalanches.Sandpile FiniteAvalanches.Trees FiniteAvalanches.Trees.Lattice
+open LatticeProb Filter FiniteAvalanches.Sandpile FiniteAvalanches.Trees FiniteAvalanches.Trees.Lattice
 open scoped Classical
 
 noncomputable section
@@ -52,6 +52,45 @@ theorem wiredDualFaceSelectedCopies_adjacent_iff (B : ℕ) (ω : EdgeField)
       rw [he]
       exact (edge_mem_toGraph_iff (dualField ω) e).mp hadj
     exact ⟨q, Finset.mem_filter.mpr ⟨Finset.mem_univ _, hval⟩, hends⟩
+
+/-- A selected dual walk confined to the face square lifts to a walk using the
+same selected original face copies. -/
+theorem wiredDualFaceSelectedCopies_reaches_of_walk (B : ℕ) (ω : EdgeField)
+    {u v : Site 2} (p : (toGraph (dualField ω)).Walk u v)
+    (hbox : ∀ z ∈ p.support, inDualFaceBox B z) :
+    (wiredDualFaceGraph B).reaches (wiredDualFaceSelectedCopies B ω)
+      (wiredDualFaceOfSite B u (hbox u p.start_mem_support))
+      (wiredDualFaceOfSite B v (hbox v p.end_mem_support)) := by
+  induction p with
+  | nil => exact Relation.ReflTransGen.refl
+  | @cons u v w huv p ih =>
+    have htail : ∀ z ∈ p.support, inDualFaceBox B z := by
+      intro z hz
+      apply hbox z
+      simp only [SimpleGraph.Walk.support_cons, List.mem_cons]
+      exact Or.inr hz
+    have hstep : (wiredDualFaceGraph B).adjacent (wiredDualFaceSelectedCopies B ω)
+        (wiredDualFaceOfSite B u (hbox u (by simp [SimpleGraph.Walk.support_cons])))
+        (wiredDualFaceOfSite B v (htail v p.start_mem_support)) := by
+      apply (wiredDualFaceSelectedCopies_adjacent_iff B ω _ _).mpr
+      exact huv
+    exact (Relation.ReflTransGen.single hstep).trans (ih htail)
+
+/-- A finite selected dual detour lifts to the selected face-copy graph in all
+sufficiently large wired boxes. -/
+theorem dualDetour_eventually_reaches_in_selectedFaceGraph (ω : EdgeField) (d : LatticeEdge)
+    (p : (toGraph (dualField ω)).Walk d.val.out.1 d.val.out.2) :
+    ∀ᶠ B : ℕ in atTop, ∃ hu : inDualFaceBox B d.val.out.1, ∃ hv : inDualFaceBox B d.val.out.2,
+      (wiredDualFaceGraph B).reaches (wiredDualFaceSelectedCopies B ω)
+        (wiredDualFaceOfSite B d.val.out.1 hu) (wiredDualFaceOfSite B d.val.out.2 hv) := by
+  have hsites : ∀ᶠ B : ℕ in atTop, ∀ z : {z // z ∈ p.support}, FiniteWired.inBox B z.val :=
+    eventually_all.mpr (fun z => eventually_finiteWired_inBox z.val)
+  filter_upwards [hsites] with B hB
+  have hbox : ∀ z ∈ p.support, inDualFaceBox B z := by
+    intro z hz
+    exact inDualFaceBox_of_inBox B z (hB ⟨z, hz⟩)
+  exact ⟨hbox _ p.start_mem_support, hbox _ p.end_mem_support,
+    wiredDualFaceSelectedCopies_reaches_of_walk B ω p hbox⟩
 
 end
 end FiniteAvalanches.Wilson.Lattice
