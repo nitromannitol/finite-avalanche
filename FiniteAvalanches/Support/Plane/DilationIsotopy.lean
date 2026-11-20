@@ -137,5 +137,55 @@ noncomputable def orientedChartOfCompactSupport (f : Plane ≃ₜ Plane)
     exact hf x hx
   exact orientedChartOfIdentityNearPoint f z hloc
 
+/-- A homeomorphism agreeing near a point with an oriented chart is itself
+    isotopic to the identity. -/
+noncomputable def orientedChartOfLocallyEq (f : Plane ≃ₜ Plane) (c : OrientedChart)
+    (z : Plane) (hf : f =ᶠ[𝓝 z] c.map) : OrientedChart := by
+  let g : Plane ≃ₜ Plane := f.trans c.map.symm
+  have hg : g =ᶠ[𝓝 z] id := by
+    filter_upwards [hf] with x hx
+    change c.map.symm (f x) = x
+    rw [hx, c.map.symm_apply_apply]
+  let d := orientedChartOfIdentityNearPoint g z hg
+  exact {
+    map := f
+    isotopy := fun t => (d.isotopy t).trans (c.isotopy t)
+    continuous := c.continuous.comp (continuous_fst.prodMk d.continuous)
+    inverse_continuous := d.inverse_continuous.comp
+      (continuous_fst.prodMk c.inverse_continuous)
+    start := by rw [d.start, c.start]; rfl
+    finish := by
+      rw [d.finish, c.finish]
+      apply Homeomorph.ext
+      intro x
+      change c.map (c.map.symm (f x)) = f x
+      exact c.map.apply_symm_apply (f x)
+  }
+
+/-- Translation of the plane is isotopic to the identity. -/
+noncomputable def orientedChartOfTranslation (v : Plane) : OrientedChart where
+  map := Homeomorph.addLeft v
+  isotopy t := Homeomorph.addLeft ((t : ℝ) • v)
+  continuous := by
+    change Continuous (fun p : ArcParameter × Plane => (p.1 : ℝ) • v + p.2)
+    fun_prop
+  inverse_continuous := by
+    change Continuous (fun p : ArcParameter × Plane => -((p.1 : ℝ) • v) + p.2)
+    fun_prop
+  start := by
+    apply Homeomorph.ext
+    intro x
+    simp
+  finish := by
+    apply Homeomorph.ext
+    intro x
+    simp
+
+/-- A homeomorphism equal to a translation near a point is isotopic to the
+    identity. -/
+noncomputable def orientedChartOfLocallyTranslation (f : Plane ≃ₜ Plane)
+    (v z : Plane) (hf : f =ᶠ[𝓝 z] Homeomorph.addLeft v) : OrientedChart :=
+  orientedChartOfLocallyEq f (orientedChartOfTranslation v) z hf
+
 end
 end FiniteAvalanches.Electrical.StatementGeometry
