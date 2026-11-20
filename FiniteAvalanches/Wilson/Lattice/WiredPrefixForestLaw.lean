@@ -52,14 +52,16 @@ theorem wiredTerminal_realizes_branchHistory (R : RootPair) (B : ℕ)
   exact BranchHistory.Selected.top (wiredHead B) x σ n a t hs'
 
 /-- Any finite wired exploration determines the law of every forest event
-whose membership is fixed by its retained nonroot directions. -/
+whose membership is fixed by its retained branch arrows. -/
 theorem wilsonRows_wiredForest_eq_of_prefix_determines (R : RootPair) (B : ℕ)
     (x : ℕ → FiniteWired.Vertex B) (k : Cursor (FiniteWired.Vertex B)) (n : ℕ)
     (S : Set (FiniteForest R B))
-    (hdet : ∀ a : BranchHistory n,
-      BranchHistory.EndsInRoots (wiredHead B) x (wiredRoots R B).val n a →
-      WiredForestDeterminedBy R B S
-        (branchHistoryRoots (wiredHead B) x (wiredRoots R B).val n a)) :
+    (hdet : ∀ h : BranchHistory n,
+      BranchHistory.EndsInRoots (wiredHead B) x (wiredRoots R B).val n h →
+      ∀ a b : GoodArrows (wiredRoots R B).val (wiredHead B),
+        BranchHistory.Realizes (wiredHead B) x a.val n h →
+        BranchHistory.Realizes (wiredHead B) x b.val n h →
+        (wiredArrowForest R B a ∈ S ↔ wiredArrowForest R B b ∈ S)) :
     wilsonRows {rows | ∃ N,
       BranchHistory.HitsBefore N n
         (rowBranchHistory (wiredHead B) x (wiredRoots R B).val k N rows n) ∧
@@ -87,10 +89,7 @@ theorem wilsonRows_wiredForest_eq_of_prefix_determines (R : RootPair) (B : ℕ)
       have hb : BranchHistory.Realizes head x z.val n b :=
         wiredTerminal_realizes_branchHistory R B x k t N n σ hrun ht hh
       have hend := branchHistory_endsInRoots_of_hits head x roots k N n σ hh
-      have heq : ∀ v ∈ branchHistoryRoots head x roots n b, v ∉ roots → a.val v = z.val v := by
-        intro v hv hvR
-        exact BranchHistory.Realizes.eq_of_mem_roots head x roots n b a.val z.val hend ha hb hv hvR
-      have hzS : wiredArrowForest R B z ∈ S := (hdet b hend a z heq).mp hS
+      have hzS : wiredArrowForest R B z ∈ S := (hdet b hend a z ha hb).mp hS
       exact ⟨z, hzS, t, hrun, fun _ => rfl⟩
     · rintro ⟨a, hS, u, hrun', htop⟩
       have htu : terminal roots head (fun v i => σ (v, i)) u :=
