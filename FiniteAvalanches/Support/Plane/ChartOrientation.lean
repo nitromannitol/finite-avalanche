@@ -597,6 +597,37 @@ theorem loopDeg_add_const_of_norm_lt (q : ℂ) (γ : C(unitInterval, ℂ))
         using hsmall t)
   simpa only [loopDeg_const] using heq
 
+/-- A closed loop has winding degree zero about every point in an unbounded
+component of its complement. -/
+theorem loopDeg_sub_const_eq_zero_of_unbounded_component
+    (γ : C(unitInterval, ℂ)) (hc : γ 0 = γ 1) {a : ℂ}
+    (ha : a ∉ Set.range γ)
+    (hunbounded : ¬ Bornology.IsBounded (connectedComponentIn (Set.range γ)ᶜ a)) :
+    loopDeg (γ - ContinuousMap.const unitInterval a)
+      (fun t => sub_ne_zero.mpr (fun h => ha ⟨t, h⟩)) = 0 := by
+  obtain ⟨R, hR⟩ := (isCompact_range γ.continuous).isBounded.exists_norm_le
+  have hex : ∃ b ∈ connectedComponentIn (Set.range γ)ᶜ a, R < ‖b‖ := by
+    by_contra hn
+    apply hunbounded
+    apply isBounded_iff_forall_norm_le.mpr
+    refine ⟨R, ?_⟩
+    intro b hb
+    exact le_of_not_gt (fun h => hn ⟨b, hb, h⟩)
+  obtain ⟨b, hb, hbR⟩ := hex
+  have hsmall : ∀ t, ‖γ t‖ < ‖-b‖ := by
+    intro t
+    rw [norm_neg]
+    exact lt_of_le_of_lt (hR _ ⟨t, rfl⟩) hbR
+  obtain ⟨hne, hzero⟩ := loopDeg_add_const_of_norm_lt (-b) γ hc hsmall
+  have heq : ContinuousMap.const unitInterval (-b) + γ =
+      γ - ContinuousMap.const unitInterval b := by
+    ext t
+    simp only [ContinuousMap.add_apply, ContinuousMap.sub_apply, ContinuousMap.const_apply]
+    abel
+  have hmove := loopDeg_sub_const_eq_of_connectedComponentIn γ hc ha hb
+  apply hmove.trans
+  simpa only [heq] using hzero
+
 /-- The recentered image of a loop under inversion. -/
 def inversionLoop (q : ℂ) (γ : C(unitInterval, ℂ)) (h : ∀ t, q + γ t ≠ 0) :
     C(unitInterval, ℂ) where
