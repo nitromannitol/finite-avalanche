@@ -238,20 +238,16 @@ theorem dense_compl_range_injective_path {x y : ℝ × ℝ}
   apply interior_eq_empty_iff_dense_compl.mp
   exact endpoint_compact_arc_interior (by norm_num : (0 : ℝ) < 1) p p.continuous hp
 
-/-- A simple plane arc admits complement points joined by paths in balls
-shrinking to its initial endpoint. -/
-theorem exists_shrinking_endpoint_paths
-    {x y : ℝ × ℝ} (p : Path x y) (hp : Function.Injective p) :
+/-- Complement points near an arc endpoint can be joined inside any prescribed
+sequence of nested balls. -/
+theorem exists_endpoint_paths_in_nested_balls
+    {x y : ℝ × ℝ} (p : Path x y) (hp : Function.Injective p)
+    (r : ℕ → ℝ) (hr : ∀ n, 0 < r n) (hmono : Antitone r) :
     ∃ z : ℕ → ℝ × ℝ,
       (∀ n, z n ∉ range p) ∧
-      (∀ n : ℕ, z n ∈ ball x (1 / ((n : ℝ) + 1))) ∧
+      (∀ n : ℕ, z n ∈ ball x (r n)) ∧
       ∀ n : ℕ, ∃ q : Path (z n) (z (n + 1)),
-        range q ⊆ ball x (1 / ((n : ℝ) + 1)) \ range p := by
-  let r : ℕ → ℝ := fun n => 1 / ((n : ℝ) + 1)
-  have hr : ∀ n, 0 < r n := by
-    intro n
-    dsimp [r]
-    positivity
+        range q ⊆ ball x (r n) \ range p := by
   have hlocal : ∀ n, ∃ δ > 0, ∀ a ∈ ball x δ \ range p,
       ∀ b ∈ ball x δ \ range p, ∃ q : Path a b, range q ⊆ ball x (r n) \ range p :=
     fun n => exists_endpoint_ball_paths p hp (hr n)
@@ -275,9 +271,24 @@ theorem exists_shrinking_endpoint_paths
       ⟨ball_subset_ball (min_le_left _ _) (hz (n + 1)), hznot (n + 1)⟩
     obtain ⟨q, hq⟩ := hpath (n + 1) (z n) ha (z (n + 1)) hb
     refine ⟨q, hq.trans (sdiff_subset_sdiff_left (ball_subset_ball ?_))⟩
-    dsimp [r]
+    exact hmono (Nat.le_succ n)
+
+
+/-- A simple plane arc admits complement points joined by paths in balls
+shrinking to its initial endpoint. -/
+theorem exists_shrinking_endpoint_paths
+    {x y : ℝ × ℝ} (p : Path x y) (hp : Function.Injective p) :
+    ∃ z : ℕ → ℝ × ℝ,
+      (∀ n, z n ∉ range p) ∧
+      (∀ n : ℕ, z n ∈ ball x (1 / ((n : ℝ) + 1))) ∧
+      ∀ n : ℕ, ∃ q : Path (z n) (z (n + 1)),
+        range q ⊆ ball x (1 / ((n : ℝ) + 1)) \ range p := by
+  apply exists_endpoint_paths_in_nested_balls p hp (fun n => 1 / ((n : ℝ) + 1))
+  · intro n
+    positivity
+  · intro n m hnm
     apply one_div_le_one_div_of_le (by positivity)
-    push_cast
+    have hn : (n : ℝ) ≤ (m : ℝ) := Nat.cast_le.mpr hnm
     linarith
 
 end FiniteAvalanches.Electrical.StatementGeometry
