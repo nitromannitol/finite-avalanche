@@ -1,4 +1,5 @@
 import FiniteAvalanches.Wilson.Lattice.WiredLimitDualDetourBox
+import FiniteAvalanches.Sandpile.Burning.SpanningTree
 
 /-! The selected dual lattice graph restricted to the finite face square. -/
 
@@ -91,6 +92,22 @@ theorem dualDetour_eventually_reaches_in_selectedFaceGraph (ω : EdgeField) (d :
     exact inDualFaceBox_of_inBox B z (hB ⟨z, hz⟩)
   exact ⟨hbox _ p.start_mem_support, hbox _ p.end_mem_support,
     wiredDualFaceSelectedCopies_reaches_of_walk B ω p hbox⟩
+
+/-- If the infinite dual field is a forest, its selected copies form a forest
+inside every finite face square. -/
+theorem wiredDualFaceSelectedCopies_is_forest (B : ℕ) (ω : EdgeField)
+    (hacyclic : (toGraph (dualField ω)).IsAcyclic) :
+    (wiredDualFaceGraph B).is_forest (wiredDualFaceSelectedCopies B ω) := by
+  let G := wiredDualFaceGraph B
+  let F := wiredDualFaceSelectedCopies B ω
+  let f : G.toSimple F →g toGraph (dualField ω) :=
+    ⟨wiredDualFaceSite, fun h => (wiredDualFaceSelectedCopies_adjacent_iff B ω _ _).mp h⟩
+  have hs : (G.toSimple F).IsAcyclic := hacyclic.comap f (wiredDualFaceSite_injective B)
+  have hi : Set.InjOn G.edge (F : Set (FiniteWired.Edge B)) := by
+    intro e he g hg heq
+    apply wiredDualFaceGraph_endpointPair_injective B
+    exact heq
+  exact FiniteAvalanches.Sandpile.Burning.copied_forest_of_simple G F hs hi
 
 end
 end FiniteAvalanches.Wilson.Lattice
