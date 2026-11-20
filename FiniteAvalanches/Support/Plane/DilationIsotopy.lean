@@ -81,5 +81,42 @@ noncomputable def orientedChartOfIdentityNearOrigin (f : Plane ≃ₜ Plane)
     intro x
     simp [Homeomorph.smulOfNeZero_symm_apply]
 
+
+/-- A plane homeomorphism equal to the identity near any point is isotopic to
+    the identity, with a jointly continuous inverse isotopy. -/
+noncomputable def orientedChartOfIdentityNearPoint (f : Plane ≃ₜ Plane) (z : Plane)
+    (hf : f =ᶠ[𝓝 z] id) : OrientedChart := by
+  let T : Plane ≃ₜ Plane := Homeomorph.addLeft z
+  let g : Plane ≃ₜ Plane := (T.trans f).trans T.symm
+  have hg : g =ᶠ[𝓝 0] id := by
+    have hT : Filter.Tendsto T (𝓝 0) (𝓝 z) := by
+      simpa [T] using T.continuous.continuousAt.tendsto (x := 0)
+    filter_upwards [hT hf] with x hx
+    change f (T x) = T x at hx
+    change T.symm (f (T x)) = x
+    rw [hx, T.symm_apply_apply]
+  let c := orientedChartOfIdentityNearOrigin g hg
+  exact {
+    map := f
+    isotopy := fun t => (T.symm.trans (c.isotopy t)).trans T
+    continuous := T.continuous.comp (c.continuous.comp
+      (continuous_fst.prodMk (T.symm.continuous.comp continuous_snd)))
+    inverse_continuous := T.continuous.comp (c.inverse_continuous.comp
+      (continuous_fst.prodMk (T.symm.continuous.comp continuous_snd)))
+    start := by
+      rw [c.start]
+      apply Homeomorph.ext
+      intro x
+      change T (T.symm x) = x
+      exact T.apply_symm_apply x
+    finish := by
+      rw [c.finish]
+      apply Homeomorph.ext
+      intro x
+      change T (g (T.symm x)) = f x
+      change T (T.symm (f (T (T.symm x)))) = f x
+      rw [T.apply_symm_apply, T.apply_symm_apply]
+  }
+
 end
 end FiniteAvalanches.Electrical.StatementGeometry
