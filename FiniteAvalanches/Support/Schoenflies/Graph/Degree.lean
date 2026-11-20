@@ -1,7 +1,9 @@
 /-
 Copyright (c) 2026 Álvaro Begué. All rights reserved.
 Released under the Apache License, Version 2.0.
+Authors: Álvaro Begué
 Source: https://github.com/alonamaloh/schoenflies-lean, commit 05a43d29cde026618777db3d4e4316204ccca237, Schoenflies/Graph/Degree.lean.
+Modified for this project: comments removed and replaced by a one-line module docstring.
 -/
 import Mathlib.Combinatorics.Graph.Subgraph
 import Mathlib.Data.Set.Card

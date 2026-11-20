@@ -1,7 +1,11 @@
 /-
 Copyright (c) 2026 Álvaro Begué. All rights reserved.
 Released under the Apache License, Version 2.0.
+Authors: Álvaro Begué
 Source: https://github.com/alonamaloh/schoenflies-lean, commit 05a43d29cde026618777db3d4e4316204ccca237, Schoenflies/Strip.lean.
+Modified for this project: comments removed and replaced by a one-line module docstring, and
+imports renamed to `FiniteAvalanches.Support.Schoenflies`;
+explicit binders added for this project's Lean option `autoImplicit false`.
 -/
 import FiniteAvalanches.Support.Schoenflies.Direction
 import FiniteAvalanches.Support.Schoenflies.UniformBound
