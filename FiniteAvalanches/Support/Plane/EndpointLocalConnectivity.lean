@@ -1,6 +1,7 @@
 import FiniteAvalanches.Support.Plane.ArcComponentPreservation
-import FiniteAvalanches.Support.Plane.TreePaths
-import FiniteAvalanches.Support.Plane.PuncturedTransport
+import FiniteAvalanches.Support.Plane.FinitePointComplement
+import Mathlib.Analysis.Normed.Module.Ball.Homeomorph
+import Mathlib.Topology.Subpath
 
 /-!
 # Local connectivity near an arc endpoint
@@ -12,6 +13,39 @@ ball, giving connected neighborhoods of an endpoint in the arc complement.
 namespace FiniteAvalanches.Electrical.StatementGeometry
 
 open Set Metric
+
+/-- A punctured open ball in the plane is path connected. -/
+theorem isPathConnected_ball_diff_singleton (p : ℝ × ℝ) {r : ℝ} (hr : 0 < r) :
+    IsPathConnected (Metric.ball p r \ {p}) := by
+  let h := OpenPartialHomeomorph.univBall (E := ℝ × ℝ) p r
+  have hsource : h.source = Set.univ := OpenPartialHomeomorph.univBall_source p r
+  have htarget : h.target = Metric.ball p r := OpenPartialHomeomorph.univBall_target p hr
+  have hzero : h 0 = p := OpenPartialHomeomorph.univBall_apply_zero p r
+  have hh : h '' ({0}ᶜ : Set (ℝ × ℝ)) =
+      Metric.ball p r \ {p} := by
+    ext z
+    constructor
+    · rintro ⟨x, hx, rfl⟩
+      refine ⟨htarget ▸ h.map_source (hsource ▸ Set.mem_univ x), ?_⟩
+      simp only [Set.mem_singleton_iff]
+      intro heq
+      have : x = 0 := by
+        have hx' := h.left_inv (hsource ▸ Set.mem_univ x)
+        rw [heq, OpenPartialHomeomorph.univBall_symm_apply_center] at hx'
+        exact hx'.symm
+      exact hx (by simp [this])
+    · rintro ⟨hz, hzp⟩
+      refine ⟨h.symm z, ?_, h.right_inv (htarget.symm ▸ hz)⟩
+      · simp only [Set.mem_compl_iff, Set.mem_singleton_iff]
+        intro heq
+        apply hzp
+        simp only [Set.mem_singleton_iff]
+        have := congrArg h heq
+        rw [h.right_inv (htarget.symm ▸ hz), hzero] at this
+        exact this
+  rw [← hh]
+  exact (isPathConnected_compl_singleton_of_one_lt_rank
+    LatticeProb.PlaneTopology.one_lt_rank_plane 0).image (OpenPartialHomeomorph.continuous_univBall p r)
 
 /-- Adjoining an arc along a preconnected intersection preserves each component
 of the complement of a compact plane set. -/

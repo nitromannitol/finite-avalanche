@@ -1,4 +1,5 @@
-import FiniteAvalanches.Support.Plane.ArcClosingPath
+import Mathlib.Topology.Path
+import Mathlib.Topology.Subpath
 
 /-!
 # Upper bounds for nested loops

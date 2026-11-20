@@ -1,6 +1,7 @@
 import FiniteAvalanches.Electrical.Geometry.ConnectedDrawingQuotient
 import FiniteAvalanches.Electrical.Geometry.BSST
 import FiniteAvalanches.Support.Plane.FinitePointComplement
+import FiniteAvalanches.Support.Plane.EndpointLocalConnectivity
 import Mathlib.Analysis.Normed.Module.Connected
 import Mathlib.Analysis.Normed.Module.Ball.Homeomorph
 import Mathlib.Analysis.LocallyConvex.WithSeminorms
@@ -42,39 +43,6 @@ private theorem nowhereDense_iUnion {ι : Type} [Fintype ι] (s : ι → Set Pla
   simpa using h Finset.univ
 
 variable {V E : Type} [Fintype V] [Fintype E] {J : CopiedGraph V E}
-
-/-- A punctured open ball in the plane is path connected. -/
-theorem isPathConnected_ball_diff_singleton (p : Plane) {r : ℝ} (hr : 0 < r) :
-    IsPathConnected (Metric.ball p r \ {p}) := by
-  let h := OpenPartialHomeomorph.univBall (E := Plane) p r
-  have hsource : h.source = Set.univ := OpenPartialHomeomorph.univBall_source p r
-  have htarget : h.target = Metric.ball p r := OpenPartialHomeomorph.univBall_target p hr
-  have hzero : h 0 = p := OpenPartialHomeomorph.univBall_apply_zero p r
-  have hh : h '' ({0}ᶜ : Set Plane) =
-      Metric.ball p r \ {p} := by
-    ext z
-    constructor
-    · rintro ⟨x, hx, rfl⟩
-      refine ⟨htarget ▸ h.map_source (hsource ▸ Set.mem_univ x), ?_⟩
-      simp only [Set.mem_singleton_iff]
-      intro heq
-      have : x = 0 := by
-        have hx' := h.left_inv (hsource ▸ Set.mem_univ x)
-        rw [heq, OpenPartialHomeomorph.univBall_symm_apply_center] at hx'
-        exact hx'.symm
-      exact hx (by simp [this])
-    · rintro ⟨hz, hzp⟩
-      refine ⟨h.symm z, ?_, h.right_inv (htarget.symm ▸ hz)⟩
-      · simp only [Set.mem_compl_iff, Set.mem_singleton_iff]
-        intro heq
-        apply hzp
-        simp only [Set.mem_singleton_iff]
-        have := congrArg h heq
-        rw [h.right_inv (htarget.symm ▸ hz), hzero] at this
-        exact this
-  rw [← hh]
-  exact (isPathConnected_compl_singleton_of_one_lt_rank
-    LatticeProb.PlaneTopology.one_lt_rank_plane 0).image (OpenPartialHomeomorph.continuous_univBall p r)
 
 /-- Removing a point from an open preconnected region leaves it preconnected. -/
 theorem IsOpen.isPreconnected_diff_singleton {U : Set Plane} (hU : IsOpen U)

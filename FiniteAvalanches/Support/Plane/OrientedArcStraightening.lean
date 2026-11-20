@@ -1,5 +1,5 @@
 import FiniteAvalanches.Support.Plane.JordanRounding
-import FiniteAvalanches.Support.Plane.ArcAccess.ClosingArc
+import FiniteAvalanches.Support.Plane.ArcClosingPath
 import FiniteAvalanches.Support.Plane.DiskReflection
 import FiniteAvalanches.Support.Plane.DilationIsotopy
 import FiniteAvalanches.Support.Plane.ChartOrientation
@@ -223,7 +223,7 @@ theorem exists_orientedChart_arc_straightening (gamma : ArcParameter → Plane)
     (hc : Continuous gamma) (hi : Function.Injective gamma) :
     ∃ c : OrientedChart, ∀ t : ArcParameter, c.map (gamma t) = (t.val, 0) := by
   let p : Path (gamma 0) (gamma 1) := ⟨⟨gamma, hc⟩, rfl, rfl⟩
-  obtain ⟨F, hF⟩ := ArcAccess.exists_plane_homeomorph_straightening p hi
+  obtain ⟨F, hF⟩ := exists_plane_homeomorph_straightening p hi
   let Cx : ℂ ≃ₜ Plane := Complex.equivRealProdCLM.toHomeomorph
   obtain ⟨R, hR, hRb⟩ :=
     ((isCompact_range hc).image Cx.symm.continuous).isBounded.exists_pos_norm_lt
