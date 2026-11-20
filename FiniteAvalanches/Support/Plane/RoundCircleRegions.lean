@@ -23,7 +23,7 @@ theorem isBounded_image_of_homeomorph (h : Plane ≃ₜ Plane) {s : Set Plane}
   (hs.isCompact_closure.image h.continuous).isBounded.subset (image_mono subset_closure)
 
 /-- A plane homeomorphism carries complementary components to complementary components. -/
-theorem image_connectedComponentIn_compl (h : Plane ≃ₜ Plane) (C : Set Plane) {x : Plane}
+theorem homeomorph_image_connectedComponentIn_compl (h : Plane ≃ₜ Plane) (C : Set Plane) {x : Plane}
     (hx : x ∉ C) : h '' connectedComponentIn Cᶜ x = connectedComponentIn (h '' C)ᶜ (h x) := by
   rw [h.image_connectedComponentIn (show x ∈ Cᶜ from hx), image_compl_eq h.bijective]
 
@@ -37,40 +37,40 @@ private theorem image_symm_image (h : Plane ≃ₜ Plane) (s : Set Plane) :
   rw [h.image_symm, h.preimage_image]
 
 /-- The image of the bounded region lies in the bounded region of the image. -/
-theorem image_inside_subset (h : Plane ≃ₜ Plane) (C : Set Plane) :
+theorem homeomorph_image_inside_subset (h : Plane ≃ₜ Plane) (C : Set Plane) :
     h '' inside C ⊆ inside (h '' C) := by
   rintro _ ⟨x, ⟨hxC, hb⟩, rfl⟩
   refine ⟨notMem_image_of_notMem h hxC, ?_⟩
-  rw [← image_connectedComponentIn_compl h C hxC]
+  rw [← homeomorph_image_connectedComponentIn_compl h C hxC]
   exact isBounded_image_of_homeomorph h hb
 
 /-- A plane homeomorphism carries the bounded region onto the bounded region of the image. -/
-theorem image_inside (h : Plane ≃ₜ Plane) (C : Set Plane) :
+theorem homeomorph_image_inside (h : Plane ≃ₜ Plane) (C : Set Plane) :
     h '' inside C = inside (h '' C) := by
-  refine (image_inside_subset h C).antisymm fun y hy => ?_
-  have hm := image_inside_subset h.symm (h '' C) ⟨y, hy, rfl⟩
+  refine (homeomorph_image_inside_subset h C).antisymm fun y hy => ?_
+  have hm := homeomorph_image_inside_subset h.symm (h '' C) ⟨y, hy, rfl⟩
   rw [image_symm_image] at hm
   exact ⟨_, hm, h.apply_symm_apply y⟩
 
 /-- The image of the unbounded region lies in the unbounded region of the image. -/
-theorem image_outside_subset (h : Plane ≃ₜ Plane) (C : Set Plane) :
+theorem homeomorph_image_outside_subset (h : Plane ≃ₜ Plane) (C : Set Plane) :
     h '' outside C ⊆ outside (h '' C) := by
   rintro _ ⟨x, ⟨hxC, hb⟩, rfl⟩
   refine ⟨notMem_image_of_notMem h hxC, fun hb' => hb ?_⟩
-  rw [← image_connectedComponentIn_compl h C hxC] at hb'
+  rw [← homeomorph_image_connectedComponentIn_compl h C hxC] at hb'
   have hm := isBounded_image_of_homeomorph h.symm hb'
   rwa [image_symm_image] at hm
 
 /-- A plane homeomorphism carries the unbounded region onto the unbounded region of the image. -/
-theorem image_outside (h : Plane ≃ₜ Plane) (C : Set Plane) :
+theorem homeomorph_image_outside (h : Plane ≃ₜ Plane) (C : Set Plane) :
     h '' outside C = outside (h '' C) := by
-  refine (image_outside_subset h C).antisymm fun y hy => ?_
-  have hm := image_outside_subset h.symm (h '' C) ⟨y, hy, rfl⟩
+  refine (homeomorph_image_outside_subset h C).antisymm fun y hy => ?_
+  have hm := homeomorph_image_outside_subset h.symm (h '' C) ⟨y, hy, rfl⟩
   rw [image_symm_image] at hm
   exact ⟨_, hm, h.apply_symm_apply y⟩
 
 /-- A plane homeomorphism carries Jordan curves to Jordan curves. -/
-theorem isJordanCurve_image (h : Plane ≃ₜ Plane) {C : Set Plane} (hC : IsJordanCurve C) :
+theorem isJordanCurve_homeomorph_image (h : Plane ≃ₜ Plane) {C : Set Plane} (hC : IsJordanCurve C) :
     IsJordanCurve (h '' C) := by
   obtain ⟨f, hf, rfl⟩ := hC
   refine ⟨h ∘ f, ⟨h.continuous.comp_continuousOn hf.continuousOn, ?_,
@@ -78,12 +78,12 @@ theorem isJordanCurve_image (h : Plane ≃ₜ Plane) {C : Set Plane} (hC : IsJor
   simp only [Function.comp_apply, hf.closes]
 
 /-- Euclidean norm in coordinates. -/
-theorem norm_mk (a b : ℝ) : ‖Plane.mk a b‖ = Real.sqrt (a ^ 2 + b ^ 2) := by
+theorem norm_planeMk (a b : ℝ) : ‖Plane.mk a b‖ = Real.sqrt (a ^ 2 + b ^ 2) := by
   rw [EuclideanSpace.norm_eq]
   simp [Fin.sum_univ_two]
 
 /-- Every plane point is given by its two coordinates. -/
-theorem eq_mk (x : Plane) : x = Plane.mk (x 0) (x 1) := by
+private theorem planeMk_coords (x : Plane) : x = Plane.mk (x 0) (x 1) := by
   ext i
   fin_cases i <;> rfl
 
@@ -125,7 +125,7 @@ theorem lowerSemicircle_one (c : Plane) (r : ℝ) : lowerSemicircle c r 1 = circ
 
 private theorem norm_trig (a : ℝ) (s : ℝ) (hs : s = Real.sin a ∨ s = -Real.sin a) :
     ‖Plane.mk (-Real.cos a) s‖ = 1 := by
-  rw [norm_mk]
+  rw [norm_planeMk]
   have : (-Real.cos a) ^ 2 + s ^ 2 = 1 := by
     rcases hs with rfl | rfl <;> nlinarith [Real.sin_sq_add_cos_sq a]
   rw [this, Real.sqrt_one]
@@ -215,7 +215,7 @@ theorem upperSemicircle_union_lowerSemicircle (hr : 0 < r) :
     · exact upperSemicircle_mem_sphere hr θ
     · exact lowerSemicircle_mem_sphere hr θ
   intro x hx
-  rw [mem_sphere, dist_eq_norm, eq_mk (x - c), norm_mk] at hx
+  rw [mem_sphere, dist_eq_norm, planeMk_coords (x - c), norm_planeMk] at hx
   set u := (x - c) 0
   set v := (x - c) 1
   have huv : u ^ 2 + v ^ 2 = r ^ 2 := by
@@ -243,7 +243,7 @@ theorem upperSemicircle_union_lowerSemicircle (hr : 0 < r) :
     rw [h1, Real.sqrt_sq_eq_abs, abs_div, abs_of_pos hr]
     field_simp
   have hx0 : x = c + Plane.mk u v := by
-    rw [← eq_mk (x - c)]
+    rw [← planeMk_coords (x - c)]
     abel
   have hru : r * -a = u := by
     simp only [a]
@@ -331,7 +331,7 @@ theorem diameter_sdiff_subset_ball (hr : 0 < r) :
     · simp [circleLeft, circleRight]
       ring
     · simp [circleLeft, circleRight]
-  rw [mem_ball, dist_eq_norm, heq, norm_mk]
+  rw [mem_ball, dist_eq_norm, heq, norm_planeMk]
   have hlt : |2 * t - 1| < 1 := by
     rw [abs_lt]
     constructor

@@ -176,12 +176,12 @@ theorem mk_horizontal_injective : Function.Injective fun t : ℝ => Plane.mk t 0
   simpa using this
 
 theorem norm_mk_horizontal (t : ℝ) : ‖Plane.mk t 0‖ = |t| := by
-  rw [norm_mk]
+  rw [norm_planeMk]
   simp [Real.sqrt_sq_eq_abs]
 
 /-- A segment from the bounded to the unbounded region first meets the curve at a
 point before which it stays in the bounded region. -/
-theorem exists_first_hit {K : Set Plane} (hS : IsSeparating K) {u v : Plane}
+theorem exists_first_hit_of_inside_outside {K : Set Plane} (hS : IsSeparating K) {u v : Plane}
     (hu : u ∈ inside K) (hv : v ∈ outside K) :
     ∃ k ∈ segment ℝ u v, k ∈ K ∧ segment ℝ u k \ {k} ⊆ inside K := by
   have hmeet : (segment ℝ u v ∩ K).Nonempty := by
@@ -231,8 +231,8 @@ theorem exists_rounding_homeomorph {K : Set Plane} (hK : IsJordanCurve K)
   have hRt : R < |R + 2| := by
     rw [abs_of_pos (by linarith)]
     linarith
-  obtain ⟨k₁, hk₁seg, hk₁K, hk₁in⟩ := exists_first_hit hS (hσ 0 zero_mem_I) (hfar _ hL)
-  obtain ⟨k₂, hk₂seg, hk₂K, hk₂in⟩ := exists_first_hit hS (hσ 1 one_mem_I) (hfar _ hRt)
+  obtain ⟨k₁, hk₁seg, hk₁K, hk₁in⟩ := exists_first_hit_of_inside_outside hS (hσ 0 zero_mem_I) (hfar _ hL)
+  obtain ⟨k₂, hk₂seg, hk₂K, hk₂in⟩ := exists_first_hit_of_inside_outside hS (hσ 1 one_mem_I) (hfar _ hRt)
   rw [segment_horizontal, segment_eq_uIcc] at hk₁seg hk₂seg
   obtain ⟨a₁, ha₁, hk₁eq⟩ := hk₁seg
   obtain ⟨a₂, ha₂, hk₂eq⟩ := hk₂seg
@@ -385,9 +385,9 @@ theorem exists_rounding_homeomorph {K : Set Plane} (hK : IsJordanCurve K)
     (closure (inside (γ₂ '' I ∪ P)))
     isClosed_closure isClosed_closure isClosed_closure isClosed_closure isClosed_closure
     isClosed_closure hcov hcov' Θ₀ Θ₁ Θ₂
-    (by rw [Θ₀.image_closure, image_outside, him₀])
-    (by rw [Θ₁.image_closure, image_inside, him₁])
-    (by rw [Θ₂.image_closure, image_inside, him₂])
+    (by rw [Θ₀.image_closure, homeomorph_image_outside, him₀])
+    (by rw [Θ₁.image_closure, homeomorph_image_inside, him₁])
+    (by rw [Θ₂.image_closure, homeomorph_image_inside, him₂])
     (fun x hx => by
       obtain ⟨s, hs, rfl⟩ := h10 ⟨hx.2, hx.1⟩
       rw [hΘ₀a s hs, hΘ₁b s hs])
