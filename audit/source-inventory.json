@@ -3662,6 +3662,18 @@
       "bytes": 4999
     },
     {
+      "path": "FiniteAvalanches/Support/Plane/BoundaryPairArms.lean",
+      "sha256": "a5524dbf920dd32bb5030031c2d832108990e0eb6cc858868ee7d0c6c5614b55",
+      "code_sha256": "39988358dc246743376355115717bf481190e75ffdd4cb5277187ced567c6960",
+      "bytes": 3303
+    },
+    {
+      "path": "FiniteAvalanches/Support/Plane/BoundaryPairFamily.lean",
+      "sha256": "a5eb19189065eb869f8b94033b74a7f70321eaa78013cdae1eaa6e3fdfaa634f",
+      "code_sha256": "68ddd73eef2015442f8d8d81f5dd6ec4ba6779ef57dea67d6b2a45714cc80c15",
+      "bytes": 3509
+    },
+    {
       "path": "FiniteAvalanches/Support/Plane/BoundaryStarExtension.lean",
       "sha256": "f35f40a5965a77b6a9ac3804aa0c7ab092adb709fde15b4fd8a0241b12b2b77d",
       "code_sha256": "557a4610639ee7a322af1259595829fba7adf1346b864a4ab0012d5d292c5d48",
@@ -6857,6 +6869,8 @@
     "FiniteAvalanches.Support.Plane.ArcStraightHomeomorph",
     "FiniteAvalanches.Support.Plane.BoundaryArcJoin",
     "FiniteAvalanches.Support.Plane.BoundaryArcJoinTails",
+    "FiniteAvalanches.Support.Plane.BoundaryPairArms",
+    "FiniteAvalanches.Support.Plane.BoundaryPairFamily",
     "FiniteAvalanches.Support.Plane.BoundaryStarExtension",
     "FiniteAvalanches.Support.Plane.BoundaryTwoStar",
     "FiniteAvalanches.Support.Plane.ChartedBoundaryStarExtension",
