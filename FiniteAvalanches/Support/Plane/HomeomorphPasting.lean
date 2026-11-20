@@ -1,3 +1,4 @@
+import FiniteAvalanches.Support.Plane.DilationIsotopy
 import Mathlib.Topology.Homeomorph.Lemmas
 import Mathlib.Topology.Piecewise
 
@@ -10,7 +11,8 @@ can be pasted to form a homeomorphism.
 
 namespace FiniteAvalanches.Electrical.StatementGeometry
 
-open Set
+open Set Filter
+open scoped Topology
 
 noncomputable section
 
@@ -73,6 +75,30 @@ theorem homeomorphPaste_apply_of_notMem {X Y : Type*} [TopologicalSpace X] [Topo
   classical
   change K.piecewise f g x = g x
   simp only [Set.piecewise, hx, if_false]
+
+/-- If a plane homeomorphism and an oriented chart agree on the boundary of a
+compact set and have the same image of it, the homeomorphism agrees on that
+set with an oriented chart. -/
+theorem exists_orientedChart_agree_on_compact
+    (f : Source.Plane ≃ₜ Source.Plane) (c : Source.OrientedChart)
+    (K : Set Source.Plane) (hK : IsCompact K)
+    (himage : f '' K = c.map '' K)
+    (hboundary : ∀ x ∈ frontier K, f x = c.map x) :
+    ∃ d : Source.OrientedChart, ∀ x ∈ K, d.map x = f x := by
+  let F := homeomorphPaste f c.map K himage hboundary
+  have hne : K ≠ univ := by
+    intro h
+    exact noncompact_univ Source.Plane (h ▸ hK)
+  obtain ⟨z, hz⟩ : ∃ z, z ∉ K := by
+    by_contra h
+    apply hne
+    exact eq_univ_iff_forall.mpr (by simpa only [not_exists, not_not] using h)
+  have hloc : F =ᶠ[𝓝 z] c.map := by
+    filter_upwards [hK.isClosed.isOpen_compl.mem_nhds hz] with x hx
+    exact homeomorphPaste_apply_of_notMem f c.map K himage hboundary hx
+  refine ⟨orientedChartOfLocallyEq F c z hloc, ?_⟩
+  intro x hx
+  exact homeomorphPaste_apply_of_mem f c.map K himage hboundary hx
 
 end
 end FiniteAvalanches.Electrical.StatementGeometry
