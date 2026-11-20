@@ -1,5 +1,8 @@
 import FiniteAvalanches.Support.Plane.PolarDualConnected
 import FiniteAvalanches.Support.Plane.BoundaryIncidenceCount
+import FiniteAvalanches.Support.Plane.BondDualCycle
+import FiniteAvalanches.Electrical.Trees.PathUniqueCrossing
+import FiniteAvalanches.Electrical.Trees.CopyDirections
 
 /-!
 # Face-boundary balance at bridge-only vertices
@@ -15,6 +18,124 @@ open Source BSST Plane Set
 open scoped Classical BigOperators
 
 variable {V E : Type} [Fintype V] [Fintype E]
+
+omit [Fintype V] in
+/-- A non-loop edge on a cycle has a different non-loop cycle edge at its
+first endpoint. Parallel edge copies are allowed. -/
+theorem CopiedGraph.exists_other_incident_nonbridge (J : CopiedGraph V E)
+    (e : E) (hne : J.left e ≠ J.right e)
+    (hcycle : J.reaches (Finset.univ.erase e) (J.left e) (J.right e)) :
+    ∃ f : E, f ≠ e ∧ (J.left f = J.left e ∨ J.right f = J.left e) ∧
+      J.left f ≠ J.right f ∧
+      J.reaches (Finset.univ.erase f) (J.left f) (J.right f) := by
+  classical
+  obtain ⟨m, vertices, copies, hver, hfirst, hlast, hmem, hends⟩ :=
+    J.exists_simple_ordered_path (Finset.univ.erase e) hcycle
+  have hm : 0 < m := by
+    by_contra h
+    have hm0 : m = 0 := Nat.eq_zero_of_not_pos h
+    subst m
+    exact hne (hfirst.symm.trans hlast)
+  let i : Fin m := ⟨0, hm⟩
+  let f := copies i
+  have hfe : f ≠ e := (Finset.mem_erase.mp (hmem i)).1
+  have hcopies := J.copies_injective_of_vertices_injective m vertices hver copies hends
+  have hstart : vertices i.castSucc = J.left e := by
+    rw [show i.castSucc = 0 from Fin.ext rfl]
+    exact hfirst
+  have hnext : vertices i.succ ≠ vertices i.castSucc := by
+    intro h
+    have hi := congrArg Fin.val (hver h)
+    simp only [Fin.val_succ, Fin.val_castSucc] at hi
+    omega
+  have hsuffix : J.reaches (Finset.univ.erase f) (vertices i.succ)
+      (vertices (Fin.last m)) := by
+    apply J.path_interval_reaches (Finset.univ.erase f) m vertices i.succ (Fin.last m)
+      (by simp only [Fin.val_succ, Fin.val_last]; omega)
+    intro k hik _
+    have hk : copies k ≠ f := by
+      intro h
+      have heq : k = i := hcopies h
+      subst k
+      simp only [Fin.val_succ] at hik
+      omega
+    exact .single ⟨copies k, Finset.mem_erase.mpr ⟨hk, Finset.mem_univ _⟩, hends k⟩
+  have hepath : J.reaches (Finset.univ.erase f) (J.right e) (J.left e) :=
+    .single ⟨e, Finset.mem_erase.mpr ⟨Ne.symm hfe, Finset.mem_univ _⟩,
+      Or.inr ⟨rfl, rfl⟩⟩
+  have halt : J.reaches (Finset.univ.erase f) (vertices i.succ) (vertices i.castSucc) := by
+    rw [hlast] at hsuffix
+    rw [hstart]
+    exact hsuffix.trans hepath
+  refine ⟨f, hfe, ?_, ?_, ?_⟩
+  · rcases hends i with ⟨ha, _⟩ | ⟨ha, _⟩
+    · exact Or.inl (ha.trans hstart)
+    · exact Or.inr (ha.trans hstart)
+  · intro h
+    rcases hends i with ⟨ha, hb⟩ | ⟨ha, hb⟩
+    · exact hnext (hb.symm.trans (h.symm.trans ha))
+    · exact hnext (hb.symm.trans (h.trans ha))
+  · rcases hends i with ⟨ha, hb⟩ | ⟨ha, hb⟩
+    · rw [ha, hb]
+      exact TwoCopy.reaches_symm J halt
+    · rw [ha, hb]
+      exact halt
+
+omit [Fintype V] in
+/-- Every endpoint of a non-loop cycle edge is incident to a second, distinct
+non-loop cycle edge. -/
+theorem CopiedGraph.exists_other_incident_nonbridge_of_mem (J : CopiedGraph V E)
+    (e : E) (v : V) (hv : J.left e = v ∨ J.right e = v)
+    (hne : J.left e ≠ J.right e)
+    (hcycle : J.reaches (Finset.univ.erase e) (J.left e) (J.right e)) :
+    ∃ f : E, f ≠ e ∧ (J.left f = v ∨ J.right f = v) ∧
+      J.left f ≠ J.right f ∧
+      J.reaches (Finset.univ.erase f) (J.left f) (J.right f) := by
+  classical
+  rcases hv with hv | hv
+  · obtain ⟨f, hfe, hf, hn, hc⟩ := J.exists_other_incident_nonbridge e hne hcycle
+    exact ⟨f, hfe, by simpa only [hv] using hf, hn, hc⟩
+  · let K := TwoCopy.reorient J (fun _ => true)
+    have hn : K.left e ≠ K.right e := by
+      simpa only [K, TwoCopy.reorient, ↓reduceIte] using hne.symm
+    have hreaches (F : Finset E) : K.reaches F = J.reaches F :=
+      TwoCopy.reorient_reaches J (fun _ => true) F
+    have hc : K.reaches (Finset.univ.erase e) (K.left e) (K.right e) := by
+      rw [hreaches]
+      simpa only [K, TwoCopy.reorient, ↓reduceIte] using
+        TwoCopy.reaches_symm J hcycle
+    obtain ⟨f, hfe, hf, hfn, hfc⟩ := K.exists_other_incident_nonbridge e hn hc
+    have hf' : J.left f = v ∨ J.right f = v := by
+      simpa only [K, TwoCopy.reorient, ↓reduceIte, hv, or_comm] using hf
+    have hfn' : J.left f ≠ J.right f := by
+      simpa only [K, TwoCopy.reorient, ↓reduceIte] using hfn.symm
+    have hfc' : J.reaches (Finset.univ.erase f) (J.left f) (J.right f) := by
+      apply TwoCopy.reaches_symm J
+      rw [hreaches] at hfc
+      simpa only [K, TwoCopy.reorient, ↓reduceIte] using hfc
+    exact ⟨f, hfe, hf', hfn', hfc'⟩
+
+omit [Fintype V] in
+/-- At each vertex, the number of incident non-loop cycle edges is either
+zero or at least two. -/
+theorem CopiedGraph.incident_nonbridge_card_ne_one (J : CopiedGraph V E) (v : V) :
+    (Finset.univ.filter (fun e => (J.left e = v ∨ J.right e = v) ∧
+      J.left e ≠ J.right e ∧
+      J.reaches (Finset.univ.erase e) (J.left e) (J.right e))).card ≠ 1 := by
+  classical
+  let S := Finset.univ.filter (fun e => (J.left e = v ∨ J.right e = v) ∧
+    J.left e ≠ J.right e ∧
+    J.reaches (Finset.univ.erase e) (J.left e) (J.right e))
+  intro hcard
+  change S.card = 1 at hcard
+  have hnonempty : S.Nonempty := Finset.card_pos.mp (by omega)
+  obtain ⟨e, he⟩ := hnonempty
+  have he' := (Finset.mem_filter.mp he).2
+  obtain ⟨f, hfe, hv, hn, hc⟩ :=
+    J.exists_other_incident_nonbridge_of_mem e v he'.1 he'.2.1 he'.2.2
+  have hf : f ∈ S := Finset.mem_filter.mpr ⟨Finset.mem_univ _, hv, hn, hc⟩
+  have hlt : 1 < S.card := Finset.one_lt_card.mpr ⟨e, he, f, hf, Ne.symm hfe⟩
+  omega
 
 /-- The two chart sides of a bridge represent the same complementary face. -/
 theorem chartFaces_eq_of_bridge {J : CopiedGraph V E} (D : Drawing J)
