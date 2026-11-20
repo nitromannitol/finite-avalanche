@@ -56,4 +56,17 @@ theorem indicator_face_boundary_eq_zero_of_incident_bridges {J : CopiedGraph V E
     have hr : v ≠ J.right e := fun h => he (Or.inr h.symm)
     simp [copyGradient, hl, hr]
 
+/-- The dual boundary of every primal gradient vanishes in a forest drawing. -/
+theorem face_boundary_gradient_eq_zero_of_forest {J : CopiedGraph V E}
+    (D : Drawing J) (charts : ∀ e, EdgeChart D e)
+    (hforest : ∀ e : E, ¬ J.reaches (Finset.univ.erase e) (J.left e) (J.right e))
+    (q : V → ℝ) (F : Face D) :
+    copyBoundary (fun e => negativeChartFace D e (charts e))
+      (fun e => positiveChartFace D e (charts e)) (copyGradient J.left J.right q) F = 0 := by
+  apply ((copyBoundary_gradient_eq_zero_iff_indicators J.left J.right
+    (fun e => negativeChartFace D e (charts e))
+    (fun e => positiveChartFace D e (charts e))).mpr ?_) q F
+  intro v G
+  exact indicator_face_boundary_eq_zero_of_incident_bridges D charts v (fun e _ => hforest e) G
+
 end FiniteAvalanches.Electrical.StatementGeometry
