@@ -11,23 +11,12 @@
     "Quot.sound",
     "FiniteAvalanches.External.BarlowMasson2011.adjacent_ust_path_euclidean_tail",
     "FiniteAvalanches.External.SandpileLimit.exists_infiniteVolumeLaw",
-    "FiniteAvalanches.External.finite_plane_dual_bond_cycle",
-    "FiniteAvalanches.External.finite_plane_dual_connected",
     "FiniteAvalanches.External.finite_plane_geometric_dual",
-    "FiniteAvalanches.External.finite_plane_tree_complement",
     "FiniteAvalanches.External.finite_plane_two_pole_topology",
-    "FiniteAvalanches.External.kenyonWilson_pairingGroves_resistanceMinor",
     "FiniteAvalanches.External.lawler_limic_beurling_srw_Z2",
     "FiniteAvalanches.External.outer_face_simple_path_disk_redrawing",
     "FiniteAvalanches.External.parametrized_plane_arc_straightening",
-    "FiniteAvalanches.External.plane_edge_chart_incidence",
-    "FiniteAvalanches.External.plane_punctured_chart_face_transport",
-    "FiniteAvalanches.External.plane_punctured_face_transport",
-    "FiniteAvalanches.External.plane_vertex_face_star",
-    "FiniteAvalanches.External.square_lattice_ust_dual_law",
-    "FiniteAvalanches.External.square_lattice_wired_ust_one_tree_one_end",
-    "FiniteAvalanches.External.square_lattice_wired_ust_weak_limit",
-    "FiniteAvalanches.External.wilson_two_color_law_existsUnique"
+    "FiniteAvalanches.External.square_lattice_wired_ust_one_tree_one_end"
   ],
   "enable_nanoda": true
 }
