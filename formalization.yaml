@@ -12,7 +12,8 @@ project:
     Classical.choice and Quot.sound. Three further literature results, used by
     none of the numbered statements, remain declared as axioms. The comparator pair FiniteAvalanchesAudit/MainOrigin/ passed the
     comparator check for the earlier sources with 19 and 8 literature inputs; the
-    pair recaptured for the current source awaits review.
+    pair recaptured for the current source has been independently reviewed, and
+    its comparator check runs in continuous integration.
   authors:
     - "Ahmed Bou-Rabee"
   license: "Apache-2.0"
@@ -107,16 +108,17 @@ fidelity:
     records where a proof takes a different route from the cited source.
 
 review:
-  status: "review-pending"
+  status: "agent-reviewed"
   reviewers:
     - "Ahmed Bou-Rabee"
   notes: >-
     Correctness of every proof is guaranteed by the Lean kernel and Mathlib;
     Theorem 1.1 depends only on propext, Classical.choice and Quot.sound, and
     the registry keeps three axioms that it does not use (no sorry, no other
-    axiom). The statements and the comparator pair were independently reviewed
-    for the earlier source inventories; the current source and the recaptured
-    pair await review.
+    axiom). The statements, the registered results and the recaptured
+    comparator pair were independently reviewed for the current source
+    inventory, as for the earlier ones; the comparator run on the current pair
+    is made in continuous integration.
 
 alignment:
   namespace: "FiniteAvalanches"
