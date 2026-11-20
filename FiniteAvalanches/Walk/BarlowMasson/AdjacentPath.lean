@@ -323,6 +323,199 @@ theorem wilsonRows_escapeRows_le : ∃ c : ℝ, 0 < c ∧ ∀ (x y : Site 2) (k 
     _ ≤ 1 * ENNReal.ofReal ε := by gcongr; exact prob_le_one
     _ = ENNReal.ofReal ε := one_mul _
 
+/-! ### The event as a finite union of edge cylinders -/
+
+/-- The sites of the closed Euclidean ball of radius `k` about `x`. -/
+def ballSites (x : Site 2) (k : ℕ) : Finset (Site 2) :=
+  (ballFinset 2 (k : ℝ)).image (fun w => w + x)
+
+theorem mem_ballSites {x z : Site 2} {k : ℕ} : z ∈ ballSites x k ↔ z ∈ euclideanBall x k := by
+  simp only [ballSites, Finset.mem_image, mem_ballFinset_iff, euclideanBall, Set.mem_setOf_eq,
+    euclideanDistance_eq]
+  constructor
+  · rintro ⟨w, hw, rfl⟩
+    simpa using hw
+  · intro h
+    exact ⟨z - x, h, sub_add_cancel z x⟩
+
+/-- The lattice edges with both endpoints in the closed Euclidean ball of radius `k` about `x`. -/
+def ballEdges (x : Site 2) (k : ℕ) : Finset LatticeEdge :=
+  (ballSites x k).sym2.subtype (· ∈ (lattice 2).edgeSet)
+
+theorem mem_ballEdges {x : Site 2} {k : ℕ} {e : LatticeEdge} :
+    e ∈ ballEdges x k ↔ ∀ z ∈ e.val, z ∈ euclideanBall x k := by
+  rw [ballEdges, Finset.mem_subtype, Finset.mem_sym2_iff]
+  simp only [mem_ballSites]
+
+/-- Joining inside `S` only depends on the edges with both endpoints in `S`. -/
+theorem joinedIn_of_agree {ω ω' : EdgeField} {S : Set (Site 2)} {x y : Site 2}
+    (h : ∀ e : LatticeEdge, (∀ z ∈ e.val, z ∈ S) → ω e = ω' e) (hj : JoinedIn ω S x y) :
+    JoinedIn ω' S x y := by
+  obtain ⟨p, hp⟩ := hj
+  induction p with
+  | nil => exact ⟨SimpleGraph.Walk.nil, hp⟩
+  | @cons a b c hadj p ih =>
+    obtain ⟨q, hq⟩ := ih (fun z hz => hp z (by simp [hz]))
+    obtain ⟨hab, hω⟩ := hadj
+    have hab' : (toGraph ω').Adj a b := by
+      refine ⟨hab, ?_⟩
+      rw [← h ⟨s(a, b), hab⟩ ?_]
+      · exact hω
+      · intro z hz
+        rcases Sym2.mem_iff.1 hz with rfl | rfl
+        · exact hp _ (by simp)
+        · exact hp _ (by simp [SimpleGraph.Walk.start_mem_support])
+    refine ⟨SimpleGraph.Walk.cons hab' q, fun z hz => ?_⟩
+    rw [SimpleGraph.Walk.support_cons, List.mem_cons] at hz
+    rcases hz with rfl | hz
+    · exact hp _ (by simp)
+    · exact hq z hz
+
+/-- Extend a pattern on `E` by closed edges. -/
+def extendPattern (E : Finset LatticeEdge) (p : E → Bool) : EdgeField :=
+  fun e => if h : e ∈ E then p ⟨e, h⟩ else false
+
+/-- The patterns on the edges of the ball for which `x` and `y` are not joined inside it. -/
+def badPatterns (x y : Site 2) (k : ℕ) : Finset (ballEdges x k → Bool) :=
+  Finset.univ.filter fun p => ¬JoinedIn (extendPattern (ballEdges x k) p) (euclideanBall x k) x y
+
+theorem joinedIn_iff_restrict (ω : EdgeField) (x y : Site 2) (k : ℕ) :
+    JoinedIn ω (euclideanBall x k) x y ↔
+      JoinedIn (extendPattern (ballEdges x k) ((ballEdges x k).restrict ω)) (euclideanBall x k)
+        x y := by
+  have hagree : ∀ e : LatticeEdge, (∀ z ∈ e.val, z ∈ euclideanBall x k) →
+      ω e = extendPattern (ballEdges x k) ((ballEdges x k).restrict ω) e := by
+    intro e he
+    simp [extendPattern, mem_ballEdges.2 he]
+  exact ⟨joinedIn_of_agree hagree, joinedIn_of_agree fun e he => (hagree e he).symm⟩
+
+theorem not_joinedIn_eq_biUnion (x y : Site 2) (k : ℕ) :
+    {ω | ¬JoinedIn ω (euclideanBall x k) x y} =
+      ⋃ p ∈ badPatterns x y k, FiniteAvalanches.Trees.Lattice.cylinder (ballEdges x k) p := by
+  ext ω
+  simp only [Set.mem_setOf_eq, Set.mem_iUnion, badPatterns, Finset.mem_filter, Finset.mem_univ,
+    true_and, FiniteAvalanches.Trees.Lattice.cylinder, exists_prop, joinedIn_iff_restrict ω x y k]
+  constructor
+  · intro h
+    exact ⟨_, h, rfl⟩
+  · rintro ⟨p, hp, rfl⟩
+    exact hp
+
+theorem isClopen_not_joinedIn (x y : Site 2) (k : ℕ) :
+    IsClopen {ω | ¬JoinedIn ω (euclideanBall x k) x y} := by
+  rw [not_joinedIn_eq_biUnion]
+  exact (badPatterns x y k).finite_toSet.isClopen_biUnion fun p _ =>
+    isClopen_cylinder (ballEdges x k) p
+
+/-! ### The bound in the boxes and in the limit -/
+
+/-- **The bound in a box.** -/
+theorem finiteLaw_not_joinedIn_le (x y : Site 2) (hxy : (lattice 2).Adj x y) (k r N : ℕ)
+    (hr : 2 ≤ r) (hrk : r < k) (hN : k ^ 2 + 3 * coordSum x + 1 ≤ N) :
+    finiteLaw N {ω | ¬JoinedIn ω (euclideanBall x k) x y} ≤
+      wilsonRows (reentryRows N x k r) + wilsonRows (escapeRows N x y r) := by
+  set E := ballEdges x k with hE
+  set S := euclideanBall x (k : ℝ) with hS
+  have hN' : ((k : ℝ) ^ 2 + 3 * coordSum x + 1) ≤ N := by exact_mod_cast hN
+  have hcs : (0 : ℝ) ≤ coordSum x := Nat.cast_nonneg _
+  have hk1 : (1 : ℝ) ≤ k := by exact_mod_cast (by omega : 1 ≤ k)
+  have hbox : ∀ w : Site 2, euclidNorm w < k → FiniteWired.inBox N (w + x) := by
+    intro w hw
+    apply inBox_of_euclidNorm_lt
+    nlinarith
+  have hEbox : ∀ e ∈ E, ∀ z ∈ e.val, FiniteWired.inBox N z := by
+    intro e he z hz
+    have h := mem_ballEdges.1 he z hz
+    simp only [euclideanBall, Set.mem_setOf_eq, euclideanDistance_eq] at h
+    have := inBox_of_euclidNorm_lt (N := N) (x := x) (w := z - x) (by nlinarith)
+    simpa using this
+  -- the query list
+  set Lq : List (Site 2) := x :: y :: (ballSites x k).toList with hLq
+  let q : ℕ → Site 2 := fun i => Lq.getD i 0
+  have hLeq : (List.range Lq.length).map q = Lq := list_eq_range_getD Lq
+  have hq : ∀ e ∈ E, ∀ z ∈ e.val, ∃ i < Lq.length, q i = z := by
+    intro e he z hz
+    have hz' : z ∈ Lq := by
+      simp only [hLq, List.mem_cons, Finset.mem_toList, mem_ballSites]
+      exact Or.inr (Or.inr (mem_ballEdges.1 he z hz))
+    obtain ⟨i, hi, rfl⟩ := List.mem_iff_getElem.1 hz'
+    exact ⟨i, hi, List.getD_eq_getElem _ _ hi⟩
+  let pe : (E → Bool) → LatticeEdge → Bool := fun p e => if h : e ∈ E then p ⟨e, h⟩ else false
+  have hsampler : ∀ p ∈ badPatterns x y k,
+      samplerEvent (sinkRoots N) ((List.range Lq.length).map q) E ∅ (pe p) (fun _ => false) ⊆
+        reentryRows N x k r ∪ escapeRows N x y r := by
+    rintro p hp ξ ⟨st, hst, hpat, -⟩
+    by_contra hξ
+    rw [Set.mem_union, not_or] at hξ
+    rw [hLeq] at hst
+    have hj := joinedIn_of_samplerRun N k r x y hxy hr hrk hbox _ ξ st hst hξ.1 hξ.2
+    simp only [badPatterns, Finset.mem_filter, Finset.mem_univ, true_and] at hp
+    apply hp
+    refine joinedIn_of_agree (fun e he => ?_) hj
+    have heE : e ∈ E := mem_ballEdges.2 he
+    have := hpat e heE
+    simp only [pe, dif_pos heE] at this
+    simp only [samplerEdgeField, extendPattern, dif_pos (show e ∈ ballEdges x k from heE)]
+    exact this
+  have hdisjC : Set.PairwiseDisjoint (↑(badPatterns x y k)) (FiniteAvalanches.Trees.Lattice.cylinder E) := by
+    intro p _ p' _ hpp
+    rw [Function.onFun, Set.disjoint_left]
+    intro ω h1 h2
+    exact hpp (h1.symm.trans h2)
+  have hdisjS : Set.PairwiseDisjoint (↑(badPatterns x y k)) (fun p =>
+      samplerEvent (sinkRoots N) ((List.range Lq.length).map q) E ∅ (pe p) (fun _ => false)) := by
+    intro p _ p' _ hpp
+    rw [Function.onFun, Set.disjoint_left]
+    rintro ξ ⟨st, hst, hpat, -⟩ ⟨st', hst', hpat', -⟩
+    have hss : st = st' := Option.some.inj (hst.symm.trans hst')
+    subst hss
+    apply hpp
+    funext e
+    have h1 := hpat e.val e.property
+    have h2 := hpat' e.val e.property
+    simp only [pe, e.property, dif_pos] at h1 h2
+    exact h1.symm.trans h2
+  calc finiteLaw N {ω | ¬JoinedIn ω (euclideanBall x k) x y}
+      = ∑ p ∈ badPatterns x y k, finiteLaw N (FiniteAvalanches.Trees.Lattice.cylinder E p) := by
+        rw [not_joinedIn_eq_biUnion]
+        exact measure_biUnion_finset hdisjC fun p _ => measurableSet_cylinder E p
+    _ = ∑ p ∈ badPatterns x y k, wilsonRows
+          (samplerEvent (sinkRoots N) ((List.range Lq.length).map q) E ∅ (pe p)
+            (fun _ => false)) := by
+        refine Finset.sum_congr rfl fun p _ => ?_
+        exact finiteLaw_cylinder_eq_sampler N q Lq.length E hEbox hq p
+    _ = wilsonRows (⋃ p ∈ badPatterns x y k,
+          samplerEvent (sinkRoots N) ((List.range Lq.length).map q) E ∅ (pe p)
+            (fun _ => false)) :=
+        (measure_biUnion_finset hdisjS fun p _ => measurableSet_samplerEvent _ _ _ _ _ _).symm
+    _ ≤ wilsonRows (reentryRows N x k r ∪ escapeRows N x y r) :=
+        measure_mono (Set.iUnion₂_subset hsampler)
+    _ ≤ wilsonRows (reentryRows N x k r) + wilsonRows (escapeRows N x y r) :=
+        measure_union_le _ _
+
+/-- **The bound for the limit law.** For natural `k` and `r` in range, the tree path between
+adjacent sites leaves the closed ball of radius `k` with probability at most
+`C r / k + c (8 / r) ^ (1/2)`. -/
+theorem ust_joinedIn_compl_le : ∃ C c : ℝ, 0 ≤ C ∧ 0 < c ∧ ∃ k₀ r₀ : ℕ, ∀ x y : Site 2,
+    (lattice 2).Adj x y → ∀ k r : ℕ, k₀ ≤ k → r₀ ≤ r → 8 ≤ r → 64 * r ≤ k →
+      (squareLatticeUST : Measure EdgeField) (treePathLeavesEuclidean x y k) ≤
+        ENNReal.ofReal (C * ((r : ℝ) / k)) + ENNReal.ofReal (c * Real.sqrt (8 / r)) := by
+  obtain ⟨C, hC, k₀, r₀, ha⟩ := wilsonRows_reentryRows_le
+  obtain ⟨c, hc, hb⟩ := wilsonRows_escapeRows_le
+  refine ⟨C, c, hC, hc, k₀, r₀, fun x y hxy k r hk hr hr8 hrk => ?_⟩
+  have hsub : treePathLeavesEuclidean x y k ⊆ {ω | ¬JoinedIn ω (euclideanBall x k) x y} :=
+    fun ω hω hj => not_mem_treePathLeavesEuclidean_of_joinedIn hj hω
+  refine (measure_mono hsub).trans ?_
+  have ht := ProbabilityMeasure.tendsto_measure_of_null_frontier_of_tendsto'
+    squareLatticeUST_tendsto (E := {ω | ¬JoinedIn ω (euclideanBall x k) x y})
+    (by simp [(isClopen_not_joinedIn x y k).frontier_eq])
+  apply le_of_tendsto ht
+  rw [eventually_atTop]
+  refine ⟨k ^ 2 + 3 * coordSum x + 1, fun N hN => ?_⟩
+  change finiteLaw N _ ≤ _
+  refine (finiteLaw_not_joinedIn_le x y hxy k r N (by omega) (by omega) hN).trans ?_
+  exact add_le_add (ha x k r N hk hr hrk hN) (hb x y k r N hxy hr8 (by omega) hN)
+
 end
 
 end FiniteAvalanches.Walk.BarlowMasson
