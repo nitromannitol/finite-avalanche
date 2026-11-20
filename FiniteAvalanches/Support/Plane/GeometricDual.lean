@@ -1,3 +1,4 @@
+import FiniteAvalanches.Support.Plane.IntervalNormalization
 import FiniteAvalanches.Support.Plane.PuncturedTransport
 import FiniteAvalanches.Support.Plane.LocalFaceIncidence
 import LatticeProb.Topology.DiskArcPair
@@ -99,6 +100,34 @@ theorem chart_vertical_crossing (D : Drawing J) (e : E) (c : EdgeChart D e) :
         y ∈ Set.Ioo 0 c.radius
       have hy' := abs_lt.mp hy
       constructor <;> constructor <;> linarith [c.radius_pos]
+
+/-- Small opposite imaginary offsets from an edge midpoint lie in the two
+corresponding chart faces. -/
+theorem chart_complex_offsets_mem_faces (D : Drawing J) (e : E) (c : EdgeChart D e)
+    {a : ℝ} (ha : 0 < a) (har : a < c.radius) :
+    Complex.equivRealProdCLM (c.chart.symm.complexMap
+        ((1 / 2 : ℂ) + (a : ℂ) / Complex.I)) ∈
+        faceRegion D (negativeChartFace D e c) ∧
+    Complex.equivRealProdCLM (c.chart.symm.complexMap
+        ((1 / 2 : ℂ) + -(a : ℂ) / Complex.I)) ∈
+        faceRegion D (positiveChartFace D e c) := by
+  have hn := (chart_vertical_crossing D e c).2.2 (-a) (by simpa [abs_neg, abs_of_pos ha] using har)
+  have hp := (chart_vertical_crossing D e c).2.2 a (by simpa [abs_of_pos ha] using har)
+  have hneg : Complex.equivRealProdCLM
+      ((1 / 2 : ℂ) + (a : ℂ) / Complex.I) = (1 / 2, -a) := by
+    ext <;> simp [Complex.div_I]
+  have hpos : Complex.equivRealProdCLM
+      ((1 / 2 : ℂ) + -(a : ℂ) / Complex.I) = (1 / 2, a) := by
+    ext <;> simp [Complex.div_I]
+  constructor
+  · change c.chart.map.symm (Complex.equivRealProdCLM
+        ((1 / 2 : ℂ) + (a : ℂ) / Complex.I)) ∈ _
+    rw [hneg]
+    exact hn.2.1 (neg_lt_zero.mpr ha)
+  · change c.chart.map.symm (Complex.equivRealProdCLM
+        ((1 / 2 : ℂ) + -(a : ℂ) / Complex.I)) ∈ _
+    rw [hpos]
+    exact hp.2.2 ha
 
 /-- The chart crossing meets exactly the corresponding edge at its midpoint. -/
 theorem curve_eq_chart_vertical_crossing (D : Drawing J) (e f : E)
