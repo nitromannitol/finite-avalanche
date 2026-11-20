@@ -669,9 +669,9 @@
     },
     {
       "path": "FiniteAvalanches/Electrical/Geometry/PunctureTransport.lean",
-      "sha256": "dbd8d5c2aebd845fe2fbfcbb9c9814455509c940c7cf893277354aa11dda0d62",
-      "code_sha256": "60446837863e87d3c31d4c72c9d8f95e460052cc340752ea75790edf7ed5e0cf",
-      "bytes": 2291
+      "sha256": "1335731d6b46b783f9949849bb56bb218cf9fced4edbdaa5849a71d083b81ee7",
+      "code_sha256": "ef94143926582884615169c09537db3d77521f37c719ac19b08465bdab6ccc21",
+      "bytes": 2298
     },
     {
       "path": "FiniteAvalanches/Electrical/Geometry/SignedPhysicalCharging.lean",
@@ -1959,9 +1959,9 @@
     },
     {
       "path": "FiniteAvalanches/External/ArcStraightening.lean",
-      "sha256": "3b8028dc6333332152ae109542d96f11ff071e8d57ea07c16cabe9185d796141",
-      "code_sha256": "c31b58ee8b0e558d6d9787c502aa0ac4b762bd3b30b93365ce7466a9438bfcf2",
-      "bytes": 648
+      "sha256": "a0cc98ad4e90defa3c401328dd6569a4ed7690b9b7c19ad2d7963048d6f6fa36",
+      "code_sha256": "6efb904c3ee090e6f823a362d41ac98c7919e16b28be51ddf381a429a27171d1",
+      "bytes": 838
     },
     {
       "path": "FiniteAvalanches/External/BSST.lean",
@@ -1971,15 +1971,15 @@
     },
     {
       "path": "FiniteAvalanches/External/BarlowMassonAdjacentPath.lean",
-      "sha256": "af45e7e1740528f8673abae26a8c1253fb98749540d3ce23d792e437fb2d6fb3",
-      "code_sha256": "c1319616db717c6048d8b025f885bac97cd42e167d87e2e0725cffc1f645ff39",
-      "bytes": 975
+      "sha256": "1f69e5ec5acfb9a3756b3ddb1a45322f1d1e259d27516b9c921e43290513f5d1",
+      "code_sha256": "8da300a3de56af6296b91a7c7ee62faeef48c1bf197cecd5ea75a6ee707edd37",
+      "bytes": 1108
     },
     {
       "path": "FiniteAvalanches/External/ClassicalBeurling.lean",
-      "sha256": "f6eeed5081e4e90afc76231b73af671a97db26b6b1ed181b141b45534cb3f3ca",
-      "code_sha256": "515aae59564a2d6d11b852753849238e6dc81ecf246f6534e31a2b02240a0f84",
-      "bytes": 1005
+      "sha256": "753d70e6f2bbbf6e71800b9360021cffcee4e588388670e19ce69043ff6f9710",
+      "code_sha256": "ee0584f414a38b6d229b18280a2e8c47555128b54c91fd7c5c3f6e469ccbe2f1",
+      "bytes": 1121
     },
     {
       "path": "FiniteAvalanches/External/ColoredWilson.lean",
@@ -1995,9 +1995,9 @@
     },
     {
       "path": "FiniteAvalanches/External/GeometricDual.lean",
-      "sha256": "ccd262c633dca44706ec3a6253e7c2027b324204e33f22e24645e9d1b05df296",
-      "code_sha256": "5de10e18c2c541b2f883db80037e0c9e739a6774eb119ca0d63548c1b9d11dff",
-      "bytes": 2188
+      "sha256": "1c11942f67cc8aba55dc7713e258d8411f10635438bbc096343fa8d3c3b28b60",
+      "code_sha256": "949cb492d0e36508af175bd469de666f9747aac4997da7145c88943e92aa1575",
+      "bytes": 2740
     },
     {
       "path": "FiniteAvalanches/External/KenyonWilsonPairingGroves.lean",
@@ -2031,9 +2031,9 @@
     },
     {
       "path": "FiniteAvalanches/External/OuterFaceRedrawing.lean",
-      "sha256": "f8ae39db554f4af2e5721b1828a3df124e23d1bfac90403968b76eddc29569d0",
-      "code_sha256": "dca7396b6bf6ec7eb6319a54bfa770fc3362d68f5a01de0fa8a7b3a963b2aa19",
-      "bytes": 1113
+      "sha256": "e0b5344a842f136686f2287493db048be27635adf5c438f4811a956551c5ac68",
+      "code_sha256": "93be6e4476bf44f21303ee23bef51dec782fdba3f305c3a6711528d7da097974",
+      "bytes": 1328
     },
     {
       "path": "FiniteAvalanches/External/PlaneDualBondCycle.lean",
@@ -2109,15 +2109,15 @@
     },
     {
       "path": "FiniteAvalanches/External/SandpileLimit.lean",
-      "sha256": "702532a6d081fc17bf7da939bf195b9ac8965f72afb514a5475f171788a4b456",
-      "code_sha256": "1ecee3e87cd09348433003aa4cbb972174822eb268d554cb35a648c7946aba78",
-      "bytes": 577
+      "sha256": "d19884ee8352f48ea5cf5a5507d74cc59b8f5ff99d555aad131352dc3d49951e",
+      "code_sha256": "e20a863173001486a598a50d92c43ecb5524f42017b07696ceb3aa33d2867596",
+      "bytes": 713
     },
     {
       "path": "FiniteAvalanches/External/TwoPoleTopology.lean",
-      "sha256": "53ff3a2c116a31303804c300ae25d5f54ecb312aced45aec09ac0756881313e4",
-      "code_sha256": "0fa6c1fedf5279be436d32f1d9eeb325f2d9d52d2a634a009bb5496a42474c0a",
-      "bytes": 1616
+      "sha256": "243b63b44807aea98faa6af17a3715b567e4618568c3548d60418351222e14bc",
+      "code_sha256": "90c21cf94b141595731b29c0c8cce1d25e7377eb5fc26a21a1d9c5a774de476c",
+      "bytes": 2514
     },
     {
       "path": "FiniteAvalanches/External/Wilson.lean",
@@ -2133,9 +2133,9 @@
     },
     {
       "path": "FiniteAvalanches/External/WiredUstOneEnd.lean",
-      "sha256": "841cd4d3bc91d9fc9dae89928369cb98a0cbd4ec841332041c88beae99466160",
-      "code_sha256": "841cd4d3bc91d9fc9dae89928369cb98a0cbd4ec841332041c88beae99466160",
-      "bytes": 1109
+      "sha256": "fb2a73e579f5c28e2b91dc2e70b762ef4492609a6e2e88d453decc207e73d128",
+      "code_sha256": "fb2a73e579f5c28e2b91dc2e70b762ef4492609a6e2e88d453decc207e73d128",
+      "bytes": 1271
     },
     {
       "path": "FiniteAvalanches/External/WiredUstWeakLimit.lean",
@@ -3248,6 +3248,60 @@
       "bytes": 503
     },
     {
+      "path": "FiniteAvalanches/Sandpile/Limit/GammaForests.lean",
+      "sha256": "3753fda5f4422c9a1997e6a3779cadb82bd7ebdecbd57f19347846db80237e68",
+      "code_sha256": "fd36d80c95af5c037df114953e7ae096772846aff351d57afb56256526fe88a3",
+      "bytes": 7072
+    },
+    {
+      "path": "FiniteAvalanches/Sandpile/Limit/GammaHeights.lean",
+      "sha256": "d69be0b52ae2be3e5e2c46e165345ad4fa4047dd0317d86710d1120eea7b6c9f",
+      "code_sha256": "493362592404e15e50634d4b48f6d1568f164938ed3d3701072e739e9a0bc5ff",
+      "bytes": 2901
+    },
+    {
+      "path": "FiniteAvalanches/Sandpile/Limit/GammaInner.lean",
+      "sha256": "2c031a9d106765b3b65c35b792e42ad807f801b4c532d661a5f2f49fbbea8ad3",
+      "code_sha256": "a1b6e5a74c06d3e2a85ce17fc6bcf86a50c5527f97ac23e30b442385fc65603a",
+      "bytes": 12197
+    },
+    {
+      "path": "FiniteAvalanches/Sandpile/Limit/GammaLaw.lean",
+      "sha256": "5287a3c3605611c9b1ccf8b9f16fa1f7bb2eae30904dd193f4118a85967e75e6",
+      "code_sha256": "c4b9897483e68bea9fb24f5a2f01adbd52728efe372ca8546356b3b461caf337",
+      "bytes": 14534
+    },
+    {
+      "path": "FiniteAvalanches/Sandpile/Limit/GammaPasts.lean",
+      "sha256": "5b37d9739e0f0f7d17b9a6258f6a63512a44699b83ed21fd9fbaa208fd125b4c",
+      "code_sha256": "1b49c5ad1418dbb5d2fce2b28d88d6d8b99852a0ad6e93c5b5a10b53722bc7d1",
+      "bytes": 13206
+    },
+    {
+      "path": "FiniteAvalanches/Sandpile/Limit/HeightConvergence.lean",
+      "sha256": "f4cecbf0a36dd5df44b4febd0b97b09872ca48dead608a195561e123d4ebf006",
+      "code_sha256": "ae58c360673609e4d266e3b413de5bbe151d87db4d442e95a0ff0d30ed8786cc",
+      "bytes": 9293
+    },
+    {
+      "path": "FiniteAvalanches/Sandpile/Limit/HeldInner.lean",
+      "sha256": "95fdbbec82debce557de4283e67bfc0accc53caf5805b8451b83d9c686225b46",
+      "code_sha256": "1c0dc39a96f36e53e3572fd3393ffa05f5db3c99b8f4f1b5d025d1a9d1f4e296",
+      "bytes": 3464
+    },
+    {
+      "path": "FiniteAvalanches/Sandpile/Limit/InfiniteVolumeLaw.lean",
+      "sha256": "9406456230a406fc88bfefec09a1e8f81e13efedee731767092fa9ae35cd3871",
+      "code_sha256": "f521fb8db3669d36ec629cfa069979e31ea7557183bd9cb9e557956e08f5be68",
+      "bytes": 9854
+    },
+    {
+      "path": "FiniteAvalanches/Sandpile/Limit/PastConvergence.lean",
+      "sha256": "c25d9954bf11375df2575d3df55580b104a179b0fd5ba56429a7490291bb3ccb",
+      "code_sha256": "6fbe7d4f807eaea22e820668cf31edf34585e54b35bea44020b3f4158b8d072a",
+      "bytes": 11613
+    },
+    {
       "path": "FiniteAvalanches/Sandpile/LocalConfinement.lean",
       "sha256": "a1fb37342ae1e2586907f328dc012155a6f080ee31c5cd8f1d071af5e1f03e90",
       "code_sha256": "f555f002ad6ffe52860c1025f937d31dd356a730e519016ceca2dfe843727596",
@@ -3693,9 +3747,9 @@
     },
     {
       "path": "FiniteAvalanches/Support/Plane/ArcClosingPath.lean",
-      "sha256": "31cc48456539c772cc43b41c4862f0f84f984a38ec620b5220cad0d3db716473",
-      "code_sha256": "2cc325639be1179d8afe6a85e7a8103b106d4c8054c6524cdac0c57c5a03dc86",
-      "bytes": 2429
+      "sha256": "3cbfc54b2016271675883c2426eb20846216106c12f862c3adff60ed347585ff",
+      "code_sha256": "ecb18b2a547a4b2f8660063ee428571d68c2128a2bfa5c225de0f1f61348f892",
+      "bytes": 4071
     },
     {
       "path": "FiniteAvalanches/Support/Plane/ArcComponentPreservation.lean",
@@ -3738,6 +3792,12 @@
       "sha256": "8a599ac3df444110432c0cab39361273d2347cf2f1a9d07f06856c08012a2072",
       "code_sha256": "8df060645e1dd5e4c798fa095f1e5c7bfcb8e6daae947ed9bed223bb47518e46",
       "bytes": 2898
+    },
+    {
+      "path": "FiniteAvalanches/Support/Plane/ArcThroughPoints.lean",
+      "sha256": "a5ce7c66578b7f02ea243bc5b456dbf0b564c2bf4823ac04bf95fc19e581e030",
+      "code_sha256": "8ae0588f3229fd0e3094d882cd4b924b250f686b6a956614004ecad77c63fe89",
+      "bytes": 9277
     },
     {
       "path": "FiniteAvalanches/Support/Plane/BondDualCycle.lean",
@@ -3858,6 +3918,12 @@
       "sha256": "f35f40a5965a77b6a9ac3804aa0c7ab092adb709fde15b4fd8a0241b12b2b77d",
       "code_sha256": "557a4610639ee7a322af1259595829fba7adf1346b864a4ab0012d5d292c5d48",
       "bytes": 2266
+    },
+    {
+      "path": "FiniteAvalanches/Support/Plane/BoundaryStarFamily.lean",
+      "sha256": "9804d71e3e3390198d29b47938f4f0c4e01b0eb51c8d67b739f19282605190b9",
+      "code_sha256": "70a9a48db98ef953db43cf6828aba70b5fca05363fab466fe7c9601f4361cc71",
+      "bytes": 12474
     },
     {
       "path": "FiniteAvalanches/Support/Plane/BoundaryStubSupply.lean",
@@ -4202,6 +4268,12 @@
       "bytes": 3838
     },
     {
+      "path": "FiniteAvalanches/Support/Plane/EdgeCrossingPaths.lean",
+      "sha256": "aff454f2c4c5c27d809fc3b0d03aae9115dd87029002044cf5aeef438c78e69c",
+      "code_sha256": "7e5c94d047fb07ccaedd4e4d0044c620b02ee22d8c8d9441ab7ab76d6412dfdc",
+      "bytes": 10218
+    },
+    {
       "path": "FiniteAvalanches/Support/Plane/EdgeFaceIncidence.lean",
       "sha256": "56ad22393f738bf71a76dbb725979aa28793587cac87d0d45e7c6dc371481904",
       "code_sha256": "41b155d73d64988351e7c7cf5f6e352d160146ffc04e2bf274395d2faa238240",
@@ -4221,9 +4293,27 @@
     },
     {
       "path": "FiniteAvalanches/Support/Plane/EndpointLocalConnectivity.lean",
-      "sha256": "518ba4d7221b948aa683cc424221b41c25c60a8ae973636492fe7a224ef0d902",
-      "code_sha256": "eb2dd11397a9058254e764853a696f670a08bd9bea7bc57170f33512e65f134e",
-      "bytes": 13836
+      "sha256": "7924167144b6e285cddda1c4e38071ac53cc3193ff1ad63f33168da45e681cde",
+      "code_sha256": "61393dc857d4c0be46dd912a888513bdb0a110721d1bc6b159b806685d533061",
+      "bytes": 15390
+    },
+    {
+      "path": "FiniteAvalanches/Support/Plane/FaceBoundaryLaw.lean",
+      "sha256": "6115dd072d714b2920f9544a1e7739025a6748d7040f775b8139c77bff4c030b",
+      "code_sha256": "09ef92c07f99a5d5b6c99c60bfcde1580c2726d27ff761f6e21ed30c783eb0a0",
+      "bytes": 13674
+    },
+    {
+      "path": "FiniteAvalanches/Support/Plane/FaceCrossingArms.lean",
+      "sha256": "dda3b36cd3cf3eb99db4eafcc7bbe764fcb1e964f4081836dc38cd8b33492fc8",
+      "code_sha256": "34b59e433e77851b58158c24c3b5abd58e0ea3883d0d508757f2c99a3b7ac72e",
+      "bytes": 3993
+    },
+    {
+      "path": "FiniteAvalanches/Support/Plane/FaceWinding.lean",
+      "sha256": "c6bf80bcb23240bb302c8445c4b94eb22c47a188e120173d67797c77ccd5294d",
+      "code_sha256": "08c754bf787c2fad77a9070559e860402de4ff3002a5227b3190ddd3a0cae490",
+      "bytes": 11082
     },
     {
       "path": "FiniteAvalanches/Support/Plane/FiniteFaceFrontier.lean",
@@ -4238,6 +4328,12 @@
       "bytes": 1408
     },
     {
+      "path": "FiniteAvalanches/Support/Plane/GeneralGeometricDual.lean",
+      "sha256": "fc2627c3535b6deb0252ea114fcf22c594882404868c21cbf1ee60df303f5e09",
+      "code_sha256": "528bc42749cd2b565c860a6ece83dace4e878b6e2437aa05c020e5c7fbc50aad",
+      "bytes": 6999
+    },
+    {
       "path": "FiniteAvalanches/Support/Plane/GeometricDual.lean",
       "sha256": "05509a3a11d7cf08dd8f9fb24e67cf47491cc92e9896899513ca99581ea450dc",
       "code_sha256": "66b22be80ca7e74da56ce98790e76205d1d63c2636715252beed9cc6f16b73e7",
@@ -4250,10 +4346,22 @@
       "bytes": 4765
     },
     {
+      "path": "FiniteAvalanches/Support/Plane/HomeomorphCoverGluing.lean",
+      "sha256": "d63018452164093415ac4e4acfc3bf1ad6e6c04e94732642eadd2c4d5129e024",
+      "code_sha256": "863104bbf26dcfa9d95b3421758c17371c162bef764be7236e5912c19ebe07cf",
+      "bytes": 6308
+    },
+    {
       "path": "FiniteAvalanches/Support/Plane/HomeomorphPasting.lean",
       "sha256": "0bc47b8e5b4619de2363e7d6cece380ce0678ad79aa8d47a98fe3e4d8c561334",
       "code_sha256": "ab1f123e9b5ba4ac1980b172e712ca4752b75754ea60ccbc007b3148a2c5d262",
       "bytes": 4358
+    },
+    {
+      "path": "FiniteAvalanches/Support/Plane/HorizontalCrossingDegree.lean",
+      "sha256": "3bee57b99148a532dd912931393bff6d5ab44cb17b83ab5ff04eb69c1681e144",
+      "code_sha256": "2d90823c00029cf3b20ecd34337e7efb00b1f3e9cf2074a8fe6729f20b3037ff",
+      "bytes": 7627
     },
     {
       "path": "FiniteAvalanches/Support/Plane/InfiniteEndpointPath.lean",
@@ -4290,6 +4398,12 @@
       "sha256": "41ab8b0572918db24f34875ce8b3162a5b76d45bb538105ef8f3bb5632e20351",
       "code_sha256": "22419de017203fe77dd36a3e62c7368f7ee603dfc296f2f67963c8b691b7d35f",
       "bytes": 2275
+    },
+    {
+      "path": "FiniteAvalanches/Support/Plane/JordanRounding.lean",
+      "sha256": "a29805de6f1ad0bf918ba4400e9fee51023cbe3b173a61e59e4879d347bf4075",
+      "code_sha256": "f888df4a9e3798741e2082f42cbd392c72de8678b66c06a187177a38f4ca4454",
+      "bytes": 20605
     },
     {
       "path": "FiniteAvalanches/Support/Plane/LocalArcEndpointAccess.lean",
@@ -4341,15 +4455,117 @@
     },
     {
       "path": "FiniteAvalanches/Support/Plane/NestedLoops.lean",
-      "sha256": "cb2beee606fcffd548a07b93bac77b6585a5978a031df5f6df965f56f9074d14",
-      "code_sha256": "96f2080415c835db110adcb36799807ac1ad09e6dc0a26e535531d1c1cd31aa2",
-      "bytes": 5861
+      "sha256": "97a582e9015d3966bf61df21a9308adf06a93adba4ee810542a1e3e10c8f1260",
+      "code_sha256": "084eaf20ab1d52bdbefe14c97d3a2ecdebc6e30b6d3e99552eaeffe8066a54a2",
+      "bytes": 5869
+    },
+    {
+      "path": "FiniteAvalanches/Support/Plane/OrientedArcStraightening.lean",
+      "sha256": "1fdf1f6f216203c0b66841b299ca42ed22541277a386825699b94a22a000f16f",
+      "code_sha256": "42636e9740d5c1fd6877f4eb9b968fadf6e5f14f8dc59bd7eee9ccec2c73291c",
+      "bytes": 14494
     },
     {
       "path": "FiniteAvalanches/Support/Plane/OrientedDiskPasting.lean",
       "sha256": "269499a86a6bde8c3bcb3b6b073560372240175497ade69b0ba7d5226ea20f30",
       "code_sha256": "314b79ccdd2d4cc0fe38265dac82e7dee27424d560328def390a0eccbfc4c995",
       "bytes": 3484
+    },
+    {
+      "path": "FiniteAvalanches/Support/Plane/OuterRedrawing/Assembly.lean",
+      "sha256": "626ce27dc6fb39c08e750caf4086352052e141eab1f80fa8734981d6041b9eab",
+      "code_sha256": "4f59a8c18492d0f1930f2e53bd933908c9883f8de1372fa7e1b74e5d5e696070",
+      "bytes": 15094
+    },
+    {
+      "path": "FiniteAvalanches/Support/Plane/OuterRedrawing/BaseCollar.lean",
+      "sha256": "25930abae359cde1e398c1fc3f9842db05cfc6fae96ee9640af20fb9732a4c3b",
+      "code_sha256": "7fa3dd1607bbe9f54c8da217cc9c68868ce6bbdc476d269cda762a3a30a8053d",
+      "bytes": 18742
+    },
+    {
+      "path": "FiniteAvalanches/Support/Plane/OuterRedrawing/BaseRealize.lean",
+      "sha256": "ccaa4a533e06972d4548d6abbb0dca44ce077f2328b524c9ac7edaed387849cd",
+      "code_sha256": "3c1585157aa637aa29687d767ce3a800affffcb721be6f1be95fcaca2f7ad215",
+      "bytes": 19978
+    },
+    {
+      "path": "FiniteAvalanches/Support/Plane/OuterRedrawing/EndSides.lean",
+      "sha256": "d0dfbefd106af9331ed0089b06ed2ade4b839da5f1e0fe44fe2a755d909ab3ed",
+      "code_sha256": "214e3305bdb0e115218f513cb09e821b1aa67cbb26f186e6968659fdc71083f4",
+      "bytes": 42472
+    },
+    {
+      "path": "FiniteAvalanches/Support/Plane/OuterRedrawing/LocalSides.lean",
+      "sha256": "c3f49b2e90d87cd6b146d699016a257540db6f1c14f30931e77fb18f91fac365",
+      "code_sha256": "990011da7988a548e6e72916628be75f5e346b09bc3b0ed3ffb93ed63e077d90",
+      "bytes": 9817
+    },
+    {
+      "path": "FiniteAvalanches/Support/Plane/OuterRedrawing/OneSide.lean",
+      "sha256": "480da6c5fdaaca93faa13702c5ddc5235b81192615b7140e84a81102b91112b7",
+      "code_sha256": "338e11338ea9650378e12499cbe25b123c70f1293f8bfa99ab48115f36c22fbd",
+      "bytes": 14530
+    },
+    {
+      "path": "FiniteAvalanches/Support/Plane/OuterRedrawing/OneSideMain.lean",
+      "sha256": "aba21237455a8cbf6041f40d01c317a38b9762f6f5f23e45496242783875a652",
+      "code_sha256": "c551edebfb261ffa327fff47af2ed2aecd6e43cab3801a14d40df8ccbbd41e68",
+      "bytes": 17465
+    },
+    {
+      "path": "FiniteAvalanches/Support/Plane/OuterRedrawing/PartialDrawing.lean",
+      "sha256": "bd53f6abd41beaf1453ce0c1faa7316bfdb6b1676e563941fbe978e45b7b1746",
+      "code_sha256": "176d03938fe4b17930d5dadf11cdde7629a258164a574602f8191636dc57bea6",
+      "bytes": 13793
+    },
+    {
+      "path": "FiniteAvalanches/Support/Plane/OuterRedrawing/PathCurve.lean",
+      "sha256": "d37b8338d882904e60dfbf7022ba100f76eac4d8a2e6b81bbe955f2bcdb7b2ac",
+      "code_sha256": "6c5736b6ddcb29f145594c53f4b9617209467727a2de7042b145c6d2c87a2601",
+      "bytes": 12764
+    },
+    {
+      "path": "FiniteAvalanches/Support/Plane/OuterRedrawing/Recursion.lean",
+      "sha256": "77426e9386b5623597b578877d9d52ac2f80e3e907cc04086f896443f581b9f6",
+      "code_sha256": "67bd76cf8e700596e5b62f8edf4ac6c102b443aa271d10365f3e376d732cbae7",
+      "bytes": 22144
+    },
+    {
+      "path": "FiniteAvalanches/Support/Plane/OuterRedrawing/SideSeparation.lean",
+      "sha256": "a603830b592a899937aeb15083a66489da2e60862cb691d8c8fbb174f4e27055",
+      "code_sha256": "6d187f66f7be6634193acd860423fcae7ea89c17d6c19a751d0ec4d9ba3e3aa4",
+      "bytes": 18242
+    },
+    {
+      "path": "FiniteAvalanches/Support/Plane/OuterRedrawing/SquareBoundary.lean",
+      "sha256": "c5ebed6dcf49bc74a58a077583af12d194b9d638e7dfc8c8a88e6fe2521d1124",
+      "code_sha256": "4539588a9a880bada6136d4d62dcb5f48564ff711b240ce18f0ff011be634320",
+      "bytes": 15722
+    },
+    {
+      "path": "FiniteAvalanches/Support/Plane/OuterRedrawing/SquareCombine.lean",
+      "sha256": "15c40aeb5242e46b45b22beb6ca01664fe4bf77cad367e6833e82da73eeb399b",
+      "code_sha256": "64df630d488bfa59604a93dc2028fa8fcf325388b4f3d92bc8485e3c548851f3",
+      "bytes": 13364
+    },
+    {
+      "path": "FiniteAvalanches/Support/Plane/OuterRedrawing/SquareInsert.lean",
+      "sha256": "118c2a80b94c8aefa4224ec05ba111fd713c0af306351acfc94d2091b83bbcfc",
+      "code_sha256": "6df102b8d1b9345b401a521cc9f9d8f535145c0874c07143f91e4f89ce81f0a6",
+      "bytes": 10713
+    },
+    {
+      "path": "FiniteAvalanches/Support/Plane/OuterRedrawing/SquareRealization.lean",
+      "sha256": "6444ed24a39862c9a303ea2c1ad5d9e8e621c6a68936c1260f7d897615dce11c",
+      "code_sha256": "40c74e10b6e547b13aa1d945ab93b904ee22f2dcf200e390b3bc351346785646",
+      "bytes": 6426
+    },
+    {
+      "path": "FiniteAvalanches/Support/Plane/OuterRedrawing/StraightSetting.lean",
+      "sha256": "5eaa5fb949e951472701d61f86b4fbcfa583c9938a7e40655b3c4f413b3f4312",
+      "code_sha256": "450307c4d2ffa25bca8bffad918fa3fb9fccbcad242cefaef217f71d8088a134",
+      "bytes": 21697
     },
     {
       "path": "FiniteAvalanches/Support/Plane/ParametrizedBoundaryAccess.lean",
@@ -4401,9 +4617,9 @@
     },
     {
       "path": "FiniteAvalanches/Support/Plane/PlaneArcStraightening.lean",
-      "sha256": "cca30069ca2f2a60264ebf8d83833895101d060087255eb892004df8a642d0f7",
-      "code_sha256": "0b6f8db156c79fdba2372bb0fd25f1aaf523aab2450b20bea760c1a7a42d2c8e",
-      "bytes": 2640
+      "sha256": "417be44e7a12511eca5aa51c3abd3e27e78569292cca5cd5932fe9d60d062029",
+      "code_sha256": "d3796cbc5fa58041819aad4abeb8f0186f3b6248469533cacad2fb36b72adef5",
+      "bytes": 1413
     },
     {
       "path": "FiniteAvalanches/Support/Plane/PlaneCircleIsotopy.lean",
@@ -4431,9 +4647,9 @@
     },
     {
       "path": "FiniteAvalanches/Support/Plane/PuncturedTransport.lean",
-      "sha256": "c76883da6f16c342d41aa08220f95f64864f21cc3fd704d5a2d2df54c527882b",
-      "code_sha256": "e4b95c698d06770756c620013d5ef1c38be25c366d3c80c5a5036166a232f9c1",
-      "bytes": 43775
+      "sha256": "68d7d2916edbad1efffad7cfa7ec74f437cc07701f5b6288003b25f453ca34ab",
+      "code_sha256": "4d6d7a7b5b7a92a64283e67c310a9ca166d7cf64fa12a935019469405209ae84",
+      "bytes": 42343
     },
     {
       "path": "FiniteAvalanches/Support/Plane/RadialCircleIsotopy.lean",
@@ -4472,6 +4688,12 @@
       "bytes": 2455
     },
     {
+      "path": "FiniteAvalanches/Support/Plane/RoundCircleRegions.lean",
+      "sha256": "10c6bae074d262ada2a2ef911d9c16448806d5e3dc0d4c8d13a72a971c7078d9",
+      "code_sha256": "cac4f43d61dcac51fd1656a044b72d12541ddd73aa0b3c0672d610f71244c703",
+      "bytes": 16480
+    },
+    {
       "path": "FiniteAvalanches/Support/Plane/SelectedDrawing.lean",
       "sha256": "5732cd1e58acc0facb757031ff66c2e9338ea531fa8e2d1a783713e13be72fdb",
       "code_sha256": "3cdef6bfb54223656101927345613008ef469f5da0a7d7286b7d9cd3a69dda00",
@@ -4496,6 +4718,12 @@
       "bytes": 4278
     },
     {
+      "path": "FiniteAvalanches/Support/Plane/SlitCrossingDegree.lean",
+      "sha256": "1bf6a7f9d9bb449ffab034244af5fe3bfb7f4833ccc998651114d7870f01ab39",
+      "code_sha256": "f9e8d5b20f1f1f8f23e28c22736d2c02bc275b24205bce76514821f9af62724d",
+      "bytes": 9786
+    },
+    {
       "path": "FiniteAvalanches/Support/Plane/SmallFaceCrossingArms.lean",
       "sha256": "b9e8155c87e043eb2f60be6c7f0d78092e28c3e0dd5850bd18215e46fbdcce95",
       "code_sha256": "2dae66ca40bb19784b3917d6b14d60f4e5ad04d104337334e582f513e0976166",
@@ -4506,6 +4734,12 @@
       "sha256": "5c4dc355d9a1bb33d22bf2aaad6da860ad4fe6ce576123999440b57b8021b96d",
       "code_sha256": "50cb0d72550909cd7ccd1650d39e69b5ac72016668e0fe802c016951d7df68b5",
       "bytes": 7176
+    },
+    {
+      "path": "FiniteAvalanches/Support/Plane/SquareNormalization.lean",
+      "sha256": "fe90dcf46eb50249934aaeb5674c0498171e8edfdbe6afce4f9a9302903252aa",
+      "code_sha256": "f201ac82175392181d00264356b501a3a94530172d98c3254ef02cb16134d389",
+      "bytes": 4883
     },
     {
       "path": "FiniteAvalanches/Support/Plane/StableOrientation.lean",
@@ -5702,6 +5936,18 @@
       "bytes": 3640
     },
     {
+      "path": "FiniteAvalanches/Trees/Lattice/DualRayParity.lean",
+      "sha256": "37daca739a84799c5d579b1806281cb5e458451fb0e1d0be2ed4b5c03ef12dee",
+      "code_sha256": "a2e95523d185e50dd07970593f9321f063f0a9072f101cc49f7344c0dc7a39d5",
+      "bytes": 17833
+    },
+    {
+      "path": "FiniteAvalanches/Trees/Lattice/DualWalkSeparation.lean",
+      "sha256": "d8115956428a21bcbd4d373ef30e2c589a70fcef58e27a735da541b7773cef53",
+      "code_sha256": "10219c00600deb33b6d5137fa32dd1d20262deab2d6b81f5364af7843a7e4be2",
+      "bytes": 5685
+    },
+    {
       "path": "FiniteAvalanches/Trees/Lattice/EdgeCuts.lean",
       "sha256": "d29afa0810f169451c86d56a3a89174eeddd0ad8d9418133ffa88de68a43a914",
       "code_sha256": "0397f272f987eabc1d525d5b224c2df2af825281af25c5b398641cd7a8b7d6f0",
@@ -5810,6 +6056,12 @@
       "bytes": 4758
     },
     {
+      "path": "FiniteAvalanches/Trees/Lattice/OneEndSeparation.lean",
+      "sha256": "e50f17bc2ecb2dda6a9bcdb6846b41731360d6d504517aa69fdceb00efade520",
+      "code_sha256": "87bab641c45180f8f428c33c404042accfecf082d0dba1bfc0789d534a3eb393",
+      "bytes": 10726
+    },
+    {
       "path": "FiniteAvalanches/Trees/Lattice/OriginalContactCount.lean",
       "sha256": "a04d3cfdead28e4b4be90dc6367e72f57782ad0ea0ce5c9e71a292a0f7b6c68e",
       "code_sha256": "89291e0b2d097ece2bdc7973beda203e035585d3725481e1482de7849562c73c",
@@ -5864,10 +6116,28 @@
       "bytes": 3067
     },
     {
+      "path": "FiniteAvalanches/Trees/Lattice/PastEvents.lean",
+      "sha256": "81747fa5a3b2cefd862aad317f59997f7a72100558f4d21d81466ac21a1d9b44",
+      "code_sha256": "90459a068324b4c91142f754e9e71b5eaf34ffaefff4960b3117d05d85e34f71",
+      "bytes": 6953
+    },
+    {
+      "path": "FiniteAvalanches/Trees/Lattice/PastEventsInfinite.lean",
+      "sha256": "656d7d817d429bd0635287d4002a9705896dd5283bbdbd3408d86c99d2f3e055",
+      "code_sha256": "a1086e75ec59a4b5afdde182a820f17ad480673263fb05d9e47927f36e0065b5",
+      "bytes": 10903
+    },
+    {
       "path": "FiniteAvalanches/Trees/Lattice/PastFourPathEvents.lean",
       "sha256": "566236e3c01bc3ca1617a29b772e4f4d646ff3bd269010f669dce1421c3c4374",
       "code_sha256": "4da2f1b51fe277af8bfc9e573730901e199b42019122080e0ca2cd691db7b0b2",
       "bytes": 3754
+    },
+    {
+      "path": "FiniteAvalanches/Trees/Lattice/PastLimit.lean",
+      "sha256": "7f9bd360e9e0ba5562607deb52580de58fb514ea86c70ab95bb7c8e798e109be",
+      "code_sha256": "181a3039daa53b22fdad02e3c0bc6f9d508a66a24237679586bff8505cca1e67",
+      "bytes": 6794
     },
     {
       "path": "FiniteAvalanches/Trees/Lattice/PastMeasurability.lean",
@@ -5942,6 +6212,12 @@
       "bytes": 2597
     },
     {
+      "path": "FiniteAvalanches/Trees/Lattice/TightEvents.lean",
+      "sha256": "cf5b2b115383de34194b384ce134d27d2c0c32675e66f157bc7752ff45b138e8",
+      "code_sha256": "0013af747cdd6df0ace707f1abb1276b4571fa03cb4fe7738ed3a6b03115c334",
+      "bytes": 5490
+    },
+    {
       "path": "FiniteAvalanches/Trees/Lattice/Topology.lean",
       "sha256": "96669857c258087be2b22708f4e366fc731bddc209badc54822e18468f96d5cf",
       "code_sha256": "3ccbd8f21c7c0fa1c3192cca849c919b336cd7defbacac67ba9762890bc2a673",
@@ -6006,6 +6282,12 @@
       "sha256": "808331658c03400a98df020ef4b1ca0c9c4a9b3fd9a8980ff0e29f8996020e0c",
       "code_sha256": "0df68561d1c50a3ef05769c2bc8e2de456e8bd6864b5e29f6ce51be7f1268650",
       "bytes": 7248
+    },
+    {
+      "path": "FiniteAvalanches/Trees/Lattice/WiredTreePasts.lean",
+      "sha256": "cc07f4d10463ed41beb38b0fc907cf016881a7f5aa6c0f6dd52c19caa58e0c10",
+      "code_sha256": "23754336128f830c76b1c78d5b5573dc454766d8cb335c83b39dcddce7c2c537",
+      "bytes": 9320
     },
     {
       "path": "FiniteAvalanches/Trees/MarkedPast.lean",
@@ -6096,6 +6378,276 @@
       "sha256": "34d34a4f93fa03bd81093812a9051673db8b657ee5af31e2a04f485388a74ede",
       "code_sha256": "66e53d2801dcd28857be353ced72c231e81103175f2112add55dd15a5da917e2",
       "bytes": 6429
+    },
+    {
+      "path": "FiniteAvalanches/Walk/BarlowMasson/AdjacentPath.lean",
+      "sha256": "a1d895fccc0e29e536c284483d0eab6228cc242cba1208ad18d9d9d85d1de5c5",
+      "code_sha256": "a11bde56ca79d617dd6e69d3019d2faa7145ec69d6960e07427ea92c8af69d47",
+      "bytes": 31446
+    },
+    {
+      "path": "FiniteAvalanches/Walk/BarlowMasson/Annulus.lean",
+      "sha256": "592ec9dc4b2c41315348b81536d5aef48b9cf8949c7ee06ab58f092ebfe8d3cb",
+      "code_sha256": "1f9be18b9572a4ba797bf774c0820fd2d52ca397d5b4b4ef10652683b1504fca",
+      "bytes": 14884
+    },
+    {
+      "path": "FiniteAvalanches/Walk/BarlowMasson/Basic.lean",
+      "sha256": "8664dab2f663cdcf0f89761dd1a32047e778e20ea1ef0e56b676c59b5551745b",
+      "code_sha256": "e3985d7e009ebae9be8ebe05084fdf5919cc41ca7906769ab793052b6dd41aee",
+      "bytes": 11395
+    },
+    {
+      "path": "FiniteAvalanches/Walk/BarlowMasson/BoxLaw.lean",
+      "sha256": "bc21c0a6941f9db36073535d64929f95fe53f03d146b167899c26853a1fd2937",
+      "code_sha256": "a0f4faef0f4b317257d1123d84dc33ec0dd9ed19b8514c03d83582d7dd98e139",
+      "bytes": 9959
+    },
+    {
+      "path": "FiniteAvalanches/Walk/BarlowMasson/Comparison.lean",
+      "sha256": "f828a238be130f697e9de1dba66adf3779309fa148b2452e21c6cf9bd467cff3",
+      "code_sha256": "750caad2b70e7176f804bc9a767a2dc3a40b16a06352a49b5bcc744338730679",
+      "bytes": 20442
+    },
+    {
+      "path": "FiniteAvalanches/Walk/BarlowMasson/Cone.lean",
+      "sha256": "262344a1c5ee34ebcb49fe96a4ce128cdbc92cde64f9ebb585ed940f2c7afd6f",
+      "code_sha256": "f301eca060830711e397101157ee47da29a4ee9d20b359138f428bb7e1ceed49",
+      "bytes": 14269
+    },
+    {
+      "path": "FiniteAvalanches/Walk/BarlowMasson/Crossing.lean",
+      "sha256": "0096e6257a181010534548a6ba47622969a347b624a9dfd886f7382035a5e7e5",
+      "code_sha256": "e54527b7db14f0f0d0f41037d2db8341aa9ee727f03aef9e494434bb90e3ffcb",
+      "bytes": 5723
+    },
+    {
+      "path": "FiniteAvalanches/Walk/BarlowMasson/Green.lean",
+      "sha256": "138910ce2a7f5a5d4ef49d0f348dd7a3165f1244818f6754eaab19390eb00b03",
+      "code_sha256": "f5eeeff5f5d6f539ccc7bf38dc08b076ab7eb1abf38bd45cf31ad83e5d073fda",
+      "bytes": 8054
+    },
+    {
+      "path": "FiniteAvalanches/Walk/BarlowMasson/Inward.lean",
+      "sha256": "3d50d415591780168dd3fc0635ab03d3e31a0de3876a60363270c3b3501286c1",
+      "code_sha256": "c748a94e2ee24ff950ab0e632c9be2b280cb7f5114f1916c3c94840ffe9138bf",
+      "bytes": 31145
+    },
+    {
+      "path": "FiniteAvalanches/Walk/BarlowMasson/LoopErasure.lean",
+      "sha256": "1e67c8d138d151c9ccd633c90cc55e992972ce54b85887e7ac5c664aa7843238",
+      "code_sha256": "f4594e386133de8f87b51ecda4cf5fbf0b0d3c53c71e9febd4afe19f4c215bcc",
+      "bytes": 13801
+    },
+    {
+      "path": "FiniteAvalanches/Walk/BarlowMasson/Ratio.lean",
+      "sha256": "3f8352159d93627f2fbec96b0ebd72ae5e832ef03c566f2b18e1927830d80107",
+      "code_sha256": "a6b28c57c884db97d4c0c6ba975b44d9c636bfb4a9752103e6f62d4aea61824d",
+      "bytes": 30296
+    },
+    {
+      "path": "FiniteAvalanches/Walk/BarlowMasson/Reentry.lean",
+      "sha256": "47b493610a9f0a1345c6ad2be46c2913191364a0984a004a91305805ab6beb18",
+      "code_sha256": "aaf65a6cb0894582564cb636ef28df103b29b35ddaa5038a7737a9c07ee6fc6c",
+      "bytes": 16297
+    },
+    {
+      "path": "FiniteAvalanches/Walk/BarlowMasson/SamplerPath.lean",
+      "sha256": "bbc5fdccf2e265db92c16a26610babdb34868c3609519c00590d6aee9bf37e10",
+      "code_sha256": "11aa6657590c38932b0de6d33482e45f0797f08a3e185c29b1339faaa3df888b",
+      "bytes": 20117
+    },
+    {
+      "path": "FiniteAvalanches/Walk/Beurling/ConditionalBeurling.lean",
+      "sha256": "6ba0f19ffa9997ff4c308bb1f2a588c43c27882f38c8bd8575dffc2c6caeb414",
+      "code_sha256": "ef41f3a5035bbdfde57c487a4983f5a23feb4e0c90ddb71cd34ec9c194cdb50f",
+      "bytes": 1161
+    },
+    {
+      "path": "FiniteAvalanches/Walk/Beurling/Defs.lean",
+      "sha256": "a27b3cb6dce0a26f389c24ca70e10c1c948de8a00f74488515a9c86f2e0faaf2",
+      "code_sha256": "81f7c1ac49f7f274d9d57f906502c625ac408b187ad059205b90d9c97fad31fe",
+      "bytes": 7471
+    },
+    {
+      "path": "FiniteAvalanches/Walk/Beurling/DenseSum.lean",
+      "sha256": "3c990ee4be5086094ecdca693acfb8fa29c88a38c8ac3f41951e7cd1f546545f",
+      "code_sha256": "c7d13eb958e26e6a85c41ee833d8dcc1ac9fef993d6fb0a5bf905beef872f4c8",
+      "bytes": 15285
+    },
+    {
+      "path": "FiniteAvalanches/Walk/Beurling/DiskGreen.lean",
+      "sha256": "01b02a2cd59c552f28b0027c0e5ec8942dd2e6768795403796afc8b06c2e4b40",
+      "code_sha256": "db05082c5e8943e14d09cbffa90745138b2407a86120134fcb3e99df91460051",
+      "bytes": 14833
+    },
+    {
+      "path": "FiniteAvalanches/Walk/Beurling/DiskGreenBasic.lean",
+      "sha256": "2f89e055d58203164a557ba03394c1b69d7dc279b9063c498cfa9868775938fe",
+      "code_sha256": "ed0d514e732ea4f930a26e2fcba87a995c47bfcdadcc338af504ed06697b7a1f",
+      "bytes": 4408
+    },
+    {
+      "path": "FiniteAvalanches/Walk/Beurling/DiskGreenFar.lean",
+      "sha256": "e9d5cb8733e25c56392cbcc054f3c0f174761fe1c9e46b26259e3803944ad6f3",
+      "code_sha256": "8e2122641ba3e004b1c8ed54e6de8c63e389f69e60e43f7e6a226283db16e020",
+      "bytes": 10546
+    },
+    {
+      "path": "FiniteAvalanches/Walk/Beurling/DiskGreenLower.lean",
+      "sha256": "23b80e0967e76be60d08f8c6f1474e5cd0a4da5fa9975cb1cadf831c134db116",
+      "code_sha256": "eb56a1b2ccc38c23c15e33f8308b07c659b36f872ae85a6623b652840ed482bb",
+      "bytes": 20151
+    },
+    {
+      "path": "FiniteAvalanches/Walk/Beurling/Estimate.lean",
+      "sha256": "c1ec123d1e5d1c7ef9d0650d7451c5ec8a79873fba2f4f4b2c8b0aa0f6759e4f",
+      "code_sha256": "9e14997ce735cfa91406756d48a50764f022dd725b5ea157dfba73e28ddee885",
+      "bytes": 1391
+    },
+    {
+      "path": "FiniteAvalanches/Walk/Beurling/FarEscape.lean",
+      "sha256": "9267fb9dff8edeb9042413ef481f9f6bad4013158c2cb8ff5020da2f89f78081",
+      "code_sha256": "9cddb303b70aa7adb8d7298e1d2b361f4cb5ce87fed76feced5b1ef8c9765a8e",
+      "bytes": 41549
+    },
+    {
+      "path": "FiniteAvalanches/Walk/Beurling/GreenPotential.lean",
+      "sha256": "75d35feeab3ae380f7058dd6148f834f1f9e9d0f76e451543d95ed419201202d",
+      "code_sha256": "25836ad3aaa789ebcb0c8030f1212714c93719236db0af8efe550aeb13461dca",
+      "bytes": 16945
+    },
+    {
+      "path": "FiniteAvalanches/Walk/Beurling/GreenWalk.lean",
+      "sha256": "aabd8ecf0144e0d4542da99450492f7672ac482fd0a6760c389b62dde65ae9a9",
+      "code_sha256": "0ffc6c807baf36a0c2ee85cbec4b6a7a58d3ce237b93ffaf8dc46714cdfc87e7",
+      "bytes": 7772
+    },
+    {
+      "path": "FiniteAvalanches/Walk/Beurling/HalfLine.lean",
+      "sha256": "bf32b856a4a49d883a82c26f2c03bd57bc975fefd6ccb0fdd922dee067fed183",
+      "code_sha256": "1be86e1145e743dd3a482c176baedf35ad0ab7a951812f01f0e84a4438832069",
+      "bytes": 18927
+    },
+    {
+      "path": "FiniteAvalanches/Walk/Beurling/HalfLineEscape.lean",
+      "sha256": "d69fc5490e86ef44f0b7a910b7521403b4d218dd7c166759213690c7b54313da",
+      "code_sha256": "110764dc2b63438d3e273e2a0f48c42a6fabb657cda78771f70ffedef55b052f",
+      "bytes": 7600
+    },
+    {
+      "path": "FiniteAvalanches/Walk/Beurling/HalfLineHit.lean",
+      "sha256": "d55410b4500d70b0badf1733413d97fe4f350951e16953aed8ad60059a9e676c",
+      "code_sha256": "bb386687d35920d8b5b20e3efc48e7b701cc3d0e0e295d972eaa40bcd51aad1b",
+      "bytes": 66768
+    },
+    {
+      "path": "FiniteAvalanches/Walk/Beurling/HalfLineHitConsequences.lean",
+      "sha256": "3dc32b205b74dbd961a7660baa6551fb0b832f148333d63ee40179ad57876705",
+      "code_sha256": "360bf7fe653e6d1ae5808b71adc3e7bf9425e725d43954871de55a8816cb861a",
+      "bytes": 46231
+    },
+    {
+      "path": "FiniteAvalanches/Walk/Beurling/HalfLineHitPoint.lean",
+      "sha256": "5510a2fe273d07ab5fab471206dabb1ecb5b4e956e8a756b48228c459e0587a0",
+      "code_sha256": "f980c751079542ddf278438610015b62cb52d86d4dd9ef2748fb000e31fcabd3",
+      "bytes": 31528
+    },
+    {
+      "path": "FiniteAvalanches/Walk/Beurling/HalfLineProduct.lean",
+      "sha256": "3a74b8bd76673f1f0a3dd56219425ee04109caeed79c82b87593bb8f774e8bc1",
+      "code_sha256": "16a669055705a8f38b20902c07fc4f011c27f5a94ac1046e4a9b2419705b022a",
+      "bytes": 28384
+    },
+    {
+      "path": "FiniteAvalanches/Walk/Beurling/HalfLineShift.lean",
+      "sha256": "4aab091aa5b59ed46c4f06917d8d4d9fe6ab09b550b20bf02d9b740f08a3fbd1",
+      "code_sha256": "54b1ab4db6210f926dd98ed5e9bbd235713d1c2c6bb31b9f1e93d82091e1344a",
+      "bytes": 19374
+    },
+    {
+      "path": "FiniteAvalanches/Walk/Beurling/HitDense.lean",
+      "sha256": "588ecd6ba9d6690b854c46246dd4763cc525ed77f109334c577e89b7e2c80f52",
+      "code_sha256": "695ce6d49ad74219f7bf450957cd9b450aa837804eaabf66f896232e01346d75",
+      "bytes": 7954
+    },
+    {
+      "path": "FiniteAvalanches/Walk/Beurling/HitPoint.lean",
+      "sha256": "966c70ffc9e724ff4cf92d77ce9c7bca2fbaf10b86053b5bc3681bbd65877484",
+      "code_sha256": "be33858a022bb821b1476e9110ec0180d303e6d3c49a1613cfdba2f8c2bef0d3",
+      "bytes": 6717
+    },
+    {
+      "path": "FiniteAvalanches/Walk/Beurling/LastExit.lean",
+      "sha256": "79a5653d12bbe5b26fd377b315ca241b0e96aa404857decd091e44dcfa36a4bf",
+      "code_sha256": "e8c1c229354fc633e185b535a2e50a93e0109bdb201e325beea6d3c80d4491b6",
+      "bytes": 13864
+    },
+    {
+      "path": "FiniteAvalanches/Walk/Beurling/Main.lean",
+      "sha256": "24550356aba5358187bd2e0ed716c6aa89367fb4467ebffc990f6866d970eafe",
+      "code_sha256": "d32bbd83e5cbb6fde494a827203bf3fe600fe8df160b5c04a6b51627ba2bd32f",
+      "bytes": 29357
+    },
+    {
+      "path": "FiniteAvalanches/Walk/Beurling/MainLarge.lean",
+      "sha256": "16ec781128cf56334eb5e2cd2f48bfb7c6da9f0bcc43aa9dd0d77b4734194f5a",
+      "code_sha256": "4304c0a0d8f25cdab9183c247527b2fb1d056a2feae33b71ad30628323a78007",
+      "bytes": 65158
+    },
+    {
+      "path": "FiniteAvalanches/Walk/Beurling/Position.lean",
+      "sha256": "1cf3721b870d2ad652ed7bdd1ee23491723bbc3729962c76cbbd2e1d0c25d0d1",
+      "code_sha256": "6a3c68ecaa7e35bf6a1679a0dc18eed1ee76da945c7b99e041a7b9ede31c4a3f",
+      "bytes": 2152
+    },
+    {
+      "path": "FiniteAvalanches/Walk/Beurling/ReturnAxis.lean",
+      "sha256": "0f8e43905d948f78ece133d35854d3c7bd3dba27c1c6d6efbb0616808189a79e",
+      "code_sha256": "c575331b87a2f99178b7e71d12920e77ef7b440bab36df20e24edd6e1c61e9b3",
+      "bytes": 32793
+    },
+    {
+      "path": "FiniteAvalanches/Walk/Beurling/Segment.lean",
+      "sha256": "50d131aade47ffe722c628f1f48f04f6a729429e59520a773b995fee8652f847",
+      "code_sha256": "69fd4ed100c9d71d088d6ad2e5781d8b16c30ef24fd1a95db187e18f3dba11f7",
+      "bytes": 8633
+    },
+    {
+      "path": "FiniteAvalanches/Walk/Beurling/SegmentEscapeConditional.lean",
+      "sha256": "3f5b0d1fbb19583d39a76401b3db579f3864d25498813de8c1e87aaab53b410b",
+      "code_sha256": "dd2ef2b4087613e9403bebcba506edba86ef04dc99c5f34ec95362bbe22175ea",
+      "bytes": 38502
+    },
+    {
+      "path": "FiniteAvalanches/Walk/Beurling/SegmentEscapeFromHalfLine.lean",
+      "sha256": "6d518af823254e1765d2f3494c7338ed4e3190fa96e27fb0b19098e37fdc135d",
+      "code_sha256": "29aa187768c92226dfc5f38e9aa3303f050ef9df9ca5afff0b81875ce79e3356",
+      "bytes": 2541
+    },
+    {
+      "path": "FiniteAvalanches/Walk/Beurling/StripExit.lean",
+      "sha256": "9c6d11953d3f430c1a92c8f624a484cc450b0792ee7fd5e94e9fce672c6ec7f8",
+      "code_sha256": "b1a168f74fe12b86abfb837a9322ac5b0af71042bb5b56d1291c6e9643f8ffa1",
+      "bytes": 12715
+    },
+    {
+      "path": "FiniteAvalanches/Walk/EuclidNormCoord.lean",
+      "sha256": "61638515400a58338456fa6214aa628951937109c38aaecafa8abed528e25a0b",
+      "code_sha256": "aafa44a260a15065e7428fd086696ad060af06164644bb2b1d12a44184a0a19d",
+      "bytes": 1106
+    },
+    {
+      "path": "FiniteAvalanches/Walk/IidBlocks.lean",
+      "sha256": "5edef59cace0b6b9012420506d233ed1a9935e95f28ee8cdc1b0ed251aabb84e",
+      "code_sha256": "2989212774d50d32ed55de019b941274cebbee8f41438756cfd58bc22ca4e2c1",
+      "bytes": 6697
+    },
+    {
+      "path": "FiniteAvalanches/Walk/SiteTranslation.lean",
+      "sha256": "0f63f5bd4c68f420f32d62386b76d651e6d1e089fd8b56fdf6a06a4f8606a1ae",
+      "code_sha256": "a3a5501b9f4224e305e699053d56013c68998a6220d8df875749ef0ec1ae6e15",
+      "bytes": 1370
     },
     {
       "path": "FiniteAvalanches/Wilson/Branches.lean",
@@ -6693,15 +7245,15 @@
     },
     {
       "path": "FiniteAvalanches/Wilson/Lattice/FiniteBoxColors.lean",
-      "sha256": "55ef1d4c9cd31c2cc49e8bc36b40ab9be7021c2b50d0002cd5955a0ec46b76eb",
-      "code_sha256": "1ac987ce64720197e41546c106f3e607fb44eebdce20931329b9d3b1cc3a23c2",
-      "bytes": 7718
+      "sha256": "46ab0dd448f356ef40139d6a5b9571836d0ca71b65deb12c0a410b8eed05447e",
+      "code_sha256": "27cf0f034279cb6f6806fc392413fad0bdec1dfcd39f2313b66c393d3c2ece54",
+      "bytes": 7829
     },
     {
       "path": "FiniteAvalanches/Wilson/Lattice/FiniteBoxForestEquiv.lean",
-      "sha256": "8623f9240837f6ad6ada14b135377fc2064db1480e3fad8e55373a457b8c54b8",
-      "code_sha256": "205eea7ed4b44612f34b8b330909cf1eab8f32df25572f435f02cbabfe2248fa",
-      "bytes": 4204
+      "sha256": "f6f90abbb1169decda6d1515c82027f9e03612db6e651064fe8d5d17190223fc",
+      "code_sha256": "40567ace22d9af4e4b24edbdd3944095c4c2b5055d917ba070a7866be4cf101d",
+      "bytes": 4393
     },
     {
       "path": "FiniteAvalanches/Wilson/Lattice/FiniteBranchHistories.lean",
@@ -6753,15 +7305,15 @@
     },
     {
       "path": "FiniteAvalanches/Wilson/Lattice/FixedBoxColorLaw.lean",
-      "sha256": "48564aacae120a7e7686ac992ef07a8574450e8c5984b65c7c30244501afae51",
-      "code_sha256": "546fb23292617fd07cd12095cf8f16b70440386473092e695f3a535bdcae10d4",
-      "bytes": 4312
+      "sha256": "9bf69e4f8f365229e206373f60ed6880e19a1b6b97ce4f98831ec2ba60613125",
+      "code_sha256": "59b2091e45526a5085c937dc51b308f9d26c4b53a9bcbaf0d2f42f072dbcf66e",
+      "bytes": 4432
     },
     {
       "path": "FiniteAvalanches/Wilson/Lattice/ForestCopyRestriction.lean",
-      "sha256": "6700b1f6d505e2ff6e531c94884cddc433c964752d46de3ca21096a6cca9e8c5",
-      "code_sha256": "6d370e2b259cd092050117dab1a2c0708a49f1e47566c10d84d112abd8ee2745",
-      "bytes": 4125
+      "sha256": "95c83b2706a5476147c8c5245f70fec2d78d2979807364da79516d62cbf61a9c",
+      "code_sha256": "3b701fee8da6ba3c3602a5a19656b9b03c4aaaff39fbbaa74b5f20f55672f2a3",
+      "bytes": 4147
     },
     {
       "path": "FiniteAvalanches/Wilson/Lattice/ForestEvents.lean",
@@ -7377,9 +7929,9 @@
     },
     {
       "path": "FiniteAvalanches/Wilson/Lattice/NonrootVertices.lean",
-      "sha256": "56c35f16eecd3f2a8fb1612ffda5c6fff657030ea9c4304d456d0a6887235c75",
-      "code_sha256": "c02a9cdf0f783fec957577f63a10e104c4c44531488a45e1ecfce5f20bd9d759",
-      "bytes": 2621
+      "sha256": "156d21e9c52880f2ad1f47d0dcf547b6853c1f5439fb2b6e0b2af157c68d77f0",
+      "code_sha256": "db4ec8a1583b551a545b2a981b0b95202e36654a54168c4cad07933c8d2e5241",
+      "bytes": 2657
     },
     {
       "path": "FiniteAvalanches/Wilson/Lattice/ObservedInverseContact.lean",
@@ -7515,9 +8067,9 @@
     },
     {
       "path": "FiniteAvalanches/Wilson/Lattice/QuotientCopyIncidence.lean",
-      "sha256": "550de42f9454add0ae7a7d504ffd14fd037878b638cc74d0207e27ef51e6ed50",
-      "code_sha256": "8fb8d24e9d4ff61df2779787ebdf0b2b867e4f9cc1cd78e6684d0391bffc5a6b",
-      "bytes": 10407
+      "sha256": "dde73fadfae9d5eb7abc336d229f25cd0f74c1cac853aa54ff1f2558cc42b621",
+      "code_sha256": "0b2f6e5a7f5fef2f799a20f87051defa39560c8820b3f595c64869786ab93fc2",
+      "bytes": 10508
     },
     {
       "path": "FiniteAvalanches/Wilson/Lattice/RandomStackHistory.lean",
@@ -7730,6 +8282,30 @@
       "bytes": 3603
     },
     {
+      "path": "FiniteAvalanches/Wilson/Lattice/SiteRootBox.lean",
+      "sha256": "d0bc38d2a3dda3f669feca0b7857209f3f50da4d5f2572046366ac657c7231cb",
+      "code_sha256": "0c1cd3e76144c7ac5033482bea1435ca4abdae986584775a2c31c96411d06fd9",
+      "bytes": 4332
+    },
+    {
+      "path": "FiniteAvalanches/Wilson/Lattice/SiteRootForests.lean",
+      "sha256": "dce079748be03c0b9b2125c98362edc539de20f9fc73fe6507fd896b93102f6d",
+      "code_sha256": "80c6b737fedc06a62b4f1abeaed1602b6bef6f5ce10b2c26036e314cd7d41e87",
+      "bytes": 15339
+    },
+    {
+      "path": "FiniteAvalanches/Wilson/Lattice/SiteRootLaw.lean",
+      "sha256": "843f6da54a46f569fd5e925c352903360b62cceb17e33f139ecae2a2cd33cfe3",
+      "code_sha256": "114f9ded881823f236c800373b3d263713c9163e877255420dda5b29bbea7fbb",
+      "bytes": 8282
+    },
+    {
+      "path": "FiniteAvalanches/Wilson/Lattice/SiteRootLimit.lean",
+      "sha256": "44c11c707167eb51605b2a57411c53c6950312a9982999a2624feb781fd1d394",
+      "code_sha256": "29a5bfbdf5a170affff5dc0c06bef071ae67f71aa9cd7d164ba48210f0aa5e7f",
+      "bytes": 7943
+    },
+    {
       "path": "FiniteAvalanches/Wilson/Lattice/StackHistoryComposition.lean",
       "sha256": "dfbb9aa4acba8c289331e934f882f4f8b5d9a250a1efac0958a90b6e17099b87",
       "code_sha256": "501e576a7b730a653c028751cbba2eb1cefcda4300fc8e4ec2ed4a441674af76",
@@ -7887,9 +8463,9 @@
     },
     {
       "path": "FiniteAvalanches/Wilson/Lattice/WiredBoxCopies.lean",
-      "sha256": "4b232458e57d67b15f13272c9d048c856da5fca996c636b1118fbb7e53247f7c",
-      "code_sha256": "02daea9e40ad763eeb550f2da97929555d4fb5bca1a9fad7b84324eba6c4cef7",
-      "bytes": 6046
+      "sha256": "167a3f9017b0eed04e0bc633bd5d8a039342fc5a97eb277d18d18434272f0846",
+      "code_sha256": "5295ae4695fcfcb19a17d9b6f3390ed1ba5920ef6d2dd309b0f6e731b2a892ee",
+      "bytes": 6346
     },
     {
       "path": "FiniteAvalanches/Wilson/Lattice/WiredBranchCoupling.lean",
@@ -8256,6 +8832,12 @@
       "sha256": "4436a048162cbda515e94cb7e5b7dccf37c5f147a9b054b79e67925375ed5be5",
       "code_sha256": "1f3f09150d05e56fd93f3237f7ace3d04f6c70c0bd590a064400f349553d4a59",
       "bytes": 1435
+    },
+    {
+      "path": "FiniteAvalanches/Wilson/Lattice/WiredLimitOneEnd.lean",
+      "sha256": "787492231be4c59c3a1f86385a2ffc8a9a5958f9b64913799eeeb335aa714018",
+      "code_sha256": "759994a1a1871fda552c54adf0942c96a80bcab392cacb35e3025003c014ad2a",
+      "bytes": 1376
     },
     {
       "path": "FiniteAvalanches/Wilson/Lattice/WiredObservationConvergence.lean",
@@ -8643,16 +9225,7 @@
     }
   ],
   "main_export": "FiniteAvalanchesCurrent.RegisteredPast.Main.finite_avalanches_origin",
-  "main_external_inputs": [
-    "FiniteAvalanches.External.BarlowMasson2011.adjacent_ust_path_euclidean_tail",
-    "FiniteAvalanches.External.SandpileLimit.exists_infiniteVolumeLaw",
-    "FiniteAvalanches.External.finite_plane_geometric_dual",
-    "FiniteAvalanches.External.finite_plane_two_pole_topology",
-    "FiniteAvalanches.External.lawler_limic_beurling_srw_Z2",
-    "FiniteAvalanches.External.outer_face_simple_path_disk_redrawing",
-    "FiniteAvalanches.External.parametrized_plane_arc_straightening",
-    "FiniteAvalanches.External.square_lattice_wired_ust_one_tree_one_end"
-  ],
+  "main_external_inputs": [],
   "registered_external_inputs": [
     "FiniteAvalanches.External.BarlowMasson2011.adjacent_ust_path_euclidean_tail",
     "FiniteAvalanches.External.SandpileLimit.exists_infiniteVolumeLaw",
@@ -8773,7 +9346,15 @@
     "FiniteAvalanches.External.plane_edge_chart_incidence",
     "FiniteAvalanches.External.finite_plane_dual_connected",
     "FiniteAvalanches.External.finite_plane_tree_complement",
-    "FiniteAvalanches.External.plane_punctured_chart_face_transport"
+    "FiniteAvalanches.External.plane_punctured_chart_face_transport",
+    "FiniteAvalanches.External.SandpileLimit.exists_infiniteVolumeLaw",
+    "FiniteAvalanches.External.square_lattice_wired_ust_one_tree_one_end",
+    "FiniteAvalanches.External.BarlowMasson2011.adjacent_ust_path_euclidean_tail",
+    "FiniteAvalanches.External.lawler_limic_beurling_srw_Z2",
+    "FiniteAvalanches.External.finite_plane_two_pole_topology",
+    "FiniteAvalanches.External.parametrized_plane_arc_straightening",
+    "FiniteAvalanches.External.outer_face_simple_path_disk_redrawing",
+    "FiniteAvalanches.External.finite_plane_geometric_dual"
   ],
   "production_import_roots": [
     "Checks.AdditiveApplications",
@@ -8981,13 +9562,13 @@
   "verification_files": [
     {
       "path": ".github/workflows/build.yml",
-      "sha256": "814c9c97dfdb2d1e330111e11ca5a27509e2899c44b98d0360d9b9f3f957f101",
-      "bytes": 2066
+      "sha256": "b2cf7877f320511c27e15ea49f70f0ed9956733668ef753e162f930355434954",
+      "bytes": 2078
     },
     {
       "path": ".github/workflows/comparator.yml",
-      "sha256": "5f1c251dd24bebf5a9113c7385e6e1ca25ed38d655998ae7e0231ca9fd7c7f5d",
-      "bytes": 2572
+      "sha256": "ac04070e83aa26bc562814b5612d9fa3f8f62cd18c3aac96a87c9eb26cbfb284",
+      "bytes": 2584
     },
     {
       "path": "audit/comparator-tool-pins.json",
@@ -9001,8 +9582,8 @@
     },
     {
       "path": "audit/trusted-inputs.json",
-      "sha256": "49b6940e6150087ac1a00bf272085e565d1d1903b9c77c88b5151f6b427ab6f4",
-      "bytes": 537916
+      "sha256": "7b7681bdbe249880353c17f8483dfbf7b4c8b91157240cf2130119f934245159",
+      "bytes": 540979
     },
     {
       "path": "lake-manifest.json",
@@ -9041,13 +9622,13 @@
     },
     {
       "path": "scripts/check_public_axioms.py",
-      "sha256": "2e398ec6a3ac91e8e27cc15fad91e070d3c1874c2fdb378475b05fd938856451",
-      "bytes": 576
+      "sha256": "5ce7d4d759730f3e7632227d93f5dab37194d00fd9540bf72a282557ceacde69",
+      "bytes": 593
     },
     {
       "path": "scripts/check_public_inputs.py",
-      "sha256": "ca16e3a7cd9c4fcea5e4a0e10fde50e96b04e5b0341955ad431fd1a263de13cc",
-      "bytes": 14016
+      "sha256": "d6e0a51e1bae26c3dc61c3c01a5fc901e9cf1c2ef83fb63c1c5b1bbfc2f339b5",
+      "bytes": 14022
     },
     {
       "path": "scripts/ci_build.sh",
@@ -9071,12 +9652,12 @@
     },
     {
       "path": "scripts/prepare_public_comparators.py",
-      "sha256": "8bde4073a5534db418b88be06ad1b3b983713033ed1ae41447bd6b1715295231",
-      "bytes": 9187
+      "sha256": "36063f590708aafaccbf7bedf0e2681739506d4dc2812980a6cc0c81f9562dc6",
+      "bytes": 9191
     },
     {
       "path": "scripts/run_comparators.sh",
-      "sha256": "a8fa6093a5caba4d27fb50d593e007a9ee901c64f967edaad40b621fb4e6669a",
+      "sha256": "fa42d373149ca561ca6ee1ca6e8b93ba584b3b7c95c37a5472b09b8b708cf22e",
       "bytes": 6288
     }
   ]

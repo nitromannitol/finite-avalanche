@@ -4,14 +4,14 @@
   "inputs": [
     {
       "id": "external:sandpile-law:v1",
-      "state": "EXTERNAL_ASSUMPTION",
+      "state": "PROVED",
       "kind": "STANDARD",
       "declaration": {
         "path": "FiniteAvalanches/External/SandpileLimit.lean",
         "export": "FiniteAvalanches.External.SandpileLimit.exists_infiniteVolumeLaw",
-        "sha256": "702532a6d081fc17bf7da939bf195b9ac8965f72afb514a5475f171788a4b456",
-        "code_sha256": "1ecee3e87cd09348433003aa4cbb972174822eb268d554cb35a648c7946aba78",
-        "complete_file": "import FiniteAvalanches.Sandpile.Law.Properties\n\nnamespace FiniteAvalanches.External.SandpileLimit\n\nopen LatticeProb MeasureTheory Filter FiniteAvalanches FiniteAvalanches.Sandpile\n  FiniteAvalanches.Probability\nopen scoped ENNReal Classical\n\nnoncomputable section\n\n/-- Athreya–Járai (2004), Theorem 1 and Remark 1(iii) with the 2006 correction (d = 2);\nJárai–Werning (2014), Theorem 3. -/\naxiom exists_infiniteVolumeLaw :\n    ∃ μ : ProbabilityMeasure StableField, IsInfiniteVolumeLaw μ ∧ IsTranslationInvariant μ\n\nend\n\nend FiniteAvalanches.External.SandpileLimit\n"
+        "sha256": "d19884ee8352f48ea5cf5a5507d74cc59b8f5ff99d555aad131352dc3d49951e",
+        "code_sha256": "e20a863173001486a598a50d92c43ecb5524f42017b07696ceb3aa33d2867596",
+        "complete_file": "import FiniteAvalanches.Sandpile.Law.Properties\nimport FiniteAvalanches.Sandpile.Limit.InfiniteVolumeLaw\n\nnamespace FiniteAvalanches.External.SandpileLimit\n\nopen LatticeProb MeasureTheory Filter FiniteAvalanches FiniteAvalanches.Sandpile\n  FiniteAvalanches.Probability\nopen scoped ENNReal Classical\n\nnoncomputable section\n\n/-- Athreya–Járai (2004), Theorem 1 and Remark 1(iii) with the 2006 correction (d = 2);\nJárai–Werning (2014), Theorem 3. -/\ntheorem exists_infiniteVolumeLaw :\n    ∃ μ : ProbabilityMeasure StableField, IsInfiniteVolumeLaw μ ∧ IsTranslationInvariant μ :=\n  FiniteAvalanches.Sandpile.InfiniteVolume.exists_infiniteVolumeLaw_proof\n\nend\n\nend FiniteAvalanches.External.SandpileLimit\n"
       },
       "sources": [
         {
@@ -62,8 +62,8 @@
         },
         {
           "path": "FiniteAvalanches/External/SandpileLimit.lean",
-          "sha256": "702532a6d081fc17bf7da939bf195b9ac8965f72afb514a5475f171788a4b456",
-          "code_sha256": "1ecee3e87cd09348433003aa4cbb972174822eb268d554cb35a648c7946aba78"
+          "sha256": "d19884ee8352f48ea5cf5a5507d74cc59b8f5ff99d555aad131352dc3d49951e",
+          "code_sha256": "e20a863173001486a598a50d92c43ecb5524f42017b07696ceb3aa33d2867596"
         },
         {
           "path": "FiniteAvalanches/Model/FiniteWired.lean",
@@ -187,7 +187,8 @@
         }
       ],
       "used_by_main": true,
-      "final_current_source_and_consumption_review": "PASS_AUDITED_EXTERNAL_ASSUMPTION"
+      "final_current_source_and_consumption_review": "STATEMENT_REVIEWED_AS_EXTERNAL_ASSUMPTION",
+      "proof_provider": "FiniteAvalanches/Sandpile/Limit/InfiniteVolumeLaw.lean"
     },
     {
       "id": "external:all-minors:v1",
@@ -574,14 +575,14 @@
     },
     {
       "id": "external:wired-ust-one-end:v1",
-      "state": "EXTERNAL_ASSUMPTION",
+      "state": "PROVED",
       "kind": "STANDARD",
       "declaration": {
         "path": "FiniteAvalanches/External/WiredUstOneEnd.lean",
         "export": "FiniteAvalanches.External.square_lattice_wired_ust_one_tree_one_end",
-        "sha256": "841cd4d3bc91d9fc9dae89928369cb98a0cbd4ec841332041c88beae99466160",
-        "code_sha256": "841cd4d3bc91d9fc9dae89928369cb98a0cbd4ec841332041c88beae99466160",
-        "complete_file": "import FiniteAvalanches.Trees.Lattice.Topology\nimport FiniteAvalanches.Trees.Lattice.WiredLaw\n\nset_option autoImplicit false\nnamespace FiniteAvalanches.External\nopen FiniteAvalanches.Trees.Lattice MeasureTheory LatticeProb\n\n                                                                                           \n                                                                    \n                                                                                  \n                                                                                  \n                                                                             \n                                                                                  \naxiom square_lattice_wired_ust_one_tree_one_end\n    (ν : ProbabilityMeasure EdgeField)\n    (hν : Filter.Tendsto finiteProbability Filter.atTop (nhds ν)) :\n    ∀ᵐ ω ∂(ν : Measure EdgeField), IsTree ω ∧\n      ∀ K : Finset (Site 2),\n        ∃! C : (toGraph ω).ComponentCompl (K : Set (Site 2)),\n          (SimpleGraph.ComponentCompl.supp C).Infinite\n\nend FiniteAvalanches.External\n"
+        "sha256": "fb2a73e579f5c28e2b91dc2e70b762ef4492609a6e2e88d453decc207e73d128",
+        "code_sha256": "fb2a73e579f5c28e2b91dc2e70b762ef4492609a6e2e88d453decc207e73d128",
+        "complete_file": "import FiniteAvalanches.Trees.Lattice.Topology\nimport FiniteAvalanches.Trees.Lattice.WiredLaw\nimport FiniteAvalanches.Wilson.Lattice.WiredLimitOneEnd\n\nset_option autoImplicit false\nnamespace FiniteAvalanches.External\nopen FiniteAvalanches.Trees.Lattice MeasureTheory LatticeProb\n\n                                                                                           \n                                                                    \n                                                                                  \n                                                                                  \n                                                                             \n                                                                                  \ntheorem square_lattice_wired_ust_one_tree_one_end\n    (ν : ProbabilityMeasure EdgeField)\n    (hν : Filter.Tendsto finiteProbability Filter.atTop (nhds ν)) :\n    ∀ᵐ ω ∂(ν : Measure EdgeField), IsTree ω ∧\n      ∀ K : Finset (Site 2),\n        ∃! C : (toGraph ω).ComponentCompl (K : Set (Site 2)),\n          (SimpleGraph.ComponentCompl.supp C).Infinite :=\n  FiniteAvalanches.Wilson.Lattice.wiredLimit_ae_tree_and_existsUnique_infinite_componentCompl ν hν\n\nend FiniteAvalanches.External\n"
       },
       "sources": [
         {
@@ -729,7 +730,8 @@
         }
       ],
       "used_by_main": true,
-      "final_current_source_and_consumption_review": "PASS_AUDITED_EXTERNAL_ASSUMPTION"
+      "final_current_source_and_consumption_review": "STATEMENT_REVIEWED_AS_EXTERNAL_ASSUMPTION",
+      "proof_provider": "FiniteAvalanches/Wilson/Lattice/WiredLimitOneEnd.lean"
     },
     {
       "id": "external:wired-ust-dual:v1",
@@ -1195,14 +1197,14 @@
     },
     {
       "id": "external:barlow-masson-adjacent-path:v1",
-      "state": "EXTERNAL_ASSUMPTION",
+      "state": "PROVED",
       "kind": "STANDARD",
       "declaration": {
         "path": "FiniteAvalanches/External/BarlowMassonAdjacentPath.lean",
         "export": "FiniteAvalanches.External.BarlowMasson2011.adjacent_ust_path_euclidean_tail",
-        "sha256": "af45e7e1740528f8673abae26a8c1253fb98749540d3ce23d792e437fb2d6fb3",
-        "code_sha256": "c1319616db717c6048d8b025f885bac97cd42e167d87e2e0725cffc1f645ff39",
-        "complete_file": "import FiniteAvalanches.Trees.Lattice.EuclideanPaths\nimport FiniteAvalanches.Trees.Lattice.InfiniteLaw\nimport Mathlib.Analysis.SpecialFunctions.Pow.Real\n\nset_option autoImplicit false\n\nnamespace FiniteAvalanches.External.BarlowMasson2011\nopen LatticeProb MeasureTheory FiniteAvalanches.Trees.Lattice\nopen FiniteAvalanches.Trees.Lattice.BarlowMasson\n\n/-- Barlow--Masson, Lemma 2.6, upper bound (2011, arXiv:0912.4765v1 p.11 (2.12)),\ntranslated to arbitrary adjacent sites. The same universal finite positive C\nprecedes all vertices and all real k≥1. Source balls are closed and Euclidean.\nThe path is the unique finite simple path in the actual lattice tree. -/\naxiom adjacent_ust_path_euclidean_tail :\n    ∃ C : ℝ, 0 < C ∧ ∀ x y : Site 2, (lattice 2).Adj x y →\n      ∀ k : ℝ, 1 ≤ k →\n        (squareLatticeUST : Measure EdgeField).real (treePathLeavesEuclidean x y k) ≤\n          C * k ^ (-(1 / 3 : ℝ))\n\nend FiniteAvalanches.External.BarlowMasson2011\n"
+        "sha256": "1f69e5ec5acfb9a3756b3ddb1a45322f1d1e259d27516b9c921e43290513f5d1",
+        "code_sha256": "8da300a3de56af6296b91a7c7ee62faeef48c1bf197cecd5ea75a6ee707edd37",
+        "complete_file": "import FiniteAvalanches.Trees.Lattice.EuclideanPaths\nimport FiniteAvalanches.Trees.Lattice.InfiniteLaw\nimport FiniteAvalanches.Walk.BarlowMasson.AdjacentPath\nimport Mathlib.Analysis.SpecialFunctions.Pow.Real\n\nset_option autoImplicit false\n\nnamespace FiniteAvalanches.External.BarlowMasson2011\nopen LatticeProb MeasureTheory FiniteAvalanches.Trees.Lattice\nopen FiniteAvalanches.Trees.Lattice.BarlowMasson\n\n/-- Barlow--Masson, Lemma 2.6, upper bound (2011, arXiv:0912.4765v1 p.11 (2.12)),\ntranslated to arbitrary adjacent sites. The same universal finite positive C\nprecedes all vertices and all real k≥1. Source balls are closed and Euclidean.\nThe path is the unique finite simple path in the actual lattice tree. -/\ntheorem adjacent_ust_path_euclidean_tail :\n    ∃ C : ℝ, 0 < C ∧ ∀ x y : Site 2, (lattice 2).Adj x y →\n      ∀ k : ℝ, 1 ≤ k →\n        (squareLatticeUST : Measure EdgeField).real (treePathLeavesEuclidean x y k) ≤\n          C * k ^ (-(1 / 3 : ℝ)) :=\n  FiniteAvalanches.Walk.BarlowMasson.adjacent_ust_path_euclidean_tail_le\n\nend FiniteAvalanches.External.BarlowMasson2011\n"
       },
       "sources": [
         {
@@ -1406,7 +1408,8 @@
         }
       ],
       "used_by_main": true,
-      "final_current_source_and_consumption_review": "PASS_AUDITED_EXTERNAL_ASSUMPTION"
+      "final_current_source_and_consumption_review": "STATEMENT_REVIEWED_AS_EXTERNAL_ASSUMPTION",
+      "proof_provider": "FiniteAvalanches/Walk/BarlowMasson/AdjacentPath.lean"
     },
     {
       "id": "external:disk-alternation:v1",
@@ -1610,14 +1613,14 @@
     },
     {
       "id": "external:classical-beurling-srw-z2:v1",
-      "state": "EXTERNAL_ASSUMPTION",
+      "state": "PROVED",
       "kind": "STANDARD",
       "declaration": {
         "path": "FiniteAvalanches/External/ClassicalBeurling.lean",
         "export": "FiniteAvalanches.External.lawler_limic_beurling_srw_Z2",
-        "sha256": "f6eeed5081e4e90afc76231b73af671a97db26b6b1ed181b141b45534cb3f3ca",
-        "code_sha256": "515aae59564a2d6d11b852753849238e6dc81ecf246f6534e31a2b02240a0f84",
-        "complete_file": "import FiniteAvalanches.Wilson.Lattice.SimpleWalk\nimport LatticeProb.Walk.Ball\nimport LatticeProb.Walk.Infinite\n\nset_option autoImplicit false\nnamespace FiniteAvalanches.External\nopen LatticeProb MeasureTheory FiniteAvalanches.Wilson.Lattice\nopen scoped ENNReal\n\n/-- Lawler–Limic, Theorem1, for iid square-lattice SRW and κ=1.\nThe obstacle hit starts at1; disk exit starts at0; avoidance includes the exit vertex. -/\naxiom lawler_limic_beurling_srw_Z2 :\n    ∃ c : ℝ, 0 < c ∧\n      ∀ A : Set (Site 2),\n        (∀ j : ℕ, ∃ z ∈ A, (j : ℝ) ≤ euclidNorm z ∧ euclidNorm z < (j : ℝ) + 1) →\n        ∀ k n : ℕ, 0 < k → k < n →\n          pathLaw 2\n            {ω | ∃ t : ℕ, 2 * (n : ℝ) ≤ euclidNorm (position 0 ω t) ∧\n              ∀ s : ℕ, 1 ≤ s → s ≤ t →\n                position 0 ω s ∉ {z | z ∈ A ∧ (k : ℝ) ≤ euclidNorm z ∧ euclidNorm z < n}} ≤\n            ENNReal.ofReal (c * Real.sqrt ((k : ℝ) / n))\n\nend FiniteAvalanches.External\n"
+        "sha256": "753d70e6f2bbbf6e71800b9360021cffcee4e588388670e19ce69043ff6f9710",
+        "code_sha256": "ee0584f414a38b6d229b18280a2e8c47555128b54c91fd7c5c3f6e469ccbe2f1",
+        "complete_file": "import FiniteAvalanches.Wilson.Lattice.SimpleWalk\nimport LatticeProb.Walk.Ball\nimport LatticeProb.Walk.Infinite\nimport FiniteAvalanches.Walk.Beurling.Position\n\nset_option autoImplicit false\nnamespace FiniteAvalanches.External\nopen LatticeProb MeasureTheory FiniteAvalanches.Wilson.Lattice\nopen scoped ENNReal\n\n/-- Lawler–Limic, Theorem1, for iid square-lattice SRW and κ=1.\nThe obstacle hit starts at1; disk exit starts at0; avoidance includes the exit vertex. -/\ntheorem lawler_limic_beurling_srw_Z2 :\n    ∃ c : ℝ, 0 < c ∧\n      ∀ A : Set (Site 2),\n        (∀ j : ℕ, ∃ z ∈ A, (j : ℝ) ≤ euclidNorm z ∧ euclidNorm z < (j : ℝ) + 1) →\n        ∀ k n : ℕ, 0 < k → k < n →\n          pathLaw 2\n            {ω | ∃ t : ℕ, 2 * (n : ℝ) ≤ euclidNorm (position 0 ω t) ∧\n              ∀ s : ℕ, 1 ≤ s → s ≤ t →\n                position 0 ω s ∉ {z | z ∈ A ∧ (k : ℝ) ≤ euclidNorm z ∧ euclidNorm z < n}} ≤\n            ENNReal.ofReal (c * Real.sqrt ((k : ℝ) / n)) :=\n  FiniteAvalanches.Walk.Beurling.lawler_limic_beurling_position\n\nend FiniteAvalanches.External\n"
       },
       "sources": [
         {
@@ -1905,7 +1908,8 @@
         }
       ],
       "used_by_main": true,
-      "final_current_source_and_consumption_review": "PASS_AUDITED_EXTERNAL_ASSUMPTION"
+      "final_current_source_and_consumption_review": "STATEMENT_REVIEWED_AS_EXTERNAL_ASSUMPTION",
+      "proof_provider": "FiniteAvalanches/Walk/Beurling/Position.lean"
     },
     {
       "id": "external:kenyon-wilson-pairing-groves:v1",
@@ -2252,8 +2256,8 @@
         },
         {
           "path": "FiniteAvalanches/External/WiredUstOneEnd.lean",
-          "sha256": "841cd4d3bc91d9fc9dae89928369cb98a0cbd4ec841332041c88beae99466160",
-          "code_sha256": "841cd4d3bc91d9fc9dae89928369cb98a0cbd4ec841332041c88beae99466160"
+          "sha256": "fb2a73e579f5c28e2b91dc2e70b762ef4492609a6e2e88d453decc207e73d128",
+          "code_sha256": "fb2a73e579f5c28e2b91dc2e70b762ef4492609a6e2e88d453decc207e73d128"
         },
         {
           "path": "FiniteAvalanches/Trees/Lattice/RayDirection.lean",
@@ -2561,8 +2565,8 @@
         },
         {
           "path": "FiniteAvalanches/External/ArcStraightening.lean",
-          "sha256": "3b8028dc6333332152ae109542d96f11ff071e8d57ea07c16cabe9185d796141",
-          "code_sha256": "c31b58ee8b0e558d6d9787c502aa0ac4b762bd3b30b93365ce7466a9438bfcf2",
+          "sha256": "a0cc98ad4e90defa3c401328dd6569a4ed7690b9b7c19ad2d7963048d6f6fa36",
+          "code_sha256": "6efb904c3ee090e6f823a362d41ac98c7919e16b28be51ddf381a429a27171d1",
           "bytes": 648
         },
         {
@@ -2675,8 +2679,8 @@
         },
         {
           "path": "FiniteAvalanches/Support/Plane/PuncturedTransport.lean",
-          "sha256": "c76883da6f16c342d41aa08220f95f64864f21cc3fd704d5a2d2df54c527882b",
-          "code_sha256": "e4b95c698d06770756c620013d5ef1c38be25c366d3c80c5a5036166a232f9c1",
+          "sha256": "68d7d2916edbad1efffad7cfa7ec74f437cc07701f5b6288003b25f453ca34ab",
+          "code_sha256": "4d6d7a7b5b7a92a64283e67c310a9ca166d7cf64fa12a935019469405209ae84",
           "bytes": 43914
         },
         {
@@ -3532,14 +3536,14 @@
     },
     {
       "id": "external:finite-plane-two-pole-topology:v1",
-      "state": "EXTERNAL_ASSUMPTION",
+      "state": "PROVED",
       "kind": "STANDARD",
       "declaration": {
         "path": "FiniteAvalanches/External/TwoPoleTopology.lean",
         "export": "FiniteAvalanches.External.finite_plane_two_pole_topology",
-        "sha256": "53ff3a2c116a31303804c300ae25d5f54ecb312aced45aec09ac0756881313e4",
-        "code_sha256": "0fa6c1fedf5279be436d32f1d9eeb325f2d9d52d2a634a009bb5496a42474c0a",
-        "complete_file": "import FiniteAvalanches.Electrical.Geometry.PolarDual\n\n/-! Classical finite-plane two-pole topology, with every original copied edge.\nThe assertion concerns actual complementary regions of continuous embeddings.\nElectrical consequences are ordinary proofs from this assertion and BSST. -/\nset_option autoImplicit false\nnamespace FiniteAvalanches.External\nopen FiniteAvalanches.Electrical FiniteAvalanches.Electrical.StatementGeometry\nopen FiniteAvalanches.Electrical.Source FiniteAvalanches.Electrical.Plane\nopen scoped Classical\n\n/-- Actual finite faces, polar connectedness, copied tree complementation and\nuniversal face-boundary telescoping for a given physical outer arc. -/\naxiom finite_plane_two_pole_topology :\n∀ {V E : Type} [Fintype V] [Fintype E]\n    (J : CopiedGraph V E) (D : PlaneEmbedding J)\n    (_hc : (supportGraph J.left J.right).Preconnected)\n    (alpha beta : V) (_hne : alpha ≠ beta) (A : OuterArc D alpha beta),\n    ∃ finiteFaces : Fintype A.embedding.Face,\n      letI : Fintype A.embedding.Face := finiteFaces\n      polarGround A ≠ polarSource A ∧\n      (supportGraph (polarDual A).left (polarDual A).right).Preconnected ∧\n      (∀ T : Finset (E ⊕ Unit),\n        (∃ t : (augmentedGraph J alpha beta).SpanningTree, t.val = T) ↔\n        (∃ t : (augmentedDual A).SpanningTree, t.val = Finset.univ \\ T)) ∧\n      (∀ (q : V → ℝ) (F : A.embedding.Face),\n        copyBoundary (augmentedDual A).left (augmentedDual A).right\n          (copyGradient (augmentedGraph J alpha beta).left\n            (augmentedGraph J alpha beta).right q) F = 0)\n\nend FiniteAvalanches.External\n"
+        "sha256": "243b63b44807aea98faa6af17a3715b567e4618568c3548d60418351222e14bc",
+        "code_sha256": "90c21cf94b141595731b29c0c8cce1d25e7377eb5fc26a21a1d9c5a774de476c",
+        "complete_file": "import FiniteAvalanches.Electrical.Geometry.PolarDual\nimport FiniteAvalanches.Support.Plane.FaceBoundaryLaw\nimport FiniteAvalanches.Support.Plane.TwoPoleReduction\nimport FiniteAvalanches.Support.Plane.UnchartedFaces\n\n/-! Classical finite-plane two-pole topology, with every original copied edge.\nThe assertion concerns actual complementary regions of continuous embeddings.\nElectrical consequences are ordinary proofs from this assertion and BSST. -/\nset_option autoImplicit false\nnamespace FiniteAvalanches.External\nopen FiniteAvalanches.Electrical FiniteAvalanches.Electrical.StatementGeometry\nopen FiniteAvalanches.Electrical.Source FiniteAvalanches.Electrical.Plane\nopen scoped Classical\n\n/-- Actual finite faces, polar connectedness, copied tree complementation and\nuniversal face-boundary telescoping for a given physical outer arc. -/\ntheorem finite_plane_two_pole_topology :\n∀ {V E : Type} [Fintype V] [Fintype E]\n    (J : CopiedGraph V E) (D : PlaneEmbedding J)\n    (_hc : (supportGraph J.left J.right).Preconnected)\n    (alpha beta : V) (_hne : alpha ≠ beta) (A : OuterArc D alpha beta),\n    ∃ finiteFaces : Fintype A.embedding.Face,\n      letI : Fintype A.embedding.Face := finiteFaces\n      polarGround A ≠ polarSource A ∧\n      (supportGraph (polarDual A).left (polarDual A).right).Preconnected ∧\n      (∀ T : Finset (E ⊕ Unit),\n        (∃ t : (augmentedGraph J alpha beta).SpanningTree, t.val = T) ↔\n        (∃ t : (augmentedDual A).SpanningTree, t.val = Finset.univ \\ T)) ∧\n      (∀ (q : V → ℝ) (F : A.embedding.Face),\n        copyBoundary (augmentedDual A).left (augmentedDual A).right\n          (copyGradient (augmentedGraph J alpha beta).left\n            (augmentedGraph J alpha beta).right q) F = 0) := by\n  intro V E _ _ J D hc alpha beta hne A\n  apply two_pole_topology_of_face_boundary D hc alpha beta hne A\n  intro q F\n  letI : Nonempty (E ⊕ Unit) := ⟨Sum.inr ()⟩\n  letI : Finite A.embedding.Face := finite_faces_of_drawing A.embedding.drawing\n  letI : Fintype (BSST.Face A.embedding.drawing) := Fintype.ofFinite _\n  have hB : ∀ x y, (augmentedGraph J alpha beta).reaches Finset.univ x y := by\n    intro x y\n    exact (augmentedGraph J alpha beta).reaches_mono (Finset.subset_univ _)\n      (J.reaches_augmented_original alpha beta\n        (J.reaches_univ_of_supportGraph_reachable (hc x y)))\n  exact copyBoundary_chartFaces_gradient_eq_zero A.embedding.drawing A.embedding.edgeChart\n    ⟨alpha, Set.mem_univ _⟩ hB q F\n\nend FiniteAvalanches.External\n"
       },
       "sources": [
         {
@@ -3663,18 +3667,19 @@
         }
       ],
       "used_by_main": true,
-      "final_current_source_and_consumption_review": "PASS_AUDITED_EXTERNAL_ASSUMPTION"
+      "final_current_source_and_consumption_review": "STATEMENT_REVIEWED_AS_EXTERNAL_ASSUMPTION",
+      "proof_provider": "FiniteAvalanches/Support/Plane/FaceBoundaryLaw.lean"
     },
     {
       "id": "external:parametrized-plane-arc-straightening:v1",
-      "state": "EXTERNAL_ASSUMPTION",
+      "state": "PROVED",
       "kind": "STANDARD",
       "declaration": {
         "path": "FiniteAvalanches/External/ArcStraightening.lean",
         "export": "FiniteAvalanches.External.parametrized_plane_arc_straightening",
-        "sha256": "3b8028dc6333332152ae109542d96f11ff071e8d57ea07c16cabe9185d796141",
-        "code_sha256": "c31b58ee8b0e558d6d9787c502aa0ac4b762bd3b30b93365ce7466a9438bfcf2",
-        "complete_file": "import FiniteAvalanches.Electrical.Geometry.OrientedDrawing\n\nset_option autoImplicit false\nnamespace FiniteAvalanches.External\n\n/-- Classical parametrized planar arc extension with a jointly continuous isotopy and inverse. -/\naxiom parametrized_plane_arc_straightening :\n∀ gamma : FiniteAvalanches.Electrical.StatementGeometry.ArcParameter →\n    FiniteAvalanches.Electrical.Source.Plane,\n  Continuous gamma → Function.Injective gamma →\n    ∃ c : FiniteAvalanches.Electrical.Source.OrientedChart,\n      ∀ t : FiniteAvalanches.Electrical.StatementGeometry.ArcParameter,\n        c.map (gamma t) = (t.val, 0)\n\nend FiniteAvalanches.External\n"
+        "sha256": "a0cc98ad4e90defa3c401328dd6569a4ed7690b9b7c19ad2d7963048d6f6fa36",
+        "code_sha256": "6efb904c3ee090e6f823a362d41ac98c7919e16b28be51ddf381a429a27171d1",
+        "complete_file": "import FiniteAvalanches.Electrical.Geometry.OrientedDrawing\nimport FiniteAvalanches.Support.Plane.OrientedArcStraightening\n\nset_option autoImplicit false\nnamespace FiniteAvalanches.External\n\n/-- Classical parametrized planar arc extension with a jointly continuous isotopy and inverse. -/\ntheorem parametrized_plane_arc_straightening :\n∀ gamma : FiniteAvalanches.Electrical.StatementGeometry.ArcParameter →\n    FiniteAvalanches.Electrical.Source.Plane,\n  Continuous gamma → Function.Injective gamma →\n    ∃ c : FiniteAvalanches.Electrical.Source.OrientedChart,\n      ∀ t : FiniteAvalanches.Electrical.StatementGeometry.ArcParameter,\n        c.map (gamma t) = (t.val, 0) :=\n  fun gamma hc hi =>\n    FiniteAvalanches.Electrical.StatementGeometry.exists_orientedChart_arc_straightening gamma hc hi\n\nend FiniteAvalanches.External\n"
       },
       "sources": [
         {
@@ -3744,18 +3749,19 @@
         }
       ],
       "used_by_main": true,
-      "final_current_source_and_consumption_review": "PASS_AUDITED_EXTERNAL_ASSUMPTION"
+      "final_current_source_and_consumption_review": "STATEMENT_REVIEWED_AS_EXTERNAL_ASSUMPTION",
+      "proof_provider": "FiniteAvalanches/Support/Plane/OrientedArcStraightening.lean"
     },
     {
       "id": "external:outer-face-simple-path-disk-redrawing:v1",
-      "state": "EXTERNAL_ASSUMPTION",
+      "state": "PROVED",
       "kind": "STANDARD",
       "declaration": {
         "path": "FiniteAvalanches/External/OuterFaceRedrawing.lean",
         "export": "FiniteAvalanches.External.outer_face_simple_path_disk_redrawing",
-        "sha256": "f8ae39db554f4af2e5721b1828a3df124e23d1bfac90403968b76eddc29569d0",
-        "code_sha256": "dca7396b6bf6ec7eb6319a54bfa770fc3362d68f5a01de0fa8a7b3a963b2aa19",
-        "complete_file": "import FiniteAvalanches.Electrical.Geometry.BSST\n\nnamespace FiniteAvalanches.External\nopen FiniteAvalanches.Electrical FiniteAvalanches.Electrical.StatementGeometry\nopen scoped Classical\n\n/-- A simple path on the unbounded face can be redrawn on the disk boundary\non the identical original copied graph, allowing rearrangement at cutvertices. -/\naxiom outer_face_simple_path_disk_redrawing : (∀ {W A : Type} [Fintype W] [Fintype A]\n  (J : CopiedGraph W A) (D : Drawing J),\n  (supportGraph J.left J.right).Preconnected →\n  ∀ (m : ℕ) (path : Fin (m+1) → W), Function.Injective path →\n  ∀ (copies : Fin m → A),\n  (∀ i, (J.left (copies i) = path i.castSucc ∧ J.right (copies i) = path i.succ) ∨\n    (J.right (copies i) = path i.castSucc ∧ J.left (copies i) = path i.succ)) →\n  ∀ F : BSST.Face D, ¬Bornology.IsBounded (BSST.faceRegion D F) →\n  (∀ i t, D.curve (copies i) t ∈ frontier (BSST.faceRegion D F)) →\n  ∃ D' : Drawing J, (∀ x, D'.point x ∈ disk) ∧\n    (∀ e t, D'.curve e t ∈ disk) ∧ (∀ i t, D'.curve (copies i) t ∈ circle))\n\nend FiniteAvalanches.External\n"
+        "sha256": "e0b5344a842f136686f2287493db048be27635adf5c438f4811a956551c5ac68",
+        "code_sha256": "93be6e4476bf44f21303ee23bef51dec782fdba3f305c3a6711528d7da097974",
+        "complete_file": "import FiniteAvalanches.Electrical.Geometry.BSST\nimport FiniteAvalanches.Support.Plane.OuterRedrawing.Assembly\n\nnamespace FiniteAvalanches.External\nopen FiniteAvalanches.Electrical FiniteAvalanches.Electrical.StatementGeometry\nopen scoped Classical\n\n/-- A simple path on the unbounded face can be redrawn on the disk boundary\non the identical original copied graph, allowing rearrangement at cutvertices. -/\ntheorem outer_face_simple_path_disk_redrawing : (∀ {W A : Type} [Fintype W] [Fintype A]\n  (J : CopiedGraph W A) (D : Drawing J),\n  (supportGraph J.left J.right).Preconnected →\n  ∀ (m : ℕ) (path : Fin (m+1) → W), Function.Injective path →\n  ∀ (copies : Fin m → A),\n  (∀ i, (J.left (copies i) = path i.castSucc ∧ J.right (copies i) = path i.succ) ∨\n    (J.right (copies i) = path i.castSucc ∧ J.left (copies i) = path i.succ)) →\n  ∀ F : BSST.Face D, ¬Bornology.IsBounded (BSST.faceRegion D F) →\n  (∀ i t, D.curve (copies i) t ∈ frontier (BSST.faceRegion D F)) →\n  ∃ D' : Drawing J, (∀ x, D'.point x ∈ disk) ∧\n    (∀ e t, D'.curve e t ∈ disk) ∧ (∀ i t, D'.curve (copies i) t ∈ circle)) := by\n  intro W A _ _ J D _ m path hpath copies hends F hF hfront\n  exact OuterRedrawing.exists_disk_redrawing D m path hpath copies hends F hF hfront\n\nend FiniteAvalanches.External\n"
       },
       "sources": [
         {
@@ -3821,18 +3827,19 @@
         }
       ],
       "used_by_main": true,
-      "final_current_source_and_consumption_review": "PASS_AUDITED_EXTERNAL_ASSUMPTION"
+      "final_current_source_and_consumption_review": "STATEMENT_REVIEWED_AS_EXTERNAL_ASSUMPTION",
+      "proof_provider": "FiniteAvalanches/Support/Plane/OuterRedrawing/Assembly.lean"
     },
     {
       "id": "external:finite-plane-geometric-dual:v1",
-      "state": "EXTERNAL_ASSUMPTION",
+      "state": "PROVED",
       "kind": "STANDARD",
       "declaration": {
         "path": "FiniteAvalanches/External/GeometricDual.lean",
         "export": "FiniteAvalanches.External.finite_plane_geometric_dual",
-        "sha256": "ccd262c633dca44706ec3a6253e7c2027b324204e33f22e24645e9d1b05df296",
-        "code_sha256": "5de10e18c2c541b2f883db80037e0c9e739a6774eb119ca0d63548c1b9d11dff",
-        "complete_file": "import FiniteAvalanches.Electrical.Geometry.BSST\nimport FiniteAvalanches.External.TwoPoleTopology\n\n/-! Classical geometric duality for finite connected plane multigraph drawings. -/\nset_option autoImplicit false\nnamespace FiniteAvalanches.External\nopen FiniteAvalanches.Electrical\nopen FiniteAvalanches.Electrical.StatementGeometry\nopen FiniteAvalanches.Electrical.BSST\nopen scoped Classical\n\n/-- The dual retains every original edge copy, crosses it once, and its faces\ncorrespond to the original vertices with reversed double-dual orientation. -/\naxiom finite_plane_geometric_dual :\n∀ {V E : Type} [Fintype V] [Fintype E] [Nonempty E]\n    (J : CopiedGraph V E) (D : Drawing J)\n    (charts : ∀ e : E, Source.EdgeChart D e)\n    (_hc : (supportGraph J.left J.right).Preconnected),\n    ∃ finiteFaces : Fintype (Face D),\n      letI : Fintype (Face D) := finiteFaces\n      let dualGraph : CopiedGraph (Face D) E :=\n        ⟨fun e => negativeChartFace D e (charts e),\n          fun e => positiveChartFace D e (charts e)⟩\n      ∃ dualDrawing : Drawing dualGraph,\n      ∃ dualCharts : ∀ e : E, Source.EdgeChart dualDrawing e,\n      ∃ vertexFaces : V ≃ Face dualDrawing,\n        (∀ F : Face D, dualDrawing.point F ∈ faceRegion D F) ∧\n        (∀ v : V, D.point v ∈ faceRegion dualDrawing (vertexFaces v)) ∧\n        (∀ (e f : E) (s t : ArcParameter),\n          D.curve e s = dualDrawing.curve f t ↔\n            e = f ∧ s.val = 1 / 2 ∧ t.val = 1 / 2) ∧\n        (∀ (e : E) (t : ArcParameter),\n          (t.val < 1 / 2 →\n            dualDrawing.curve e t ∈ faceRegion D (dualGraph.left e)) ∧\n          (1 / 2 < t.val →\n            dualDrawing.curve e t ∈ faceRegion D (dualGraph.right e))) ∧\n        (∀ e : E, ∃ radius : ℝ, 0 < radius ∧ radius < (charts e).radius ∧\n          ∀ t : ArcParameter, |t.val - 1 / 2| < radius →\n            (charts e).chart.map (dualDrawing.curve e t) = (1 / 2, t.val - 1 / 2)) ∧\n        (∀ e : E,\n          positiveChartFace dualDrawing e (dualCharts e) = vertexFaces (J.left e) ∧\n          negativeChartFace dualDrawing e (dualCharts e) = vertexFaces (J.right e))\n\nend FiniteAvalanches.External\n"
+        "sha256": "1c11942f67cc8aba55dc7713e258d8411f10635438bbc096343fa8d3c3b28b60",
+        "code_sha256": "949cb492d0e36508af175bd469de666f9747aac4997da7145c88943e92aa1575",
+        "complete_file": "import FiniteAvalanches.Electrical.Geometry.BSST\nimport FiniteAvalanches.External.TwoPoleTopology\nimport FiniteAvalanches.Support.Plane.GeneralGeometricDual\nimport FiniteAvalanches.Support.Plane.UnchartedFaces\n\n/-! Classical geometric duality for finite connected plane multigraph drawings. -/\nset_option autoImplicit false\nnamespace FiniteAvalanches.External\nopen FiniteAvalanches.Electrical\nopen FiniteAvalanches.Electrical.StatementGeometry\nopen FiniteAvalanches.Electrical.BSST\nopen scoped Classical\n\n/-- The dual retains every original edge copy, crosses it once, and its faces\ncorrespond to the original vertices with reversed double-dual orientation. -/\ntheorem finite_plane_geometric_dual :\n∀ {V E : Type} [Fintype V] [Fintype E] [Nonempty E]\n    (J : CopiedGraph V E) (D : Drawing J)\n    (charts : ∀ e : E, Source.EdgeChart D e)\n    (_hc : (supportGraph J.left J.right).Preconnected),\n    ∃ finiteFaces : Fintype (Face D),\n      letI : Fintype (Face D) := finiteFaces\n      let dualGraph : CopiedGraph (Face D) E :=\n        ⟨fun e => negativeChartFace D e (charts e),\n          fun e => positiveChartFace D e (charts e)⟩\n      ∃ dualDrawing : Drawing dualGraph,\n      ∃ dualCharts : ∀ e : E, Source.EdgeChart dualDrawing e,\n      ∃ vertexFaces : V ≃ Face dualDrawing,\n        (∀ F : Face D, dualDrawing.point F ∈ faceRegion D F) ∧\n        (∀ v : V, D.point v ∈ faceRegion dualDrawing (vertexFaces v)) ∧\n        (∀ (e f : E) (s t : ArcParameter),\n          D.curve e s = dualDrawing.curve f t ↔\n            e = f ∧ s.val = 1 / 2 ∧ t.val = 1 / 2) ∧\n        (∀ (e : E) (t : ArcParameter),\n          (t.val < 1 / 2 →\n            dualDrawing.curve e t ∈ faceRegion D (dualGraph.left e)) ∧\n          (1 / 2 < t.val →\n            dualDrawing.curve e t ∈ faceRegion D (dualGraph.right e))) ∧\n        (∀ e : E, ∃ radius : ℝ, 0 < radius ∧ radius < (charts e).radius ∧\n          ∀ t : ArcParameter, |t.val - 1 / 2| < radius →\n            (charts e).chart.map (dualDrawing.curve e t) = (1 / 2, t.val - 1 / 2)) ∧\n        (∀ e : E,\n          positiveChartFace dualDrawing e (dualCharts e) = vertexFaces (J.left e) ∧\n          negativeChartFace dualDrawing e (dualCharts e) = vertexFaces (J.right e)) := by\n  intro V E _ _ _ J D charts hc\n  letI : Finite (Face D) := finite_faces_of_drawing D\n  let finiteFaces : Fintype (Face D) := Fintype.ofFinite (Face D)\n  letI : Fintype (Face D) := finiteFaces\n  obtain ⟨D', dualCharts, vertexFaces, hpoint, hvertex, hcross, hside, hchart, hfaces⟩ :=\n    exists_geometric_dual D charts hc\n  exact ⟨finiteFaces, D', dualCharts, vertexFaces, hpoint, hvertex, hcross, hside, hchart,\n    hfaces⟩\n\nend FiniteAvalanches.External\n"
       },
       "sources": [
         {
@@ -3956,7 +3963,8 @@
         }
       ],
       "used_by_main": true,
-      "final_current_source_and_consumption_review": "PASS_AUDITED_EXTERNAL_ASSUMPTION"
+      "final_current_source_and_consumption_review": "STATEMENT_REVIEWED_AS_EXTERNAL_ASSUMPTION",
+      "proof_provider": "FiniteAvalanches/Support/Plane/GeneralGeometricDual.lean"
     },
     {
       "id": "external:finite-plane-dual-bond-cycle:v1",
@@ -4019,8 +4027,8 @@
         },
         {
           "path": "FiniteAvalanches/External/ArcStraightening.lean",
-          "sha256": "3b8028dc6333332152ae109542d96f11ff071e8d57ea07c16cabe9185d796141",
-          "code_sha256": "c31b58ee8b0e558d6d9787c502aa0ac4b762bd3b30b93365ce7466a9438bfcf2"
+          "sha256": "a0cc98ad4e90defa3c401328dd6569a4ed7690b9b7c19ad2d7963048d6f6fa36",
+          "code_sha256": "6efb904c3ee090e6f823a362d41ac98c7919e16b28be51ddf381a429a27171d1"
         },
         {
           "path": "FiniteAvalanches/Electrical/Geometry/OrientedDrawing.lean",
@@ -4275,13 +4283,13 @@
         },
         {
           "path": "FiniteAvalanches/External/GeometricDual.lean",
-          "sha256": "ccd262c633dca44706ec3a6253e7c2027b324204e33f22e24645e9d1b05df296",
-          "code_sha256": "5de10e18c2c541b2f883db80037e0c9e739a6774eb119ca0d63548c1b9d11dff"
+          "sha256": "1c11942f67cc8aba55dc7713e258d8411f10635438bbc096343fa8d3c3b28b60",
+          "code_sha256": "949cb492d0e36508af175bd469de666f9747aac4997da7145c88943e92aa1575"
         },
         {
           "path": "FiniteAvalanches/External/TwoPoleTopology.lean",
-          "sha256": "53ff3a2c116a31303804c300ae25d5f54ecb312aced45aec09ac0756881313e4",
-          "code_sha256": "0fa6c1fedf5279be436d32f1d9eeb325f2d9d52d2a634a009bb5496a42474c0a"
+          "sha256": "243b63b44807aea98faa6af17a3715b567e4618568c3548d60418351222e14bc",
+          "code_sha256": "90c21cf94b141595731b29c0c8cce1d25e7377eb5fc26a21a1d9c5a774de476c"
         },
         {
           "path": "FiniteAvalanches/Electrical/Geometry/PolarDual.lean",
@@ -4577,8 +4585,8 @@
         },
         {
           "path": "FiniteAvalanches/Support/Plane/PuncturedTransport.lean",
-          "sha256": "c76883da6f16c342d41aa08220f95f64864f21cc3fd704d5a2d2df54c527882b",
-          "code_sha256": "e4b95c698d06770756c620013d5ef1c38be25c366d3c80c5a5036166a232f9c1",
+          "sha256": "68d7d2916edbad1efffad7cfa7ec74f437cc07701f5b6288003b25f453ca34ab",
+          "code_sha256": "4d6d7a7b5b7a92a64283e67c310a9ca166d7cf64fa12a935019469405209ae84",
           "bytes": 43914
         },
         {
@@ -5522,8 +5530,8 @@
         },
         {
           "path": "FiniteAvalanches/External/ArcStraightening.lean",
-          "sha256": "3b8028dc6333332152ae109542d96f11ff071e8d57ea07c16cabe9185d796141",
-          "code_sha256": "c31b58ee8b0e558d6d9787c502aa0ac4b762bd3b30b93365ce7466a9438bfcf2"
+          "sha256": "a0cc98ad4e90defa3c401328dd6569a4ed7690b9b7c19ad2d7963048d6f6fa36",
+          "code_sha256": "6efb904c3ee090e6f823a362d41ac98c7919e16b28be51ddf381a429a27171d1"
         },
         {
           "path": "FiniteAvalanches/Electrical/Geometry/OrientedDrawing.lean",
@@ -5778,13 +5786,13 @@
         },
         {
           "path": "FiniteAvalanches/External/GeometricDual.lean",
-          "sha256": "ccd262c633dca44706ec3a6253e7c2027b324204e33f22e24645e9d1b05df296",
-          "code_sha256": "5de10e18c2c541b2f883db80037e0c9e739a6774eb119ca0d63548c1b9d11dff"
+          "sha256": "1c11942f67cc8aba55dc7713e258d8411f10635438bbc096343fa8d3c3b28b60",
+          "code_sha256": "949cb492d0e36508af175bd469de666f9747aac4997da7145c88943e92aa1575"
         },
         {
           "path": "FiniteAvalanches/External/TwoPoleTopology.lean",
-          "sha256": "53ff3a2c116a31303804c300ae25d5f54ecb312aced45aec09ac0756881313e4",
-          "code_sha256": "0fa6c1fedf5279be436d32f1d9eeb325f2d9d52d2a634a009bb5496a42474c0a"
+          "sha256": "243b63b44807aea98faa6af17a3715b567e4618568c3548d60418351222e14bc",
+          "code_sha256": "90c21cf94b141595731b29c0c8cce1d25e7377eb5fc26a21a1d9c5a774de476c"
         },
         {
           "path": "FiniteAvalanches/Electrical/Geometry/PolarDual.lean",
@@ -5833,8 +5841,8 @@
         },
         {
           "path": "FiniteAvalanches/Support/Plane/PuncturedTransport.lean",
-          "sha256": "c76883da6f16c342d41aa08220f95f64864f21cc3fd704d5a2d2df54c527882b",
-          "code_sha256": "e4b95c698d06770756c620013d5ef1c38be25c366d3c80c5a5036166a232f9c1"
+          "sha256": "68d7d2916edbad1efffad7cfa7ec74f437cc07701f5b6288003b25f453ca34ab",
+          "code_sha256": "4d6d7a7b5b7a92a64283e67c310a9ca166d7cf64fa12a935019469405209ae84"
         }
       ],
       "used_by_main": true,
@@ -5897,8 +5905,8 @@
         },
         {
           "path": "FiniteAvalanches/External/ArcStraightening.lean",
-          "sha256": "3b8028dc6333332152ae109542d96f11ff071e8d57ea07c16cabe9185d796141",
-          "code_sha256": "c31b58ee8b0e558d6d9787c502aa0ac4b762bd3b30b93365ce7466a9438bfcf2"
+          "sha256": "a0cc98ad4e90defa3c401328dd6569a4ed7690b9b7c19ad2d7963048d6f6fa36",
+          "code_sha256": "6efb904c3ee090e6f823a362d41ac98c7919e16b28be51ddf381a429a27171d1"
         },
         {
           "path": "FiniteAvalanches/Electrical/Geometry/OrientedDrawing.lean",
@@ -6153,13 +6161,13 @@
         },
         {
           "path": "FiniteAvalanches/External/GeometricDual.lean",
-          "sha256": "ccd262c633dca44706ec3a6253e7c2027b324204e33f22e24645e9d1b05df296",
-          "code_sha256": "5de10e18c2c541b2f883db80037e0c9e739a6774eb119ca0d63548c1b9d11dff"
+          "sha256": "1c11942f67cc8aba55dc7713e258d8411f10635438bbc096343fa8d3c3b28b60",
+          "code_sha256": "949cb492d0e36508af175bd469de666f9747aac4997da7145c88943e92aa1575"
         },
         {
           "path": "FiniteAvalanches/External/TwoPoleTopology.lean",
-          "sha256": "53ff3a2c116a31303804c300ae25d5f54ecb312aced45aec09ac0756881313e4",
-          "code_sha256": "0fa6c1fedf5279be436d32f1d9eeb325f2d9d52d2a634a009bb5496a42474c0a"
+          "sha256": "243b63b44807aea98faa6af17a3715b567e4618568c3548d60418351222e14bc",
+          "code_sha256": "90c21cf94b141595731b29c0c8cce1d25e7377eb5fc26a21a1d9c5a774de476c"
         },
         {
           "path": "FiniteAvalanches/Electrical/Geometry/PolarDual.lean",
@@ -6961,8 +6969,8 @@
         },
         {
           "path": "FiniteAvalanches/External/ArcStraightening.lean",
-          "sha256": "3b8028dc6333332152ae109542d96f11ff071e8d57ea07c16cabe9185d796141",
-          "code_sha256": "c31b58ee8b0e558d6d9787c502aa0ac4b762bd3b30b93365ce7466a9438bfcf2"
+          "sha256": "a0cc98ad4e90defa3c401328dd6569a4ed7690b9b7c19ad2d7963048d6f6fa36",
+          "code_sha256": "6efb904c3ee090e6f823a362d41ac98c7919e16b28be51ddf381a429a27171d1"
         },
         {
           "path": "FiniteAvalanches/Electrical/Geometry/OrientedDrawing.lean",
@@ -7217,13 +7225,13 @@
         },
         {
           "path": "FiniteAvalanches/External/GeometricDual.lean",
-          "sha256": "ccd262c633dca44706ec3a6253e7c2027b324204e33f22e24645e9d1b05df296",
-          "code_sha256": "5de10e18c2c541b2f883db80037e0c9e739a6774eb119ca0d63548c1b9d11dff"
+          "sha256": "1c11942f67cc8aba55dc7713e258d8411f10635438bbc096343fa8d3c3b28b60",
+          "code_sha256": "949cb492d0e36508af175bd469de666f9747aac4997da7145c88943e92aa1575"
         },
         {
           "path": "FiniteAvalanches/External/TwoPoleTopology.lean",
-          "sha256": "53ff3a2c116a31303804c300ae25d5f54ecb312aced45aec09ac0756881313e4",
-          "code_sha256": "0fa6c1fedf5279be436d32f1d9eeb325f2d9d52d2a634a009bb5496a42474c0a"
+          "sha256": "243b63b44807aea98faa6af17a3715b567e4618568c3548d60418351222e14bc",
+          "code_sha256": "90c21cf94b141595731b29c0c8cce1d25e7377eb5fc26a21a1d9c5a774de476c"
         },
         {
           "path": "FiniteAvalanches/Electrical/Geometry/PolarDual.lean",
@@ -8041,8 +8049,8 @@
         },
         {
           "path": "FiniteAvalanches/External/ArcStraightening.lean",
-          "sha256": "3b8028dc6333332152ae109542d96f11ff071e8d57ea07c16cabe9185d796141",
-          "code_sha256": "c31b58ee8b0e558d6d9787c502aa0ac4b762bd3b30b93365ce7466a9438bfcf2"
+          "sha256": "a0cc98ad4e90defa3c401328dd6569a4ed7690b9b7c19ad2d7963048d6f6fa36",
+          "code_sha256": "6efb904c3ee090e6f823a362d41ac98c7919e16b28be51ddf381a429a27171d1"
         },
         {
           "path": "FiniteAvalanches/Electrical/Geometry/OrientedDrawing.lean",
@@ -8297,13 +8305,13 @@
         },
         {
           "path": "FiniteAvalanches/External/GeometricDual.lean",
-          "sha256": "ccd262c633dca44706ec3a6253e7c2027b324204e33f22e24645e9d1b05df296",
-          "code_sha256": "5de10e18c2c541b2f883db80037e0c9e739a6774eb119ca0d63548c1b9d11dff"
+          "sha256": "1c11942f67cc8aba55dc7713e258d8411f10635438bbc096343fa8d3c3b28b60",
+          "code_sha256": "949cb492d0e36508af175bd469de666f9747aac4997da7145c88943e92aa1575"
         },
         {
           "path": "FiniteAvalanches/External/TwoPoleTopology.lean",
-          "sha256": "53ff3a2c116a31303804c300ae25d5f54ecb312aced45aec09ac0756881313e4",
-          "code_sha256": "0fa6c1fedf5279be436d32f1d9eeb325f2d9d52d2a634a009bb5496a42474c0a"
+          "sha256": "243b63b44807aea98faa6af17a3715b567e4618568c3548d60418351222e14bc",
+          "code_sha256": "90c21cf94b141595731b29c0c8cce1d25e7377eb5fc26a21a1d9c5a774de476c"
         },
         {
           "path": "FiniteAvalanches/Electrical/Geometry/PolarDual.lean",
@@ -8583,8 +8591,8 @@
         },
         {
           "path": "FiniteAvalanches/Support/Plane/PuncturedTransport.lean",
-          "sha256": "c76883da6f16c342d41aa08220f95f64864f21cc3fd704d5a2d2df54c527882b",
-          "code_sha256": "e4b95c698d06770756c620013d5ef1c38be25c366d3c80c5a5036166a232f9c1",
+          "sha256": "68d7d2916edbad1efffad7cfa7ec74f437cc07701f5b6288003b25f453ca34ab",
+          "code_sha256": "4d6d7a7b5b7a92a64283e67c310a9ca166d7cf64fa12a935019469405209ae84",
           "bytes": 43914
         },
         {
@@ -9505,8 +9513,8 @@
         },
         {
           "path": "FiniteAvalanches/Support/Plane/PuncturedTransport.lean",
-          "sha256": "c76883da6f16c342d41aa08220f95f64864f21cc3fd704d5a2d2df54c527882b",
-          "code_sha256": "e4b95c698d06770756c620013d5ef1c38be25c366d3c80c5a5036166a232f9c1"
+          "sha256": "68d7d2916edbad1efffad7cfa7ec74f437cc07701f5b6288003b25f453ca34ab",
+          "code_sha256": "4d6d7a7b5b7a92a64283e67c310a9ca166d7cf64fa12a935019469405209ae84"
         },
         {
           "path": "FiniteAvalanches/Support/Plane/TopoDegree.lean",
