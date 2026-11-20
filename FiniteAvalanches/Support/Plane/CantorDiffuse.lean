@@ -51,4 +51,39 @@ theorem cantorCoinMeasure_singleton (f : ℕ → Bool) : cantorCoinMeasure {f} =
   apply le_antisymm _ bot_le
   exact ge_of_tendsto' (ENNReal.tendsto_pow_atTop_nhds_zero_of_lt_one (by norm_num)) hbound
 
+/-- A perfect set carries a diffuse probability concentrated inside any
+open set meeting it. -/
+theorem Perfect.exists_diffuse_probability_in_open
+    {X : Type*} [MetricSpace X] [CompleteSpace X] [MeasurableSpace X] [BorelSpace X]
+    {K U : Set X} (hK : Perfect K) (hU : IsOpen U) (hne : (U ∩ K).Nonempty) :
+    ∃ μ : Measure X, IsProbabilityMeasure μ ∧ (∀ x, μ {x} = 0) ∧ μ (U ∩ K) = 1 := by
+  obtain ⟨f, hfsub, hfc, hfi⟩ := Perfect.exists_nat_bool_injection_in_open hK hU hne
+  haveI : IsProbabilityMeasure cantorCoinMeasure := by
+    unfold cantorCoinMeasure
+    infer_instance
+  have hfmeas : Measurable f := hfc.measurable
+  haveI : IsProbabilityMeasure (cantorCoinMeasure.map f) :=
+    Measure.isProbabilityMeasure_map hfmeas.aemeasurable
+  refine ⟨cantorCoinMeasure.map f, inferInstance, ?_, ?_⟩
+  · intro x
+    rw [Measure.map_apply hfmeas (measurableSet_singleton x)]
+    by_cases hx : x ∈ range f
+    · obtain ⟨a, rfl⟩ := hx
+      have heq : f ⁻¹' {f a} = {a} := by
+        ext z
+        simp only [mem_preimage, mem_singleton_iff]
+        exact hfi.eq_iff
+      rw [heq, cantorCoinMeasure_singleton]
+    · have heq : f ⁻¹' {x} = ∅ := by
+        apply Set.eq_empty_iff_forall_notMem.mpr
+        intro z hz
+        exact hx ⟨z, hz⟩
+      simp only [heq, measure_empty]
+  · rw [Measure.map_apply hfmeas (hU.measurableSet.inter hK.closed.measurableSet)]
+    have heq : f ⁻¹' (U ∩ K) = univ := by
+      apply Set.eq_univ_of_forall
+      intro z
+      exact hfsub ⟨z, rfl⟩
+    rw [heq, measure_univ]
+
 end FiniteAvalanches.Electrical.StatementGeometry
