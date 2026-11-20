@@ -3632,6 +3632,12 @@
       "bytes": 3038
     },
     {
+      "path": "FiniteAvalanches/Support/Plane/ArcEndpointAccess.lean",
+      "sha256": "60ad47407eec581c81e08770c2d2f9f1be61c41a141426195f397e697b75cbc6",
+      "code_sha256": "39d8b8e342838ebafc337e74b73808ef2dfe60213cee05c88f5a7f8f511f466b",
+      "bytes": 1812
+    },
+    {
       "path": "FiniteAvalanches/Support/Plane/ArcLocalStraightening.lean",
       "sha256": "9c21254a85afb1bf023e87c8511cc5bbc3cd27f2da03dc574f3da406f62a4035",
       "code_sha256": "8cff372ee6bed9aa8ff68b2ff2f2e61a19de4d1d90cf7d0ae4d3eaf649dcdbd9",
