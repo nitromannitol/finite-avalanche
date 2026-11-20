@@ -114,4 +114,57 @@ theorem exists_plane_homeomorph_straightening_of_separate_endpoint_accesses
   exact exists_plane_homeomorph_straightening_of_endpoint_accesses p hp q' r'
     hq' hr' hdisj hqout' hrout'
 
+
+/-- A simple plane arc admits parameter-preserving straightening exactly when
+both endpoints can be reached by simple paths from the complement. -/
+theorem plane_homeomorph_straightening_iff_endpoint_accesses
+    {x y : ℝ × ℝ} (p : Path x y) (hp : Function.Injective p) :
+    (∃ F : (ℝ × ℝ) ≃ₜ (ℝ × ℝ), ∀ t : unitInterval, F (p t) = (t.val, 0)) ↔
+    ∃ (a b : ℝ × ℝ) (q : Path a x) (r : Path b y),
+      Function.Injective q ∧ Function.Injective r ∧
+      (∀ t : unitInterval, t ≠ 1 → q t ∉ range p) ∧
+      (∀ t : unitInterval, t ≠ 1 → r t ∉ range p) := by
+  constructor
+  · rintro ⟨F, hF⟩
+    have hx : F.symm (0, 0) = x := by
+      apply F.injective
+      simpa using (hF 0).symm
+    have hy : F.symm (1, 0) = y := by
+      apply F.injective
+      simpa using (hF 1).symm
+    let q : Path (F.symm (-1, 0)) x :=
+      ((Path.segment (-1, 0) (0, 0)).map F.symm.continuous).cast rfl hx.symm
+    let r : Path (F.symm (2, 0)) y :=
+      ((Path.segment (2, 0) (1, 0)).map F.symm.continuous).cast rfl hy.symm
+    have hq : Function.Injective q :=
+      F.symm.injective.comp (Path.segment_injective_of_ne (by norm_num))
+    have hr : Function.Injective r :=
+      F.symm.injective.comp (Path.segment_injective_of_ne (by norm_num))
+    refine ⟨_, _, q, r, hq, hr, ?_, ?_⟩
+    · intro t ht ⟨u, hu⟩
+      have h := congrArg F hu
+      rw [hF u] at h
+      have hc := congrArg Prod.fst h
+      simp only [q, Path.cast_coe, Path.map_coe, Function.comp_apply,
+        Homeomorph.apply_symm_apply, Path.segment_apply, AffineMap.lineMap_apply_module,
+        Prod.fst_add] at hc
+      change (u : ℝ) = (1 - (t : ℝ)) * (-1) + (t : ℝ) * 0 at hc
+      have ht1 : (t : ℝ) < 1 := lt_of_le_of_ne t.property.2
+        (fun heq => ht (Subtype.ext heq))
+      linarith [u.property.1]
+    · intro t ht ⟨u, hu⟩
+      have h := congrArg F hu
+      rw [hF u] at h
+      have hc := congrArg Prod.fst h
+      simp only [r, Path.cast_coe, Path.map_coe, Function.comp_apply,
+        Homeomorph.apply_symm_apply, Path.segment_apply, AffineMap.lineMap_apply_module,
+        Prod.fst_add] at hc
+      change (u : ℝ) = (1 - (t : ℝ)) * 2 + (t : ℝ) * 1 at hc
+      have ht1 : (t : ℝ) < 1 := lt_of_le_of_ne t.property.2
+        (fun heq => ht (Subtype.ext heq))
+      linarith [u.property.2]
+  · rintro ⟨a, b, q, r, hq, hr, hqout, hrout⟩
+    exact exists_plane_homeomorph_straightening_of_separate_endpoint_accesses
+      p hp q r hq hr hqout hrout
+
 end FiniteAvalanches.Electrical.StatementGeometry
