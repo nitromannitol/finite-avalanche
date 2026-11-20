@@ -538,6 +538,43 @@ theorem exists_winding_jump_of_reverse_horizontal_crossing
   refine ⟨a, ha, hae, hp', hm', ?_⟩
   omega
 
+/-- A horizontal crossing in chart coordinates gives the corresponding signed
+winding jump for the image loop about the images of the two vertical offsets. -/
+theorem Source.OrientedChart.exists_winding_jump_complexMapLoop_horizontal
+    (chart : Source.OrientedChart) (γ : C(unitInterval, ℂ)) (hclosed : γ 0 = γ 1)
+    {ε : ℝ} (hε : 0 < ε)
+    {u v w : ℝ} (hu : 0 < u) (huv : u < v) (hvw : v < w) (hw : w < 1)
+    (hzero : ∀ t : unitInterval, γ t = 0 ↔ (t : ℝ) = v)
+    (hcross : (∀ t : unitInterval, u ≤ (t : ℝ) → (t : ℝ) < v → 0 < (γ t).re) ∧
+        (∀ t : unitInterval, v < (t : ℝ) → (t : ℝ) ≤ w → (γ t).re < 0) ∨
+      (∀ t : unitInterval, u ≤ (t : ℝ) → (t : ℝ) < v → (γ t).re < 0) ∧
+        (∀ t : unitInterval, v < (t : ℝ) → (t : ℝ) ≤ w → 0 < (γ t).re)) :
+    ∃ (a : ℝ) (_ : 0 < a) (_ : a < ε)
+        (hp : ∀ t, γ t ≠ (a : ℂ) / Complex.I)
+        (hm : ∀ t, γ t ≠ -(a : ℂ) / Complex.I),
+      let d := loopDeg (chart.complexMapLoop γ -
+          ContinuousMap.const unitInterval (chart.complexMap ((a : ℂ) / Complex.I)))
+        (fun t => sub_ne_zero.mpr (fun h => hp t (chart.complexMap.injective h))) -
+        loopDeg (chart.complexMapLoop γ -
+          ContinuousMap.const unitInterval (chart.complexMap (-(a : ℂ) / Complex.I)))
+        (fun t => sub_ne_zero.mpr (fun h => hm t (chart.complexMap.injective h)))
+      (d = 1 ∧ (∀ t : unitInterval, u ≤ (t : ℝ) → (t : ℝ) < v → 0 < (γ t).re)) ∨
+        (d = -1 ∧ (∀ t : unitInterval, u ≤ (t : ℝ) → (t : ℝ) < v → (γ t).re < 0)) := by
+  rcases hcross with ⟨hpos, hneg⟩ | ⟨hneg, hpos⟩
+  · obtain ⟨a, ha, hae, hp, hm, hd⟩ :=
+      exists_winding_jump_of_horizontal_crossing γ hclosed hε hu huv hvw hw hzero hpos hneg
+    refine ⟨a, ha, hae, hp, hm, Or.inl ⟨?_, hpos⟩⟩
+    rw [chart.loopDeg_complexMapLoop_sub_const γ hclosed ((a : ℂ) / Complex.I) hp,
+      chart.loopDeg_complexMapLoop_sub_const γ hclosed (-(a : ℂ) / Complex.I) hm]
+    exact hd
+  · obtain ⟨a, ha, hae, hp, hm, hd⟩ :=
+      exists_winding_jump_of_reverse_horizontal_crossing γ hclosed hε hu huv hvw hw
+        hzero hneg hpos
+    refine ⟨a, ha, hae, hp, hm, Or.inr ⟨?_, hneg⟩⟩
+    rw [chart.loopDeg_complexMapLoop_sub_const γ hclosed ((a : ℂ) / Complex.I) hp,
+      chart.loopDeg_complexMapLoop_sub_const γ hclosed (-(a : ℂ) / Complex.I) hm]
+    exact hd
+
 /-- Two equal positive winding jumps cannot have both their sides matched in
 reverse within complementary components of the same loop. -/
 theorem not_crossed_component_matching_of_winding_jumps
