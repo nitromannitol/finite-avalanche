@@ -120,4 +120,38 @@ theorem indicator_face_boundary_eq_sum_relevant_edges {J : CopiedGraph V E}
     have hr : v ≠ J.right e := fun h => hi (Or.inr h.symm)
     simp [copyGradient, hl, hr]
 
+
+/-- A vertex has zero indicator boundary when every incident non-loop edge
+is a bridge; loops may be present. -/
+theorem indicator_face_boundary_eq_zero_of_incident_nonloop_bridges {J : CopiedGraph V E}
+    (D : Drawing J) (charts : ∀ e, EdgeChart D e) (v : V)
+    (hbridge : ∀ e : E, (J.left e = v ∨ J.right e = v) →
+      J.left e ≠ J.right e →
+      ¬ J.reaches (Finset.univ.erase e) (J.left e) (J.right e)) (F : Face D) :
+    copyBoundary (fun e => negativeChartFace D e (charts e))
+      (fun e => positiveChartFace D e (charts e))
+      (copyGradient J.left J.right (Pi.single v 1)) F = 0 := by
+  classical
+  rw [indicator_face_boundary_eq_sum_relevant_edges]
+  apply Finset.sum_eq_zero
+  intro e he
+  have he' := (Finset.mem_filter.mp he).2
+  exact (hbridge e he'.1 he'.2.1 he'.2.2).elim
+
+/-- The dual boundary of every gradient vanishes when all non-loop edges are
+bridges, with arbitrary loop copies allowed. -/
+theorem face_boundary_gradient_eq_zero_of_nonloop_bridges {J : CopiedGraph V E}
+    (D : Drawing J) (charts : ∀ e, EdgeChart D e)
+    (hbridge : ∀ e : E, J.left e ≠ J.right e →
+      ¬ J.reaches (Finset.univ.erase e) (J.left e) (J.right e))
+    (q : V → ℝ) (F : Face D) :
+    copyBoundary (fun e => negativeChartFace D e (charts e))
+      (fun e => positiveChartFace D e (charts e)) (copyGradient J.left J.right q) F = 0 := by
+  apply ((copyBoundary_gradient_eq_zero_iff_indicators J.left J.right
+    (fun e => negativeChartFace D e (charts e))
+    (fun e => positiveChartFace D e (charts e))).mpr ?_) q F
+  intro v G
+  exact indicator_face_boundary_eq_zero_of_incident_nonloop_bridges D charts v
+    (fun e _ => hbridge e) G
+
 end FiniteAvalanches.Electrical.StatementGeometry
