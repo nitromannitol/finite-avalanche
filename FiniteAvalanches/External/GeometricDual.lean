@@ -1,5 +1,8 @@
 import FiniteAvalanches.Electrical.Geometry.BSST
 import FiniteAvalanches.External.TwoPoleTopology
+import FiniteAvalanches.Support.Plane.GeneralGeometricDual
+import FiniteAvalanches.Support.Plane.UnchartedFaces
+import FiniteAvalanches.Support.Plane.TraceClosedName
 
 /-! Classical geometric duality for finite connected plane multigraph drawings. -/
 set_option autoImplicit false
@@ -11,7 +14,7 @@ open scoped Classical
 
 /-- The dual retains every original edge copy, crosses it once, and its faces
 correspond to the original vertices with reversed double-dual orientation. -/
-axiom finite_plane_geometric_dual :
+theorem finite_plane_geometric_dual :
 ∀ {V E : Type} [Fintype V] [Fintype E] [Nonempty E]
     (J : CopiedGraph V E) (D : Drawing J)
     (charts : ∀ e : E, Source.EdgeChart D e)
@@ -39,6 +42,14 @@ axiom finite_plane_geometric_dual :
             (charts e).chart.map (dualDrawing.curve e t) = (1 / 2, t.val - 1 / 2)) ∧
         (∀ e : E,
           positiveChartFace dualDrawing e (dualCharts e) = vertexFaces (J.left e) ∧
-          negativeChartFace dualDrawing e (dualCharts e) = vertexFaces (J.right e))
+          negativeChartFace dualDrawing e (dualCharts e) = vertexFaces (J.right e)) := by
+  intro V E _ _ _ J D charts hc
+  letI : Finite (Face D) := finite_faces_of_drawing D
+  let finiteFaces : Fintype (Face D) := Fintype.ofFinite (Face D)
+  letI : Fintype (Face D) := finiteFaces
+  obtain ⟨D', dualCharts, vertexFaces, hpoint, hvertex, hcross, hside, hchart, hfaces⟩ :=
+    exists_geometric_dual D charts hc
+  exact ⟨finiteFaces, D', dualCharts, vertexFaces, hpoint, hvertex, hcross, hside, hchart,
+    hfaces⟩
 
 end FiniteAvalanches.External
