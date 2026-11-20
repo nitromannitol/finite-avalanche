@@ -45,5 +45,33 @@ declaration.
   terminals ([`docs/electrical-voltage.md`](docs/electrical-voltage.md)). The construction of the
   square tiling follows Lovász, *Graphs and Geometry*, §6.1 and Theorem 6.1.
 
-The 22 standard results that the proofs use are listed in the README and in
-[`audit/trusted-inputs.json`](audit/trusted-inputs.json).
+## Results from the literature
+
+The registry [`audit/trusted-inputs.json`](audit/trusted-inputs.json) and the README list the 25
+registered results from the literature. Theorem 1.1 uses 8 of them as axioms; 14 are proved in
+Lean, each with the statement text of the axiom it replaces. Where the Lean proof of a registered
+result takes a different route from the cited source, the route is recorded here.
+
+- **Weak convergence of the wired spanning trees** (`square_lattice_wired_ust_weak_limit`) is
+  derived from Wilson's algorithm on the wired boxes: explorations rooted at the origin and at the
+  wired sink are coupled through cycle popping, and the probabilities of finite edge cylinders
+  converge ([`FiniteUstWeakLimit.lean`](FiniteAvalanches/Wilson/Lattice/FiniteUstWeakLimit.lean)).
+- **Planar duality of the spanning tree** (`square_lattice_ust_dual_law`) is proved in finite
+  volume first: on each wired box, cut parity identifies the complements of spanning trees with
+  spanning trees of the face graph, and the shifted face-tree laws converge to the wired law
+  ([`WiredDualFaceCutParity.lean`](FiniteAvalanches/Wilson/Lattice/WiredDualFaceCutParity.lean)).
+- **Wilson's algorithm with two root sets** (`wilson_two_color_law_existsUnique`) is proved by
+  cycle popping on the finite networks, with the cylinder law constructed and shown unique on
+  the recurrent lattice
+  ([`WiredRootedSupport.lean`](FiniteAvalanches/Wilson/Lattice/WiredRootedSupport.lean)).
+- **Pairing groves and response-matrix minors** (`kenyonWilson_pairingGroves_resistanceMinor`):
+  Kenyon and Wilson derive the formula from their grove partition functions (Theorems 8.1 and
+  B.3). The Lean proof instead uses the all-minors matrix-tree theorem and complementary minors of
+  the grounded Green kernel
+  ([`ResistanceComplement.lean`](FiniteAvalanches/Electrical/Trees/ResistanceComplement.lean),
+  [`PairingRelabel.lean`](FiniteAvalanches/Electrical/Trees/PairingRelabel.lean)).
+- **Plane topology.** The face star of a vertex, bonds as dual cycles, connectedness of the dual,
+  complementary spanning trees and edge-chart incidence are proved from the Jordan–Schönflies
+  theorem, in modules adapted from Álvaro Begué's formalization
+  ([`FiniteAvalanches/Support/Schoenflies/`](FiniteAvalanches/Support/Schoenflies/)). The two
+  punctured-plane transport results are ported from Lattice-Probability.

@@ -7,7 +7,7 @@ abstract: >-
   law of the abelian sandpile on Z^2, adding one grain at the origin causes
   finitely many topplings almost surely, and the radius of the avalanche
   satisfies P(radius > M) <= C (log(M + 2))^(-a). All 17 numbered statements
-  of the paper are proved; the proofs use 22 standard results from the
+  of the paper are proved; the proofs use 8 standard results from the
   literature, which enter as named axioms.
 type: software
 authors:
