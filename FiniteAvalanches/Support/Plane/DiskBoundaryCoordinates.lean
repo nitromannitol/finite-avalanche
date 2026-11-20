@@ -85,5 +85,73 @@ def diskBoundaryCircle : AddCircle (1 : ℝ) ≃ₜ frontier complexDisk where
 theorem diskBoundaryCircle_symm_apply (z : frontier complexDisk) :
     diskBoundaryCircle.symm z = (puncturedPolarCoordinates (diskBoundaryPunctured z)).2 := rfl
 
+/-- A disk-preserving plane homeomorphism preserves its frontier. -/
+theorem image_frontier_complexDisk (f : Plane ≃ₜ Plane)
+    (hf : f '' complexDisk = complexDisk) :
+    f '' frontier complexDisk = frontier complexDisk := by
+  rw [f.image_frontier, hf]
+
+/-- The action on the frontier of a disk-preserving plane homeomorphism. -/
+def diskBoundaryMap (f : Plane ≃ₜ Plane) (hf : f '' complexDisk = complexDisk) :
+    AddCircle (1 : ℝ) ≃ₜ AddCircle (1 : ℝ) := by
+  have hfront : ∀ x : Plane, x ∈ frontier complexDisk ↔ f x ∈ frontier complexDisk := by
+    intro x
+    conv_rhs => rw [← image_frontier_complexDisk f hf, f.image_eq_preimage_symm]
+    simp only [mem_preimage, f.symm_apply_apply]
+  exact diskBoundaryCircle.trans ((f.subtype hfront).trans diskBoundaryCircle.symm)
+
+/-- The boundary map is the conjugate of the restriction to the frontier. -/
+theorem diskBoundaryMap_apply (f : Plane ≃ₜ Plane) (hf : f '' complexDisk = complexDisk)
+    (z : frontier complexDisk) :
+    diskBoundaryMap f hf (diskBoundaryCircle.symm z) =
+      diskBoundaryCircle.symm ⟨f z, by
+        exact (Set.ext_iff.mp (image_frontier_complexDisk f hf) (f (z : Plane))).mp
+          (mem_image_of_mem f z.property)⟩ := by
+  change diskBoundaryCircle.symm ⟨f (diskBoundaryCircle (diskBoundaryCircle.symm z)), _⟩ = _
+  apply congrArg diskBoundaryCircle.symm
+  apply Subtype.ext
+  change f (diskBoundaryCircle (diskBoundaryCircle.symm z)) = f z
+  rw [diskBoundaryCircle.apply_symm_apply]
+
+/-- A disk-preserving homeomorphism is represented on the boundary by its
+induced circle map in polar coordinates. -/
+theorem diskBoundaryMap_radial_action (f : Plane ≃ₜ Plane)
+    (hf : f '' complexDisk = complexDisk) (x : ({0}ᶜ : Set ℂ)) (hx : ‖(x : ℂ)‖ = 2) :
+    f (Complex.equivRealProdCLM x) = Complex.equivRealProdCLM
+      (puncturedPolarCoordinates.symm ((puncturedPolarCoordinates x).1,
+        diskBoundaryMap f hf (puncturedPolarCoordinates x).2) : ℂ) := by
+  have hfront : Complex.equivRealProdCLM x ∈ frontier complexDisk := by
+    rw [mem_frontier_complexDisk, Complex.equivRealProdCLM.symm_apply_apply]
+    exact hx
+  let z : frontier complexDisk := ⟨Complex.equivRealProdCLM x, hfront⟩
+  have hz : diskBoundaryCircle.symm z = (puncturedPolarCoordinates x).2 := by
+    rw [diskBoundaryCircle_symm_apply]
+    congr 1
+  have hrad : (puncturedPolarCoordinates x).1 = diskBoundaryRadius := by
+    apply Subtype.ext
+    rw [puncturedPolarCoordinates_radius]
+    exact hx
+  have hF := diskBoundaryMap_apply f hf z
+  rw [hz] at hF
+  let y : frontier complexDisk := ⟨f z, by
+    exact (Set.ext_iff.mp (image_frontier_complexDisk f hf) (f (z : Plane))).mp
+          (mem_image_of_mem f z.property)⟩
+  change diskBoundaryMap f hf (puncturedPolarCoordinates x).2 = diskBoundaryCircle.symm y at hF
+  rw [hF, hrad]
+  have hy := congrArg Subtype.val (diskBoundaryCircle.apply_symm_apply y)
+  change Complex.equivRealProdCLM
+    (puncturedPolarCoordinates.symm (diskBoundaryRadius, diskBoundaryCircle.symm y) : ℂ) = f z at hy
+  exact hy.symm
+
+/-- A disk-preserving homeomorphism with increasing boundary circle map agrees
+on the disk with an oriented chart. -/
+theorem exists_orientedChart_agree_on_complexDisk_of_boundaryMap
+    (f : Plane ≃ₜ Plane) (hf : f '' complexDisk = complexDisk)
+    (hinc : StrictMono (circleCutMap (normalizedCircleHomeomorph (diskBoundaryMap f hf))
+      (normalizedCircleHomeomorph_zero _))) :
+    ∃ c : OrientedChart, ∀ x ∈ complexDisk, c.map x = f x :=
+  exists_orientedChart_agree_on_complexDisk f (diskBoundaryMap f hf) hinc hf
+    (diskBoundaryMap_radial_action f hf)
+
 end
 end FiniteAvalanches.Electrical.StatementGeometry

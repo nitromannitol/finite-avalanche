@@ -90,7 +90,7 @@ theorem exists_orientedChart_with_radial_action
   apply congrArg Subtype.val
   apply puncturedPolarCoordinates.injective
   apply Prod.ext
-  · simp only [Homeomorph.apply_symm_apply, Prod.fst]
+  · simp only [Homeomorph.apply_symm_apply]
     apply Subtype.ext
     rw [puncturedPolarCoordinates_radius, puncturedPolarCoordinates_radius]
     have h := hnorm (x : ℂ)
