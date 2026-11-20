@@ -7,7 +7,9 @@ Changes: import `LatticeProb.Walk.KilledGreenPlanarLower` replaced by
 `LatticeProb.Network.MaximumPrinciple`, `LatticeProb.Network.KilledGreen`,
 `FiniteAvalanches.Walk.EuclidNormCoord`; namespace `LatticeProb.Beurling` renamed to
 `FiniteAvalanches.Walk.Beurling`, with `open LatticeProb` added; `measurableSet_setOfPred` replaced
-by `measurableSet_setOf` (3 times).
+by `measurableSet_setOf` (3 times); the end-of-line comments of `disk`, `shellPart`, `axisSet` and
+`green` replaced by docstrings, docstrings added to `walkPos`, `IsDense`, `diskFinset`, `prob` and
+`Asymp`, and the statement of `Asymp` broken over three lines.
 -/
 import LatticeProb.Walk.Harnack.Basics
 import LatticeProb.Walk.Lazy
@@ -46,10 +48,14 @@ namespace FiniteAvalanches.Walk.Beurling
 open LatticeProb
 open MeasureTheory
 
+/-- The walk started at `x` with increments `ω`, at time `t`. -/
 def walkPos (x : Site 2) (ω : ℕ → Dir 2) (t : ℕ) : Site 2 := x + ∑ j ∈ Finset.range t, dirVec (ω j)
-def disk (r : ℝ) : Set (Site 2) := {z | euclidNorm z < r}                                   -- C_r
+/-- The disk `C_r = {z : |z| < r}`. -/
+def disk (r : ℝ) : Set (Site 2) := {z | euclidNorm z < r}
+/-- The part `A[a, b]` of `A` in the annulus `a ≤ |z| < b`. -/
 def shellPart (A : Set (Site 2)) (a b : ℝ) : Set (Site 2) :=
-  {z | z ∈ A ∧ a ≤ euclidNorm z ∧ euclidNorm z < b}                                           -- A[a,b]
+  {z | z ∈ A ∧ a ≤ euclidNorm z ∧ euclidNorm z < b}
+/-- `A` meets every annulus `j ≤ |z| < j + 1`. -/
 def IsDense (A : Set (Site 2)) : Prop := ∀ j : ℕ, ∃ z ∈ A, (j : ℝ) ≤ euclidNorm z ∧ euclidNorm z < j + 1
 /-- {tau_r < T_B}: leave C_r (time 0 allowed) with no visit to B at times 1..t. -/
 def exitsBefore (r : ℝ) (B : Set (Site 2)) (x : Site 2) : Set (ℕ → Dir 2) :=
@@ -60,13 +66,21 @@ def hitsBefore (B : Set (Site 2)) (r : ℝ) (x : Site 2) : Set (ℕ → Dir 2) :
 /-- {rho_r < T_B}: leave the strip L_r = {|Im z| < r} before a positive-time visit to B. -/
 def stripExitsBefore (r : ℝ) (B : Set (Site 2)) (x : Site 2) : Set (ℕ → Dir 2) :=
   {ω | ∃ t, r ≤ |((walkPos x ω t) 1 : ℝ)| ∧ ∀ s, 1 ≤ s → s ≤ t → walkPos x ω s ∉ B}
-def axisSet (S : Set ℤ) : Set (Site 2) := {z | z 1 = 0 ∧ z 0 ∈ S}                            -- kappa S on the real axis
+/-- The points `(i, 0)` of the real axis with `i ∈ S`. -/
+def axisSet (S : Set ℤ) : Set (Site 2) := {z | z 1 = 0 ∧ z 0 ∈ S}
+/-- The sites of the disk `C_r`, as a finite set. -/
 def diskFinset (r : ℝ) : Finset (Site 2) := (ballFinset 2 r).filter (fun z => euclidNorm z < r)
+/-- The Green function `G_r = G_{C_r}` of the disk: the expected number of visits to `z` before
+the walk from `w` leaves `C_r`. The killed Green function of the library is divided by the
+degree `4`. -/
 noncomputable def green (r : ℝ) (w z : Site 2) : ℝ :=
-  4 * Graph.killedGreenReal (lattice 2) (diskFinset r : Set (Site 2)) w z                   -- G_r = G_{C_r}, expected visits (the killed Green function of the library is divided by the degree 4)
+  4 * Graph.killedGreenReal (lattice 2) (diskFinset r : Set (Site 2)) w z
+/-- The probability of an event of the increments under the path law of the walk. -/
 noncomputable def prob (E : Set (ℕ → Dir 2)) : ℝ := (pathLaw 2 E).toReal
-def Asymp (E : ℕ → Set (ℕ → Dir 2)) (f : ℕ → ℝ) : Prop := ∃ c₁ c₂ : ℝ, 0 < c₁ ∧ 0 < c₂ ∧ ∃ N : ℕ, ∀ n : ℕ, N ≤ n →
-  c₁ / f n ≤ prob (E n) ∧ prob (E n) ≤ c₂ / f n
+/-- `P(E n) ≍ 1 / f n` for all large `n`. -/
+def Asymp (E : ℕ → Set (ℕ → Dir 2)) (f : ℕ → ℝ) : Prop :=
+  ∃ c₁ c₂ : ℝ, 0 < c₁ ∧ 0 < c₂ ∧ ∃ N : ℕ, ∀ n : ℕ, N ≤ n →
+    c₁ / f n ≤ prob (E n) ∧ prob (E n) ≤ c₂ / f n
 
 /-- The position of the walk at a fixed time is a measurable function of the increments. -/
 theorem measurable_walkPos (x : Site 2) (t : ℕ) :
