@@ -3674,6 +3674,12 @@
       "bytes": 3509
     },
     {
+      "path": "FiniteAvalanches/Support/Plane/BoundarySmallFamily.lean",
+      "sha256": "c954062d173d19fb8af821f161389e4d41e55d7130207144f414e7e9c686adaf",
+      "code_sha256": "896f7443f5a435157fd0f1f4ee9d31fe8c060d35c2bed44755d5bc5a3fde6840",
+      "bytes": 4054
+    },
+    {
       "path": "FiniteAvalanches/Support/Plane/BoundaryStarExtension.lean",
       "sha256": "f35f40a5965a77b6a9ac3804aa0c7ab092adb709fde15b4fd8a0241b12b2b77d",
       "code_sha256": "557a4610639ee7a322af1259595829fba7adf1346b864a4ab0012d5d292c5d48",
@@ -4008,6 +4014,18 @@
       "sha256": "da749ec82029d8801d8f4b1a26c622e2ccc1c1a69f0ab5c15c454cab4d2201f5",
       "code_sha256": "f5b23a5317d8c4183911f9895b9f3ffa830f49fe7a3277c84bca047400b7eced",
       "bytes": 4278
+    },
+    {
+      "path": "FiniteAvalanches/Support/Plane/SmallFaceCrossingArms.lean",
+      "sha256": "b9e8155c87e043eb2f60be6c7f0d78092e28c3e0dd5850bd18215e46fbdcce95",
+      "code_sha256": "2dae66ca40bb19784b3917d6b14d60f4e5ad04d104337334e582f513e0976166",
+      "bytes": 4191
+    },
+    {
+      "path": "FiniteAvalanches/Support/Plane/SmallFaceGeometricDual.lean",
+      "sha256": "5c4dc355d9a1bb33d22bf2aaad6da860ad4fe6ce576123999440b57b8021b96d",
+      "code_sha256": "50cb0d72550909cd7ccd1650d39e69b5ac72016668e0fe802c016951d7df68b5",
+      "bytes": 7176
     },
     {
       "path": "FiniteAvalanches/Support/Plane/StarSplicing.lean",
@@ -6871,6 +6889,7 @@
     "FiniteAvalanches.Support.Plane.BoundaryArcJoinTails",
     "FiniteAvalanches.Support.Plane.BoundaryPairArms",
     "FiniteAvalanches.Support.Plane.BoundaryPairFamily",
+    "FiniteAvalanches.Support.Plane.BoundarySmallFamily",
     "FiniteAvalanches.Support.Plane.BoundaryStarExtension",
     "FiniteAvalanches.Support.Plane.BoundaryTwoStar",
     "FiniteAvalanches.Support.Plane.ChartedBoundaryStarExtension",
@@ -6909,6 +6928,8 @@
     "FiniteAvalanches.Support.Plane.RetainedTailFamily",
     "FiniteAvalanches.Support.Plane.RetainedTailReparam",
     "FiniteAvalanches.Support.Plane.SimplePathDuality",
+    "FiniteAvalanches.Support.Plane.SmallFaceCrossingArms",
+    "FiniteAvalanches.Support.Plane.SmallFaceGeometricDual",
     "FiniteAvalanches.Support.Plane.StarSplicing",
     "FiniteAvalanches.Support.Plane.StraightModel",
     "FiniteAvalanches.Support.Plane.SubarcCompletion",
