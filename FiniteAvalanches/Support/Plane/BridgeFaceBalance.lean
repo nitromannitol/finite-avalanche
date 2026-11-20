@@ -85,4 +85,39 @@ theorem face_boundary_gradient_eq_zero_of_forest {J : CopiedGraph V E}
   intro v G
   exact indicator_face_boundary_eq_zero_of_incident_bridges D charts v (fun e _ => hforest e) G
 
+
+/-- For a vertex indicator, only incident non-loop edges whose chart sides
+are distinct contribute to the dual boundary. -/
+theorem indicator_face_boundary_eq_sum_relevant_edges {J : CopiedGraph V E}
+    (D : Drawing J) (charts : ∀ e, EdgeChart D e) (v : V) (F : Face D) :
+    copyBoundary (fun e => negativeChartFace D e (charts e))
+      (fun e => positiveChartFace D e (charts e))
+      (copyGradient J.left J.right (Pi.single v 1)) F =
+    ∑ e ∈ Finset.univ.filter (fun e => (J.left e = v ∨ J.right e = v) ∧
+        J.left e ≠ J.right e ∧
+        J.reaches (Finset.univ.erase e) (J.left e) (J.right e)),
+      ((if negativeChartFace D e (charts e) = F then
+          copyGradient J.left J.right (Pi.single v 1) e else 0) -
+       (if positiveChartFace D e (charts e) = F then
+          copyGradient J.left J.right (Pi.single v 1) e else 0)) := by
+  classical
+  unfold copyBoundary
+  symm
+  apply Finset.sum_subset (Finset.filter_subset _ _)
+  intro e _ he
+  have hn : ¬ ((J.left e = v ∨ J.right e = v) ∧
+      J.left e ≠ J.right e ∧
+      J.reaches (Finset.univ.erase e) (J.left e) (J.right e)) := by
+    simpa only [Finset.mem_filter, Finset.mem_univ, true_and] using he
+  by_cases hi : J.left e = v ∨ J.right e = v
+  · by_cases hl : J.left e = J.right e
+    · simp only [copyGradient, hl, sub_self, ite_self]
+    · have hb : ¬ J.reaches (Finset.univ.erase e) (J.left e) (J.right e) :=
+        fun h => hn ⟨hi, hl, h⟩
+      have hf := chartFaces_eq_of_bridge D charts e hb
+      rw [hf, sub_self]
+  · have hl : v ≠ J.left e := fun h => hi (Or.inl h.symm)
+    have hr : v ≠ J.right e := fun h => hi (Or.inr h.symm)
+    simp [copyGradient, hl, hr]
+
 end FiniteAvalanches.Electrical.StatementGeometry
