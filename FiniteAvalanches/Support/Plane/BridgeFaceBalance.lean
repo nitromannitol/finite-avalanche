@@ -31,6 +31,22 @@ theorem chartFaces_eq_of_bridge {J : CopiedGraph V E} (D : Drawing J)
   rw [hs] at h
   exact CopiedGraph.eq_of_reaches_empty _ h
 
+/-- An edge is a bridge exactly when its two chart sides are in the same face. -/
+theorem bridge_iff_chartFaces_eq {J : CopiedGraph V E} (D : Drawing J)
+    (charts : ∀ e, EdgeChart D e) (e : E) :
+    (¬ J.reaches (Finset.univ.erase e) (J.left e) (J.right e)) ↔
+      negativeChartFace D e (charts e) = positiveChartFace D e (charts e) := by
+  classical
+  constructor
+  · exact chartFaces_eq_of_bridge D charts e
+  · intro hface hreach
+    letI : Nonempty E := ⟨e⟩
+    have hnot := (edge_path_duality D charts (Finset.univ.erase e) e
+      (Finset.notMem_erase _ _)).mp hreach
+    apply hnot
+    rw [hface]
+    exact .refl
+
 /-- At a vertex incident only to bridges, every face has zero boundary of the
 vertex-indicator gradient. -/
 theorem indicator_face_boundary_eq_zero_of_incident_bridges {J : CopiedGraph V E}
