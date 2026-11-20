@@ -3633,9 +3633,9 @@
     },
     {
       "path": "FiniteAvalanches/Support/Plane/ArcEndpointAccess.lean",
-      "sha256": "ec922493030aa19b6340c5676eef1a77ce1e9ecbb8856e9d76b8febc6e9eac3d",
-      "code_sha256": "2a767fe3d2b0868719bb6da1b8f11a916b16bb87cc3357822de258ed41761a4f",
-      "bytes": 8032
+      "sha256": "e40a899da839dca93bb1730c481d9430f5b44787530d44745ebbfceb29965183",
+      "code_sha256": "6e4fb9496700612005228665f134a21081814c94d7d13453210f60fa8c471426",
+      "bytes": 11233
     },
     {
       "path": "FiniteAvalanches/Support/Plane/ArcLocalStraightening.lean",
