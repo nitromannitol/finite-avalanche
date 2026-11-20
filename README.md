@@ -165,7 +165,7 @@ and records how the Lean statements read the paper.
 
 ## Size
 
-About 219,900 lines of Lean in 1,439 files, of which about 172,200 lines are code once comments
+About 250,100 lines of Lean in 1,536 files, of which about 197,200 lines are code once comments
 and blank lines are removed, on top of mathlib and Lattice-Probability. The comparator surface under
 `FiniteAvalanchesAudit/` and the axiom query `PublicVerification/` are not counted.
 
