@@ -147,5 +147,32 @@ theorem mem_outside_of_mem_closure_unbounded {C K : Set (ℝ × ℝ)}
   · exact h
   · exact absurd (by obtain ⟨y, hy, hyz⟩ := h; exact H.injective hyz ▸ hy) hzC
 
+/-- A Jordan curve straight near `q` cannot have one connected set touching both
+sides at `q`, when that set is assembled from a connected set `U`, an arc-free
+piece `Λ` in the closure of `U`, and a connected set `L` accumulating on `Λ`. -/
+theorem jordan_core_contradiction {C U Λ L : Set (ℝ × ℝ)}
+    (hC : IsJordanCurve (euclideanPlaneHomeomorph '' C)) (hU : IsPreconnected U)
+    (hUC : Disjoint U C) (hΛne : Λ.Nonempty) (hΛU : Λ ⊆ closure U) (hΛC : Disjoint Λ C)
+    (hL : IsPreconnected L) (hΛL : Λ ⊆ closure L) (hLC : Disjoint L C)
+    {q : ℝ × ℝ} {r : ℝ} (hr : 0 < r) (hloc : ∀ w ∈ ball q r, w ∈ C ↔ w.2 = q.2)
+    (hsides : ((U ∩ (ball q r ∩ {w | q.2 < w.2})).Nonempty ∧
+        (L ∩ (ball q r ∩ {w | w.2 < q.2})).Nonempty) ∨
+      ((U ∩ (ball q r ∩ {w | w.2 < q.2})).Nonempty ∧
+        (L ∩ (ball q r ∩ {w | q.2 < w.2})).Nonempty)) : False := by
+  have hUΛ : IsPreconnected (U ∪ Λ) :=
+    hU.subset_closure subset_union_left (union_subset subset_closure hΛU)
+  have hLΛ : IsPreconnected (L ∪ Λ) :=
+    hL.subset_closure subset_union_left (union_subset subset_closure hΛL)
+  obtain ⟨x, hx⟩ := hΛne
+  have hK : IsPreconnected ((U ∪ Λ) ∪ (L ∪ Λ)) :=
+    hUΛ.union x (Or.inr hx) (Or.inr hx) hLΛ
+  have hKC : Disjoint ((U ∪ Λ) ∪ (L ∪ Λ)) C :=
+    ((hUC.union_left hΛC).union_left (hLC.union_left hΛC))
+  rcases hsides with ⟨⟨u, huU, hu⟩, ⟨l, hlL, hl⟩⟩ | ⟨⟨u, huU, hu⟩, ⟨l, hlL, hl⟩⟩
+  · exact not_preconnected_meets_upper_lower hC hr hloc hK hKC
+      ⟨u, Or.inl (Or.inl huU), hu⟩ ⟨l, Or.inr (Or.inl hlL), hl⟩
+  · exact not_preconnected_meets_upper_lower hC hr hloc hK hKC
+      ⟨l, Or.inr (Or.inl hlL), hl⟩ ⟨u, Or.inl (Or.inl huU), hu⟩
+
 end
 end FiniteAvalanches.Electrical.StatementGeometry
