@@ -1983,9 +1983,9 @@
     },
     {
       "path": "FiniteAvalanches/External/PlaneDualBondCycle.lean",
-      "sha256": "0a47f284574f325cd99eb86a9d2bc8f94ae31ac9dab3bc3a0a54510f139d9699",
-      "code_sha256": "6c7ab3261127379873df8be5f8c20f77936669c220031423300034ec5e40ed68",
-      "bytes": 2021
+      "sha256": "77424304ded4c753c0c0a0ab412769fb0b0b9187ca4947b1ed37286ef6dfec57",
+      "code_sha256": "871920ced7bc14617ab2a21f0f02824748b1012caf9e7647f4987338ccff4f14",
+      "bytes": 2528
     },
     {
       "path": "FiniteAvalanches/External/PlaneDualConnected.lean",
@@ -3650,6 +3650,24 @@
       "bytes": 2898
     },
     {
+      "path": "FiniteAvalanches/Support/Plane/BondDualCycle.lean",
+      "sha256": "638f1831f4714354ae85cefa570ecc4bcd4da59c3e2d2f5d9974b2c42535086b",
+      "code_sha256": "fbf071993c1c5535403d07bc2c72bd8a5b4cbf6f7ad640829dd76b7d1bc6d744",
+      "bytes": 5695
+    },
+    {
+      "path": "FiniteAvalanches/Support/Plane/BondDualMinimality.lean",
+      "sha256": "143874b0839591751f0661a70d61d2638b01433b9bfc47478ef71ffba4a9ce28",
+      "code_sha256": "0a2e44a0cbda6c7d5606fafd82c94541bf5c74d706cc2c30a39c5e7ab2674bad",
+      "bytes": 4695
+    },
+    {
+      "path": "FiniteAvalanches/Support/Plane/BondDualReachability.lean",
+      "sha256": "9f29a8e7715effcea626ec7cfc8fe34f54ce8babd52ab9b2a7af63e7d7d6bdd5",
+      "code_sha256": "9937fc1f31e1f2bc25cc412c959c182e26769601d6c10c4034cbcbe70807803c",
+      "bytes": 3013
+    },
+    {
       "path": "FiniteAvalanches/Support/Plane/BoundaryArcJoin.lean",
       "sha256": "f32a70c4fa5412e0d4e30ba50692e90f33d6b776bdc153fc8bd03837808666d4",
       "code_sha256": "ff04a17aea717730bb1ed1bfdf2c26bdb470c3d7dbb49988e60021d2c3142180",
@@ -3660,6 +3678,12 @@
       "sha256": "cd607f36fe2b70f9e469c57e030e4c70bbe906930a2c81775c3421f90cafec64",
       "code_sha256": "03ba0712e131a0df310903ae1d039bcab409f684893d68a613fc01c5dacd0ed9",
       "bytes": 4999
+    },
+    {
+      "path": "FiniteAvalanches/Support/Plane/BoundaryGradientBasis.lean",
+      "sha256": "9cc41302918269c66f494a62191a64b67b83054c20c8b018cb75fda810726ef2",
+      "code_sha256": "1cb333e5d57c962b2bde34764fee722d51138fd9cfff353d31cac5c7d1323a48",
+      "bytes": 1708
     },
     {
       "path": "FiniteAvalanches/Support/Plane/BoundaryPairArms.lean",
@@ -3720,6 +3744,12 @@
       "sha256": "3e53d9d63c4e238961ec112524eaa0497725212f4a3643b12012e55a50a87770",
       "code_sha256": "41e693a3c52fff7bac8471816d36ae0776f2c5c71333ad4e14e8f32719fc8eae",
       "bytes": 32564
+    },
+    {
+      "path": "FiniteAvalanches/Support/Plane/CopiedSimplePath.lean",
+      "sha256": "71d6f7aabced29502769b0de8d54e62ddf9edcf130acbec779a0f0b4c3f9460d",
+      "code_sha256": "9554c387e37988007ea52605bcdfbd44c3417b3886d1907d6174712680f9e624",
+      "bytes": 2355
     },
     {
       "path": "FiniteAvalanches/Support/Plane/CopiedTreeCardinality.lean",
@@ -4128,6 +4158,12 @@
       "sha256": "35ace87a0c899869924badad4ee6f745d86b63338852f9aab373f0c385e8c46c",
       "code_sha256": "e09565cda24af7f76679c6313fb48093cc0bc4aa6ea49a5def0371b1f5b6cf67",
       "bytes": 2090
+    },
+    {
+      "path": "FiniteAvalanches/Support/Plane/TwoPoleReduction.lean",
+      "sha256": "2fdfafb4e4448012a6b3c8b1d75c4f0f18a8538031d6301e5b3105754f3f765d",
+      "code_sha256": "1a5b1c3d12d520692cc70c1483b719a45d44b1ebe5b0328efcda6f68d93235ce",
+      "bytes": 2188
     },
     {
       "path": "FiniteAvalanches/Support/Plane/TwoPoleSeparation.lean",
@@ -6672,7 +6708,6 @@
   "main_external_inputs": [
     "FiniteAvalanches.External.BarlowMasson2011.adjacent_ust_path_euclidean_tail",
     "FiniteAvalanches.External.SandpileLimit.exists_infiniteVolumeLaw",
-    "FiniteAvalanches.External.finite_plane_dual_bond_cycle",
     "FiniteAvalanches.External.finite_plane_geometric_dual",
     "FiniteAvalanches.External.finite_plane_two_pole_topology",
     "FiniteAvalanches.External.kenyonWilson_pairingGroves_resistanceMinor",
@@ -6788,6 +6823,7 @@
     "FiniteAvalanches.External.ProvedConsumers.voltage_exact_type",
     "FiniteAvalanches.External.allMinors_matrixTree",
     "FiniteAvalanches.External.disk_alternation_impossible",
+    "FiniteAvalanches.External.finite_plane_dual_bond_cycle",
     "FiniteAvalanches.External.finite_plane_dual_connected",
     "FiniteAvalanches.External.finite_plane_tree_complement",
     "FiniteAvalanches.External.kirchhoff_meanTreePathCurrent",
@@ -7212,8 +7248,8 @@
     },
     {
       "path": "audit/trusted-inputs.json",
-      "sha256": "13a9cd2b2b9f12ac3027fefd1a6ead945c4883eb4426adb5dab060c40e555800",
-      "bytes": 478435
+      "sha256": "a18c96878068d2a00caf4981eee4663f9fd139c64a25fa9ff83180b5d9987874",
+      "bytes": 535972
     },
     {
       "path": "lake-manifest.json",
