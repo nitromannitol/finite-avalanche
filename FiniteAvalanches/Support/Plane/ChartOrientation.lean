@@ -618,6 +618,78 @@ theorem loopDeg_add_const_of_norm_lt (q : ℂ) (γ : C(unitInterval, ℂ))
         using hsmall t)
   simpa only [loopDeg_const] using heq
 
+/-- A positively traversed circle has winding degree one around any point
+strictly inside it. -/
+theorem loopDeg_circle_sub_const_of_norm_lt {r : ℝ} (hr : r ≠ 0) {a : ℂ}
+    (ha : ‖a‖ < |r|) :
+    ∃ h : ∀ t, (circleLoop r - ContinuousMap.const unitInterval a) t ≠ 0,
+      loopDeg (circleLoop r - ContinuousMap.const unitInterval a) h = 1 := by
+  have hnorm : ∀ t, ‖circleLoop r t‖ = |r| := by
+    intro t
+    change ‖circleMap 0 r _‖ = |r|
+    exact norm_circleMap_zero _ _
+  have hne : ∀ t, (circleLoop r - ContinuousMap.const unitInterval a) t ≠ 0 := by
+    intro t ht
+    have he : circleLoop r t = a := sub_eq_zero.mp ht
+    have := hnorm t
+    rw [he] at this
+    exact (ne_of_lt ha) this
+  have hc : circleLoop r 0 = circleLoop r 1 := by
+    simpa [circleLoop] using (periodic_circleMap 0 r 0).symm
+  have hclosed : (circleLoop r - ContinuousMap.const unitInterval a) 0 =
+      (circleLoop r - ContinuousMap.const unitInterval a) 1 := by
+    change circleLoop r 0 - a = circleLoop r 1 - a
+    rw [hc]
+  have he := loopDeg_eq_of_norm_sub_lt
+    (circleLoop r - ContinuousMap.const unitInterval a) (circleLoop r) hne
+    (circleLoop_ne_zero hr) hclosed hc (fun t => by
+      change ‖circleLoop r t - a - circleLoop r t‖ < ‖circleLoop r t‖
+      rw [show circleLoop r t - a - circleLoop r t = -a by abel, norm_neg, hnorm]
+      exact ha)
+  exact ⟨hne, he.trans (loopDeg_circle hr)⟩
+
+/-- A circle has winding degree zero around any point strictly outside it. -/
+theorem loopDeg_circle_sub_const_of_norm_gt {r : ℝ} {a : ℂ}
+    (ha : |r| < ‖a‖) :
+    ∃ h : ∀ t, (circleLoop r - ContinuousMap.const unitInterval a) t ≠ 0,
+      loopDeg (circleLoop r - ContinuousMap.const unitInterval a) h = 0 := by
+  have hc : circleLoop r 0 = circleLoop r 1 := by
+    simpa [circleLoop] using (periodic_circleMap 0 r 0).symm
+  have hsmall : ∀ t, ‖circleLoop r t‖ < ‖-a‖ := by
+    intro t
+    change ‖circleMap 0 r _‖ < ‖-a‖
+    rw [norm_circleMap_zero, norm_neg]
+    exact ha
+  obtain ⟨hne, hdeg⟩ := loopDeg_add_const_of_norm_lt (-a) (circleLoop r) hc hsmall
+  have heq : ContinuousMap.const unitInterval (-a) + circleLoop r =
+      circleLoop r - ContinuousMap.const unitInterval a := by
+    ext t
+    simp only [ContinuousMap.add_apply, ContinuousMap.sub_apply, ContinuousMap.const_apply]
+    abel
+  refine ⟨?_, ?_⟩
+  · simpa only [heq] using hne
+  · simpa only [heq] using hdeg
+
+/-- An oriented chart sends the interior and exterior of a circle to points
+whose winding degrees about the image curve differ by one. -/
+theorem Source.OrientedChart.circle_side_degree (chart : Source.OrientedChart)
+    {r : ℝ} (hr : r ≠ 0) {a b : ℂ} (ha : ‖a‖ < |r|) (hb : |r| < ‖b‖) :
+    ∃ (hca : ∀ t, circleLoop r t ≠ a) (hcb : ∀ t, circleLoop r t ≠ b),
+      loopDeg (slice (chart.isotopyLoop a (circleLoop r)) 1)
+          (fun t => chart.isotopyLoop_ne_zero a (circleLoop r) hca (t, 1)) -
+        loopDeg (slice (chart.isotopyLoop b (circleLoop r)) 1)
+          (fun t => chart.isotopyLoop_ne_zero b (circleLoop r) hcb (t, 1)) = 1 := by
+  obtain ⟨hca, hda⟩ := loopDeg_circle_sub_const_of_norm_lt hr ha
+  obtain ⟨hcb, hdb⟩ := loopDeg_circle_sub_const_of_norm_gt hb
+  have hca' : ∀ t, circleLoop r t ≠ a := fun t => sub_ne_zero.mp (hca t)
+  have hcb' : ∀ t, circleLoop r t ≠ b := fun t => sub_ne_zero.mp (hcb t)
+  have hc : circleLoop r 0 = circleLoop r 1 := by
+    simpa [circleLoop] using (periodic_circleMap 0 r 0).symm
+  refine ⟨hca', hcb', ?_⟩
+  rw [chart.isotopyLoop_degree a (circleLoop r) hca' hc,
+    chart.isotopyLoop_degree b (circleLoop r) hcb' hc, hda, hdb]
+  exact sub_zero 1
+
 /-- If the quotient of the offsets from two points follows the coordinate
 signs of a positive circle, the winding degree increases by one between the
 points. -/
