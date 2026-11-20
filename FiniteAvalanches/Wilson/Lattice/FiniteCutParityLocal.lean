@@ -73,5 +73,47 @@ theorem even_commonCutCopies_of_even_incidence (G : Multigraph V E) (H : Multigr
   rw [hcard]
   exact hsum
 
+/-- If all other vertices have even incidence with a dual cut, then so does a
+specified vertex; every original copy has two distinct endpoints. -/
+theorem even_dualCutIncidentCopies_of_others (G : Multigraph V E) (H : Multigraph W E)
+    (D : Set W) (v₀ : V) (hothers : ∀ v, v ≠ v₀ → Even (dualCutIncidentCopies G H D v).card) :
+    Even (dualCutIncidentCopies G H D v₀).card := by
+  let f : V → E → ZMod 2 := fun v e =>
+    if H.crosses D e then (if G.left e = v then 1 else 0) + (if G.right e = v then 1 else 0) else 0
+  have hvertex (v : V) : (∑ e : E, f v e) = (dualCutIncidentCopies G H D v).card := by
+    rw [Finset.card_eq_sum_ones, Nat.cast_sum]
+    simp only [Nat.cast_one]
+    rw [dualCutIncidentCopies, Finset.sum_filter]
+    apply Finset.sum_congr rfl
+    intro e _
+    dsimp only [f]
+    by_cases hh : H.crosses D e
+    · by_cases hl : G.left e = v <;> by_cases hr : G.right e = v
+      · exact (G.loopless e (hl.trans hr.symm)).elim
+      · simp [hh, hl, hr]
+      · simp [hh, hl, hr]
+      · simp [hh, hl, hr]
+    · simp [hh]
+  have htotal : (∑ v : V, (dualCutIncidentCopies G H D v).card : ZMod 2) = 0 := by
+    simp_rw [← hvertex]
+    rw [Finset.sum_comm]
+    apply Finset.sum_eq_zero
+    intro e _
+    dsimp only [f]
+    by_cases hh : H.crosses D e
+    · simp only [hh, if_true, Finset.sum_add_distrib]
+      simp only [eq_comm, Finset.sum_ite_eq', Finset.mem_univ, if_true]
+      exact ZMod.natCast_self 2
+    · simp [hh]
+  have hsingle : (∑ v : V, (dualCutIncidentCopies G H D v).card : ZMod 2) =
+      (dualCutIncidentCopies G H D v₀).card := by
+    apply Finset.sum_eq_single v₀
+    · intro v _ hv
+      exact (hothers v hv).natCast_zmod_two
+    · intro h
+      exact (h (Finset.mem_univ v₀)).elim
+  rw [hsingle] at htotal
+  exact ZMod.natCast_eq_zero_iff_even.mp htotal
+
 end
 end FiniteAvalanches.Wilson.Lattice
