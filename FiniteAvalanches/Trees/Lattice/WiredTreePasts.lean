@@ -112,7 +112,7 @@ theorem inPast_bounded {Γ : Finset (Site 2)} {ω : EdgeField}
     (hL : WiredTreeLink (T := T) s ι Γ ω) {b : Site 2} (hbΓ : b ∈ Γ)
     (hnb : ∀ z, (lattice 2).Adj b z → z ∈ Γ) {k : ℕ}
     (hbox : ∀ x : Site 2, |x 0| ≤ k → |x 1| ≤ k → ∀ z, (lattice 2).Adj x z → z ∈ Γ)
-    (hcert : ω ∉ tightEvent b (boxFinset k)) {x : Site 2} (hx : x ∈ Γ)
+    (hcert : ω ∉ tightEvent b (centeredBox k)) {x : Site 2} (hx : x ∈ Γ)
     (hpast : ι b ∈ (path hT s (ι x)).support) : |x 0| ≤ k ∧ |x 1| ≤ k := by
   have hne : ι b ≠ s := hL.ne_root b hbΓ
   obtain ⟨w, hadj, q', hq⟩ := SimpleGraph.Walk.exists_eq_cons_of_ne hne (path hT (ι b) s)
@@ -120,7 +120,7 @@ theorem inPast_bounded {Γ : Finset (Site 2)} {ω : EdgeField}
   · obtain ⟨z, hz, hzΓ⟩ := hL.exit b hbΓ hadj
     exact absurd (hnb z hz) hzΓ
   have hbc : (toGraph ω).Adj b c := (hL.adj b hbΓ c hc).mp hadj
-  have hcertified : DualCertified ω (boxFinset k : Set (Site 2)) ⟨s(b, c), hbc.1⟩ := by
+  have hcertified : DualCertified ω (centeredBox k : Set (Site 2)) ⟨s(b, c), hbc.1⟩ := by
     by_contra hno
     exact hcert ⟨⟨s(b, c), hbc.1⟩, Sym2.mem_mk_left _ _, hbc.2, hno⟩
   obtain ⟨u, v, huv, hlink⟩ := hcertified
@@ -129,7 +129,7 @@ theorem inPast_bounded {Γ : Finset (Site 2)} {ω : EdgeField}
     have := (dualEdgeOf ⟨s(b, c), hbc.1⟩).property
     rw [huv, he] at this
     exact (lattice 2).loopless.irrefl v this
-  have hu : u ∈ boxFinset k := by
+  have hu : u ∈ centeredBox k := by
     rcases Relation.ReflTransGen.cases_head hlink with he | ⟨_, hstep, _⟩
     · exact absurd he huv_ne
     · exact hstep.1
@@ -137,11 +137,11 @@ theorem inPast_bounded {Γ : Finset (Site 2)} {ω : EdgeField}
   have hPbound : ∀ z ∈ P.reverse.support, |z 0| ≤ (k : ℤ) ∧ |z 1| ≤ (k : ℤ) := by
     intro z hz
     rw [SimpleGraph.Walk.support_reverse, List.mem_reverse] at hz
-    have hzb : z ∈ boxFinset k := by
+    have hzb : z ∈ centeredBox k := by
       rcases hP z hz with rfl | hz'
       · exact hu
       · exact hz'
-    rw [mem_boxFinset] at hzb
+    rw [mem_centeredBox] at hzb
     exact ⟨abs_le.mpr (hzb 0), abs_le.mpr (hzb 1)⟩
   obtain ⟨S, hSbox, hSbc, hSsep⟩ :=
     exists_box_separation_of_dual_walk ω hbc huv P.reverse k hPbound

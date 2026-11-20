@@ -17,22 +17,22 @@ open scoped Classical
 noncomputable section
 
 /-- The sites of the box `[-m, m]²`. -/
-def boxFinset (m : ℕ) : Finset (Site 2) := Finset.Icc (fun _ => -(m : ℤ)) (fun _ => (m : ℤ))
+def centeredBox (m : ℕ) : Finset (Site 2) := Finset.Icc (fun _ => -(m : ℤ)) (fun _ => (m : ℤ))
 
-theorem mem_boxFinset {m : ℕ} {x : Site 2} : x ∈ boxFinset m ↔ ∀ i, -(m : ℤ) ≤ x i ∧ x i ≤ m := by
-  simp only [boxFinset, Finset.mem_Icc, Pi.le_def]
+theorem mem_centeredBox {m : ℕ} {x : Site 2} : x ∈ centeredBox m ↔ ∀ i, -(m : ℤ) ≤ x i ∧ x i ≤ m := by
+  simp only [centeredBox, Finset.mem_Icc, Pi.le_def]
   exact ⟨fun h i => ⟨h.1 i, h.2 i⟩, fun h => ⟨fun i => (h i).1, fun i => (h i).2⟩⟩
 
-theorem boxFinset_mono {m n : ℕ} (h : m ≤ n) : boxFinset m ⊆ boxFinset n := by
+theorem centeredBox_mono {m n : ℕ} (h : m ≤ n) : centeredBox m ⊆ centeredBox n := by
   intro x hx
-  rw [mem_boxFinset] at hx ⊢
+  rw [mem_centeredBox] at hx ⊢
   intro i
   have := hx i
   have hmn : (m : ℤ) ≤ n := by exact_mod_cast h
   constructor <;> omega
 
-theorem exists_subset_boxFinset (S : Finset (Site 2)) : ∃ m, S ⊆ boxFinset m := by
-  refine ⟨∑ z ∈ S, ((z 0).natAbs + (z 1).natAbs), fun z hz => mem_boxFinset.mpr fun i => ?_⟩
+theorem exists_subset_centeredBox (S : Finset (Site 2)) : ∃ m, S ⊆ centeredBox m := by
+  refine ⟨∑ z ∈ S, ((z 0).natAbs + (z 1).natAbs), fun z hz => mem_centeredBox.mpr fun i => ?_⟩
   have hle : (z 0).natAbs + (z 1).natAbs ≤ ∑ w ∈ S, ((w 0).natAbs + (w 1).natAbs) :=
     Finset.single_le_sum (f := fun w : Site 2 => (w 0).natAbs + (w 1).natAbs)
       (fun _ _ => Nat.zero_le _) hz
@@ -43,20 +43,20 @@ theorem exists_subset_boxFinset (S : Finset (Site 2)) : ∃ m, S ⊆ boxFinset m
   rw [Int.natCast_natAbs] at hc
   exact abs_le.mp hc
 
-theorem eventually_subset_boxFinset (S : Finset (Site 2)) : ∀ᶠ m in atTop, S ⊆ boxFinset m := by
-  obtain ⟨m, hm⟩ := exists_subset_boxFinset S
+theorem eventually_subset_centeredBox (S : Finset (Site 2)) : ∀ᶠ m in atTop, S ⊆ centeredBox m := by
+  obtain ⟨m, hm⟩ := exists_subset_centeredBox S
   filter_upwards [eventually_ge_atTop m] with n hn
-  exact hm.trans (boxFinset_mono hn)
+  exact hm.trans (centeredBox_mono hn)
 
 /-- Sites of the inner boundary of a box lie on its border. -/
-theorem not_mem_boxFinset_of_innerBoundary {m n : ℕ} (hnm : n < m) {u : Site 2}
-    (hu : u ∈ innerBoundary (boxFinset m)) : u ∉ boxFinset n := by
+theorem not_mem_centeredBox_of_innerBoundary {m n : ℕ} (hnm : n < m) {u : Site 2}
+    (hu : u ∈ innerBoundary (centeredBox m)) : u ∉ centeredBox n := by
   obtain ⟨hum, y, hy, hyb⟩ := hu
-  rw [mem_boxFinset] at hum
+  rw [mem_centeredBox] at hum
   intro hun
-  rw [mem_boxFinset] at hun
+  rw [mem_centeredBox] at hun
   apply hyb
-  rw [mem_boxFinset]
+  rw [mem_centeredBox]
   have hmn : (n : ℤ) < m := by exact_mod_cast hnm
   obtain ⟨i, rfl | rfl⟩ := hy
   · intro j
@@ -170,7 +170,7 @@ include hT in
 /-- In a one-ended spanning tree the past events of `B` hold for all large boxes exactly
 for the complement of the infinite component. -/
 theorem eventually_pastEvent_iff {B : Finset (Site 2)} (hB : B.Nonempty) (S : Finset (Site 2)) :
-    (∀ᶠ m in atTop, ω ∈ pastEvent B S (boxFinset m)) ↔
+    (∀ᶠ m in atTop, ω ∈ pastEvent B S (centeredBox m)) ↔
       (S : Set (Site 2)) = pastSet ω hU B := by
   constructor
   · intro h
@@ -196,18 +196,18 @@ theorem eventually_pastEvent_iff {B : Finset (Site 2)} (hB : B.Nonempty) (S : Fi
       obtain ⟨⟨w, b⟩, hwC, hbB, hwb⟩ :=
         SimpleGraph.ComponentCompl.exists_adj_boundary_pair hT.connected.preconnected
           (Finset.coe_nonempty.mpr hB) C
-      obtain ⟨M, hM⟩ := exists_subset_boxFinset hCfin.toFinset
+      obtain ⟨M, hM⟩ := exists_subset_centeredBox hCfin.toFinset
       have hm := hm1 (max m1 (M + 1)) (le_max_left _ _)
       obtain ⟨u, hu, hwu⟩ := hm.2.2 b hbB w (hCS w hwC) hwb.symm
       have huC : u ∈ C := mem_componentCompl_of_linked (fun _ hz => hz.2) C hwC hwu
-      exact not_mem_boxFinset_of_innerBoundary (by omega) hu
+      exact not_mem_centeredBox_of_innerBoundary (by omega) hu
         (hM (hCfin.mem_toFinset.mpr huC))
   · intro hS
     have hBS : B ⊆ S := by
       intro b hb
       have : b ∈ (S : Set (Site 2)) := hS ▸ subset_pastSet ω hU B hb
       exact this
-    obtain ⟨m0, hm0⟩ := exists_subset_boxFinset (B.biUnion nbrFinset)
+    obtain ⟨m0, hm0⟩ := exists_subset_centeredBox (B.biUnion nbrFinset)
     filter_upwards [eventually_ge_atTop m0] with m hm
     refine ⟨hBS, fun x hx hxB y hxy => ?_, fun b hb w hw hbw => ?_⟩
     · by_contra hy
@@ -225,15 +225,15 @@ theorem eventually_pastEvent_iff {B : Finset (Site 2)} (hB : B.Nonempty) (S : Fi
         apply hw
         have : w ∈ (S : Set (Site 2)) := hS ▸ hwC
         exact this
-      have hwbox : w ∈ boxFinset m := boxFinset_mono hm (hm0 (Finset.mem_biUnion.mpr
+      have hwbox : w ∈ centeredBox m := centeredBox_mono hm (hm0 (Finset.mem_biUnion.mpr
         ⟨b, hb, (FiniteAvalanches.Sandpile.FiniteWired.mem_neighbors_iff b w).mpr (toGraph_le_lattice ω hbw)⟩))
       obtain ⟨z, hzC, hzbox⟩ := ((infComp_infinite ω hU B).sdiff
-        (boxFinset m).finite_toSet).nonempty
+        (centeredBox m).finite_toSet).nonempty
       obtain ⟨u, hu, hwu⟩ := linked_exit_out
         (linked_of_mem_componentCompl (infComp ω hU B) hwC hzC) hwbox hzbox
       refine ⟨u, hu, ?_⟩
-      have he : (boxFinset m : Set (Site 2)) ∩ (B : Set (Site 2))ᶜ =
-          (boxFinset m : Set (Site 2)) \ (B : Set (Site 2)) := rfl
+      have he : (centeredBox m : Set (Site 2)) ∩ (B : Set (Site 2))ᶜ =
+          (centeredBox m : Set (Site 2)) \ (B : Set (Site 2)) := rfl
       rw [← he]
       exact hwu
 

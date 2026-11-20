@@ -253,10 +253,10 @@ theorem treeLaw_pastSites_le {B S W : Finset Site2} (hBΓ : B ⊆ Γ) (hWΓ : W 
 theorem treeLaw_pastSites_not_subset_le {B : Finset Site2} (hBΓ : B ⊆ Γ)
     (hnbr : ∀ b ∈ B, ∀ z, (lattice 2).Adj b z → z ∈ Γ) (k : ℕ)
     (hbox : ∀ x : Site2, |x 0| ≤ k → |x 1| ≤ k → ∀ z, (lattice 2).Adj x z → z ∈ Γ) :
-    (graph Γ).treeLaw {t | ¬pastSites Γ B t ⊆ boxFinset k} ≤
-      ∑ b ∈ B, forestLaw (Γ : Set Site2) (radius Γ) (tightEvent b (boxFinset k)) := by
-  have hsub : {t : (graph Γ).SpanningTree | ¬pastSites Γ B t ⊆ boxFinset k} ⊆
-      ⋃ b ∈ B, {t | gammaField Γ t ∈ tightEvent b (boxFinset k)} := by
+    (graph Γ).treeLaw {t | ¬pastSites Γ B t ⊆ centeredBox k} ≤
+      ∑ b ∈ B, forestLaw (Γ : Set Site2) (radius Γ) (tightEvent b (centeredBox k)) := by
+  have hsub : {t : (graph Γ).SpanningTree | ¬pastSites Γ B t ⊆ centeredBox k} ⊆
+      ⋃ b ∈ B, {t | gammaField Γ t ∈ tightEvent b (centeredBox k)} := by
     intro t ht
     simp only [Set.mem_setOf_eq, Finset.not_subset] at ht
     obtain ⟨x, hx, hxk⟩ := ht
@@ -267,17 +267,17 @@ theorem treeLaw_pastSites_not_subset_le {B : Finset Site2} (hBΓ : B ⊆ Γ)
     obtain ⟨h0, h1⟩ := inPast_bounded (hT := treeGraph_isTree Γ t) (wiredTreeLink Γ t) (hBΓ hb)
       (hnbr b hb) hbox hcert hxΓ hmem
     apply hxk
-    rw [mem_boxFinset]
+    rw [mem_centeredBox]
     intro i
     fin_cases i
     · exact abs_le.mp h0
     · exact abs_le.mp h1
-  calc (graph Γ).treeLaw {t | ¬pastSites Γ B t ⊆ boxFinset k}
-      ≤ (graph Γ).treeLaw (⋃ b ∈ B, {t | gammaField Γ t ∈ tightEvent b (boxFinset k)}) :=
+  calc (graph Γ).treeLaw {t | ¬pastSites Γ B t ⊆ centeredBox k}
+      ≤ (graph Γ).treeLaw (⋃ b ∈ B, {t | gammaField Γ t ∈ tightEvent b (centeredBox k)}) :=
         measure_mono hsub
-    _ ≤ ∑ b ∈ B, (graph Γ).treeLaw {t | gammaField Γ t ∈ tightEvent b (boxFinset k)} :=
+    _ ≤ ∑ b ∈ B, (graph Γ).treeLaw {t | gammaField Γ t ∈ tightEvent b (centeredBox k)} :=
         measure_biUnion_finset_le _ _
-    _ = ∑ b ∈ B, forestLaw (Γ : Set Site2) (radius Γ) (tightEvent b (boxFinset k)) := by
+    _ = ∑ b ∈ B, forestLaw (Γ : Set Site2) (radius Γ) (tightEvent b (centeredBox k)) := by
         refine Finset.sum_congr rfl fun b _ => ?_
         exact treeLaw_preimage_gammaField Γ _ (measurableSet_tightEvent b _)
 

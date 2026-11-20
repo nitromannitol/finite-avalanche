@@ -20,11 +20,11 @@ noncomputable section
 
 /-- The past of `B` is `S` in all large boxes. -/
 def pastLimitEvent (B S : Finset (Site 2)) : Set EdgeField :=
-  {ω | ∀ᶠ m in atTop, ω ∈ pastEvent B S (boxFinset m)}
+  {ω | ∀ᶠ m in atTop, ω ∈ pastEvent B S (centeredBox m)}
 
 theorem measurableSet_pastLimitEvent (B S : Finset (Site 2)) :
     MeasurableSet (pastLimitEvent B S) := by
-  have h : pastLimitEvent B S = ⋃ N : ℕ, ⋂ m : ℕ, ⋂ (_ : N ≤ m), pastEvent B S (boxFinset m) := by
+  have h : pastLimitEvent B S = ⋃ N : ℕ, ⋂ m : ℕ, ⋂ (_ : N ≤ m), pastEvent B S (centeredBox m) := by
     ext ω
     simp [pastLimitEvent, eventually_atTop]
   rw [h]
@@ -32,21 +32,21 @@ theorem measurableSet_pastLimitEvent (B S : Finset (Site 2)) :
     (isClopen_pastEvent B S _).isClosed.measurableSet
 
 /-- A box containing the lattice neighbours of `B`. -/
-def nbrBox (B : Finset (Site 2)) : ℕ := (exists_subset_boxFinset (B.biUnion nbrFinset)).choose
+def nbrBox (B : Finset (Site 2)) : ℕ := (exists_subset_centeredBox (B.biUnion nbrFinset)).choose
 
 theorem nbr_mem_nbrBox {B : Finset (Site 2)} {b w : Site 2} (hb : b ∈ B)
-    (hbw : (lattice 2).Adj b w) : w ∈ boxFinset (nbrBox B) :=
-  (exists_subset_boxFinset (B.biUnion nbrFinset)).choose_spec (Finset.mem_biUnion.mpr
+    (hbw : (lattice 2).Adj b w) : w ∈ centeredBox (nbrBox B) :=
+  (exists_subset_centeredBox (B.biUnion nbrFinset)).choose_spec (Finset.mem_biUnion.mpr
     ⟨b, hb, (FiniteAvalanches.Sandpile.FiniteWired.mem_neighbors_iff b w).mpr hbw⟩)
 
 theorem pastEvent_antitone (B S : Finset (Site 2)) :
-    Antitone fun m => pastEvent B S (boxFinset (m + nbrBox B)) := by
+    Antitone fun m => pastEvent B S (centeredBox (m + nbrBox B)) := by
   intro m m' hmm'
-  exact pastEvent_anti (boxFinset_mono (by omega)) fun b hb w hw =>
-    boxFinset_mono (by omega) (nbr_mem_nbrBox hb hw)
+  exact pastEvent_anti (centeredBox_mono (by omega)) fun b hb w hw =>
+    centeredBox_mono (by omega) (nbr_mem_nbrBox hb hw)
 
 theorem pastLimitEvent_eq (B S : Finset (Site 2)) :
-    pastLimitEvent B S = ⋂ m, pastEvent B S (boxFinset (m + nbrBox B)) := by
+    pastLimitEvent B S = ⋂ m, pastEvent B S (centeredBox (m + nbrBox B)) := by
   ext ω
   simp only [pastLimitEvent, Set.mem_setOf_eq, Set.mem_iInter]
   constructor
@@ -61,14 +61,14 @@ theorem pastLimitEvent_eq (B S : Finset (Site 2)) :
 
 /-- The local past events converge to the limiting past event. -/
 theorem tendsto_pastEvent (μ : Measure EdgeField) [IsFiniteMeasure μ] (B S : Finset (Site 2)) :
-    Tendsto (fun m => μ (pastEvent B S (boxFinset m))) atTop (𝓝 (μ (pastLimitEvent B S))) := by
+    Tendsto (fun m => μ (pastEvent B S (centeredBox m))) atTop (𝓝 (μ (pastLimitEvent B S))) := by
   have h := tendsto_measure_iInter_atTop (μ := μ)
-    (fun m => (isClopen_pastEvent B S (boxFinset (m + nbrBox B))).isClosed.measurableSet
+    (fun m => (isClopen_pastEvent B S (centeredBox (m + nbrBox B))).isClosed.measurableSet
       |>.nullMeasurableSet) (pastEvent_antitone B S) ⟨0, measure_ne_top _ _⟩
   rw [← pastLimitEvent_eq] at h
-  have h' : Tendsto (fun m => μ (pastEvent B S (boxFinset (m + nbrBox B)))) atTop
+  have h' : Tendsto (fun m => μ (pastEvent B S (centeredBox (m + nbrBox B)))) atTop
       (𝓝 (μ (pastLimitEvent B S))) := h
-  exact (tendsto_add_atTop_iff_nat (f := fun m => μ (pastEvent B S (boxFinset m)))
+  exact (tendsto_add_atTop_iff_nat (f := fun m => μ (pastEvent B S (centeredBox m)))
     (nbrBox B)).mp h'
 
 /-- The wired uniform spanning tree of `ℤ²` as a measure. -/
@@ -120,11 +120,11 @@ theorem hasSum_pastLimitEvent {B : Finset (Site 2)} (hB : B.Nonempty) :
 
 /-- The tightness events at a site vanish under the wired uniform spanning tree. -/
 theorem tendsto_tightEvent (b : Site 2) :
-    Tendsto (fun k => ustMeasure (tightEvent b (boxFinset k))) atTop (𝓝 0) := by
+    Tendsto (fun k => ustMeasure (tightEvent b (centeredBox k))) atTop (𝓝 0) := by
   have h := tendsto_measure_iInter_atTop (μ := ustMeasure)
-    (fun k => (isClopen_tightEvent b (boxFinset k)).isClosed.measurableSet.nullMeasurableSet)
-    (fun k k' hkk' => tightEvent_anti b (boxFinset_mono hkk')) ⟨0, measure_ne_top _ _⟩
-  have hnull : ustMeasure (⋂ k, tightEvent b (boxFinset k)) = 0 := by
+    (fun k => (isClopen_tightEvent b (centeredBox k)).isClosed.measurableSet.nullMeasurableSet)
+    (fun k k' hkk' => tightEvent_anti b (centeredBox_mono hkk')) ⟨0, measure_ne_top _ _⟩
+  have hnull : ustMeasure (⋂ k, tightEvent b (centeredBox k)) = 0 := by
     apply measure_mono_null (t := {ω | ¬(toGraph (dualField ω)).Connected})
     · intro ω hω hconn
       obtain ⟨k, hk⟩ := (eventually_not_mem_tightEvent ω hconn b).exists

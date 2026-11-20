@@ -81,13 +81,13 @@ theorem isClopen_tightEvent (b : Site 2) (W : Finset (Site 2)) :
 
 /-- With a connected dual field, every edge is eventually certified inside large boxes. -/
 theorem eventually_dualCertified (ω : EdgeField) (hD : (toGraph (dualField ω)).Connected)
-    (e : LatticeEdge) : ∀ᶠ m in atTop, DualCertified ω (boxFinset m : Set (Site 2)) e := by
+    (e : LatticeEdge) : ∀ᶠ m in atTop, DualCertified ω (centeredBox m : Set (Site 2)) e := by
   obtain ⟨⟨u, v⟩, huv⟩ := Quot.exists_rep (dualEdgeOf e).val
   obtain ⟨p⟩ := hD.preconnected u v
-  filter_upwards [eventually_subset_boxFinset p.support.toFinset] with m hm
+  filter_upwards [eventually_subset_centeredBox p.support.toFinset] with m hm
   refine ⟨u, v, huv.symm, ?_⟩
   have key : ∀ {a c : Site 2} (q : (toGraph (dualField ω)).Walk a c),
-      (∀ z ∈ q.support, z ∈ boxFinset m) → DualLinked ω (boxFinset m : Set (Site 2)) a c := by
+      (∀ z ∈ q.support, z ∈ centeredBox m) → DualLinked ω (centeredBox m : Set (Site 2)) a c := by
     intro a c q
     induction q with
     | nil => intro _; exact Relation.ReflTransGen.refl
@@ -100,8 +100,8 @@ theorem eventually_dualCertified (ω : EdgeField) (hD : (toGraph (dualField ω))
 
 /-- With a connected dual field, the tightness events at `b` are eventually empty. -/
 theorem eventually_not_mem_tightEvent (ω : EdgeField) (hD : (toGraph (dualField ω)).Connected)
-    (b : Site 2) : ∀ᶠ m in atTop, ω ∉ tightEvent b (boxFinset m) := by
-  have hall : ∀ᶠ m in atTop, ∀ e ∈ edgesAt {b}, DualCertified ω (boxFinset m : Set (Site 2)) e :=
+    (b : Site 2) : ∀ᶠ m in atTop, ω ∉ tightEvent b (centeredBox m) := by
+  have hall : ∀ᶠ m in atTop, ∀ e ∈ edgesAt {b}, DualCertified ω (centeredBox m : Set (Site 2)) e :=
     (edgesAt {b}).eventually_all.mpr fun e _ => eventually_dualCertified ω hD e
   filter_upwards [hall] with m hm
   rintro ⟨e, hbe, -, hno⟩
