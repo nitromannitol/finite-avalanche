@@ -16,8 +16,8 @@ run_cmd do
   let targets ← liftIO <| IO.ofExcept (summary.getObjValAs? (Array Json) "retained_targets")
   let retained ← liftIO <| IO.ofExcept <| targets.mapM fun row => do
     MainComparatorLiteral.decodeName (← row.getObjVal? "name")
-  unless retained.size == 8 && (Std.HashSet.ofArray retained).size == 8 do
-    throwError "PAIR_RETAINED_TARGETS_NOT_EXACT_8"
+  unless retained.size == 0 && (Std.HashSet.ofArray retained).size == 0 do
+    throwError "PAIR_RETAINED_TARGETS_NOT_EXACT_0"
   let targetName := `FiniteAvalanchesAudit.MainOrigin.finite_avalanches_origin
   let some (.thmInfo target) := env.find? targetName | throwError "PAIR_TARGET_NOT_THEOREM"
   unless target.levelParams == levels && target.type.equal mainType do
@@ -42,7 +42,7 @@ run_cmd do
     let axs ← collectAxioms ci.name
     for ax in axs do
       unless MainComparatorReplay.primitives.contains ax || retained.contains ax do
-        throwError "PAIR_SEMANTIC_AXIOM_OUTSIDE_PRIMITIVES_PLUS_8 {ci.name} {ax}"
+        throwError "PAIR_SEMANTIC_AXIOM_OUTSIDE_PRIMITIVES_PLUS_0 {ci.name} {ax}"
       semanticUnion := semanticUnion.insert ax
   unless (semanticUnion.toArray.map Name.toString).qsort (· < ·) == semanticAxioms.qsort (· < ·) do
     throwError "PAIR_SEMANTIC_AXIOM_UNION_DIFFERS_FROM_ACTUAL_CAPTURE"
@@ -78,6 +78,6 @@ run_cmd do
   let output : System.FilePath := "audit/main-comparator/verify-solution"
   liftIO <| IO.FS.createDirAll output
   liftIO <| IO.FS.writeFile (output / "SUMMARY.json") (result.pretty ++ "\n")
-  logInfo m!"PAIR_SOLUTION_KERNEL_CHECK full MAIN type and complete meaning declarations match; all8 assertions; comparator pending"
+  logInfo m!"PAIR_SOLUTION_KERNEL_CHECK full MAIN type and complete meaning declarations match; all0 assertions; comparator pending"
 
 #print axioms FiniteAvalanchesAudit.MainOrigin.finite_avalanches_origin

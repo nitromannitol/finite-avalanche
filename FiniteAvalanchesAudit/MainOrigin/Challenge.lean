@@ -489,23 +489,23 @@ def runReplay : CommandElabM Unit := do
   let schema ← liftIO <| IO.ofExcept (summary.getObjValAs? String "schema")
   unless schema == "main-comparator-full-constantinfo-dag-v1" do throwError "REPLAY_SCHEMA_MISMATCH"
   let retainedCount ← liftIO <| IO.ofExcept (summary.getObjValAs? Nat "retained_count")
-  unless retainedCount == 8 do throwError "REPLAY_RETAINED_COUNT_NOT_8"
+  unless retainedCount == 0 do throwError "REPLAY_RETAINED_COUNT_NOT_0"
   let proofSerialized ← liftIO <| IO.ofExcept (summary.getObjValAs? Bool "main_proof_serialized")
   if proofSerialized then throwError "REPLAY_CAPTURE_INCLUDES_MAIN_PROOF"
   let retainedTargets ← liftIO <| IO.ofExcept (summary.getObjValAs? (Array Json) "retained_targets")
   let retained ← liftIO <| IO.ofExcept <| retainedTargets.mapM fun row => do
     MainComparatorLiteral.decodeName (← row.getObjVal? "name")
-  unless retained.size == 8 && (Std.HashSet.ofArray retained).size == 8 do
+  unless retained.size == 0 && (Std.HashSet.ofArray retained).size == 0 do
     throwError "REPLAY_RETAINED_TARGETS_NOT_8_DISTINCT_NAMES"
   let nodes ← liftIO <| MainComparatorReplay.readNodes (MainComparatorReplay.captureDirectory / "nodes.jsonl")
   let (constants, byName) ← liftIO <| MainComparatorReplay.readConstants
     (MainComparatorReplay.captureDirectory / "declarations.jsonl") nodes
   for ci in constants do
     if initial.contains ci.name then throwError "OWNED_LITERAL_NAME_ALREADY_IN_MATHLIB {ci.name}"
-    if ci.isAxiom && !retained.contains ci.name then throwError "LITERAL_AXIOM_OUTSIDE_RETAINED_8 {ci.name}"
+    if ci.isAxiom && !retained.contains ci.name then throwError "LITERAL_AXIOM_OUTSIDE_RETAINED_0 {ci.name}"
   let capturedAxioms := constants.filter ConstantInfo.isAxiom |>.map ConstantInfo.name
   unless capturedAxioms.qsort Name.lt == retained.qsort Name.lt do
-    throwError "REPLAY_CAPTURED_AXIOM_SET_DIFFERS_FROM_RETAINED_8"
+    throwError "REPLAY_CAPTURED_AXIOM_SET_DIFFERS_FROM_RETAINED_0"
   let boundaryRaw ← liftIO <| IO.FS.readFile (MainComparatorReplay.captureDirectory / "boundary.json")
   let boundary ← liftIO <| IO.ofExcept <| (← liftIO <| IO.ofExcept (Json.parse boundaryRaw)).getArr?
   for row in boundary do
@@ -564,7 +564,7 @@ def runReplay : CommandElabM Unit := do
     let axioms ← collectAxioms ci.name
     for ax in axioms do
       unless MainComparatorReplay.primitives.contains ax || retained.contains ax do
-        throwError "REPLAY_AXIOM_OUTSIDE_PRIMITIVES_PLUS_EXACT_8 {ci.name} {ax}"
+        throwError "REPLAY_AXIOM_OUTSIDE_PRIMITIVES_PLUS_EXACT_0 {ci.name} {ax}"
       axiomUnion := axiomUnion.insert ax
   let mainRoot ← liftIO <| IO.ofExcept (summary.getObjValAs? Nat "main_type_root")
   let mainType ← liftIO <| IO.ofExcept (MainComparatorLiteral.expression nodes (toJson mainRoot))
@@ -593,7 +593,7 @@ def runReplay : CommandElabM Unit := do
     ("comparator_pair_constructed", toJson false), ("comparator_pass", toJson false)]
   liftIO <| IO.FS.createDirAll MainComparatorReplay.outputDirectory
   liftIO <| IO.FS.writeFile (MainComparatorReplay.outputDirectory / "SUMMARY.json") (report.pretty ++ "\n")
-  logInfo m!"MAIN_LITERAL_KERNEL_REPLAY whole_constants={constants.size}; retained_types=8; whole main type checked; actual comparator pending"
+  logInfo m!"MAIN_LITERAL_KERNEL_REPLAY whole_constants={constants.size}; retained_types=0; whole main type checked; actual comparator pending"
 
 end MainComparatorReplay
 
