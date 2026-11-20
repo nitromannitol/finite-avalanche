@@ -3656,6 +3656,12 @@
       "bytes": 4906
     },
     {
+      "path": "FiniteAvalanches/Support/Plane/BoundaryArcJoinTails.lean",
+      "sha256": "cd607f36fe2b70f9e469c57e030e4c70bbe906930a2c81775c3421f90cafec64",
+      "code_sha256": "03ba0712e131a0df310903ae1d039bcab409f684893d68a613fc01c5dacd0ed9",
+      "bytes": 4999
+    },
+    {
       "path": "FiniteAvalanches/Support/Plane/BoundaryStarExtension.lean",
       "sha256": "f35f40a5965a77b6a9ac3804aa0c7ab092adb709fde15b4fd8a0241b12b2b77d",
       "code_sha256": "557a4610639ee7a322af1259595829fba7adf1346b864a4ab0012d5d292c5d48",
@@ -6820,6 +6826,7 @@
     "FiniteAvalanches.Support.Plane.ArcLocalStraightening",
     "FiniteAvalanches.Support.Plane.ArcStraightHomeomorph",
     "FiniteAvalanches.Support.Plane.BoundaryArcJoin",
+    "FiniteAvalanches.Support.Plane.BoundaryArcJoinTails",
     "FiniteAvalanches.Support.Plane.BoundaryStarExtension",
     "FiniteAvalanches.Support.Plane.ChartedBoundaryStarExtension",
     "FiniteAvalanches.Support.Plane.CopiedTreeCardinality",
