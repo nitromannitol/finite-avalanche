@@ -230,4 +230,78 @@ theorem exists_maximal_loopCancellation
   intro T hT hMT
   exact hM ⟨T, hT⟩ hMT
 
+/-- Distinct subloops in a maximal cancellation cannot share an endpoint. -/
+theorem IsLoopCancellation.not_adjacent_of_maximal
+    {X : Type*} [TopologicalSpace X] {x y : X} (p : Path x y)
+    {S : Set (unitInterval × unitInterval)} (hS : IsLoopCancellation p S)
+    (hmax : ∀ T, IsLoopCancellation p T → LoopFamilyRefines S T → LoopFamilyRefines T S)
+    {v w : unitInterval × unitInterval} (hv : v ∈ S) (hw : w ∈ S)
+    (hjoin : v.2 = w.1) : False := by
+  have hvlt := (hS.1 v hv).1
+  have hwlt := (hS.1 w hw).1
+  have hvw : v ≠ w := by
+    intro heq
+    subst w
+    have heq' : v.2 = v.1 := hjoin
+    exact (ne_of_lt hvlt) heq'.symm
+  let j : unitInterval × unitInterval := (v.1, w.2)
+  have hjlt : j.1 < j.2 := lt_trans hvlt (hjoin ▸ hwlt)
+  have hjloop : p j.1 = p j.2 := (hS.1 v hv).2.trans (hjoin ▸ (hS.1 w hw).2)
+  have hjdisj : ∀ k ∈ S, k ≠ v → k ≠ w → Disjoint (Ioo j.1 j.2) (Ioo k.1 k.2) := by
+    intro k hk hkv hkw
+    apply Set.disjoint_left.mpr
+    intro z hzj hzk
+    by_cases hzv : z < v.2
+    · have hzv' : z ∈ Ioo v.1 v.2 := ⟨hzj.1, hzv⟩
+      exact Set.disjoint_left.mp (hS.2 v hv k hk hkv.symm) hzv' hzk
+    · by_cases hwz : w.1 < z
+      · have hzw : z ∈ Ioo w.1 w.2 := ⟨hwz, hzj.2⟩
+        exact Set.disjoint_left.mp (hS.2 w hw k hk hkw.symm) hzw hzk
+      · have heq : z = v.2 := le_antisymm (by simpa only [hjoin] using le_of_not_gt hwz)
+          (le_of_not_gt hzv)
+        have hmaxlt : max v.1 k.1 < v.2 := by
+          apply max_lt
+          · exact hvlt
+          · simpa only [← heq] using hzk.1
+        obtain ⟨s, hs1, hs2⟩ := exists_between hmaxlt
+        have hsv : s ∈ Ioo v.1 v.2 := ⟨lt_of_le_of_lt (le_max_left _ _) hs1, hs2⟩
+        have hsk : s ∈ Ioo k.1 k.2 :=
+          ⟨lt_of_le_of_lt (le_max_right _ _) hs1, lt_trans hs2 (heq ▸ hzk.2)⟩
+        exact Set.disjoint_left.mp (hS.2 v hv k hk hkv.symm) hsv hsk
+  let T : Set (unitInterval × unitInterval) := insert j {k ∈ S | k ≠ v ∧ k ≠ w}
+  have hT : IsLoopCancellation p T := by
+    constructor
+    · intro k hk
+      simp only [T, mem_insert_iff, mem_setOf_eq] at hk
+      rcases hk with rfl | ⟨hk, -, -⟩
+      · exact ⟨hjlt, hjloop⟩
+      · exact hS.1 k hk
+    · intro k hk l hl hne
+      simp only [T, mem_insert_iff, mem_setOf_eq] at hk hl
+      rcases hk with rfl | ⟨hk, hkv, hkw⟩ <;>
+        rcases hl with rfl | ⟨hl, hlv, hlw⟩
+      · exact (hne rfl).elim
+      · exact hjdisj l hl hlv hlw
+      · exact (hjdisj k hk hkv hkw).symm
+      · exact hS.2 k hk l hl hne
+  have href : LoopFamilyRefines S T := by
+    intro k hk
+    by_cases hkv : k = v
+    · subst k
+      exact ⟨j, mem_insert j _, le_rfl, le_of_lt (hjoin ▸ hwlt)⟩
+    · by_cases hkw : k = w
+      · subst k
+        exact ⟨j, mem_insert j _, le_of_lt (hjoin ▸ hvlt), le_rfl⟩
+      · exact ⟨k, mem_insert_of_mem j ⟨hk, hkv, hkw⟩, le_rfl, le_rfl⟩
+  obtain ⟨r, hrS, hr1, hr2⟩ := hmax T hT href j (mem_insert j _)
+  obtain ⟨t, htv1, htv2⟩ := exists_between hvlt
+  have htr : t ∈ Ioo r.1 r.2 :=
+    ⟨lt_of_le_of_lt hr1 htv1, lt_of_lt_of_le htv2
+      (le_trans (le_of_lt (hjoin ▸ hwlt)) hr2)⟩
+  have hrv : r = v := by
+    by_contra hne
+    exact Set.disjoint_left.mp (hS.2 r hrS v hv hne) htr ⟨htv1, htv2⟩
+  subst r
+  exact (not_le_of_gt (hjoin ▸ hwlt)) hr2
+
 end FiniteAvalanches.Electrical.StatementGeometry
