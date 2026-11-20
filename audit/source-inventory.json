@@ -3662,6 +3662,12 @@
       "bytes": 3554
     },
     {
+      "path": "FiniteAvalanches/Support/Plane/ArcOrientedReduction.lean",
+      "sha256": "018f44311e2e5e96228f73fa5d38f090870122071ec93d259a1cb91b061c8607",
+      "code_sha256": "8a396157a81441e496e6b61def93672cfaf4cc65390c6cbc35f7bc092642bfb3",
+      "bytes": 3448
+    },
+    {
       "path": "FiniteAvalanches/Support/Plane/ArcRemoval.lean",
       "sha256": "deae3962989684586505936ab48e978997770ac7d1032758d1ae4096cb71834b",
       "code_sha256": "845964df2547af3dc056cfe8d0b280c647d52a93519b042427fd18fb83c98f04",
@@ -3948,6 +3954,12 @@
       "sha256": "b2a7ca58bf5d973c05fb3ba0f4d95232c549a7fe7dbe9df24c2ca5c1e7a396e6",
       "code_sha256": "b682e83c2bfd943b950d33a687b68326b65c528ba90a616d5e837fdd900001cd",
       "bytes": 7477
+    },
+    {
+      "path": "FiniteAvalanches/Support/Plane/DiskReflection.lean",
+      "sha256": "9d6b7416e8862848467b8273e326e9b68a5176d48834c150048fd2a85416dae2",
+      "code_sha256": "40edb57d8ab3d8a1fbfa6f817c7991a46f65ed224f663a160e34b89e6586e993",
+      "bytes": 4466
     },
     {
       "path": "FiniteAvalanches/Support/Plane/DualAssembly.lean",
