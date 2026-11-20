@@ -126,4 +126,57 @@ theorem endpointPathSeries_eq_of_clock_bounds
   rw [hsum]
   abel
 
+/-- Every time before one belongs to a dyadic concatenation stage. -/
+theorem exists_endpointPathClock_stage {t : ℝ} (ht0 : 0 ≤ t) (ht1 : t < 1) :
+    ∃ n : ℕ, 0 ≤ endpointPathClock n t ∧ endpointPathClock n t ≤ 1 ∧
+      (∀ m < n, 1 ≤ endpointPathClock m t) ∧
+      ∀ m > n, endpointPathClock m t ≤ 0 := by
+  let u : ℝ := 1 - t
+  have hu0 : 0 < u := by dsimp [u]; linarith
+  have hu1 : u ≤ 1 := by dsimp [u]; linarith
+  obtain ⟨n, hnlo, hnhi⟩ := exists_nat_pow_near_of_lt_one hu0 hu1
+    (by norm_num : (0 : ℝ) < 1 / 2) (by norm_num : (1 / 2 : ℝ) < 1)
+  have hinv : ∀ k : ℕ, (2 : ℝ) ^ k * (1 / 2 : ℝ) ^ k = 1 := by
+    intro k
+    rw [← mul_pow]
+    norm_num
+  have hupper : (2 : ℝ) ^ n * u ≤ 1 := by
+    calc
+      _ ≤ (2 : ℝ) ^ n * (1 / 2 : ℝ) ^ n :=
+        mul_le_mul_of_nonneg_left hnhi (by positivity)
+      _ = 1 := hinv n
+  have hlower : 1 < (2 : ℝ) ^ (n + 1) * u := by
+    calc
+      1 = (2 : ℝ) ^ (n + 1) * (1 / 2 : ℝ) ^ (n + 1) := (hinv (n + 1)).symm
+      _ < (2 : ℝ) ^ (n + 1) * u := mul_lt_mul_of_pos_left hnlo (by positivity)
+  have hstep : (2 : ℝ) ^ (n + 1) * u = 2 * ((2 : ℝ) ^ n * u) := by
+    rw [pow_succ]
+    ring
+  refine ⟨n, ?_, ?_, ?_, ?_⟩
+  · unfold endpointPathClock
+    change 0 ≤ 2 - (2 : ℝ) ^ (n + 1) * u
+    rw [hstep]
+    linarith
+  · unfold endpointPathClock
+    change 2 - (2 : ℝ) ^ (n + 1) * u ≤ 1
+    linarith
+  · intro m hm
+    have hpow : (2 : ℝ) ^ (m + 1) ≤ (2 : ℝ) ^ n :=
+      pow_le_pow_right₀ (by norm_num) (by omega)
+    have hmul := mul_le_mul_of_nonneg_right hpow hu0.le
+    unfold endpointPathClock
+    change 1 ≤ 2 - (2 : ℝ) ^ (m + 1) * u
+    linarith
+  · intro m hm
+    have hpow : (2 : ℝ) ^ (n + 2) ≤ (2 : ℝ) ^ (m + 1) :=
+      pow_le_pow_right₀ (by norm_num) (by omega)
+    have hmul := mul_le_mul_of_nonneg_right hpow hu0.le
+    have hstep' : (2 : ℝ) ^ (n + 2) * u = 2 * ((2 : ℝ) ^ (n + 1) * u) := by
+      rw [show n + 2 = (n + 1) + 1 by omega, pow_succ]
+      ring
+    unfold endpointPathClock
+    change 2 - (2 : ℝ) ^ (m + 1) * u ≤ 0
+    rw [hstep'] at hmul
+    linarith
+
 end FiniteAvalanches.Electrical.StatementGeometry
