@@ -37,6 +37,15 @@ def wiredDualFaceInteriorDirectionEquiv (B : ℕ) (x : FiniteWired.Active (B + 1
       IncidentCopy (wiredDualFaceGraph (B + 1)) (wiredDualFaceInnerVertex (B + 1) x) :=
   (freeInteriorDirectionEquiv B x hx).trans (wiredDualFaceInnerIncidentEquiv B x hx)
 
+/-- Corresponding interior directions have the same successor in both graphs. -/
+theorem wiredDualFaceInteriorDirection_head (B : ℕ) (x : FiniteWired.Active (B + 1))
+    (hx : FiniteWired.inBox B (FiniteWired.site x)) (d : FiniteWired.Direction) :
+    incidentCopyHead (wiredDualFaceGraph (B + 1)) (wiredDualFaceInnerVertex (B + 1) x)
+        (wiredDualFaceInteriorDirectionEquiv B x hx d) =
+      wiredDualFaceInnerVertex (B + 1)
+        (incidentCopyHead (freeBoxGraph (B + 1)) x (freeInteriorDirectionEquiv B x hx d)) :=
+  wiredDualFaceInnerIncident_head (B + 1) x (freeInteriorDirectionEquiv B x hx d)
+
 /-- Uniform face-square instructions give uniform directions in the interior. -/
 theorem wiredDualFaceInterior_uniform_map_direction (B : ℕ)
     (x : FiniteWired.Active (B + 1)) (hx : FiniteWired.inBox B (FiniteWired.site x)) :
