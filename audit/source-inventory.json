@@ -3932,6 +3932,12 @@
       "bytes": 3876
     },
     {
+      "path": "FiniteAvalanches/Support/Plane/EndpointLocalConnectivity.lean",
+      "sha256": "518ba4d7221b948aa683cc424221b41c25c60a8ae973636492fe7a224ef0d902",
+      "code_sha256": "eb2dd11397a9058254e764853a696f670a08bd9bea7bc57170f33512e65f134e",
+      "bytes": 13836
+    },
+    {
       "path": "FiniteAvalanches/Support/Plane/FiniteFaceFrontier.lean",
       "sha256": "38fd3226ec38a382ea5e2a9f57360ffdded5d0ccf48958f7ab4f081a1c023e1d",
       "code_sha256": "c61f3edcecf44f5e8dd9574c07d6cdf67b073eb0a69494fb3220c8d747a25dde",
@@ -3954,6 +3960,12 @@
       "sha256": "3489b6be678764353ca984d9d43ae8bf4c0c90c27a95c55428720dc2231bfb2e",
       "code_sha256": "b0bf73e6f902d7926a5f55a2d8c44552827e013d13048901d9fef72636c44107",
       "bytes": 4765
+    },
+    {
+      "path": "FiniteAvalanches/Support/Plane/InfiniteEndpointPath.lean",
+      "sha256": "c47be274e1e5e323e259f9f82a67268255ed711f949be08da26d2e6c60c8f49b",
+      "code_sha256": "6e14e238c6b80db7527f0bdf59b2dbf85f015629d21957425969dfb02124ae7a",
+      "bytes": 9220
     },
     {
       "path": "FiniteAvalanches/Support/Plane/JordanDrawingFaces.lean",
