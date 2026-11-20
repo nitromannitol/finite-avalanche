@@ -240,6 +240,44 @@ theorem uniform_remainder_values {Γ B S : Finset Site2} (hB : B ⊆ Γ) (hS : S
       exact absurd (he ▸ subset_remainderSites hB h) hBS
     rw [hempty, hempty', measure_empty, zero_mul]
 
+/-- The cylinder event of prescribed heights on a finite set. -/
+def heightEvent (B : Finset Site2) (ξ : Site2 → ℕ) : Set StableField :=
+  {η | ∀ x ∈ B, (η x).val = ξ x}
+
+theorem measurableSet_heightEvent (B : Finset Site2) (ξ : Site2 → ℕ) :
+    MeasurableSet (heightEvent B ξ) := by
+  have h : heightEvent B ξ = ⋂ x ∈ B, (fun η : StableField => η x) ⁻¹' {k | k.val = ξ x} := by
+    ext η
+    simp [heightEvent]
+  rw [h]
+  exact Finset.measurableSet_biInter _ fun x _ =>
+    measurable_pi_apply x (Set.toFinite _).measurableSet
+
+/-- The finite-volume law of prescribed heights on `B` as a mixture over the union of the
+pasts of `B` in the uniform spanning tree of the wired graph of `Γ`. -/
+theorem finiteFieldLawOn_heightEvent {Γ B : Finset Site2} (hB : B ⊆ Γ) (ξ : Site2 → ℕ) :
+    finiteFieldLawOn Γ (heightEvent B ξ) =
+      ∑ S ∈ Γ.powerset, (graph Γ).treeLaw {t | pastSites Γ B t = S} * innerRatio B S ξ := by
+  rw [finiteFieldLawOn_eq_map, Measure.map_apply (measurable_of_countable _)
+    (measurableSet_heightEvent B ξ)]
+  have hcover : (fun h => (allowedHeightsEquiv Γ h).val) ⁻¹' heightEvent B ξ =
+      ⋃ S ∈ Γ.powerset, {h : AllowedHeights Γ | remainderSites Γ B h = S ∧
+        ∀ x ∈ B, ((allowedHeightsEquiv Γ h).val x).val = ξ x} := by
+    ext h
+    simp only [Set.mem_preimage, heightEvent, Set.mem_setOf_eq, Set.mem_iUnion,
+      Finset.mem_powerset, exists_prop]
+    constructor
+    · intro hv
+      exact ⟨remainderSites Γ B h, siteSet_subset Γ _, rfl, hv⟩
+    · rintro ⟨S, -, -, hv⟩
+      exact hv
+  rw [hcover, measure_biUnion_finset]
+  · refine Finset.sum_congr rfl fun S hS => ?_
+    rw [uniform_remainder_values hB (Finset.mem_powerset.mp hS) ξ, treeLaw_pastSites_eq]
+  · intro S _ S' _ hne
+    exact Set.disjoint_left.mpr fun h h1 h2 => hne (h1.1.symm.trans h2.1)
+  · exact fun _ _ => trivial
+
 end
 
 end FiniteAvalanches.Sandpile.GammaGraph
