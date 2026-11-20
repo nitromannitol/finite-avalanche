@@ -3902,6 +3902,12 @@
       "bytes": 8709
     },
     {
+      "path": "FiniteAvalanches/Support/Plane/PolygonalPathStar.lean",
+      "sha256": "417f803d607e46d98550fb7d737baee6a78aed8fd61459ea7a397d993ceda095",
+      "code_sha256": "648e4b842a4de1cc481c85ee41d1f691b08279152706755bebaad377165febae",
+      "bytes": 2121
+    },
+    {
       "path": "FiniteAvalanches/Support/Plane/PuncturedTransport.lean",
       "sha256": "47607564e261597b8aa8bb5b85f6a247c2e75158b7a47e415a7c4a6abe3655c5",
       "code_sha256": "bb6dbde37da1618cb3ae1b8b99ae61846ea4ec5c2d32401af97edb32935e8ca3",
@@ -3990,6 +3996,12 @@
       "sha256": "8ab8a958df8aa011977efae8ba6b1691d347022f7627f80b8c2e9af27c1c7398",
       "code_sha256": "798e3fa2e27ecfc1ba452e0ba63cc7fc5602c722b689b59db4229a12028a5ce2",
       "bytes": 10377
+    },
+    {
+      "path": "FiniteAvalanches/Support/Plane/TransverseStar.lean",
+      "sha256": "650d1528178ed6bad478b7a8d8564cf0b06fdbc628fc5ca98b0e86ef2196ee3b",
+      "code_sha256": "b3cfffeb36f543fc092fe1a7c97d7bc8c93c7a748a5a5c87371fe49d666d4866",
+      "bytes": 4090
     },
     {
       "path": "FiniteAvalanches/Support/Plane/TreeComplement.lean",
@@ -6811,6 +6823,7 @@
     "FiniteAvalanches.Support.Plane.LoopEdgeJordan",
     "FiniteAvalanches.Support.Plane.ParametrizedBoundaryAccess",
     "FiniteAvalanches.Support.Plane.PathEdgeIncidence",
+    "FiniteAvalanches.Support.Plane.PolygonalPathStar",
     "FiniteAvalanches.Support.Plane.ReachabilityPath",
     "FiniteAvalanches.Support.Plane.ReachabilityTrace",
     "FiniteAvalanches.Support.Plane.SimplePathDuality",
@@ -6818,6 +6831,7 @@
     "FiniteAvalanches.Support.Plane.SubarcCompletion",
     "FiniteAvalanches.Support.Plane.TerminalReparam",
     "FiniteAvalanches.Support.Plane.ThreeCompactSeparation",
+    "FiniteAvalanches.Support.Plane.TransverseStar",
     "FiniteAvalanches.Support.Plane.TreeComplementReduction",
     "FiniteAvalanches.Support.Plane.TwoArcJordan",
     "FiniteAvalanches.Support.Schoenflies.Accessible",
