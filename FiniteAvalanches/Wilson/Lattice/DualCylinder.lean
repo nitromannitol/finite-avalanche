@@ -1,5 +1,5 @@
 import FiniteAvalanches.Trees.Lattice.Dual
-import FiniteAvalanches.Wilson.Lattice.FiniteUstWeakLimit
+import FiniteAvalanches.Wilson.Lattice.PositiveCylinder
 
 /-! Finite-cylinder reduction for square-lattice duality. -/
 
@@ -89,6 +89,37 @@ theorem wiredLimit_dual_of_cylinder_limits (ν : ProbabilityMeasure EdgeField)
     exact finiteLaw_dual_cylinder N E p
   rw [heq] at hmass
   exact tendsto_nhds_unique hmass (hcross E p)
+
+
+/-- Equality of limiting inclusion probabilities with crossed-edge avoidance
+probabilities suffices for self-duality of the wired limit. -/
+theorem wiredLimit_dual_of_inclusion_limits (ν : ProbabilityMeasure EdgeField)
+    (hν : Tendsto finiteProbability atTop (nhds ν))
+    (hcross : ∀ E : Finset LatticeEdge,
+      Tendsto (fun N => finiteLaw N
+        (cylinder (crossingEdges E) (crossingPattern E (fun _ => true))))
+        atTop (nhds ((ν : Measure EdgeField) (edgeInclusionEvent E)))) :
+    (ν : Measure EdgeField).map dualField = (ν : Measure EdgeField) := by
+  let νdual := ν.map measurable_dualField.aemeasurable
+  apply congrArg (fun μ : ProbabilityMeasure EdgeField => (μ : Measure EdgeField))
+    (probabilityMeasure_edgeField_eq_of_inclusion νdual ν ?_)
+  intro E
+  rw [edgeInclusionEvent_eq_cylinder]
+  have hweak := ProbabilityMeasure.tendsto_map_of_tendsto_of_continuous
+    finiteProbability ν hν continuous_dualField
+  have hmass := ProbabilityMeasure.tendsto_measure_of_null_frontier_of_tendsto'
+    hweak (E := FiniteAvalanches.Trees.Lattice.cylinder E (fun _ => true)) (by
+      rw [(isClopen_cylinder E (fun _ => true)).frontier_eq]
+      exact measure_empty)
+  have heq : (fun N => ((finiteProbability N).map continuous_dualField.measurable.aemeasurable :
+      Measure EdgeField) (FiniteAvalanches.Trees.Lattice.cylinder E (fun _ => true))) =
+      (fun N => finiteLaw N (cylinder (crossingEdges E) (crossingPattern E (fun _ => true)))) := by
+    funext N
+    exact finiteLaw_dual_cylinder N E (fun _ => true)
+  rw [heq] at hmass
+  have htarget := hcross E
+  rw [edgeInclusionEvent_eq_cylinder] at htarget
+  exact tendsto_nhds_unique hmass htarget
 
 end
 end FiniteAvalanches.Wilson.Lattice
