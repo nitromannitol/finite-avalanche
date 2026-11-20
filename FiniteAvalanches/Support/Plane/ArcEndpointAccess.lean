@@ -167,4 +167,47 @@ theorem plane_homeomorph_straightening_iff_endpoint_accesses
     exact exists_plane_homeomorph_straightening_of_separate_endpoint_accesses
       p hp q r hq hr hqout hrout
 
+/-- An access to an initial subarc can be shortened to avoid the whole arc. -/
+theorem exists_endpoint_access_of_initial_subpath
+    {x y a : ℝ × ℝ} (p : Path x y) (hp : Function.Injective p)
+    (s : unitInterval) (hs : s ≠ 0) (q : Path a x) (hq : Function.Injective q)
+    (hout : ∀ t : unitInterval, t ≠ 1 → q t ∉ range (p.subpath 0 s)) :
+    ∃ b : ℝ × ℝ, ∃ r : Path b x, Function.Injective r ∧
+      ∀ t : unitInterval, t ≠ 1 → r t ∉ range p := by
+  have hx : x ∉ range (p.subpath s 1) := by
+    rw [Path.range_subpath_of_le p s 1 le_top]
+    rintro ⟨t, ht, heq⟩
+    have ht0 : t = 0 := hp (by simpa only [Path.source] using heq)
+    have : s ≤ 0 := ht0 ▸ ht.1
+    exact hs (le_antisymm this bot_le)
+  let U := (range (p.subpath s 1))ᶜ
+  have hU : IsOpen U := (isCompact_range (p.subpath s 1).continuous).isClosed.isOpen_compl
+  obtain ⟨u, hu, huU⟩ := exists_tail_in_open q hU hx
+  let r : Path (q u) x := (q.subpath u 1).cast rfl q.target.symm
+  refine ⟨q u, r, injective_tail q hq hu, ?_⟩
+  intro t ht hmem
+  have hnot : r t ∉ range (p.subpath s 1) := huU ⟨t, rfl⟩
+  obtain ⟨v, hv⟩ := hmem
+  by_cases hvle : v ≤ s
+  · have hvsub : p v ∈ range (p.subpath 0 s) := by
+      rw [Path.range_subpath_of_le p 0 s bot_le]
+      exact ⟨v, ⟨bot_le, hvle⟩, rfl⟩
+    have hrt : r t ∉ range (p.subpath 0 s) := by
+      have hsub : range r ⊆ range q := by
+        change range (q.subpath u 1) ⊆ range q
+        rw [Path.range_subpath_of_le q u 1 le_top]
+        exact image_subset_range _ _
+      obtain ⟨w, hw⟩ := hsub ⟨t, rfl⟩
+      change q w = (q.subpath u 1) t at hw
+      have hw1 : w ≠ 1 := by
+        intro hw1
+        apply ht
+        apply injective_tail q hq hu
+        simpa only [hw1, Path.target] using hw.symm
+      exact hw ▸ hout w hw1
+    exact hrt (hv ▸ hvsub)
+  · apply hnot
+    rw [Path.range_subpath_of_le p s 1 le_top]
+    exact ⟨v, ⟨le_of_not_ge hvle, le_top⟩, hv⟩
+
 end FiniteAvalanches.Electrical.StatementGeometry
