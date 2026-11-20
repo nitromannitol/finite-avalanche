@@ -9,6 +9,8 @@ to the quarter, half, and three-quarter points.
 
 namespace FiniteAvalanches.Electrical
 
+open QuantumZipper.CA.Topo
+
 noncomputable section
 
 private def clipUnit (x : ℝ) : ℝ := max 0 (min x 1)
@@ -63,6 +65,86 @@ theorem exists_interval_normalization {a b c : ℝ}
   refine ⟨ρ, ?_, Subtype.ext hf0, Subtype.ext hf1, hfquarter, hfhalf, hfthreequarter⟩
   intro x y h
   exact hfmono h
+
+/-- The local winding jump is independent of the location and duration of
+its parameter interval. -/
+theorem loopDeg_sub_const_sub_eq_one_of_crossing_interval
+    (γ : C(unitInterval, ℂ)) (hclosed : γ 0 = γ 1) {a : ℝ} (ha : 0 < a)
+    (hp : ∀ t, γ t ≠ (a : ℂ)) (hm : ∀ t, γ t ≠ -(a : ℂ))
+    {u v w : ℝ} (hu : 0 < u) (huv : u < v) (hvw : v < w) (hw : w < 1)
+    (hfar : ∀ t : unitInterval, (t : ℝ) < u ∨ w < (t : ℝ) →
+      a ^ 2 < (γ t).re ^ 2 + (γ t).im ^ 2)
+    (hpos : ∀ t : unitInterval, u ≤ (t : ℝ) → (t : ℝ) < v → 0 < (γ t).im)
+    (hneg : ∀ t : unitInterval, v < (t : ℝ) → (t : ℝ) ≤ w → (γ t).im < 0)
+    (hmid : ∀ t : unitInterval, (t : ℝ) = v → (γ t).re ^ 2 + (γ t).im ^ 2 < a ^ 2) :
+    loopDeg (γ - ContinuousMap.const unitInterval (a : ℂ))
+        (fun t => sub_ne_zero.mpr (hp t)) -
+      loopDeg (γ - ContinuousMap.const unitInterval (-(a : ℂ)))
+        (fun t => sub_ne_zero.mpr (hm t)) = 1 := by
+  obtain ⟨ρ, hρ, hρ0, hρ1, hρu, hρv, hρw⟩ :=
+    exists_interval_normalization hu huv hvw hw
+  let u₀ : unitInterval := ⟨1 / 4, by norm_num⟩
+  let v₀ : unitInterval := ⟨1 / 2, by norm_num⟩
+  let w₀ : unitInterval := ⟨3 / 4, by norm_num⟩
+  have hresult := loopDeg_sub_const_sub_eq_one_of_local_crossing (γ.comp ρ)
+    (by change γ (ρ 0) = γ (ρ 1); rw [hρ0, hρ1, hclosed]) ha
+    (fun t => hp (ρ t)) (fun t => hm (ρ t))
+    (by
+      intro t ht
+      apply hfar (ρ t)
+      rcases ht with ht | ht
+      · left
+        have hh := hρ (show t < u₀ from ht)
+        change (ρ t : ℝ) < (ρ u₀ : ℝ) at hh
+        simpa only [u₀, hρu] using hh
+      · right
+        have hh := hρ (show w₀ < t from ht)
+        change (ρ w₀ : ℝ) < (ρ t : ℝ) at hh
+        simpa only [w₀, hρw] using hh)
+    (by
+      intro t hlo hhi
+      apply hpos (ρ t)
+      · have hh := hρ.monotone (show u₀ ≤ t from hlo)
+        change (ρ u₀ : ℝ) ≤ (ρ t : ℝ) at hh
+        simpa only [u₀, hρu] using hh
+      · have hh := hρ (show t < v₀ from hhi)
+        change (ρ t : ℝ) < (ρ v₀ : ℝ) at hh
+        simpa only [v₀, hρv] using hh)
+    (by
+      intro t hlo hhi
+      apply hneg (ρ t)
+      · have hh := hρ (show v₀ < t from hlo)
+        change (ρ v₀ : ℝ) < (ρ t : ℝ) at hh
+        simpa only [v₀, hρv] using hh
+      · have hh := hρ.monotone (show t ≤ w₀ from hhi)
+        change (ρ t : ℝ) ≤ (ρ w₀ : ℝ) at hh
+        simpa only [w₀, hρw] using hh)
+    (by
+      intro t ht
+      apply hmid (ρ t)
+      have ht' : t = v₀ := Subtype.ext ht
+      subst t
+      exact hρv)
+  have hdp := loopDeg_comp_of_endpoints (γ - ContinuousMap.const unitInterval (a : ℂ))
+    (fun t => sub_ne_zero.mpr (hp t)) (by simp only [ContinuousMap.sub_apply,
+      ContinuousMap.const_apply, hclosed]) ρ hρ0 hρ1
+  have hdm := loopDeg_comp_of_endpoints (γ - ContinuousMap.const unitInterval (-(a : ℂ)))
+    (fun t => sub_ne_zero.mpr (hm t)) (by simp only [ContinuousMap.sub_apply,
+      ContinuousMap.const_apply, hclosed]) ρ hρ0 hρ1
+  have hdp' : loopDeg (γ.comp ρ - ContinuousMap.const unitInterval (a : ℂ))
+      (fun t => sub_ne_zero.mpr (hp (ρ t))) =
+      loopDeg (γ - ContinuousMap.const unitInterval (a : ℂ))
+        (fun t => sub_ne_zero.mpr (hp t)) := by
+    convert hdp using 1
+    congr 1
+  have hdm' : loopDeg (γ.comp ρ - ContinuousMap.const unitInterval (-(a : ℂ)))
+      (fun t => sub_ne_zero.mpr (hm (ρ t))) =
+      loopDeg (γ - ContinuousMap.const unitInterval (-(a : ℂ)))
+        (fun t => sub_ne_zero.mpr (hm t)) := by
+    convert hdm using 1
+    congr 1
+  rw [← hdp', ← hdm']
+  exact hresult
 
 end
 end FiniteAvalanches.Electrical
