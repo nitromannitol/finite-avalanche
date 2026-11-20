@@ -3680,6 +3680,12 @@
       "bytes": 4999
     },
     {
+      "path": "FiniteAvalanches/Support/Plane/BoundaryDartPermutation.lean",
+      "sha256": "6f18f1fb319d024e91a994b182aa801e4cd77a6d8828f910183f11dffcdfeff3",
+      "code_sha256": "ecc101186e98863edb4fa91d109f81d935af12e9d67e9ca5debf1437efadd633",
+      "bytes": 2551
+    },
+    {
       "path": "FiniteAvalanches/Support/Plane/BoundaryGradientBasis.lean",
       "sha256": "9cc41302918269c66f494a62191a64b67b83054c20c8b018cb75fda810726ef2",
       "code_sha256": "1cb333e5d57c962b2bde34764fee722d51138fd9cfff353d31cac5c7d1323a48",
