@@ -9,7 +9,7 @@
   "joint_constants_before_all_real_scales": false,
   "source_characterizations_checked": false,
   "exact_type_and_bodies_checked": false,
-  "source_inventory_sha256": "9b31fa9f4dfb2c5bf83cdc01c58da52fbde55ad98e79f9b96937b1a1e7eab08d",
+  "source_inventory_sha256": "dd318a3495fa60b56eef122f4d416f0f6fea48d763234d1a87a44f5437dbbffa",
   "bindings": [
     {
       "path": "FiniteAvalanchesAudit/MainOrigin/Challenge.lean",

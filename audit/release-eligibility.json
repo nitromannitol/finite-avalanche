@@ -3,7 +3,7 @@
   "status": "PENDING_CURRENT_SOURCE_REVIEW",
   "manuscript_revision": "2ff7e75e9b6d626dc6c6243fa3d25fd179b34cf2",
   "manuscript_sha256": "d2a875c154db9ff913ec6b25cf38e8da134ca977f6a24fd9c036cd8873b1082a",
-  "candidate_source_inventory_sha256": "9b31fa9f4dfb2c5bf83cdc01c58da52fbde55ad98e79f9b96937b1a1e7eab08d",
+  "candidate_source_inventory_sha256": "dd318a3495fa60b56eef122f4d416f0f6fea48d763234d1a87a44f5437dbbffa",
   "final_statement_and_proof_review": {
     "verdict": "PENDING",
     "independent": false,
