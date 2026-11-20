@@ -1,14 +1,3 @@
-/-
-Adapted from Lattice-Probability (https://github.com/nitromannitol/Lattice-Probability), module
-`LatticeProb/Walk/Beurling/GreenPotential.lean` of the development of the Lawler-Limic Beurling estimate
-for Lean v4.35 and its Mathlib.
-Changes: imports of the Beurling modules renamed to this repository's; namespace
-`LatticeProb.Beurling` renamed to `FiniteAvalanches.Walk.Beurling`, with `open LatticeProb` added;
-`Set.mem_ofPred_eq` replaced by `Set.mem_setOf_eq` (once); `measurableSet_setOfPred` replaced by
-`measurableSet_setOf` (2 times); `Measurable.of_eval` replaced by `measurable_pi_lambda _` (once);
-`dite_eq_left` replaced by `dif_pos` (once); `dite_eq_right` replaced by `dif_neg` (once);
-`ite_eq_left` replaced by `if_pos` (once).
--/
 import FiniteAvalanches.Walk.Beurling.Defs
 import LatticeProb.Walk.RecurrenceHitting
 import LatticeProb.Walk.Harnack.Basics

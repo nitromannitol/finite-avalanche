@@ -1,16 +1,3 @@
-/-
-Adapted from Lattice-Probability (https://github.com/nitromannitol/Lattice-Probability), module
-`LatticeProb/Walk/Beurling/Defs.lean` of the development of the Lawler-Limic Beurling estimate
-for Lean v4.35 and its Mathlib.
-Changes: import `LatticeProb.Walk.KilledGreenPlanarLower` replaced by
-`LatticeProb.Walk.Harnack.Basics`, `LatticeProb.Walk.Lazy`, `LatticeProb.Walk.Ball`,
-`LatticeProb.Network.MaximumPrinciple`, `LatticeProb.Network.KilledGreen`,
-`FiniteAvalanches.Walk.EuclidNormCoord`; namespace `LatticeProb.Beurling` renamed to
-`FiniteAvalanches.Walk.Beurling`, with `open LatticeProb` added; `measurableSet_setOfPred` replaced
-by `measurableSet_setOf` (3 times); the end-of-line comments of `disk`, `shellPart`, `axisSet` and
-`green` replaced by docstrings, docstrings added to `walkPos`, `IsDense`, `diskFinset`, `prob` and
-`Asymp`, and the statement of `Asymp` broken over three lines.
--/
 import LatticeProb.Walk.Harnack.Basics
 import LatticeProb.Walk.Lazy
 import LatticeProb.Walk.Ball

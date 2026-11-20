@@ -1,12 +1,3 @@
-/-
-Adapted from Lattice-Probability (https://github.com/nitromannitol/Lattice-Probability), module
-`LatticeProb/Walk/Beurling/DiskGreenFar.lean` of the development of the Lawler-Limic Beurling estimate
-for Lean v4.35 and its Mathlib.
-Changes: imports of the Beurling modules renamed to this repository's; namespace
-`LatticeProb.Beurling` renamed to `FiniteAvalanches.Walk.Beurling`, with `open LatticeProb` added;
-`Set.mem_ofPred_eq` replaced by `Set.mem_setOf_eq` (once); `set_option maxHeartbeats 400000 in`
-added before `green_far_asymptotics`.
--/
 import FiniteAvalanches.Walk.Beurling.DiskGreen
 import FiniteAvalanches.Walk.Beurling.GreenWalk
 

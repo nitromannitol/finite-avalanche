@@ -1,10 +1,3 @@
-/-
-Adapted from Lattice-Probability (https://github.com/nitromannitol/Lattice-Probability), module
-`LatticeProb/Walk/Beurling/Segment.lean` of the development of the Lawler-Limic Beurling estimate
-for Lean v4.35 and its Mathlib.
-Changes: imports of the Beurling modules renamed to this repository's; namespace
-`LatticeProb.Beurling` renamed to `FiniteAvalanches.Walk.Beurling`, with `open LatticeProb` added.
--/
 import FiniteAvalanches.Walk.Beurling.LastExit
 import FiniteAvalanches.Walk.Beurling.DiskGreenLower
 import FiniteAvalanches.Walk.Beurling.StripExit

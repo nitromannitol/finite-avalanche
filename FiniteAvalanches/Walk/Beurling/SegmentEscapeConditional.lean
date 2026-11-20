@@ -1,13 +1,3 @@
-/-
-Adapted from Lattice-Probability (https://github.com/nitromannitol/Lattice-Probability), module
-`LatticeProb/Walk/Beurling/SegmentEscapeConditional.lean` of the development of the Lawler-Limic Beurling estimate
-for Lean v4.35 and its Mathlib.
-Changes: imports of the Beurling modules renamed to this repository's; namespace
-`LatticeProb.Beurling` renamed to `FiniteAvalanches.Walk.Beurling`, with `open LatticeProb` added;
-`Set.mem_ofPred_eq` replaced by `Set.mem_setOf_eq` (13 times); `measurableSet_setOfPred` replaced by
-`measurableSet_setOf` (once); `Measurable.of_eval` replaced by `measurable_pi_lambda _` (once);
-`set_option maxHeartbeats 400000 in` added before `prob_exitsBefore_segment_le_of_halfLine`.
--/
 import FiniteAvalanches.Walk.Beurling.FarEscape
 
 /-!

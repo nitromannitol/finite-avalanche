@@ -1,13 +1,3 @@
-/-
-Adapted from Lattice-Probability (https://github.com/nitromannitol/Lattice-Probability), module
-`LatticeProb/Walk/Beurling/MainLarge.lean` of the development of the Lawler-Limic Beurling estimate
-for Lean v4.35 and its Mathlib.
-Changes: imports of the Beurling modules renamed to this repository's; namespace
-`LatticeProb.Beurling` renamed to `FiniteAvalanches.Walk.Beurling`, with `open LatticeProb` added;
-`Set.mem_ofPred_eq` replaced by `Set.mem_setOf_eq` (6 times); `measurableSet_setOfPred` replaced by
-`measurableSet_setOf` (once); `ite_eq_left` replaced by `if_pos` (5 times); `ite_eq_right` replaced
-by `if_neg` (2 times).
--/
 import FiniteAvalanches.Walk.Beurling.SegmentEscapeFromHalfLine
 import FiniteAvalanches.Walk.Beurling.DiskGreenFar
 import FiniteAvalanches.Walk.Beurling.LastExit

@@ -1,13 +1,3 @@
-/-
-Adapted from Lattice-Probability (https://github.com/nitromannitol/Lattice-Probability), module
-`LatticeProb/Walk/Beurling/HalfLineHitConsequences.lean` of the development of the Lawler-Limic Beurling estimate
-for Lean v4.35 and its Mathlib.
-Changes: imports of the Beurling modules renamed to this repository's; namespace
-`LatticeProb.Beurling` renamed to `FiniteAvalanches.Walk.Beurling`, with `open LatticeProb` added;
-`Set.mem_ofPred_eq` replaced by `Set.mem_setOf_eq` (4 times); `measurableSet_setOfPred` replaced by
-`measurableSet_setOf` (2 times); `private` removed from `hitAtTime`, `prob_hit_then` and
-`prob_entersAt_axis_start_le`.
--/
 import FiniteAvalanches.Walk.Beurling.HalfLineHit
 import FiniteAvalanches.Walk.Beurling.HalfLineHitPoint
 

@@ -1,12 +1,3 @@
-/-
-Adapted from Lattice-Probability (https://github.com/nitromannitol/Lattice-Probability), module
-`LatticeProb/Walk/Beurling/DenseSum.lean` of the development of the Lawler-Limic Beurling estimate
-for Lean v4.35 and its Mathlib.
-Changes: imports of the Beurling modules renamed to this repository's; import
-`LatticeProb.Lattice.Translation` replaced by `FiniteAvalanches.Walk.SiteTranslation`; namespace
-`LatticeProb.Beurling` renamed to `FiniteAvalanches.Walk.Beurling`, with `open LatticeProb` added;
-`ite_eq_left` replaced by `if_pos` (6 times); `ite_eq_right` replaced by `if_neg` (6 times).
--/
 import FiniteAvalanches.Walk.Beurling.DiskGreen
 import FiniteAvalanches.Walk.SiteTranslation
 
