@@ -93,8 +93,8 @@ expected_status = 'PAIR_TYPE_AND_SEMANTIC_KERNEL_CHECK_ONLY_NOT_COMPARATOR_APPRO
 if not (result['status'] == expected_status and result['mode'] == mode.upper()
         and result['full_main_type_equal'] is True
         and result['universe_parameters_equal'] is True
-        and result['exact_retained_assertion_types'] == 19
-        and result['whole_constantinfo_comparisons'] == 954
+        and result['exact_retained_assertion_types'] == 8
+        and result['whole_constantinfo_comparisons'] == 1976
         and result['comparator_pass'] is False
         and set(result['actual_semantic_axioms']) == set(capture['semantic_actual_axioms'])):
     raise SystemExit('Incomplete or mismatching whole-environment query')

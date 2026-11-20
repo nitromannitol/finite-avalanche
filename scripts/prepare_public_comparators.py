@@ -112,13 +112,13 @@ def prepare(root, destination=None):
     require(summary.get('schema') == 'main-comparator-full-constantinfo-dag-v1' and
             name(summary['main_name']) == MAIN and summary.get('main_levels') == [] and
             summary.get('main_proof_serialized') is False, 'Wrong current complete constant-info capture')
-    require(summary.get('owned_constants') == 954 and summary.get('whole_types_roundtripped') == 954,
-            'Captured constant-info/type count differs from the reviewed 954')
-    require(summary.get('retained_count') == 19 and len(summary['retained_targets']) == 19 and
+    require(summary.get('owned_constants') == 1976 and summary.get('whole_types_roundtripped') == 1976,
+            'Captured constant-info/type count differs from the reviewed 1976')
+    require(summary.get('retained_count') == 8 and len(summary['retained_targets']) == 8 and
             {e['display_name'] for e in summary['retained_targets']} == contents['main_inputs'] and
-            set(summary['owned_axioms']) == contents['main_inputs'], 'Retained assumptions differ from exact19')
-    require(len(summary['actual_main_axioms']) == 22 and set(summary['actual_main_axioms']) == PRIMITIVES | contents['main_inputs'],
-            'Captured Main closure differs from exact19 and logical primitives')
+            set(summary['owned_axioms']) == contents['main_inputs'], 'Retained assumptions differ from exact8')
+    require(len(summary['actual_main_axioms']) == 11 and set(summary['actual_main_axioms']) == PRIMITIVES | contents['main_inputs'],
+            'Captured Main closure differs from exact8 and logical primitives')
     config = read_json(regular(root, 'FiniteAvalanchesAudit/MainOrigin/comparator.json'))
     require(set(config) == {'challenge_module','solution_module','theorem_names','definition_names','permitted_axioms','enable_nanoda'},
             'Unsupported comparator configuration')
@@ -130,7 +130,7 @@ def prepare(root, destination=None):
     # Exact Main closure, rather than unused additional registered axioms.
     permitted = config['permitted_axioms']
     require(isinstance(permitted,list) and len(permitted) == len(set(permitted)) and
-            set(permitted) == PRIMITIVES | contents['main_inputs'], 'Comparator must use exact19 Main assumptions')
+            set(permitted) == PRIMITIVES | contents['main_inputs'], 'Comparator must use exact8 Main assumptions')
     challenge = regular(root,'FiniteAvalanchesAudit/MainOrigin/Challenge.lean').read_text()
     code, tokens = source_tokens(challenge)
     require(re.findall(r'^\s*import\s+([^\n]+)', code, re.M) == ['Mathlib'], 'Challenge must import Mathlib only')

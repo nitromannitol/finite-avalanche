@@ -1,4 +1,4 @@
-name: Current Main comparator (19 inputs)
+name: Current Main comparator (8 inputs)
 
 on:
   workflow_dispatch:
