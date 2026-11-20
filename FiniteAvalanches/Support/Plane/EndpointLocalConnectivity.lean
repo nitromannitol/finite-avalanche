@@ -1,5 +1,6 @@
 import FiniteAvalanches.Support.Plane.ArcComponentPreservation
 import FiniteAvalanches.Support.Plane.TreePaths
+import FiniteAvalanches.Support.Plane.PuncturedTransport
 
 /-!
 # Local connectivity near an arc endpoint
@@ -158,5 +159,83 @@ theorem exists_endpoint_ball_paths
   rcases hz with hzP | hzQ
   · exact hnot (Or.inl hzP)
   · exact hnot (Or.inr (Or.inl hzQ))
+
+private theorem endpoint_arc_ball_contra {a b : ℝ} (f : Icc a b → (ℝ × ℝ)) (hf : Continuous f)
+    (hi : Function.Injective f) {r : ℝ} (hr : 0 < r)
+    (t l u : Icc a b) (hlt : l.val < t.val) (htu : t.val < u.val)
+    (hl : f l ∈ Metric.ball (f t) r) (hu : f u ∈ Metric.ball (f t) r)
+    (hball : Metric.ball (f t) r ⊆ range f) : False := by
+  let A := Metric.ball (f t) r \ {f t}
+  have hconn : IsPreconnected (f ⁻¹' A) :=
+    (isPathConnected_ball_diff_singleton (f t) hr).isConnected.isPreconnected.preimage_of_isClosedMap
+      hi hf.isClosedMap (fun x hx => hball hx.1)
+  have hconn' : IsPreconnected ((Subtype.val : Icc a b → ℝ) '' (f ⁻¹' A)) :=
+    hconn.image _ continuous_subtype_val.continuousOn
+  have hl' : l.val ∈ (Subtype.val : Icc a b → ℝ) '' (f ⁻¹' A) := by
+    refine ⟨l, ⟨hl, ?_⟩, rfl⟩
+    simpa only [mem_singleton_iff] using (fun h : f l = f t => (ne_of_lt hlt) (congrArg Subtype.val (hi h)))
+  have hu' : u.val ∈ (Subtype.val : Icc a b → ℝ) '' (f ⁻¹' A) := by
+    refine ⟨u, ⟨hu, ?_⟩, rfl⟩
+    simpa only [mem_singleton_iff] using (fun h : f u = f t => (ne_of_gt htu) (congrArg Subtype.val (hi h)))
+  have ht' := hconn'.ordConnected.out hl' hu' ⟨hlt.le, htu.le⟩
+  obtain ⟨v, hv, hv'⟩ := ht'
+  have : v = t := Subtype.ext hv'
+  subst v
+  exact hv.2 (by simp)
+
+
+private theorem endpoint_compact_arc_interior {a b : ℝ} (hab : a < b) (f : Icc a b → (ℝ × ℝ))
+    (hf : Continuous f) (hi : Function.Injective f) : interior (range f) = ∅ := by
+  apply Set.eq_empty_iff_forall_notMem.mpr
+  intro x hx
+  obtain ⟨r, hr, hrsub⟩ := Metric.isOpen_iff.mp isOpen_interior x hx
+  let a' : Icc a b := ⟨a, ⟨le_refl _, hab.le⟩⟩
+  let b' : Icc a b := ⟨b, ⟨hab.le, le_refl _⟩⟩
+  have hd : Dense ((Set.univ : Set (ℝ × ℝ)) \ {f a', f b'}) :=
+    dense_univ.sdiff_finite (Set.toFinite _)
+  obtain ⟨y, hy, hyend⟩ := hd.inter_open_nonempty (Metric.ball x r) Metric.isOpen_ball
+    ⟨x, Metric.mem_ball_self hr⟩
+  have hyRange : y ∈ range f := interior_subset (hrsub hy)
+  obtain ⟨t, rfl⟩ := hyRange
+  have hta : a < t.val := by
+    have hne : t.val ≠ a := by
+      intro h
+      have : t = a' := Subtype.ext h
+      subst t
+      exact hyend.2 (by simp)
+    exact lt_of_le_of_ne t.property.1 (Ne.symm hne)
+  have htb : t.val < b := by
+    have hne : t.val ≠ b := by
+      intro h
+      have : t = b' := Subtype.ext h
+      subst t
+      exact hyend.2 (by simp)
+    exact lt_of_le_of_ne t.property.2 hne
+  obtain ⟨q, hq, hqsub⟩ := Metric.isOpen_iff.mp Metric.isOpen_ball (f t) hy
+  obtain ⟨δ, hδ, hδf⟩ := Metric.continuousAt_iff.mp hf.continuousAt q hq
+  let d : ℝ := min ((t.val - a)/2) (min ((b - t.val)/2) (δ/2))
+  have hdpos : 0 < d := by dsimp [d]; positivity
+  have hda : d ≤ (t.val - a)/2 := min_le_left _ _
+  have hdb : d ≤ (b - t.val)/2 := le_trans (min_le_right _ _) (min_le_left _ _)
+  have hdd : d ≤ δ/2 := le_trans (min_le_right _ _) (min_le_right _ _)
+  let l : Icc a b := ⟨t.val - d, ⟨by linarith, by linarith [t.property.2]⟩⟩
+  let u : Icc a b := ⟨t.val + d, ⟨by linarith [t.property.1], by linarith⟩⟩
+  have hld : dist l t < δ := by
+    change dist (t.val - d) t.val < δ
+    rw [Real.dist_eq, show t.val - d - t.val = -d by ring, abs_neg, abs_of_pos hdpos]
+    linarith
+  have hud : dist u t < δ := by
+    change dist (t.val + d) t.val < δ
+    rw [Real.dist_eq, show t.val + d - t.val = d by ring, abs_of_pos hdpos]
+    linarith
+  exact endpoint_arc_ball_contra f hf hi hq t l u (by dsimp [l]; linarith)
+    (by dsimp [u]; linarith) (hδf hld) (hδf hud)
+    (fun z hz => interior_subset (hrsub (hqsub hz)))
+
+/-- The complement of a simple plane path is dense. -/
+theorem dense_compl_range_injective_path {x y : ℝ × ℝ}
+    (p : Path x y) (hp : Function.Injective p) : Dense (range p)ᶜ := by
+  apply interior_eq_empty_iff_dense_compl.mp
+  exact endpoint_compact_arc_interior (by norm_num : (0 : ℝ) < 1) p p.continuous hp
 
 end FiniteAvalanches.Electrical.StatementGeometry
