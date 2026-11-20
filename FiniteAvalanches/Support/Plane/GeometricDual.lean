@@ -1428,4 +1428,62 @@ theorem not_crossed_face_matching_of_winding_jumps (D : Drawing J)
     (hcomp F₂ hp₂F (h₂.symm ▸ hq₁F))
   omega
 
+/-- Two equally oriented crossings of one loop in the drawing cannot have
+both pairs of chart faces reversed. -/
+theorem not_crossed_chart_faces_of_plane_loop (D : Drawing J)
+    (e₁ e₂ : E) (c₁ : EdgeChart D e₁) (c₂ : EdgeChart D e₂)
+    (η : C(unitInterval, ℂ)) (hclosed : η 0 = η 1)
+    (htrace : ∀ t, Complex.equivRealProdCLM (η t) ∈ drawingTrace D)
+    {u₁ v₁ w₁ u₂ v₂ w₂ : ℝ}
+    (hu₁ : 0 < u₁) (huv₁ : u₁ < v₁) (hvw₁ : v₁ < w₁) (hw₁ : w₁ < 1)
+    (hu₂ : 0 < u₂) (huv₂ : u₂ < v₂) (hvw₂ : v₂ < w₂) (hw₂ : w₂ < 1)
+    (hzero₁ : ∀ t : unitInterval,
+      c₁.chart.complexMapLoop η t - (1 / 2 : ℂ) = 0 ↔ (t : ℝ) = v₁)
+    (hzero₂ : ∀ t : unitInterval,
+      c₂.chart.complexMapLoop η t - (1 / 2 : ℂ) = 0 ↔ (t : ℝ) = v₂)
+    (hcross₁ : (∀ t : unitInterval, u₁ ≤ (t : ℝ) → (t : ℝ) < v₁ →
+        0 < (c₁.chart.complexMapLoop η t - (1 / 2 : ℂ)).re) ∧
+        (∀ t : unitInterval, v₁ < (t : ℝ) → (t : ℝ) ≤ w₁ →
+          (c₁.chart.complexMapLoop η t - (1 / 2 : ℂ)).re < 0) ∨
+      (∀ t : unitInterval, u₁ ≤ (t : ℝ) → (t : ℝ) < v₁ →
+        (c₁.chart.complexMapLoop η t - (1 / 2 : ℂ)).re < 0) ∧
+        (∀ t : unitInterval, v₁ < (t : ℝ) → (t : ℝ) ≤ w₁ →
+          0 < (c₁.chart.complexMapLoop η t - (1 / 2 : ℂ)).re))
+    (hcross₂ : (∀ t : unitInterval, u₂ ≤ (t : ℝ) → (t : ℝ) < v₂ →
+        0 < (c₂.chart.complexMapLoop η t - (1 / 2 : ℂ)).re) ∧
+        (∀ t : unitInterval, v₂ < (t : ℝ) → (t : ℝ) ≤ w₂ →
+          (c₂.chart.complexMapLoop η t - (1 / 2 : ℂ)).re < 0) ∨
+      (∀ t : unitInterval, u₂ ≤ (t : ℝ) → (t : ℝ) < v₂ →
+        (c₂.chart.complexMapLoop η t - (1 / 2 : ℂ)).re < 0) ∧
+        (∀ t : unitInterval, v₂ < (t : ℝ) → (t : ℝ) ≤ w₂ →
+          0 < (c₂.chart.complexMapLoop η t - (1 / 2 : ℂ)).re))
+    (hsame : ∀ s t : unitInterval, u₁ ≤ (s : ℝ) → (s : ℝ) < v₁ →
+      u₂ ≤ (t : ℝ) → (t : ℝ) < v₂ →
+      (0 < (c₁.chart.complexMapLoop η s - (1 / 2 : ℂ)).re ↔
+        0 < (c₂.chart.complexMapLoop η t - (1 / 2 : ℂ)).re)) :
+    ¬ (negativeChartFace D e₁ c₁ = positiveChartFace D e₂ c₂ ∧
+      positiveChartFace D e₁ c₁ = negativeChartFace D e₂ c₂) := by
+  obtain ⟨a₁, _, _, hp₁, hn₁, hp₁F, hn₁F, hj₁⟩ :=
+    edge_chart_winding_jump_of_plane_loop D e₁ c₁ η hclosed hu₁ huv₁ hvw₁ hw₁ hzero₁ hcross₁
+  obtain ⟨a₂, _, _, hp₂, hn₂, hp₂F, hn₂F, hj₂⟩ :=
+    edge_chart_winding_jump_of_plane_loop D e₂ c₂ η hclosed hu₂ huv₂ hvw₂ hw₂ hzero₂ hcross₂
+  let s : unitInterval := ⟨u₁, ⟨le_of_lt hu₁, le_of_lt (lt_trans huv₁ (lt_trans hvw₁ hw₁))⟩⟩
+  let t : unitInterval := ⟨u₂, ⟨le_of_lt hu₂, le_of_lt (lt_trans huv₂ (lt_trans hvw₂ hw₂))⟩⟩
+  have hs := hsame s t (le_refl _) huv₁ (le_refl _) huv₂
+  have havoid {z : ℂ} (h : ∀ t, η t ≠ z) : z ∉ Set.range η := by
+    rintro ⟨t, ht⟩
+    exact h t ht
+  rcases hj₁ with ⟨hd₁, hpos₁⟩ | ⟨hd₁, hneg₁⟩ <;>
+    rcases hj₂ with ⟨hd₂, hpos₂⟩ | ⟨hd₂, hneg₂⟩
+  · exact not_crossed_face_matching_of_winding_jumps D η hclosed htrace
+      (k := 1) (by norm_num) (havoid hp₁) (havoid hn₁) (havoid hp₂) (havoid hn₂)
+      hp₁F hn₁F hp₂F hn₂F hd₁ hd₂
+  · exact (not_lt_of_ge (le_of_lt (hneg₂ t (le_refl _) huv₂))
+      (hs.mp (hpos₁ s (le_refl _) huv₁))).elim
+  · exact (not_lt_of_ge (le_of_lt (hneg₁ s (le_refl _) huv₁))
+      (hs.mpr (hpos₂ t (le_refl _) huv₂))).elim
+  · exact not_crossed_face_matching_of_winding_jumps D η hclosed htrace
+      (k := -1) (by norm_num) (havoid hp₁) (havoid hn₁) (havoid hp₂) (havoid hn₂)
+      hp₁F hn₁F hp₂F hn₂F hd₁ hd₂
+
 end FiniteAvalanches.Electrical.StatementGeometry
