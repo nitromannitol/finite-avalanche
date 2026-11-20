@@ -51,7 +51,8 @@ theorem loopDeg_upper_eq_lower_add_of_crossing (β : C(unitInterval, ℂ)) (hc :
   have hN : ∀ t, 0 < ((β t).re - x₀) ^ 2 + ((β t).im + a) ^ 2 := by
     intro t
     by_contra hle
-    have h1 : (β t).re - x₀ = 0 := by nlinarith [sq_nonneg ((β t).re - x₀), sq_nonneg ((β t).im + a)]
+    have h1 : (β t).re - x₀ = 0 := by
+      nlinarith [sq_nonneg ((β t).re - x₀), sq_nonneg ((β t).im + a)]
     have h2 : (β t).im + a = 0 := by nlinarith [sq_nonneg ((β t).re - x₀), sq_nonneg ((β t).im + a)]
     apply hlow t
     apply Complex.ext <;> simp [wlow] <;> linarith

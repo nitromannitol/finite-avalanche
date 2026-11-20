@@ -36,6 +36,7 @@ path avoids the midpoint and the sign is zero, or it crosses with sign `σ`. -/
 def EdgeCrossingSign (D : Drawing J) (e : E) {a b : ℝ × ℝ} (P : Path a b) (σ : ℤ) : Prop :=
   (σ = 0 ∧ ∀ t, P t ≠ D.curve e halfParameter) ∨ PathCrossesEdge D e P σ
 
+/-- The edge path evaluates to the drawn curve. -/
 theorem Drawing.edgePath_apply (D : Drawing J) (e : E) (t : unitInterval) :
     D.edgePath e t = D.curve e t := rfl
 
@@ -75,10 +76,12 @@ theorem Drawing.edgePath_avoids (D : Drawing J) {e f : E} (hef : f ≠ e) (t : u
   have := (D.intersects f e hef t halfParameter h).2
   norm_num [halfParameter] at this
 
+/-- The curve of an edge passes through its own midpoint with sign one. -/
 theorem Drawing.edgePath_crossingSign_self (D : Drawing J) (e : E) :
     EdgeCrossingSign D e (D.edgePath e) 1 :=
   Or.inr (D.edgePath_crossesEdge e)
 
+/-- The curve of another edge passes through the midpoint of an edge with sign zero. -/
 theorem Drawing.edgePath_crossingSign_of_ne (D : Drawing J) {e f : E} (hef : f ≠ e) :
     EdgeCrossingSign D e (D.edgePath f) 0 :=
   Or.inl ⟨rfl, D.edgePath_avoids hef⟩

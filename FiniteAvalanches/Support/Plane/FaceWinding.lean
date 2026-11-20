@@ -27,9 +27,11 @@ noncomputable def complexLoop {a : ℝ × ℝ} (P : Path a a) : C(unitInterval, 
   ⟨fun t => Complex.equivRealProdCLM.symm (P t),
     Complex.equivRealProdCLM.symm.continuous.comp P.continuous⟩
 
+/-- The complex loop of a closed path is closed. -/
 theorem complexLoop_closed {a : ℝ × ℝ} (P : Path a a) : complexLoop P 0 = complexLoop P 1 := by
   simp [complexLoop]
 
+/-- The complex loop of a closed path avoids the images of points off its range. -/
 theorem complexLoop_ne {a z : ℝ × ℝ} (P : Path a a) (hz : z ∉ range P) (t : unitInterval) :
     complexLoop P t ≠ Complex.equivRealProdCLM.symm z := by
   intro h
@@ -51,7 +53,8 @@ theorem windingAround_eq_of_isPreconnected {a : ℝ × ℝ} (P : Path a a) {S : 
     exact complexLoop_ne P (disjoint_left.mp hSP hz) t ht
   have hmem : Complex.equivRealProdCLM.symm w ∈
       connectedComponentIn (range (complexLoop P))ᶜ (Complex.equivRealProdCLM.symm z) := by
-    apply (hS.image _ Complex.equivRealProdCLM.symm.continuous.continuousOn).subset_connectedComponentIn
+    apply (hS.image _
+      Complex.equivRealProdCLM.symm.continuous.continuousOn).subset_connectedComponentIn
       (mem_image_of_mem _ hz)
     · rintro _ ⟨u, hu, rfl⟩ ⟨t, ht⟩
       exact complexLoop_ne P (disjoint_left.mp hSP hu) t ht
