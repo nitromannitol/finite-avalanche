@@ -4131,9 +4131,9 @@
     },
     {
       "path": "FiniteAvalanches/Support/Plane/Disconnect.lean",
-      "sha256": "ae5e0f05a8412f46224075ad48cdbefd88fa7de46e7f3e966f00183b0163c331",
-      "code_sha256": "187a1b88c5f69d712760bae07681735a83f37da9fc9414dedb6f0342ff9ad85c",
-      "bytes": 637
+      "sha256": "f712cf8349d3927ebaa4bee12d8f902f3eaa751c760a231f105e845e45c2b07a",
+      "code_sha256": "cf2b07cd865cdc3e69c8b787e246f686f97ff114d53e0bec90eef1678269615a",
+      "bytes": 927
     },
     {
       "path": "FiniteAvalanches/Support/Plane/DiskBoundaryCoordinates.lean",
@@ -4395,9 +4395,9 @@
     },
     {
       "path": "FiniteAvalanches/Support/Plane/PlanarCore.lean",
-      "sha256": "7a82ace60b00116d7a3209998dda226645b36685489d5d2996e8b855461bef44",
-      "code_sha256": "9735c4d9897b9caa8d356f2f0d5eca703956ea303229d5af360507e3eff5a5cd",
-      "bytes": 8799
+      "sha256": "88ac45eea4041a7b30c8b2a8bebc7df289a5ca58d10ac9fb8f9a921204cd96bb",
+      "code_sha256": "11c47ec9ff4bb8de86b7155cab85beeeea782934cfa6974cc0046cb27ee6b9fc",
+      "bytes": 8852
     },
     {
       "path": "FiniteAvalanches/Support/Plane/PlaneArcStraightening.lean",
@@ -4563,27 +4563,27 @@
     },
     {
       "path": "FiniteAvalanches/Support/Plane/TopoDegree.lean",
-      "sha256": "f2e435cf5807619508bf84a07dee556b351278fd1d3ea66de48b263774b77188",
-      "code_sha256": "c66f68958733e5150c6f3fce07bb67d8d7cdc7a004e5f05f89994b9da21c0cc5",
-      "bytes": 12775
+      "sha256": "b6f3b9f9a9d544afd792c3f6d7570e4389b5547346de7c4398b49947129499ac",
+      "code_sha256": "c2ab4f43dd887a8f57f7f6886d89ac9bc2176f062a3acfd21537c3b21f518a79",
+      "bytes": 12984
     },
     {
       "path": "FiniteAvalanches/Support/Plane/TopoEilenberg.lean",
-      "sha256": "6bc82c48bbe7e8d916d57148225a398cc4324b2aa9f1817129359f4c641aae49",
-      "code_sha256": "12be72f4872a570475948b08962c92eb369c7da6e5b57848e17a0ad42a4acdeb",
-      "bytes": 13289
+      "sha256": "87c95554144a8accc02244867e1274a3afcf1a898f4f61954a602773c16d6b72",
+      "code_sha256": "5e6b19d6834a4fb58439d920b4e15a3e1babd2cfbd33e4fd19e0c4bf0d99114d",
+      "bytes": 13425
     },
     {
       "path": "FiniteAvalanches/Support/Plane/TopoJaniszewski.lean",
-      "sha256": "58646946b6328f9733407a1b8a180b0607c8111a29448705a20495b67b67706f",
-      "code_sha256": "9cad5a7b81c5a5401b5f2056e1f68d69da666bb0a9d4aaf5f4f392f3cb60a32b",
-      "bytes": 3361
+      "sha256": "d724a652ff5eb6c9fee0a131e10981f44f9347a724d7ac151bfe920fddebde62",
+      "code_sha256": "4ce64ccc6e5c5a98412055a61d63474b5ab73c27aaa82fc1a2d739dda64c4314",
+      "bytes": 3403
     },
     {
       "path": "FiniteAvalanches/Support/Plane/TopoSep.lean",
-      "sha256": "36a27166a888f5d86bf8d794a551d18a8df164cbfcec55a153ce9705fb4a2219",
-      "code_sha256": "5a9896ea64b65d69651261e88689b031360321edc0ba22bfad8a115d1fbe51b6",
-      "bytes": 10421
+      "sha256": "f6f03a266ab0ffed7a24933794f1c2c08abf7e226a695ed8a9d51b2756a7af4c",
+      "code_sha256": "ab350918de52c1619b5b80cbedbb2255671a078e5ac8e3f34bdc0dd0e269e73f",
+      "bytes": 10684
     },
     {
       "path": "FiniteAvalanches/Support/Plane/TransverseClosedAvoidance.lean",
@@ -4683,771 +4683,771 @@
     },
     {
       "path": "FiniteAvalanches/Support/Schoenflies/Accessible.lean",
-      "sha256": "443db546380b82ccd5b3c1eead1a86d2ae52572f8fdef8f5bd6bfbde59df9ad8",
-      "code_sha256": "cdd764c8bf813abdcd3cb5f1cd88b570a368cc4727b1ea6865b69b3b037dbb2b",
-      "bytes": 8209
+      "sha256": "b68353fb08cb9b609675234c135922abad3f5ed1aa2be8ddb52094bc4f4124a0",
+      "code_sha256": "faed9ee802891e3a9a5f921fb2374fef8c9ef6b523dd2306b4e1e0bb98ea62ce",
+      "bytes": 8229
     },
     {
       "path": "FiniteAvalanches/Support/Schoenflies/AccessibleJoin.lean",
-      "sha256": "bf6dd1a943b90529ff2acad928f06cd6abc68db18c1d3c3292dfe8c2a9245999",
-      "code_sha256": "7d0346a8a45559cdd9c1191fbe74b0f53362a084cdda1d2f7bc7af0e6ebbb7e2",
-      "bytes": 13043
+      "sha256": "acc1b911a62797e3cadc92c975c7e4dce8ca2c962a66bfb4b74014b094f39f52",
+      "code_sha256": "fb87967eba3f124e31c988bc085c093f3965232a15a0f0ce6814e890c9e641b7",
+      "bytes": 13063
     },
     {
       "path": "FiniteAvalanches/Support/Schoenflies/AlternatingCrosscuts.lean",
-      "sha256": "d03f815cb0ce9c1b3849e17d12d510ddb6765e5c8056a5e4f7f61fbd86074946",
-      "code_sha256": "036a5c784b53dc8fc628a57353286dd8effd8daf4579a6a8393f5685e124795c",
-      "bytes": 6558
+      "sha256": "167308273766957c9764a37917946bbcce00126d3223384fdb36b14089fead45",
+      "code_sha256": "2ef188fb89bdd192ee870337150828156dd52910dfd5315221f5df8e28d9690e",
+      "bytes": 6578
     },
     {
       "path": "FiniteAvalanches/Support/Schoenflies/ArcCollars.lean",
-      "sha256": "b14399cc468ff62eac3a41cd7476dd06653118a27dd0dfe4bf4f1e90cfbb9770",
-      "code_sha256": "e0ef0f017ce576bdcb87ec2dd73feb013e1516be80ea736d9e300d46213bc920",
-      "bytes": 74276
+      "sha256": "e8f02cb97c7fde0a8d3ca996f89f24a1ff9813c4fed555efe99f8cc49b3282c2",
+      "code_sha256": "dee21c46ba176c322f8912f98749c023869709b8ca8bde70c90f367418cbd18f",
+      "bytes": 74296
     },
     {
       "path": "FiniteAvalanches/Support/Schoenflies/ArcComplement.lean",
-      "sha256": "7e693e9f099a922e15984f89815fe4b60d186b7982f95a6367f71aea9ac1ce79",
-      "code_sha256": "cdb78f414a2c858955639b479affda8741278fb58cc87c47426b5eb455084bdc",
-      "bytes": 29217
+      "sha256": "2379e621ef640ef05b3772d4e9fc049987b911223e86ec3feb6487cbc7d4bc3c",
+      "code_sha256": "94ada44e847b70c041252102d5904bed08bdd318d711e25566101aec939e3c94",
+      "bytes": 29237
     },
     {
       "path": "FiniteAvalanches/Support/Schoenflies/ArcComplementPrep.lean",
-      "sha256": "d47beefcca7e683b0d2eae5c19bc48fef192312ac870269fbfa23463f2feb4e6",
-      "code_sha256": "c45a773af803097d33f0de121486422cb207b007701ea97bb884c161ba22eec8",
-      "bytes": 41182
+      "sha256": "ef062705494b3714b901ec874609375aaf9852aedde252779f0e9403a038adfa",
+      "code_sha256": "92f9aeb1db1685e40b731aabf7f4a92babf1d4524ba5d4b0c5ce9cec57cc3eaf",
+      "bytes": 41202
     },
     {
       "path": "FiniteAvalanches/Support/Schoenflies/ArcMonotone.lean",
-      "sha256": "63b750f9c61cd96058f15a9b50984e25a87017ebc78431d23796b56958873183",
-      "code_sha256": "313743fee36c4a078b9eb13a343439decd4ddefd20c026b4ab38a13a44166870",
-      "bytes": 8766
+      "sha256": "173d6527ec560c0b46a06b870104faea774edec23bd57747526416bee882c2de",
+      "code_sha256": "7b633468087dc65cd59f3345f7ff6e62284a2fdf8bc77a5714eea959c1ba7629",
+      "bytes": 8786
     },
     {
       "path": "FiniteAvalanches/Support/Schoenflies/BoundaryAnchors.lean",
-      "sha256": "996eac8b01ab6c13f90f416a304a19f4dee799b7d0de2c7d3f32338958aed649",
-      "code_sha256": "5d1aa813694a21599821565b1608ea991cddf948ec3fcdb9816c33952a4640d7",
-      "bytes": 40631
+      "sha256": "029bd3732cc05c4d2ba46753e0490ec242a97d33dd05b7bc7c59806b9f51a8fa",
+      "code_sha256": "c753a8b722a43fe47888528cf063fa14e3cad10596753095e9f9970e0fe710e0",
+      "bytes": 40651
     },
     {
       "path": "FiniteAvalanches/Support/Schoenflies/BoundaryContinuity.lean",
-      "sha256": "ec244d0b13719fcb8eab1ed7a86ea4770721c44998fa696f0ca1b4ac62d851da",
-      "code_sha256": "1a80398ab307d1bd3c879ea54130a8f30b80508f52cac43be43ad2531ea041c7",
-      "bytes": 23427
+      "sha256": "b23ac8247b12f17594ffd8c6053833d18a04ed8a7911d09fe0f0f33e3db673a0",
+      "code_sha256": "0505024368986927fe76a2a34051fb98b65e13ff4438062bcb4a37480d160372",
+      "bytes": 23447
     },
     {
       "path": "FiniteAvalanches/Support/Schoenflies/BoundaryContinuity2.lean",
-      "sha256": "8c6b6aa35047c9dd182f264432ade170a7acb2eb67f59a295286c0fe3f87a312",
-      "code_sha256": "c19bf699d1e79afce4eb75afbbd99e908a363b4de4875b4286b255fb764860fa",
-      "bytes": 26181
+      "sha256": "b4f11595af26b9596da038f52957e4b6df06e117452a790a7b2b3277e4230a49",
+      "code_sha256": "aa4ac4f0c449277cfad8c699a91eec6893cf36abfb504150a5c1458b375d2324",
+      "bytes": 26201
     },
     {
       "path": "FiniteAvalanches/Support/Schoenflies/BoundaryCycles.lean",
-      "sha256": "9f35bb78f2b91a737cce23fa57b4e7396d160f2a7ee51b6bf363d3a2eb1c4c6c",
-      "code_sha256": "b99ebcfcc7aff3ee36e15763c81cf16961ec36495c175d68ee51aaa7bbd432fa",
-      "bytes": 8091
+      "sha256": "496ba41f9354cc769a5ec5bb7374f9646ec32130cf998067a547e027d3fcb3f6",
+      "code_sha256": "f7604796362b098cde3a0fcf2c13f0f5c1387f7d33dc7c02159896910ec1411b",
+      "bytes": 8111
     },
     {
       "path": "FiniteAvalanches/Support/Schoenflies/BoundaryCyclesGenerated.lean",
-      "sha256": "da297628589f62a3279409621f40f01912fecb364ae8502621fda8cdda5ba162",
-      "code_sha256": "3ee2ab9b0b823fb7a89be3818f2c3afb06c9f74faa9ea1f89b8cedc5dd28a26d",
-      "bytes": 31208
+      "sha256": "e98d3c9b65497d2fa21757f3835e0bd5158ea7831d1b7c6fc4efce434d5499a2",
+      "code_sha256": "9d254a29af6bb312bdbcfb07614c358d19c6a3abf63c85bf7600a8a9e6315ee0",
+      "bytes": 31228
     },
     {
       "path": "FiniteAvalanches/Support/Schoenflies/Bounded.lean",
-      "sha256": "bff3d96a5e82b9f534e69e1a40387d01e915a72f356de9372dfb502de5d9661f",
-      "code_sha256": "8e49cb7a54094b5098acadd8630a050530fc35f4483c839271434549b48da29f",
-      "bytes": 2270
+      "sha256": "d6b471feb6314e545ef8dd5272d04cbc85c5764c9be4c185c82e552d206c7e65",
+      "code_sha256": "e946ff591213dd57f64b3a45f3f33e3cef0978de517fcace29f825596ee1423a",
+      "bytes": 2290
     },
     {
       "path": "FiniteAvalanches/Support/Schoenflies/CellulationInvariants.lean",
-      "sha256": "9187cafb35c5f89b41ceb5656f7db433e2680b022f3b23a55631c19204789ad1",
-      "code_sha256": "4cd8c1d64f3cfe6bf7858cd144726df98336c2e036013004bf6196620aa62806",
-      "bytes": 28628
+      "sha256": "6daa42b99499645ee39685da2154cd65d9b03835d2785998651680a6b5dac96f",
+      "code_sha256": "444f771854d69eb82cd47771366ddabb21065c6320b1f2a160ee14170ab72751",
+      "bytes": 28648
     },
     {
       "path": "FiniteAvalanches/Support/Schoenflies/CombinatorialInvariance.lean",
-      "sha256": "5a1f21aaa6fc38ac5e91082ff31fd96817b7417bc07aeb680f13cc7811b15d57",
-      "code_sha256": "5680129f1f7525774a1e4522d84ddeae0c6c31e3661a134af89206074802e572",
-      "bytes": 13892
+      "sha256": "d10d0bc417bab6d06466c2ca3996ecbb63e29f6bba1836211959c92d42387ae6",
+      "code_sha256": "eb23f67216fa46997c2bf0ea779986f0dc6d5e9f3997aa2249b8a8ee6dba29d9",
+      "bytes": 13912
     },
     {
       "path": "FiniteAvalanches/Support/Schoenflies/CommonSubdivision.lean",
-      "sha256": "5a8476a953c3b9287be2f689bb3c4c58526779f3632be2d62f922b438df0a659",
-      "code_sha256": "44ba3141616d2829dcd5e9c4e0980c606cee63c6434df9d6bdb6034ba91bf42f",
-      "bytes": 69454
+      "sha256": "3a319fb9cdd629ca1202d88ff8a7473b4c1f76153c57524e522f8d2cf4952c7e",
+      "code_sha256": "db4225dfe9a9ea16890e7338dd2d6db29c5fed4e9bf724d8a2d50561d0cc9097",
+      "bytes": 69474
     },
     {
       "path": "FiniteAvalanches/Support/Schoenflies/Concatenate.lean",
-      "sha256": "e118e7a2165c15cf0db315feb2c5222d28255c8c9f477680dd42b13a7cfab6bd",
-      "code_sha256": "58a02dfc804b9ed582a84e9c981f2ea1a5188ca6c4506148c3a4a1220340843a",
-      "bytes": 9667
+      "sha256": "198f54cde3e88d78767aa88a707c84ca5725b619787737d41e0530a189ecaf49",
+      "code_sha256": "96bedaeaa76a63c6965dc49f83e8ec66cc847fcc1f0e82039bec5386a281bfc6",
+      "bytes": 9687
     },
     {
       "path": "FiniteAvalanches/Support/Schoenflies/CrosscutAtMostTwo.lean",
-      "sha256": "368f4403afe3098c97e6ef11d690bcb6fd6b5141ed75b8d12b746c013d25b697",
-      "code_sha256": "6a08363239bd395fdecf828da5ecdff2da1866dede2354ff620b0fd036628e8d",
-      "bytes": 21945
+      "sha256": "bd5176f4daebfd5996292ed10dd438fb153e7793293f0f78f44107329a1b1d9a",
+      "code_sha256": "8d1b8985e17f08b68c34299f4c25522b45437e53c4f98aff1ed09c3d07437bdb",
+      "bytes": 21965
     },
     {
       "path": "FiniteAvalanches/Support/Schoenflies/CrosscutCells.lean",
-      "sha256": "a8efd5510cd460a6141f56a3f92e6b7e8b04a12a5d04b1b7648516f137fb32a3",
-      "code_sha256": "eeac23796b95eb8cf410f4bf8107b3295fc5c6515acf1ff4a60dd06781df659e",
-      "bytes": 14074
+      "sha256": "6a25e8f78fe6e5d7869dd7fbe75fdaa250e65d78666f664e91ffd643b569fd21",
+      "code_sha256": "573393608b62caa0fd030d36e506ebe7d806961ca6b9179a3f9086a71819471a",
+      "bytes": 14094
     },
     {
       "path": "FiniteAvalanches/Support/Schoenflies/CrosscutEncloses.lean",
-      "sha256": "50dde179e3b984a25e9de2d13ff48e166b7e7ef1e1c5eb270d6c3e40a9e31673",
-      "code_sha256": "78f9f8be82c02926b8d505ba7d14bb7f362b538c3a17e646effc71cce2158a7c",
-      "bytes": 19185
+      "sha256": "6ac27d4a37d34872217a990d1778de9a95586c69324572e0d2570cb0508cb8fe",
+      "code_sha256": "0975883ca06174f4a45224616eab8eb66ead37d0bc43ece29ef11ad1fc5d7822",
+      "bytes": 19205
     },
     {
       "path": "FiniteAvalanches/Support/Schoenflies/CrosscutExists.lean",
-      "sha256": "64315caae580da15f616f51df812bf3193bfff465033dcb50d7dbb5a48744f2a",
-      "code_sha256": "0e863344d2b3ebf351a6bca69e8c3db9dc37bd8833f3dc8608d41f1228fed3af",
-      "bytes": 18481
+      "sha256": "1db3088eea53d338291a448433c4e6e27f60dd567fd18be558f25fbb82d9dc2c",
+      "code_sha256": "88f5d9c03944d4197645de8d4eaf8b5d5bfbfe115b4a9ec7f91f0170f7351041",
+      "bytes": 18501
     },
     {
       "path": "FiniteAvalanches/Support/Schoenflies/Curve.lean",
-      "sha256": "6f9b892b88712e3f83d92343eb7e0ad9058781a4008b77eaee77e123a3fc1389",
-      "code_sha256": "ab85adbf8684e37adc54b8990a9f29518bd5880c50febecd7386341f631a2de0",
-      "bytes": 4060
+      "sha256": "d3a508ff4c0dcdb852e0bdf4216fa36c317e3065750e1a5973fb46e53bb8f4cf",
+      "code_sha256": "fb978f498d0cf85bfbe3f78a275d218b5e10339aeb6448e5d7094a23e05e0b5e",
+      "bytes": 4080
     },
     {
       "path": "FiniteAvalanches/Support/Schoenflies/Direction.lean",
-      "sha256": "5365c4a4d31c7b740af53b7cae1288f930d2e74e8587e0e6332c923c0240300d",
-      "code_sha256": "84f4ab034463bf9ca996496a9c24a1b3703857dc378fea27fb583f7453121cff",
-      "bytes": 13094
+      "sha256": "747eeaf76dbe60f9f9256d8a2834480d7cc40abc71a5f80e86cd3529c6a71a90",
+      "code_sha256": "1904df45d5531eed10e257fc424c5213dd5172319c75cd3fafb323e8891a9e23",
+      "bytes": 13114
     },
     {
       "path": "FiniteAvalanches/Support/Schoenflies/Endgame.lean",
-      "sha256": "9669d8d6e8aa95fdfa9974e6f1e11863e7aec8c426b3d46c466fba05f047da10",
-      "code_sha256": "5bff692e9d60c12048afbe487a3b7ce1e314eb9f66731e91c5c8f135749a73e9",
-      "bytes": 15359
+      "sha256": "2fc603cfbb9ec69a51fc1c4d2fb813fe1ec92804072486c97dec2fbd38afdceb",
+      "code_sha256": "b5a9be77a5aeca59f37bd53047175c97c3bcfb3ff381d424184b8da3e56e18a3",
+      "bytes": 15379
     },
     {
       "path": "FiniteAvalanches/Support/Schoenflies/FaceCycles.lean",
-      "sha256": "ebb0a95de3239f9857ac20ff6089e0293dcdf96b6026cb569e36d8d20663e536",
-      "code_sha256": "e44d3a36be9b37bc908388b0ac121a92acee657a4ff66d89b8ab20c968bce777",
-      "bytes": 18203
+      "sha256": "5d0d445d523b0cef43fd594a898c825209922cb288f3516f869017cc844e6555",
+      "code_sha256": "2c594af10e711f5b4320fd88263c71b2bad6bf087eeabea2e178f288a0cebd65",
+      "bytes": 18223
     },
     {
       "path": "FiniteAvalanches/Support/Schoenflies/FaceCyclesLand.lean",
-      "sha256": "f2bbfdc782f00792bf6fc2f926e074e923a122c5eec4fdcd1dce0750b1ccfc6b",
-      "code_sha256": "eb51bbadfac34b5918c5d1291a0354128a072f5288bfb98ebf4927bd142adb88",
-      "bytes": 17285
+      "sha256": "203c9ae784958833c81789542765cecf21e8e23c324d9c76b26776d8a32a82f1",
+      "code_sha256": "f9307b4f8f80b942ba07a96a24130891691de0754a000a880bfb4113ac3f0cdd",
+      "bytes": 17305
     },
     {
       "path": "FiniteAvalanches/Support/Schoenflies/FaceCyclesProof.lean",
-      "sha256": "959c98bfb14e098e0a6ad855dc871b297f46fcc569bc389856e3075a16bd962c",
-      "code_sha256": "8258ca6a3a0624cd529fd7355d5cc7adafc5db7d0ddce5c81975768238843c5c",
-      "bytes": 34853
+      "sha256": "ebefcf286484999a27f291294576519227f907628871abc5b56d22bd090319a8",
+      "code_sha256": "27b7e207fb2e440c7cf8cd4bb98f2e7d8fdb6a9de3e8cd0ad1f74919aa5f58f9",
+      "bytes": 34873
     },
     {
       "path": "FiniteAvalanches/Support/Schoenflies/FiniteTransfer.lean",
-      "sha256": "87267b8fc7e0881b1a5e0a330f22c7b96210f7ee287c0a1c99644c0c21cbc7ef",
-      "code_sha256": "42ba2eb58824280cab4a3d33b6461c26c6994aa562759ea1c49e705e97c56df9",
-      "bytes": 61393
+      "sha256": "c5d35c5a44054ce56a13f598b68908df4534e4c3cfd8c5cb422e2beb723c110b",
+      "code_sha256": "3ab0ca26094e5f5049053bfe666eb6913c226829edde4a2d62302d6f85bbdc21",
+      "bytes": 61413
     },
     {
       "path": "FiniteAvalanches/Support/Schoenflies/FiniteTransferTarget.lean",
-      "sha256": "02bd9fbe96cb6e8b5d3df75a5e89f901d535713635e17c8e9ef495a14c210e85",
-      "code_sha256": "7d28b13597fec85e4d086c822bc1e119bb75cafe38a46f2ce6ad1fd339e6f906",
-      "bytes": 80986
+      "sha256": "a9b4c452099d30a03974ce3ebea2aa4ca74f1ef9b58d4b90163ff1d95dbaf97f",
+      "code_sha256": "91fbd949ea9fd238cb1e571c77912dae82e95f7cef43b9353cc9b726d4a2ca3e",
+      "bytes": 81006
     },
     {
       "path": "FiniteAvalanches/Support/Schoenflies/FiniteTransferTargetMesh.lean",
-      "sha256": "7799cb691ba76e18fca0929d86b3d1cd2f184d92726e249657092ab038ba20a1",
-      "code_sha256": "defd2b0f15ea6d1851e16bfebe400d3b5a6329d0fdaa12af831d78677183089e",
-      "bytes": 20190
+      "sha256": "d42bef5c6d432da7cb051f176953c0a229b9aabc9a5340fbae1241f79d9b9217",
+      "code_sha256": "1611aa8a002470ccdc72004773448011ed336d05de1ccb8c88b30c94fb8bf73c",
+      "bytes": 20210
     },
     {
       "path": "FiniteAvalanches/Support/Schoenflies/FreshAccess.lean",
-      "sha256": "1082beb3d229b6d3679e5aa51728e99e4e8ffa371d69190aa55120f7526b6daf",
-      "code_sha256": "8c0653b013c8cedc0718d3548534d7a770c219272bf304e1affd5e8a92255cdc",
-      "bytes": 7515
+      "sha256": "9820b01f250af1ef471fcd930f1710de6c0bd2a84a9e0d4d376cce4844925b2c",
+      "code_sha256": "e56379a66b68b72c442be4f2fc1db5c778c04738ff35cc0b18bb5f4989b70641",
+      "bytes": 7535
     },
     {
       "path": "FiniteAvalanches/Support/Schoenflies/FreshDenseSelection.lean",
-      "sha256": "7c404eeb10372efdd30d9790d9c61fd1316c842ae410970cdafce3eac500604f",
-      "code_sha256": "34abc6496f98c5e006bea4af4b35b01cf1d99d92f4c1f35d13471f07b39d09dd",
-      "bytes": 22803
+      "sha256": "4b68d1cacb65733c405cf4bbc815a2611ccf04cb29e0df6fe1726879d4bcfbf9",
+      "code_sha256": "5fa04af1b66098a9edf704512524854f8d33700d51f95da7d8e36479526af8d4",
+      "bytes": 22823
     },
     {
       "path": "FiniteAvalanches/Support/Schoenflies/GeneralCrosscut.lean",
-      "sha256": "dca6bbc8e42c7723513f11eda584eae539747ac1330a3e8b835f7e087cfbed15",
-      "code_sha256": "48ba7b7e8508d4334427c523e3614382b1153a874b7423047c52c134aa4f9d03",
-      "bytes": 18292
+      "sha256": "314f6e71445b085d11d99107a0adeff5584de62253c0bdf1f1ea668a23b759d7",
+      "code_sha256": "0e330111ad3b3f8ad8550da152d7ad152002f52dbaf14b0d949935e909b1c864",
+      "bytes": 18312
     },
     {
       "path": "FiniteAvalanches/Support/Schoenflies/GeneratedStructure.lean",
-      "sha256": "3d8ea282a6091ca09f10fe027a2dad6aa2c0d471808fdb476d0268d32b463aed",
-      "code_sha256": "a3f310ff54b865df64af074c7afa622f69f8a3fb992fa6de3dfd94be10951895",
-      "bytes": 69754
+      "sha256": "13f33059d4de64c8e510e9ea58f92f379741f83b55c0eaa8c76f44bbc8b2b1b1",
+      "code_sha256": "ff658b1d84466d66a4cc948dfa35d647538eeb55f2749e4305aab08b54d7b211",
+      "bytes": 69774
     },
     {
       "path": "FiniteAvalanches/Support/Schoenflies/Graph/Component.lean",
-      "sha256": "1e394283c967e7fad3a354997646abb4d38f1136f9d23b4ed4cd12603ca49e88",
-      "code_sha256": "db74e6462e562df013c8044aa481aa98584fafe113ed1c8315b2f6ff54a1ba3c",
-      "bytes": 11270
+      "sha256": "df5894a0eb1e7732899f2a035a1fcef5140dc01fd484295b4f9298015fef587f",
+      "code_sha256": "fc77eac46d51ff1c8501ab1cf6619a209d96385b6829b116ebc057faf922e5a1",
+      "bytes": 11290
     },
     {
       "path": "FiniteAvalanches/Support/Schoenflies/Graph/Cycle.lean",
-      "sha256": "ca3f479138e5cf8fd1e1bcfab80842bfba328d9a372553cca77854f8551e477f",
-      "code_sha256": "b4c5159f53af0b14df1116f952598a8148885a183aa82e4149aae648ee9f37ff",
-      "bytes": 7640
+      "sha256": "ee4e109ed5cf58531c49e49b40149f8b65ede29605727ae18f41b3f971c518f8",
+      "code_sha256": "13aa24e82b8b9d6beb4e36c6df3dc3dd199cb288e118930e71ecbe014bb622a5",
+      "bytes": 7660
     },
     {
       "path": "FiniteAvalanches/Support/Schoenflies/Graph/CycleJordan.lean",
-      "sha256": "38e2ce68e6b562e1be2d233d88d638ebc74c3850b2b325f19e5256322c1b3c0b",
-      "code_sha256": "08999d648cf9151bc6465bcc1c743c094cbca8451d147571f9c1f8fa59d055ab",
-      "bytes": 6220
+      "sha256": "fc2a95525764f044affe4f13ed83d372f8c5d7ec02a83693b4368bdefd5d5417",
+      "code_sha256": "fff21f74d72458ba8a0d64f6bff86db9a9cd56844b2f573d828ced16dd0e11cc",
+      "bytes": 6240
     },
     {
       "path": "FiniteAvalanches/Support/Schoenflies/Graph/Degree.lean",
-      "sha256": "cb32afff8e81225e12f35b9dd2b53c97242f1b4f014f07ea9799cf96901e2a91",
-      "code_sha256": "cd6251b9d269fe9732165bb85e6fa9690d01f7f22805b7f619b366e6ef8741dc",
-      "bytes": 11039
+      "sha256": "8297c3d3f60b5921693d72b9242e02280669276906945739815f8539e909fb9f",
+      "code_sha256": "d0959d3bab76fb1c2670f2c4947f8b9f6506daef8f178abe6b5ebc022ce9d13a",
+      "bytes": 11059
     },
     {
       "path": "FiniteAvalanches/Support/Schoenflies/Graph/Drawing.lean",
-      "sha256": "232c02f53f326430582607c4c89c9b4e45a918a819314ee421c03f88abdd7da7",
-      "code_sha256": "17c40b2e04022430158e778d8e1a6b9c9bd606a82ac866237baaac2fd390039e",
-      "bytes": 5242
+      "sha256": "530f084872e2a8116d63d659241029a3cf75dea903a8e49ef0b3837f3dffbb08",
+      "code_sha256": "620f7555ae4a2bcc77824bfe904d8fbf6e0b2d2639ab003cda6abc327e544b5b",
+      "bytes": 5262
     },
     {
       "path": "FiniteAvalanches/Support/Schoenflies/Graph/Ear.lean",
-      "sha256": "156669d5a2eef86670b57781753f4e9e826bb94b36e9bfe182354d47faa9df97",
-      "code_sha256": "f5e9793d02f17d4b1b5a3c31bd173194804ec8e8e4ba15605b4440e09af62adc",
-      "bytes": 10595
+      "sha256": "6292c48044c10f2e7f11ba68ccb708bf85a275f9b173e1a0aa4f10f3bc17d50d",
+      "code_sha256": "ff0549bbadc94bbf0597c239f37575c6a45498aa61068d72ca9629dde647d2ed",
+      "bytes": 10615
     },
     {
       "path": "FiniteAvalanches/Support/Schoenflies/Graph/K33.lean",
-      "sha256": "9599580d1d671fa7e10bb98ec43e8feedc6ad5fe441a1c7bd7ccc85d1d80448b",
-      "code_sha256": "5d3ea1cedb957325271a2b6f47b501da6ef2061a118a5a9726665dcc7d0d1d68",
-      "bytes": 19991
+      "sha256": "fd9e0832208cb5b8885d6f9563c9ba04535d53c385ada0aff4a9eed67aca9f27",
+      "code_sha256": "f00659602fac4f6249266e9f176ac8e164ad5ccf028afefaf081802ba26c3c43",
+      "bytes": 20011
     },
     {
       "path": "FiniteAvalanches/Support/Schoenflies/Graph/K33Closed.lean",
-      "sha256": "24b2813ee6a7db7432ecb6ef9955050a8904e326f63025947c2488f0306807b6",
-      "code_sha256": "4b001ca77b9b1d8f0b14d68d9b0f78e360cacd51038736676847efc11070ced3",
-      "bytes": 32710
+      "sha256": "606b34ee969e2fe9511c0095bf36880518bc8b21100e5dbb305a42da5b8ec491",
+      "code_sha256": "ba74708cc44c8910a826b300e5aa453c158c39dd0a28fd12b47a1f779f50a712",
+      "bytes": 32730
     },
     {
       "path": "FiniteAvalanches/Support/Schoenflies/Graph/K33Land.lean",
-      "sha256": "181e38eca5a13e4e16343d859b517c941f550429646d12bea497fedc6e70ae21",
-      "code_sha256": "9dc700a11eb1a196308840c88ed730f152ec509d3a630a8b6ff8712366e38f96",
-      "bytes": 35377
+      "sha256": "5ddca4d833cddc117dd45eec456b8daf5f3c45f5b9c48a2d80dda40b4d0bee4e",
+      "code_sha256": "e916bfbe3df20d2cd5a6e3665f8c9b7123859142ec0a0bcec142d6b8ba73450a",
+      "bytes": 35397
     },
     {
       "path": "FiniteAvalanches/Support/Schoenflies/Graph/K33Planar.lean",
-      "sha256": "1708f4145cc68d2312d9df7a1342c978d3590142765ffa19b1bf4de6f7095915",
-      "code_sha256": "c3454449e6a8869f2c8b3689748368080bafa042266a367f62098156380409b5",
-      "bytes": 16707
+      "sha256": "2abcee36d7afe98115607c986c14fadcb098b47a48bc1922776851c1c19e3fff",
+      "code_sha256": "60a6136862508fb6d6841348eb77b53f4dfc56ab964418cbf6173f700fddec42",
+      "bytes": 16727
     },
     {
       "path": "FiniteAvalanches/Support/Schoenflies/Graph/OuterFace.lean",
-      "sha256": "eb508bc67cd24b7334d3fc3c1fa0fd447fefd7cdc6787c0667beaa4648fe399c",
-      "code_sha256": "e86e921133e75b7f524751f6ce13d99d54bf9145cf5cc5f4111f1d01ec35a5be",
-      "bytes": 5391
+      "sha256": "2aae84ef9c080373ed62a507d5de50159e4ebe6131751306de5d4c3d051183a8",
+      "code_sha256": "1cc17272e096d93372db2e0a9da3c2d3dc79ecfb01f051873f22d93b5da5f319",
+      "bytes": 5411
     },
     {
       "path": "FiniteAvalanches/Support/Schoenflies/Graph/PathGraph.lean",
-      "sha256": "e78a6a6be45e838aadde998d11e41be3eb853fb52731b8491e4a3c96437a26f8",
-      "code_sha256": "966912f72a616b339ad21657a6a8b17f786086986af93d775ce77c38afabba80",
-      "bytes": 9209
+      "sha256": "6d1450593deb5dabae739407f68d327a6d686cf752a31bb9cc30dffbab25c4db",
+      "code_sha256": "e6d367141136a1d70552f02bcc835ef0f3fb42d03c903b5d749f517f5eb0aa86",
+      "bytes": 9229
     },
     {
       "path": "FiniteAvalanches/Support/Schoenflies/Graph/Redrawing.lean",
-      "sha256": "f444507eb5f85ee7bb482cb214ac19b8027de1555b36b966a3668ef3a4262c15",
-      "code_sha256": "85b0137fcc1eed2c5e4ef42d1f4d40062d5ff1f4fce8321592a02dc9c2df0184",
-      "bytes": 25450
+      "sha256": "49ca08e3f5cdc1280b0de77a89d1aad93a63586679f445570f6fb150d1ede582",
+      "code_sha256": "e4486f4926c4b75b40e99e283d440af0e380a8848bc51d888196b16a573b4b14",
+      "bytes": 25470
     },
     {
       "path": "FiniteAvalanches/Support/Schoenflies/Graph/Relabel.lean",
-      "sha256": "bd49ff2f4336c0043d5fc3f56bead32292a31c54037053a9c81b2f2ec5fa66c4",
-      "code_sha256": "c1eb040cc109ab4b2ad6625eff6528d5a51d1dd8e5ed672f5462a761687493bf",
-      "bytes": 9073
+      "sha256": "3436aff7df2846730d9e75f4631cdb8d8df1d15c5beab80db9d1c29158e8f98a",
+      "code_sha256": "78e4c93cf20d70550c976724eb137e79307d239694a939df1f7d1f2d2c14fe94",
+      "bytes": 9093
     },
     {
       "path": "FiniteAvalanches/Support/Schoenflies/Graph/RelativeEar.lean",
-      "sha256": "61573bbaae417e3473c82834ff350e79f07cd04d173f43b06d2a9344e7a5b8d4",
-      "code_sha256": "55b0690b71950e13e38d77fa0caaf43e772b5c585dc0f1edf81d7ee340af3ac1",
-      "bytes": 6711
+      "sha256": "d79450cbe4e0537157f1db963ce8f3b5e888af9ea366cf87b27be9d95f29be0a",
+      "code_sha256": "f6994752112108cb1ba928a9a17761c61cf6b306350358a839f6cec426b8205b",
+      "bytes": 6731
     },
     {
       "path": "FiniteAvalanches/Support/Schoenflies/Graph/Tree.lean",
-      "sha256": "cb2c576796445879268ce79f9fefdf8748f7a563e811f701bb8fcfcec9e7a5b1",
-      "code_sha256": "5327f362112aeed8ea927a3d0c2fe0034da14fbe69281659672541b6f9c2b1ee",
-      "bytes": 12735
+      "sha256": "6e6d42d52767f4d3d9da367b949466ccf7a6c9721c789bad97854108482d9b6d",
+      "code_sha256": "2e70138b8823797815d8d0c9223e03141850fbe6e71886d8c185058dc8fbe78c",
+      "bytes": 12755
     },
     {
       "path": "FiniteAvalanches/Support/Schoenflies/Graph/TwoConnected.lean",
-      "sha256": "f11e89ab3ab5dfc1a8d5a8ef179a93cae40ff2dcc2dda5806a1fc537198afc9d",
-      "code_sha256": "a5515bd2ae7240d2db627e4dd455e7308e3fb872eed1620a8d289c356bf7c063",
-      "bytes": 10103
+      "sha256": "4e2fa3fe6618bdbc1ad774a2ed0acafe175de6a3261e92236ec3c241e5ac3663",
+      "code_sha256": "6abfd472c2aa4ca95fa2782a96df92e21b7fefa69c05bd4365e0d118771aa407",
+      "bytes": 10123
     },
     {
       "path": "FiniteAvalanches/Support/Schoenflies/Graph/TwoPaths.lean",
-      "sha256": "7afd7426c52861a0aca4594ed7c5131c2405fd170debfa1caf11e63bbef925e6",
-      "code_sha256": "02abec2bb15c5f1de1b27ecc96c22033c421cb037d3d342cd104a5a48dc5893a",
-      "bytes": 3504
+      "sha256": "4d6621d0ca4598cb6e0ab783aceb67e24355ec24fac6bc37aca2d730c0a9f514",
+      "code_sha256": "39447fab19e37ed5d111b7f73d567117ed529d4b564ac7b26a20da701c0fed29",
+      "bytes": 3524
     },
     {
       "path": "FiniteAvalanches/Support/Schoenflies/Graph/VertexSquares.lean",
-      "sha256": "17402e27a9132ecde87575a17fb192d5fab31cdc39790fabc45c2ec5f89f5867",
-      "code_sha256": "15b7802f288e89fe79b87f31d6615a429158cd2c1b7722cfdb6974fcdb09a4da",
-      "bytes": 14859
+      "sha256": "333af96ad40fe51e92a73e44231cce886b96ac2f98ec187042ec6f4c77047d3a",
+      "code_sha256": "d700c67bb44fe458355d887ed7e9c6f26aecda67b6fc9f7d67856e9bfaf5cb15",
+      "bytes": 14879
     },
     {
       "path": "FiniteAvalanches/Support/Schoenflies/Graph/Walk.lean",
-      "sha256": "f65d3f4f6bdb9270cb6816e38bfa312fde326d699c48dd603a90235d740be2f6",
-      "code_sha256": "1c7c35c91b87be1cfcbb51cd71851afca10fc2dd43abe68e043115d18db0f056",
-      "bytes": 15990
+      "sha256": "5e4993a3e53c0a4746c93e654435e6aaac5ac3f986c65d7b7d56577feff080bb",
+      "code_sha256": "2ceab4be64c9e375051f42486bce145038272d7c50f8fc08f36351cd496360b0",
+      "bytes": 16010
     },
     {
       "path": "FiniteAvalanches/Support/Schoenflies/GridAttach.lean",
-      "sha256": "e98c4d09ca24554428a55bfac3b6d336847ad94c15c9a12833027610bfeec73d",
-      "code_sha256": "9652bee181ebe700ad0a59497c40160299be4b3547573f892c3f67a15e3d5243",
-      "bytes": 21305
+      "sha256": "8573f270b3c6acc8c7c6408feb1ecbdf037a46afd55f86749afd65e81a07d46b",
+      "code_sha256": "d878a94bd3a47d63451d971359ecf7680c2ce98f91b3718a2f840820f21c6152",
+      "bytes": 21325
     },
     {
       "path": "FiniteAvalanches/Support/Schoenflies/InitialGenerated.lean",
-      "sha256": "e4a3ddf6886c4bbc18b15bb5eb187a317ea1319c0b1ad5c1c3487f2ef28e9c91",
-      "code_sha256": "ce053ebbb0870ce30ebdc1661e2ef294c8a044f34260151ea17ddcfa5055ba72",
-      "bytes": 30538
+      "sha256": "894be2f6e75fcd410c829264d4b7ce03ce863fa3a21e0bbc1263c66d2055bcc6",
+      "code_sha256": "c349ab44e21f9ce9caf9bcef96d663ce84f403d6279835484b30da84c3757698",
+      "bytes": 30558
     },
     {
       "path": "FiniteAvalanches/Support/Schoenflies/InitialOuterCycle.lean",
-      "sha256": "f634b36ca5d61ca31e8d61baea83d101c414052b8e43ef4bf63ac92c3d248636",
-      "code_sha256": "7d88cd9cdd4ee49c4377f623fbd30361c100b64b2403facc048e6efa5a414160",
-      "bytes": 2493
+      "sha256": "7de5e421048ee596ded250d85f6437e1c996d335546967c6515aa9af07143443",
+      "code_sha256": "a8b74faac6246f736215701f6f4ffde1a5241acd1092e94532e09d3954967728",
+      "bytes": 2513
     },
     {
       "path": "FiniteAvalanches/Support/Schoenflies/InitialPair.lean",
-      "sha256": "79d40b3fb5e98422411b93937f332b10e9a5b39e9f73949967b103c512664254",
-      "code_sha256": "f60df6ab5ea7fb460058b4881467a63c8d0fb3e52eabf9360d3207edd43f91f8",
-      "bytes": 68594
+      "sha256": "b8be0dbd2a198fe50bf19c330e77911aeed26795f1abdd3cb2e747aba7da4710",
+      "code_sha256": "c319282349cd8c403dfeddc01d13d08d917fe6464d3e9b303af55e0bb991db54",
+      "bytes": 68614
     },
     {
       "path": "FiniteAvalanches/Support/Schoenflies/InitialPairFixed.lean",
-      "sha256": "bd998ea6ea9f1c0d6b0fa21f9f4cc8297d3db9d8d88ce6545357903a418bffb5",
-      "code_sha256": "4c24400ee1aa3c70932c14f8c2b9e2695068eb99defb02ad514b8d08d16dd848",
-      "bytes": 26587
+      "sha256": "e1a0646f3f8c2ebd6cd4eaace255c18ef5ede8e0d10d051e004100c83c55acfb",
+      "code_sha256": "90d9d53897571c7f88e76e60ae8194ee85bf493bc3769f11f41177c4a11bf16b",
+      "bytes": 26607
     },
     {
       "path": "FiniteAvalanches/Support/Schoenflies/InteriorHomeomorphism.lean",
-      "sha256": "775ca535a369e81b4f21c5c5b83f85cca920706865f1f2065df260c08ec7dd29",
-      "code_sha256": "6345a95c9fa04023d7467dc43f72df5c977c96448bd4b24fb997b911cf4097c5",
-      "bytes": 4459
+      "sha256": "1f1b2192bb8865e4cec324a286dd3d7e094577c843de4ca771ae1dcecbfc5f88",
+      "code_sha256": "292c072b2205d6c9c3c013bf92d077c03e730c2ae6a42cf95ec18b22b6840113",
+      "bytes": 4479
     },
     {
       "path": "FiniteAvalanches/Support/Schoenflies/Inversion.lean",
-      "sha256": "35c64d8a1b14c39ae0ba9b9c931be7fd0b33bf01c0ac96e8ea8790ffac157316",
-      "code_sha256": "1f6204319fbb4b7707efb010799ab600433da55ae56258dc94544eae79e71da3",
-      "bytes": 21928
+      "sha256": "ed51d73b594454b8b45c47d9905a88bac7ea58d0cbf16ad4bfd5cdff75e7f2c4",
+      "code_sha256": "033d798de528157a9bcfafe391949c694864b0b2f747a245aa8dee90d95314ab",
+      "bytes": 21948
     },
     {
       "path": "FiniteAvalanches/Support/Schoenflies/Jordan.lean",
-      "sha256": "e9efd3082c7e7287485667d373710b8d9b7599884691284f6345aec6d235cf3c",
-      "code_sha256": "e4bc5aa37b4ed0bd2b7d498a8fff924742dbdb7bc391f97f7966339570b48f65",
-      "bytes": 35446
+      "sha256": "e9f812826eff353d47953e7cb1c6915056a6a107b547ccc9711528e7dfe2f4ef",
+      "code_sha256": "1b89558f56c320dc8e9e918e09ff68b9b406c4b30d816798d01b5744875e5ec6",
+      "bytes": 35466
     },
     {
       "path": "FiniteAvalanches/Support/Schoenflies/JordanClosed.lean",
-      "sha256": "ce073ad3c49d0d4fbcc32512720ae3d61880b86eee66f81b0aa7c4f7a34ceae8",
-      "code_sha256": "f74882077baece87c03a425ad0accb76739f7ef855113abcc18c4525e237d68a",
-      "bytes": 2213
+      "sha256": "ed4038a62255672fda20e6746539c9512f195df385ce7ea1c1c92f63341521a7",
+      "code_sha256": "1dd05b8d898d01e8d65c4dfb00367b3a20d29490b8a34381aeed7574e5a32bce",
+      "bytes": 2233
     },
     {
       "path": "FiniteAvalanches/Support/Schoenflies/JordanSchoenflies.lean",
-      "sha256": "69dd3a3de3e17d943c2ad0e8468e841e09d14c300b11e985683b529d299f9fb2",
-      "code_sha256": "9410304eb2d4cb4b5a5a3588028626753243530a8fbe86c092de0a25fc90257e",
-      "bytes": 1987
+      "sha256": "810643ed6f0105cf4e15883bc9059dbd28ef54c3fbb772d5cb3cdd7641bd8ed6",
+      "code_sha256": "e3bc4207771a897d5ade3bf79534220364d8b5efea11053af6a6d49714d1ab47",
+      "bytes": 2007
     },
     {
       "path": "FiniteAvalanches/Support/Schoenflies/JordanSeparates.lean",
-      "sha256": "0f60713d2e05c493eb4630da1b9bb10679375b3ab25100d636f6e0873479dbbb",
-      "code_sha256": "fbcb211c81b6cda0e2b930d7264e1ef79db78bf9a42686d51dfaa4d77bec36da",
-      "bytes": 26492
+      "sha256": "161209cc36c76dae831c7846583a2c49ae6173e55115e13f683d166cff0e1ad9",
+      "code_sha256": "cbe1d23a4e70b35c0ce7148641cc34357a883e44b74e6f3c9c8191e8e3dc37be",
+      "bytes": 26512
     },
     {
       "path": "FiniteAvalanches/Support/Schoenflies/LimitMap.lean",
-      "sha256": "5a492c2d397568df2193846a082a44af46116308405ce4c90d0bde4b466b87f8",
-      "code_sha256": "706adf37a18174679a3d7824ca795d3bb309f8f56c9d30efecf4f3899a13b636",
-      "bytes": 31418
+      "sha256": "153693fbcc2b933390323e05af07a592a240d6de7442493cf589128c7080c051",
+      "code_sha256": "0344e2f3349ab14432c1eca0b828b10ecf8318c5143d4dadd3e3bca8cf03eedf",
+      "bytes": 31438
     },
     {
       "path": "FiniteAvalanches/Support/Schoenflies/Line.lean",
-      "sha256": "64225a924aac99ad0b736c7032ebcf24d9dbde12efedbdc6d4b360c68733f241",
-      "code_sha256": "a8bde0ef11fe6a67b1a9780a5ec3af7d1a795662341fc76a69f497e6952846c2",
-      "bytes": 11646
+      "sha256": "9a44cbabbc6339c46bf8e34dcc420e26e9d2d0828a80bf9b1c4ed92977f96cc7",
+      "code_sha256": "7a23f8caa887f8b4b6b53ab60f4e2d5945850999796add40f0e67409c2d00107",
+      "bytes": 11666
     },
     {
       "path": "FiniteAvalanches/Support/Schoenflies/LocalGrid.lean",
-      "sha256": "a4837286f0c39991e57cf78089a9bf3eb8c958d1ed5ffe1c348ade398b475279",
-      "code_sha256": "938570257cbf7939ca8d9d22c3fad11fd77bbcf93bff43861e718f2b917bdbe7",
-      "bytes": 23760
+      "sha256": "c58d549962c82a396914d678c977e1fbc0a9b0f523d9aafe4317cf3119894e8a",
+      "code_sha256": "c83c02e01a343d3706d74ca07a0e7c6c8334d2721b766a34d6c466a561c5fa35",
+      "bytes": 23780
     },
     {
       "path": "FiniteAvalanches/Support/Schoenflies/LocallyPolygonal.lean",
-      "sha256": "7453c46e209ee01cbc5c3c69940f3d24b2f4a709b14f9a00122ef4c488dd2f4f",
-      "code_sha256": "c147ad4ebf5a083de8a97ba943372e814588cfd3d3415af23c2c305df923f0e3",
-      "bytes": 12922
+      "sha256": "8a56daa458b63d1c80a4b0e98668aa3033562a48852cfdfee3f107772cab94cb",
+      "code_sha256": "ab1c187b296b4ed726188bb46ff3ecff699c2f4096c8d01cb4e59c6e8d9addf1",
+      "bytes": 12942
     },
     {
       "path": "FiniteAvalanches/Support/Schoenflies/MatchedArc.lean",
-      "sha256": "1bbf2087f9396f87d99a73b0d698a94413827a339df00d2878a8256a390dd721",
-      "code_sha256": "6d7affd9a470f18e6de118fc4ea8ddc5192d8a81754f021dcc7e5e070fa80a55",
-      "bytes": 10361
+      "sha256": "6eabdb669f4ca41ada1883a9628247d98dfe18aaccb965e24e8b843298739d5f",
+      "code_sha256": "f28103d6e0e898b4902033233160263fd33371ff7433e560cf90e7ead86cead2",
+      "bytes": 10381
     },
     {
       "path": "FiniteAvalanches/Support/Schoenflies/MatchedSplit.lean",
-      "sha256": "010637180de78cc21e96d22d157a9c609f27323e64c69f7d8603901a98a073a6",
-      "code_sha256": "f118bee7caf5f1f9436529365d6d5f039ab6dbf0a231d1bb176483a341c09417",
-      "bytes": 15019
+      "sha256": "8ed4c8e9b7b2d83d641038b2c10caae4cdf01f9663c88018f44b68a02b4c2517",
+      "code_sha256": "dbdd057e610541935afc9c13fa9cee373785a1168fa7c95904959f5f93b57b10",
+      "bytes": 15039
     },
     {
       "path": "FiniteAvalanches/Support/Schoenflies/ModelCurve.lean",
-      "sha256": "4a823404444b3e4304748386725eed29858691658acd92c7cc99d50ce936e4a9",
-      "code_sha256": "41f278fe651a9ead8e598bca4defaa77efeb93891f1f2b40673a793f24470f4e",
-      "bytes": 15071
+      "sha256": "83ed0c569012a971618d44ac6a08f01b81f0ea61310b49e154503fbdb25edd86",
+      "code_sha256": "8daa1524eb0167417a069c31dce87f375e1252b39a1725d3734e50afbc10a762",
+      "bytes": 15091
     },
     {
       "path": "FiniteAvalanches/Support/Schoenflies/OuterChain.lean",
-      "sha256": "174329bf2853e35958a230ae55ab957ff73bff8238471d454f0b0501897550fc",
-      "code_sha256": "bfa20cbf31559b186f58f7ed8fc58444ac5c1372cf2214cc3a38714cf96ccc01",
-      "bytes": 24849
+      "sha256": "59deb7f760eaba2e8fcef2d76c5c2d73433126046ef95e793354adf8560a16df",
+      "code_sha256": "1c93ae809ee1009fb04bcd62c2a3bf7b3122de2558d7e37e20eb67c781f05a87",
+      "bytes": 24869
     },
     {
       "path": "FiniteAvalanches/Support/Schoenflies/OuterChainClosed.lean",
-      "sha256": "d06a1cff07f844be2b4592c7a4cb08ad1a0c33bbcc5568614695e5cf95fef0b6",
-      "code_sha256": "c4348cff37e8a082ee5c27c939946e90ad68aa88e0e9b1948a37c87817ed6d53",
-      "bytes": 1151
+      "sha256": "5cb93fb9f6cf03e52b1a2bb44079a024174c045c7fb1a114cc0e0a9e109ff0ee",
+      "code_sha256": "c8bd615d67b0d590784343abb9aa0af3b42e12327f4de8d19395de01181a5070",
+      "bytes": 1171
     },
     {
       "path": "FiniteAvalanches/Support/Schoenflies/Overlay.lean",
-      "sha256": "d604391260aa0e0dfbfd3192bb4f5ea7210ddc1935354bce20f567a36d1415a5",
-      "code_sha256": "ba93bc6f2b200e491fd5f1b66f62b8fe1a18e26743863d91e47ce07c144dc7d6",
-      "bytes": 10550
+      "sha256": "e832dcd2d217208b6f79b40904657ed93d45646ea04378db5a4f5567b7c68444",
+      "code_sha256": "6211b8401155ec6a567ff57688b60f24c1963cb94844bd58dcdf88df78145f18",
+      "bytes": 10570
     },
     {
       "path": "FiniteAvalanches/Support/Schoenflies/OverlayExtension.lean",
-      "sha256": "2ebda14504d570396764c6d21560613acc84099dee6baf500b1868a1ba865cc3",
-      "code_sha256": "ddd21a943d682a0ac2e2b8da055c18412289e5c40530a8af129e5d955af2a2b1",
-      "bytes": 9126
+      "sha256": "f00548cd77387cdcb5dbe0abaa55bba9ec4f017066c05943dbc795cbcaebeeb5",
+      "code_sha256": "9b42a7d618e88fc6c9198502bd1fc589a9a89a94c8873d2d36e72f05741fa3bb",
+      "bytes": 9146
     },
     {
       "path": "FiniteAvalanches/Support/Schoenflies/OverlayGraph.lean",
-      "sha256": "f172eb7b3f4a70e3417fba74500e09083f6d92b6eb722081cd2193c76543c57d",
-      "code_sha256": "99329340c8024c22386a9b3fd2b5bb820a44969e33342dc9eb339290226d7ea2",
-      "bytes": 13301
+      "sha256": "bc227a3cabfe80a0115bfca4ddf9d81cb15a72a3e6e1e4ba72630d4cd489790f",
+      "code_sha256": "c586990e0550fd4ad5773fb82887b6d6ed5ce1f0c5def5b7ba01c43082fe976d",
+      "bytes": 13321
     },
     {
       "path": "FiniteAvalanches/Support/Schoenflies/Parity.lean",
-      "sha256": "ddac490e5855944067dd8827c942c08502d8d5abacb2c24769f85c2aee104185",
-      "code_sha256": "262b1386fbebb1605df84304b42c382e4b7919d235bbf28e3859c112597dc4f1",
-      "bytes": 39999
+      "sha256": "bbe219b3fdab68b0ed8d2e8b0bb77805b64b0f06d988c077037bed2750e79db4",
+      "code_sha256": "8d87885a9690d9c581efc64e2ae94e5bdf5696bdf7906d02f4804f11df2bd8eb",
+      "bytes": 40019
     },
     {
       "path": "FiniteAvalanches/Support/Schoenflies/ParitySplitting.lean",
-      "sha256": "120d943b4be3e4817e743f75884e9b8a15b955c66c6b668910d83c87a4352d1c",
-      "code_sha256": "7fd1ede66e33b3bd02a1184f9ddb00cf023be38b77434a2438967e7c9ba51530",
-      "bytes": 17606
+      "sha256": "bb2ae05d795769048ec79fb94a457390dd7d0fd63346b7a94ac56f78479170e3",
+      "code_sha256": "cae34ff6d730e3c1a949b1863cc2c2de6a236c80c778c2b85cbd32290b695643",
+      "bytes": 17626
     },
     {
       "path": "FiniteAvalanches/Support/Schoenflies/Plane.lean",
-      "sha256": "10271105a1f16d347bdf9242cee1fbc36cf2b245b0e1ed5053db05a0963e6472",
-      "code_sha256": "7897cb8b9c22695fe796e730bd46045489b1b75c1b7672ebdd9188d373b2ceed",
-      "bytes": 7333
+      "sha256": "ca9a0982645dce8931a748168370ca0dadf495ff0d0e640130809aa81c0cad9c",
+      "code_sha256": "effbe263b6baeb140a2e1bc85294b613269261988c2e80d33de25a0f61d7e553",
+      "bytes": 7353
     },
     {
       "path": "FiniteAvalanches/Support/Schoenflies/PolyArcRealize.lean",
-      "sha256": "a7854b4bf090003d20b1f510557b97419384d8348b3b7f3b6c3a75e0dee96d65",
-      "code_sha256": "ad39c7d87a452a5dd0bf288ad1db71d8a39842dc6efe694aaa5935d28a808eb8",
-      "bytes": 28438
+      "sha256": "733e44fffcf251f8ca94af1988394bf081966cc72387e70c91b66e428e798c6f",
+      "code_sha256": "1ae050a4ec24ff3f390a00f8858c9a14ff682f6dab3178bc1454e5f2c70037b1",
+      "bytes": 28458
     },
     {
       "path": "FiniteAvalanches/Support/Schoenflies/PolyLocal.lean",
-      "sha256": "79f659fe7832de96fe12e70b080bee036904b1267721392d32171cd0dc76aa9e",
-      "code_sha256": "eb33603d02aaa4b50a19a9278c1d2e8a20adeae7165eac6543900c4be9732285",
-      "bytes": 13123
+      "sha256": "dbc4ebf74a341c5e7b86e0adcfa47ec0bc196feb211034e90376001bafb2c181",
+      "code_sha256": "8daf355986c9f7f413efa2712576f52ef3f69968d419a00542be8d733596d9c3",
+      "bytes": 13143
     },
     {
       "path": "FiniteAvalanches/Support/Schoenflies/PolyPath.lean",
-      "sha256": "9e0b60ef53c7cfdab31000e1e479d4d915d366fa22364e2639b4a6cdc32a275b",
-      "code_sha256": "e9a4b9bbeccde9a6b89ae62ea43daeb9407d964d3c8c88e6b14ba589d293140d",
-      "bytes": 5967
+      "sha256": "80b79a7fb928073df5f6624050a038afdf3a08fab54c6ad19e2dd488db8ee940",
+      "code_sha256": "dda96c46e60127424d2344ad5cc9167078e38c2f2c25bfba2fea527129c43f9b",
+      "bytes": 5987
     },
     {
       "path": "FiniteAvalanches/Support/Schoenflies/PolygonBridge.lean",
-      "sha256": "1c9ff7fc2fc163cf5345a77fb64bc3ac66d2c9f9030f3526d47fb657b974cb80",
-      "code_sha256": "f4716892f7d2636cec5fc95023ae632564854f43376d0709800031c3e3d2a38c",
-      "bytes": 18082
+      "sha256": "ba550f0d81f80db31c937d59f3b47cf68fbe0f624d32ed97e778f46a1f473e56",
+      "code_sha256": "100bb82996a7be2fe7f18d05f3b6005d7b753e9489fc4e8e0f6bebd703f97187",
+      "bytes": 18102
     },
     {
       "path": "FiniteAvalanches/Support/Schoenflies/Polygonal.lean",
-      "sha256": "3af2bded921d39fded513aabe9fe64cbfef6f21b6ee4ba0f0d7a824e2e28f4f5",
-      "code_sha256": "234c6157672cd600724a375ad81692db2e04fb7d76d4d458f7a2c8b16fd91e9e",
-      "bytes": 7168
+      "sha256": "38d0d2d12d2e323883495da64f8f1200e014364beeebb6917535d70ab95bd6da",
+      "code_sha256": "3dd72a815e0e600d4317e1f7b81d84905cebf512dd414b71b2ea450fe1787f2c",
+      "bytes": 7188
     },
     {
       "path": "FiniteAvalanches/Support/Schoenflies/PolygonalCarrier.lean",
-      "sha256": "91eeda79e9eb64d2b32bec631a9e38cc873050dd67b47435c62b068bbd0a8556",
-      "code_sha256": "76028a4fa424b7458e50030e45a5c363d4350d6e81f7948b2217ffc6267f71f2",
-      "bytes": 6701
+      "sha256": "40581e0956496ee3be37d857d7c077ca0a90022ee35384d229bb9077991eea7a",
+      "code_sha256": "b857d1ab265c83f38e23f463840217705937328dd32c50f84995a8d92cb29cf0",
+      "bytes": 6721
     },
     {
       "path": "FiniteAvalanches/Support/Schoenflies/PolygonalCrosscut.lean",
-      "sha256": "9ab7a74115718d08462b601a8e623d89e08ad13e31ef5e246de5232b8fc24dc3",
-      "code_sha256": "0b8be9ec0b9d3b588616ef5a7bff233b78100f043efb6dbfd144c862e31162ad",
-      "bytes": 22309
+      "sha256": "cf7b0ed22637757015aa336a4b6c6736613e3a11083a69c55da89061de1183ef",
+      "code_sha256": "42868c3362be4f9652365411962c9131266d48d815f476bf0061cf1d1bd5da45",
+      "bytes": 22329
     },
     {
       "path": "FiniteAvalanches/Support/Schoenflies/PolygonalJordan.lean",
-      "sha256": "efb081f9920031ba377cd9f6b260f26dc77d3b4ccb4504ec06380ecdc65cb0ce",
-      "code_sha256": "4fbb8d955514e53ed7351a86e9f6570799408889e1f9b439086f720fc7f8c60e",
-      "bytes": 25048
+      "sha256": "c5872854c2c81c765e1cbc7129876a25e57a0db85274c10234dec1a8e4be5b9f",
+      "code_sha256": "56aa1c4fe19d15137c4c06667516939171e7936535a31e0c9b32aeee3bc13ac7",
+      "bytes": 25068
     },
     {
       "path": "FiniteAvalanches/Support/Schoenflies/PrePolygonArc.lean",
-      "sha256": "7acfbeb97a05f81987cb8511b1db8238eb8e17b90d6d17d5f45f4fcb85e2c79a",
-      "code_sha256": "536c578d6c25513bcf36ce7787514df2e2be0b56b19c43675646d31b2c8c9b1b",
-      "bytes": 36467
+      "sha256": "eb735ea19e2deeeb391022ba55cc8ef5b3f1e8deaa8817aa4531fab39de6c2a1",
+      "code_sha256": "e37bd45d8c4779f11da36cf1491e96bac72cd894ce0f5131dc96258e3bc65e5a",
+      "bytes": 36487
     },
     {
       "path": "FiniteAvalanches/Support/Schoenflies/PrePolygonSep.lean",
-      "sha256": "b7994a58110a1cd866c59eacd431435a4627a99bf9961cce78d17db29e5b1380",
-      "code_sha256": "a0589e1099edb9bcb3a3ced095e67d5cd5cf585079a11ac9d098c76bcdb19395",
-      "bytes": 15598
+      "sha256": "a97ce061ed638f0fed2ca934ccac3f75497f3ee794dea79926c1e4118450becf",
+      "code_sha256": "5ab186654abb2097b7e008bcb39c8bb73d521d4ac5d9e4d885447185523fb534",
+      "bytes": 15618
     },
     {
       "path": "FiniteAvalanches/Support/Schoenflies/QuantitativeForwardStages.lean",
-      "sha256": "a8c1c7c5646e4c35bf2c6f1b216655faf29ef3bca5e6c8135285e4f8a6c987e2",
-      "code_sha256": "e7c1dba178399a23aff8b91702ab11a2cb038d7965a7ffa4301f68840de4e114",
-      "bytes": 11502
+      "sha256": "e7d858ad87e432e1fe180d2e77ed1595351cbe07369829d41b55cab49baeacb2",
+      "code_sha256": "028120a36091fc8f485906bf1e3b0b0568eef8c581b37e67e2f6fc9b48358d3b",
+      "bytes": 11522
     },
     {
       "path": "FiniteAvalanches/Support/Schoenflies/QuantitativeRecursion.lean",
-      "sha256": "0b8bcc2eaa8beabde9c11ba351035b1774a3dff80a8742beaaf14786f0cd5396",
-      "code_sha256": "f2277c56cfe61ac34e35054c6556431c72579ccc888f2d476c2054a52c0167d5",
-      "bytes": 10531
+      "sha256": "af1a47468fe1ec6bf772d15d24779123228c02d3394ac0873b1253f72c2971e8",
+      "code_sha256": "1618685c61375581f2252789a39c3d464f2914d81c8378589404923a1b67a18c",
+      "bytes": 10551
     },
     {
       "path": "FiniteAvalanches/Support/Schoenflies/QuantitativeStages.lean",
-      "sha256": "8cfce98f32900f73f7bc28dbef3e3540872cf628903dad5ba81e51a7bbfab147",
-      "code_sha256": "e88f25f5050ac9adf21f613c39ee286d9c4162e071a564d1eda74e9323fe5f31",
-      "bytes": 3725
+      "sha256": "d586a2212c2403159f71622dc2f2ddd72329aa416211e1c2fd083c4853f90251",
+      "code_sha256": "6e645b0474894e8a5bcdee5c4d0cd2196e958f6b3478ddf3163044d48e4ca5b2",
+      "bytes": 3745
     },
     {
       "path": "FiniteAvalanches/Support/Schoenflies/Realization.lean",
-      "sha256": "90eebf422190a7dad38dc3643052e3d35e4370b1bae8c748c334de95a6405c23",
-      "code_sha256": "68264945bd2280f202bf2467b1e7667304d60f224ccf9c9215cad4915986c4f4",
-      "bytes": 62815
+      "sha256": "8830186280cfdbd3838f669206a654610ec43f38a9dda0585ba1709d843443f3",
+      "code_sha256": "67eba39daf61ddc4d5865d4b85c9a106530705c28794c5f2126894672440f19a",
+      "bytes": 62835
     },
     {
       "path": "FiniteAvalanches/Support/Schoenflies/RealizeSplit.lean",
-      "sha256": "117149ad7f0f7cbc5c438972ed996b26e29ccd3bce73fd62b7a05a3d94c39d23",
-      "code_sha256": "2a3a380564e09cd35e9c1d98aedd5347b7e25c04c5a8915528540cc32f1b5394",
-      "bytes": 39704
+      "sha256": "8ea8f8365e686bdd48a8445acf2b0061e135c85d36700fc8fb9de1868a8b0788",
+      "code_sha256": "417610e25ad4dafb59dd91ec19315965d82a63a42d78fab63cb923ff76147e79",
+      "bytes": 39724
     },
     {
       "path": "FiniteAvalanches/Support/Schoenflies/RealizeSubdiv.lean",
-      "sha256": "3b5e63e3079bcd588836e3850bf987f002dfe5ab14ebc31ac3c4967bc452c3aa",
-      "code_sha256": "04834bf7940a4ff71c617d668bbfea378c41a1d29b73c3f3ed19f57805246525",
-      "bytes": 40528
+      "sha256": "47cb95e7f52f85cec2881fec42a92c3e89c1b343f6edcc5e1ca40588a94af41e",
+      "code_sha256": "bdf0c29a0961519095578a4d9a54722d45c89f54610a2383c27ba9380ee984a2",
+      "bytes": 40548
     },
     {
       "path": "FiniteAvalanches/Support/Schoenflies/RealizeSubdivHomeo.lean",
-      "sha256": "d708ed9a2f92a037f73e1748ff6899491d9c8d7e199db5416ae3bd97fbb1e81b",
-      "code_sha256": "97968800904e603f2c78b449e8280603d1909ab74766bb8de2c69f8410a09bb7",
-      "bytes": 5870
+      "sha256": "0e026d640d84d460855baeea0a224656b69bfdc242a44a77072d5eefd1bed15a",
+      "code_sha256": "b6bd4939cbbd47cb1660fd9de306a135c69725c4e74c3572d0121fcd5762ed5d",
+      "bytes": 5890
     },
     {
       "path": "FiniteAvalanches/Support/Schoenflies/RefinementStars.lean",
-      "sha256": "0eab1c07caec09cdd6f4d1d2bc7766b94a6f96625b338bd9cec203a88d8cd31b",
-      "code_sha256": "24157580853f2fb48f08c61e4992cae79728e5c0c41821f1f14ff49f66f588d0",
-      "bytes": 23241
+      "sha256": "5df81d06cc3e6cfdc76ee00fd6f5a8ae7ad8013343a8ca22fc9fb0f7b7ca9644",
+      "code_sha256": "a1ec4b7085aba53ed813f6c366be14b224482fe7fb91c98383205297013c68f6",
+      "bytes": 23261
     },
     {
       "path": "FiniteAvalanches/Support/Schoenflies/SegmentCut.lean",
-      "sha256": "bac3e7c5d79c708d5a4f2ca263d1711e66736673296a98e18bbe465a9c426f4e",
-      "code_sha256": "967f271661540f5719826777cad74ba0caf3a06b435471dde71a6e176cee5a51",
-      "bytes": 3437
+      "sha256": "77a591ea0391542a45060f68cef8fbfa189d877dc23df42aeb6e72627d9bbd2b",
+      "code_sha256": "a1adc0e710fa5ba06c6cc9c035950f349f10d85ae2ca02770ebe12a7606852bd",
+      "bytes": 3457
     },
     {
       "path": "FiniteAvalanches/Support/Schoenflies/SegmentMeet.lean",
-      "sha256": "ff5e80360037fb31e1150cc4894c2069da95e3e8e1c7757393d601b16fae26c5",
-      "code_sha256": "d4825176a8ea52aa43415abc25e7027c2f91bfa076e27ef93b664812d7aeaf2d",
-      "bytes": 2270
+      "sha256": "ec53e3dd315af992a79340718e23b5bbe39ef3a7f3c6bfecf1d72db30ae0208d",
+      "code_sha256": "db83ee3377080f43ce025875953c9e967e152b071e843c265958e38a45fd3294",
+      "bytes": 2290
     },
     {
       "path": "FiniteAvalanches/Support/Schoenflies/SegmentOrder.lean",
-      "sha256": "3c7548276f81f679be58410926235fac3ecd9f39b83ba82610d585fd0337998b",
-      "code_sha256": "68c6a7440bd5ddbecbb431528220e2c02f60519558a0b45a2cd175e161eb5176",
-      "bytes": 12269
+      "sha256": "822fb1d8bff8e2a03cec49ba3ebe1307bd7e9411187d945fc6565522d0fa81ae",
+      "code_sha256": "c33c06cc277edf30f6ebf1410d99e2ccdf0a676ed0b5435813e8dea073d9536a",
+      "bytes": 12289
     },
     {
       "path": "FiniteAvalanches/Support/Schoenflies/SimpleArc.lean",
-      "sha256": "0e7f5f860aaf90a7fb3c6c1714314448667637fad6a3567acb91060b6e5a10de",
-      "code_sha256": "aee55c855fd3e666537699fb83be40293e460c92ad5ea52d138b299142e051c4",
-      "bytes": 17618
+      "sha256": "515501420949ef7c290630163b8ba411433043e880d9f361c4bd8e48dbb239a2",
+      "code_sha256": "06779eff363b03c14d8294aa5be5570aeabfc83ca699a33743add8faec54dfa7",
+      "bytes": 17638
     },
     {
       "path": "FiniteAvalanches/Support/Schoenflies/SkeletonAccess.lean",
-      "sha256": "3a6574a82e6fb6e0760a43dd6f1bf3af9c0228ab24fee41c8d83a9f9b084ac0a",
-      "code_sha256": "8dc0e93477642b0877c749ef0a721f6c0eb06850deb5dcc7572212f0a934701b",
-      "bytes": 29480
+      "sha256": "af9f5e7f58aa01a983910f01c71bbbd5248d892610ad79acabc1c5671c225e47",
+      "code_sha256": "91d0e060e8f3083e9e9e24af8079a7026cf359376eaeaaad2f8fc25534a315fd",
+      "bytes": 29500
     },
     {
       "path": "FiniteAvalanches/Support/Schoenflies/SkeletonLocal.lean",
-      "sha256": "441a4b84224af6ee73b1e404bc777b8c1d7cb0343b7d253c0a59949cb192e15a",
-      "code_sha256": "1f82f359d6cb625222d70c468139c5b7bb4148487ecb4ed111758f81a68228fc",
-      "bytes": 23776
+      "sha256": "bb3a408a0f2da839ebf70e1f526ce85a88a52568315650db791b13173470a5b1",
+      "code_sha256": "1d13ce91293cf9aba0fd400af02c9f1b824dbe78a199425b92765b32d38ca0ab",
+      "bytes": 23796
     },
     {
       "path": "FiniteAvalanches/Support/Schoenflies/SkeletonSectors.lean",
-      "sha256": "3f71c8267efaf884e87fd5cb5ac4d06776cd0f63b8933718fa4b3f18b84f84ef",
-      "code_sha256": "2080e4cd55ce29ac4c2d61ca2aec02b1200db377ed4a3f4fc058de54588aed7d",
-      "bytes": 43213
+      "sha256": "51f8e5fe8dac04d8b93ca7a25daa47c3723d68ca40d7091bcd3d2e278f370cc3",
+      "code_sha256": "1c1e06e91924c7bd06c12b19e10aeaafabde9447bceb2f89f1c1e122a7cda836",
+      "bytes": 43233
     },
     {
       "path": "FiniteAvalanches/Support/Schoenflies/SourceAttachment.lean",
-      "sha256": "043e5fc66635157e8dbe069485f8a9829fb1a474f18022e67c0a7ef9fb992b09",
-      "code_sha256": "a69696fb9c7f61259c75171bf4ff88332b5b1a236a665d2bc6c7831710615118",
-      "bytes": 66911
+      "sha256": "97112a8ebf71cad408162cf05e6328d36b522120a4eb7daeb9f23dd61cef5156",
+      "code_sha256": "45a1fd8e98c78148fe2768752be372ae066e0da8c85ced09a4c9301fb32c0581",
+      "bytes": 66931
     },
     {
       "path": "FiniteAvalanches/Support/Schoenflies/SourceJoining.lean",
-      "sha256": "e00b3d38923d0d224fd809749f47384d61750529256999db6e8c18eebe796ef9",
-      "code_sha256": "8d238e85def3612e44823428dfaa625d733eb920d78d796aadb6bdde0a9784c4",
-      "bytes": 59751
+      "sha256": "030e85fab2192ec1de82d25e1451a0100245a943b0e42738f2c563afeee32464",
+      "code_sha256": "ee2cabaecf84df83f7149a8c1fdd011fa8a0bc1e5c248226cd2308ff8997d945",
+      "bytes": 59771
     },
     {
       "path": "FiniteAvalanches/Support/Schoenflies/SourceOverlay.lean",
-      "sha256": "d9c517c3b9fb9f9fa3b969616b153e1c84f229e74605d9aaf666fa38dde08739",
-      "code_sha256": "3bfea2951bf06d1e81e0e0b8c31328cf53b65b75465bee1d32c87ff03e174571",
-      "bytes": 49260
+      "sha256": "7129ddfdd878cf81cd2a4e0bf7ba089502ac1075825299b5d37742752ca5046d",
+      "code_sha256": "f4fb98b574f29e1cb939480fcb069b84f3e3b350d8901f3073647c38e1cbf140",
+      "bytes": 49280
     },
     {
       "path": "FiniteAvalanches/Support/Schoenflies/Square.lean",
-      "sha256": "cf0898cd0b2ea2ad00c9e545da03e2c396eb16f62076882b90fc82dbbc8efa70",
-      "code_sha256": "f18a00d1368aebcdaa705623394b4216ea3a9d1fb563e619426b3d306534fafb",
-      "bytes": 9820
+      "sha256": "f8b287adde0f01d078ec68fc59e1ba072c0fef55b19e377f9b5e1106e6529a53",
+      "code_sha256": "9732cf48257135dc7f7c9734877e309972dcbc9ce68498eabea6d704988a9297",
+      "bytes": 9840
     },
     {
       "path": "FiniteAvalanches/Support/Schoenflies/SquareCycle.lean",
-      "sha256": "42bdcf0088a239d1959502fec642a1f00ce6a517334cb59302136651ed9fba9a",
-      "code_sha256": "48ced3a820023b5d7535b604361b2e318935e3240fa8997fee78bec007bb2a52",
-      "bytes": 40761
+      "sha256": "4af952b434e277fec5498e551b3a059ba0c5d3325b82f1b99c6d5978f8396c98",
+      "code_sha256": "50c3e2ca8f24fe7e53c3430614c0d5077a60cd244a88581327a3fb36574fe175",
+      "bytes": 40781
     },
     {
       "path": "FiniteAvalanches/Support/Schoenflies/SquareMesh.lean",
-      "sha256": "7636a1ae34b6612eb9196f57e9cda83f22c564152f887bdeee1c1260a69dd820",
-      "code_sha256": "900479e584d062e83138f4c615b24e711e38418c0a9563107ddc5d249c6989ac",
-      "bytes": 48221
+      "sha256": "92f3611d39297e3c776b6d5301932e7ac5a20e812723d203f1d29d2cf34c0975",
+      "code_sha256": "60538b4ff296394217fdec04df91a2f63ec717f0e8a666fa1a6768fc02d87000",
+      "bytes": 48241
     },
     {
       "path": "FiniteAvalanches/Support/Schoenflies/SquareMeshClosed.lean",
-      "sha256": "5c05a1618ee03c6eaaa5f7719c27861d8100e755b1a42130cc595b1ac1e2fdeb",
-      "code_sha256": "00c48d09ace06b03fa43c90953c50fb9cad7ac49658ada4c2e64157a51208f6d",
-      "bytes": 51669
+      "sha256": "da1047d41f313121f0bad1d64392d14d561e40e2780be3d2f083a4de7c7c73f3",
+      "code_sha256": "db31eb675a59e939c4c01877385e3612fd91cd6ede8a8bf3009c3cf64875475a",
+      "bytes": 51689
     },
     {
       "path": "FiniteAvalanches/Support/Schoenflies/SquareMeshConnected.lean",
-      "sha256": "0f84e0601e9a5520c1401c3e09341516162a60b397d16bcc095d1dd165a380ce",
-      "code_sha256": "c1a068bf6afb8e0172215b5ba8be7791e34bc703154a3451ba0b39caa1037ef1",
-      "bytes": 46044
+      "sha256": "9588d39822ffc94861650a7fa25c52edf93b4e6c69e06c04fb25b5dc3ff99006",
+      "code_sha256": "14772b56883ecf309bcd926a7e6007d378561b23137fd9f2bec0429828c0239c",
+      "bytes": 46064
     },
     {
       "path": "FiniteAvalanches/Support/Schoenflies/SquareMeshFixed.lean",
-      "sha256": "cbc0e9dd836d728f193a5203fb7dfd5c4dc8217c5e73b5972d54ff7c2ee2a292",
-      "code_sha256": "323a1e381bc8c770fb2b1d3de2b59ebef9834293c3ee14dffa811892025b5d48",
-      "bytes": 40502
+      "sha256": "68b91edaa9964cd95c806b816712bec0d09866b841dd37ae2ef6783237294aee",
+      "code_sha256": "fb133b78b0a4b520fbcd176bd8c25ba8dfa75bdfc29265ab9c45a2e3aadc3551",
+      "bytes": 40522
     },
     {
       "path": "FiniteAvalanches/Support/Schoenflies/SquareMover.lean",
-      "sha256": "ce7d57d0dbc41802a363aaee8a0de0f0c26cbfab6b978927a9172530ff74d9fa",
-      "code_sha256": "e33f38965f29101edd3e8488188cc1abd07215b7d77aac14f1b85245c8d04bb2",
-      "bytes": 22374
+      "sha256": "235c9751bcde00045da39a8484814c9c534af51680bac048f67ed21211906593",
+      "code_sha256": "41be63f057ef7f090ed4287d669941fc0d752aad12d61e2a03929ab7dd83433f",
+      "bytes": 22394
     },
     {
       "path": "FiniteAvalanches/Support/Schoenflies/StageTower.lean",
-      "sha256": "610d0509568589a4f75552a97c6429b1d4a9455b72ca4326aec39b468ea73bf1",
-      "code_sha256": "a01b7c6215a28978bdb223ffc0f31dd3635af2d5e842846b7a7f75cf3bc55f2e",
-      "bytes": 4668
+      "sha256": "71e49b398ac69329fa0d7aaee8ce902a51528989ba8163099f2181d3ecd965a5",
+      "code_sha256": "28c83d18c18b0f388730307a3f01c36cfd759c225a373e693c3140b5244b3477",
+      "bytes": 4688
     },
     {
       "path": "FiniteAvalanches/Support/Schoenflies/StageTransition.lean",
-      "sha256": "29453a85a041d050cecb05f4b393d26357379ac553a15e869b4a889810aa692c",
-      "code_sha256": "dcb1d6ef14eeb72d5c11ffbcf97e8be531528b6ead77c34eb6a4226179850d1a",
-      "bytes": 3497
+      "sha256": "1c61c288b98e2425ce6c9e46348d3991d90db267f53c2e59678546f4b0251d4c",
+      "code_sha256": "c8f142b6d4c22ddf1ef2b186c5f090df79e632803826f84f8ca5c4a02e1f16e6",
+      "bytes": 3517
     },
     {
       "path": "FiniteAvalanches/Support/Schoenflies/Strip.lean",
-      "sha256": "c019a52963e813c9d190080aa021e173f77e695ae870f7197544847e3d47d6ed",
-      "code_sha256": "6af30b2dd4c12ddc1f8ef674dfb2aea7e44b2dbb0bd3b20f95884cc82ca4a12d",
-      "bytes": 35605
+      "sha256": "f69ff2c18ca4bdd4cb58066d790e360b1c32ead27b72fc7404679a226d9c706b",
+      "code_sha256": "6d0d58a4765a4ad4cb8652b47e3622fd026397e0460e7c79ef3a44dc0ee4baaa",
+      "bytes": 35625
     },
     {
       "path": "FiniteAvalanches/Support/Schoenflies/StripConnected.lean",
-      "sha256": "c031fc2bcd3cf4edb24173358f9b104b167b2aa65c4cf3fd4c34ea9fae151afe",
-      "code_sha256": "51a088953b49b805aaa39d764b2a387a2d11344557634541c72adf9a1f628c0d",
-      "bytes": 16724
+      "sha256": "8ff3a926f28874dd826be24263818d89f9807945840f951941cf079785ceb286",
+      "code_sha256": "8fdf326c7593c8b6a47359c517f16d230a0816b2fbf6959b12730133c32d0f93",
+      "bytes": 16744
     },
     {
       "path": "FiniteAvalanches/Support/Schoenflies/StripConstants.lean",
-      "sha256": "d85f542eb0bf7588777b63526df270fe26694b6463f10805497fc9e8148e096d",
-      "code_sha256": "1d59acd1d207e28862bf2c8465e67fbe0704dc6c5e956e8d0eb5b5a165fd4b3c",
-      "bytes": 10459
+      "sha256": "8faf1d3f4435e2abebf8be9dd53cf1d6f1df7cbcc35dfa119382849ba05ebbab",
+      "code_sha256": "d14dd7de0e1a6befe9f82b54bb5c4423394ce56dbf97ae6e1f23eecd50e95dd3",
+      "bytes": 10479
     },
     {
       "path": "FiniteAvalanches/Support/Schoenflies/StripLocal.lean",
-      "sha256": "11d2ba71f47417d39f6613f130da2c4297b6ad742b5ebcb8faf6495d4657f7cf",
-      "code_sha256": "5b0396aeeccc46c78865c11ca02049f1149ea2e3359ba7cb4770dd72fc3de44c",
-      "bytes": 18325
+      "sha256": "894ae5d6b5e4ff67de2401de66881fd8ab1ae4e8271efa5da791e46df1d14d07",
+      "code_sha256": "3e7b833641da1e6e58699b33c281912b2949e2146d76e4f55e81cad21deed4ee",
+      "bytes": 18345
     },
     {
       "path": "FiniteAvalanches/Support/Schoenflies/Subarc.lean",
-      "sha256": "339062974cee25e665cb88f5240bcd1473e6bc6abe61329be9eae032834a6365",
-      "code_sha256": "259148dc2f4bfed53323660a7a0bf79695827e0538d1788460782ec758e7145b",
-      "bytes": 9736
+      "sha256": "62c3f849bc373c04f933c3f9f713acd39c49256517a15d28036a61dcbc76c66d",
+      "code_sha256": "1012e38efdfda875673b1c0703b50bb8629277e1de5e22236340bf7c7e275ac3",
+      "bytes": 9756
     },
     {
       "path": "FiniteAvalanches/Support/Schoenflies/Subdivide.lean",
-      "sha256": "94db2a720b81655bf105fdb8125a7a8226d8abba3af608cd9c601fd675ae6d06",
-      "code_sha256": "b9f7e6ad700e03cbbb30fdd3be34e3bad2d355fc2437a15ca1573fa8be8876cc",
-      "bytes": 6774
+      "sha256": "d3401ae708d9dd16f49afe7ff8c5c2fa466ecf070f52053269a87436c1fe00a8",
+      "code_sha256": "a82efb9b8ecb329751d38c793a6806e34b03cac98614f035cee7cba92263231b",
+      "bytes": 6794
     },
     {
       "path": "FiniteAvalanches/Support/Schoenflies/TargetOverlay.lean",
-      "sha256": "3a53212ffb32b739f7cbaa02082d824b8f959345535413b317da565d1fb90490",
-      "code_sha256": "77bd970387de012f9c7a7ad2e5fbcc27b0e686b2fd07f5a31487a418b6d715b4",
-      "bytes": 64851
+      "sha256": "4223c8069f760d27cab1a8d959bc0f736f73a576c8425be0717458ef3b792102",
+      "code_sha256": "53d9b71d1ba6f2300afd6d76992eefd6d719ed80e56c7fb9d0693cba3f0ec513",
+      "bytes": 64871
     },
     {
       "path": "FiniteAvalanches/Support/Schoenflies/Topology.lean",
-      "sha256": "2d8dab6804c6e0be8e2beff4cf90208308240f5b6cf6789f0773fdb4f8421b52",
-      "code_sha256": "4b0a89a5dc6aedc970fd52c4fbb456709a445220b6c2f8ea004a3be6059081fc",
-      "bytes": 2083
+      "sha256": "b74cdb3c50dc017fb46b3287bf0a7e5d7248e11806236afac7b295e1c57feca9",
+      "code_sha256": "11e2dd76fd2723c3ce5ad2ed291166a17d7e3b8e161e5c2c80f4f79320362b4e",
+      "bytes": 2103
     },
     {
       "path": "FiniteAvalanches/Support/Schoenflies/TwoArcs.lean",
-      "sha256": "0dd36fb17a8cb2d751f1a3a92b8068aa2be0eeb160201aa8a1fd4cd51d7c2078",
-      "code_sha256": "aa8d2df47f00d34e9cf886f6c569163cd62ba5f36388454b9c74c9291bbc8fdf",
-      "bytes": 9368
+      "sha256": "02e27ddfe62835f82d0c205e7d11283b9d288c142ec92e0ed1d32457a4d4b1b6",
+      "code_sha256": "e5281a2f08ed2d3488dfedc7a23d66499adc7505507f00396d2b08bebd3704ae",
+      "bytes": 9388
     },
     {
       "path": "FiniteAvalanches/Support/Schoenflies/UniformBound.lean",
-      "sha256": "fecb265e8ed441e00f12f35220d34888abe9e67ca99805bb74c72be7a99b03c9",
-      "code_sha256": "acf2dfddad576c3d5ff7ad43b98733c4a8b3b0fe62fe8ce5097c2c032634aa85",
-      "bytes": 1679
+      "sha256": "b37b58a4dc300a181fc56ee01f7ed39c0549c382dd3c10d6f7c708d7511a32ab",
+      "code_sha256": "09a94580ef96965c5ee23b22d9ccaaba3e7ae7ea493428513f4b80d63952e906",
+      "bytes": 1699
     },
     {
       "path": "FiniteAvalanches/Support/Schoenflies/Windows.lean",
-      "sha256": "695d8f93a85eb208c4048d244feb85447b9ca095113775d038b433b276e694ae",
-      "code_sha256": "9cd63a1f3fda02a8649030e2f6ea471c1e72a50a246852ba555f98665fb8d8ef",
-      "bytes": 7724
+      "sha256": "f979ae220115d9266631bd186649aa94f217dad3fc35927d29d33f8e1c0a320f",
+      "code_sha256": "d024449e3654b972c4a3e109e1298105aa0d87fa8a38a2b156814a7509739046",
+      "bytes": 7744
     },
     {
       "path": "FiniteAvalanches/Trees/AmbientContactCount.lean",
@@ -9001,7 +9001,7 @@
     },
     {
       "path": "audit/trusted-inputs.json",
-      "sha256": "88319c3b810a09630d788f58a191e709ccb468017507aad2022609ab2307f94e",
+      "sha256": "49b6940e6150087ac1a00bf272085e565d1d1903b9c77c88b5151f6b427ab6f4",
       "bytes": 537916
     },
     {
