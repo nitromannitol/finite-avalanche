@@ -334,6 +334,70 @@ theorem exists_winding_jump_of_reverse_local_crossing
   refine ⟨a, ha, hae, hp', hm', ?_⟩
   omega
 
+/-- An oriented product-plane chart expressed in complex coordinates. -/
+def Source.OrientedChart.complexMap (chart : Source.OrientedChart) : ℂ ≃ₜ ℂ :=
+  (Complex.equivRealProdCLM.toHomeomorph.trans chart.map).trans
+    Complex.equivRealProdCLM.symm.toHomeomorph
+
+/-- The image of a loop under an oriented chart in complex coordinates. -/
+def Source.OrientedChart.complexMapLoop (chart : Source.OrientedChart)
+    (γ : C(unitInterval, ℂ)) : C(unitInterval, ℂ) :=
+  ⟨fun t => chart.complexMap (γ t), chart.complexMap.continuous.comp γ.continuous⟩
+
+/-- The winding degree of the image loop about the image point equals the
+original winding degree. -/
+theorem Source.OrientedChart.loopDeg_complexMapLoop_sub_const
+    (chart : Source.OrientedChart) (γ : C(unitInterval, ℂ))
+    (hclosed : γ 0 = γ 1) (q : ℂ) (hq : ∀ t, γ t ≠ q) :
+    loopDeg (chart.complexMapLoop γ - ContinuousMap.const unitInterval (chart.complexMap q))
+        (fun t => sub_ne_zero.mpr (fun h => hq t (chart.complexMap.injective h))) =
+      loopDeg (γ - ContinuousMap.const unitInterval q) (fun t => sub_ne_zero.mpr (hq t)) := by
+  have he : slice (chart.isotopyLoop q γ) 1 =
+      chart.complexMapLoop γ - ContinuousMap.const unitInterval (chart.complexMap q) := by
+    ext t
+    change Complex.equivRealProdCLM.symm
+      (chart.isotopy 1 (Complex.equivRealProdCLM (γ t))) -
+      Complex.equivRealProdCLM.symm (chart.isotopy 1 (Complex.equivRealProdCLM q)) = _
+    rw [show chart.isotopy 1 = chart.map from chart.finish]
+    rfl
+  simpa only [he] using chart.isotopyLoop_degree q γ hq hclosed
+
+/-- A signed local crossing in chart coordinates gives the same winding jump
+for the image loop about the images of its two offset points. -/
+theorem Source.OrientedChart.exists_winding_jump_complexMapLoop
+    (chart : Source.OrientedChart) (γ : C(unitInterval, ℂ)) (hclosed : γ 0 = γ 1)
+    {ε : ℝ} (hε : 0 < ε)
+    {u v w : ℝ} (hu : 0 < u) (huv : u < v) (hvw : v < w) (hw : w < 1)
+    (hzero : ∀ t : unitInterval, γ t = 0 ↔ (t : ℝ) = v)
+    (hcross : (∀ t : unitInterval, u ≤ (t : ℝ) → (t : ℝ) < v → 0 < (γ t).im) ∧
+        (∀ t : unitInterval, v < (t : ℝ) → (t : ℝ) ≤ w → (γ t).im < 0) ∨
+      (∀ t : unitInterval, u ≤ (t : ℝ) → (t : ℝ) < v → (γ t).im < 0) ∧
+        (∀ t : unitInterval, v < (t : ℝ) → (t : ℝ) ≤ w → 0 < (γ t).im)) :
+    ∃ (a : ℝ) (_ : 0 < a) (_ : a < ε) (hp : ∀ t, γ t ≠ (a : ℂ))
+        (hm : ∀ t, γ t ≠ -(a : ℂ)),
+      let d := loopDeg (chart.complexMapLoop γ -
+          ContinuousMap.const unitInterval (chart.complexMap (a : ℂ)))
+        (fun t => sub_ne_zero.mpr (fun h => hp t (chart.complexMap.injective h))) -
+        loopDeg (chart.complexMapLoop γ -
+          ContinuousMap.const unitInterval (chart.complexMap (-(a : ℂ))))
+        (fun t => sub_ne_zero.mpr (fun h => hm t (chart.complexMap.injective h)))
+      (d = 1 ∧ (∀ t : unitInterval, u ≤ (t : ℝ) → (t : ℝ) < v → 0 < (γ t).im)) ∨
+        (d = -1 ∧ (∀ t : unitInterval, u ≤ (t : ℝ) → (t : ℝ) < v → (γ t).im < 0)) := by
+  rcases hcross with ⟨hpos, hneg⟩ | ⟨hneg, hpos⟩
+  · obtain ⟨a, ha, hae, hp, hm, hd⟩ :=
+      FiniteAvalanches.Electrical.exists_winding_jump_of_local_crossing γ hclosed hε hu huv hvw hw
+        hzero hpos hneg
+    refine ⟨a, ha, hae, hp, hm, Or.inl ⟨?_, hpos⟩⟩
+    rw [chart.loopDeg_complexMapLoop_sub_const γ hclosed (a : ℂ) hp,
+      chart.loopDeg_complexMapLoop_sub_const γ hclosed (-(a : ℂ)) hm]
+    exact hd
+  · obtain ⟨a, ha, hae, hp, hm, hd⟩ :=
+      exists_winding_jump_of_reverse_local_crossing γ hclosed hε hu huv hvw hw hzero hneg hpos
+    refine ⟨a, ha, hae, hp, hm, Or.inr ⟨?_, hneg⟩⟩
+    rw [chart.loopDeg_complexMapLoop_sub_const γ hclosed (a : ℂ) hp,
+      chart.loopDeg_complexMapLoop_sub_const γ hclosed (-(a : ℂ)) hm]
+    exact hd
+
 /-- Two equal positive winding jumps cannot have both their sides matched in
 reverse within complementary components of the same loop. -/
 theorem not_crossed_component_matching_of_winding_jumps
