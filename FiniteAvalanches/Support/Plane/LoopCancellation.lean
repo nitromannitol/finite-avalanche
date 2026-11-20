@@ -304,4 +304,28 @@ theorem IsLoopCancellation.not_adjacent_of_maximal
   subst r
   exact (not_le_of_gt (hjoin ▸ hwlt)) hr2
 
+/-- The closed intervals of distinct loops in a maximal cancellation are
+strictly separated. -/
+theorem IsLoopCancellation.separated_of_maximal
+    {X : Type*} [TopologicalSpace X] {x y : X} (p : Path x y)
+    {S : Set (unitInterval × unitInterval)} (hS : IsLoopCancellation p S)
+    (hmax : ∀ T, IsLoopCancellation p T → LoopFamilyRefines S T → LoopFamilyRefines T S)
+    {v w : unitInterval × unitInterval} (hv : v ∈ S) (hw : w ∈ S) (hne : v ≠ w) :
+    v.2 < w.1 ∨ w.2 < v.1 := by
+  by_contra h
+  push Not at h
+  have hvwne : v.2 ≠ w.1 := fun heq => hS.not_adjacent_of_maximal p hmax hv hw heq
+  have hwvne : w.2 ≠ v.1 := fun heq => hS.not_adjacent_of_maximal p hmax hw hv heq
+  have hleft : w.1 < v.2 := lt_of_le_of_ne h.1 hvwne.symm
+  have hright : v.1 < w.2 := lt_of_le_of_ne h.2 hwvne.symm
+  have hmaxmin : max v.1 w.1 < min v.2 w.2 := by
+    rw [lt_min_iff, max_lt_iff, max_lt_iff]
+    exact ⟨⟨(hS.1 v hv).1, hleft⟩, ⟨hright, (hS.1 w hw).1⟩⟩
+  obtain ⟨t, ht1, ht2⟩ := exists_between hmaxmin
+  have htv : t ∈ Ioo v.1 v.2 :=
+    ⟨lt_of_le_of_lt (le_max_left _ _) ht1, lt_of_lt_of_le ht2 (min_le_left _ _)⟩
+  have htw : t ∈ Ioo w.1 w.2 :=
+    ⟨lt_of_le_of_lt (le_max_right _ _) ht1, lt_of_lt_of_le ht2 (min_le_right _ _)⟩
+  exact Set.disjoint_left.mp (hS.2 v hv w hw hne) htv htw
+
 end FiniteAvalanches.Electrical.StatementGeometry
