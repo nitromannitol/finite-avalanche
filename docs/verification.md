@@ -31,6 +31,6 @@ files into `FiniteAvalanchesAudit/MainOrigin/semantic-data/`. The current captur
 declarations, the 8 retained axioms and the unchanged type of Theorem 1.1.
 
 The pair for the earlier 19-input source passed the comparator workflow in continuous
-integration. The release review and the comparator review bind that earlier source inventory;
-both are pending for the current source, and the review-gated checks cannot pass until they are
-renewed.
+integration. The independent release review and comparator review of the current source and pair
+are recorded in `audit/release-eligibility.json` and `audit/comparator-review.json`, bound to the
+current source inventory; the comparator run of the current pair is made by the workflow.

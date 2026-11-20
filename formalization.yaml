@@ -10,7 +10,8 @@ project:
     8 standard results from the literature, which enter as named Lean axioms;
     14 further registered results are proved in Lean. The comparator pair
     FiniteAvalanchesAudit/MainOrigin/ passed the comparator check for the earlier
-    19-input source; the pair recaptured for the current source awaits review.
+    19-input source; the pair recaptured for the current source has been
+    independently reviewed, and its comparator check runs in continuous integration.
   authors:
     - "Ahmed Bou-Rabee"
   license: "Apache-2.0"
@@ -123,11 +124,10 @@ review:
   notes: >-
     Correctness of every proof is guaranteed by the Lean kernel and Mathlib
     relative to the 11 registered axioms, 8 of which Theorem 1.1 uses (no
-    sorry, no other axiom). The
-    statements were reviewed against the paper for the earlier source inventory.
-    The recorded comparator review and the passing comparator workflow also cover
-    that earlier 19-input inventory; the pair recaptured for the current source
-    awaits review.
+    sorry, no other axiom). The statements, the registered inputs and the
+    recaptured comparator pair were independently reviewed for the current
+    source inventory. The comparator workflow passed for the earlier 19-input
+    inventory; its run on the current pair is made in continuous integration.
 
 alignment:
   namespace: "FiniteAvalanches"
