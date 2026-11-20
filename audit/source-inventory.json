@@ -3854,6 +3854,12 @@
       "bytes": 8680
     },
     {
+      "path": "FiniteAvalanches/Support/Plane/DilationIsotopy.lean",
+      "sha256": "ef89b40a9d0a9f05a342e976a878c4a2a679f4d32fd6c3bbca97370bc3cdcf1f",
+      "code_sha256": "3cb15236083234d0a2c889ef809a4953176e9c1871f806897eec65c39dfc86b7",
+      "bytes": 5700
+    },
+    {
       "path": "FiniteAvalanches/Support/Plane/Disconnect.lean",
       "sha256": "f60e2b87649dc234e94204f80db717f820406632cd4dfe292d41d89682fd527b",
       "code_sha256": "b7f1f21b08b0494c809e4cc68744a2a5dc6b46ac40b01e573d19985feeddf7c7",
