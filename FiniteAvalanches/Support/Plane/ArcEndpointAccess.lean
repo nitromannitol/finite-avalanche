@@ -210,4 +210,25 @@ theorem exists_endpoint_access_of_initial_subpath
     rw [Path.range_subpath_of_le p s 1 le_top]
     exact ⟨v, ⟨le_of_not_ge hvle, le_top⟩, hv⟩
 
+
+/-- Local accesses to the two endpoint subarcs suffice for parameter-preserving
+plane straightening of the entire arc. -/
+theorem exists_plane_homeomorph_straightening_of_local_endpoint_accesses
+    {x y a b : ℝ × ℝ} (p : Path x y) (hp : Function.Injective p)
+    (s t : unitInterval) (hs : s ≠ 0) (ht : t ≠ 0)
+    (q : Path a x) (r : Path b y) (hq : Function.Injective q)
+    (hr : Function.Injective r)
+    (hqout : ∀ u : unitInterval, u ≠ 1 → q u ∉ range (p.subpath 0 s))
+    (hrout : ∀ u : unitInterval, u ≠ 1 → r u ∉ range (p.symm.subpath 0 t)) :
+    ∃ F : (ℝ × ℝ) ≃ₜ (ℝ × ℝ), ∀ u : unitInterval, F (p u) = (u.val, 0) := by
+  obtain ⟨a', q', hq', hqout'⟩ :=
+    exists_endpoint_access_of_initial_subpath p hp s hs q hq hqout
+  have hp' : Function.Injective p.symm := hp.comp unitInterval.symm_involutive.injective
+  obtain ⟨b', r', hr', hrout'⟩ :=
+    exists_endpoint_access_of_initial_subpath p.symm hp' t ht r hr hrout
+  have hrout'' : ∀ u : unitInterval, u ≠ 1 → r' u ∉ range p := by
+    simpa only [Path.symm_range] using hrout'
+  exact exists_plane_homeomorph_straightening_of_separate_endpoint_accesses
+    p hp q' r' hq' hr' hqout' hrout''
+
 end FiniteAvalanches.Electrical.StatementGeometry
