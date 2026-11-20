@@ -15,14 +15,15 @@ open Set
 
 /-- A nonempty nested family of subloops of a path is contained in another
 subloop. -/
-theorem exists_upper_subloop_of_nested {X : Type*} [TopologicalSpace X] [T2Space X]
+theorem exists_upper_subloop_of_nested_with_coverage {X : Type*} [TopologicalSpace X] [T2Space X]
     {x y : X} (p : Path x y) (S : Set (unitInterval × unitInterval))
     (hne : S.Nonempty)
     (hloop : ∀ v ∈ S, v.1 ≤ v.2 ∧ p v.1 = p v.2)
     (hchain : ∀ v ∈ S, ∀ w ∈ S,
       (v.1 ≤ w.1 ∧ w.2 ≤ v.2) ∨ (w.1 ≤ v.1 ∧ v.2 ≤ w.2)) :
     ∃ a b : unitInterval, a ≤ b ∧ p a = p b ∧
-      ∀ v ∈ S, a ≤ v.1 ∧ v.2 ≤ b := by
+      (∀ v ∈ S, a ≤ v.1 ∧ v.2 ≤ b) ∧
+      ∀ t : unitInterval, a < t → t < b → ∃ v ∈ S, v.1 < t ∧ t < v.2 := by
   let T := closure S
   have hT : IsCompact T := isCompact_univ.of_isClosed_subset isClosed_closure (subset_univ T)
   have hTne : T.Nonempty := hne.mono subset_closure
@@ -39,28 +40,50 @@ theorem exists_upper_subloop_of_nested {X : Type*} [TopologicalSpace X] [T2Space
   have hlen : Continuous len :=
     (continuous_subtype_val.comp continuous_snd).sub (continuous_subtype_val.comp continuous_fst)
   obtain ⟨v, hvT, hvmax⟩ := hT.exists_isMaxOn hTne hlen.continuousOn
-  refine ⟨v.1, v.2, horder v hvT, heq v hvT, ?_⟩
-  intro w hw
-  let C : Set (unitInterval × unitInterval) :=
-    {z | z.1 ≤ w.1 ∧ w.2 ≤ z.2} ∪ {z | w.1 ≤ z.1 ∧ z.2 ≤ w.2}
-  have hCclosed : IsClosed C := by
-    apply IsClosed.union
-    · exact (isClosed_le continuous_fst continuous_const).inter
-        (isClosed_le continuous_const (continuous_subtype_val.comp continuous_snd))
-    · exact (isClosed_le continuous_const continuous_fst).inter
-        (isClosed_le (continuous_subtype_val.comp continuous_snd) continuous_const)
-  have hSC : S ⊆ C := by
-    intro z hz
-    exact hchain z hz w hw
-  have hvC : v ∈ C := closure_minimal hSC hCclosed hvT
-  rcases hvC with hvw | hwv
-  · exact hvw
-  · have hm : len w ≤ len v := hvmax (subset_closure hw)
-    have hleft : (w.1 : ℝ) ≤ v.1 := hwv.1
-    have hright : (v.2 : ℝ) ≤ w.2 := hwv.2
-    have ha : (v.1 : ℝ) ≤ w.1 := by dsimp [len] at hm; linarith
-    have hb : (w.2 : ℝ) ≤ v.2 := by dsimp [len] at hm; linarith
-    exact ⟨ha, hb⟩
+  refine ⟨v.1, v.2, horder v hvT, heq v hvT, ?_, ?_⟩
+  · intro w hw
+    let C : Set (unitInterval × unitInterval) :=
+      {z | z.1 ≤ w.1 ∧ w.2 ≤ z.2} ∪ {z | w.1 ≤ z.1 ∧ z.2 ≤ w.2}
+    have hCclosed : IsClosed C := by
+      apply IsClosed.union
+      · exact (isClosed_le continuous_fst continuous_const).inter
+          (isClosed_le continuous_const (continuous_subtype_val.comp continuous_snd))
+      · exact (isClosed_le continuous_const continuous_fst).inter
+          (isClosed_le (continuous_subtype_val.comp continuous_snd) continuous_const)
+    have hSC : S ⊆ C := by
+      intro z hz
+      exact hchain z hz w hw
+    have hvC : v ∈ C := closure_minimal hSC hCclosed hvT
+    rcases hvC with hvw | hwv
+    · exact hvw
+    · have hm : len w ≤ len v := hvmax (subset_closure hw)
+      have hleft : (w.1 : ℝ) ≤ v.1 := hwv.1
+      have hright : (v.2 : ℝ) ≤ w.2 := hwv.2
+      have ha : (v.1 : ℝ) ≤ w.1 := by dsimp [len] at hm; linarith
+      have hb : (w.2 : ℝ) ≤ v.2 := by dsimp [len] at hm; linarith
+      exact ⟨ha, hb⟩
+
+  · intro t ht1 ht2
+    let O : Set (unitInterval × unitInterval) := {z | z.1 < t ∧ t < z.2}
+    have hO : IsOpen O := (isOpen_lt continuous_fst continuous_const).inter
+      (isOpen_lt continuous_const (continuous_subtype_val.comp continuous_snd))
+    have hvO : v ∈ O := ⟨ht1, ht2⟩
+    obtain ⟨w, hwO, hwS⟩ := (mem_closure_iff.mp hvT) O hO hvO
+    exact ⟨w, hwS, hwO⟩
+
+/-- A nonempty nested family of subloops of a path is contained in another
+subloop. -/
+theorem exists_upper_subloop_of_nested {X : Type*} [TopologicalSpace X] [T2Space X]
+    {x y : X} (p : Path x y) (S : Set (unitInterval × unitInterval))
+    (hne : S.Nonempty)
+    (hloop : ∀ v ∈ S, v.1 ≤ v.2 ∧ p v.1 = p v.2)
+    (hchain : ∀ v ∈ S, ∀ w ∈ S,
+      (v.1 ≤ w.1 ∧ w.2 ≤ v.2) ∨ (w.1 ≤ v.1 ∧ v.2 ≤ w.2)) :
+    ∃ a b : unitInterval, a ≤ b ∧ p a = p b ∧
+      ∀ v ∈ S, a ≤ v.1 ∧ v.2 ≤ b := by
+  obtain ⟨a, b, hab, hp, hupper, _⟩ :=
+    exists_upper_subloop_of_nested_with_coverage p S hne hloop hchain
+  exact ⟨a, b, hab, hp, hupper⟩
 
 /-- Every subloop is contained in an inclusion-maximal subloop. -/
 theorem exists_maximal_subloop {X : Type*} [TopologicalSpace X] [T2Space X]
