@@ -3962,6 +3962,12 @@
       "bytes": 7477
     },
     {
+      "path": "FiniteAvalanches/Support/Plane/DiskBoundaryImage.lean",
+      "sha256": "83539920ef41c3a24bdfc615f0ea3ef87e79911ebab183fd38a4028e731f629b",
+      "code_sha256": "7b99aef3ec20279536cbd0afe61093d0529e9c2d5e0f1a34dd51a0cd5974e6ed",
+      "bytes": 6270
+    },
+    {
       "path": "FiniteAvalanches/Support/Plane/DiskReflection.lean",
       "sha256": "9d6b7416e8862848467b8273e326e9b68a5176d48834c150048fd2a85416dae2",
       "code_sha256": "40edb57d8ab3d8a1fbfa6f817c7991a46f65ed224f663a160e34b89e6586e993",
