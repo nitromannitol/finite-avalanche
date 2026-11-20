@@ -4310,6 +4310,12 @@
       "bytes": 7176
     },
     {
+      "path": "FiniteAvalanches/Support/Plane/StableOrientation.lean",
+      "sha256": "268ed9a6950dc111778f76553fefb0136694b48530fd2fbe8e43e052dbd8866f",
+      "code_sha256": "83272d21306a2945d727a493cce351fcfbc7e766561d5a1db5eca79d34f4233e",
+      "bytes": 3375
+    },
+    {
       "path": "FiniteAvalanches/Support/Plane/StarSplicing.lean",
       "sha256": "b414381448c0665146c238fd79c30618c42f040edfaf7fa7540cbe9938668731",
       "code_sha256": "db90620a430e617fb31d163c7f6a6f6ab82f051b13be70a7fcf645c883d08f3c",
