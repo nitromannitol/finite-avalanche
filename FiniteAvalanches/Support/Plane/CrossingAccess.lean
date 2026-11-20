@@ -1,8 +1,6 @@
 import FiniteAvalanches.Support.Plane.TreePaths
 
 /-!
-Ported from Lattice-Probability `LatticeProb/Topology/PlaneGraph/CrossingAccess.lean` at commit `ba2b67f3`.
-
 # Transverse access to a charted arc
 
 A point on a charted vertical arc has a simple transverse access path in any

@@ -3,8 +3,6 @@ import FiniteAvalanches.Support.Plane.GeometricDual
 import Mathlib.Topology.Subpath
 
 /-!
-Ported from Lattice-Probability `LatticeProb/Topology/PlaneGraph/CompactAvoidance.lean` at commit `ba2b67f3`.
-
 # Avoiding compact sets and marked points
 
 A compact nonseparating plane set and finitely many marked points can be avoided

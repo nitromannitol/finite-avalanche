@@ -1,3 +1,10 @@
+/-
+Copied from Leonardo Bonanno's lean-formalizations
+(https://github.com/leobon12/lean-formalizations), module
+`QuantumZipper/Proofs/Complex/TopoDegree.lean`, commit 31e748330ee154d5f41537c4b01f71b8a5510c2d.
+Changes: `Set.domRestrict` replaced by `Set.restrict` for the pinned Mathlib,
+with one proof step expanded; some comments removed.
+-/
 import Mathlib.Analysis.Complex.CoveringMap
 import Mathlib.Topology.Homotopy.Lifting
 import Mathlib.Analysis.SpecialFunctions.Complex.CircleMap
@@ -6,8 +13,6 @@ import Mathlib.Topology.ContinuousMap.Algebra
 
 /-!
 # Degree of loops in `ℂ \ {0}`
-
-Ported from Lattice-Probability `LatticeProb/Bonanno/QuantumZipper/Proofs/Complex/TopoDegree.lean` at commit `74eab009`, adapted there from Leonardo Bonanno’s `lean-formalizations` at commit `31e7483`.
 
 For a continuous nonvanishing `γ : C(unitInterval, ℂ)` we construct a continuous logarithm
 (`exists_lift_exp`), show that two continuous logarithms differ by a constant

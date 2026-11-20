@@ -2,6 +2,7 @@
 Adapted from Lattice-Probability, LatticeProb/Graph/CyclePopping/Trace.lean,
 revision 0b6994229ccf31047ae7b654ecbec59496594700.
 https://github.com/nitromannitol/Lattice-Probability
+Changes: imports and namespace renamed to this repository's.
 -/
 /-
 Chronological traces on arrow stacks. Consuming a trace advances the cursor at every

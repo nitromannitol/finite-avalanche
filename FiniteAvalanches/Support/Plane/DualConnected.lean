@@ -6,8 +6,6 @@ import Mathlib.Topology.LocallyConstant.Basic
 /-!
 # Connected components of plane graph duals
 
-Ported from Lattice-Probability `LatticeProb/Topology/PlaneGraph/DualConnected.lean` at commit `550a3a18`.
-
 A connectedness criterion for the chart-face dual in terms of locally constant
 extensions across edge interiors.
 -/

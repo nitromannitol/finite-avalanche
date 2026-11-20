@@ -1,3 +1,10 @@
+/-
+Copied from Leonardo Bonanno's lean-formalizations
+(https://github.com/leobon12/lean-formalizations), module
+`MatedCRTHarmonic/Topology/PlanarCore.lean`, commit 31e748330ee154d5f41537c4b01f71b8a5510c2d.
+Changes: imports renamed to this repository's modules; module docstring
+rewritten.
+-/
 import Mathlib.Topology.Connected.LocallyPathConnected
 import FiniteAvalanches.Support.Plane.Disconnect
 import FiniteAvalanches.Support.Plane.TopoJaniszewski
@@ -6,9 +13,6 @@ set_option autoImplicit false
 
 /-!
 # Planar separation
-
-Ported from Lattice-Probability `LatticeProb/Bonanno/MatedCRTHarmonic/Topology/PlanarCore.lean` at commit `ba2b67f3`, adapted there from
-Leonardo Bonanno’s `lean-formalizations` at commit `31e7483`.
 -/
 
 namespace MatedCRTHarmonic.Topology

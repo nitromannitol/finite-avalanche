@@ -3,8 +3,6 @@ import LatticeProb.Topology.PolygonalArc
 /-!
 # Simple loops from two arcs
 
-Ported from Lattice-Probability `LatticeProb/Topology/PlaneGraph/LoopPaths.lean` at commit `ba2b67f3`.
-
 Two simple arcs with common endpoints and otherwise disjoint images concatenate
 into a path injective away from its final endpoint.
 -/

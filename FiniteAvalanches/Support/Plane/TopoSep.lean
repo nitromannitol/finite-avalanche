@@ -1,3 +1,9 @@
+/-
+Copied from Leonardo Bonanno's lean-formalizations
+(https://github.com/leobon12/lean-formalizations), module
+`QuantumZipper/Proofs/Complex/TopoSep.lean`, commit 31e748330ee154d5f41537c4b01f71b8a5510c2d.
+Changes: module docstring shortened.
+-/
 import Mathlib.Topology.Connected.LocallyConnected
 import Mathlib.Topology.MetricSpace.Thickening
 import Mathlib.Topology.UniformSpace.HeineCantor
@@ -7,10 +13,6 @@ import Mathlib.Analysis.SpecialFunctions.Complex.Arg
 
 /-!
 # Planar separation and the unbounded component
-
-Ported from Lattice-Probability `LatticeProb/Bonanno/QuantumZipper/Proofs/Complex/TopoSep.lean`
-at commit `ba2b67f3`, adapted there from Leonardo Bonanno’s `lean-formalizations` at commit
-`31e7483`.
 -/
 
 open Set Metric

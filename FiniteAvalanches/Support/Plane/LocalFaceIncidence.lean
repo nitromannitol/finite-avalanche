@@ -1,3 +1,8 @@
+/-
+Copied from Lattice-Probability (https://github.com/nitromannitol/Lattice-Probability), module
+`LatticeProb/Topology/LocalFaceIncidence.lean`, commit 0b6994229ccf31047ae7b654ecbec59496594700.
+Changes: the header comment became the module docstring.
+-/
 import Mathlib.Topology.Connected.Clopen
 import Mathlib.Topology.Homeomorph.Defs
 import Mathlib.Topology.Order.IntermediateValue
@@ -6,8 +11,6 @@ import Mathlib.Topology.Instances.Real.Lemmas
 import Mathlib.Tactic.Linarith
 
 /-!
-Ported from Lattice-Probability `LatticeProb/Topology/LocalFaceIncidence.lean` at commit `74eab009`.
-
 A regular horizontal-axis chart determines the actual complementary components on its
 upper and lower sides and their closure incidence. The proof maps the preconnected
 half rectangles into the complement and uses open neighborhoods to classify incidence.

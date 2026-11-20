@@ -2,8 +2,6 @@ import FiniteAvalanches.Support.Plane.PlanarCore
 import LatticeProb.Topology.PolygonalArc
 
 /-!
-Ported from Lattice-Probability `LatticeProb/Topology/PlaneGraph/ArcRemoval.lean` at commit `ba2b67f3`.
-
 # Removing an arc from an open plane region
 
 An arc contained in an open connected plane region does not disconnect the region.

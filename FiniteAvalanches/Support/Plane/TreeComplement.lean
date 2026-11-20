@@ -6,8 +6,6 @@ import Mathlib.Topology.Order.Compact
 /-!
 # Faces of finite plane graphs
 
-Ported from Lattice-Probability `LatticeProb/Topology/PlaneGraph/TreeComplement.lean` at commit `01bdb9a9`.
-
 The trace of a finite drawing is compact and its complement has a face.
 -/
 

@@ -2,6 +2,7 @@
 Adapted from Lattice-Probability, LatticeProb/Combinatorics/LoopErasure/Composition.lean,
 revision 0b6994229ccf31047ae7b654ecbec59496594700.
 https://github.com/nitromannitol/Lattice-Probability
+Changes: import and namespace renamed to this repository's; docstrings shortened.
 -/
 /- Concatenation and cycle erasure for chronological loop erasure. A closed excursion
 at the endpoint of a walk, whose other vertices avoid the loop-erased path, does not

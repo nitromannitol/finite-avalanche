@@ -2,8 +2,6 @@ import FiniteAvalanches.Support.Plane.ChartConstruction
 import FiniteAvalanches.Support.Plane.CrossingDrawing
 
 /-!
-Ported from Lattice-Probability `LatticeProb/Topology/PlaneGraph/DualAssembly.lean` at commit `ba2b67f3`.
-
 # Dual drawings from crossing paths
 
 Separated paths to edge crossings give a drawing with oriented charts and

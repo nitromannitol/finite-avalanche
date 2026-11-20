@@ -1,12 +1,16 @@
+/-
+Copied from Leonardo Bonanno's lean-formalizations
+(https://github.com/leobon12/lean-formalizations), module
+`QuantumZipper/Proofs/Complex/TopoEilenberg.lean`, commit 31e748330ee154d5f41537c4b01f71b8a5510c2d.
+Changes: imports renamed to this repository's modules; `Set.domRestrict`
+replaced by `Set.restrict` for the pinned Mathlib; module docstring shortened.
+-/
 import FiniteAvalanches.Support.Plane.TopoDegree
 import FiniteAvalanches.Support.Plane.TopoSep
 import Mathlib.Analysis.Complex.Tietze
 
 /-!
 # Planar separation
-
-Ported from Lattice-Probability `LatticeProb/Bonanno/QuantumZipper/Proofs/Complex/TopoEilenberg.lean` at commit `ba2b67f3`, adapted there from
-Leonardo Bonanno’s `lean-formalizations` at commit `31e7483`.
 -/
 
 open Complex Set Metric Real

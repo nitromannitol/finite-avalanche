@@ -4,8 +4,6 @@ import FiniteAvalanches.Support.Plane.LoopPaths
 /-!
 # Drawings from crossing paths
 
-Ported from Lattice-Probability `LatticeProb/Topology/PlaneGraph/CrossingDrawing.lean` at commit `ba2b67f3`.
-
 A family of separated paths to edge crossings determines a plane drawing,
 including loops when the two incident vertices coincide.
 -/

@@ -12,9 +12,6 @@ import Mathlib.Topology.GDelta.Basic
 /-!
 # Topology of plane graph faces
 
-Ported from Lattice-Probability `LatticeProb/Topology/PlaneGraph/PuncturedTransport.lean`
-at commit `7aaf8e2`, an ancestor of `74eab009`.
-
 Compactness of a finite drawing and openness of its complement components.
 The proofs follow `FiniteAvalanches.Electrical.Source.drawingTrace_isCompact` and
 `FiniteAvalanches.Electrical.PunctureTransport.faceRegion_isOpen`.

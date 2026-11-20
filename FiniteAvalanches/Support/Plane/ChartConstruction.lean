@@ -4,8 +4,6 @@ import Mathlib.Combinatorics.SimpleGraph.Connectivity.Connected
 /-!
 # Edge charts from local trace containment
 
-Ported from Lattice-Probability `LatticeProb/Topology/PlaneGraph/ChartConstruction.lean` at commit `ba2b67f3`.
-
 A straight parametrized edge determines the whole local trace once the trace
 is known to lie on the corresponding coordinate axis.
 -/

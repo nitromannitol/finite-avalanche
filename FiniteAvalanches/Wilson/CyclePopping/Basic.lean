@@ -3,6 +3,7 @@ Cycle-popping confluence, adapted from Lattice-Probability,
 LatticeProb/Graph/CyclePopping/Basic.lean at revision
 0b6994229ccf31047ae7b654ecbec59496594700.
 https://github.com/nitromannitol/Lattice-Probability
+Changes: namespace renamed to this repository's; one docstring reworded.
 -/
 /-
 Finite cycle popping for vertex instruction stacks. Each vertex has its own literal

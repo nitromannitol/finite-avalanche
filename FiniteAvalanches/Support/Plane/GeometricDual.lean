@@ -7,9 +7,6 @@ import Mathlib.Topology.LocallyConstant.Basic
 
 /-!
 # Geometric facts for plane dual drawings
-
-Ported from Lattice-Probability `LatticeProb/Topology/PlaneGraph/GeometricDual.lean`
-at commit `ba2b67f3`.
 -/
 
 namespace FiniteAvalanches.Electrical.StatementGeometry

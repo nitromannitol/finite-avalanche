@@ -4,9 +4,6 @@ import FiniteAvalanches.Support.Plane.LocalFaceIncidence
 
 /-!
 # Transport of oriented edge chart faces
-
-Ported from Lattice-Probability `LatticeProb/Topology/PlaneGraph/PuncturedTransport.lean`
-at commit `74eab009`.
 -/
 
 namespace FiniteAvalanches.Electrical.StatementGeometry

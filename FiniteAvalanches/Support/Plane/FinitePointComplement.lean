@@ -1,9 +1,12 @@
+/-
+Copied from Lattice-Probability (https://github.com/nitromannitol/Lattice-Probability), module
+`LatticeProb/Topology/FinitePointComplement.lean`, commit 0b6994229ccf31047ae7b654ecbec59496594700.
+Changes: the header comment became the module docstring.
+-/
 import Mathlib.Analysis.Normed.Module.Connected
 import Mathlib.LinearAlgebra.Dimension.Constructions
 
 /-!
-Ported from Lattice-Probability `LatticeProb/Topology/FinitePointComplement.lean` at commit `74eab009`.
-
 The complement of finitely many points in the real plane is path connected.
 The proof specializes the countable-complement theorem to the rank-two product space.
 -/

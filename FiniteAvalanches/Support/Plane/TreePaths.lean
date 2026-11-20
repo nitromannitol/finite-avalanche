@@ -1,8 +1,6 @@
 import FiniteAvalanches.Support.Plane.CompactAvoidance
 
 /-!
-Ported from Lattice-Probability `LatticeProb/Topology/PlaneGraph/TreePaths.lean` at commit `ba2b67f3`.
-
 # Paths and polygonal attachments in finite arc trees
 
 Distinct points of a finite planar arc tree can be joined by an injective path.

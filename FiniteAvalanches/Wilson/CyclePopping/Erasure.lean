@@ -2,6 +2,7 @@
 Adapted from Lattice-Probability, LatticeProb/Graph/CyclePopping/Erasure.lean,
 revision 0b6994229ccf31047ae7b654ecbec59496594700.
 https://github.com/nitromannitol/Lattice-Probability
+Changes: imports, namespaces and the opened namespace renamed to this repository's.
 -/
 /-
 Chronological loop erasure produces a finite legal cycle-pop run. The induction keeps

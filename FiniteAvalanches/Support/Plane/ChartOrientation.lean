@@ -4,8 +4,6 @@ import FiniteAvalanches.Support.Plane.TopoDegree
 /-!
 # Orientation of plane charts
 
-Ported from Lattice-Probability `LatticeProb/Topology/PlaneGraph/ChartOrientation.lean` at commit `74eab009`.
-
 The degree of a small circle around a point is preserved by a plane isotopy.
 -/
 
