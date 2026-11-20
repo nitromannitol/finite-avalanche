@@ -14,7 +14,7 @@ open Set
 /-- The interval endpoint quotient is the standard additive circle. -/
 noncomputable def circleQuotHomeomorph : CircleQuot ≃ₜ AddCircle (1 : ℝ) := by
   let A : Type := Icc (0 : ℝ) (0 + 1)
-  let h : unitInterval ≃ₜ A := Homeomorph.setCongr (by simp [A, unitInterval])
+  let h : unitInterval ≃ₜ A := Homeomorph.setCongr (by simp [unitInterval])
   have hzero : h 0 = ⟨0, by norm_num⟩ := by apply Subtype.ext; rfl
   have hone : h 1 = ⟨1, by norm_num⟩ := by apply Subtype.ext; rfl
   have hrel (x y : unitInterval) : CircleEndpointIdent x y ↔
