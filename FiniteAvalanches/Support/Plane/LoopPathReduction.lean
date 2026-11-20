@@ -78,4 +78,36 @@ theorem exists_injective_path_of_loop_collapse
         simpa only [hv1, hv2] using (hflat v hv).symm
   exact exists_injective_path_of_compact_quotient p F hF h0 h1 g hg hg0 hg1 hsurj hfiber
 
+/-- If a monotone map collapses exactly the closed intervals of a maximal
+cancellation, its quotient is an injective subpath. -/
+theorem exists_injective_path_of_exact_loop_collapse
+    {X : Type*} [TopologicalSpace X] {x y : X} (p : Path x y)
+    (S : Set (unitInterval × unitInterval)) (hS : IsLoopCancellation p S)
+    (hmax : ∀ T, IsLoopCancellation p T → LoopFamilyRefines S T → LoopFamilyRefines T S)
+    (g : unitInterval → unitInterval) (hg : Continuous g) (hmono : Monotone g)
+    (hg0 : g 0 = 0) (hg1 : g 1 = 1)
+    (hflat : ∀ v ∈ S, g v.1 = g v.2)
+    (honly : ∀ s t : unitInterval, s < t → g s = g t →
+      ∃ v ∈ S, v.1 ≤ s ∧ t ≤ v.2) :
+    ∃ q : Path x y, Function.Injective q ∧ range q ⊆ range p := by
+  apply exists_injective_path_of_loop_collapse p S hS hmax g hg hmono hg0 hg1 hflat
+  intro s t hs ht hgeq
+  have hforward : ∀ a b : unitInterval, a < b → g a = g b →
+      (∀ v ∈ S, a ∉ Ioo v.1 v.2) → (∀ v ∈ S, b ∉ Ioo v.1 v.2) → p a = p b := by
+    intro a b hab hg' ha hb
+    obtain ⟨v, hv, hva, hbv⟩ := honly a b hab hg'
+    have ha' : a = v.1 := by
+      by_contra hne
+      have hlt : v.1 < a := lt_of_le_of_ne hva (Ne.symm hne)
+      exact ha v hv ⟨hlt, lt_of_lt_of_le hab hbv⟩
+    have hb' : b = v.2 := by
+      by_contra hne
+      have hlt : b < v.2 := lt_of_le_of_ne hbv hne
+      exact hb v hv ⟨lt_of_le_of_lt hva hab, hlt⟩
+    simpa only [ha', hb'] using (hS.1 v hv).2
+  rcases lt_trichotomy s t with hlt | rfl | hgt
+  · exact hforward s t hlt hgeq hs ht
+  · rfl
+  · exact (hforward t s hgt hgeq.symm ht hs).symm
+
 end FiniteAvalanches.Electrical.StatementGeometry
