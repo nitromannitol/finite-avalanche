@@ -266,6 +266,74 @@ theorem Source.OrientedChart.exists_winding_jump_of_local_crossing
     chart.isotopyLoop_degree (-(a : ℂ)) γ hm hclosed]
   exact hdeg
 
+/-- A crossing in the opposite direction has winding jump minus one. -/
+theorem exists_winding_jump_of_reverse_local_crossing
+    (γ : C(unitInterval, ℂ)) (hclosed : γ 0 = γ 1)
+    {ε : ℝ} (hε : 0 < ε)
+    {u v w : ℝ} (hu : 0 < u) (huv : u < v) (hvw : v < w) (hw : w < 1)
+    (hzero : ∀ t : unitInterval, γ t = 0 ↔ (t : ℝ) = v)
+    (hneg : ∀ t : unitInterval, u ≤ (t : ℝ) → (t : ℝ) < v → (γ t).im < 0)
+    (hpos : ∀ t : unitInterval, v < (t : ℝ) → (t : ℝ) ≤ w → 0 < (γ t).im) :
+    ∃ (a : ℝ) (_ : 0 < a) (_ : a < ε) (hp : ∀ t, γ t ≠ (a : ℂ))
+        (hm : ∀ t, γ t ≠ -(a : ℂ)),
+      loopDeg (γ - ContinuousMap.const unitInterval (a : ℂ))
+          (fun t => sub_ne_zero.mpr (hp t)) -
+        loopDeg (γ - ContinuousMap.const unitInterval (-(a : ℂ)))
+          (fun t => sub_ne_zero.mpr (hm t)) = -1 := by
+  let δ : C(unitInterval, ℂ) := ⟨fun t => starRingEnd ℂ (γ t),
+    Complex.continuous_conj.comp γ.continuous⟩
+  have hδclosed : δ 0 = δ 1 := by
+    change starRingEnd ℂ (γ 0) = starRingEnd ℂ (γ 1)
+    rw [hclosed]
+  have hδzero : ∀ t : unitInterval, δ t = 0 ↔ (t : ℝ) = v := by
+    intro t
+    change starRingEnd ℂ (γ t) = 0 ↔ _
+    simpa using hzero t
+  obtain ⟨a, ha, hae, hp, hm, hdeg⟩ :=
+    exists_winding_jump_of_local_crossing δ hδclosed hε hu huv hvw hw hδzero
+      (by intro t ht₁ ht₂; change 0 < -(γ t).im; linarith [hneg t ht₁ ht₂])
+      (by intro t ht₁ ht₂; change -(γ t).im < 0; linarith [hpos t ht₁ ht₂])
+  have hp' : ∀ t, γ t ≠ (a : ℂ) := by
+    intro t h
+    apply hp t
+    change starRingEnd ℂ (γ t) = _
+    rw [h]
+    simp only [Complex.conj_ofReal]
+  have hm' : ∀ t, γ t ≠ -(a : ℂ) := by
+    intro t h
+    apply hm t
+    change starRingEnd ℂ (γ t) = _
+    rw [h]
+    simp only [map_neg, Complex.conj_ofReal]
+  have hcp := loopDeg_conj (γ - ContinuousMap.const unitInterval (a : ℂ))
+    (fun t => sub_ne_zero.mpr (hp' t))
+    (by change γ 0 - (a : ℂ) = γ 1 - (a : ℂ); rw [hclosed])
+  have hcm := loopDeg_conj (γ - ContinuousMap.const unitInterval (-(a : ℂ)))
+    (fun t => sub_ne_zero.mpr (hm' t))
+    (by change γ 0 - (-(a : ℂ)) = γ 1 - (-(a : ℂ)); rw [hclosed])
+  have hδp : (⟨fun t => starRingEnd ℂ ((γ - ContinuousMap.const unitInterval (a : ℂ)) t),
+      Complex.continuous_conj.comp (γ - ContinuousMap.const unitInterval (a : ℂ)).continuous⟩ :
+      C(unitInterval, ℂ)) = δ - ContinuousMap.const unitInterval (a : ℂ) := by
+    ext t
+    simp only [ContinuousMap.sub_apply, ContinuousMap.const_apply, map_sub, Complex.conj_ofReal, δ,
+      ContinuousMap.coe_mk]
+  have hδm : (⟨fun t => starRingEnd ℂ ((γ - ContinuousMap.const unitInterval (-(a : ℂ))) t),
+      Complex.continuous_conj.comp (γ - ContinuousMap.const unitInterval (-(a : ℂ))).continuous⟩ :
+      C(unitInterval, ℂ)) = δ - ContinuousMap.const unitInterval (-(a : ℂ)) := by
+    ext t
+    simp only [ContinuousMap.sub_apply, ContinuousMap.const_apply, map_sub, map_neg, Complex.conj_ofReal, δ,
+      ContinuousMap.coe_mk]
+  have hcp' : loopDeg (δ - ContinuousMap.const unitInterval (a : ℂ))
+      (fun t => sub_ne_zero.mpr (hp t)) =
+      -loopDeg (γ - ContinuousMap.const unitInterval (a : ℂ))
+        (fun t => sub_ne_zero.mpr (hp' t)) := by simpa only [hδp] using hcp
+  have hcm' : loopDeg (δ - ContinuousMap.const unitInterval (-(a : ℂ)))
+      (fun t => sub_ne_zero.mpr (hm t)) =
+      -loopDeg (γ - ContinuousMap.const unitInterval (-(a : ℂ)))
+        (fun t => sub_ne_zero.mpr (hm' t)) := by simpa only [hδm] using hcm
+  refine ⟨a, ha, hae, hp', hm', ?_⟩
+  omega
+
 /-- Two equal positive winding jumps cannot have both their sides matched in
 reverse within complementary components of the same loop. -/
 theorem not_crossed_component_matching_of_winding_jumps
