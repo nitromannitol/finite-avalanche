@@ -3950,6 +3950,12 @@
       "bytes": 4278
     },
     {
+      "path": "FiniteAvalanches/Support/Plane/StarSplicing.lean",
+      "sha256": "b414381448c0665146c238fd79c30618c42f040edfaf7fa7540cbe9938668731",
+      "code_sha256": "db90620a430e617fb31d163c7f6a6f6ab82f051b13be70a7fcf645c883d08f3c",
+      "bytes": 3763
+    },
+    {
       "path": "FiniteAvalanches/Support/Plane/StraightModel.lean",
       "sha256": "b96d7405b955afbb9ad5d2354e95d0e5cdae673bdf001878c9f2012c1db66a01",
       "code_sha256": "447dece68ca64c9257934619bdd22dcb7a5a1c4139943bbf1156f9c1f405ec85",
@@ -6827,6 +6833,7 @@
     "FiniteAvalanches.Support.Plane.ReachabilityPath",
     "FiniteAvalanches.Support.Plane.ReachabilityTrace",
     "FiniteAvalanches.Support.Plane.SimplePathDuality",
+    "FiniteAvalanches.Support.Plane.StarSplicing",
     "FiniteAvalanches.Support.Plane.StraightModel",
     "FiniteAvalanches.Support.Plane.SubarcCompletion",
     "FiniteAvalanches.Support.Plane.TerminalReparam",
