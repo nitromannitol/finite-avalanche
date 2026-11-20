@@ -1,4 +1,5 @@
 import FiniteAvalanches.Support.Plane.LoopPathReduction
+import Mathlib.Topology.MetricSpace.Perfect
 
 /-!
 # Residual points of a loop cancellation
@@ -10,6 +11,7 @@ and no interior residual point is isolated.
 namespace FiniteAvalanches.Electrical.StatementGeometry
 
 open Set
+open scoped Topology
 
 /-- The points not belonging to the interior of any cancelled loop. -/
 def loopResidual (S : Set (unitInterval × unitInterval)) : Set unitInterval :=
@@ -91,5 +93,69 @@ theorem IsLoopCancellation.residual_not_isolated_of_maximal
     apply hbad w.1 (hS.endpoints_mem_loopResidual_of_maximal p hmax hw).1
     exact ⟨lt_of_lt_of_le hl hzw, lt_trans hbw.1 hbr⟩
   exact hS.not_adjacent_of_maximal p hmax hv hw (hv2.trans hw1.symm)
+
+/-- The closure of the interior residual points of a maximal cancellation is
+perfect. -/
+theorem IsLoopCancellation.perfect_interior_loopResidual_of_maximal
+    {X : Type*} [TopologicalSpace X] {x y : X} (p : Path x y)
+    {S : Set (unitInterval × unitInterval)} (hS : IsLoopCancellation p S)
+    (hmax : ∀ T, IsLoopCancellation p T → LoopFamilyRefines S T → LoopFamilyRefines T S) :
+    Perfect (closure (loopResidual S ∩ Ioo 0 1)) := by
+  apply Preperfect.perfect_closure
+  rw [preperfect_iff_nhds]
+  intro z hz U hU
+  have hz0 : (0 : unitInterval) < z := hz.2.1
+  have hz1 : z < (1 : unitInterval) := hz.2.2
+  obtain ⟨l, hlz, hlU⟩ := exists_Ioc_subset_of_mem_nhds hU ⟨0, hz0⟩
+  obtain ⟨r, hzr, hrU⟩ := exists_Ico_subset_of_mem_nhds hU ⟨1, hz1⟩
+  obtain ⟨l', hll', hl'z⟩ := exists_between (max_lt hlz hz0)
+  obtain ⟨r', hzr', hr'r⟩ := exists_between (lt_min hzr hz1)
+  obtain ⟨t, htF, ht, htne⟩ := hS.residual_not_isolated_of_maximal p hmax hz.1 hl'z hzr'
+  have htU : t ∈ U := by
+    by_cases htz : t ≤ z
+    · exact hlU ⟨lt_trans (lt_of_le_of_lt (le_max_left _ _) hll') ht.1, htz⟩
+    · exact hrU ⟨le_of_not_ge htz, lt_trans ht.2
+        (lt_of_lt_of_le hr'r (min_le_left _ _))⟩
+  have ht0 : (0 : unitInterval) < t :=
+    lt_trans (lt_of_le_of_lt (le_max_right _ _) hll') ht.1
+  have ht1 : t < (1 : unitInterval) :=
+    lt_trans ht.2 (lt_of_lt_of_le hr'r (min_le_right _ _))
+  exact ⟨t, ⟨htU, htF, ht0, ht1⟩, htne⟩
+
+/-- A non-loop path has an interior residual parameter in every maximal loop
+cancellation. -/
+theorem IsLoopCancellation.interior_loopResidual_nonempty_of_maximal
+    {X : Type*} [TopologicalSpace X] {x y : X} (p : Path x y) (hxy : x ≠ y)
+    {S : Set (unitInterval × unitInterval)} (hS : IsLoopCancellation p S)
+    (hmax : ∀ T, IsLoopCancellation p T → LoopFamilyRefines S T → LoopFamilyRefines T S) :
+    (loopResidual S ∩ Ioo 0 1).Nonempty := by
+  classical
+  by_contra hnone
+  let m : unitInterval := ⟨1 / 2, by norm_num⟩
+  have hm : m ∉ loopResidual S := by
+    intro hmF
+    apply hnone
+    refine ⟨m, hmF, ?_⟩
+    change (0 : ℝ) < 1 / 2 ∧ (1 / 2 : ℝ) < 1
+    norm_num
+  have hex : ∃ v ∈ S, m ∈ Ioo v.1 v.2 := by
+    by_contra h
+    apply hm
+    intro v hv hmv
+    exact h ⟨v, hv, hmv⟩
+  obtain ⟨v, hv, _⟩ := hex
+  have hvF := hS.endpoints_mem_loopResidual_of_maximal p hmax hv
+  have hv0 : v.1 = 0 := by
+    by_contra hne
+    have hvpos : (0 : unitInterval) < v.1 := lt_of_le_of_ne bot_le (Ne.symm hne)
+    have hvlt : v.1 < (1 : unitInterval) := lt_of_lt_of_le (hS.1 v hv).1 le_top
+    exact hnone ⟨v.1, hvF.1, hvpos, hvlt⟩
+  have hv1 : v.2 = 1 := by
+    by_contra hne
+    have hvpos : (0 : unitInterval) < v.2 := lt_of_le_of_lt bot_le (hS.1 v hv).1
+    have hvlt : v.2 < (1 : unitInterval) := lt_of_le_of_ne le_top hne
+    exact hnone ⟨v.2, hvF.2, hvpos, hvlt⟩
+  apply hxy
+  simpa only [hv0, hv1, Path.source, Path.target] using (hS.1 v hv).2
 
 end FiniteAvalanches.Electrical.StatementGeometry
