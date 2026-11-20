@@ -9,7 +9,7 @@ A machine-checked **Lean 4** formalization of the paper
 The formalized text is the arXiv v2 source (`main.tex`, SHA-256
 `d2a875c154db9ff913ec6b25cf38e8da134ca977f6a24fd9c036cd8873b1082a`). All 17 numbered
 statements of the paper are stated and proved in Lean, the main theorem among them. The proofs
-use 19 standard results from the literature as named Lean axioms (see
+use 12 standard results from the literature as named Lean axioms (see
 [Standing assumptions and scope](#standing-assumptions-and-scope)).
 
 The development is built on [mathlib](https://github.com/leanprover-community/mathlib4) and the
@@ -75,12 +75,12 @@ and records how the Lean statements read the paper.
 
 ## Standing assumptions and scope
 
-1. **Results from the literature.** Nineteen results enter as named Lean axioms in
+1. **Results from the literature.** Twelve results enter as named Lean axioms in
    [`FiniteAvalanches/External/`](FiniteAvalanches/External/). The axiom report of Theorem 1.1
-   consists of these 19 axioms and `propext`, `Classical.choice` and `Quot.sound`. The registry
+   consists of these 12 axioms and `propext`, `Classical.choice` and `Quot.sound`. The registry
    [`audit/trusted-inputs.json`](audit/trusted-inputs.json) records their exact Lean statements,
    hashes and available source references. Some plane-graph inputs have no citation in their
-   module docstrings; no specific source has been identified for `plane_edge_chart_incidence`.
+   module docstrings.
 
    *Uniform spanning trees, sandpiles and random walk (8).*
 
@@ -95,21 +95,18 @@ and records how the Lean statements read the paper.
    | The Beurling estimate for simple random walk on `ℤ²` (Lawler–Limic 2004, Theorem 1) | `lawler_limic_beurling_srw_Z2` |
    | Pairing groves and response-matrix minors (Kenyon–Wilson 2009, Theorems 8.1 and B.3) | `kenyonWilson_pairingGroves_resistanceMinor` |
 
-   *Topology of finite plane graphs (11).* Available references include Mohar–Thomassen,
+   *Topology of finite plane graphs (4).* Available references include Mohar–Thomassen,
    *Graphs on Surfaces*, Diestel, *Graph Theory*, and Hatcher, *Algebraic Topology*. The
-   inputs are the face star of a vertex
-   (`plane_vertex_face_star`), the faces of a two-pole plane network
+   inputs are the faces of a two-pole plane network
    (`finite_plane_two_pole_topology`), extension and straightening of plane arcs
    (`parametrized_plane_arc_straightening`), redrawing a path of the outer face on the boundary of
-   a disk (`outer_face_simple_path_disk_redrawing`), the geometric dual
-   (`finite_plane_geometric_dual`), bonds as dual cycles (`finite_plane_dual_bond_cycle`),
-   connectedness of the dual (`finite_plane_dual_connected`), complementary spanning trees
-   (`finite_plane_tree_complement`), the faces on both sides of an edge
-   (`plane_edge_chart_incidence`), and transport of faces under inversion of the punctured plane
-   (`plane_punctured_face_transport`, `plane_punctured_chart_face_transport`).
+   a disk (`outer_face_simple_path_disk_redrawing`), and the geometric dual
+   (`finite_plane_geometric_dual`).
 
-   The all-minors matrix-tree theorem, nested projection domination, and disk alternation
-   are proved using Lattice-Probability. The registry contains three further axioms that
+   The all-minors matrix-tree theorem, nested projection domination, disk alternation, and punctured face and chart-face transport
+   are proved using Lattice-Probability. The vertex face star, dual connectivity, edge-chart incidence, the spanning-tree complement theorem
+   and the bond-cycle theorem are proved
+   using a formalization of the Jordan–Schönflies theorem. The registry contains three further axioms that
    Theorem 1.1 does not use: Wilson's
    algorithm on a finite network, ray-seeded Wilson sampling on `ℤ²` (van Engelenburg–Hutchcroft)
    and the square tiling of Brooks, Smith, Stone and Tutte.
@@ -132,7 +129,7 @@ and records how the Lean statements read the paper.
   contains one intentional statement-level `sorry`, which the solution proves.
 - **Exact axiom boundary.** [`PublicVerification/Axioms.lean`](PublicVerification/Axioms.lean)
   prints 69 axiom reports, and [`scripts/check_public_axioms.py`](scripts/check_public_axioms.py)
-  checks each of them: Theorem 1.1 uses exactly the 19 axioms above and the three standard
+  checks each of them: Theorem 1.1 uses exactly the 17 axioms above and the three standard
   axioms, and every other report lists only standard and registered axioms. The review-gated
   check requires a current source review.
 - **Warning-free build.** The continuous-integration build compiles every module with warnings

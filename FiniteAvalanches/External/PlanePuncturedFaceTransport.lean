@@ -1,3 +1,4 @@
+import FiniteAvalanches.Support.Plane.PuncturedTransport
 import FiniteAvalanches.Electrical.Geometry.ConnectedDrawingQuotient
 import FiniteAvalanches.Electrical.Geometry.BSST
 
@@ -11,7 +12,7 @@ open FiniteAvalanches.Electrical.DrawingContraction (restrictDrawing)
 namespace FiniteAvalanches.External
 
 /-- Punctured-plane inversion transports all copied curves and complement faces. -/
-axiom plane_punctured_face_transport : (
+theorem plane_punctured_face_transport : (
   ∀ {V E E₀ : Type} [Fintype V] [Fintype E] [Fintype E₀]
     (J : CopiedGraph V E) (K : CopiedGraph V E₀) (D : Drawing J)
     (i : E₀ → E) (hi : Function.Injective i)
@@ -48,6 +49,8 @@ axiom plane_punctured_face_transport : (
             D.curve e t ∈ closure (D.curve e '' S) ↔
               D'.curve e t ∈ closure (D'.curve e '' S)) ∧
           ¬Bornology.IsBounded (faceRegion R' (faces F))
-  )
+  ) := by
+  intro V E E₀ _ _ _ J K D i hi hl hr F
+  exact D.punctured_face_transport i hi hl hr F
 
 end FiniteAvalanches.External

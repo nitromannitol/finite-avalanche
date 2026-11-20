@@ -7,7 +7,7 @@ project:
     on Z^2, adding one grain at the origin causes finitely many topplings almost
     surely, and the radius of the avalanche has a logarithmic tail (Theorem
     1.1). All 17 numbered statements of the paper are formalized. The proofs use
-    19 standard results from the literature, which enter as named Lean axioms.
+    12 standard results from the literature, which enter as named Lean axioms.
     The comparator pair FiniteAvalanchesAudit/MainOrigin/ was checked for the earlier
     source inventory; the regenerated pair awaits review for the current source.
   authors:
@@ -62,7 +62,7 @@ status:
     A Lean 4 / Mathlib formalization of the 17 numbered statements of the paper:
     Theorem 1.1 (finite avalanches and the logarithmic radius tail) and the
     lemmas and propositions of Sections 2 to 7 behind it. SCOPE BOUNDARY: the
-    proofs use 19 standard results from the literature (uniform spanning trees,
+    proofs use 12 standard results from the literature (uniform spanning trees,
     Wilson's algorithm, the Beurling estimate,
     pairing groves, the infinite-volume sandpile law and the topology of finite
     plane graphs), declared as axioms in FiniteAvalanches/External/ and
@@ -81,19 +81,12 @@ status:
   external_axioms:
     - "FiniteAvalanches.External.BarlowMasson2011.adjacent_ust_path_euclidean_tail"
     - "FiniteAvalanches.External.SandpileLimit.exists_infiniteVolumeLaw"
-    - "FiniteAvalanches.External.finite_plane_dual_bond_cycle"
-    - "FiniteAvalanches.External.finite_plane_dual_connected"
     - "FiniteAvalanches.External.finite_plane_geometric_dual"
-    - "FiniteAvalanches.External.finite_plane_tree_complement"
     - "FiniteAvalanches.External.finite_plane_two_pole_topology"
     - "FiniteAvalanches.External.kenyonWilson_pairingGroves_resistanceMinor"
     - "FiniteAvalanches.External.lawler_limic_beurling_srw_Z2"
     - "FiniteAvalanches.External.outer_face_simple_path_disk_redrawing"
     - "FiniteAvalanches.External.parametrized_plane_arc_straightening"
-    - "FiniteAvalanches.External.plane_edge_chart_incidence"
-    - "FiniteAvalanches.External.plane_punctured_chart_face_transport"
-    - "FiniteAvalanches.External.plane_punctured_face_transport"
-    - "FiniteAvalanches.External.plane_vertex_face_star"
     - "FiniteAvalanches.External.square_lattice_ust_dual_law"
     - "FiniteAvalanches.External.square_lattice_wired_ust_one_tree_one_end"
     - "FiniteAvalanches.External.square_lattice_wired_ust_weak_limit"
@@ -102,7 +95,7 @@ status:
     - declaration: "FiniteAvalanchesCurrent.RegisteredPast.Main.finite_avalanches_origin"
       file: "FiniteAvalanchesCurrent/RegisteredPast/Main.lean"
       sorry_count: 0
-      axioms: ["propext", "Classical.choice", "Quot.sound", "the 19 external axioms above"]
+      axioms: ["propext", "Classical.choice", "Quot.sound", "the 12 external axioms above"]
       comparator_config: "FiniteAvalanchesAudit/MainOrigin/comparator.json"
       literature_dependencies:
         - "FiniteAvalanches.External.SandpileLimit.exists_infiniteVolumeLaw"
@@ -133,9 +126,8 @@ fidelity:
     chosen before every real threshold; Proposition 5.1 and Lemma 6.2 are one
     declaration sharing the constant epsilon; electrical networks keep every
     copy of a parallel edge, and the voltage is defined for distinct terminals.
-    The 19 external results are axioms. Available source references are recorded
-    in audit/trusted-inputs.json; no specific source has been identified for
-    plane_edge_chart_incidence. Three formerly assumed results are now proved.
+    The 12 external results are axioms. Available source references are recorded
+    in audit/trusted-inputs.json. Ten formerly assumed results are now proved.
 
 review:
   status: "review-pending"
@@ -143,7 +135,7 @@ review:
     - "Ahmed Bou-Rabee"
   notes: >-
     Correctness of every proof is guaranteed by the Lean kernel and Mathlib
-    relative to the 19 registered axioms (no sorry, no other axiom). The
+    relative to the 12 registered axioms (no sorry, no other axiom). The
     statements were reviewed against the paper for the earlier source inventory.
     The recorded comparator review also covers that earlier inventory; the regenerated
     pair awaits review for the current source.

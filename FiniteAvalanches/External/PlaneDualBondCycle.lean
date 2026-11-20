@@ -1,4 +1,7 @@
 import FiniteAvalanches.Electrical.Geometry.SourceHDual
+import FiniteAvalanches.Support.Plane.BondDualCycle
+
+/-! A bond of a finite plane drawing gives a dual cycle of original copies. -/
 open FiniteAvalanches.Electrical.StatementGeometry
 open FiniteAvalanches.Electrical.Source
 open FiniteAvalanches.Electrical.BSST
@@ -8,7 +11,7 @@ set_option autoImplicit false
 namespace FiniteAvalanches.External
 
 /-- A plane bond is a dual cycle, cut at one distinguished original copy. -/
-axiom finite_plane_dual_bond_cycle : (
+theorem finite_plane_dual_bond_cycle : (
 ∀ {V E : Type} [Fintype V] [Fintype E]
     (J : CopiedGraph V E) (Q : Drawing J)
     (charts : ∀ e : E, EdgeChart Q e) (A : Finset V),
@@ -34,6 +37,14 @@ axiom finite_plane_dual_bond_cycle : (
           positiveChartFace Q marked (charts marked) = vertices (Fin.last m)) ∨
         (positiveChartFace Q marked (charts marked) = vertices 0 ∧
           negativeChartFace Q marked (charts marked) = vertices (Fin.last m)))
-  )
+  ) := by
+  intro V E _ _ J Q charts A hA hAc marked hmarked
+  obtain ⟨m, vertices, hinj, copies, hcard, hends, hfirst, hlast⟩ :=
+    exists_indexed_dual_bond_cycle Q charts A hA hAc marked hmarked
+  refine ⟨m, vertices, hinj, copies, ?_, hends, Or.inl ⟨hfirst, hlast⟩⟩
+  convert hcard using 1
+  congr 1
+  ext e
+  simp only [Finset.mem_filter, CopiedGraph.Crosses]
 
 end FiniteAvalanches.External

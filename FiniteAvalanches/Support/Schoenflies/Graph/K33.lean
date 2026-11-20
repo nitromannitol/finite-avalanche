@@ -1,0 +1,567 @@
+/-
+Copyright (c) 2026 Álvaro Begué. All rights reserved.
+Released under the Apache License, Version 2.0.
+Source: https://github.com/alonamaloh/schoenflies-lean, commit 05a43d29cde026618777db3d4e4316204ccca237, Schoenflies/Graph/K33.lean.
+-/
+import FiniteAvalanches.Support.Schoenflies.Graph.CycleJordan
+import FiniteAvalanches.Support.Schoenflies.Subarc
+
+/-! Plane geometry for the Jordan–Schönflies theorem. -/
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+open Set Schoenflies unitInterval
+open scoped Graph
+
+namespace Graph
+
+variable {α β : Type*} {G : Graph α β} {x y : Fin 3 → α} {e : Fin 3 → Fin 3 → β}
+variable {i j k l s t : Fin 3} {z : α}
+
+ 
+structure IsK33Config (G : Graph α β) (x y : Fin 3 → α) (e : Fin 3 → Fin 3 → β) : Prop where
+   
+  isLink : ∀ i j, G.IsLink (e i j) (x i) (y j)
+   
+  x_injective : Function.Injective x
+   
+  y_injective : Function.Injective y
+   
+  ne : ∀ i j, x i ≠ y j
+
+namespace IsK33Config
+
+theorem x_ne_x (h : IsK33Config G x y e) (hik : i ≠ k) : x i ≠ x k :=
+  fun he ↦ hik (h.x_injective he)
+
+theorem y_ne_y (h : IsK33Config G x y e) (hjl : j ≠ l) : y j ≠ y l :=
+  fun he ↦ hjl (h.y_injective he)
+
+theorem x_ne_y (h : IsK33Config G x y e) (i j : Fin 3) : x i ≠ y j := h.ne i j
+
+theorem y_ne_x (h : IsK33Config G x y e) (j i : Fin 3) : y j ≠ x i := (h.ne i j).symm
+
+ 
+
+
+theorem eq_of_e_eq (h : IsK33Config G x y e) (heq : e i j = e k l) : i = k ∧ j = l := by
+  have h' : G.IsLink (e i j) (x k) (y l) := by rw [heq]; exact h.isLink k l
+  rcases (h.isLink i j).eq_and_eq_or_eq_and_eq h' with ⟨h1, h2⟩ | ⟨h1, -⟩
+  · exact ⟨h.x_injective h1, h.y_injective h2⟩
+  · exact absurd h1 (h.ne i l)
+
+theorem e_ne (h : IsK33Config G x y e) (hne : ¬ (i = k ∧ j = l)) : e i j ≠ e k l :=
+  fun heq ↦ hne (h.eq_of_e_eq heq)
+
+ 
+theorem inc_elim (h : IsK33Config G x y e) (hz : G.Inc (e i j) z) : z = x i ∨ z = y j :=
+  hz.eq_or_eq_of_isLink (h.isLink i j)
+
+ 
+
+
+theorem notMem_walkVertices (h : IsK33Config G x y e) {W : List β} {w : α} (hzw : z ≠ w)
+    (hW : ∀ f ∈ W, ∃ i j, f = e i j ∧ z ≠ x i ∧ z ≠ y j) :
+    z ∉ G.walkVertices w W := by
+  intro hz
+  rcases mem_walkVertices_iff.1 hz with rfl | ⟨f, hf, hinc⟩
+  · exact hzw rfl
+  obtain ⟨i, j, rfl, hxi, hyj⟩ := hW f hf
+  rcases h.inc_elim hinc with hh | hh
+  exacts [hxi hh, hyj hh]
+
+end IsK33Config
+
+ 
+
+
+
+
+
+ 
+
+
+def hexPairs : List (Fin 3 × Fin 3) := [(0, 0), (0, 2), (2, 2), (2, 1), (1, 1), (1, 0)]
+
+ 
+
+def hexDetour (e : Fin 3 → Fin 3 → β) : List β := [e 0 2, e 2 2, e 2 1, e 1 1, e 1 0]
+
+ 
+def hexList (e : Fin 3 → Fin 3 → β) : List β := e 0 0 :: hexDetour e
+
+theorem hexList_eq_map (e : Fin 3 → Fin 3 → β) :
+    hexList e = hexPairs.map fun p ↦ e p.1 p.2 := rfl
+
+theorem mem_hexList_iff {f : β} : f ∈ hexList e ↔ ∃ p ∈ hexPairs, f = e p.1 p.2 := by
+  rw [hexList_eq_map]
+  simp only [List.mem_map, eq_comm]
+
+namespace IsK33Config
+
+ 
+
+theorem hexDetour_isPath (h : IsK33Config G x y e) : G.IsPath (x 0) (hexDetour e) (y 0) := by
+  have h5 : G.IsPath (x 1) [e 1 0] (y 0) := .single (h.isLink 1 0) (h.x_ne_y 1 0)
+  have h4 : G.IsPath (y 1) [e 1 1, e 1 0] (y 0) := by
+    refine .cons (h.isLink 1 1).symm h5 (h.notMem_walkVertices (h.y_ne_x 1 1) ?_)
+    rintro f hf
+    simp only [List.mem_cons, List.not_mem_nil, or_false] at hf
+    rcases hf with rfl
+    exact ⟨1, 0, rfl, h.y_ne_x 1 1, h.y_ne_y (by decide)⟩
+  have h3 : G.IsPath (x 2) [e 2 1, e 1 1, e 1 0] (y 0) := by
+    refine .cons (h.isLink 2 1) h4 (h.notMem_walkVertices (h.x_ne_y 2 1) ?_)
+    rintro f hf
+    simp only [List.mem_cons, List.not_mem_nil, or_false] at hf
+    rcases hf with rfl | rfl
+    · exact ⟨1, 1, rfl, h.x_ne_x (by decide), h.x_ne_y 2 1⟩
+    · exact ⟨1, 0, rfl, h.x_ne_x (by decide), h.x_ne_y 2 0⟩
+  have h2 : G.IsPath (y 2) [e 2 2, e 2 1, e 1 1, e 1 0] (y 0) := by
+    refine .cons (h.isLink 2 2).symm h3 (h.notMem_walkVertices (h.y_ne_x 2 2) ?_)
+    rintro f hf
+    simp only [List.mem_cons, List.not_mem_nil, or_false] at hf
+    rcases hf with rfl | rfl | rfl
+    · exact ⟨2, 1, rfl, h.y_ne_x 2 2, h.y_ne_y (by decide)⟩
+    · exact ⟨1, 1, rfl, h.y_ne_x 2 1, h.y_ne_y (by decide)⟩
+    · exact ⟨1, 0, rfl, h.y_ne_x 2 1, h.y_ne_y (by decide)⟩
+  refine .cons (h.isLink 0 2) h2 (h.notMem_walkVertices (h.x_ne_y 0 2) ?_)
+  rintro f hf
+  simp only [List.mem_cons, List.not_mem_nil, or_false] at hf
+  rcases hf with rfl | rfl | rfl | rfl
+  · exact ⟨2, 2, rfl, h.x_ne_x (by decide), h.x_ne_y 0 2⟩
+  · exact ⟨2, 1, rfl, h.x_ne_x (by decide), h.x_ne_y 0 1⟩
+  · exact ⟨1, 1, rfl, h.x_ne_x (by decide), h.x_ne_y 0 1⟩
+  · exact ⟨1, 0, rfl, h.x_ne_x (by decide), h.x_ne_y 0 0⟩
+
+ 
+theorem hexagon_isCycleThrough (h : IsK33Config G x y e) :
+    G.IsCycleThrough (e 0 0) (x 0) (y 0) (hexDetour e) := by
+  refine ⟨h.isLink 0 0, h.hexDetour_isPath, ?_⟩
+  simp only [hexDetour, List.mem_cons, List.not_mem_nil, or_false, not_or]
+  exact ⟨h.e_ne (by decide), h.e_ne (by decide), h.e_ne (by decide), h.e_ne (by decide),
+    h.e_ne (by decide)⟩
+
+ 
+
+
+
+ 
+theorem chord_notMem_hexList (h : IsK33Config G x y e) (s : Fin 3) : e s (s + 1) ∉ hexList e := by
+  intro hmem
+  obtain ⟨p, hp, heq⟩ := mem_hexList_iff.1 hmem
+  have key : ∀ (s : Fin 3) (p : Fin 3 × Fin 3), p ∈ hexPairs → ¬ (s = p.1 ∧ s + 1 = p.2) := by
+    decide
+  exact key s p hp (h.eq_of_e_eq heq)
+
+ 
+theorem chord_ne (h : IsK33Config G x y e) (hst : s ≠ t) : e s (s + 1) ≠ e t (t + 1) :=
+  h.e_ne (fun hc ↦ hst hc.1)
+
+ 
+theorem hexList_edge_mem (h : IsK33Config G x y e) {f : β} (hf : f ∈ hexList e) : f ∈ E(G) := by
+  obtain ⟨p, -, rfl⟩ := mem_hexList_iff.1 hf
+  exact (h.isLink p.1 p.2).edge_mem
+
+end IsK33Config
+
+theorem mem_hexList (e : Fin 3 → Fin 3 → β) {p : Fin 3 × Fin 3} (hp : p ∈ hexPairs) :
+    e p.1 p.2 ∈ hexList e :=
+  mem_hexList_iff.2 ⟨p, hp, rfl⟩
+
+ 
+
+
+
+
+
+
+
+ 
+def arcAPairs (s : Fin 3) : List (Fin 3 × Fin 3) := [(s, s), (s + 1, s), (s + 1, s + 1)]
+
+ 
+def arcBPairs (s : Fin 3) : List (Fin 3 × Fin 3) := [(s, s + 2), (s + 2, s + 2), (s + 2, s + 1)]
+
+ 
+def arcA (e : Fin 3 → Fin 3 → β) (s : Fin 3) : List β := [e s s, e (s + 1) s, e (s + 1) (s + 1)]
+
+ 
+def arcB (e : Fin 3 → Fin 3 → β) (s : Fin 3) : List β :=
+  [e s (s + 2), e (s + 2) (s + 2), e (s + 2) (s + 1)]
+
+theorem arcA_eq_map (e : Fin 3 → Fin 3 → β) (s : Fin 3) :
+    arcA e s = (arcAPairs s).map fun p ↦ e p.1 p.2 := rfl
+
+theorem arcB_eq_map (e : Fin 3 → Fin 3 → β) (s : Fin 3) :
+    arcB e s = (arcBPairs s).map fun p ↦ e p.1 p.2 := rfl
+
+namespace IsK33Config
+
+ 
+theorem arcA_isPath (h : IsK33Config G x y e) (s : Fin 3) :
+    G.IsPath (x s) (arcA e s) (y (s + 1)) := by
+  have hab : s ≠ s + 1 := by revert s; decide
+  have p3 : G.IsPath (x (s + 1)) [e (s + 1) (s + 1)] (y (s + 1)) :=
+    .single (h.isLink (s + 1) (s + 1)) (h.x_ne_y _ _)
+  have p2 : G.IsPath (y s) [e (s + 1) s, e (s + 1) (s + 1)] (y (s + 1)) := by
+    refine .cons (h.isLink (s + 1) s).symm p3 (h.notMem_walkVertices (h.y_ne_x _ _) ?_)
+    rintro f hf
+    simp only [List.mem_cons, List.not_mem_nil, or_false] at hf
+    rcases hf with rfl
+    exact ⟨s + 1, s + 1, rfl, h.y_ne_x _ _, h.y_ne_y hab⟩
+  refine .cons (h.isLink s s) p2 (h.notMem_walkVertices (h.x_ne_y _ _) ?_)
+  rintro f hf
+  simp only [List.mem_cons, List.not_mem_nil, or_false] at hf
+  rcases hf with rfl | rfl
+  · exact ⟨s + 1, s, rfl, h.x_ne_x hab, h.x_ne_y _ _⟩
+  · exact ⟨s + 1, s + 1, rfl, h.x_ne_x hab, h.x_ne_y _ _⟩
+
+ 
+theorem arcB_isPath (h : IsK33Config G x y e) (s : Fin 3) :
+    G.IsPath (x s) (arcB e s) (y (s + 1)) := by
+  have hac : s ≠ s + 2 := by revert s; decide
+  have hcb : s + 2 ≠ s + 1 := by revert s; decide
+  have q3 : G.IsPath (x (s + 2)) [e (s + 2) (s + 1)] (y (s + 1)) :=
+    .single (h.isLink (s + 2) (s + 1)) (h.x_ne_y _ _)
+  have q2 : G.IsPath (y (s + 2)) [e (s + 2) (s + 2), e (s + 2) (s + 1)] (y (s + 1)) := by
+    refine .cons (h.isLink (s + 2) (s + 2)).symm q3 (h.notMem_walkVertices (h.y_ne_x _ _) ?_)
+    rintro f hf
+    simp only [List.mem_cons, List.not_mem_nil, or_false] at hf
+    rcases hf with rfl
+    exact ⟨s + 2, s + 1, rfl, h.y_ne_x _ _, h.y_ne_y hcb⟩
+  refine .cons (h.isLink s (s + 2)) q2 (h.notMem_walkVertices (h.x_ne_y _ _) ?_)
+  rintro f hf
+  simp only [List.mem_cons, List.not_mem_nil, or_false] at hf
+  rcases hf with rfl | rfl
+  · exact ⟨s + 2, s + 2, rfl, h.x_ne_x hac, h.x_ne_y _ _⟩
+  · exact ⟨s + 2, s + 1, rfl, h.x_ne_x hac, h.x_ne_y _ _⟩
+
+end IsK33Config
+
+end Graph
+
+ 
+
+
+
+
+namespace Graph
+
+variable {β : Type*} {G : Graph Plane β} {x y : Fin 3 → Plane} {e : Fin 3 → Fin 3 → β}
+variable {drawing : β → ℝ → Plane} {s t : Fin 3}
+
+ 
+def hexSet (drawing : β → ℝ → Plane) (e : Fin 3 → Fin 3 → β) : Set Plane :=
+  edgesCover drawing (hexList e)
+
+theorem mem_edgesCover_map_iff {L : List (Fin 3 × Fin 3)} {p : Plane} :
+    p ∈ edgesCover drawing (L.map fun q ↦ e q.1 q.2) ↔
+      ∃ q ∈ L, p ∈ edgeArc drawing (e q.1 q.2) := by
+  constructor
+  · intro hp
+    obtain ⟨f, hf, hpf⟩ := mem_edgesCover_iff.1 hp
+    obtain ⟨q, hq, rfl⟩ := List.mem_map.1 hf
+    exact ⟨q, hq, hpf⟩
+  · rintro ⟨q, hq, hpq⟩
+    exact mem_edgesCover (List.mem_map_of_mem hq) hpq
+
+theorem mem_hexSet_iff {p : Plane} :
+    p ∈ hexSet drawing e ↔ ∃ q ∈ hexPairs, p ∈ edgeArc drawing (e q.1 q.2) := by
+  rw [hexSet, hexList_eq_map]; exact mem_edgesCover_map_iff
+
+theorem mem_arcA_iff {p : Plane} :
+    p ∈ edgesCover drawing (arcA e s) ↔ ∃ q ∈ arcAPairs s, p ∈ edgeArc drawing (e q.1 q.2) := by
+  rw [arcA_eq_map]; exact mem_edgesCover_map_iff
+
+theorem mem_arcB_iff {p : Plane} :
+    p ∈ edgesCover drawing (arcB e s) ↔ ∃ q ∈ arcBPairs s, p ∈ edgeArc drawing (e q.1 q.2) := by
+  rw [arcB_eq_map]; exact mem_edgesCover_map_iff
+
+namespace IsK33Config
+
+ 
+
+
+theorem hexagon_isJordanCurve (h : IsK33Config G x y e) (hd : IsDrawing G drawing) :
+    IsJordanCurve (hexSet drawing e) :=
+  hd.cycle_isJordanCurve h.hexagon_isCycleThrough
+
+ 
+theorem x_mem_hexSet (h : IsK33Config G x y e) (hd : IsDrawing G drawing) (i : Fin 3) :
+    x i ∈ hexSet drawing e := by
+  have hp : ∀ i : Fin 3, ((i, i) : Fin 3 × Fin 3) ∈ hexPairs := by decide
+  exact mem_edgesCover (mem_hexList e (hp i)) (hd.edge_isArcBetween (h.isLink i i)).left_mem
+
+ 
+theorem y_mem_hexSet (h : IsK33Config G x y e) (hd : IsDrawing G drawing) (j : Fin 3) :
+    y j ∈ hexSet drawing e := by
+  have hp : ∀ j : Fin 3, ((j, j) : Fin 3 × Fin 3) ∈ hexPairs := by decide
+  exact mem_edgesCover (mem_hexList e (hp j)) (hd.edge_isArcBetween (h.isLink j j)).right_mem
+
+ 
+
+theorem chord_inter_hexSet (h : IsK33Config G x y e) (hd : IsDrawing G drawing) (s : Fin 3) :
+    edgeArc drawing (e s (s + 1)) ∩ hexSet drawing e = {x s, y (s + 1)} := by
+  refine Set.eq_of_subset_of_subset ?_ ?_
+  · rintro p ⟨hpe, hph⟩
+    obtain ⟨f, hf, hpf⟩ := mem_edgesCover_iff.1 hph
+    have hne : e s (s + 1) ≠ f := fun hc ↦ h.chord_notMem_hexList s (hc ▸ hf)
+    obtain ⟨-, hinc, -⟩ :=
+      hd.edge_inter (h.isLink s (s + 1)).edge_mem (h.hexList_edge_mem hf) hne hpe hpf
+    exact h.inc_elim hinc
+  · rintro p (rfl | rfl)
+    · exact ⟨(hd.edge_isArcBetween (h.isLink s (s + 1))).left_mem, h.x_mem_hexSet hd s⟩
+    · exact ⟨(hd.edge_isArcBetween (h.isLink s (s + 1))).right_mem, h.y_mem_hexSet hd (s + 1)⟩
+
+ 
+
+theorem chord_openArc_eq (h : IsK33Config G x y e) (hd : IsDrawing G drawing) (s : Fin 3) :
+    openArc (drawing (e s (s + 1))) = edgeArc drawing (e s (s + 1)) \ {x s, y (s + 1)} := by
+  obtain ⟨-, hi, hlink⟩ := hd.edge_param (h.isLink s (s + 1)).edge_mem
+  have hpair : ({drawing (e s (s + 1)) 0, drawing (e s (s + 1)) 1} : Set Plane)
+      = {x s, y (s + 1)} := by
+    rcases hlink.eq_and_eq_or_eq_and_eq (h.isLink s (s + 1)) with ⟨h1, h2⟩ | ⟨h1, h2⟩
+    · rw [h1, h2]
+    · rw [h1, h2, Set.pair_comm]
+  rw [openArc_eq_diff hi, hpair]
+  rfl
+
+ 
+theorem chord_openArc_subset_compl (h : IsK33Config G x y e) (hd : IsDrawing G drawing)
+    (s : Fin 3) : openArc (drawing (e s (s + 1))) ⊆ (hexSet drawing e)ᶜ := by
+  rw [h.chord_openArc_eq hd s]
+  rintro p ⟨hpe, hpn⟩ hph
+  exact hpn ((h.chord_inter_hexSet hd s).subset ⟨hpe, hph⟩)
+
+theorem chord_openArc_isPreconnected (h : IsK33Config G x y e) (hd : IsDrawing G drawing)
+    (s : Fin 3) : IsPreconnected (openArc (drawing (e s (s + 1)))) :=
+  isPreconnected_Ioo.image _
+    ((hd.edge_param (h.isLink s (s + 1)).edge_mem).1.mono Ioo_subset_I)
+
+theorem chord_openArc_nonempty (s : Fin 3) :
+    (openArc (drawing (e s (s + 1)))).Nonempty :=
+  ⟨drawing (e s (s + 1)) (1 / 2), 1 / 2, by norm_num, rfl⟩
+
+ 
+
+
+theorem chord_openArc_subset_connectedComponentIn (h : IsK33Config G x y e)
+    (hd : IsDrawing G drawing) (s : Fin 3) {p : Plane}
+    (hp : p ∈ openArc (drawing (e s (s + 1)))) :
+    openArc (drawing (e s (s + 1))) ⊆ connectedComponentIn (hexSet drawing e)ᶜ p :=
+  (h.chord_openArc_isPreconnected hd s).subset_connectedComponentIn hp
+    (h.chord_openArc_subset_compl hd s)
+
+ 
+
+theorem chords_disjoint (h : IsK33Config G x y e) (hd : IsDrawing G drawing) (hst : s ≠ t) :
+    edgeArc drawing (e s (s + 1)) ∩ edgeArc drawing (e t (t + 1)) = ∅ := by
+  refine Set.eq_empty_of_forall_notMem fun p ⟨hps, hpt⟩ ↦ ?_
+  obtain ⟨-, hincs, hinct⟩ := hd.edge_inter (h.isLink s (s + 1)).edge_mem
+    (h.isLink t (t + 1)).edge_mem (h.chord_ne hst) hps hpt
+  have hne1 : s ≠ t := hst
+  have hne2 : s + 1 ≠ t + 1 := fun hc ↦ hst (by simpa using hc)
+  rcases h.inc_elim hincs with rfl | rfl <;> rcases h.inc_elim hinct with hh | hh
+  · exact (h.x_ne_x hne1) hh
+  · exact (h.x_ne_y s (t + 1)) hh
+  · exact (h.y_ne_x (s + 1) t) hh
+  · exact (h.y_ne_y hne2) hh
+
+ 
+
+theorem arcA_isArcBetween (h : IsK33Config G x y e) (hd : IsDrawing G drawing) (s : Fin 3) :
+    IsArcBetween (edgesCover drawing (arcA e s)) (x s) (y (s + 1)) :=
+  hd.path_isArcBetween (h.arcA_isPath s) (by simp [arcA])
+
+theorem arcB_isArcBetween (h : IsK33Config G x y e) (hd : IsDrawing G drawing) (s : Fin 3) :
+    IsArcBetween (edgesCover drawing (arcB e s)) (x s) (y (s + 1)) :=
+  hd.path_isArcBetween (h.arcB_isPath s) (by simp [arcB])
+
+ 
+theorem arcs_union (s : Fin 3) :
+    edgesCover drawing (arcA e s) ∪ edgesCover drawing (arcB e s) = hexSet drawing e := by
+  have hA : ∀ s : Fin 3, ∀ q ∈ arcAPairs s, q ∈ hexPairs := by decide
+  have hB : ∀ s : Fin 3, ∀ q ∈ arcBPairs s, q ∈ hexPairs := by decide
+  have hC : ∀ s : Fin 3, ∀ q ∈ hexPairs, q ∈ arcAPairs s ∨ q ∈ arcBPairs s := by decide
+  refine Set.eq_of_subset_of_subset ?_ ?_
+  · rintro p (hp | hp)
+    · obtain ⟨q, hq, hpq⟩ := mem_arcA_iff.1 hp
+      exact mem_hexSet_iff.2 ⟨q, hA s q hq, hpq⟩
+    · obtain ⟨q, hq, hpq⟩ := mem_arcB_iff.1 hp
+      exact mem_hexSet_iff.2 ⟨q, hB s q hq, hpq⟩
+  · intro p hp
+    obtain ⟨q, hq, hpq⟩ := mem_hexSet_iff.1 hp
+    rcases hC s q hq with hq' | hq'
+    exacts [Or.inl (mem_arcA_iff.2 ⟨q, hq', hpq⟩), Or.inr (mem_arcB_iff.2 ⟨q, hq', hpq⟩)]
+
+ 
+theorem arcs_inter (h : IsK33Config G x y e) (hd : IsDrawing G drawing) (s : Fin 3) :
+    edgesCover drawing (arcA e s) ∩ edgesCover drawing (arcB e s) = {x s, y (s + 1)} := by
+  have hne : ∀ s : Fin 3, ∀ q ∈ arcAPairs s, ∀ r ∈ arcBPairs s, ¬ (q.1 = r.1 ∧ q.2 = r.2) := by
+    decide
+  have h1 : ∀ s : Fin 3, ∀ q ∈ arcAPairs s, ∀ r ∈ arcBPairs s, q.1 = r.1 → q.1 = s := by decide
+  have h2 : ∀ s : Fin 3, ∀ q ∈ arcAPairs s, ∀ r ∈ arcBPairs s, q.2 = r.2 → q.2 = s + 1 := by
+    decide
+  refine Set.eq_of_subset_of_subset ?_ ?_
+  · rintro p ⟨hpA, hpB⟩
+    obtain ⟨q, hq, hpq⟩ := mem_arcA_iff.1 hpA
+    obtain ⟨r, hr, hpr⟩ := mem_arcB_iff.1 hpB
+    obtain ⟨-, hincq, hincr⟩ := hd.edge_inter (h.isLink q.1 q.2).edge_mem
+      (h.isLink r.1 r.2).edge_mem (h.e_ne (hne s q hq r hr)) hpq hpr
+    rcases h.inc_elim hincq with hh | hh <;> rcases h.inc_elim hincr with hh' | hh'
+    · exact Or.inl (hh.trans (by rw [h1 s q hq r hr (h.x_injective (hh.symm.trans hh'))]))
+    · exact absurd (hh.symm.trans hh') (h.x_ne_y _ _)
+    · exact absurd (hh.symm.trans hh') (h.y_ne_x _ _)
+    · exact Or.inr (hh.trans (by rw [h2 s q hq r hr (h.y_injective (hh.symm.trans hh'))]))
+  · rintro p (rfl | rfl)
+    · exact ⟨mem_arcA_iff.2 ⟨(s, s), by simp [arcAPairs],
+        (hd.edge_isArcBetween (h.isLink s s)).left_mem⟩,
+        mem_arcB_iff.2 ⟨(s, s + 2), by simp [arcBPairs],
+          (hd.edge_isArcBetween (h.isLink s (s + 2))).left_mem⟩⟩
+    · exact ⟨mem_arcA_iff.2 ⟨(s + 1, s + 1), by simp [arcAPairs],
+        (hd.edge_isArcBetween (h.isLink (s + 1) (s + 1))).right_mem⟩,
+        mem_arcB_iff.2 ⟨(s + 2, s + 1), by simp [arcBPairs],
+          (hd.edge_isArcBetween (h.isLink (s + 2) (s + 1))).right_mem⟩⟩
+
+ 
+
+
+
+
+
+
+
+theorem chords_alternate (h : IsK33Config G x y e) (hd : IsDrawing G drawing) (s : Fin 3) :
+    ∃ A B : Set Plane,
+      IsArcBetween A (x s) (y (s + 1)) ∧ IsArcBetween B (x s) (y (s + 1)) ∧
+        A ∪ B = hexSet drawing e ∧ A ∩ B = {x s, y (s + 1)} ∧
+        x (s + 1) ∈ A \ ({x s, y (s + 1)} : Set Plane) ∧
+        y (s + 1 + 1) ∈ B \ ({x s, y (s + 1)} : Set Plane) := by
+  have hsucc : s + 1 + 1 = s + 2 := by revert s; decide
+  have hs1 : s + 1 ≠ s := by revert s; decide
+  have hs2 : s + 2 ≠ s + 1 := by revert s; decide
+  refine ⟨_, _, h.arcA_isArcBetween hd s, h.arcB_isArcBetween hd s, arcs_union s,
+    h.arcs_inter hd s, ⟨?_, ?_⟩, ?_, ?_⟩
+  · exact mem_arcA_iff.2 ⟨(s + 1, s), by simp [arcAPairs],
+      (hd.edge_isArcBetween (h.isLink (s + 1) s)).left_mem⟩
+  · rintro (hc | hc)
+    exacts [h.x_ne_x hs1 hc, h.x_ne_y _ _ hc]
+  · rw [hsucc]
+    exact mem_arcB_iff.2 ⟨(s + 2, s + 2), by simp [arcBPairs],
+      (hd.edge_isArcBetween (h.isLink (s + 2) (s + 2))).right_mem⟩
+  · rw [hsucc]
+    rintro (hc | hc)
+    exacts [h.y_ne_x _ _ hc, h.y_ne_y hs2 hc]
+
+ 
+
+ 
+
+theorem chord_subset_or (h : IsK33Config G x y e) (hd : IsDrawing G drawing) {U V : Set Plane}
+    (hUo : IsOpen U) (hVo : IsOpen V) (hUV : Disjoint U V)
+    (hcover : (hexSet drawing e)ᶜ ⊆ U ∪ V) (s : Fin 3) :
+    openArc (drawing (e s (s + 1))) ⊆ U ∨ openArc (drawing (e s (s + 1))) ⊆ V := by
+  have hsub : openArc (drawing (e s (s + 1))) ⊆ U ∪ V :=
+    (h.chord_openArc_subset_compl hd s).trans hcover
+  obtain ⟨p, hp⟩ := chord_openArc_nonempty (drawing := drawing) (e := e) s
+  rcases hsub hp with hpU | hpV
+  · exact Or.inl ((h.chord_openArc_isPreconnected hd s).subset_left_of_subset_union
+      hUo hVo hUV hsub ⟨p, hp, hpU⟩)
+  · refine Or.inr ((h.chord_openArc_isPreconnected hd s).subset_left_of_subset_union
+      hVo hUo hUV.symm (hsub.trans (by rw [Set.union_comm])) ⟨p, hp, hpV⟩)
+
+ 
+
+
+
+theorem exists_two_chords_same_side (h : IsK33Config G x y e) (hd : IsDrawing G drawing)
+    {U V : Set Plane} (hUo : IsOpen U) (hVo : IsOpen V) (hUV : Disjoint U V)
+    (hcover : (hexSet drawing e)ᶜ ⊆ U ∪ V) :
+    ∃ s t : Fin 3, s ≠ t ∧
+      ((openArc (drawing (e s (s + 1))) ⊆ U ∧ openArc (drawing (e t (t + 1))) ⊆ U) ∨
+        (openArc (drawing (e s (s + 1))) ⊆ V ∧ openArc (drawing (e t (t + 1))) ⊆ V)) := by
+  have key := fun s ↦ h.chord_subset_or hd hUo hVo hUV hcover s
+  rcases key 0 with h0 | h0 <;> rcases key 1 with h1 | h1 <;> rcases key 2 with h2 | h2
+  exacts [⟨0, 1, by decide, Or.inl ⟨h0, h1⟩⟩, ⟨0, 1, by decide, Or.inl ⟨h0, h1⟩⟩,
+    ⟨0, 2, by decide, Or.inl ⟨h0, h2⟩⟩, ⟨1, 2, by decide, Or.inr ⟨h1, h2⟩⟩,
+    ⟨1, 2, by decide, Or.inl ⟨h1, h2⟩⟩, ⟨0, 2, by decide, Or.inr ⟨h0, h2⟩⟩,
+    ⟨0, 1, by decide, Or.inr ⟨h0, h1⟩⟩, ⟨0, 1, by decide, Or.inr ⟨h0, h1⟩⟩]
+
+end IsK33Config
+
+end Graph
