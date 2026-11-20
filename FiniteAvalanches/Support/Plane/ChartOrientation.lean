@@ -18,6 +18,37 @@ open scoped ComplexConjugate
 
 noncomputable section
 
+/-- The winding degree of a closed loop is constant as the base point moves
+along a path in its complement. -/
+theorem loopDeg_sub_const_eq_of_path (γ : C(unitInterval, ℂ)) (hc : γ 0 = γ 1)
+    {a b : ℂ} (p : Path a b) (hp : ∀ s t, γ t ≠ p s) :
+    loopDeg (γ - ContinuousMap.const unitInterval a)
+        (fun t => sub_ne_zero.mpr (by
+          simpa only [ContinuousMap.const_apply, Path.source] using hp 0 t)) =
+      loopDeg (γ - ContinuousMap.const unitInterval b)
+        (fun t => sub_ne_zero.mpr (by
+          simpa only [ContinuousMap.const_apply, Path.target] using hp 1 t)) := by
+  let H : C(unitInterval × unitInterval, ℂ) :=
+    ⟨fun z => γ z.1 - p z.2,
+      (γ.continuous.comp continuous_fst).sub (p.continuous.comp continuous_snd)⟩
+  have hH : ∀ z, H z ≠ 0 := fun z => sub_ne_zero.mpr (hp z.2 z.1)
+  have hclosed : ∀ s, H (0, s) = H (1, s) := by
+    intro s
+    change γ 0 - p s = γ 1 - p s
+    rw [hc]
+  have h := loopDeg_homotopy H hH hclosed
+  have h0 : slice H 0 = γ - ContinuousMap.const unitInterval a := by
+    ext t
+    simp only [slice, H, ContinuousMap.coe_mk, ContinuousMap.sub_apply,
+      ContinuousMap.const_apply, Path.source]
+  have h1 : slice H 1 = γ - ContinuousMap.const unitInterval b := by
+    ext t
+    simp only [slice, H, ContinuousMap.coe_mk, ContinuousMap.sub_apply,
+      ContinuousMap.const_apply, Path.target]
+  convert h using 1 <;> congr 1
+  · exact h0.symm
+  · exact h1.symm
+
 /-- A circle around a point, followed through an isotopy and recentered. -/
 def Source.OrientedChart.isotopyCircle (chart : Source.OrientedChart) (q : ℂ) (r : ℝ) :
     C(unitInterval × unitInterval, ℂ) where
