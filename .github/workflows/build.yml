@@ -1,4 +1,4 @@
-name: Current source CI (8 inputs)
+name: Current source CI (no literature inputs)
 
 on:
   workflow_dispatch:
