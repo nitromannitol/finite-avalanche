@@ -50,7 +50,7 @@ theorem wiredRoots_distantOriginRootPair (B : ℕ) :
   cases v with
   | none =>
     change (False ∨ True) ↔ (none = none ∨ none = some (wiredOrigin B))
-    simp only [false_or, true_iff, eq_self_iff_true, true_or]
+    exact ⟨fun _ => Or.inl rfl, fun _ => Or.inr trivial⟩
   | some a =>
     have hne : FiniteWired.site a ≠ distantOriginRoot B := by
       intro he
