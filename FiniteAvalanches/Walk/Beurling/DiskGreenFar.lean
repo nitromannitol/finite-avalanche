@@ -153,7 +153,6 @@ private theorem abs_log_difference_le {n a b : ℝ} (hn : 2 ≤ n)
   have h2 := log_difference_le hn hb0 ha (by linarith)
   exact abs_le.mpr ⟨by linarith, h1⟩
 
-set_option maxHeartbeats 400000 in
 /-- **Lawler and Limic (2004), Lemma 4.** If `m ≥ n⁴`, the Green function between two
 points in `C̄_n` has the logarithmic asymptotics of a disk of radius `m`. -/
 theorem green_far_asymptotics : ∃ C : ℝ, ∀ n m : ℕ, 2 ≤ n → n ^ 4 ≤ m → ∀ z w : Site 2,
@@ -224,6 +223,6 @@ theorem green_far_asymptotics : ∃ C : ℝ, ∀ n m : ℕ, 2 ≤ n → n ^ 4 �
   have hcmp1 := mul_le_mul_of_nonneg_left cmp.1 hp
   have hcmp2 := mul_le_mul_of_nonneg_left cmp.2 hp
   apply abs_le.mpr
-  constructor <;> nlinarith [abs_nonneg C]
+  constructor <;> linarith [mul_nonneg (abs_nonneg C) hv, mul_nonneg (abs_nonneg C) ht]
 
 end FiniteAvalanches.Walk.Beurling

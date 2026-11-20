@@ -382,7 +382,121 @@ private theorem isDense_axisSet_nonneg : IsDense (axisSet {i | 0 ≤ i}) := by
 
 end Aux
 
-set_option maxHeartbeats 400000 in
+/-- Lawler and Limic (2004), proof of Lemma 14, first step: from `(j, 0)` the walk leaves the disk
+of radius `2n` before a positive-time visit to the segment `{(i, 0) : k ≤ i < n}` with
+probability at most `48 M / √n * (1 / √(j - k + 1) + 1 / √(n - j + 1))`. -/
+private theorem prob_exitsBefore_two_mul_le_of_halfLine {Cd Ce : ℝ}
+    (hCd : ∀ j n : ℕ, 1 ≤ j → 1 ≤ n →
+      prob (exitsBefore n (axisSet {i | (j : ℤ) ≤ i}) 0) ≤ Cd * Real.sqrt ((j : ℝ) / n))
+    (hCe : ∀ j n : ℕ, 1 ≤ j → 1 ≤ n → j ≤ n →
+      prob (exitsBefore n (axisSet {i | -(j : ℤ) ≤ i}) 0) ≤ Ce / Real.sqrt (j * n))
+    {n k j : ℕ} (hn64 : 64 ≤ n) (hkn : k ≤ n / 2) (hkj : k ≤ j) (hjn : j < n) :
+    prob (exitsBefore (2 * (n : ℝ)) (axisSet (Set.Ico (k : ℤ) n)) (axisPt j)) ≤
+      48 * max (max Cd Ce) 0 / Real.sqrt n *
+        (1 / Real.sqrt (j - k + 1) + 1 / Real.sqrt (n - j + 1)) := by
+  classical
+  obtain ⟨M, hM⟩ : ∃ M : ℝ, M = max (max Cd Ce) 0 := ⟨_, rfl⟩
+  have hM0 : 0 ≤ M := hM ▸ le_max_right _ _
+  rw [← hM]
+  have hn64' : (64 : ℝ) ≤ n := by exact_mod_cast hn64
+  have hn0 : (0 : ℝ) < n := by linarith
+  have hjn' : (j : ℝ) + 1 ≤ n := by exact_mod_cast hjn
+  have hkj' : (k : ℝ) ≤ j := by exact_mod_cast hkj
+  generalize hB : axisSet (Set.Ico (k : ℤ) n) = B
+  have hBmem : ∀ z, z ∈ B ↔ z 1 = 0 ∧ (k : ℤ) ≤ z 0 ∧ z 0 < n := fun z => by
+    rw [← hB]
+    simp only [axisSet, Set.mem_setOf_eq, Set.mem_Ico]
+  have hjnorm : euclidNorm (axisPt (j : ℤ)) = j := by
+    rw [euclidNorm_axisPt]
+    simp
+  obtain ⟨r, hr⟩ : ∃ r : ℕ, r = n / 8 := ⟨_, rfl⟩
+  have hr1 : 1 ≤ r := by omega
+  have hnr : n ≤ 16 * r := by omega
+  have hr0 : (0 : ℝ) < r := by exact_mod_cast hr1
+  have hnr' : (n : ℝ) ≤ 16 * r := by exact_mod_cast hnr
+  have hrn' : (r : ℝ) + j ≤ 2 * n := by
+    have : r + j ≤ 2 * n := by omega
+    exact_mod_cast this
+  have hX : 0 ≤ 1 / Real.sqrt (j - k + 1) := by positivity
+  have hY : 0 ≤ 1 / Real.sqrt (n - j + 1) := by positivity
+  have hMn : 0 ≤ M / Real.sqrt n := div_nonneg hM0 (Real.sqrt_nonneg _)
+  have hsplit : ∀ y : ℝ, 0 ≤ y →
+      24 * M / Real.sqrt (n * y) = 24 * (M / Real.sqrt n) * (1 / Real.sqrt y) := fun y hy => by
+    rw [Real.sqrt_mul hn0.le]
+    ring
+  have hlocal := fun (d : ℕ) (hdr : d + 1 ≤ 36 * r) =>
+    prob_exitsBefore_halfLine_le hCd hCe (d := d) hr1 hdr
+  rw [← hM] at hlocal
+  rcases le_or_gt (r + j + 1) n with hfar | hnear
+  · -- the right endpoint is far: the walk sees the half-line `{i ≥ k}`
+    obtain ⟨d, hd⟩ : ∃ d : ℕ, d = j - k := ⟨_, rfl⟩
+    have hd' : (d : ℝ) + 1 = j - k + 1 := by
+      rw [hd, Nat.cast_sub hkj]
+    have hsub : exitsBefore (2 * (n : ℝ)) B (axisPt j) ⊆
+        exitsBefore r (axisSet {i | -(d : ℤ) ≤ i}) 0 := by
+      refine exitsBefore_subset_of_local (by rw [hjnorm]; exact hrn') fun z hz hzr => ?_
+      simp only [axisSet, Set.mem_setOf_eq] at hz
+      obtain ⟨hz1, hz0⟩ := hz
+      obtain ⟨hl, hu⟩ := bounds_of_euclidNorm_lt hz1 hzr
+      refine (hBmem _).2 ⟨?_, ?_, ?_⟩
+      · simp [axisPt_apply_one, hz1]
+      · simp only [Pi.add_apply, axisPt_apply_zero]
+        omega
+      · simp only [Pi.add_apply, axisPt_apply_zero]
+        omega
+    calc prob (exitsBefore (2 * (n : ℝ)) B (axisPt j))
+        ≤ prob (exitsBefore r (axisSet {i | -(d : ℤ) ≤ i}) 0) := prob_mono hsub
+      _ ≤ 6 * M / Real.sqrt (r * (d + 1)) := hlocal d (by omega)
+      _ ≤ 4 * (6 * M) / Real.sqrt (n * (d + 1)) :=
+          div_sqrt_le_div_sqrt (by linarith) (mul_pos hr0 (by positivity))
+            (mul_pos hn0 (by positivity)) (by norm_num)
+            (by nlinarith [mul_le_mul_of_nonneg_right hnr' (by positivity : (0 : ℝ) ≤ d + 1)])
+      _ = 24 * M / Real.sqrt (n * (d + 1)) := by ring
+      _ = 24 * (M / Real.sqrt n) * (1 / Real.sqrt (j - k + 1)) := by
+          rw [hsplit ((d : ℝ) + 1) (by positivity), hd']
+      _ ≤ 48 * M / Real.sqrt n * (1 / Real.sqrt (j - k + 1) + 1 / Real.sqrt (n - j + 1)) := by
+          rw [mul_div_assoc]
+          nlinarith [mul_nonneg hMn hX, mul_nonneg hMn hY]
+  · -- the left endpoint is far: the walk sees the half-line `{i ≤ n - 1}`
+    obtain ⟨d, hd⟩ : ∃ d : ℕ, d = n - 1 - j := ⟨_, rfl⟩
+    have hd' : (d : ℝ) + 1 = n - j := by
+      have h : d + 1 + j = n := by omega
+      have h' : ((d + 1 + j : ℕ) : ℝ) = n := by exact_mod_cast h
+      push_cast at h'
+      linarith
+    have hsub : exitsBefore (2 * (n : ℝ)) B (axisPt j) ⊆
+        exitsBefore r {z | -z ∈ axisSet {i | -(d : ℤ) ≤ i}} 0 := by
+      refine exitsBefore_subset_of_local (by rw [hjnorm]; exact hrn') fun z hz hzr => ?_
+      simp only [axisSet, Set.mem_setOf_eq, Pi.neg_apply, neg_eq_zero, neg_le_neg_iff] at hz
+      obtain ⟨hz1, hz0⟩ := hz
+      obtain ⟨hl, hu⟩ := bounds_of_euclidNorm_lt hz1 hzr
+      refine (hBmem _).2 ⟨?_, ?_, ?_⟩
+      · simp [axisPt_apply_one, hz1]
+      · simp only [Pi.add_apply, axisPt_apply_zero]
+        omega
+      · simp only [Pi.add_apply, axisPt_apply_zero]
+        omega
+    have hnj : (1 : ℝ) ≤ n - j := by linarith
+    calc prob (exitsBefore (2 * (n : ℝ)) B (axisPt j))
+        ≤ prob (exitsBefore r {z | -z ∈ axisSet {i | -(d : ℤ) ≤ i}} 0) := prob_mono hsub
+      _ = prob (exitsBefore r (axisSet {i | -(d : ℤ) ≤ i}) 0) := prob_exitsBefore_neg _ _
+      _ ≤ 6 * M / Real.sqrt (r * (d + 1)) := hlocal d (by omega)
+      _ ≤ 4 * (6 * M) / Real.sqrt (n * (d + 1)) :=
+          div_sqrt_le_div_sqrt (by linarith) (mul_pos hr0 (by positivity))
+            (mul_pos hn0 (by positivity)) (by norm_num)
+            (by nlinarith [mul_le_mul_of_nonneg_right hnr' (by positivity : (0 : ℝ) ≤ d + 1)])
+      _ = 24 * M / Real.sqrt (n * (n - j)) := by rw [hd']; ring
+      _ ≤ 2 * (24 * M) / Real.sqrt (n * (n - j + 1)) :=
+          div_sqrt_le_div_sqrt (by linarith) (mul_pos hn0 (by linarith))
+            (mul_pos hn0 (by linarith)) (by norm_num)
+            (by nlinarith [mul_le_mul_of_nonneg_left hnj hn0.le])
+      _ = 2 * (24 * (M / Real.sqrt n) * (1 / Real.sqrt (n - j + 1))) := by
+          rw [← hsplit ((n : ℝ) - j + 1) (by linarith)]
+          ring
+      _ ≤ 48 * M / Real.sqrt n * (1 / Real.sqrt (j - k + 1) + 1 / Real.sqrt (n - j + 1)) := by
+          rw [mul_div_assoc]
+          nlinarith [mul_nonneg hMn hX, mul_nonneg hMn hY]
+
 /-- **Lawler and Limic (2004), Lemma 14, given Proposition 12 (d), (e).** Let `0 ≤ k ≤ n / 2`,
 `k ≤ j < n` and `m = n⁴`. From the point `(j, 0)` the probability that the walk reaches the circle
 of radius `m` before a positive-time visit to the segment `{(i, 0) : k ≤ i < n}` is at most
@@ -432,93 +546,8 @@ theorem prob_exitsBefore_segment_le_of_halfLine
   -- Step 1: leaving the disk of radius `2n` before returning to the segment
   have hbA : prob (exitsBefore (2 * (n : ℝ)) B (axisPt j)) ≤
       48 * M / Real.sqrt n * (1 / Real.sqrt (j - k + 1) + 1 / Real.sqrt (n - j + 1)) := by
-    obtain ⟨r, hr⟩ : ∃ r : ℕ, r = n / 8 := ⟨_, rfl⟩
-    have hr1 : 1 ≤ r := by omega
-    have hnr : n ≤ 16 * r := by omega
-    have hr0 : (0 : ℝ) < r := by exact_mod_cast hr1
-    have hnr' : (n : ℝ) ≤ 16 * r := by exact_mod_cast hnr
-    have hrn' : (r : ℝ) + j ≤ 2 * n := by
-      have : r + j ≤ 2 * n := by omega
-      exact_mod_cast this
-    have hX : 0 ≤ 1 / Real.sqrt (j - k + 1) := by positivity
-    have hY : 0 ≤ 1 / Real.sqrt (n - j + 1) := by positivity
-    have hMn : 0 ≤ M / Real.sqrt n := div_nonneg hM0 (Real.sqrt_nonneg _)
-    have hsplit : ∀ y : ℝ, 0 ≤ y →
-        24 * M / Real.sqrt (n * y) = 24 * (M / Real.sqrt n) * (1 / Real.sqrt y) := fun y hy => by
-      rw [Real.sqrt_mul hn0.le]
-      ring
-    have hlocal := fun (d : ℕ) (hdr : d + 1 ≤ 36 * r) =>
-      prob_exitsBefore_halfLine_le hCd hCe (d := d) hr1 hdr
-    rw [← hM] at hlocal
-    rcases le_or_gt (r + j + 1) n with hfar | hnear
-    · -- the right endpoint is far: the walk sees the half-line `{i ≥ k}`
-      obtain ⟨d, hd⟩ : ∃ d : ℕ, d = j - k := ⟨_, rfl⟩
-      have hd' : (d : ℝ) + 1 = j - k + 1 := by
-        rw [hd, Nat.cast_sub hkj]
-      have hsub : exitsBefore (2 * (n : ℝ)) B (axisPt j) ⊆
-          exitsBefore r (axisSet {i | -(d : ℤ) ≤ i}) 0 := by
-        refine exitsBefore_subset_of_local (by rw [hjnorm]; exact hrn') fun z hz hzr => ?_
-        simp only [axisSet, Set.mem_setOf_eq] at hz
-        obtain ⟨hz1, hz0⟩ := hz
-        obtain ⟨hl, hu⟩ := bounds_of_euclidNorm_lt hz1 hzr
-        refine (hBmem _).2 ⟨?_, ?_, ?_⟩
-        · simp [axisPt_apply_one, hz1]
-        · simp only [Pi.add_apply, axisPt_apply_zero]
-          omega
-        · simp only [Pi.add_apply, axisPt_apply_zero]
-          omega
-      calc prob (exitsBefore (2 * (n : ℝ)) B (axisPt j))
-          ≤ prob (exitsBefore r (axisSet {i | -(d : ℤ) ≤ i}) 0) := prob_mono hsub
-        _ ≤ 6 * M / Real.sqrt (r * (d + 1)) := hlocal d (by omega)
-        _ ≤ 4 * (6 * M) / Real.sqrt (n * (d + 1)) :=
-            div_sqrt_le_div_sqrt (by linarith) (mul_pos hr0 (by positivity))
-              (mul_pos hn0 (by positivity)) (by norm_num)
-              (by nlinarith [mul_le_mul_of_nonneg_right hnr' (by positivity : (0 : ℝ) ≤ d + 1)])
-        _ = 24 * M / Real.sqrt (n * (d + 1)) := by ring
-        _ = 24 * (M / Real.sqrt n) * (1 / Real.sqrt (j - k + 1)) := by
-            rw [hsplit ((d : ℝ) + 1) (by positivity), hd']
-        _ ≤ 48 * M / Real.sqrt n * (1 / Real.sqrt (j - k + 1) + 1 / Real.sqrt (n - j + 1)) := by
-            rw [mul_div_assoc]
-            nlinarith [mul_nonneg hMn hX, mul_nonneg hMn hY]
-    · -- the left endpoint is far: the walk sees the half-line `{i ≤ n - 1}`
-      obtain ⟨d, hd⟩ : ∃ d : ℕ, d = n - 1 - j := ⟨_, rfl⟩
-      have hd' : (d : ℝ) + 1 = n - j := by
-        have h : d + 1 + j = n := by omega
-        have h' : ((d + 1 + j : ℕ) : ℝ) = n := by exact_mod_cast h
-        push_cast at h'
-        linarith
-      have hsub : exitsBefore (2 * (n : ℝ)) B (axisPt j) ⊆
-          exitsBefore r {z | -z ∈ axisSet {i | -(d : ℤ) ≤ i}} 0 := by
-        refine exitsBefore_subset_of_local (by rw [hjnorm]; exact hrn') fun z hz hzr => ?_
-        simp only [axisSet, Set.mem_setOf_eq, Pi.neg_apply, neg_eq_zero, neg_le_neg_iff] at hz
-        obtain ⟨hz1, hz0⟩ := hz
-        obtain ⟨hl, hu⟩ := bounds_of_euclidNorm_lt hz1 hzr
-        refine (hBmem _).2 ⟨?_, ?_, ?_⟩
-        · simp [axisPt_apply_one, hz1]
-        · simp only [Pi.add_apply, axisPt_apply_zero]
-          omega
-        · simp only [Pi.add_apply, axisPt_apply_zero]
-          omega
-      have hnj : (1 : ℝ) ≤ n - j := by linarith
-      calc prob (exitsBefore (2 * (n : ℝ)) B (axisPt j))
-          ≤ prob (exitsBefore r {z | -z ∈ axisSet {i | -(d : ℤ) ≤ i}} 0) := prob_mono hsub
-        _ = prob (exitsBefore r (axisSet {i | -(d : ℤ) ≤ i}) 0) := prob_exitsBefore_neg _ _
-        _ ≤ 6 * M / Real.sqrt (r * (d + 1)) := hlocal d (by omega)
-        _ ≤ 4 * (6 * M) / Real.sqrt (n * (d + 1)) :=
-            div_sqrt_le_div_sqrt (by linarith) (mul_pos hr0 (by positivity))
-              (mul_pos hn0 (by positivity)) (by norm_num)
-              (by nlinarith [mul_le_mul_of_nonneg_right hnr' (by positivity : (0 : ℝ) ≤ d + 1)])
-        _ = 24 * M / Real.sqrt (n * (n - j)) := by rw [hd']; ring
-        _ ≤ 2 * (24 * M) / Real.sqrt (n * (n - j + 1)) :=
-            div_sqrt_le_div_sqrt (by linarith) (mul_pos hn0 (by linarith))
-              (mul_pos hn0 (by linarith)) (by norm_num)
-              (by nlinarith [mul_le_mul_of_nonneg_left hnj hn0.le])
-        _ = 2 * (24 * (M / Real.sqrt n) * (1 / Real.sqrt (n - j + 1))) := by
-            rw [← hsplit ((n : ℝ) - j + 1) (by linarith)]
-            ring
-        _ ≤ 48 * M / Real.sqrt n * (1 / Real.sqrt (j - k + 1) + 1 / Real.sqrt (n - j + 1)) := by
-            rw [mul_div_assoc]
-            nlinarith [mul_nonneg hMn hX, mul_nonneg hMn hY]
+    rw [← hB, hM]
+    exact prob_exitsBefore_two_mul_le_of_halfLine hCd hCe hn64 hkn hkj hjn
   -- Step 2: the maximum principle
   obtain ⟨m, hm⟩ : ∃ m : ℝ, m = (n : ℝ) ^ 4 := ⟨_, rfl⟩
   rw [← hm]
