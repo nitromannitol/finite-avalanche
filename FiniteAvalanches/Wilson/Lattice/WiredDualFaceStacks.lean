@@ -18,7 +18,7 @@ instance wiredDualFaceIncidentNonempty (B : ℕ) (x : WiredDualFace B) :
   let a : WiredDualFace B := wiredDualFaceOfSite B 0 (by intro i; simp)
   let b : WiredDualFace B := wiredDualFaceOfSite B (-unit 0) (by
     intro i
-    fin_cases i <;> simp [unit] <;> omega)
+    fin_cases i <;> simp [unit])
   have hab : a ≠ b := by
     intro h
     have h0 := congrArg (fun z : WiredDualFace B => (z 0).val) h

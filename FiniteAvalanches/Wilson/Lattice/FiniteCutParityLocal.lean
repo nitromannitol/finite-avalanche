@@ -12,7 +12,7 @@ open scoped Classical BigOperators
 
 noncomputable section
 
-variable {V W E : Type*} [Fintype V] [Fintype W] [Fintype E] [DecidableEq E]
+variable {V W E : Type*} [Fintype V] [Fintype W] [Fintype E]
 
 /-- Copies of a dual cut incident to a given primal vertex. -/
 def dualCutIncidentCopies (G : Multigraph V E) (H : Multigraph W E)
@@ -62,7 +62,9 @@ theorem even_commonCutCopies_of_even_incidence (G : Multigraph V E) (H : Multigr
         simp [T, eq_comm]
       rw [hl, hr]
       by_cases hleft : G.left e ∈ C <;> by_cases hright : G.right e ∈ C <;>
-        simp [Multigraph.crosses, hleft, hright] <;> norm_num <;> exact ZMod.natCast_self 2
+        simp [Multigraph.crosses, hleft, hright]
+      norm_num
+      exact ZMod.natCast_self 2
     · simp [hh]
   simp_rw [hedge] at hsum
   apply ZMod.natCast_eq_zero_iff_even.mp

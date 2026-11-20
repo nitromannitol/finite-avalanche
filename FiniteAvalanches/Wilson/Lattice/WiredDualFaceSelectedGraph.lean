@@ -46,7 +46,7 @@ theorem wiredDualFaceSelectedCopies_adjacent_iff (B : ℕ) (ω : EdgeField)
         wiredDualFaceSite ((wiredDualFaceGraph B).right q)) =
           s(wiredDualFaceSite v, wiredDualFaceSite w)
       rcases hends with ⟨hl, hr⟩ | ⟨hr, hl⟩
-      · simpa only [hl, hr]
+      · simp only [hl, hr]
       · simpa only [hl, hr] using (Sym2.eq_swap :
           s(wiredDualFaceSite w, wiredDualFaceSite v) = s(wiredDualFaceSite v, wiredDualFaceSite w))
     have hval : dualField ω (wiredCopyDualEdge q) = true := by

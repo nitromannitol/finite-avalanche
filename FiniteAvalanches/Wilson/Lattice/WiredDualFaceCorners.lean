@@ -52,7 +52,7 @@ theorem wiredDualFaceGraph_direction_zero_true (B : ℕ) (x : FiniteWired.Active
       s(wiredDualFaceCorner B x false true, wiredDualFaceCorner B x false false) := by
   apply Sym2.map.injective (wiredDualFaceSite_injective B)
   rw [Sym2.map_mk, wiredDualFaceGraph_directionEdge, Sym2.map_mk]
-  apply congrArg₂ (fun (a b : Site 2) => s(a, b)) <;> simp [wiredDualFaceCorner, wiredDualFaceSite_ofSite, dualFaceCornerSite, crossingStepBase, signedStepBase] <;> abel
+  apply congrArg₂ (fun (a b : Site 2) => s(a, b)) <;> simp [wiredDualFaceCorner, wiredDualFaceSite_ofSite, dualFaceCornerSite, crossingStepBase, signedStepBase]
 
 /-- The two dual faces crossing a negative horizontal step. -/
 theorem wiredDualFaceGraph_direction_zero_false (B : ℕ) (x : FiniteWired.Active B) :
@@ -61,7 +61,7 @@ theorem wiredDualFaceGraph_direction_zero_false (B : ℕ) (x : FiniteWired.Activ
       s(wiredDualFaceCorner B x true true, wiredDualFaceCorner B x true false) := by
   apply Sym2.map.injective (wiredDualFaceSite_injective B)
   rw [Sym2.map_mk, wiredDualFaceGraph_directionEdge, Sym2.map_mk]
-  apply congrArg₂ (fun (a b : Site 2) => s(a, b)) <;> simp [wiredDualFaceCorner, wiredDualFaceSite_ofSite, dualFaceCornerSite, crossingStepBase, signedStepBase] <;> abel
+  apply congrArg₂ (fun (a b : Site 2) => s(a, b)) <;> simp [wiredDualFaceCorner, wiredDualFaceSite_ofSite, dualFaceCornerSite, crossingStepBase, signedStepBase]
 
 /-- The two dual faces crossing a positive vertical step. -/
 theorem wiredDualFaceGraph_direction_one_true (B : ℕ) (x : FiniteWired.Active B) :
@@ -70,7 +70,7 @@ theorem wiredDualFaceGraph_direction_one_true (B : ℕ) (x : FiniteWired.Active 
       s(wiredDualFaceCorner B x true false, wiredDualFaceCorner B x false false) := by
   apply Sym2.map.injective (wiredDualFaceSite_injective B)
   rw [Sym2.map_mk, wiredDualFaceGraph_directionEdge, Sym2.map_mk]
-  apply congrArg₂ (fun (a b : Site 2) => s(a, b)) <;> simp [wiredDualFaceCorner, wiredDualFaceSite_ofSite, dualFaceCornerSite, crossingStepBase, signedStepBase] <;> abel
+  apply congrArg₂ (fun (a b : Site 2) => s(a, b)) <;> simp [wiredDualFaceCorner, wiredDualFaceSite_ofSite, dualFaceCornerSite, crossingStepBase, signedStepBase]
 
 /-- The two dual faces crossing a negative vertical step. -/
 theorem wiredDualFaceGraph_direction_one_false (B : ℕ) (x : FiniteWired.Active B) :
@@ -79,7 +79,8 @@ theorem wiredDualFaceGraph_direction_one_false (B : ℕ) (x : FiniteWired.Active
       s(wiredDualFaceCorner B x true true, wiredDualFaceCorner B x false true) := by
   apply Sym2.map.injective (wiredDualFaceSite_injective B)
   rw [Sym2.map_mk, wiredDualFaceGraph_directionEdge, Sym2.map_mk]
-  apply congrArg₂ (fun (a b : Site 2) => s(a, b)) <;> simp [wiredDualFaceCorner, wiredDualFaceSite_ofSite, dualFaceCornerSite, crossingStepBase, signedStepBase] <;> abel
+  apply congrArg₂ (fun (a b : Site 2) => s(a, b)) <;> simp [wiredDualFaceCorner, wiredDualFaceSite_ofSite, dualFaceCornerSite, crossingStepBase, signedStepBase]
+  abel
 
 end
 end FiniteAvalanches.Wilson.Lattice
