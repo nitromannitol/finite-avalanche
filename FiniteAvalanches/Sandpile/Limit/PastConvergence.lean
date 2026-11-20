@@ -131,6 +131,100 @@ theorem eventually_pastProb_lt (B S : Finset Site2) {c : ℝ≥0∞} (hc : pastW
     with n h1 h2
   exact lt_of_le_of_lt h1 h2
 
+theorem pastWeight_ne_top (B S : Finset Site2) : pastWeight B S ≠ ⊤ := measure_ne_top _ _
+
+theorem pastProb_ne_top (B S : Finset Site2) (n : ℕ) : pastProb Λ B S n ≠ ⊤ :=
+  measure_ne_top _ _
+
+include hΛ in
+theorem eventually_pastProb_toReal_lt (B S : Finset Site2) {η : ℝ} (hη : 0 < η) :
+    ∀ᶠ n in atTop, (pastProb Λ B S n).toReal < (pastWeight B S).toReal + η := by
+  have hc : pastWeight B S < ENNReal.ofReal ((pastWeight B S).toReal + η) := by
+    rw [← ENNReal.ofReal_toReal (pastWeight_ne_top B S)]
+    exact (ENNReal.ofReal_lt_ofReal_iff (by positivity)).mpr
+      (by rw [ENNReal.toReal_ofReal ENNReal.toReal_nonneg]; linarith)
+  filter_upwards [eventually_pastProb_lt hΛ B S hc] with n hn
+  have := (ENNReal.toReal_lt_toReal (pastProb_ne_top B S n) ENNReal.ofReal_ne_top).mpr hn
+  rwa [ENNReal.toReal_ofReal (by positivity)] at this
+
+theorem hasSum_pastWeight_toReal {B : Finset Site2} (hB : B.Nonempty) :
+    HasSum (fun S => (pastWeight B S).toReal) 1 := by
+  have h := hasSum_pastLimitEvent hB
+  have hs := ENNReal.hasSum_toReal (f := fun S => pastWeight B S) (by
+    rw [h.tsum_eq]
+    exact ENNReal.one_ne_top)
+  rw [← ENNReal.tsum_toReal_eq (fun S => pastWeight_ne_top B S), h.tsum_eq,
+    ENNReal.toReal_one] at hs
+  exact hs
+
+theorem tendsto_tight_sum_toReal (B : Finset Site2) :
+    Tendsto (fun k => ∑ b ∈ B, (ustMeasure (tightEvent b (centeredBox k))).toReal) atTop
+      (𝓝 0) := by
+  have h : Tendsto (fun k => ∑ b ∈ B, (ustMeasure (tightEvent b (centeredBox k))).toReal) atTop
+      (𝓝 (∑ _b ∈ B, (0 : ℝ))) :=
+    tendsto_finsetSum _ fun b _ => by
+      have h := (ENNReal.tendsto_toReal ENNReal.zero_ne_top).comp (tendsto_tightEvent b)
+      rw [ENNReal.toReal_zero] at h
+      exact h
+  simpa using h
+
+include hΛ in
+theorem tendsto_volume_tight_sum_toReal (B : Finset Site2) (k : ℕ) :
+    Tendsto (fun n => ∑ b ∈ B, (volumeLaw Λ n (tightEvent b (centeredBox k))).toReal) atTop
+      (𝓝 (∑ b ∈ B, (ustMeasure (tightEvent b (centeredBox k))).toReal)) :=
+  tendsto_finsetSum _ fun b _ => (ENNReal.tendsto_toReal (measure_ne_top _ _)).comp
+    (volumeLaw_tendsto_clopen hΛ (isClopen_tightEvent b _))
+
+include hΛ in
+/-- The probability that the past of `B` is `S` converges along the exhaustion. -/
+theorem tendsto_pastProb_toReal {B : Finset Site2} (hB : B.Nonempty) (S : Finset Site2) :
+    Tendsto (fun n => (pastProb Λ B S n).toReal) atTop (𝓝 (pastWeight B S).toReal) := by
+  set a := fun S' => (pastWeight B S').toReal with ha
+  have hsumA := hasSum_pastWeight_toReal hB
+  refine tendsto_order.2 ⟨fun c hc => ?_, fun c hc => ?_⟩
+  · set δ := a S - c with hδ
+    have hδpos : 0 < δ := by simp only [hδ]; linarith
+    obtain ⟨k, hk⟩ := (((tendsto_order.1 (tendsto_tight_sum_toReal B)).2 (δ / 4)
+      (by positivity)).and (eventually_subset_centeredBox S)).exists
+    set F := (centeredBox k).powerset.erase S with hF
+    have hSmem : S ∈ (centeredBox k).powerset := Finset.mem_powerset.mpr hk.2
+    set η := δ / (4 * (F.card + 1)) with hηdef
+    have hη : 0 < η := by positivity
+    have hFsum : a S + ∑ S' ∈ F, a S' ≤ 1 := by
+      have := sum_le_hasSum (insert S F) (fun _ _ => ENNReal.toReal_nonneg) hsumA
+      rwa [Finset.sum_insert (Finset.notMem_erase S _)] at this
+    have hall : ∀ᶠ n in atTop, ∀ S' ∈ F, (pastProb Λ B S' n).toReal < a S' + η :=
+      F.eventually_all.mpr fun S' _ => eventually_pastProb_toReal_lt hΛ B S' hη
+    have htightn := (tendsto_order.1 (tendsto_volume_tight_sum_toReal hΛ B k)).2
+      (∑ b ∈ B, (ustMeasure (tightEvent b (centeredBox k))).toReal + δ / 4)
+      (by linarith)
+    filter_upwards [hall, htightn, eventually_tight_bound hΛ B k] with n h1 h2 h3
+    have htot := sum_pastProb_add (Λ := Λ) B n k
+    rw [← Finset.add_sum_erase _ _ hSmem] at htot
+    have htot' := congrArg ENNReal.toReal htot
+    rw [ENNReal.toReal_add (by
+        exact ENNReal.add_ne_top.mpr ⟨pastProb_ne_top B S n,
+          ENNReal.sum_ne_top.mpr fun S' _ => pastProb_ne_top B S' n⟩) (measure_ne_top _ _),
+      ENNReal.toReal_add (pastProb_ne_top B S n)
+        (ENNReal.sum_ne_top.mpr fun S' _ => pastProb_ne_top B S' n),
+      ENNReal.toReal_sum fun S' _ => pastProb_ne_top B S' n, ENNReal.toReal_one] at htot'
+    have h3' : ((graph (Λ n)).treeLaw {t | ¬pastSites (Λ n) B t ⊆ centeredBox k}).toReal ≤
+        ∑ b ∈ B, (volumeLaw Λ n (tightEvent b (centeredBox k))).toReal := by
+      rw [← ENNReal.toReal_sum fun b _ => measure_ne_top _ _]
+      exact ENNReal.toReal_mono (ENNReal.sum_ne_top.mpr fun b _ => measure_ne_top _ _) h3
+    have hFlt : ∑ S' ∈ F, (pastProb Λ B S' n).toReal ≤ ∑ S' ∈ F, a S' + F.card * η := by
+      have := Finset.sum_le_sum fun S' hS' => (h1 S' hS').le
+      rw [Finset.sum_add_distrib, Finset.sum_const, nsmul_eq_mul] at this
+      exact this
+    have hcardη : (F.card : ℝ) * η ≤ δ / 4 := by
+      rw [hηdef, mul_div_assoc']
+      rw [div_le_div_iff₀ (by positivity) (by positivity)]
+      nlinarith [hδpos]
+    have hk1 := hk.1
+    linarith
+  · exact (eventually_pastProb_toReal_lt hΛ B S (by linarith : 0 < c - a S)).mono
+      fun n hn => by linarith
+
 end
 
 end FiniteAvalanches.Sandpile.InfiniteVolume
