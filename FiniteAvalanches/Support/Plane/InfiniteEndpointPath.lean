@@ -100,4 +100,30 @@ theorem endpointPathSeries_one {x : ℝ × ℝ}
   simp only [endpointPathSeries, hterms, hsum.tsum_eq]
   abel
 
+/-- When earlier clocks have finished and later clocks have not started, the
+concatenation equals the current path value. -/
+theorem endpointPathSeries_eq_of_clock_bounds
+    (z : ℕ → ℝ × ℝ) (q : ∀ n, Path (z n) (z (n + 1))) (n : ℕ) (t : ℝ)
+    (hprev : ∀ m < n, 1 ≤ endpointPathClock m t)
+    (hnext : ∀ m > n, endpointPathClock m t ≤ 0) :
+    endpointPathSeries z q t = (q n).extend (endpointPathClock n t) := by
+  have htail : ∀ m ∉ Finset.range (n + 1),
+      (q m).extend (endpointPathClock m t) - z m = 0 := by
+    intro m hm
+    have hnm : n < m := by
+      simp only [Finset.mem_range, not_lt] at hm
+      omega
+    rw [(q m).extend_of_le_zero (hnext m hnm), sub_self]
+  rw [endpointPathSeries, tsum_eq_sum htail, Finset.sum_range_succ]
+  have hsum : (∑ m ∈ Finset.range n,
+      ((q m).extend (endpointPathClock m t) - z m)) = z n - z 0 := by
+    calc
+      _ = ∑ m ∈ Finset.range n, (z (m + 1) - z m) := by
+        apply Finset.sum_congr rfl
+        intro m hm
+        rw [(q m).extend_of_one_le (hprev m (Finset.mem_range.mp hm))]
+      _ = z n - z 0 := Finset.sum_range_sub z n
+  rw [hsum]
+  abel
+
 end FiniteAvalanches.Electrical.StatementGeometry
