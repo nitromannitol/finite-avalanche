@@ -3824,10 +3824,22 @@
       "bytes": 4322
     },
     {
+      "path": "FiniteAvalanches/Support/Plane/CircleReflection.lean",
+      "sha256": "5cec0dc1d30a4caaf85d69b082e2b2c25e368edb0c26c7b04d4665129d6e5088",
+      "code_sha256": "5a5dd7e5753a7c5357f32f47cd06624a843efb4d3bce521c5aac8a01d33e9f83",
+      "bytes": 3363
+    },
+    {
       "path": "FiniteAvalanches/Support/Plane/CompactAvoidance.lean",
       "sha256": "3e53d9d63c4e238961ec112524eaa0497725212f4a3643b12012e55a50a87770",
       "code_sha256": "41e693a3c52fff7bac8471816d36ae0776f2c5c71333ad4e14e8f32719fc8eae",
       "bytes": 32564
+    },
+    {
+      "path": "FiniteAvalanches/Support/Plane/ComplexOrientedChart.lean",
+      "sha256": "509a135b83a3b50316f96b56b940bebf3df509f9c0c32f31b54a45fe6bc58336",
+      "code_sha256": "06ad47905991e66d11c83246d102d9a622ec8e09a24747a577aa3acc7216aadc",
+      "bytes": 3540
     },
     {
       "path": "FiniteAvalanches/Support/Plane/CopiedSimplePath.lean",
