@@ -264,6 +264,52 @@ theorem edge_chart_global_winding_jump (D : Drawing J) (e : E) (c : EdgeChart D 
     · right
       exact ⟨by rw [hpdeg, hndeg]; exact hd, hs⟩
 
+/-- A local horizontal crossing of a given plane loop gives a signed winding
+jump between points in the two faces of the edge chart. -/
+theorem edge_chart_winding_jump_of_plane_loop (D : Drawing J) (e : E) (c : EdgeChart D e)
+    (η : C(unitInterval, ℂ)) (hclosed : η 0 = η 1)
+    {u v w : ℝ} (hu : 0 < u) (huv : u < v) (hvw : v < w) (hw : w < 1)
+    (hzero : ∀ t : unitInterval,
+      c.chart.complexMapLoop η t - (1 / 2 : ℂ) = 0 ↔ (t : ℝ) = v)
+    (hcross : (∀ t : unitInterval, u ≤ (t : ℝ) → (t : ℝ) < v →
+        0 < (c.chart.complexMapLoop η t - (1 / 2 : ℂ)).re) ∧
+        (∀ t : unitInterval, v < (t : ℝ) → (t : ℝ) ≤ w →
+          (c.chart.complexMapLoop η t - (1 / 2 : ℂ)).re < 0) ∨
+      (∀ t : unitInterval, u ≤ (t : ℝ) → (t : ℝ) < v →
+        (c.chart.complexMapLoop η t - (1 / 2 : ℂ)).re < 0) ∧
+        (∀ t : unitInterval, v < (t : ℝ) → (t : ℝ) ≤ w →
+          0 < (c.chart.complexMapLoop η t - (1 / 2 : ℂ)).re)) :
+    ∃ (a : ℝ) (_ : 0 < a) (_ : a < c.radius),
+      let chart := c.chart.symm
+      let q : ℂ := 1 / 2
+      let p := chart.complexMap (q + (a : ℂ) / Complex.I)
+      let n := chart.complexMap (q + -(a : ℂ) / Complex.I)
+      ∃ (hp : ∀ t, η t ≠ p) (hn : ∀ t, η t ≠ n),
+        Complex.equivRealProdCLM p ∈ faceRegion D (negativeChartFace D e c) ∧
+        Complex.equivRealProdCLM n ∈ faceRegion D (positiveChartFace D e c) ∧
+        ((loopDeg (η - ContinuousMap.const unitInterval p)
+              (fun t => sub_ne_zero.mpr (hp t)) -
+            loopDeg (η - ContinuousMap.const unitInterval n)
+              (fun t => sub_ne_zero.mpr (hn t)) = 1 ∧
+            ∀ t : unitInterval, u ≤ (t : ℝ) → (t : ℝ) < v →
+              0 < (c.chart.complexMapLoop η t - (1 / 2 : ℂ)).re) ∨
+          (loopDeg (η - ContinuousMap.const unitInterval p)
+              (fun t => sub_ne_zero.mpr (hp t)) -
+            loopDeg (η - ContinuousMap.const unitInterval n)
+              (fun t => sub_ne_zero.mpr (hn t)) = -1 ∧
+            ∀ t : unitInterval, u ≤ (t : ℝ) → (t : ℝ) < v →
+              (c.chart.complexMapLoop η t - (1 / 2 : ℂ)).re < 0)) := by
+  let γ := c.chart.complexMapLoop η - ContinuousMap.const unitInterval (1 / 2 : ℂ)
+  have hc : γ 0 = γ 1 := by
+    change c.chart.complexMap (η 0) - (1 / 2 : ℂ) =
+      c.chart.complexMap (η 1) - (1 / 2 : ℂ)
+    rw [hclosed]
+  have h := edge_chart_global_winding_jump D e c γ hc hu huv hvw hw hzero hcross
+  have hback : c.chart.symm.complexMapLoop
+      (ContinuousMap.const unitInterval (1 / 2 : ℂ) + γ) = η := by
+    exact c.chart.symm.complexMapLoop_centered_inverse (1 / 2 : ℂ) η
+  simpa only [hback, γ, ContinuousMap.sub_apply, ContinuousMap.const_apply] using h
+
 /-- The chart crossing meets exactly the corresponding edge at its midpoint. -/
 theorem curve_eq_chart_vertical_crossing (D : Drawing J) (e f : E)
     (c : EdgeChart D e) (s : ArcParameter) (y : ℝ) (hy : |y| < c.radius) :
