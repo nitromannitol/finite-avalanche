@@ -104,4 +104,33 @@ theorem IsIntervalUpperAt.eq_of_overlap
   · exact le_antisymm hwv.1 hvw.1
   · exact le_antisymm hvw.2 hwv.2
 
+/-- A laminar family of nondegenerate subloops has a disjoint family of upper
+subloops with the same union of interiors. -/
+theorem exists_disjoint_upper_loop_family {X : Type*} [TopologicalSpace X] [T2Space X]
+    {x y : X} (p : Path x y) (S : Set (unitInterval × unitInterval))
+    (hloop : ∀ v ∈ S, v.1 < v.2 ∧ p v.1 = p v.2)
+    (hlam : IsLaminarIntervalFamily S) :
+    ∃ T : Set (unitInterval × unitInterval),
+      (∀ v ∈ T, v.1 < v.2 ∧ p v.1 = p v.2) ∧
+      (∀ v ∈ T, ∀ w ∈ T, v ≠ w → Disjoint (Ioo v.1 v.2) (Ioo w.1 w.2)) ∧
+      (∀ v ∈ S, ∃ w ∈ T, w.1 ≤ v.1 ∧ v.2 ≤ w.2) ∧
+      ∀ w ∈ T, ∀ t ∈ Ioo w.1 w.2, ∃ v ∈ S, t ∈ Ioo v.1 v.2 := by
+  let T : Set (unitInterval × unitInterval) :=
+    {w | p w.1 = p w.2 ∧ ∃ t, IsIntervalUpperAt S t w}
+  refine ⟨T, ?_, ?_, ?_, ?_⟩
+  · rintro v ⟨hv, t, ht⟩
+    exact ⟨lt_trans ht.1.1 ht.1.2, hv⟩
+  · rintro v ⟨_, t, ht⟩ w ⟨_, u, hu⟩ hne
+    apply Set.disjoint_left.mpr
+    intro s hs ht'
+    exact hne (ht.eq_of_overlap hlam hu ⟨s, hs, ht'⟩)
+  · intro v hv
+    obtain ⟨t, ht1, ht2⟩ := exists_between (hloop v hv).1
+    obtain ⟨w, hwloop, hw⟩ := exists_intervalUpperAt p S
+      (fun z hz => ⟨(hloop z hz).1.le, (hloop z hz).2⟩) hlam ⟨v, hv, ht1, ht2⟩
+    exact ⟨w, ⟨hwloop, t, hw⟩, hw.2.1 v hv ⟨ht1, ht2⟩⟩
+  · rintro w ⟨_, t, hw⟩ s hs
+    obtain ⟨v, hv, _, hsv⟩ := hw.2.2 s hs
+    exact ⟨v, hv, hsv⟩
+
 end FiniteAvalanches.Electrical.StatementGeometry
