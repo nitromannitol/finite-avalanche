@@ -158,4 +158,41 @@ theorem IsLoopCancellation.interior_loopResidual_nonempty_of_maximal
   apply hxy
   simpa only [hv0, hv1, Path.source, Path.target] using (hS.1 v hv).2
 
+/-- An open interval avoiding the perfect residual core is contained in one
+closed cancelled-loop interval. -/
+theorem IsLoopCancellation.exists_loop_of_disjoint_residual_core
+    {X : Type*} [TopologicalSpace X] {x y : X} (p : Path x y)
+    {S : Set (unitInterval × unitInterval)} (hS : IsLoopCancellation p S)
+    (hmax : ∀ T, IsLoopCancellation p T → LoopFamilyRefines S T → LoopFamilyRefines T S)
+    {s t : unitInterval} (hst : s < t)
+    (hdisj : Disjoint (Ioo s t) (closure (loopResidual S ∩ Ioo 0 1))) :
+    ∃ v ∈ S, v.1 ≤ s ∧ t ≤ v.2 := by
+  classical
+  obtain ⟨m, hsm, hmt⟩ := exists_between hst
+  have hmF : m ∉ loopResidual S := by
+    intro hm
+    have hmcore : m ∈ closure (loopResidual S ∩ Ioo 0 1) :=
+      subset_closure ⟨hm, lt_of_le_of_lt bot_le hsm, lt_of_lt_of_le hmt le_top⟩
+    exact Set.disjoint_left.mp hdisj ⟨hsm, hmt⟩ hmcore
+  have hex : ∃ v ∈ S, m ∈ Ioo v.1 v.2 := by
+    by_contra h
+    apply hmF
+    intro v hv hmv
+    exact h ⟨v, hv, hmv⟩
+  obtain ⟨v, hv, hmv⟩ := hex
+  have hvF := hS.endpoints_mem_loopResidual_of_maximal p hmax hv
+  refine ⟨v, hv, ?_, ?_⟩
+  · by_contra h
+    have hsv : s < v.1 := lt_of_not_ge h
+    have hvcore : v.1 ∈ closure (loopResidual S ∩ Ioo 0 1) :=
+      subset_closure ⟨hvF.1, lt_of_le_of_lt bot_le hsv, lt_of_lt_of_le
+        (lt_trans hmv.1 hmt) le_top⟩
+    exact Set.disjoint_left.mp hdisj ⟨hsv, lt_trans hmv.1 hmt⟩ hvcore
+  · by_contra h
+    have hvt : v.2 < t := lt_of_not_ge h
+    have hvcore : v.2 ∈ closure (loopResidual S ∩ Ioo 0 1) :=
+      subset_closure ⟨hvF.2, lt_of_le_of_lt bot_le (lt_trans hsm hmv.2),
+        lt_of_lt_of_le hvt le_top⟩
+    exact Set.disjoint_left.mp hdisj ⟨lt_trans hsm hmv.2, hvt⟩ hvcore
+
 end FiniteAvalanches.Electrical.StatementGeometry
