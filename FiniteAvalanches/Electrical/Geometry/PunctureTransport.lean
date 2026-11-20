@@ -37,7 +37,7 @@ theorem faceRegion_isOpen (R : Drawing J) (F : Face R) : IsOpen (faceRegion R F)
     · rintro ⟨b, hb, rfl⟩
       exact ⟨b.property, ConnectedComponents.coe_eq_coe'.mpr hb⟩
   rw [heq]
-  exact (drawingTrace_isClosed R).isOpen_compl.connectedComponentIn
+  exact (Source.drawingTrace_isClosed R).isOpen_compl.connectedComponentIn
 
 /-- For actual complement faces, region and closure equivalences transport the frontier. -/
 theorem frontier_transport (R : Drawing J) (S : Drawing K)
