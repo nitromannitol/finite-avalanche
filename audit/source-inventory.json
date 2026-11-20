@@ -3740,6 +3740,18 @@
       "bytes": 3509
     },
     {
+      "path": "FiniteAvalanches/Support/Plane/BoundaryProtectedStub.lean",
+      "sha256": "d5ccd3bfaa7e021986a287de18e73d10ae345deafacd2abf947cc9429d9f3f2e",
+      "code_sha256": "b23f3da81504d034ac3dac222843abbb1b2a5cff8b9f8292e05c608c3aed3e26",
+      "bytes": 3287
+    },
+    {
+      "path": "FiniteAvalanches/Support/Plane/BoundaryRootTails.lean",
+      "sha256": "fe79078bfe356f27e7e6429e253b984b3f7ffc8709882b6f7cb9a3692fceda0e",
+      "code_sha256": "2e8887ff1a5b834f40483b8725b1404accb291c225525a03c116350ee2f480c3",
+      "bytes": 5280
+    },
+    {
       "path": "FiniteAvalanches/Support/Plane/BoundarySmallFamily.lean",
       "sha256": "c954062d173d19fb8af821f161389e4d41e55d7130207144f414e7e9c686adaf",
       "code_sha256": "896f7443f5a435157fd0f1f4ee9d31fe8c060d35c2bed44755d5bc5a3fde6840",
@@ -4059,9 +4071,9 @@
     },
     {
       "path": "FiniteAvalanches/Support/Plane/GeometricDual.lean",
-      "sha256": "fa48ff04d4ef16d7fad8e76440f18c9a52830e43c6aac9ba197f9f93f238edc7",
-      "code_sha256": "eab58b5d8420c6fa5c93442240c5e003e7785f52a7118e18670921e5e47ace1f",
-      "bytes": 57086
+      "sha256": "f68f6c2618d2d49c40960157eb7909ae66227a34afa85abca14082058841ac56",
+      "code_sha256": "53bebc5b8bb7e95bb377bd8945dbcac1859260f17dc2c1fdb11633e3748d1e45",
+      "bytes": 75569
     },
     {
       "path": "FiniteAvalanches/Support/Plane/HalfOpenLocalStraightening.lean",
@@ -4095,9 +4107,9 @@
     },
     {
       "path": "FiniteAvalanches/Support/Plane/IntervalNormalization.lean",
-      "sha256": "344105596393898db891bbab9875f4ac6a4d5a894c02cc1c1b1e6b6b610f48e5",
-      "code_sha256": "2e0f4ae9cb043e215b49cd9ca760603c32e358efaf9a4c5be472217473e0918c",
-      "bytes": 13564
+      "sha256": "c72afddae159e0bc1c302f6913195aa03d65f9a00f051f7ed9762aa84b23a793",
+      "code_sha256": "e905b8b5da68d67d4689a214806b4f396a9211fbd2b2de0bc25c27710f0c2d26",
+      "bytes": 33508
     },
     {
       "path": "FiniteAvalanches/Support/Plane/JordanDrawingFaces.lean",
@@ -7219,6 +7231,8 @@
     "FiniteAvalanches.Support.Plane.BoundaryArcJoinTails",
     "FiniteAvalanches.Support.Plane.BoundaryPairArms",
     "FiniteAvalanches.Support.Plane.BoundaryPairFamily",
+    "FiniteAvalanches.Support.Plane.BoundaryProtectedStub",
+    "FiniteAvalanches.Support.Plane.BoundaryRootTails",
     "FiniteAvalanches.Support.Plane.BoundarySmallFamily",
     "FiniteAvalanches.Support.Plane.BoundaryStarExtension",
     "FiniteAvalanches.Support.Plane.BoundaryTwoStar",
