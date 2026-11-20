@@ -72,6 +72,17 @@ result takes a different route from the cited source, the route is recorded here
   [`PairingRelabel.lean`](FiniteAvalanches/Electrical/Trees/PairingRelabel.lean)).
 - **Plane topology.** The face star of a vertex, bonds as dual cycles, connectedness of the dual,
   complementary spanning trees and edge-chart incidence are proved from the Jordan–Schönflies
-  theorem, in modules adapted from Álvaro Begué's formalization
-  ([`FiniteAvalanches/Support/Schoenflies/`](FiniteAvalanches/Support/Schoenflies/)). The two
-  punctured-plane transport results are ported from Lattice-Probability.
+  theorem, in modules copied from Álvaro Begué's formalization
+  ([`FiniteAvalanches/Support/Schoenflies/`](FiniteAvalanches/Support/Schoenflies/)). These proofs
+  also use six planar-separation modules copied from Leonardo Bonanno's lean-formalizations at
+  commit `31e7483`: the degree of a loop, Eilenberg's criterion, Janiszewski's theorem and the
+  unbounded component ([`TopoDegree.lean`](FiniteAvalanches/Support/Plane/TopoDegree.lean),
+  [`TopoEilenberg.lean`](FiniteAvalanches/Support/Plane/TopoEilenberg.lean),
+  [`TopoJaniszewski.lean`](FiniteAvalanches/Support/Plane/TopoJaniszewski.lean),
+  [`TopoSep.lean`](FiniteAvalanches/Support/Plane/TopoSep.lean),
+  [`PlanarCore.lean`](FiniteAvalanches/Support/Plane/PlanarCore.lean) and
+  [`Disconnect.lean`](FiniteAvalanches/Support/Plane/Disconnect.lean)). The two punctured-plane
+  transport results are proved in this repository
+  ([`PuncturedTransport.lean`](FiniteAvalanches/Support/Plane/PuncturedTransport.lean),
+  [`ChartFaceTransport.lean`](FiniteAvalanches/Support/Plane/ChartFaceTransport.lean)); the chart-face
+  transport uses the loop degree of `TopoDegree.lean`.

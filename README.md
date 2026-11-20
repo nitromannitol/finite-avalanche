@@ -79,7 +79,7 @@ and records how the Lean statements read the paper.
    [`FiniteAvalanches/External/`](FiniteAvalanches/External/). The axiom report of Theorem 1.1
    consists of these 8 axioms and `propext`, `Classical.choice` and `Quot.sound`. The registry
    [`audit/trusted-inputs.json`](audit/trusted-inputs.json) records their exact Lean statements,
-   hashes and available source references. Some plane-graph inputs have no citation in their
+   hashes and available source references. The four plane-graph inputs have no citation in their
    module docstrings.
 
    *Uniform spanning trees, sandpiles and random walk (4).*
@@ -117,10 +117,13 @@ and records how the Lean statements read the paper.
    | Connectedness of the dual | `finite_plane_dual_connected` | Jordan–Schönflies theorem |
    | Complementary spanning trees | `finite_plane_tree_complement` | Jordan–Schönflies theorem |
    | The faces on both sides of an edge | `plane_edge_chart_incidence` | Jordan–Schönflies theorem |
-   | Transport of faces under inversion of the punctured plane | `plane_punctured_face_transport`, `plane_punctured_chart_face_transport` | ported from Lattice-Probability |
+   | Transport of faces under inversion of the punctured plane | `plane_punctured_face_transport`, `plane_punctured_chart_face_transport` | proved in this repository |
 
-   The Jordan–Schönflies modules under `FiniteAvalanches/Support/Schoenflies/` are adapted from
-   Álvaro Begué's formalization (see [`THIRD_PARTY_NOTICES.md`](THIRD_PARTY_NOTICES.md)).
+   The Jordan–Schönflies modules under `FiniteAvalanches/Support/Schoenflies/` are copied from
+   Álvaro Begué's formalization. The plane-topology proofs, and the chart-face transport, also use
+   six planar-separation modules (the degree of a loop, Eilenberg's criterion and Janiszewski's
+   theorem) copied from Leonardo Bonanno's lean-formalizations; see
+   [Copied code](#copied-code).
    [`CORRESPONDENCE.md`](CORRESPONDENCE.md) records where a proof takes a different route from the
    cited source. The registry contains three further axioms that Theorem 1.1 does not use: Wilson's
    algorithm on a finite network, ray-seeded Wilson sampling on `ℤ²` (van Engelenburg–Hutchcroft)
@@ -238,6 +241,18 @@ paper's statement on the use of artificial intelligence describes. Every proof i
 Lean kernel. The models and tooling are disclosed in [`formalization.yaml`](formalization.yaml),
 following the [mathlib-initiative](https://github.com/mathlib-initiative/formalization.yaml)
 standard.
+
+## Copied code
+
+Some modules are copied from other repositories, with attribution and never through a Lake
+dependency. Each copied file starts with a header naming its source repository, module path and
+commit and the changes made; [`THIRD_PARTY_NOTICES.md`](THIRD_PARTY_NOTICES.md) lists them.
+
+| Source | Commit | Files in this repository |
+| --- | --- | --- |
+| Álvaro Begué, [schoenflies-lean](https://github.com/alonamaloh/schoenflies-lean) (Apache License 2.0, text in [`FiniteAvalanches/Support/Schoenflies/LICENSE`](FiniteAvalanches/Support/Schoenflies/LICENSE)) | `05a43d29cde026618777db3d4e4316204ccca237` | the 128 modules under `FiniteAvalanches/Support/Schoenflies/` |
+| Leonardo Bonanno, [lean-formalizations](https://github.com/leobon12/lean-formalizations) (no licence stated upstream) | `31e748330ee154d5f41537c4b01f71b8a5510c2d` | `FiniteAvalanches/Support/Plane/`: `Disconnect`, `PlanarCore`, `TopoDegree`, `TopoEilenberg`, `TopoJaniszewski`, `TopoSep` |
+| [Lattice-Probability](https://github.com/nitromannitol/Lattice-Probability) (Apache License 2.0) | `0b6994229ccf31047ae7b654ecbec59496594700` | `FiniteAvalanches/Support/Plane/`: `FinitePointComplement`, `LocalFaceIncidence`; `FiniteAvalanches/Wilson/`: `LoopErasureComposition`, `CyclePopping/Basic`, `CyclePopping/Erasure`, `CyclePopping/Trace` |
 
 ## Authors and citation
 
