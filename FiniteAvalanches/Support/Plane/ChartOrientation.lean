@@ -726,6 +726,60 @@ theorem loopDeg_sub_const_sub_eq_one_of_quotient_sign
   have hdiv := loopDeg_div α β hα hβ hαc hβc
   exact hdiv.symm.trans hdeg
 
+/-- The coordinates of the quotient of offsets from two symmetric real points. -/
+theorem symmetric_offset_quotient_coordinates (z : ℂ) (a : ℝ) :
+    ((z - (a : ℂ)) / (z + (a : ℂ))).re =
+        (z.re ^ 2 + z.im ^ 2 - a ^ 2) / Complex.normSq (z + (a : ℂ)) ∧
+      ((z - (a : ℂ)) / (z + (a : ℂ))).im =
+        (2 * a * z.im) / Complex.normSq (z + (a : ℂ)) := by
+  constructor
+  · rw [Complex.div_re]
+    simp only [Complex.sub_re, Complex.add_re, Complex.sub_im, Complex.add_im,
+      Complex.ofReal_re, Complex.ofReal_im, sub_zero, add_zero]
+    rw [← add_div]
+    congr 1
+    ring
+  · rw [Complex.div_im]
+    simp only [Complex.sub_re, Complex.add_re, Complex.sub_im, Complex.add_im,
+      Complex.ofReal_re, Complex.ofReal_im, sub_zero, add_zero]
+    rw [← sub_div]
+    congr 1
+    ring
+
+/-- A loop whose sides and distances follow a circle has winding-degree
+difference one between two symmetric real points. -/
+theorem loopDeg_sub_const_sub_eq_one_of_symmetric_crossing
+    (γ : C(unitInterval, ℂ)) (hc : γ 0 = γ 1) {a : ℝ} (ha : 0 < a)
+    (hp : ∀ t, γ t ≠ (a : ℂ)) (hm : ∀ t, γ t ≠ -(a : ℂ))
+    {r : ℝ} (hr : r ≠ 0)
+    (hsign : ∀ t,
+      (0 < (γ t).im ∧ 0 < (circleLoop r t).im) ∨
+      ((γ t).im < 0 ∧ (circleLoop r t).im < 0) ∨
+      (a ^ 2 < (γ t).re ^ 2 + (γ t).im ^ 2 ∧ 0 < (circleLoop r t).re) ∨
+      ((γ t).re ^ 2 + (γ t).im ^ 2 < a ^ 2 ∧ (circleLoop r t).re < 0)) :
+    loopDeg (γ - ContinuousMap.const unitInterval (a : ℂ))
+        (fun t => sub_ne_zero.mpr (hp t)) -
+      loopDeg (γ - ContinuousMap.const unitInterval (-(a : ℂ)))
+        (fun t => sub_ne_zero.mpr (hm t)) = 1 := by
+  apply loopDeg_sub_const_sub_eq_one_of_quotient_sign γ hc (a : ℂ) (-(a : ℂ)) hp hm hr
+  intro t
+  have hden : 0 < Complex.normSq (γ t + (a : ℂ)) :=
+    Complex.normSq_pos.mpr (by
+      intro hz
+      exact hm t (eq_neg_of_add_eq_zero_left hz))
+  have hcoord := symmetric_offset_quotient_coordinates (γ t) a
+  simp only [sub_neg_eq_add] at hcoord ⊢
+  rcases hsign t with h | h | h | h
+  · have hn : 0 < 2 * a * (γ t).im := mul_pos (mul_pos (by norm_num) ha) h.1
+    exact Or.inl ⟨by rw [hcoord.2]; exact div_pos hn hden, h.2⟩
+  · have hn : 2 * a * (γ t).im < 0 :=
+      mul_neg_of_pos_of_neg (mul_pos (by norm_num) ha) h.1
+    exact Or.inr (Or.inl ⟨by rw [hcoord.2]; exact div_neg_of_neg_of_pos hn hden, h.2⟩)
+  · have hn : 0 < (γ t).re ^ 2 + (γ t).im ^ 2 - a ^ 2 := by linarith
+    exact Or.inr (Or.inr (Or.inl ⟨by rw [hcoord.1]; exact div_pos hn hden, h.2⟩))
+  · have hn : (γ t).re ^ 2 + (γ t).im ^ 2 - a ^ 2 < 0 := by linarith
+    exact Or.inr (Or.inr (Or.inr ⟨by rw [hcoord.1]; exact div_neg_of_neg_of_pos hn hden, h.2⟩))
+
 /-- A closed loop has winding degree zero about every point in an unbounded
 component of its complement. -/
 theorem loopDeg_sub_const_eq_zero_of_unbounded_component
