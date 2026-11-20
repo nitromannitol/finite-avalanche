@@ -1,4 +1,5 @@
 import FiniteAvalanches.Electrical.Geometry.OrientedDrawing
+import FiniteAvalanches.Support.Plane.SelectedDrawing
 import Mathlib.Topology.Subpath
 
 /-!
@@ -34,10 +35,6 @@ def PathCrossesEdge (D : Drawing J) (e : E) {a b : ℝ × ℝ} (P : Path a b) (�
 path avoids the midpoint and the sign is zero, or it crosses with sign `σ`. -/
 def EdgeCrossingSign (D : Drawing J) (e : E) {a b : ℝ × ℝ} (P : Path a b) (σ : ℤ) : Prop :=
   (σ = 0 ∧ ∀ t, P t ≠ D.curve e halfParameter) ∨ PathCrossesEdge D e P σ
-
-/-- The drawn curve of an edge as a path between its endpoints. -/
-def Drawing.edgePath (D : Drawing J) (e : E) : Path (D.point (J.left e)) (D.point (J.right e)) :=
-  ⟨⟨D.curve e, D.continuous e⟩, D.start e, D.finish e⟩
 
 theorem Drawing.edgePath_apply (D : Drawing J) (e : E) (t : unitInterval) :
     D.edgePath e t = D.curve e t := rfl
