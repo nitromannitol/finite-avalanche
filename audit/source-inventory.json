@@ -3741,9 +3741,9 @@
     },
     {
       "path": "FiniteAvalanches/Support/Plane/BoundaryProtectedFamily.lean",
-      "sha256": "58ac25829674896a83ee8f8c0547c761319068afceee467d933e5135201a910f",
-      "code_sha256": "4807100528f9e674738dc5aa4fda9dd6ceabb49471771c9ca0b5d2480d13855b",
-      "bytes": 5234
+      "sha256": "0d3254497b578bb1e0e807e7e9943a9b0dadb06bce285b2d548b77b7b01a0d56",
+      "code_sha256": "20412b06944b725fd4c17c6ccd7181a4b5645ca249f3c5004b63837b689f868e",
+      "bytes": 5235
     },
     {
       "path": "FiniteAvalanches/Support/Plane/BoundaryProtectedStub.lean",
@@ -3768,6 +3768,12 @@
       "sha256": "f35f40a5965a77b6a9ac3804aa0c7ab092adb709fde15b4fd8a0241b12b2b77d",
       "code_sha256": "557a4610639ee7a322af1259595829fba7adf1346b864a4ab0012d5d292c5d48",
       "bytes": 2266
+    },
+    {
+      "path": "FiniteAvalanches/Support/Plane/BoundaryStubSupply.lean",
+      "sha256": "319c9b94c3efd932a98cd2b0c68034f96217aa57253d013c47eb12f119ebbf87",
+      "code_sha256": "41ea508f89eb50c70d9fc8b83c0aaf2156e80d1143fd5811ecf50068172a14ee",
+      "bytes": 2511
     },
     {
       "path": "FiniteAvalanches/Support/Plane/BoundaryTwoStar.lean",
@@ -4296,6 +4302,12 @@
       "sha256": "4bb48a159b10c299cd84a5ba6abbe8db09d655e6fe8010264d371bfce62962a4",
       "code_sha256": "544483e6c5e50f12c989fff9354a7ab6fc689ff7da9a1b794ee56110b2f378b2",
       "bytes": 5004
+    },
+    {
+      "path": "FiniteAvalanches/Support/Plane/RootStubSupply.lean",
+      "sha256": "e75683b5c25226a7e2298dcf36321469a3a59b57b1074475b38d564b9e255304",
+      "code_sha256": "6c9383e6c62900984eda4e51d8afa7c3e30c733e1be99d6d24d3a144c0017273",
+      "bytes": 2455
     },
     {
       "path": "FiniteAvalanches/Support/Plane/SelectedDrawing.lean",
