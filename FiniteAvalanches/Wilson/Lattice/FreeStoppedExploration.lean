@@ -13,7 +13,7 @@ open scoped Classical
 
 noncomputable section
 
-local instance (N : ℕ) : DecidableEq (FiniteWired.InteriorEdge N) := Classical.decEq _
+local instance decEqInteriorEdgeFreeStoppedExploration (N : ℕ) : DecidableEq (FiniteWired.InteriorEdge N) := Classical.decEq _
 
 /-- A lattice direction followed inside a box, with a fixed value at a would-be exit. -/
 def freeDirectionHead (B : ℕ) (x : FiniteWired.Active B) (d : FiniteWired.Direction) :

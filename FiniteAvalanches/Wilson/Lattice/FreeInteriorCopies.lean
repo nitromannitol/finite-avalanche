@@ -13,7 +13,7 @@ open scoped Classical
 
 noncomputable section
 
-local instance (N : ℕ) : DecidableEq (FiniteWired.InteriorEdge N) := Classical.decEq _
+local instance decEqInteriorEdgeFreeInteriorCopies (N : ℕ) : DecidableEq (FiniteWired.InteriorEdge N) := Classical.decEq _
 
 /-- All neighbors of a site in a smaller box lie in the next larger box. -/
 theorem inBox_succ_of_step (N : ℕ) (z : Site 2) (hz : FiniteWired.inBox N z)

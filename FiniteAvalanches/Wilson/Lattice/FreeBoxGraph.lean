@@ -13,7 +13,7 @@ open scoped Classical ENNReal
 
 noncomputable section
 
-local instance (N : ℕ) : DecidableEq (FiniteWired.InteriorEdge N) := Classical.decEq _
+local instance decEqInteriorEdgeFreeBoxGraph (N : ℕ) : DecidableEq (FiniteWired.InteriorEdge N) := Classical.decEq _
 
 /-- The free box keeps precisely the interior original edge copies. -/
 def freeBoxGraph (N : ℕ) : Multigraph (FiniteWired.Active N) (FiniteWired.InteriorEdge N) :=

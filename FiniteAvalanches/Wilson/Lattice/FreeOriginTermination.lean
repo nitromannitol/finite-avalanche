@@ -13,7 +13,7 @@ open scoped Classical
 
 noncomputable section
 
-local instance (N : ℕ) : DecidableEq (FiniteWired.InteriorEdge N) := Classical.decEq _
+local instance decEqInteriorEdgeFreeOriginTermination (N : ℕ) : DecidableEq (FiniteWired.InteriorEdge N) := Classical.decEq _
 
 /-- The coordinate distance from an active site to the origin. -/
 def freeOriginRank {N : ℕ} (x : FiniteWired.Active N) : ℕ :=

@@ -13,7 +13,7 @@ open scoped Classical
 
 noncomputable section
 
-local instance (N : ℕ) : DecidableEq (FiniteWired.InteriorEdge N) := Classical.decEq _
+local instance decEqInteriorEdgeFreeSafeTerminalPrefix (N : ℕ) : DecidableEq (FiniteWired.InteriorEdge N) := Classical.decEq _
 
 /-- The singleton origin root of the free box. -/
 def freeOriginRoot (B : ℕ) : Set (FiniteWired.Active (B + 1)) := {wiredOrigin (B + 1)}

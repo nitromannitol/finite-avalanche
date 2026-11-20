@@ -14,7 +14,7 @@ open scoped Classical
 
 noncomputable section
 
-local instance (N : ℕ) : DecidableEq (FiniteWired.InteriorEdge N) := Classical.decEq _
+local instance decEqInteriorEdgeFreeSafeIncidentLaw (N : ℕ) : DecidableEq (FiniteWired.InteriorEdge N) := Classical.decEq _
 
 /-- Safe direction-stack histories form a measurable event. -/
 theorem measurableSet_freeSafeStackHistoryEvent (B : ℕ) (x : ℕ → Site 2)
