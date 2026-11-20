@@ -3740,6 +3740,12 @@
       "bytes": 3509
     },
     {
+      "path": "FiniteAvalanches/Support/Plane/BoundaryProtectedFamily.lean",
+      "sha256": "58ac25829674896a83ee8f8c0547c761319068afceee467d933e5135201a910f",
+      "code_sha256": "4807100528f9e674738dc5aa4fda9dd6ceabb49471771c9ca0b5d2480d13855b",
+      "bytes": 5234
+    },
+    {
       "path": "FiniteAvalanches/Support/Plane/BoundaryProtectedStub.lean",
       "sha256": "d5ccd3bfaa7e021986a287de18e73d10ae345deafacd2abf947cc9429d9f3f2e",
       "code_sha256": "b23f3da81504d034ac3dac222843abbb1b2a5cff8b9f8292e05c608c3aed3e26",
@@ -7231,6 +7237,7 @@
     "FiniteAvalanches.Support.Plane.BoundaryArcJoinTails",
     "FiniteAvalanches.Support.Plane.BoundaryPairArms",
     "FiniteAvalanches.Support.Plane.BoundaryPairFamily",
+    "FiniteAvalanches.Support.Plane.BoundaryProtectedFamily",
     "FiniteAvalanches.Support.Plane.BoundaryProtectedStub",
     "FiniteAvalanches.Support.Plane.BoundaryRootTails",
     "FiniteAvalanches.Support.Plane.BoundarySmallFamily",
