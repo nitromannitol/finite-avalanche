@@ -18,6 +18,20 @@ open scoped ComplexConjugate
 
 noncomputable section
 
+/-- The winding degree of a loop is unchanged by an endpoint-preserving
+continuous reparametrization. -/
+theorem loopDeg_comp_of_endpoints (γ : C(unitInterval, ℂ)) (hγ : ∀ t, γ t ≠ 0)
+    (hc : γ 0 = γ 1) (ρ : C(unitInterval, unitInterval))
+    (h0 : ρ 0 = 0) (h1 : ρ 1 = 1) :
+    loopDeg (γ.comp ρ) (fun t => hγ (ρ t)) = loopDeg γ hγ := by
+  obtain ⟨L, hL⟩ := exists_lift_exp γ hγ
+  apply loopDeg_unique (γ.comp ρ) (fun t => hγ (ρ t))
+    (by change γ (ρ 0) = γ (ρ 1); rw [h0, h1, hc])
+    (L := fun t => L (ρ t)) (L.continuous.comp ρ.continuous)
+    (fun t => hL (ρ t))
+  rw [h0, h1]
+  exact loopDeg_eq_of_lift γ hγ hc L.continuous hL
+
 /-- The winding degree of a closed loop is constant as the base point moves
 along a path in its complement. -/
 theorem loopDeg_sub_const_eq_of_path (γ : C(unitInterval, ℂ)) (hc : γ 0 = γ 1)
