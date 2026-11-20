@@ -3848,6 +3848,12 @@
       "bytes": 5008
     },
     {
+      "path": "FiniteAvalanches/Support/Plane/ConjugateChart.lean",
+      "sha256": "c6214f7913e806d2f9d2f6d85f99c28ed67bced529aa09b416a8e694d6236ed8",
+      "code_sha256": "bae3dbcfbe6030b79bf488aaec784ae6ea799db9c7a45580664048d9893600a9",
+      "bytes": 2795
+    },
+    {
       "path": "FiniteAvalanches/Support/Plane/CopiedSimplePath.lean",
       "sha256": "71d6f7aabced29502769b0de8d54e62ddf9edcf130acbec779a0f0b4c3f9460d",
       "code_sha256": "9554c387e37988007ea52605bcdfbd44c3417b3886d1907d6174712680f9e624",
