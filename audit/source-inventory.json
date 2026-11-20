@@ -3914,6 +3914,18 @@
       "bytes": 5138
     },
     {
+      "path": "FiniteAvalanches/Support/Plane/ParametrizedBoundaryBridge.lean",
+      "sha256": "72f12d27c89e231ad8921842f32235509f526a4317e8e768684c3781ca695686",
+      "code_sha256": "f53b7a002c306da7a963db0a7fd317667337bf288e24806b928a93782b1bff78",
+      "bytes": 7976
+    },
+    {
+      "path": "FiniteAvalanches/Support/Plane/ParametrizedBoundaryTwoStar.lean",
+      "sha256": "3cce489de273934e150167830603ea9ffe97b1be24b50a539ec495e62467399f",
+      "code_sha256": "f0878075e5d57863b5423f6516c0c89d2c4836691872fbee6679d7defb14296b",
+      "bytes": 2895
+    },
+    {
       "path": "FiniteAvalanches/Support/Plane/PathEdgeIncidence.lean",
       "sha256": "dc6a1b002193a03e19c6512b9adb3abdb1c9bcf59f9fc4ff060475e9d022c241",
       "code_sha256": "10b485c7b752b3a26d94c3c231c59c21dfb4cd9ef229e542d942d6ead5308bc7",
@@ -3948,6 +3960,12 @@
       "sha256": "87cc21bfd77e4a6b1e6b83f0eb11cc5314c3ee8d4abc26b2bc2b8d959e6e5ac0",
       "code_sha256": "e964dcc437d9554cce23a32bfc0e43113bb495598a43a6c21e38bcd45f1bf97c",
       "bytes": 4206
+    },
+    {
+      "path": "FiniteAvalanches/Support/Plane/RetainedTailReparam.lean",
+      "sha256": "4bb48a159b10c299cd84a5ba6abbe8db09d655e6fe8010264d371bfce62962a4",
+      "code_sha256": "544483e6c5e50f12c989fff9354a7ab6fc689ff7da9a1b794ee56110b2f378b2",
+      "bytes": 5004
     },
     {
       "path": "FiniteAvalanches/Support/Plane/SelectedDrawing.lean",
@@ -6862,10 +6880,13 @@
     "FiniteAvalanches.Support.Plane.JordanLoopExtension",
     "FiniteAvalanches.Support.Plane.LoopEdgeJordan",
     "FiniteAvalanches.Support.Plane.ParametrizedBoundaryAccess",
+    "FiniteAvalanches.Support.Plane.ParametrizedBoundaryBridge",
+    "FiniteAvalanches.Support.Plane.ParametrizedBoundaryTwoStar",
     "FiniteAvalanches.Support.Plane.PathEdgeIncidence",
     "FiniteAvalanches.Support.Plane.PolygonalPathStar",
     "FiniteAvalanches.Support.Plane.ReachabilityPath",
     "FiniteAvalanches.Support.Plane.ReachabilityTrace",
+    "FiniteAvalanches.Support.Plane.RetainedTailReparam",
     "FiniteAvalanches.Support.Plane.SimplePathDuality",
     "FiniteAvalanches.Support.Plane.StarSplicing",
     "FiniteAvalanches.Support.Plane.StraightModel",
