@@ -52,7 +52,7 @@ theorem polarDual_preconnected {J : CopiedGraph V E} (D : PlaneEmbedding J)
   have hK : K = (⟨fun e => negativeChartFace A.embedding.drawing e (A.embedding.edgeChart e),
       fun e => positiveChartFace A.embedding.drawing e (A.embedding.edgeChart e)⟩ :
       CopiedGraph (Face A.embedding.drawing) (E ⊕ Unit)) := by
-    congr 1 <;> funext e <;> rfl
+    congr 1
   have halt : K.reaches (Finset.univ.erase m) (K.left m) (K.right m) := by
     have heq := edge_path_duality A.embedding.drawing A.embedding.edgeChart ∅ m
       (Finset.notMem_empty m)
