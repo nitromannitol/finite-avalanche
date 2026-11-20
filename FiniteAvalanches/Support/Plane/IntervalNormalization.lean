@@ -266,5 +266,27 @@ theorem Source.OrientedChart.exists_winding_jump_of_local_crossing
     chart.isotopyLoop_degree (-(a : ℂ)) γ hm hclosed]
   exact hdeg
 
+/-- Two equal positive winding jumps cannot have both their sides matched in
+reverse within complementary components of the same loop. -/
+theorem not_crossed_component_matching_of_winding_jumps
+    (γ : C(unitInterval, ℂ)) (hclosed : γ 0 = γ 1)
+    {p₁ p₂ q₁ q₂ : ℂ}
+    (hp₁ : p₁ ∉ Set.range γ) (hp₂ : p₂ ∉ Set.range γ)
+    (hq₁ : q₁ ∉ Set.range γ) (hq₂ : q₂ ∉ Set.range γ)
+    (hpdeg : loopDeg (γ - ContinuousMap.const unitInterval p₁)
+        (fun t => sub_ne_zero.mpr (fun h => hp₁ ⟨t, h⟩)) -
+      loopDeg (γ - ContinuousMap.const unitInterval p₂)
+        (fun t => sub_ne_zero.mpr (fun h => hp₂ ⟨t, h⟩)) = 1)
+    (hqdeg : loopDeg (γ - ContinuousMap.const unitInterval q₁)
+        (fun t => sub_ne_zero.mpr (fun h => hq₁ ⟨t, h⟩)) -
+      loopDeg (γ - ContinuousMap.const unitInterval q₂)
+        (fun t => sub_ne_zero.mpr (fun h => hq₂ ⟨t, h⟩)) = 1) :
+    ¬ (q₂ ∈ connectedComponentIn (Set.range γ)ᶜ p₁ ∧
+      q₁ ∈ connectedComponentIn (Set.range γ)ᶜ p₂) := by
+  rintro ⟨h₁, h₂⟩
+  have heq₁ := loopDeg_sub_const_eq_of_connectedComponentIn γ hclosed hp₁ h₁
+  have heq₂ := loopDeg_sub_const_eq_of_connectedComponentIn γ hclosed hp₂ h₂
+  omega
+
 end
 end FiniteAvalanches.Electrical
