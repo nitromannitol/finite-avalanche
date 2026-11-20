@@ -3962,6 +3962,12 @@
       "bytes": 8709
     },
     {
+      "path": "FiniteAvalanches/Support/Plane/PolarDualConnected.lean",
+      "sha256": "8669ce7e88b93bfe3fe6bb3113ff7469b050017b7125d62af7d9c862dc33ed61",
+      "code_sha256": "407d46227f17a2fafc87d71c87528604fc321f02178790faa2ca52317ddd0059",
+      "bytes": 3222
+    },
+    {
       "path": "FiniteAvalanches/Support/Plane/PolygonalPathStar.lean",
       "sha256": "417f803d607e46d98550fb7d737baee6a78aed8fd61459ea7a397d993ceda095",
       "code_sha256": "648e4b842a4de1cc481c85ee41d1f691b08279152706755bebaad377165febae",
@@ -4122,6 +4128,18 @@
       "sha256": "35ace87a0c899869924badad4ee6f745d86b63338852f9aab373f0c385e8c46c",
       "code_sha256": "e09565cda24af7f76679c6313fb48093cc0bc4aa6ea49a5def0371b1f5b6cf67",
       "bytes": 2090
+    },
+    {
+      "path": "FiniteAvalanches/Support/Plane/TwoPoleSeparation.lean",
+      "sha256": "6ff4e3b74dec4d7b2efadc5123cb5312b496b3e644339580fa0af599238e0e8b",
+      "code_sha256": "de714aec8b7e8cd31a1fb0da8d64999610fefc0b1bd8e8381bbf815f4b7deb4b",
+      "bytes": 2167
+    },
+    {
+      "path": "FiniteAvalanches/Support/Plane/TwoPoleTreeComplement.lean",
+      "sha256": "cff3b4979169e955177de84592fa8bd61acbd96e834e11b076f04ab917cda710",
+      "code_sha256": "d056f000d132920e6a877692be774d3d9ea934a4ce3ce73af70dc67e288fb0ab",
+      "bytes": 2507
     },
     {
       "path": "FiniteAvalanches/Support/Plane/UnchartedFaces.lean",
