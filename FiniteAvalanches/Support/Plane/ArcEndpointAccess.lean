@@ -35,4 +35,83 @@ theorem exists_plane_homeomorph_straightening_of_endpoint_accesses
     simpa only [U, compl_compl, inter_comm] using hmeet
   exact exists_plane_homeomorph_straightening_of_closing_arc p s hp hs hmeet'
 
+private theorem injective_tail {X : Type*} [TopologicalSpace X] {a b : X}
+    (q : Path a b) (hq : Function.Injective q) {s : unitInterval} (hs : s ≠ 1) :
+    Function.Injective (q.subpath s 1) := by
+  intro u v huv
+  have h := congrArg Subtype.val (hq huv)
+  simp only [Set.Icc.coe_convexComb] at h
+  change (1 - (u : ℝ)) * (s : ℝ) + (u : ℝ) * 1 =
+    (1 - (v : ℝ)) * (s : ℝ) + (v : ℝ) * 1 at h
+  have hs' : (s : ℝ) ≠ 1 := fun h => hs (Subtype.ext h)
+  apply Subtype.ext
+  have hz : ((u : ℝ) - v) * (1 - (s : ℝ)) = 0 := by nlinarith [h]
+  exact sub_eq_zero.mp ((mul_eq_zero.mp hz).resolve_right (sub_ne_zero.mpr hs'.symm))
+
+private theorem exists_tail_in_open {X : Type*} [TopologicalSpace X] {a b : X}
+    (q : Path a b) {U : Set X} (hU : IsOpen U) (hb : b ∈ U) :
+    ∃ s : unitInterval, s ≠ 1 ∧ range (q.subpath s 1) ⊆ U := by
+  have hq : q ⁻¹' U ∈ nhds (1 : unitInterval) := by
+    apply q.continuous.continuousAt.tendsto
+    simpa only [Path.target] using hU.mem_nhds hb
+  obtain ⟨l, hl, hsub⟩ := exists_Ioc_subset_of_mem_nhds hq
+    ⟨0, by norm_num⟩
+  obtain ⟨s, hls, hs1⟩ := exists_between hl
+  refine ⟨s, ne_of_lt hs1, ?_⟩
+  rw [Path.range_subpath_of_le q s 1 le_top]
+  rintro z ⟨t, ht, rfl⟩
+  exact hsub ⟨lt_of_lt_of_le hls ht.1, ht.2⟩
+
+/-- Separate accesses to the endpoints of a simple arc suffice for plane
+straightening; the accesses may meet away from the endpoints. -/
+theorem exists_plane_homeomorph_straightening_of_separate_endpoint_accesses
+    {x y a b : ℝ × ℝ} (p : Path x y) (hp : Function.Injective p)
+    (q : Path a x) (r : Path b y) (hq : Function.Injective q)
+    (hr : Function.Injective r)
+    (hqout : ∀ t : unitInterval, t ≠ 1 → q t ∉ range p)
+    (hrout : ∀ t : unitInterval, t ≠ 1 → r t ∉ range p) :
+    ∃ F : (ℝ × ℝ) ≃ₜ (ℝ × ℝ), ∀ t : unitInterval, F (p t) = (t.val, 0) := by
+  have hxy : x ≠ y := by
+    intro h
+    have heq : (0 : unitInterval) = 1 := hp (by simpa using h)
+    norm_num at heq
+  obtain ⟨U, V, hU, hV, hx, hy, hUV⟩ := t2_separation hxy
+  obtain ⟨s, hs, hsU⟩ := exists_tail_in_open q hU hx
+  obtain ⟨t, ht, htV⟩ := exists_tail_in_open r hV hy
+  let q' : Path (q s) x := (q.subpath s 1).cast rfl q.target.symm
+  let r' : Path (r t) y := (r.subpath t 1).cast rfl r.target.symm
+  have hq' : Function.Injective q' := injective_tail q hq hs
+  have hr' : Function.Injective r' := injective_tail r hr ht
+  have hdisj : Disjoint (range q') (range r') := hUV.mono hsU htV
+  have hqout' : ∀ u : unitInterval, u ≠ 1 → q' u ∉ range p := by
+    intro u hu hmem
+    have hsub : range q' ⊆ range q := by
+      change range (q.subpath s 1) ⊆ range q
+      rw [Path.range_subpath_of_le q s 1 le_top]
+      exact image_subset_range _ _
+    obtain ⟨v, hv⟩ := hsub ⟨u, rfl⟩
+    have hv1 : v = 1 := by
+      by_contra hv1
+      exact hqout v hv1 (hv ▸ hmem)
+    have hqu : q' u = x := by simpa only [hv1, Path.target] using hv.symm
+    apply hu
+    apply hq'
+    simpa only [Path.target] using hqu
+  have hrout' : ∀ u : unitInterval, u ≠ 1 → r' u ∉ range p := by
+    intro u hu hmem
+    have hsub : range r' ⊆ range r := by
+      change range (r.subpath t 1) ⊆ range r
+      rw [Path.range_subpath_of_le r t 1 le_top]
+      exact image_subset_range _ _
+    obtain ⟨v, hv⟩ := hsub ⟨u, rfl⟩
+    have hv1 : v = 1 := by
+      by_contra hv1
+      exact hrout v hv1 (hv ▸ hmem)
+    have hru : r' u = y := by simpa only [hv1, Path.target] using hv.symm
+    apply hu
+    apply hr'
+    simpa only [Path.target] using hru
+  exact exists_plane_homeomorph_straightening_of_endpoint_accesses p hp q' r'
+    hq' hr' hdisj hqout' hrout'
+
 end FiniteAvalanches.Electrical.StatementGeometry
