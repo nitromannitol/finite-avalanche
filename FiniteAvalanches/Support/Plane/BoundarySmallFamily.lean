@@ -50,7 +50,7 @@ theorem exists_boundary_arm_family_of_card_le_two
       apply Finset.Subset.antisymm
       · intro j hj
         have hji : j = i := Finset.card_le_one.mp hsmall j hj i hi
-        simpa only [Finset.mem_singleton, hji]
+        simp only [Finset.mem_singleton, hji]
       · simpa only [Finset.singleton_subset_iff] using hi
     have htail : range ((p i).subpath 0 1) ⊆ range (p i) := by
       rw [Path.range_subpath_of_le _ _ _ (show (0 : unitInterval) ≤ 1 from bot_le)]
