@@ -2019,9 +2019,9 @@
     },
     {
       "path": "FiniteAvalanches/External/PlaneVertexFaceStar.lean",
-      "sha256": "c8dda3cc8310cc3d6683ee5e54a52f700cb3548483b42c14c6b8c0bb57635f84",
-      "code_sha256": "3174d5970ce7506669ff4c220137cb89dcdff2c891e7b30e5c805adff23aa89b",
-      "bytes": 1034
+      "sha256": "5f1cbdaa6c69ab238dd58c6b3a633476e222baee48b5ffcdfcbb902686eb0f75",
+      "code_sha256": "a392cefcdf6cf494e74bcf27dd87fd747906180a84441866b0bf92de38839544",
+      "bytes": 1689
     },
     {
       "path": "FiniteAvalanches/External/PolyaSquareLattice.lean",
@@ -3914,6 +3914,12 @@
       "bytes": 6991
     },
     {
+      "path": "FiniteAvalanches/Support/Plane/LocalVertexIncidence.lean",
+      "sha256": "166892d54b5767ea451055ad175cfc340386f0c0329d6070d51ac5f1110bbc22",
+      "code_sha256": "bdd8ab92a83af32326c28e485360c62e89b5e4c6dd149550840bd4cfd6a651cf",
+      "bytes": 2814
+    },
+    {
       "path": "FiniteAvalanches/Support/Plane/LoopEdgeJordan.lean",
       "sha256": "3ae15b8bf9be08c776d74b2e23019f6c0a39d3d360f6c8da3ef2b8bf79c02e15",
       "code_sha256": "1c94f7cfb7f4f53454df2e1e2c4b6aa6823b1aa17adda0107a55d1d2aec42b10",
@@ -4116,6 +4122,24 @@
       "sha256": "35ace87a0c899869924badad4ee6f745d86b63338852f9aab373f0c385e8c46c",
       "code_sha256": "e09565cda24af7f76679c6313fb48093cc0bc4aa6ea49a5def0371b1f5b6cf67",
       "bytes": 2090
+    },
+    {
+      "path": "FiniteAvalanches/Support/Plane/UnchartedFaces.lean",
+      "sha256": "5c82a5a1b1a02f13b3077bb94cfed7eec37faead5077ee7da7edf18a6b3594fe",
+      "code_sha256": "0ef6d876dc01a0f596aa62082d08658e180667388bd4cd2c481c54d35a2b7c19",
+      "bytes": 6034
+    },
+    {
+      "path": "FiniteAvalanches/Support/Plane/VertexFaceConnectivity.lean",
+      "sha256": "37a802e159fe52031c9ec3b46253990bccc1e959d0fd127939f4dbfe7277c531",
+      "code_sha256": "79b08a4f1b4532ae11dfb09372969bee7c449f8524f239431d7597143e0c8001",
+      "bytes": 6444
+    },
+    {
+      "path": "FiniteAvalanches/Support/Plane/VertexFaceIncidence.lean",
+      "sha256": "54d1cbb3ac200495eb64276e12e086626f29dbda1b0975134675ddef9f78c69e",
+      "code_sha256": "5b7f7ff7c4ef89c9bfa32eaa3e73bd1ecc2c4520bfc2e402a5c94ea8d56926b6",
+      "bytes": 3516
     },
     {
       "path": "FiniteAvalanches/Support/Schoenflies/Accessible.lean",
@@ -6637,7 +6661,6 @@
     "FiniteAvalanches.External.lawler_limic_beurling_srw_Z2",
     "FiniteAvalanches.External.outer_face_simple_path_disk_redrawing",
     "FiniteAvalanches.External.parametrized_plane_arc_straightening",
-    "FiniteAvalanches.External.plane_vertex_face_star",
     "FiniteAvalanches.External.square_lattice_ust_dual_law",
     "FiniteAvalanches.External.square_lattice_wired_ust_one_tree_one_end",
     "FiniteAvalanches.External.square_lattice_wired_ust_weak_limit",
@@ -6754,6 +6777,7 @@
     "FiniteAvalanches.External.plane_edge_chart_incidence",
     "FiniteAvalanches.External.plane_punctured_chart_face_transport",
     "FiniteAvalanches.External.plane_punctured_face_transport",
+    "FiniteAvalanches.External.plane_vertex_face_star",
     "FiniteAvalanches.External.polya_square_lattice_hits_every_site",
     "FiniteAvalanches.External.wired_srw_firstHit_voltage",
     "FiniteAvalanches.ProvedStandards.polya_square_lattice_hits_every_site",
@@ -7170,8 +7194,8 @@
     },
     {
       "path": "audit/trusted-inputs.json",
-      "sha256": "a8ee8bb7aad2b56ed5443e465799424855a1c2916eb8d2ea5d65a93d9df56034",
-      "bytes": 425046
+      "sha256": "13a9cd2b2b9f12ac3027fefd1a6ead945c4883eb4426adb5dab060c40e555800",
+      "bytes": 478435
     },
     {
       "path": "lake-manifest.json",

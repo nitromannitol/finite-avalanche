@@ -9,7 +9,7 @@ A machine-checked **Lean 4** formalization of the paper
 The formalized text is the arXiv v2 source (`main.tex`, SHA-256
 `d2a875c154db9ff913ec6b25cf38e8da134ca977f6a24fd9c036cd8873b1082a`). All 17 numbered
 statements of the paper are stated and proved in Lean, the main theorem among them. The proofs
-use 14 standard results from the literature as named Lean axioms (see
+use 13 standard results from the literature as named Lean axioms (see
 [Standing assumptions and scope](#standing-assumptions-and-scope)).
 
 The development is built on [mathlib](https://github.com/leanprover-community/mathlib4) and the
@@ -75,9 +75,9 @@ and records how the Lean statements read the paper.
 
 ## Standing assumptions and scope
 
-1. **Results from the literature.** Fourteen results enter as named Lean axioms in
+1. **Results from the literature.** Thirteen results enter as named Lean axioms in
    [`FiniteAvalanches/External/`](FiniteAvalanches/External/). The axiom report of Theorem 1.1
-   consists of these 14 axioms and `propext`, `Classical.choice` and `Quot.sound`. The registry
+   consists of these 13 axioms and `propext`, `Classical.choice` and `Quot.sound`. The registry
    [`audit/trusted-inputs.json`](audit/trusted-inputs.json) records their exact Lean statements,
    hashes and available source references. Some plane-graph inputs have no citation in their
    module docstrings.
@@ -95,17 +95,16 @@ and records how the Lean statements read the paper.
    | The Beurling estimate for simple random walk on `ℤ²` (Lawler–Limic 2004, Theorem 1) | `lawler_limic_beurling_srw_Z2` |
    | Pairing groves and response-matrix minors (Kenyon–Wilson 2009, Theorems 8.1 and B.3) | `kenyonWilson_pairingGroves_resistanceMinor` |
 
-   *Topology of finite plane graphs (6).* Available references include Mohar–Thomassen,
+   *Topology of finite plane graphs (5).* Available references include Mohar–Thomassen,
    *Graphs on Surfaces*, Diestel, *Graph Theory*, and Hatcher, *Algebraic Topology*. The
-   inputs are the face star of a vertex
-   (`plane_vertex_face_star`), the faces of a two-pole plane network
+   inputs are the faces of a two-pole plane network
    (`finite_plane_two_pole_topology`), extension and straightening of plane arcs
    (`parametrized_plane_arc_straightening`), redrawing a path of the outer face on the boundary of
    a disk (`outer_face_simple_path_disk_redrawing`), the geometric dual
    (`finite_plane_geometric_dual`), and bonds as dual cycles (`finite_plane_dual_bond_cycle`).
 
    The all-minors matrix-tree theorem, nested projection domination, disk alternation, and punctured face and chart-face transport
-   are proved using Lattice-Probability. Dual connectivity, edge-chart incidence and the spanning-tree complement theorem are proved
+   are proved using Lattice-Probability. The vertex face star, dual connectivity, edge-chart incidence and the spanning-tree complement theorem are proved
    using a formalization of the Jordan–Schönflies theorem. The registry contains three further axioms that
    Theorem 1.1 does not use: Wilson's
    algorithm on a finite network, ray-seeded Wilson sampling on `ℤ²` (van Engelenburg–Hutchcroft)
