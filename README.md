@@ -156,7 +156,8 @@ and records how the Lean statements read the paper.
   [leanprover/comparator](https://github.com/leanprover/comparator) check, with the Lean and
   nanoda kernels, passed in continuous integration for the earlier sources with 19 and with 8
   literature inputs. The pair recaptured for the current source, whose permitted axioms are the
-  three standard ones, awaits independent review before its comparator check can run.
+  three standard ones, has been independently reviewed; its comparator check runs in continuous
+  integration.
 - **Pinned toolchain and dependencies.** Lean `v4.32.0`, mathlib
   `81a5d257c8e410db227a6665ed08f64fea08e997` and Lattice-Probability
   `68722ce2d464119e90b373829d2761624b1f6a75`, recorded in [`lake-manifest.json`](lake-manifest.json).

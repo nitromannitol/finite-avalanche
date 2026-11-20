@@ -33,6 +33,7 @@ declarations, no retained axiom and the unchanged type of Theorem 1.1; the compa
 exactly `propext`, `Classical.choice` and `Quot.sound`.
 
 The pairs for the earlier sources with 19 and 8 literature inputs passed the comparator workflow
-in continuous integration. The release review and the comparator review in
-`audit/release-eligibility.json` and `audit/comparator-review.json` are pending for the current
-source, and the review-gated checks cannot pass until they are recorded.
+in continuous integration. The independent release review and comparator review of the current
+source and pair are recorded in `audit/release-eligibility.json` and `audit/comparator-review.json`,
+bound to the current source inventory; the comparator run of the current pair is made by the
+workflow.
