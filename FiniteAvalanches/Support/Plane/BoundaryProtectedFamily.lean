@@ -78,7 +78,7 @@ theorem exists_boundary_path_to_root_with_protected_family
   let L := K ∪ ⋃ i ∈ s, range (p i)
   have hL : IsFiniteArcTree r L := hK.attach_finset_root_paths hrK s p hp hpK hpp
   have hLU : L ⊆ U := union_subset hKU (iUnion₂_subset (fun i hi =>
-    (hpU i hi).trans (diff_subset)))
+    (hpU i hi).trans (sdiff_subset)))
   have hvL : range v ∩ L = {r} := by
     apply subset_antisymm
     · rintro y ⟨hy, hyK | hyP⟩
