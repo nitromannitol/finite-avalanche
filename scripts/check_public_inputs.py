@@ -84,6 +84,7 @@ def inspect_contents(root, dependencies=False):
        'lakefile.lean','lake-manifest.json','lean-toolchain','scripts/check_public_inputs.py',
        'scripts/check_public_axioms.py','scripts/lean_text.py','scripts/ci_build.sh',
        'scripts/prepare_public_comparators.py','scripts/run_comparators.sh',
+       'scripts/capture_main_origin.py',
        'scripts/check_clean_log.py','scripts/lint_public.py','scripts/build_comparator_tools.sh',
        'scripts/check_comparator_tools.py','scripts/comparator_landrun.py',
        'audit/comparator-tool-pins.json','.github/workflows/build.yml','.github/workflows/comparator.yml'}

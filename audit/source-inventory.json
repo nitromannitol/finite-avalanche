@@ -5749,6 +5749,11 @@
       "bytes": 3284
     },
     {
+      "path": "scripts/capture_main_origin.py",
+      "sha256": "d25ec60ccbbf3462e2d86fcf17a95285fa03fdd266f2f3ca4cfc670628af6ecc",
+      "bytes": 8721
+    },
+    {
       "path": "scripts/check_clean_log.py",
       "sha256": "7f6ce402790f33fe48b1d204e3bacb72065a7e68a6ec1efea77d0b35543040e8",
       "bytes": 644
@@ -5765,8 +5770,8 @@
     },
     {
       "path": "scripts/check_public_inputs.py",
-      "sha256": "4ab7405d611373c0157c9e8d9fab702bc687c6241fd91af866cf5d2818c7dff8",
-      "bytes": 13478
+      "sha256": "8fe622a4ebe8f2519f28dbdd4b58f21ecde8e3ac0dd1a3d4e3ff6e95d24c1ed1",
+      "bytes": 14239
     },
     {
       "path": "scripts/ci_build.sh",
@@ -5790,12 +5795,12 @@
     },
     {
       "path": "scripts/prepare_public_comparators.py",
-      "sha256": "7319cd0355a0fd6042b89512f5f36fcb31abdb276c0f523f345a7adb3ce47358",
+      "sha256": "5a3e5e9af71f6cfef3f8ee6931349cc63d2d90d63490092821889f27716abfc1",
       "bytes": 9189
     },
     {
       "path": "scripts/run_comparators.sh",
-      "sha256": "6ac9dbf6edef10dde1eeb19412f054f2a0ba9f86334eb3e4311bb7d12ef5b154",
+      "sha256": "7fa12c580587c0b7130d4251eec4ef787387750cc005b70cfe282b2183b32281",
       "bytes": 6288
     }
   ]

@@ -141,8 +141,8 @@ and records how the Lean statements read the paper.
   [`FiniteAvalanchesAudit/MainOrigin/`](FiniteAvalanchesAudit/MainOrigin/) imports mathlib alone
   and rebuilds Theorem 1.1 from recorded kernel data. The recorded
   [leanprover/comparator](https://github.com/leanprover/comparator) check used the Lean and
-  nanoda kernels for the earlier 22-input source snapshot. The comparator pair requires regeneration and review for the current source
-  before the comparator check can run.
+  nanoda kernels for the earlier 22-input source snapshot. The regenerated comparator pair
+  awaits review for the current source before the comparator check can run.
 - **Pinned toolchain and dependencies.** Lean `v4.32.0`, mathlib
   `81a5d257c8e410db227a6665ed08f64fea08e997` and Lattice-Probability
   `68722ce2d464119e90b373829d2761624b1f6a75`, recorded in [`lake-manifest.json`](lake-manifest.json).
