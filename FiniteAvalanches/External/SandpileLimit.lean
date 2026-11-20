@@ -1,4 +1,5 @@
 import FiniteAvalanches.Sandpile.Law.Properties
+import FiniteAvalanches.Sandpile.Limit.InfiniteVolumeLaw
 
 namespace FiniteAvalanches.External.SandpileLimit
 
@@ -10,8 +11,9 @@ noncomputable section
 
 /-- Athreya–Járai (2004), Theorem 1 and Remark 1(iii) with the 2006 correction (d = 2);
 Járai–Werning (2014), Theorem 3. -/
-axiom exists_infiniteVolumeLaw :
-    ∃ μ : ProbabilityMeasure StableField, IsInfiniteVolumeLaw μ ∧ IsTranslationInvariant μ
+theorem exists_infiniteVolumeLaw :
+    ∃ μ : ProbabilityMeasure StableField, IsInfiniteVolumeLaw μ ∧ IsTranslationInvariant μ :=
+  FiniteAvalanches.Sandpile.InfiniteVolume.exists_infiniteVolumeLaw_proof
 
 end
 
