@@ -55,7 +55,7 @@ theorem dualField_preimage_cylinder (E : Finset LatticeEdge) (p : E → Bool) :
       exact Finset.mem_map.mpr ⟨e.val, e.property, rfl⟩
     have he := h ⟨crossingEdgeEquiv e.val, hm⟩
     simp only [crossingPattern, crossingEdgeEquiv.symm_apply_apply] at he
-    simpa only [dualField_apply_crossing, he, Bool.not_not]
+    simp only [dualField_apply_crossing, he, Bool.not_not]
 
 /-- Dual finite-cylinder probabilities are primal complemented-cylinder probabilities. -/
 theorem finiteLaw_dual_cylinder (N : ℕ) (E : Finset LatticeEdge) (p : E → Bool) :
