@@ -9,8 +9,10 @@ A machine-checked **Lean 4** formalization of the paper
 The formalized text is the arXiv v2 source (`main.tex`, SHA-256
 `d2a875c154db9ff913ec6b25cf38e8da134ca977f6a24fd9c036cd8873b1082a`). All 17 numbered
 statements of the paper are stated and proved in Lean, the main theorem among them. No result from
-the literature is assumed: the results the paper cites are proved in Lean as well, and Theorem 1.1
-depends only on the axioms `propext`, `Classical.choice` and `Quot.sound` (see
+the literature is assumed by Theorem 1.1 or the other numbered statements: the 22 registered results
+their proofs use are proved in Lean, and each of the 17 statements depends only on the axioms
+`propext`, `Classical.choice` and `Quot.sound`. The repository still declares three further
+literature results as axioms that none of the numbered statements uses (see
 [Standing assumptions and scope](#standing-assumptions-and-scope)).
 
 The development is built on [mathlib](https://github.com/leanprover-community/mathlib4) and the
@@ -76,8 +78,8 @@ and records how the Lean statements read the paper.
 
 ## Standing assumptions and scope
 
-1. **Results from the literature.** No result from the literature is assumed. The results that
-   the proofs cite are stated in [`FiniteAvalanches/External/`](FiniteAvalanches/External/) and
+1. **Results from the literature.** No result from the literature is assumed by Theorem 1.1 or
+   the other numbered statements. The results that their proofs cite are stated in [`FiniteAvalanches/External/`](FiniteAvalanches/External/) and
    proved there; the axiom report of Theorem 1.1 consists of `propext`, `Classical.choice` and
    `Quot.sound` only. The registry [`audit/trusted-inputs.json`](audit/trusted-inputs.json)
    records the exact Lean statement of each cited result, its hashes, its source references and
@@ -119,9 +121,11 @@ and records how the Lean statements read the paper.
    [`CORRESPONDENCE.md`](CORRESPONDENCE.md) records where a proof takes a different route from the
    cited source.
 
-   The registry also keeps three axioms that Theorem 1.1 does not use: Wilson's algorithm on a
-   finite network, ray-seeded Wilson sampling on `ℤ²` (van Engelenburg–Hutchcroft) and the square
-   tiling of Brooks, Smith, Stone and Tutte.
+   The repository still declares three literature results as axioms, registered in the same
+   registry, that none of the 17 numbered statements uses: Wilson's algorithm on a finite network,
+   ray-seeded Wilson sampling on `ℤ²` (van Engelenburg–Hutchcroft) and the square tiling of
+   Brooks, Smith, Stone and Tutte. The square-tiling axiom is still referenced by four auxiliary
+   modules outside the proof of every numbered statement.
 2. **The model.** Sandpiles are integer fields on `ℤ²`; the stationary law is a probability
    measure on all of `ℤ² → ℤ`, and Theorem 1.1 quantifies over every integer field, not only the
    stable ones. Toppling sequences are finite lists of legal topplings.

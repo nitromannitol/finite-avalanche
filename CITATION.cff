@@ -8,7 +8,9 @@ abstract: >-
   finitely many topplings almost surely, and the radius of the avalanche
   satisfies P(radius > M) <= C (log(M + 2))^(-a). All 17 numbered statements
   of the paper are proved, together with the 22 results from the literature
-  that the proofs cite; no result from the literature is assumed.
+  that the proofs cite; none of these proofs assumes a result from the
+  literature. Three further literature results, used by none of the numbered
+  statements, remain declared as axioms.
 type: software
 authors:
   - family-names: Bou-Rabee

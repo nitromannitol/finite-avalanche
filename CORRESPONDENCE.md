@@ -72,7 +72,7 @@ the cited source, the route is recorded here.
   The tree law is the limit of the laws of the wired boxes, and in each box Wilson's algorithm
   runs from roots on the exterior of the box. Lemma 2.4 follows the decomposition of Barlow and
   Masson by the prefix of the loop-erased path and the last visit. Its ratio bound uses a cone
-  estimate from the exactly harmonic quadratic `Re z + Re z² / 2` and optional stopping, explicit
+  estimate from the exactly harmonic quadratic `Re z + Re z² / 2` and the maximum principle, explicit
   two-sided bounds on annuli from the potential kernel, and an inward Beurling estimate from the
   first-entrance decomposition and the symmetry of the Green function. The exponent `1/3`
   balances the reentry bound of Lemma 2.4 against the Beurling estimate

@@ -6,10 +6,11 @@ project:
     finite" by Ahmed Bou-Rabee: under the stationary law of the abelian sandpile
     on Z^2, adding one grain at the origin causes finitely many topplings almost
     surely, and the radius of the avalanche has a logarithmic tail (Theorem
-    1.1). All 17 numbered statements of the paper are formalized, and no result
-    from the literature is assumed: the 22 cited results that the proofs use are
-    proved in Lean, and Theorem 1.1 depends only on propext, Classical.choice and
-    Quot.sound. The comparator pair FiniteAvalanchesAudit/MainOrigin/ passed the
+    1.1). All 17 numbered statements of the paper are formalized, and none of
+    them assumes a result from the literature: the 22 cited results that their
+    proofs use are proved in Lean, and Theorem 1.1 depends only on propext,
+    Classical.choice and Quot.sound. Three further literature results, used by
+    none of the numbered statements, remain declared as axioms. The comparator pair FiniteAvalanchesAudit/MainOrigin/ passed the
     comparator check for the earlier sources with 19 and 8 literature inputs; the
     pair recaptured for the current source awaits review.
   authors:
@@ -98,8 +99,10 @@ fidelity:
     chosen before every real threshold; Proposition 5.1 and Lemma 6.2 are one
     declaration sharing the constant epsilon; electrical networks keep every
     copy of a parallel edge, and the voltage is defined for distinct terminals.
-    No external result is assumed. The 22 cited results that the proofs use
-    are proved with the statements of the axioms they replace; their source
+    No external result is assumed by the numbered statements. The 22 cited
+    results that their proofs use are proved with the statements of the axioms
+    they replace; three further literature results, used by none of the
+    numbered statements, remain declared as axioms; their source
     references are recorded in audit/trusted-inputs.json, and CORRESPONDENCE.md
     records where a proof takes a different route from the cited source.
 
