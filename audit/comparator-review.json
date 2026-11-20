@@ -1,14 +1,14 @@
 {
   "schema_version": 1,
-  "status": "PENDING_CURRENT_SOURCE_REVIEW",
+  "status": "REVIEWED_CURRENT_PAIR",
   "target_export": "FiniteAvalanchesCurrent.RegisteredPast.Main.finite_avalanches_origin",
-  "independent": false,
+  "independent": true,
   "producer_role": "finite-wilson",
   "reviewer_role": "independent-pair-review",
-  "whole_integer_carrier": false,
-  "joint_constants_before_all_real_scales": false,
-  "source_characterizations_checked": false,
-  "exact_type_and_bodies_checked": false,
+  "whole_integer_carrier": true,
+  "joint_constants_before_all_real_scales": true,
+  "source_characterizations_checked": true,
+  "exact_type_and_bodies_checked": true,
   "source_inventory_sha256": "aa619434711affeb0ae68ae5b440ecfb7cdea6e3d8d6eb36a9cd62a4fd69f5c5",
   "bindings": [
     {
@@ -104,5 +104,7 @@
       "status_only_metadata_transport_review_sha256": "d57476de54846efaf9498aa5a74526bc3fd8de232357d6cca9c8fc7ba42fa76c"
     }
   ],
-  "current_pair_actual_replay_status": "PENDING_CI_COMPARATOR_RUN"
+  "current_pair_actual_replay_status": "PENDING_CI_COMPARATOR_RUN",
+  "current_pair_review_sha256": "cc0c4600764db2eba1ae49498f42413b70d47fc4bdfa3ae95863fba21002c739",
+  "current_source_review_sha256": "aefe9e13ee64f52828b8faf6221d6cc7bf45389e8b2b38d73eded5dcca96b98e"
 }
