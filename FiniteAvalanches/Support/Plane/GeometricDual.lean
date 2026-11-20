@@ -1381,12 +1381,12 @@ theorem exists_unbounded_face (D : Drawing J) :
 
 
 
-/-- Equal signed winding jumps along a loop contained in the drawing trace
+/-- Equal nonzero winding jumps along a loop contained in the drawing trace
 exclude a reversal of both face sides. -/
 theorem not_crossed_face_matching_of_winding_jumps (D : Drawing J)
     (γ : C(unitInterval, ℂ)) (hclosed : γ 0 = γ 1)
     (htrace : ∀ t, Complex.equivRealProdCLM (γ t) ∈ drawingTrace D)
-    {p₁ p₂ q₁ q₂ : ℂ} {F₁ F₂ G₁ G₂ : Face D}
+    {p₁ p₂ q₁ q₂ : ℂ} {F₁ F₂ G₁ G₂ : Face D} {k : ℤ} (hk : k ≠ 0)
     (hp₁ : p₁ ∉ Set.range γ) (hp₂ : p₂ ∉ Set.range γ)
     (hq₁ : q₁ ∉ Set.range γ) (hq₂ : q₂ ∉ Set.range γ)
     (hp₁F : Complex.equivRealProdCLM p₁ ∈ faceRegion D F₁)
@@ -1396,11 +1396,11 @@ theorem not_crossed_face_matching_of_winding_jumps (D : Drawing J)
     (hpdeg : loopDeg (γ - ContinuousMap.const unitInterval p₁)
         (fun t => sub_ne_zero.mpr (fun h => hp₁ ⟨t, h⟩)) -
       loopDeg (γ - ContinuousMap.const unitInterval p₂)
-        (fun t => sub_ne_zero.mpr (fun h => hp₂ ⟨t, h⟩)) = 1)
+        (fun t => sub_ne_zero.mpr (fun h => hp₂ ⟨t, h⟩)) = k)
     (hqdeg : loopDeg (γ - ContinuousMap.const unitInterval q₁)
         (fun t => sub_ne_zero.mpr (fun h => hq₁ ⟨t, h⟩)) -
       loopDeg (γ - ContinuousMap.const unitInterval q₂)
-        (fun t => sub_ne_zero.mpr (fun h => hq₂ ⟨t, h⟩)) = 1) :
+        (fun t => sub_ne_zero.mpr (fun h => hq₂ ⟨t, h⟩)) = k) :
     ¬ (F₁ = G₂ ∧ F₂ = G₁) := by
   have hcomp (F : Face D) {a b : ℂ}
       (ha : Complex.equivRealProdCLM a ∈ faceRegion D F)
@@ -1422,7 +1422,10 @@ theorem not_crossed_face_matching_of_winding_jumps (D : Drawing J)
       exact htrace t
     exact hU.subset_connectedComponentIn haU hsub hbU
   rintro ⟨h₁, h₂⟩
-  apply not_crossed_component_matching_of_winding_jumps γ hclosed hp₁ hp₂ hq₁ hq₂ hpdeg hqdeg
-  exact ⟨hcomp F₁ hp₁F (h₁.symm ▸ hq₂F), hcomp F₂ hp₂F (h₂.symm ▸ hq₁F)⟩
+  have heq₁ := loopDeg_sub_const_eq_of_connectedComponentIn γ hclosed hp₁
+    (hcomp F₁ hp₁F (h₁.symm ▸ hq₂F))
+  have heq₂ := loopDeg_sub_const_eq_of_connectedComponentIn γ hclosed hp₂
+    (hcomp F₂ hp₂F (h₂.symm ▸ hq₁F))
+  omega
 
 end FiniteAvalanches.Electrical.StatementGeometry
