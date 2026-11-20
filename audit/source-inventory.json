@@ -4004,6 +4004,12 @@
       "bytes": 10377
     },
     {
+      "path": "FiniteAvalanches/Support/Plane/TransverseClosedAvoidance.lean",
+      "sha256": "b26731d1ba7bf43b1a57ccd233501b7a74b8706831a6eb87030aac885b07c7fe",
+      "code_sha256": "0f4b9fc09493ca8a305c29e7d8b94274e20972c13624ace7f6812faa82328252",
+      "bytes": 2831
+    },
+    {
       "path": "FiniteAvalanches/Support/Plane/TransverseStar.lean",
       "sha256": "650d1528178ed6bad478b7a8d8564cf0b06fdbc628fc5ca98b0e86ef2196ee3b",
       "code_sha256": "b3cfffeb36f543fc092fe1a7c97d7bc8c93c7a748a5a5c87371fe49d666d4866",
@@ -6838,6 +6844,7 @@
     "FiniteAvalanches.Support.Plane.SubarcCompletion",
     "FiniteAvalanches.Support.Plane.TerminalReparam",
     "FiniteAvalanches.Support.Plane.ThreeCompactSeparation",
+    "FiniteAvalanches.Support.Plane.TransverseClosedAvoidance",
     "FiniteAvalanches.Support.Plane.TransverseStar",
     "FiniteAvalanches.Support.Plane.TreeComplementReduction",
     "FiniteAvalanches.Support.Plane.TwoArcJordan",
