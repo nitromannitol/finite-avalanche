@@ -11,6 +11,7 @@ on successive dyadic time intervals.
 namespace FiniteAvalanches.Electrical.StatementGeometry
 
 open Set Metric Filter
+open scoped Topology
 
 /-- The parameter of the `n`th path in a dyadic concatenation. -/
 def endpointPathClock (n : ℕ) (t : ℝ) : ℝ :=
@@ -55,5 +56,48 @@ theorem endpointPathSeries_zero (z : ℕ → ℝ × ℝ)
         _ ≤ (2 : ℝ) ^ (n + 1) := pow_le_pow_right₀ (by norm_num) (by omega)
     linarith
   simp only [endpointPathSeries, hzero, tsum_zero, add_zero]
+
+/-- A dyadic concatenation of paths in geometrically shrinking balls ends at
+their common center. -/
+theorem endpointPathSeries_one {x : ℝ × ℝ}
+    (z : ℕ → ℝ × ℝ) (q : ∀ n, Path (z n) (z (n + 1)))
+    (hq : ∀ n, range (q n) ⊆ ball x ((1 / 2 : ℝ) ^ n)) :
+    endpointPathSeries z q 1 = x := by
+  have hz : ∀ n, dist (z n) x < (1 / 2 : ℝ) ^ n := by
+    intro n
+    exact hq n (q n).source_mem_range
+  have hzlim : Tendsto z atTop (𝓝 x) := by
+    rw [Metric.tendsto_atTop]
+    intro ε hε
+    have hp := (Metric.tendsto_atTop.mp
+      (tendsto_pow_atTop_nhds_zero_of_lt_one
+        (by norm_num : (0 : ℝ) ≤ 1 / 2) (by norm_num : (1 / 2 : ℝ) < 1))) ε hε
+    obtain ⟨N, hN⟩ := hp
+    refine ⟨N, fun n hn => ?_⟩
+    have hh := hN n hn
+    rw [Real.dist_eq, sub_zero, abs_of_nonneg (by positivity)] at hh
+    exact (hz n).trans hh
+  have hbound : ∀ n, ‖z (n + 1) - z n‖ ≤ 2 * (1 / 2 : ℝ) ^ n := by
+    intro n
+    have h1 : dist (z (n + 1)) x < (1 / 2 : ℝ) ^ n :=
+      hq n (q n).target_mem_range
+    have h2 := hz n
+    have h := dist_triangle (z (n + 1)) x (z n)
+    rw [dist_comm x (z n), dist_eq_norm] at h
+    linarith
+  have hsumnorm : Summable (fun n => ‖z (n + 1) - z n‖) := by
+    apply Summable.of_nonneg_of_le (fun n => norm_nonneg _ ) hbound
+    exact (summable_geometric_of_lt_one (by norm_num : (0 : ℝ) ≤ 1 / 2)
+      (by norm_num : (1 / 2 : ℝ) < 1)).mul_left 2
+  have hsum : HasSum (fun n => z (n + 1) - z n) (x - z 0) := by
+    apply (hasSum_iff_tendsto_nat_of_summable_norm hsumnorm).mpr
+    simpa only [Finset.sum_range_sub] using hzlim.sub tendsto_const_nhds
+  have hterms : ∀ n, (q n).extend (endpointPathClock n 1) - z n = z (n + 1) - z n := by
+    intro n
+    rw [(q n).extend_of_one_le]
+    unfold endpointPathClock
+    simp
+  simp only [endpointPathSeries, hterms, hsum.tsum_eq]
+  abel
 
 end FiniteAvalanches.Electrical.StatementGeometry
