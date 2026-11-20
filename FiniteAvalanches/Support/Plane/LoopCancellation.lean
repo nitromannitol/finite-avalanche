@@ -133,4 +133,69 @@ theorem exists_disjoint_upper_loop_family {X : Type*} [TopologicalSpace X] [T2Sp
     obtain ⟨v, hv, _, hsv⟩ := hw.2.2 s hs
     exact ⟨v, hv, hsv⟩
 
+/-- A loop cancellation consists of pairwise interior-disjoint subloops. -/
+def IsLoopCancellation {X : Type*} [TopologicalSpace X] {x y : X}
+    (p : Path x y) (S : Set (unitInterval × unitInterval)) : Prop :=
+  (∀ v ∈ S, v.1 < v.2 ∧ p v.1 = p v.2) ∧
+  ∀ v ∈ S, ∀ w ∈ S, v ≠ w → Disjoint (Ioo v.1 v.2) (Ioo w.1 w.2)
+
+/-- One loop family refines another if each of its intervals is contained in
+an interval of the latter family. -/
+def LoopFamilyRefines (S T : Set (unitInterval × unitInterval)) : Prop :=
+  ∀ v ∈ S, ∃ w ∈ T, w.1 ≤ v.1 ∧ v.2 ≤ w.2
+
+/-- Refinement of loop families is transitive. -/
+theorem LoopFamilyRefines.trans {S T U : Set (unitInterval × unitInterval)}
+    (hST : LoopFamilyRefines S T) (hTU : LoopFamilyRefines T U) : LoopFamilyRefines S U := by
+  intro v hv
+  obtain ⟨w, hw, hw1, hw2⟩ := hST v hv
+  obtain ⟨z, hz, hz1, hz2⟩ := hTU w hw
+  exact ⟨z, hz, hz1.trans hw1, hw2.trans hz2⟩
+
+/-- The union of a refinement chain of loop cancellations is laminar. -/
+theorem laminar_sUnion_of_loopCancellation_chain
+    {X : Type*} [TopologicalSpace X] {x y : X} (p : Path x y)
+    (C : Set (Set (unitInterval × unitInterval)))
+    (hcancel : ∀ A ∈ C, IsLoopCancellation p A)
+    (hchain : ∀ A ∈ C, ∀ B ∈ C, LoopFamilyRefines A B ∨ LoopFamilyRefines B A) :
+    IsLaminarIntervalFamily (⋃₀ C) := by
+  intro v hv w hw hoverlap
+  obtain ⟨A, hAC, hvA⟩ := mem_sUnion.mp hv
+  obtain ⟨B, hBC, hwB⟩ := mem_sUnion.mp hw
+  obtain ⟨s, hsv, hsw⟩ := hoverlap
+  rcases hchain A hAC B hBC with hAB | hBA
+  · obtain ⟨u, huB, hu1, hu2⟩ := hAB v hvA
+    have hsu : s ∈ Ioo u.1 u.2 :=
+      ⟨lt_of_le_of_lt hu1 hsv.1, lt_of_lt_of_le hsv.2 hu2⟩
+    have huw : u = w := by
+      by_contra hne
+      exact Set.disjoint_left.mp ((hcancel B hBC).2 u huB w hwB hne) hsu hsw
+    subst u
+    exact Or.inr ⟨hu1, hu2⟩
+  · obtain ⟨u, huA, hu1, hu2⟩ := hBA w hwB
+    have hsu : s ∈ Ioo u.1 u.2 :=
+      ⟨lt_of_le_of_lt hu1 hsw.1, lt_of_lt_of_le hsw.2 hu2⟩
+    have huv : u = v := by
+      by_contra hne
+      exact Set.disjoint_left.mp ((hcancel A hAC).2 u huA v hvA hne) hsu hsv
+    subst u
+    exact Or.inl ⟨hu1, hu2⟩
+
+/-- Every refinement chain of loop cancellations has an upper loop cancellation. -/
+theorem exists_upper_loopCancellation_of_chain
+    {X : Type*} [TopologicalSpace X] [T2Space X] {x y : X} (p : Path x y)
+    (C : Set (Set (unitInterval × unitInterval)))
+    (hcancel : ∀ A ∈ C, IsLoopCancellation p A)
+    (hchain : ∀ A ∈ C, ∀ B ∈ C, LoopFamilyRefines A B ∨ LoopFamilyRefines B A) :
+    ∃ T, IsLoopCancellation p T ∧ ∀ A ∈ C, LoopFamilyRefines A T := by
+  have hloop : ∀ v ∈ ⋃₀ C, v.1 < v.2 ∧ p v.1 = p v.2 := by
+    intro v hv
+    obtain ⟨A, hA, hvA⟩ := mem_sUnion.mp hv
+    exact (hcancel A hA).1 v hvA
+  obtain ⟨T, hTloop, hTdisj, hTcover, _⟩ := exists_disjoint_upper_loop_family p (⋃₀ C)
+    hloop (laminar_sUnion_of_loopCancellation_chain p C hcancel hchain)
+  refine ⟨T, ⟨hTloop, hTdisj⟩, ?_⟩
+  intro A hA v hv
+  exact hTcover v (mem_sUnion.mpr ⟨A, hA, hv⟩)
+
 end FiniteAvalanches.Electrical.StatementGeometry
