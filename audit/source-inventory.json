@@ -3855,9 +3855,9 @@
     },
     {
       "path": "FiniteAvalanches/Support/Plane/DilationIsotopy.lean",
-      "sha256": "ef89b40a9d0a9f05a342e976a878c4a2a679f4d32fd6c3bbca97370bc3cdcf1f",
-      "code_sha256": "3cb15236083234d0a2c889ef809a4953176e9c1871f806897eec65c39dfc86b7",
-      "bytes": 5700
+      "sha256": "ad51f5700705739c4a7e8ae901351b1571a4b2d043f0a8330949b47fc12c2ea7",
+      "code_sha256": "2f910fe48280d4d9a4d5d26e71a8ef041aa5281149bfc90426832c9a7a6574f8",
+      "bytes": 7576
     },
     {
       "path": "FiniteAvalanches/Support/Plane/Disconnect.lean",
