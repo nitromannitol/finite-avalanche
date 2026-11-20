@@ -23,6 +23,7 @@ def wordTrace (head : V → D → V) (x : V) (w : ℕ → D) :
   | zero => exact ⟨x, .nil⟩
   | succ n q => exact ⟨head q.1 (w n), q.2.cons ⟨w n, rfl⟩⟩
 
+omit [DecidableEq V] in
 /-- A finite word trace is determined by the instructions before its endpoint. -/
 theorem wordTrace_eq_of_prefix (head : V → D → V) (x : V) (w w' : ℕ → D)
     (n : ℕ) (h : ∀ i < n, w' i = w i) :
