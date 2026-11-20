@@ -3656,6 +3656,12 @@
       "bytes": 4906
     },
     {
+      "path": "FiniteAvalanches/Support/Plane/BoundaryStarExtension.lean",
+      "sha256": "f35f40a5965a77b6a9ac3804aa0c7ab092adb709fde15b4fd8a0241b12b2b77d",
+      "code_sha256": "557a4610639ee7a322af1259595829fba7adf1346b864a4ab0012d5d292c5d48",
+      "bytes": 2266
+    },
+    {
       "path": "FiniteAvalanches/Support/Plane/ChartConstruction.lean",
       "sha256": "1d26be8d14b6b02b9daaa260db585a5594fb2c466eb27a4a83e5f9f3decb3385",
       "code_sha256": "415c1086d6c12fff553cf23c974f5e6c458b8b3e93c2c89db1a3e895ab3c1bd0",
@@ -3672,6 +3678,12 @@
       "sha256": "8dd37740eb80ca0da6725c0462ed8d6d72efc0a1eaafebed1aee5ee7f23ac73a",
       "code_sha256": "e1a9e19d90f78cfa5e28d4e7af3efc1b52421e1f918f017300f9907cfd845aed",
       "bytes": 35497
+    },
+    {
+      "path": "FiniteAvalanches/Support/Plane/ChartedBoundaryStarExtension.lean",
+      "sha256": "77259f134e1987ffd97717a1e30ce3f0b5113c78f5bafaa09e06abbaf395b04d",
+      "code_sha256": "9022591f936c72892892a510f83f7cffa7a49516eb67540edec7fc1d28244421",
+      "bytes": 4129
     },
     {
       "path": "FiniteAvalanches/Support/Plane/CompactAvoidance.lean",
@@ -6808,6 +6820,8 @@
     "FiniteAvalanches.Support.Plane.ArcLocalStraightening",
     "FiniteAvalanches.Support.Plane.ArcStraightHomeomorph",
     "FiniteAvalanches.Support.Plane.BoundaryArcJoin",
+    "FiniteAvalanches.Support.Plane.BoundaryStarExtension",
+    "FiniteAvalanches.Support.Plane.ChartedBoundaryStarExtension",
     "FiniteAvalanches.Support.Plane.CopiedTreeCardinality",
     "FiniteAvalanches.Support.Plane.CrossingArms",
     "FiniteAvalanches.Support.Plane.CrossingArmsSeparation",
