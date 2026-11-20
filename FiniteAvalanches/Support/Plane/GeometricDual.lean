@@ -1380,4 +1380,49 @@ theorem exists_unbounded_face (D : Drawing J) :
   simpa only [hid, Set.image_id] using hbu'
 
 
+
+/-- Equal signed winding jumps along a loop contained in the drawing trace
+exclude a reversal of both face sides. -/
+theorem not_crossed_face_matching_of_winding_jumps (D : Drawing J)
+    (γ : C(unitInterval, ℂ)) (hclosed : γ 0 = γ 1)
+    (htrace : ∀ t, Complex.equivRealProdCLM (γ t) ∈ drawingTrace D)
+    {p₁ p₂ q₁ q₂ : ℂ} {F₁ F₂ G₁ G₂ : Face D}
+    (hp₁ : p₁ ∉ Set.range γ) (hp₂ : p₂ ∉ Set.range γ)
+    (hq₁ : q₁ ∉ Set.range γ) (hq₂ : q₂ ∉ Set.range γ)
+    (hp₁F : Complex.equivRealProdCLM p₁ ∈ faceRegion D F₁)
+    (hp₂F : Complex.equivRealProdCLM p₂ ∈ faceRegion D F₂)
+    (hq₁F : Complex.equivRealProdCLM q₁ ∈ faceRegion D G₁)
+    (hq₂F : Complex.equivRealProdCLM q₂ ∈ faceRegion D G₂)
+    (hpdeg : loopDeg (γ - ContinuousMap.const unitInterval p₁)
+        (fun t => sub_ne_zero.mpr (fun h => hp₁ ⟨t, h⟩)) -
+      loopDeg (γ - ContinuousMap.const unitInterval p₂)
+        (fun t => sub_ne_zero.mpr (fun h => hp₂ ⟨t, h⟩)) = 1)
+    (hqdeg : loopDeg (γ - ContinuousMap.const unitInterval q₁)
+        (fun t => sub_ne_zero.mpr (fun h => hq₁ ⟨t, h⟩)) -
+      loopDeg (γ - ContinuousMap.const unitInterval q₂)
+        (fun t => sub_ne_zero.mpr (fun h => hq₂ ⟨t, h⟩)) = 1) :
+    ¬ (F₁ = G₂ ∧ F₂ = G₁) := by
+  have hcomp (F : Face D) {a b : ℂ}
+      (ha : Complex.equivRealProdCLM a ∈ faceRegion D F)
+      (hb : Complex.equivRealProdCLM b ∈ faceRegion D F) :
+      b ∈ connectedComponentIn (Set.range γ)ᶜ a := by
+    let U : Set ℂ := Complex.equivRealProdCLM.symm '' faceRegion D F
+    have haU : a ∈ U := ⟨Complex.equivRealProdCLM a, ha,
+      Complex.equivRealProdCLM.symm_apply_apply a⟩
+    have hbU : b ∈ U := ⟨Complex.equivRealProdCLM b, hb,
+      Complex.equivRealProdCLM.symm_apply_apply b⟩
+    have hU : IsPreconnected U := (faceRegion_isConnected D F).isPreconnected.image _
+      Complex.equivRealProdCLM.symm.continuous.continuousOn
+    have hsub : U ⊆ (Set.range γ)ᶜ := by
+      rintro z ⟨x, hx, rfl⟩ ⟨t, ht⟩
+      apply hx.1
+      have h := congrArg Complex.equivRealProdCLM ht
+      rw [Complex.equivRealProdCLM.apply_symm_apply] at h
+      rw [← h]
+      exact htrace t
+    exact hU.subset_connectedComponentIn haU hsub hbU
+  rintro ⟨h₁, h₂⟩
+  apply not_crossed_component_matching_of_winding_jumps γ hclosed hp₁ hp₂ hq₁ hq₂ hpdeg hqdeg
+  exact ⟨hcomp F₁ hp₁F (h₁.symm ▸ hq₂F), hcomp F₂ hp₂F (h₂.symm ▸ hq₁F)⟩
+
 end FiniteAvalanches.Electrical.StatementGeometry
