@@ -3668,6 +3668,12 @@
       "bytes": 2266
     },
     {
+      "path": "FiniteAvalanches/Support/Plane/BoundaryTwoStar.lean",
+      "sha256": "28b1574df2ddd10496d649f3c81ab3962123861e2c42b08389404ac69a9d477f",
+      "code_sha256": "80572c4d207320edb3d6c19a0c758660e88b450d29b20f9ad1aa1ef56d39b484",
+      "bytes": 6493
+    },
+    {
       "path": "FiniteAvalanches/Support/Plane/ChartConstruction.lean",
       "sha256": "1d26be8d14b6b02b9daaa260db585a5594fb2c466eb27a4a83e5f9f3decb3385",
       "code_sha256": "415c1086d6c12fff553cf23c974f5e6c458b8b3e93c2c89db1a3e895ab3c1bd0",
@@ -6828,6 +6834,7 @@
     "FiniteAvalanches.Support.Plane.BoundaryArcJoin",
     "FiniteAvalanches.Support.Plane.BoundaryArcJoinTails",
     "FiniteAvalanches.Support.Plane.BoundaryStarExtension",
+    "FiniteAvalanches.Support.Plane.BoundaryTwoStar",
     "FiniteAvalanches.Support.Plane.ChartedBoundaryStarExtension",
     "FiniteAvalanches.Support.Plane.CopiedTreeCardinality",
     "FiniteAvalanches.Support.Plane.CrossingArms",
