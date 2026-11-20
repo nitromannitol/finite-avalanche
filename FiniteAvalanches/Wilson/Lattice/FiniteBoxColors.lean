@@ -111,7 +111,7 @@ theorem collapseLarge_copy_endpoints {N M : ℕ} (hNM : N ≤ M) (e : FiniteWire
  theorem collapseLarge_color_reaches {N M : ℕ} (hNM : N ≤ M) (R : RootPair)
     (houtside : ∀ x, ¬FiniteWired.inBox N x → x ∈ R.one) (F : FiniteForest R N)
     {x y : FiniteWired.Vertex M}
-    (hxy : (WiredTrees.graph M).reaches (finiteForestEquiv hNM R houtside F).val x y) :
+    (hxy : (WiredTrees.graph M).reaches (finiteForestEquiv hNM R (exterior_roots_of_one houtside) F).val x y) :
     finiteColors R N F (collapseLarge hNM x) =
       finiteColors R N F (collapseLarge hNM y) := by
   induction hxy with
@@ -143,9 +143,9 @@ theorem collapseLarge_copy_endpoints {N M : ℕ} (hNM : N ≤ M) (e : FiniteWire
 theorem finiteForestEquiv_colors {N M : ℕ} (hNM : N ≤ M) (R : RootPair)
     (houtside : ∀ x, ¬FiniteWired.inBox N x → x ∈ R.one) (F : FiniteForest R N)
     (x : FiniteWired.Vertex M) :
-    finiteColors R M (finiteForestEquiv hNM R houtside F) x =
+    finiteColors R M (finiteForestEquiv hNM R (exterior_roots_of_one houtside) F) x =
       finiteColors R N F (collapseLarge hNM x) := by
-  obtain ⟨r,hr,hxr,_⟩ := (finiteForestEquiv hNM R houtside F).property.2 x
+  obtain ⟨r,hr,hxr,_⟩ := (finiteForestEquiv hNM R (exterior_roots_of_one houtside) F).property.2 x
   rw [finiteColors_reaches R M _ hxr,collapseLarge_color_reaches hNM R houtside F hxr]
   rcases hr with hz | ho
   · rw [finiteColors_zero R M _ hz,
@@ -157,9 +157,9 @@ theorem finiteForestEquiv_colors {N M : ℕ} (hNM : N ≤ M) (R : RootPair)
 theorem finiteForestEquiv_site_colors {N M : ℕ} (hNM : N ≤ M) (R : RootPair)
     (houtside : ∀ x, ¬FiniteWired.inBox N x → x ∈ R.one) (F : FiniteForest R N)
     (x : Site 2) :
-    finiteColors R M (finiteForestEquiv hNM R houtside F) (wiredSite M x) =
+    finiteColors R M (finiteForestEquiv hNM R (exterior_roots_of_one houtside) F) (wiredSite M x) =
       finiteColors R N F (wiredSite N x) := by
-  rw [finiteForestEquiv_colors,collapseLarge_wiredSite]
+  rw [finiteForestEquiv_colors hNM R houtside,collapseLarge_wiredSite]
 
 end
 end FiniteAvalanches.Wilson.Lattice.WiredBoxCopies

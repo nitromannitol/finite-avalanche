@@ -2,8 +2,10 @@ import FiniteAvalanches.Wilson.Lattice.QuotientCopyIncidence
 import FiniteAvalanches.Trees.CopiedTreeTransport
 
 /-! Ordinary cross-volume equivalence on the existing copied rooted forests.
-All roots outside the small box are actual one roots; no distributional
-identity, forest equivalence, or component-color conclusion is a premise. -/
+Every site outside the small box is an actual root, of either color; no
+distributional identity, forest equivalence, or component-color conclusion is a
+premise. Without roots inside the small box, its forests are the spanning trees
+of the wired box rooted at its sink. -/
 set_option autoImplicit false
 namespace FiniteAvalanches.Wilson.Lattice.WiredBoxCopies
 open LatticeProb FiniteAvalanches.Sandpile FiniteAvalanches.Trees
@@ -12,7 +14,7 @@ open scoped Classical
 noncomputable section
 
 def quotientTreeEquiv {N M : ℕ} (hNM : N ≤ M) (R : RootPair)
-    (houtside : ∀ x, ¬FiniteWired.inBox N x → x ∈ R.one) :
+    (houtside : ∀ x, ¬FiniteWired.inBox N x → x ∈ R.zero ∪ R.one) :
     (graph (WiredTrees.graph N) (wiredRoots R N)).ComponentTree Set.univ ≃
       (graph (WiredTrees.graph M) (wiredRoots R M)).ComponentTree Set.univ where
   toFun t := ⟨t.val.image (quotientCopyEquiv hNM R houtside),
@@ -35,7 +37,7 @@ def quotientTreeEquiv {N M : ℕ} (hNM : N ≤ M) (R : RootPair)
       Finset.image_id']
 
 theorem liftCopies_image_quotientCopyEquiv {N M : ℕ} (hNM : N ≤ M) (R : RootPair)
-    (houtside : ∀ x, ¬FiniteWired.inBox N x → x ∈ R.one)
+    (houtside : ∀ x, ¬FiniteWired.inBox N x → x ∈ R.zero ∪ R.one)
     (t : Finset (Copy (WiredTrees.graph N) (wiredRoots R N))) :
     liftCopies (WiredTrees.graph M) (wiredRoots R M)
         (t.image (quotientCopyEquiv hNM R houtside)) =
@@ -47,14 +49,14 @@ theorem liftCopies_image_quotientCopyEquiv {N M : ℕ} (hNM : N ≤ M) (R : Root
 
 /-- Genuine bijection of the whole existing forest carriers. -/
 def finiteForestEquiv {N M : ℕ} (hNM : N ≤ M) (R : RootPair)
-    (houtside : ∀ x, ¬FiniteWired.inBox N x → x ∈ R.one) :
+    (houtside : ∀ x, ¬FiniteWired.inBox N x → x ∈ R.zero ∪ R.one) :
     FiniteForest R N ≃ FiniteForest R M :=
   (rootContractionEquiv (WiredTrees.graph N) (wiredRoots R N)).trans
     ((quotientTreeEquiv hNM R houtside).trans
       (rootContractionEquiv (WiredTrees.graph M) (wiredRoots R M)).symm)
 
 @[simp] theorem finiteForestEquiv_copies {N M : ℕ} (hNM : N ≤ M) (R : RootPair)
-    (houtside : ∀ x, ¬FiniteWired.inBox N x → x ∈ R.one) (F : FiniteForest R N) :
+    (houtside : ∀ x, ¬FiniteWired.inBox N x → x ∈ R.zero ∪ R.one) (F : FiniteForest R N) :
     (finiteForestEquiv hNM R houtside F).val = F.val.image (copyInLarger hNM) := by
   change liftCopies (WiredTrees.graph M) (wiredRoots R M)
       ((projectCopies (WiredTrees.graph N) (wiredRoots R N) F.val).image
@@ -62,7 +64,7 @@ def finiteForestEquiv {N M : ℕ} (hNM : N ≤ M) (R : RootPair)
   rw [liftCopies_image_quotientCopyEquiv,lift_project_forest _ _ F.property]
 
 @[simp] theorem finiteForestEquiv_symm_copies {N M : ℕ} (hNM : N ≤ M) (R : RootPair)
-    (houtside : ∀ x, ¬FiniteWired.inBox N x → x ∈ R.one) (F : FiniteForest R M) :
+    (houtside : ∀ x, ¬FiniteWired.inBox N x → x ∈ R.zero ∪ R.one) (F : FiniteForest R M) :
     ((finiteForestEquiv hNM R houtside).symm F).val = restrictCopies hNM F.val := by
   apply Finset.image_injective (copyInLarger_injective hNM)
   rw [image_restrictCopies_forest hNM R houtside F,
@@ -71,7 +73,7 @@ def finiteForestEquiv {N M : ℕ} (hNM : N ≤ M) (R : RootPair)
 
 /-- Whole original-copy counts agree, with no exterior-root multiplicity factor. -/
 theorem finiteForestCount_eq {N M : ℕ} (hNM : N ≤ M) (R : RootPair)
-    (houtside : ∀ x, ¬FiniteWired.inBox N x → x ∈ R.one) :
+    (houtside : ∀ x, ¬FiniteWired.inBox N x → x ∈ R.zero ∪ R.one) :
     finiteForestCount R N = finiteForestCount R M :=
   Nat.card_congr (finiteForestEquiv hNM R houtside)
 

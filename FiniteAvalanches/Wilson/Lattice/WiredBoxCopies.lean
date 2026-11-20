@@ -98,7 +98,7 @@ def copyInLarger {N M : ℕ} (hNM : N ≤ M) : FiniteWired.Edge N → FiniteWire
 /-- Source exterior roots force every nonroot of the large wired graph into
  the original small box; this is proved from literal root membership. -/
 theorem nonroot_inside {N M : ℕ} (R : RootPair)
-    (houtside : ∀ x, ¬FiniteWired.inBox N x → x ∈ R.one)
+    (houtside : ∀ x, ¬FiniteWired.inBox N x → x ∈ R.zero ∪ R.one)
     (v : FiniteWired.Vertex M) (hv : v ∉ (wiredRoots R M).val) :
     ∃ x : FiniteWired.Active M, v = some x ∧ FiniteWired.inBox N (FiniteWired.site x) := by
   cases v with
@@ -106,12 +106,18 @@ theorem nonroot_inside {N M : ℕ} (R : RootPair)
   | some x =>
     refine ⟨x,rfl,?_⟩
     by_contra hx
-    exact hv (Or.inr (houtside _ hx))
+    exact hv (houtside _ hx)
+
+/-- Exterior one roots are in particular exterior roots. -/
+theorem exterior_roots_of_one {N : ℕ} {R : RootPair}
+    (houtside : ∀ x, ¬FiniteWired.inBox N x → x ∈ R.one) :
+    ∀ x, ¬FiniteWired.inBox N x → x ∈ R.zero ∪ R.one :=
+  fun x hx => Or.inr (houtside x hx)
 
 /-- An edge between two original roots is absent from every actual rooted
 forest. In particular all copies entirely exterior to the small box vanish. -/
 theorem exterior_root_copies_absent {N M : ℕ} (R : RootPair)
-    (houtside : ∀ x, ¬FiniteWired.inBox N x → x ∈ R.one)
+    (houtside : ∀ x, ¬FiniteWired.inBox N x → x ∈ R.zero ∪ R.one)
     (F : FiniteForest R M) (e : FiniteWired.Edge M)
     (hl : (FiniteWired.endpoints e).1 = none ∨
       ∃ x, (FiniteWired.endpoints e).1 = some x ∧ ¬FiniteWired.inBox N (FiniteWired.site x))
@@ -119,14 +125,14 @@ theorem exterior_root_copies_absent {N M : ℕ} (R : RootPair)
       ∃ x, (FiniteWired.endpoints e).2 = some x ∧ ¬FiniteWired.inBox N (FiniteWired.site x)) :
     e ∉ F.val := by
   have ho (v : FiniteWired.Vertex M) (h : v = none ∨
-      ∃ x, v = some x ∧ ¬FiniteWired.inBox N (FiniteWired.site x)) : v ∈ wiredOne R M := by
+      ∃ x, v = some x ∧ ¬FiniteWired.inBox N (FiniteWired.site x)) : v ∈ (wiredRoots R M).val := by
     rcases h with rfl | ⟨x,rfl,hx⟩
-    · trivial
+    · exact Or.inr trivial
     · exact houtside _ hx
   intro he
   obtain ⟨r,_,_,hu⟩ := F.property.2 ((WiredTrees.graph M).left e)
-  have ha := hu ((WiredTrees.graph M).left e) (Or.inr (ho _ hl)) .refl
-  have hb := hu ((WiredTrees.graph M).right e) (Or.inr (ho _ hr))
+  have ha := hu ((WiredTrees.graph M).left e) (ho _ hl) .refl
+  have hb := hu ((WiredTrees.graph M).right e) (ho _ hr)
     (.single ⟨e,he,Or.inl ⟨rfl,rfl⟩⟩)
   exact (WiredTrees.graph M).loopless e (ha.trans hb.symm)
 

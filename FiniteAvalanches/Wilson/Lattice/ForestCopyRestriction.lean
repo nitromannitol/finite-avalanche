@@ -38,7 +38,7 @@ private theorem outside_of_no_small_vertex {N M : ℕ} (hNM : N ≤ M)
 /-- Every selected large-box copy is the image of exactly one original
 small-box copy. Root-root exterior copies cannot create a hidden fiber factor. -/
 theorem selected_copy_in_range {N M : ℕ} (hNM : N ≤ M) (R : RootPair)
-    (houtside : ∀ x, ¬FiniteWired.inBox N x → x ∈ R.one)
+    (houtside : ∀ x, ¬FiniteWired.inBox N x → x ∈ R.zero ∪ R.one)
     (F : FiniteForest R M) (e : FiniteWired.Edge M) (he : e ∈ F.val) :
     ∃ f : FiniteWired.Edge N, copyInLarger hNM f = e := by
   by_cases hl : ∃ x : FiniteWired.Active N,
@@ -74,7 +74,7 @@ def restrictCopies {N M : ℕ} (hNM : N ≤ M) (F : Finset (FiniteWired.Edge M))
     exact ⟨e,he,rfl⟩
 
  theorem image_restrictCopies_forest {N M : ℕ} (hNM : N ≤ M) (R : RootPair)
-    (houtside : ∀ x, ¬FiniteWired.inBox N x → x ∈ R.one)
+    (houtside : ∀ x, ¬FiniteWired.inBox N x → x ∈ R.zero ∪ R.one)
     (F : FiniteForest R M) :
     (restrictCopies hNM F.val).image (copyInLarger hNM) = F.val := by
   ext e

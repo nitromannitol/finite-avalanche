@@ -1,4 +1,4 @@
-import FiniteAvalanches.Walk.BarlowMasson.BoxContraction
+import FiniteAvalanches.Wilson.Lattice.FiniteBoxForestEquiv
 import FiniteAvalanches.Wilson.Lattice.WiredCylinderLaw
 import FiniteAvalanches.Wilson.Lattice.WiredJointCylinders
 import FiniteAvalanches.Wilson.Lattice.WiredObservationGeometry
@@ -16,7 +16,7 @@ branch, and adds the loop erasure of this walk.
 
 Take the root pair `sinkRoots N`, with no root inside the box and every exterior site a root.
 Its rooted forests in the box of size `N` are the spanning trees of the wired box rooted at the
-sink. By `WiredBoxCopies.ExteriorRoots.finiteForestEquiv` its rooted forests in every larger box
+sink. By `WiredBoxCopies.finiteForestEquiv` its rooted forests in every larger box
 have the same law on the edges of the box of size `N`. These laws converge to the unique law with
 the finite joint distributions of the lattice sampler (`finiteForestProbability_tendsto_of_cylinderLaw`).
 
@@ -43,7 +43,7 @@ forest of the smaller box on every edge with both endpoints in the smaller box. 
 theorem finiteEdgeField_finiteForestEquiv {N M : ℕ} (hNM : N ≤ M) (R : RootPair)
     (hext : ∀ x, ¬FiniteWired.inBox N x → x ∈ R.zero ∪ R.one) (F : FiniteForest R N)
     (e : LatticeEdge) (he : ∀ z ∈ e.val, FiniteWired.inBox N z) :
-    finiteEdgeField R M (ExteriorRoots.finiteForestEquiv hNM R hext F) e =
+    finiteEdgeField R M (finiteForestEquiv hNM R hext F) e =
       finiteEdgeField R N F e := by
   obtain ⟨i, rfl⟩ := exists_interiorEdge_of_inBox N e he
   obtain ⟨j, hj⟩ : ∃ j, copyInLarger hNM (Sum.inl i) = Sum.inl j := ⟨_, rfl⟩
@@ -52,7 +52,7 @@ theorem finiteEdgeField_finiteForestEquiv {N M : ℕ} (hNM : N ≤ M) (R : RootP
     rw [hj] at h
     exact h
   rw [finiteEdgeField_internal_eq R N F i, ← hji, finiteEdgeField_internal_eq,
-    ExteriorRoots.finiteForestEquiv_copies]
+    finiteForestEquiv_copies]
   apply Bool.decide_congr
   rw [← hj, Finset.mem_image]
   constructor
@@ -71,7 +71,7 @@ theorem finiteForestLaw_window_eq {N M : ℕ} (hNM : N ≤ M) (R : RootPair)
     (isClopen_jointEvent E ∅ pe pc).isClosed.measurableSet
   have hevent (F : FiniteForest R N) :
       finiteForestField R N F ∈ jointEvent E ∅ pe pc ↔
-        finiteForestField R M (ExteriorRoots.finiteForestEquiv hNM R hext F) ∈
+        finiteForestField R M (finiteForestEquiv hNM R hext F) ∈
           jointEvent E ∅ pe pc := by
     simp only [jointEvent, Set.mem_setOf_eq, Finset.notMem_empty, IsEmpty.forall_iff,
       implies_true, and_true, finiteForestField]
@@ -82,11 +82,11 @@ theorem finiteForestLaw_window_eq {N M : ℕ} (hNM : N ≤ M) (R : RootPair)
     · intro h e heE
       rw [← finiteEdgeField_finiteForestEquiv hNM R hext F e (hE e heE)]
       exact h e heE
-  have hcount := Nat.card_congr ((ExteriorRoots.finiteForestEquiv hNM R hext).subtypeEquiv
+  have hcount := Nat.card_congr ((finiteForestEquiv hNM R hext).subtypeEquiv
     (p := fun F => finiteForestField R N F ∈ jointEvent E ∅ pe pc)
     (q := fun F => finiteForestField R M F ∈ jointEvent E ∅ pe pc) hevent)
   rw [finiteForestLaw_count R N _ hm, finiteForestLaw_count R M _ hm,
-    ExteriorRoots.finiteForestCount_eq hNM R hext]
+    finiteForestCount_eq hNM R hext]
   congr 2
 
 /-- A wired box whose exterior consists of roots has, on its own edges, the finite joint

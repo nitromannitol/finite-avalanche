@@ -10,7 +10,7 @@ open scoped Classical
 noncomputable section
 
 theorem quotientVertexEquiv_project_active {N M : ℕ} (hNM : N ≤ M) (R : RootPair)
-    (houtside : ∀ x, ¬FiniteWired.inBox N x → x ∈ R.one)
+    (houtside : ∀ x, ¬FiniteWired.inBox N x → x ∈ R.zero ∪ R.one)
     (x : FiniteWired.Active N) :
     quotientVertexEquiv hNM R houtside (project (wiredRoots R N) (some x)) =
       project (wiredRoots R M) (some (activeEmbedding hNM x)) := by
@@ -29,15 +29,15 @@ theorem project_wired_sink (R : RootPair) (N : ℕ) :
   (project_eq_none _ _).mpr (Or.inr trivial)
 
 theorem project_exterior_active {N M : ℕ} (R : RootPair)
-    (houtside : ∀ x, ¬FiniteWired.inBox N x → x ∈ R.one)
+    (houtside : ∀ x, ¬FiniteWired.inBox N x → x ∈ R.zero ∪ R.one)
     (x : FiniteWired.Active M) (hx : ¬FiniteWired.inBox N (FiniteWired.site x)) :
     project (wiredRoots R M) (some x) = none :=
-  (project_eq_none _ _).mpr (Or.inr (houtside _ hx))
+  (project_eq_none _ _).mpr (houtside _ hx)
 
 /-- The actual contracted endpoints of every copied small edge match those
 of its actual large representative, allowing an orientation reversal. -/
 theorem copyInLarger_quotient_endpoints {N M : ℕ} (hNM : N ≤ M) (R : RootPair)
-    (houtside : ∀ x, ¬FiniteWired.inBox N x → x ∈ R.one) (e : FiniteWired.Edge N) :
+    (houtside : ∀ x, ¬FiniteWired.inBox N x → x ∈ R.zero ∪ R.one) (e : FiniteWired.Edge N) :
     (project (wiredRoots R M) ((FiniteWired.endpoints (copyInLarger hNM e)).1) =
         quotientVertexEquiv hNM R houtside
           (project (wiredRoots R N) ((FiniteWired.endpoints e).1)) ∧
@@ -91,7 +91,7 @@ theorem copyInLarger_quotient_endpoints {N M : ℕ} (hNM : N ≤ M) (R : RootPai
 
 /-- Survival is tested on actual contracted endpoints, not endpoint supports. -/
 theorem copyInLarger_survives_iff {N M : ℕ} (hNM : N ≤ M) (R : RootPair)
-    (houtside : ∀ x, ¬FiniteWired.inBox N x → x ∈ R.one) (e : FiniteWired.Edge N) :
+    (houtside : ∀ x, ¬FiniteWired.inBox N x → x ∈ R.zero ∪ R.one) (e : FiniteWired.Edge N) :
     project (wiredRoots R M) ((WiredTrees.graph M).left (copyInLarger hNM e)) ≠
         project (wiredRoots R M) ((WiredTrees.graph M).right (copyInLarger hNM e)) ↔
       project (wiredRoots R N) ((WiredTrees.graph N).left e) ≠
@@ -110,7 +110,7 @@ theorem copyInLarger_survives_iff {N M : ℕ} (hNM : N ≤ M) (R : RootPair)
 /-- Every surviving large-quotient copy is incident to an actual small-box
 nonroot; root-root exterior edges are deleted by the existing quotient. -/
 theorem surviving_large_copy_in_range {N M : ℕ} (hNM : N ≤ M) (R : RootPair)
-    (houtside : ∀ x, ¬FiniteWired.inBox N x → x ∈ R.one)
+    (houtside : ∀ x, ¬FiniteWired.inBox N x → x ∈ R.zero ∪ R.one)
     (e : Copy (WiredTrees.graph M) (wiredRoots R M)) :
     ∃ f : FiniteWired.Edge N, copyInLarger hNM f = e.val := by
   have hn : (WiredTrees.graph M).left e.val ∉ (wiredRoots R M).val ∨
@@ -131,13 +131,13 @@ theorem surviving_large_copy_in_range {N M : ℕ} (hNM : N ≤ M) (R : RootPair)
 
 /-- Surviving copies keep their original IDs; only endpoint-root labels change. -/
 def quotientCopyMap {N M : ℕ} (hNM : N ≤ M) (R : RootPair)
-    (houtside : ∀ x, ¬FiniteWired.inBox N x → x ∈ R.one)
+    (houtside : ∀ x, ¬FiniteWired.inBox N x → x ∈ R.zero ∪ R.one)
     (e : Copy (WiredTrees.graph N) (wiredRoots R N)) :
     Copy (WiredTrees.graph M) (wiredRoots R M) :=
   ⟨copyInLarger hNM e.val,(copyInLarger_survives_iff hNM R houtside e.val).mpr e.property⟩
 
 theorem quotientCopyMap_bijective {N M : ℕ} (hNM : N ≤ M) (R : RootPair)
-    (houtside : ∀ x, ¬FiniteWired.inBox N x → x ∈ R.one) :
+    (houtside : ∀ x, ¬FiniteWired.inBox N x → x ∈ R.zero ∪ R.one) :
     Function.Bijective (quotientCopyMap hNM R houtside) := by
   constructor
   · intro a b hab
@@ -152,19 +152,19 @@ theorem quotientCopyMap_bijective {N M : ℕ} (hNM : N ≤ M) (R : RootPair)
 
 /-- Actual quotient copied-edge equivalence, not an equivalence supplied as a premise. -/
 def quotientCopyEquiv {N M : ℕ} (hNM : N ≤ M) (R : RootPair)
-    (houtside : ∀ x, ¬FiniteWired.inBox N x → x ∈ R.one) :
+    (houtside : ∀ x, ¬FiniteWired.inBox N x → x ∈ R.zero ∪ R.one) :
     Copy (WiredTrees.graph N) (wiredRoots R N) ≃
       Copy (WiredTrees.graph M) (wiredRoots R M) :=
   Equiv.ofBijective (quotientCopyMap hNM R houtside)
     (quotientCopyMap_bijective hNM R houtside)
 
 @[simp] theorem quotientCopyEquiv_val {N M : ℕ} (hNM : N ≤ M) (R : RootPair)
-    (houtside : ∀ x, ¬FiniteWired.inBox N x → x ∈ R.one)
+    (houtside : ∀ x, ¬FiniteWired.inBox N x → x ∈ R.zero ∪ R.one)
     (e : Copy (WiredTrees.graph N) (wiredRoots R N)) :
     (quotientCopyEquiv hNM R houtside e).val = copyInLarger hNM e.val := rfl
 
 theorem quotientCopyEquiv_endpoints {N M : ℕ} (hNM : N ≤ M) (R : RootPair)
-    (houtside : ∀ x, ¬FiniteWired.inBox N x → x ∈ R.one)
+    (houtside : ∀ x, ¬FiniteWired.inBox N x → x ∈ R.zero ∪ R.one)
     (e : Copy (WiredTrees.graph N) (wiredRoots R N)) :
     ((graph (WiredTrees.graph M) (wiredRoots R M)).left (quotientCopyEquiv hNM R houtside e) =
         quotientVertexEquiv hNM R houtside ((graph (WiredTrees.graph N) (wiredRoots R N)).left e) ∧

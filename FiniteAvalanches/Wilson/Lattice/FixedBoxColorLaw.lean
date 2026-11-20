@@ -20,18 +20,18 @@ theorem finite_window_real_eq {N M : ℕ} (hNM : N ≤ M) (R : RootPair)
     ((isClopen_windowColorEvent W H).preimage continuous_snd).isClosed.measurableSet
   have hevent (F : FiniteForest R N) :
       finiteForestField R N F ∈ Prod.snd ⁻¹' windowColorEvent W H ↔
-        finiteForestField R M (finiteForestEquiv hNM R houtside F) ∈
+        finiteForestField R M (finiteForestEquiv hNM R (exterior_roots_of_one houtside) F) ∈
           Prod.snd ⁻¹' windowColorEvent W H := by
     change (fun x : W => finiteColors R N F (wiredSite N x.val)) ∈ H ↔
-      (fun x : W => finiteColors R M (finiteForestEquiv hNM R houtside F)
+      (fun x : W => finiteColors R M (finiteForestEquiv hNM R (exterior_roots_of_one houtside) F)
         (wiredSite M x.val)) ∈ H
     have hc : (fun x : W => finiteColors R N F (wiredSite N x.val)) =
-        (fun x : W => finiteColors R M (finiteForestEquiv hNM R houtside F)
+        (fun x : W => finiteColors R M (finiteForestEquiv hNM R (exterior_roots_of_one houtside) F)
           (wiredSite M x.val)) := by
       funext x
       exact (finiteForestEquiv_site_colors hNM R houtside F x.val).symm
     rw [hc]
-  have hcount := Nat.card_congr ((finiteForestEquiv hNM R houtside).subtypeEquiv
+  have hcount := Nat.card_congr ((finiteForestEquiv hNM R (exterior_roots_of_one houtside)).subtypeEquiv
     (p := fun F => finiteForestField R N F ∈ Prod.snd ⁻¹' windowColorEvent W H)
     (q := fun F => finiteForestField R M F ∈ Prod.snd ⁻¹' windowColorEvent W H) hevent)
   rw [Measure.real,Measure.real,finiteForestLaw_count R N _ hm,
@@ -43,7 +43,7 @@ theorem finite_window_real_eq {N M : ℕ} (hNM : N ≤ M) (R : RootPair)
     (Nat.card {F : FiniteForest R M //
       finiteForestField R M F ∈ Prod.snd ⁻¹' windowColorEvent W H} : ℝ) /
       finiteForestCount R M
-  rw [hcount,finiteForestCount_eq hNM R houtside]
+  rw [hcount,finiteForestCount_eq hNM R (exterior_roots_of_one houtside)]
 
 /-- Exact fixed-box identification on every finite window and every event,
 without a Wilson restart or color-law equality supplied as a hypothesis. -/

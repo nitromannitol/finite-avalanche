@@ -8,15 +8,15 @@ open scoped Classical
 noncomputable section
 
 /-- The actual larger box has no additional nonroot sites when the whole
-exterior of the smaller box is among the prescribed one roots. -/
+exterior of the smaller box consists of prescribed roots, of either color. -/
 def nonrootActiveEquiv {N M : ℕ} (hNM : N ≤ M) (R : RootPair)
-    (houtside : ∀ x, ¬FiniteWired.inBox N x → x ∈ R.one) :
+    (houtside : ∀ x, ¬FiniteWired.inBox N x → x ∈ R.zero ∪ R.one) :
     {x : FiniteWired.Active N // FiniteWired.site x ∉ R.zero ∪ R.one} ≃
       {x : FiniteWired.Active M // FiniteWired.site x ∉ R.zero ∪ R.one} where
   toFun x := ⟨activeEmbedding hNM x.val,x.property⟩
   invFun x := ⟨FiniteWired.activeOfSite N (FiniteWired.site x.val) (by
     by_contra hx
-    exact x.property (Or.inr (houtside _ hx))),x.property⟩
+    exact x.property (houtside _ hx)),x.property⟩
   left_inv x := Subtype.ext (FiniteWired.site_injective N rfl)
   right_inv x := Subtype.ext (FiniteWired.site_injective M rfl)
 
@@ -42,14 +42,14 @@ def nonrootWiredEquiv (R : RootPair) (N : ℕ) :
 This only transports vertices: the copied-forest equivalence still requires
 its separate surviving-copy and incidence proof. -/
 def quotientVertexEquiv {N M : ℕ} (hNM : N ≤ M) (R : RootPair)
-    (houtside : ∀ x, ¬FiniteWired.inBox N x → x ∈ R.one) :
+    (houtside : ∀ x, ¬FiniteWired.inBox N x → x ∈ R.zero ∪ R.one) :
     CopiedNetwork.NonemptyQuotient.Vertex (wiredRoots R N) ≃
       CopiedNetwork.NonemptyQuotient.Vertex (wiredRoots R M) :=
   Equiv.optionCongr ((nonrootWiredEquiv R N).trans
     ((nonrootActiveEquiv hNM R houtside).trans (nonrootWiredEquiv R M).symm))
 
 @[simp] theorem quotientVertexEquiv_none {N M : ℕ} (hNM : N ≤ M) (R : RootPair)
-    (houtside : ∀ x, ¬FiniteWired.inBox N x → x ∈ R.one) :
+    (houtside : ∀ x, ¬FiniteWired.inBox N x → x ∈ R.zero ∪ R.one) :
     quotientVertexEquiv hNM R houtside none = none := rfl
 
 end
