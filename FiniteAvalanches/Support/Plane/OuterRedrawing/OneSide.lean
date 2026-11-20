@@ -219,5 +219,86 @@ theorem exists_arc_to_path_vertex (h : StraightPath D m path copies) (A : Finset
         show 2 * (t : ℝ) < τ₀; have := min_le_left (τ₀ / 2) (1 / 2); linarith, ?_⟩
       rw [Path.trans_apply, dif_pos ht2]
 
+/-- The edge leaves its initial vertex above the horizontal line. -/
+def StartsAbove (D : Drawing J) (e : E) : Prop :=
+  ∃ τ > 0, ∀ t : ArcParameter, 0 < t.val → t.val < τ → 0 < (D.curve e t).2
+
+/-- The edge leaves its initial vertex below the horizontal line. -/
+def StartsBelow (D : Drawing J) (e : E) : Prop :=
+  ∃ τ > 0, ∀ t : ArcParameter, 0 < t.val → t.val < τ → (D.curve e t).2 < 0
+
+/-- The edge reaches its final vertex from above the horizontal line. -/
+def FinishesAbove (D : Drawing J) (e : E) : Prop :=
+  ∃ τ > 0, ∀ t : ArcParameter, 1 - τ < t.val → t.val < 1 → 0 < (D.curve e t).2
+
+/-- The edge reaches its final vertex from below the horizontal line. -/
+def FinishesBelow (D : Drawing J) (e : E) : Prop :=
+  ∃ τ > 0, ∀ t : ArcParameter, 1 - τ < t.val → t.val < 1 → (D.curve e t).2 < 0
+
+/-- An edge off the path cannot return to the horizontal line close to an
+interior path vertex. -/
+theorem off_line_near_vertex (h : StraightPath D m path copies) {e : E} (he : e ∉ range copies)
+    {a : ℕ} (ha0 : 0 < a) (ham : a < m) (t : ArcParameter) (ht0 : 0 < t.val) (ht1 : t.val < 1)
+    (hzero : (D.curve e t).2 = 0) : 1 / m ≤ |(D.curve e t).1 - (a : ℝ) / m| := by
+  by_contra hlt
+  push Not at hlt
+  have hm := h.m_pos_real
+  have ha1 : (1 : ℝ) ≤ a := by exact_mod_cast ha0
+  have ham' : (a : ℝ) + 1 ≤ m := by exact_mod_cast ham
+  have h1 := abs_lt.mp hlt
+  have hseg : D.curve e t ∈ unitSeg := by
+    refine ⟨hzero, ?_, ?_⟩
+    · have : (a : ℝ) / m - 1 / m = ((a : ℝ) - 1) / m := by ring
+      have h2 : 0 ≤ ((a : ℝ) - 1) / m := div_nonneg (by linarith) hm.le
+      linarith [h1.1]
+    · have : (a : ℝ) / m + 1 / m = ((a : ℝ) + 1) / m := by ring
+      have h2 : ((a : ℝ) + 1) / m ≤ 1 := by rw [div_le_one hm]; exact ham'
+      linarith [h1.2]
+  obtain ⟨ht, -⟩ := h.nonpath_curve_on_unitSeg he hseg
+  rcases ht with ht | ht <;> linarith
+
+/-- An edge off the path leaves an interior path vertex on one side of the line. -/
+theorem starts_above_or_below (h : StraightPath D m path copies) {e : E} (he : e ∉ range copies)
+    {a : ℕ} (ha0 : 0 < a) (ham : a < m) (hl : J.left e = path ⟨a, by omega⟩) :
+    StartsAbove D e ∨ StartsBelow D e := by
+  have hm := h.m_pos_real
+  have h0 : D.curve e zeroParam = ((a : ℝ) / m, 0) := by rw [D.start, hl, h.point]
+  obtain ⟨τ, hτ, -, hside⟩ := sign_near_zero (D.continuous e) (by positivity : (0 : ℝ) < 1 / m)
+    h0 (fun t ht0 ht1 hz => off_line_near_vertex h he ha0 ham t ht0 ht1 hz)
+  rcases hside with hs | hs
+  · exact Or.inl ⟨τ, hτ, hs⟩
+  · exact Or.inr ⟨τ, hτ, hs⟩
+
+/-- An edge off the path reaches an interior path vertex from one side of the line. -/
+theorem finishes_above_or_below (h : StraightPath D m path copies) {e : E}
+    (he : e ∉ range copies) {a : ℕ} (ha0 : 0 < a) (ham : a < m)
+    (hr : J.right e = path ⟨a, by omega⟩) : FinishesAbove D e ∨ FinishesBelow D e := by
+  have hm := h.m_pos_real
+  let γ : ArcParameter → ℝ × ℝ := fun t => D.curve e (unitInterval.symm t)
+  have hγ : Continuous γ := (D.continuous e).comp unitInterval.continuous_symm
+  have h0 : γ zeroParam = ((a : ℝ) / m, 0) := by
+    change D.curve e (unitInterval.symm zeroParam) = _
+    have : unitInterval.symm zeroParam = oneParam := Subtype.ext (by simp)
+    rw [this, D.finish, hr, h.point]
+  obtain ⟨τ, hτ, -, hside⟩ := sign_near_zero hγ (by positivity : (0 : ℝ) < 1 / m) h0
+    (fun t ht0 ht1 hz => off_line_near_vertex h he ha0 ham _
+      (by simp only [unitInterval.coe_symm_eq]; linarith)
+      (by simp only [unitInterval.coe_symm_eq]; linarith) hz)
+  have hconv : ∀ t : ArcParameter, 1 - τ < t.val → t.val < 1 →
+      D.curve e t = γ (unitInterval.symm t) ∧ 0 < (unitInterval.symm t).val ∧
+        (unitInterval.symm t).val < τ := by
+    intro t ht0 ht1
+    refine ⟨by simp [γ], by simp only [unitInterval.coe_symm_eq]; linarith,
+      by simp only [unitInterval.coe_symm_eq]; linarith⟩
+  rcases hside with hs | hs
+  · refine Or.inl ⟨τ, hτ, fun t ht0 ht1 => ?_⟩
+    obtain ⟨he', h1, h2⟩ := hconv t ht0 ht1
+    rw [he']
+    exact hs _ h1 h2
+  · refine Or.inr ⟨τ, hτ, fun t ht0 ht1 => ?_⟩
+    obtain ⟨he', h1, h2⟩ := hconv t ht0 ht1
+    rw [he']
+    exact hs _ h1 h2
+
 end
 end FiniteAvalanches.Electrical.StatementGeometry.OuterRedrawing
