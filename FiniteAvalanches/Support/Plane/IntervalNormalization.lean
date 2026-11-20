@@ -150,11 +150,12 @@ theorem loopDeg_sub_const_sub_eq_one_of_crossing_interval
 orientations, has a unit winding jump across sufficiently close real points. -/
 theorem exists_winding_jump_of_local_crossing
     (γ : C(unitInterval, ℂ)) (hclosed : γ 0 = γ 1)
+    {ε : ℝ} (hε : 0 < ε)
     {u v w : ℝ} (hu : 0 < u) (huv : u < v) (hvw : v < w) (hw : w < 1)
     (hzero : ∀ t : unitInterval, γ t = 0 ↔ (t : ℝ) = v)
     (hpos : ∀ t : unitInterval, u ≤ (t : ℝ) → (t : ℝ) < v → 0 < (γ t).im)
     (hneg : ∀ t : unitInterval, v < (t : ℝ) → (t : ℝ) ≤ w → (γ t).im < 0) :
-    ∃ (a : ℝ) (_ : 0 < a) (hp : ∀ t, γ t ≠ (a : ℂ))
+    ∃ (a : ℝ) (_ : 0 < a) (_ : a < ε) (hp : ∀ t, γ t ≠ (a : ℂ))
         (hm : ∀ t, γ t ≠ -(a : ℂ)),
       loopDeg (γ - ContinuousMap.const unitInterval (a : ℂ))
           (fun t => sub_ne_zero.mpr (hp t)) -
@@ -173,8 +174,16 @@ theorem exists_winding_jump_of_local_crossing
     have hv := (hzero t₀).mp he
     rcases ht₀ with ht | ht <;> linarith
   have hr : 0 < ‖γ t₀‖ := norm_pos_iff.mpr h₀
-  let a : ℝ := ‖γ t₀‖ / 2
+  let a : ℝ := min ‖γ t₀‖ ε / 2
   have ha : 0 < a := by dsimp [a]; positivity
+  have hae : a < ε := by
+    dsimp [a]
+    have h := min_le_right ‖γ t₀‖ ε
+    linarith
+  have har : a < ‖γ t₀‖ := by
+    dsimp [a]
+    have h := min_le_left ‖γ t₀‖ ε
+    linarith
   have hfar : ∀ t : unitInterval, (t : ℝ) ≤ u ∨ w ≤ (t : ℝ) →
       a ^ 2 < (γ t).re ^ 2 + (γ t).im ^ 2 := by
     intro t ht
@@ -183,7 +192,6 @@ theorem exists_winding_jump_of_local_crossing
     have hsq : ‖γ t‖ ^ 2 = (γ t).re ^ 2 + (γ t).im ^ 2 := by
       rw [Complex.sq_norm, Complex.normSq_apply]
       ring
-    dsimp [a]
     nlinarith
   have hp : ∀ t, γ t ≠ (a : ℂ) := by
     intro t he
@@ -227,7 +235,7 @@ theorem exists_winding_jump_of_local_crossing
     · have h := hneg t ht (le_of_not_ge hhi)
       rw [he] at h
       simp at h
-  refine ⟨a, ha, hp, hm, ?_⟩
+  refine ⟨a, ha, hae, hp, hm, ?_⟩
   apply loopDeg_sub_const_sub_eq_one_of_crossing_interval γ hclosed ha hp hm hu huv hvw hw
     (fun t ht => hfar t (ht.imp le_of_lt le_of_lt)) hpos hneg
   intro t ht
@@ -239,20 +247,21 @@ theorem exists_winding_jump_of_local_crossing
 image, preserving the sign of the jump. -/
 theorem Source.OrientedChart.exists_winding_jump_of_local_crossing
     (chart : Source.OrientedChart) (γ : C(unitInterval, ℂ)) (hclosed : γ 0 = γ 1)
+    {ε : ℝ} (hε : 0 < ε)
     {u v w : ℝ} (hu : 0 < u) (huv : u < v) (hvw : v < w) (hw : w < 1)
     (hzero : ∀ t : unitInterval, γ t = 0 ↔ (t : ℝ) = v)
     (hpos : ∀ t : unitInterval, u ≤ (t : ℝ) → (t : ℝ) < v → 0 < (γ t).im)
     (hneg : ∀ t : unitInterval, v < (t : ℝ) → (t : ℝ) ≤ w → (γ t).im < 0) :
-    ∃ (a : ℝ) (_ : 0 < a) (hp : ∀ t, γ t ≠ (a : ℂ))
+    ∃ (a : ℝ) (_ : 0 < a) (_ : a < ε) (hp : ∀ t, γ t ≠ (a : ℂ))
         (hm : ∀ t, γ t ≠ -(a : ℂ)),
       loopDeg (slice (chart.isotopyLoop (a : ℂ) γ) 1)
           (fun t => chart.isotopyLoop_ne_zero (a : ℂ) γ hp (t, 1)) -
         loopDeg (slice (chart.isotopyLoop (-(a : ℂ)) γ) 1)
           (fun t => chart.isotopyLoop_ne_zero (-(a : ℂ)) γ hm (t, 1)) = 1 := by
-  obtain ⟨a, ha, hp, hm, hdeg⟩ :=
+  obtain ⟨a, ha, hae, hp, hm, hdeg⟩ :=
     FiniteAvalanches.Electrical.exists_winding_jump_of_local_crossing
-      γ hclosed hu huv hvw hw hzero hpos hneg
-  refine ⟨a, ha, hp, hm, ?_⟩
+      γ hclosed hε hu huv hvw hw hzero hpos hneg
+  refine ⟨a, ha, hae, hp, hm, ?_⟩
   rw [chart.isotopyLoop_degree (a : ℂ) γ hp hclosed,
     chart.isotopyLoop_degree (-(a : ℂ)) γ hm hclosed]
   exact hdeg
