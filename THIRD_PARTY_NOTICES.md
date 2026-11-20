@@ -18,8 +18,8 @@ header naming its source repository, module path and commit, and the changes mad
   commit `05a43d29cde026618777db3d4e4316204ccca237`: the 128 modules under
   `FiniteAvalanches/Support/Schoenflies/`, copied from `Schoenflies/`. They are distributed under
   the [Apache License 2.0](FiniteAvalanches/Support/Schoenflies/LICENSE), whose text is kept next to
-  them. Each header keeps the upstream copyright and author lines and states that the file was
-  modified: comments removed, imports renamed, and explicit binders added in six files.
+  them. Each header keeps the upstream copyright, licence and author lines verbatim and states that
+  the file was modified: comments removed, imports renamed, and explicit binders added in six files.
 - **Leonardo Bonanno, [lean-formalizations](https://github.com/leobon12/lean-formalizations/tree/31e748330ee154d5f41537c4b01f71b8a5510c2d)**,
   commit `31e748330ee154d5f41537c4b01f71b8a5510c2d`: six modules under
   `FiniteAvalanches/Support/Plane/`, copied with attribution to Leonardo Bonanno:

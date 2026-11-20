@@ -1,6 +1,6 @@
 /-
 Copyright (c) 2026 Álvaro Begué. All rights reserved.
-Released under the Apache License, Version 2.0.
+Released under Apache 2.0 license as described in the file LICENSE.
 Authors: Álvaro Begué
 Source: https://github.com/alonamaloh/schoenflies-lean, commit 05a43d29cde026618777db3d4e4316204ccca237, Schoenflies/SkeletonAccess.lean.
 Modified for this project: comments removed and replaced by a one-line module docstring, and
