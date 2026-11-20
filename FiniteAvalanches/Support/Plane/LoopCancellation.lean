@@ -1,4 +1,5 @@
 import FiniteAvalanches.Support.Plane.NestedLoops
+import Mathlib.Order.Zorn
 
 /-!
 # Laminar families of loops
@@ -197,5 +198,36 @@ theorem exists_upper_loopCancellation_of_chain
   refine ⟨T, ⟨hTloop, hTdisj⟩, ?_⟩
   intro A hA v hv
   exact hTcover v (mem_sUnion.mpr ⟨A, hA, hv⟩)
+
+/-- Every path in a Hausdorff space has a maximal loop cancellation. -/
+theorem exists_maximal_loopCancellation
+    {X : Type*} [TopologicalSpace X] [T2Space X] {x y : X} (p : Path x y) :
+    ∃ M, IsLoopCancellation p M ∧ ∀ T, IsLoopCancellation p T →
+      LoopFamilyRefines M T → LoopFamilyRefines T M := by
+  let α := {S : Set (unitInterval × unitInterval) // IsLoopCancellation p S}
+  let rel : α → α → Prop := fun A B => LoopFamilyRefines A.1 B.1
+  have hbound : ∀ C : Set α, IsChain rel C → ∃ B, ∀ A ∈ C, rel A B := by
+    intro C hC
+    let D : Set (Set (unitInterval × unitInterval)) := Subtype.val '' C
+    have hcancel : ∀ A ∈ D, IsLoopCancellation p A := by
+      rintro A ⟨A', _, rfl⟩
+      exact A'.2
+    have hchain : ∀ A ∈ D, ∀ B ∈ D, LoopFamilyRefines A B ∨ LoopFamilyRefines B A := by
+      rintro A ⟨A', hA', rfl⟩ B ⟨B', hB', rfl⟩
+      by_cases heq : A' = B'
+      · subst B'
+        left
+        intro v hv
+        exact ⟨v, hv, le_rfl, le_rfl⟩
+      · exact hC hA' hB' heq
+    obtain ⟨T, hT, hupper⟩ := exists_upper_loopCancellation_of_chain p D hcancel hchain
+    refine ⟨⟨T, hT⟩, ?_⟩
+    intro A hA
+    exact hupper A.1 ⟨A, hA, rfl⟩
+  obtain ⟨M, hM⟩ := exists_maximal_of_chains_bounded hbound
+    (fun hAB hBC => LoopFamilyRefines.trans hAB hBC)
+  refine ⟨M.1, M.2, ?_⟩
+  intro T hT hMT
+  exact hM ⟨T, hT⟩ hMT
 
 end FiniteAvalanches.Electrical.StatementGeometry
