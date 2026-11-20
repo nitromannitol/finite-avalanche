@@ -223,6 +223,64 @@ theorem mem_pastSites_iff {B : Finset Site2} (hB : B ⊆ Γ) (x : Site2) :
     rw [siteVertex_of_mem (hB hb), siteVertex_of_mem hx] at hmem
     exact hmem
 
+theorem measurableSet_pastEvent (B S W : Finset Site2) : MeasurableSet (pastEvent B S W) :=
+  (isClopen_pastEvent B S W).isClosed.measurableSet
+
+theorem measurableSet_tightEvent (b : Site2) (W : Finset Site2) :
+    MeasurableSet (tightEvent b W) :=
+  (isClopen_tightEvent b W).isClosed.measurableSet
+
+theorem treeLaw_preimage_gammaField (A : Set EdgeField) (hA : MeasurableSet A) :
+    (graph Γ).treeLaw {t | gammaField Γ t ∈ A} = forestLaw (Γ : Set Site2) (radius Γ) A := by
+  rw [← map_gammaField_treeLaw, Measure.map_apply (measurable_of_countable _) hA]
+  rfl
+
+/-- The past of `B` in the wired volume is controlled by its local event. -/
+theorem treeLaw_pastSites_le {B S W : Finset Site2} (hBΓ : B ⊆ Γ) (hWΓ : W ⊆ Γ)
+    (hnbr : ∀ b ∈ B, ∀ w, (lattice 2).Adj b w → w ∈ W) :
+    (graph Γ).treeLaw {t | pastSites Γ B t = S} ≤
+      forestLaw (Γ : Set Site2) (radius Γ) (pastEvent B S W) := by
+  rw [← treeLaw_preimage_gammaField Γ _ (measurableSet_pastEvent B S W)]
+  apply measure_mono
+  intro t ht
+  simp only [Set.mem_setOf_eq] at ht ⊢
+  refine pastEvent_of_inPast (hT := treeGraph_isTree Γ t) (wiredTreeLink Γ t) hBΓ hWΓ hnbr
+    fun x => ?_
+  rw [← ht]
+  exact mem_pastSites_iff Γ t hBΓ x
+
+/-- The past of `B` leaves a box only on a tightness event at some site of `B`. -/
+theorem treeLaw_pastSites_not_subset_le {B : Finset Site2} (hBΓ : B ⊆ Γ)
+    (hnbr : ∀ b ∈ B, ∀ z, (lattice 2).Adj b z → z ∈ Γ) (k : ℕ)
+    (hbox : ∀ x : Site2, |x 0| ≤ k → |x 1| ≤ k → ∀ z, (lattice 2).Adj x z → z ∈ Γ) :
+    (graph Γ).treeLaw {t | ¬pastSites Γ B t ⊆ boxFinset k} ≤
+      ∑ b ∈ B, forestLaw (Γ : Set Site2) (radius Γ) (tightEvent b (boxFinset k)) := by
+  have hsub : {t : (graph Γ).SpanningTree | ¬pastSites Γ B t ⊆ boxFinset k} ⊆
+      ⋃ b ∈ B, {t | gammaField Γ t ∈ tightEvent b (boxFinset k)} := by
+    intro t ht
+    simp only [Set.mem_setOf_eq, Finset.not_subset] at ht
+    obtain ⟨x, hx, hxk⟩ := ht
+    obtain ⟨hxΓ, b, hb, hmem⟩ := (mem_pastSites_iff Γ t hBΓ x).mp hx
+    simp only [Set.mem_iUnion, Set.mem_setOf_eq, exists_prop]
+    refine ⟨b, hb, ?_⟩
+    by_contra hcert
+    obtain ⟨h0, h1⟩ := inPast_bounded (hT := treeGraph_isTree Γ t) (wiredTreeLink Γ t) (hBΓ hb)
+      (hnbr b hb) hbox hcert hxΓ hmem
+    apply hxk
+    rw [mem_boxFinset]
+    intro i
+    fin_cases i
+    · exact abs_le.mp h0
+    · exact abs_le.mp h1
+  calc (graph Γ).treeLaw {t | ¬pastSites Γ B t ⊆ boxFinset k}
+      ≤ (graph Γ).treeLaw (⋃ b ∈ B, {t | gammaField Γ t ∈ tightEvent b (boxFinset k)}) :=
+        measure_mono hsub
+    _ ≤ ∑ b ∈ B, (graph Γ).treeLaw {t | gammaField Γ t ∈ tightEvent b (boxFinset k)} :=
+        measure_biUnion_finset_le _ _
+    _ = ∑ b ∈ B, forestLaw (Γ : Set Site2) (radius Γ) (tightEvent b (boxFinset k)) := by
+        refine Finset.sum_congr rfl fun b _ => ?_
+        exact treeLaw_preimage_gammaField Γ _ (measurableSet_tightEvent b _)
+
 end
 
 end FiniteAvalanches.Sandpile.GammaGraph
