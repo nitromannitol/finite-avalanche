@@ -27,7 +27,6 @@ theorem eventually_subset_finiteEdgeExhaustion (E : Finset LatticeEdge) :
   intro e he
   apply Finset.mem_biUnion.mpr
   refine ⟨i, Finset.mem_range.mpr (by omega), ?_⟩
-  change e ∈ finiteEdgeEnumeration i
   change finiteEdgeEnumeration i = E at hi
   rw [hi]
   exact he

@@ -53,6 +53,7 @@ theorem BranchHistory.Realizes.successor_mem_roots
         change follows (fun v => head v (a v)) _ at hf
         exact Or.inr (follows_successor_mem _ _ hf hdep)
 
+omit [DecidableEq V] in
 /-- Two rootward maps that agree on a closed set have the same first root for
 every vertex of that set. -/
 theorem firstRoot_eq_of_agree_on_closed (R U : Set V) (f g : V → V)

@@ -119,7 +119,7 @@ theorem stackExplore_eq_historyErasedCursor
     have hs := stackStep_eq_history_of_boundedHit head S (x n) j c N σ hcursor hhit
     constructor
     · rw [List.range_succ, List.map_append, stackExplore_append, hexplore]
-      simpa only [List.map_singleton, stackExplore, hs.1, Option.bind_some,
+      simp only [List.map_singleton, stackExplore, hs.1, Option.bind_some,
         boundedBranchHistory, branchHistoryRoots, branchHistoryErasedCursor, a, S, c, j]
     · simpa only [boundedBranchHistory, branchHistoryRoots, branchHistoryCursor,
         branchHistoryErasedCursor, a, S, c, j] using hs.2

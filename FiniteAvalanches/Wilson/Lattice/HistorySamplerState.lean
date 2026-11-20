@@ -64,7 +64,6 @@ theorem samplerRun_eq_branchHistorySampler (st : SamplerState) (x : ℕ → Site
     simp only [Option.bind_some, samplerRun, Nat.zero_add]
     have he : boundedWordHit latticeDirectionHead
         (branchHistoryRoots latticeDirectionHead x st.covered n a) (x n) c N (rows n) = t := by
-      change boundedWordHit latticeDirectionHead _ (x n) c N (rows n) = _
       rw [← hroots]
     have hb : (samplerStep mid (x n) (rows n)).bind (fun a => some a) =
         samplerStep mid (x n) (rows n) := by

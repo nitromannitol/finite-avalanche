@@ -32,7 +32,6 @@ theorem wiredSite_wiredVertexSite (B : ℕ) (v : FiniteWired.Vertex B) :
     wiredSite B (wiredVertexSite B v) = v := by
   cases v with
   | none =>
-    change wiredSite B (wiredVertexSite B none) = none
     rw [wiredSite, dif_neg (wiredVertexSite_none_not_inBox B)]
   | some v =>
     have hv : FiniteWired.inBox B (FiniteWired.site v) := fun i => (v i).property

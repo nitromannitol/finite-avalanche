@@ -14,6 +14,7 @@ noncomputable section
 
 variable {V W D : Type*} [DecidableEq V] [DecidableEq W]
 
+omit [DecidableEq V] in
 /-- A word trace lists its successive positions in chronological order. -/
 theorem wordTrace_vertices (head : V → D → V) (x : V) (w : ℕ → D) :
     letI : Quiver V := instructionQuiver head

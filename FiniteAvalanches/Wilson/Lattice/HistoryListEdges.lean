@@ -132,7 +132,6 @@ theorem samplerRun_edges_eq_branchHistoryEdgeSet (st : SamplerState) (x : ℕ �
     change out.edges = mid.edges ∪ pathUndirectedEdges (loopErase p.2) at hed
     have he : boundedWordHit latticeDirectionHead
         (branchHistoryRoots latticeDirectionHead x st.covered n a) (x n) c N (rows n) = t := by
-      change boundedWordHit latticeDirectionHead _ (x n) c N (rows n) = _
       rw [← hroots]
     change out.edges = st.edges ∪ branchHistoryEdgeSet latticeDirectionHead x (n + 1)
       (a, stoppedDirectionHistory (boundedWordHit latticeDirectionHead

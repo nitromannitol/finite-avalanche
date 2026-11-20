@@ -51,6 +51,7 @@ def BranchHistory.Realizes (head : V → FiniteWired.Direction → V) (x : ℕ �
     (a : V → FiniteWired.Direction) (n : ℕ) (h : BranchHistory n) : Prop :=
   BranchHistory.Selected head x (fun p => a p.1) (fun _ => 0) n h
 
+omit [DecidableEq V] in
 /-- Selection of a path depends only on the selected instructions. -/
 theorem selected_constant_top (head : V → FiniteWired.Direction → V)
     (σ : V × ℕ → FiniteWired.Direction) (k : Cursor V) {x y : V}
@@ -88,6 +89,7 @@ theorem branchHistory_top_realizes_of_hits
   exact BranchHistory.Selected.top head x σ n _ _
     (branchHistory_selected_of_hits head x R k N n σ h)
 
+omit [DecidableEq V] in
 /-- Two assignments selecting the same path agree at each departure. -/
 theorem selected_directions_eq_of_mem_departures
     (head : V → FiniteWired.Direction → V) (a b : V → FiniteWired.Direction)

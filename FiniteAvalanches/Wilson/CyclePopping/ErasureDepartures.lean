@@ -28,6 +28,7 @@ theorem departures_loopErase_subset {a b : V} (p : Path a b) :
     have hn := (Path.dropLast_append_end_eq (loopErase p)) ▸ loopErase_vertices_nodup p
     exact False.elim ((List.nodup_append.mp hn).2.2 b hv b (List.mem_singleton_self b) rfl)
 
+omit [DecidableEq V] in
 /-- Along a path that follows an arrow map without departing from a root,
 every vertex has the same first root as the endpoint. -/
 theorem firstRoot_eq_of_follows_avoids (R : Set V) (f : V → V)

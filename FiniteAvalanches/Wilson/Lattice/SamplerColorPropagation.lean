@@ -103,7 +103,6 @@ theorem samplerRun_colors_eq_branchHistoryColor (st : SamplerState) (x : ℕ →
     change out.colors = fun v => if v ∈ departures (loopErase p.2) then mid.colors p.1 else mid.colors v at hcolor
     have he : boundedWordHit latticeDirectionHead
         (branchHistoryRoots latticeDirectionHead x st.covered n a) (x n) c N (rows n) = t := by
-      change boundedWordHit latticeDirectionHead _ (x n) c N (rows n) = _
       rw [← hroots]
     change out.colors = branchHistoryColor latticeDirectionHead x st.colors (n + 1)
       (a, stoppedDirectionHistory (boundedWordHit latticeDirectionHead

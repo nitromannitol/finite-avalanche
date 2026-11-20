@@ -19,7 +19,7 @@ theorem historyTrace_selected_of_boundedHit
     (head : V → FiniteWired.Direction → V) (R : Set V) (x : V)
     (k l : Cursor V) (N : ℕ) (σ : V × ℕ → FiniteWired.Direction)
     (hcursor : ∀ v, v ∉ R → k v = l v)
-    (h : boundedWordHit head R x l N (readingLetter head x l σ) < N) :
+    (_h : boundedWordHit head R x l N (readingLetter head x l σ) < N) :
     letI : Quiver V := instructionQuiver head
     let p := stoppedDirectionHistory (boundedWordHit head R x l N) (readingLetter head x l σ)
     selected (instructionArrowStacks head (fun v i => σ (v, i)))

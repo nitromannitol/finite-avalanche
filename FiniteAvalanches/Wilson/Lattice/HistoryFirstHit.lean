@@ -16,6 +16,7 @@ noncomputable section
 
 variable {V : Type*} [DecidableEq V]
 
+omit [DecidableEq V] in
 /-- A finite word trace departs from exactly its positions before the endpoint. -/
 theorem wordTrace_departures (head : V → FiniteWired.Direction → V)
     (x : V) (w : WalkDriver) :
