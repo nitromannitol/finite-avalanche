@@ -2,8 +2,8 @@
 Copied from Leonardo Bonanno's lean-formalizations
 (https://github.com/leobon12/lean-formalizations), module
 `QuantumZipper/Proofs/Complex/TopoJaniszewski.lean`, commit 31e748330ee154d5f41537c4b01f71b8a5510c2d.
-Changes: imports renamed to this repository's modules; module docstring
-shortened.
+Changes: import renamed to this repository's module; module docstring replaced
+by a short heading; one line comment removed.
 -/
 import FiniteAvalanches.Support.Plane.TopoEilenberg
 

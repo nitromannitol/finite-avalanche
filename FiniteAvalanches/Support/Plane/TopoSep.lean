@@ -2,7 +2,10 @@
 Copied from Leonardo Bonanno's lean-formalizations
 (https://github.com/leobon12/lean-formalizations), module
 `QuantumZipper/Proofs/Complex/TopoSep.lean`, commit 31e748330ee154d5f41537c4b01f71b8a5510c2d.
-Changes: module docstring shortened.
+Changes: module docstring replaced by a short heading; the docstrings of
+`ULC.image_Icc`, `ULC.union_of_isCompact_of_isClosed` and `ULC.union` reworded, dropping
+the upstream remarks "Own elementary proof" and the remark that the hypotheses `hfin` and
+`hne` of the original statement are not needed.
 -/
 import Mathlib.Topology.Connected.LocallyConnected
 import Mathlib.Topology.MetricSpace.Thickening

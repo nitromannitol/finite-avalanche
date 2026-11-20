@@ -2,8 +2,8 @@
 Copied from Leonardo Bonanno's lean-formalizations
 (https://github.com/leobon12/lean-formalizations), module
 `MatedCRTHarmonic/Topology/PlanarCore.lean`, commit 31e748330ee154d5f41537c4b01f71b8a5510c2d.
-Changes: imports renamed to this repository's modules; module docstring
-rewritten.
+Changes: imports renamed to this repository's modules; module docstring replaced
+by a short heading. The rest of the file is unchanged.
 -/
 import Mathlib.Topology.Connected.LocallyPathConnected
 import FiniteAvalanches.Support.Plane.Disconnect

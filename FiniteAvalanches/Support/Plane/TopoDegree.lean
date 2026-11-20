@@ -2,8 +2,10 @@
 Copied from Leonardo Bonanno's lean-formalizations
 (https://github.com/leobon12/lean-formalizations), module
 `QuantumZipper/Proofs/Complex/TopoDegree.lean`, commit 31e748330ee154d5f41537c4b01f71b8a5510c2d.
-Changes: `Set.domRestrict` replaced by `Set.restrict` for the pinned Mathlib,
-with one proof step expanded; some comments removed.
+Changes: `Set.domRestrict` and `continuousOn_iff_continuous_domRestrict` replaced
+by `Set.restrict` and `continuousOn_iff_continuous_restrict` for the pinned Mathlib, with
+that proof step expanded; the module heading shortened by dropping its upstream node label;
+three line comments removed. The rest of the module docstring is unchanged.
 -/
 import Mathlib.Analysis.Complex.CoveringMap
 import Mathlib.Topology.Homotopy.Lifting

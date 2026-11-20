@@ -2,8 +2,10 @@
 Copied from Leonardo Bonanno's lean-formalizations
 (https://github.com/leobon12/lean-formalizations), module
 `QuantumZipper/Proofs/Complex/TopoEilenberg.lean`, commit 31e748330ee154d5f41537c4b01f71b8a5510c2d.
-Changes: imports renamed to this repository's modules; `Set.domRestrict`
-replaced by `Set.restrict` for the pinned Mathlib; module docstring shortened.
+Changes: imports renamed to this repository's modules; `Set.domRestrict` and
+`continuousOn_iff_continuous_domRestrict` replaced by `Set.restrict` and
+`continuousOn_iff_continuous_restrict` for the pinned Mathlib; module docstring replaced by
+a short heading; eight line comments removed.
 -/
 import FiniteAvalanches.Support.Plane.TopoDegree
 import FiniteAvalanches.Support.Plane.TopoSep
