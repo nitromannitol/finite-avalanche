@@ -1,19 +1,19 @@
 {
   "schema_version": 1,
-  "status": "REVIEWED_CURRENT_PAIR",
+  "status": "PENDING_CURRENT_SOURCE_REVIEW",
   "target_export": "FiniteAvalanchesCurrent.RegisteredPast.Main.finite_avalanches_origin",
-  "independent": true,
+  "independent": false,
   "producer_role": "finite-wilson",
   "reviewer_role": "independent-pair-review",
-  "whole_integer_carrier": true,
-  "joint_constants_before_all_real_scales": true,
-  "source_characterizations_checked": true,
-  "exact_type_and_bodies_checked": true,
-  "source_inventory_sha256": "dd318a3495fa60b56eef122f4d416f0f6fea48d763234d1a87a44f5437dbbffa",
+  "whole_integer_carrier": false,
+  "joint_constants_before_all_real_scales": false,
+  "source_characterizations_checked": false,
+  "exact_type_and_bodies_checked": false,
+  "source_inventory_sha256": "aa619434711affeb0ae68ae5b440ecfb7cdea6e3d8d6eb36a9cd62a4fd69f5c5",
   "bindings": [
     {
       "path": "FiniteAvalanchesAudit/MainOrigin/Challenge.lean",
-      "sha256": "10f983409515ce8944605aa3ff4f405944de4d2ba763b3226e034d9872c9fbe3"
+      "sha256": "52004b3acf5f72c1bbe74f3b730b7c998d6b0d80677fe34fde91d0453d4e663f"
     },
     {
       "path": "FiniteAvalanchesAudit/MainOrigin/Solution.lean",
@@ -21,27 +21,27 @@
     },
     {
       "path": "FiniteAvalanchesAudit/MainOrigin/VerifyChallenge.lean",
-      "sha256": "e22dc319c17d3865c7cbda51ecbf27156ffef8a652c9d41b73d7beafb1f5ac28"
+      "sha256": "6cef660625d280520fd2c780b2cd01aea84651341cd88aaec6b0b3e46b484f56"
     },
     {
       "path": "FiniteAvalanchesAudit/MainOrigin/VerifySolution.lean",
-      "sha256": "1ae8fdda3b454b10d1dff7a6d2dcc9e2f3cd46eadcee2bb9109dcb746a6ac5fa"
+      "sha256": "63457dd7610bea27f7a5e14a28580ff1eb925f00ec23dc4fc6dff107a435e16f"
     },
     {
       "path": "FiniteAvalanchesAudit/MainOrigin/comparator.json",
-      "sha256": "1c0628350a798049a8a7fecd279e8d2022b52b9be0268393d5e02d094adf53a1"
+      "sha256": "95bef46aa2d007e814f5ae02f9f01594e51d92bb87a7d5f3c74238f81e96a786"
     },
     {
       "path": "FiniteAvalanchesAudit/MainOrigin/semantic-data/SUMMARY.json",
-      "sha256": "a80c590fa4badf79f1e8357cab37a9ed8076e3eec7e761380e2057b8f3f1e3e8"
+      "sha256": "036b66406a2cbf1c699f1ca4a103863842edcc46bfaf175ba04828dd552e04b6"
     },
     {
       "path": "FiniteAvalanchesAudit/MainOrigin/semantic-data/boundary.json",
-      "sha256": "6a6c8c1d590eba0e6401b84ee19ab9ec42af3d94dd93b2e875175ef47ec11990"
+      "sha256": "6bc3a334c1c86e69a4ebb73ab09f2428f14d46a00ccb3cb791d74dbcb530e879"
     },
     {
       "path": "FiniteAvalanchesAudit/MainOrigin/semantic-data/declarations.jsonl",
-      "sha256": "3ce1efa84e0a4fefb8cf084a997643ffb121bd1bcf9076259e0c41072d61b8b4"
+      "sha256": "652d40f598cc52c56f4142ecfb04fec43de5bd8c9424cec5955aff1bfe4fed7c"
     },
     {
       "path": "FiniteAvalanchesAudit/MainOrigin/semantic-data/main-type-nodes.jsonl",
@@ -53,7 +53,7 @@
     },
     {
       "path": "FiniteAvalanchesAudit/MainOrigin/semantic-data/nodes.jsonl",
-      "sha256": "73f3d6b7d27514655b882947067effc93215ec6df154adae537a938f0b4d125f"
+      "sha256": "ac55e8246f06b0937219c53adb420e26955c75a9ad1b457a6150e08f174371b9"
     }
   ],
   "manuscript_revision": "2ff7e75e9b6d626dc6c6243fa3d25fd179b34cf2",
@@ -61,31 +61,48 @@
   "independent_comments_only_projection_review_sha256": "d5e0627b4a1ecad635f15267d293bd96d9de6626ee5577e6fadeb5ef66a27df9",
   "previous_pair_actual_replay": {
     "status": "PASS_CI_COMPARATOR_LEAN_NANODA_AND_BOTH_FULL_ENVIRONMENT_QUERIES",
-    "commit": "2a17c769c1aa197c39c03cd012e90ba25491246c",
+    "commit": "12a1d8adde060746b29323348fab6edb1d877647",
     "workflow": ".github/workflows/comparator.yml",
-    "run_id": 44625515142,
-    "completed_at": "2026-11-19T22:39:51Z",
-    "inventory_sha256": "4ba2a5364873b74ba373ad0900809ee56088391f1e77e81dc89c0114f12f5651"
+    "run_id": 44771184802,
+    "completed_at": "2026-11-20T16:56:01Z",
+    "inventory_sha256": "dd318a3495fa60b56eef122f4d416f0f6fea48d763234d1a87a44f5437dbbffa"
   },
-  "earlier_pair_actual_replay": {
-    "status": "PASS_ACTUAL_LOCAL_COMPARATOR_LEAN_NANODA_AND_BOTH_FULL_ENVIRONMENT_QUERIES",
-    "receipt_sha256": "eb225dfb58a4ab3c6ba33175ae059feceb7faf29d28951ebf60b5882b29820f8",
-    "log_sha256": "a5dbf4d39b82e87c6faea030406f99de55ee9dddbf5b3d34b34abe6c23accc57",
-    "inventory_sha256": "5e6e8b08a17594a11a68f4843c831d4ad1f2429713f9d74854c2991c68ca19a9",
-    "additional_namespace_sandbox": true
-  },
+  "earlier_pair_actual_replays": [
+    {
+      "status": "PASS_CI_COMPARATOR_LEAN_NANODA_AND_BOTH_FULL_ENVIRONMENT_QUERIES",
+      "commit": "2a17c769c1aa197c39c03cd012e90ba25491246c",
+      "workflow": ".github/workflows/comparator.yml",
+      "run_id": 44625515142,
+      "completed_at": "2026-11-19T22:39:51Z",
+      "inventory_sha256": "4ba2a5364873b74ba373ad0900809ee56088391f1e77e81dc89c0114f12f5651"
+    },
+    {
+      "status": "PASS_ACTUAL_LOCAL_COMPARATOR_LEAN_NANODA_AND_BOTH_FULL_ENVIRONMENT_QUERIES",
+      "receipt_sha256": "eb225dfb58a4ab3c6ba33175ae059feceb7faf29d28951ebf60b5882b29820f8",
+      "log_sha256": "a5dbf4d39b82e87c6faea030406f99de55ee9dddbf5b3d34b34abe6c23accc57",
+      "inventory_sha256": "5e6e8b08a17594a11a68f4843c831d4ad1f2429713f9d74854c2991c68ca19a9",
+      "additional_namespace_sandbox": true
+    }
+  ],
   "previous_pair_review": {
     "status": "REVIEWED_CURRENT_PAIR",
-    "source_inventory_sha256": "4ba2a5364873b74ba373ad0900809ee56088391f1e77e81dc89c0114f12f5651",
-    "main_inputs": 19,
-    "pair_review_sha256": "ddc891e00c982df8fb83bf8d63cf14780e15cf1bf30b5e721f80bc59b6c8e0c3",
-    "source_review_sha256": "d7a202cf49e1cb1e448ffaa086d75f4b5a1adf84f4d3ef022ce0b738ae4919d5",
-    "source_meaning_review_sha256": "60bc52184b374c0c67e5c218c78a1fd9ad4e81865f261bcc67bc253067febce0",
-    "statement_and_proof_review_sha256": "3ccceb290afabd24b9beadcd49757984c251814baf4aed258f11af9866ecd44a",
-    "static_projection_review_sha256": "06bff1e8449f0b977e5eebf86bafbca4c527c989ce84b2d7685695931918c18b",
-    "status_only_metadata_transport_review_sha256": "d57476de54846efaf9498aa5a74526bc3fd8de232357d6cca9c8fc7ba42fa76c"
+    "source_inventory_sha256": "dd318a3495fa60b56eef122f4d416f0f6fea48d763234d1a87a44f5437dbbffa",
+    "main_inputs": 8,
+    "pair_review_sha256": "8cb8300929df0dc86c8977d8ec42960f2ec69589393795b1097fb9c07bf3dd6f",
+    "source_review_sha256": "2d266970868a6bba47d7f8d12d5907c6394e4046742c6bb20524810fe593bcb4"
   },
-  "current_pair_actual_replay_status": "PENDING_CI_COMPARATOR_RUN",
-  "current_pair_review_sha256": "8cb8300929df0dc86c8977d8ec42960f2ec69589393795b1097fb9c07bf3dd6f",
-  "current_source_review_sha256": "2d266970868a6bba47d7f8d12d5907c6394e4046742c6bb20524810fe593bcb4"
+  "earlier_pair_reviews": [
+    {
+      "status": "REVIEWED_CURRENT_PAIR",
+      "source_inventory_sha256": "4ba2a5364873b74ba373ad0900809ee56088391f1e77e81dc89c0114f12f5651",
+      "main_inputs": 19,
+      "pair_review_sha256": "ddc891e00c982df8fb83bf8d63cf14780e15cf1bf30b5e721f80bc59b6c8e0c3",
+      "source_review_sha256": "d7a202cf49e1cb1e448ffaa086d75f4b5a1adf84f4d3ef022ce0b738ae4919d5",
+      "source_meaning_review_sha256": "60bc52184b374c0c67e5c218c78a1fd9ad4e81865f261bcc67bc253067febce0",
+      "statement_and_proof_review_sha256": "3ccceb290afabd24b9beadcd49757984c251814baf4aed258f11af9866ecd44a",
+      "static_projection_review_sha256": "06bff1e8449f0b977e5eebf86bafbca4c527c989ce84b2d7685695931918c18b",
+      "status_only_metadata_transport_review_sha256": "d57476de54846efaf9498aa5a74526bc3fd8de232357d6cca9c8fc7ba42fa76c"
+    }
+  ],
+  "current_pair_actual_replay_status": "PENDING_CI_COMPARATOR_RUN"
 }
