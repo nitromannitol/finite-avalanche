@@ -191,6 +191,79 @@ theorem edge_chart_winding_jump (D : Drawing J) (e : E) (c : EdgeChart D e)
         chart.loopDeg_mapLoop_sub_const q _ γ hclosed hn]
       exact hd
 
+/-- A horizontal chart crossing determines a signed winding jump between
+actual points of the two chart faces for the corresponding plane loop. -/
+theorem edge_chart_global_winding_jump (D : Drawing J) (e : E) (c : EdgeChart D e)
+    (γ : C(unitInterval, ℂ)) (hclosed : γ 0 = γ 1)
+    {u v w : ℝ} (hu : 0 < u) (huv : u < v) (hvw : v < w) (hw : w < 1)
+    (hzero : ∀ t : unitInterval, γ t = 0 ↔ (t : ℝ) = v)
+    (hcross : (∀ t : unitInterval, u ≤ (t : ℝ) → (t : ℝ) < v → 0 < (γ t).re) ∧
+        (∀ t : unitInterval, v < (t : ℝ) → (t : ℝ) ≤ w → (γ t).re < 0) ∨
+      (∀ t : unitInterval, u ≤ (t : ℝ) → (t : ℝ) < v → (γ t).re < 0) ∧
+        (∀ t : unitInterval, v < (t : ℝ) → (t : ℝ) ≤ w → 0 < (γ t).re)) :
+    let chart := c.chart.symm
+    let q : ℂ := 1 / 2
+    let δ := chart.complexMapLoop (ContinuousMap.const unitInterval q + γ)
+    ∃ (a : ℝ) (_ : 0 < a) (_ : a < c.radius),
+      let p := chart.complexMap (q + (a : ℂ) / Complex.I)
+      let n := chart.complexMap (q + -(a : ℂ) / Complex.I)
+      ∃ (hp : ∀ t, δ t ≠ p) (hn : ∀ t, δ t ≠ n),
+        Complex.equivRealProdCLM p ∈ faceRegion D (negativeChartFace D e c) ∧
+        Complex.equivRealProdCLM n ∈ faceRegion D (positiveChartFace D e c) ∧
+        ((loopDeg (δ - ContinuousMap.const unitInterval p)
+              (fun t => sub_ne_zero.mpr (hp t)) -
+            loopDeg (δ - ContinuousMap.const unitInterval n)
+              (fun t => sub_ne_zero.mpr (hn t)) = 1 ∧
+            ∀ t : unitInterval, u ≤ (t : ℝ) → (t : ℝ) < v → 0 < (γ t).re) ∨
+          (loopDeg (δ - ContinuousMap.const unitInterval p)
+              (fun t => sub_ne_zero.mpr (hp t)) -
+            loopDeg (δ - ContinuousMap.const unitInterval n)
+              (fun t => sub_ne_zero.mpr (hn t)) = -1 ∧
+            ∀ t : unitInterval, u ≤ (t : ℝ) → (t : ℝ) < v → (γ t).re < 0)) := by
+  let chart := c.chart.symm
+  let q : ℂ := 1 / 2
+  let δ := chart.complexMapLoop (ContinuousMap.const unitInterval q + γ)
+  have heq (z : ℂ) : δ - ContinuousMap.const unitInterval (chart.complexMap (q + z)) =
+      chart.mapLoop q γ - ContinuousMap.const unitInterval
+        (chart.complexMap (q + z) - chart.complexMap q) := by
+    ext t
+    change chart.complexMap (q + γ t) - chart.complexMap (q + z) = _
+    rw [ContinuousMap.sub_apply, ContinuousMap.const_apply, chart.mapLoop_apply]
+    change chart.complexMap (q + γ t) - chart.complexMap (q + z) =
+      (chart.complexMap (q + γ t) - chart.complexMap q) -
+        (chart.complexMap (q + z) - chart.complexMap q)
+    ring
+  have avoid (z : ℂ)
+      (hz : ∀ t, chart.mapLoop q γ t ≠ chart.complexMap (q + z) - chart.complexMap q) :
+      ∀ t, δ t ≠ chart.complexMap (q + z) := by
+    intro t h
+    apply hz t
+    rw [chart.mapLoop_apply]
+    change chart.complexMap (q + γ t) - chart.complexMap q = _
+    change chart.complexMap (q + γ t) = chart.complexMap (q + z) at h
+    rw [h]
+  obtain ⟨a, ha, har, hp, hn, hfacep, hfacen, hd⟩ :=
+    edge_chart_winding_jump D e c γ hclosed hu huv hvw hw hzero hcross
+  refine ⟨a, ha, har, avoid _ hp, avoid _ hn, ?_, ?_, ?_⟩
+  · simpa [chart, q] using hfacep
+  · simpa [chart, q] using hfacen
+  · have deg_congr {f g : C(unitInterval, ℂ)} (h : f = g)
+        (hf : ∀ t, f t ≠ 0) (hg : ∀ t, g t ≠ 0) :
+        loopDeg f hf = loopDeg g hg := by
+      subst g
+      rfl
+    have hpdeg := deg_congr (heq ((a : ℂ) / Complex.I))
+      (fun t => sub_ne_zero.mpr (avoid _ hp t))
+      (fun t => sub_ne_zero.mpr (hp t))
+    have hndeg := deg_congr (heq (-(a : ℂ) / Complex.I))
+      (fun t => sub_ne_zero.mpr (avoid _ hn t))
+      (fun t => sub_ne_zero.mpr (hn t))
+    rcases hd with ⟨hd, hs⟩ | ⟨hd, hs⟩
+    · left
+      exact ⟨by rw [hpdeg, hndeg]; exact hd, hs⟩
+    · right
+      exact ⟨by rw [hpdeg, hndeg]; exact hd, hs⟩
+
 /-- The chart crossing meets exactly the corresponding edge at its midpoint. -/
 theorem curve_eq_chart_vertical_crossing (D : Drawing J) (e f : E)
     (c : EdgeChart D e) (s : ArcParameter) (y : ℝ) (hy : |y| < c.radius) :
