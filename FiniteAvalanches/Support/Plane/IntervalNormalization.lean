@@ -479,6 +479,65 @@ theorem exists_winding_jump_of_horizontal_crossing
   refine ⟨a, ha, hae, hp', hm', ?_⟩
   omega
 
+/-- A loop crossing the origin from negative to positive real coordinates
+has a negative unit winding jump between small imaginary offsets. -/
+theorem exists_winding_jump_of_reverse_horizontal_crossing
+    (γ : C(unitInterval, ℂ)) (hclosed : γ 0 = γ 1)
+    {ε : ℝ} (hε : 0 < ε)
+    {u v w : ℝ} (hu : 0 < u) (huv : u < v) (hvw : v < w) (hw : w < 1)
+    (hzero : ∀ t : unitInterval, γ t = 0 ↔ (t : ℝ) = v)
+    (hneg : ∀ t : unitInterval, u ≤ (t : ℝ) → (t : ℝ) < v → (γ t).re < 0)
+    (hpos : ∀ t : unitInterval, v < (t : ℝ) → (t : ℝ) ≤ w → 0 < (γ t).re) :
+    ∃ (a : ℝ) (_ : 0 < a) (_ : a < ε)
+        (hp : ∀ t, γ t ≠ (a : ℂ) / Complex.I)
+        (hm : ∀ t, γ t ≠ -(a : ℂ) / Complex.I),
+      loopDeg (γ - ContinuousMap.const unitInterval ((a : ℂ) / Complex.I))
+          (fun t => sub_ne_zero.mpr (hp t)) -
+        loopDeg (γ - ContinuousMap.const unitInterval (-(a : ℂ) / Complex.I))
+          (fun t => sub_ne_zero.mpr (hm t)) = -1 := by
+  let δ := ContinuousMap.const unitInterval Complex.I * γ
+  have hδclosed : δ 0 = δ 1 := by
+    change Complex.I * γ 0 = Complex.I * γ 1
+    rw [hclosed]
+  have hδzero : ∀ t : unitInterval, δ t = 0 ↔ (t : ℝ) = v := by
+    intro t
+    change Complex.I * γ t = 0 ↔ _
+    simpa only [mul_eq_zero, Complex.I_ne_zero, false_or] using hzero t
+  obtain ⟨a, ha, hae, hp, hm, hd⟩ :=
+    exists_winding_jump_of_reverse_local_crossing δ hδclosed hε hu huv hvw hw hδzero
+      (by intro t ht₁ ht₂; simpa [δ, Complex.mul_im] using hneg t ht₁ ht₂)
+      (by intro t ht₁ ht₂; simpa [δ, Complex.mul_im] using hpos t ht₁ ht₂)
+  have hp' : ∀ t, γ t ≠ (a : ℂ) / Complex.I := by
+    intro t h
+    apply hp t
+    change Complex.I * γ t = _
+    rw [h]
+    field_simp
+  have hm' : ∀ t, γ t ≠ -(a : ℂ) / Complex.I := by
+    intro t h
+    apply hm t
+    change Complex.I * γ t = _
+    rw [h]
+    field_simp
+  have hpdeg := loopDeg_mul_const_sub_const γ hclosed Complex.I
+    ((a : ℂ) / Complex.I) Complex.I_ne_zero hp'
+  have hmdeg := loopDeg_mul_const_sub_const γ hclosed Complex.I
+    (-(a : ℂ) / Complex.I) Complex.I_ne_zero hm'
+  have hrotp : Complex.I * ((a : ℂ) / Complex.I) = (a : ℂ) := by field_simp
+  have hrotm : Complex.I * (-(a : ℂ) / Complex.I) = -(a : ℂ) := by field_simp
+  have hpdeg' : loopDeg (δ - ContinuousMap.const unitInterval (a : ℂ))
+      (fun t => sub_ne_zero.mpr (hp t)) =
+      loopDeg (γ - ContinuousMap.const unitInterval ((a : ℂ) / Complex.I))
+        (fun t => sub_ne_zero.mpr (hp' t)) := by
+    simpa only [hrotp] using hpdeg
+  have hmdeg' : loopDeg (δ - ContinuousMap.const unitInterval (-(a : ℂ)))
+      (fun t => sub_ne_zero.mpr (hm t)) =
+      loopDeg (γ - ContinuousMap.const unitInterval (-(a : ℂ) / Complex.I))
+        (fun t => sub_ne_zero.mpr (hm' t)) := by
+    simpa only [hrotm] using hmdeg
+  refine ⟨a, ha, hae, hp', hm', ?_⟩
+  omega
+
 /-- Two equal positive winding jumps cannot have both their sides matched in
 reverse within complementary components of the same loop. -/
 theorem not_crossed_component_matching_of_winding_jumps
