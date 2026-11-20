@@ -5,7 +5,8 @@ for Lean v4.35 and its Mathlib.
 Changes: imports of the Beurling modules renamed to this repository's; namespace
 `LatticeProb.Beurling` renamed to `FiniteAvalanches.Walk.Beurling`, with `open LatticeProb` added;
 `Set.mem_ofPred_eq` replaced by `Set.mem_setOf_eq` (4 times); `measurableSet_setOfPred` replaced by
-`measurableSet_setOf` (2 times).
+`measurableSet_setOf` (2 times); `private` removed from `hitAtTime`, `prob_hit_then` and
+`prob_entersAt_axis_start_le`.
 -/
 import FiniteAvalanches.Walk.Beurling.HalfLineHit
 import FiniteAvalanches.Walk.Beurling.HalfLineHitPoint
@@ -111,7 +112,7 @@ private theorem euclidNorm_axisPt_nat (l : ℕ) : euclidNorm (axisPt (l : ℤ)) 
 
 /-- The walk from `x` is at `w` at the positive time `t`, with no visit to `B` at the times
 `1, …, t - 1`. -/
-private def hitAtTime (B : Set (Site 2)) (x w : Site 2) (t : ℕ) : Set (ℕ → Dir 2) :=
+def hitAtTime (B : Set (Site 2)) (x w : Site 2) (t : ℕ) : Set (ℕ → Dir 2) :=
   {ω | 1 ≤ t ∧ walkPos x ω t = w ∧ ∀ s, 1 ≤ s → s < t → walkPos x ω s ∉ B}
 
 private theorem dependsOnFirst_hitAtTime (B : Set (Site 2)) (x w : Site 2) (t : ℕ) :
@@ -142,7 +143,7 @@ private theorem iUnion_hitAtTime (B : Set (Site 2)) (x w : Site 2) :
 
 /-- **The Markov property at the first visit to a set.**  If the walk first visits `B` at `w`
 and then continues with an event `C`, the probability is the product of the two probabilities. -/
-private theorem prob_hit_then {B : Set (Site 2)} {x w : Site 2} (hw : w ∈ B) {C : Set (ℕ → Dir 2)}
+theorem prob_hit_then {B : Set (Site 2)} {x w : Site 2} (hw : w ∈ B) {C : Set (ℕ → Dir 2)}
     (hC : MeasurableSet C) :
     prob {ω | ∃ t, ω ∈ hitAtTime B x w t ∧ shiftBy t ω ∈ C} =
       prob (entersAt B w x) * prob C := by
@@ -610,7 +611,7 @@ private theorem measurableSet_entersAt (B : Set (Site 2)) (z x : Site 2) :
 
 /-- From a point of the axis at distance `n ≥ 2` from the origin, the first visit to the real axis
 is a visit to `-k` with probability `O(1 / (n + k)²)`. -/
-private theorem prob_entersAt_axis_start_le : ∃ C : ℝ, 0 ≤ C ∧ ∀ n k : ℕ, 2 ≤ n →
+theorem prob_entersAt_axis_start_le : ∃ C : ℝ, 0 ≤ C ∧ ∀ n k : ℕ, 2 ≤ n →
     prob (entersAt (axisSet Set.univ) (axisPt (-(k : ℤ))) (axisPt (n : ℤ))) ≤
       C / ((n : ℝ) + k) ^ 2 := by
   obtain ⟨C₂, hC₂, hh⟩ := halfPlaneKernel_height_one
