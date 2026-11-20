@@ -362,6 +362,20 @@ theorem Source.OrientedChart.loopDeg_complexMapLoop_sub_const
     rfl
   simpa only [he] using chart.isotopyLoop_degree q γ hq hclosed
 
+/-- Taking centered inverse-chart coordinates of a loop and mapping back
+recovers the original loop. -/
+theorem Source.OrientedChart.complexMapLoop_centered_inverse
+    (chart : Source.OrientedChart) (q : ℂ) (γ : C(unitInterval, ℂ)) :
+    chart.complexMapLoop (ContinuousMap.const unitInterval q +
+      (chart.symm.complexMapLoop γ - ContinuousMap.const unitInterval q)) = γ := by
+  ext t
+  change chart.complexMap (q + (chart.symm.complexMap (γ t) - q)) = γ t
+  have h : q + (chart.symm.complexMap (γ t) - q) = chart.symm.complexMap (γ t) := by ring
+  rw [h]
+  change Complex.equivRealProdCLM.symm
+    (chart.map (chart.map.symm (Complex.equivRealProdCLM (γ t)))) = γ t
+  rw [Homeomorph.apply_symm_apply, ContinuousLinearEquiv.symm_apply_apply]
+
 /-- A signed local crossing in chart coordinates gives the same winding jump
 for the image loop about the images of its two offset points. -/
 theorem Source.OrientedChart.exists_winding_jump_complexMapLoop
