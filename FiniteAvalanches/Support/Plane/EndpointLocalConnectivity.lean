@@ -238,4 +238,46 @@ theorem dense_compl_range_injective_path {x y : ℝ × ℝ}
   apply interior_eq_empty_iff_dense_compl.mp
   exact endpoint_compact_arc_interior (by norm_num : (0 : ℝ) < 1) p p.continuous hp
 
+/-- A simple plane arc admits complement points joined by paths in balls
+shrinking to its initial endpoint. -/
+theorem exists_shrinking_endpoint_paths
+    {x y : ℝ × ℝ} (p : Path x y) (hp : Function.Injective p) :
+    ∃ z : ℕ → ℝ × ℝ,
+      (∀ n, z n ∉ range p) ∧
+      (∀ n : ℕ, z n ∈ ball x (1 / ((n : ℝ) + 1))) ∧
+      ∀ n : ℕ, ∃ q : Path (z n) (z (n + 1)),
+        range q ⊆ ball x (1 / ((n : ℝ) + 1)) \ range p := by
+  let r : ℕ → ℝ := fun n => 1 / ((n : ℝ) + 1)
+  have hr : ∀ n, 0 < r n := by
+    intro n
+    dsimp [r]
+    positivity
+  have hlocal : ∀ n, ∃ δ > 0, ∀ a ∈ ball x δ \ range p,
+      ∀ b ∈ ball x δ \ range p, ∃ q : Path a b, range q ⊆ ball x (r n) \ range p :=
+    fun n => exists_endpoint_ball_paths p hp (hr n)
+  choose δ hδ hpath using hlocal
+  have hchoice : ∀ n, ∃ z : ℝ × ℝ,
+      z ∈ ball x (min (δ n) (min (δ (n + 1)) (r n))) ∧ z ∉ range p := by
+    intro n
+    have hpos : 0 < min (δ n) (min (δ (n + 1)) (r n)) :=
+      lt_min (hδ n) (lt_min (hδ (n + 1)) (hr n))
+    obtain ⟨z, hz, hznot⟩ := (dense_compl_range_injective_path p hp).inter_open_nonempty
+      _ isOpen_ball ⟨x, mem_ball_self hpos⟩
+    exact ⟨z, hz, hznot⟩
+  choose z hz hznot using hchoice
+  refine ⟨z, hznot, ?_, ?_⟩
+  · intro n
+    exact ball_subset_ball (le_trans (min_le_right _ _) (min_le_right _ _)) (hz n)
+  · intro n
+    have ha : z n ∈ ball x (δ (n + 1)) \ range p :=
+      ⟨ball_subset_ball (le_trans (min_le_right _ _) (min_le_left _ _)) (hz n), hznot n⟩
+    have hb : z (n + 1) ∈ ball x (δ (n + 1)) \ range p :=
+      ⟨ball_subset_ball (min_le_left _ _) (hz (n + 1)), hznot (n + 1)⟩
+    obtain ⟨q, hq⟩ := hpath (n + 1) (z n) ha (z (n + 1)) hb
+    refine ⟨q, hq.trans (sdiff_subset_sdiff_left (ball_subset_ball ?_))⟩
+    dsimp [r]
+    apply one_div_le_one_div_of_le (by positivity)
+    push_cast
+    linarith
+
 end FiniteAvalanches.Electrical.StatementGeometry
