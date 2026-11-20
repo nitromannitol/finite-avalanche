@@ -398,6 +398,87 @@ theorem Source.OrientedChart.exists_winding_jump_complexMapLoop
       chart.loopDeg_complexMapLoop_sub_const γ hclosed (-(a : ℂ)) hm]
     exact hd
 
+/-- Multiplying a loop and its base point by a fixed nonzero complex number
+preserves the winding degree. -/
+theorem loopDeg_mul_const_sub_const (γ : C(unitInterval, ℂ)) (hclosed : γ 0 = γ 1)
+    (c q : ℂ) (hc : c ≠ 0) (hq : ∀ t, γ t ≠ q) :
+    loopDeg (ContinuousMap.const unitInterval c * γ -
+        ContinuousMap.const unitInterval (c * q))
+      (fun t => by
+        change c * γ t - c * q ≠ 0
+        rw [← mul_sub]
+        exact mul_ne_zero hc (sub_ne_zero.mpr (hq t))) =
+      loopDeg (γ - ContinuousMap.const unitInterval q) (fun t => sub_ne_zero.mpr (hq t)) := by
+  let η := γ - ContinuousMap.const unitInterval q
+  have hη : ∀ t, η t ≠ 0 := fun t => sub_ne_zero.mpr (hq t)
+  have hηclosed : η 0 = η 1 := by change γ 0 - q = γ 1 - q; rw [hclosed]
+  have he := loopDeg_mul (ContinuousMap.const unitInterval c) η (fun _ => hc) hη rfl hηclosed
+  have hmap : ContinuousMap.const unitInterval c * η =
+      ContinuousMap.const unitInterval c * γ - ContinuousMap.const unitInterval (c * q) := by
+    ext t
+    change c * (γ t - q) = c * γ t - c * q
+    exact mul_sub c (γ t) q
+  simpa only [hmap, loopDeg_const c hc, zero_add] using he
+
+/-- A loop crossing the origin from positive to negative real coordinates
+has a unit winding jump between small imaginary offsets. -/
+theorem exists_winding_jump_of_horizontal_crossing
+    (γ : C(unitInterval, ℂ)) (hclosed : γ 0 = γ 1)
+    {ε : ℝ} (hε : 0 < ε)
+    {u v w : ℝ} (hu : 0 < u) (huv : u < v) (hvw : v < w) (hw : w < 1)
+    (hzero : ∀ t : unitInterval, γ t = 0 ↔ (t : ℝ) = v)
+    (hpos : ∀ t : unitInterval, u ≤ (t : ℝ) → (t : ℝ) < v → 0 < (γ t).re)
+    (hneg : ∀ t : unitInterval, v < (t : ℝ) → (t : ℝ) ≤ w → (γ t).re < 0) :
+    ∃ (a : ℝ) (_ : 0 < a) (_ : a < ε)
+        (hp : ∀ t, γ t ≠ (a : ℂ) / Complex.I)
+        (hm : ∀ t, γ t ≠ -(a : ℂ) / Complex.I),
+      loopDeg (γ - ContinuousMap.const unitInterval ((a : ℂ) / Complex.I))
+          (fun t => sub_ne_zero.mpr (hp t)) -
+        loopDeg (γ - ContinuousMap.const unitInterval (-(a : ℂ) / Complex.I))
+          (fun t => sub_ne_zero.mpr (hm t)) = 1 := by
+  let δ := ContinuousMap.const unitInterval Complex.I * γ
+  have hδclosed : δ 0 = δ 1 := by
+    change Complex.I * γ 0 = Complex.I * γ 1
+    rw [hclosed]
+  have hδzero : ∀ t : unitInterval, δ t = 0 ↔ (t : ℝ) = v := by
+    intro t
+    change Complex.I * γ t = 0 ↔ _
+    simpa only [mul_eq_zero, Complex.I_ne_zero, false_or] using hzero t
+  obtain ⟨a, ha, hae, hp, hm, hd⟩ :=
+    exists_winding_jump_of_local_crossing δ hδclosed hε hu huv hvw hw hδzero
+      (by intro t ht₁ ht₂; simpa [δ, Complex.mul_im] using hpos t ht₁ ht₂)
+      (by intro t ht₁ ht₂; simpa [δ, Complex.mul_im] using hneg t ht₁ ht₂)
+  have hp' : ∀ t, γ t ≠ (a : ℂ) / Complex.I := by
+    intro t h
+    apply hp t
+    change Complex.I * γ t = _
+    rw [h]
+    field_simp
+  have hm' : ∀ t, γ t ≠ -(a : ℂ) / Complex.I := by
+    intro t h
+    apply hm t
+    change Complex.I * γ t = _
+    rw [h]
+    field_simp
+  have hpdeg := loopDeg_mul_const_sub_const γ hclosed Complex.I
+    ((a : ℂ) / Complex.I) Complex.I_ne_zero hp'
+  have hmdeg := loopDeg_mul_const_sub_const γ hclosed Complex.I
+    (-(a : ℂ) / Complex.I) Complex.I_ne_zero hm'
+  have hrotp : Complex.I * ((a : ℂ) / Complex.I) = (a : ℂ) := by field_simp
+  have hrotm : Complex.I * (-(a : ℂ) / Complex.I) = -(a : ℂ) := by field_simp
+  have hpdeg' : loopDeg (δ - ContinuousMap.const unitInterval (a : ℂ))
+      (fun t => sub_ne_zero.mpr (hp t)) =
+      loopDeg (γ - ContinuousMap.const unitInterval ((a : ℂ) / Complex.I))
+        (fun t => sub_ne_zero.mpr (hp' t)) := by
+    simpa only [hrotp] using hpdeg
+  have hmdeg' : loopDeg (δ - ContinuousMap.const unitInterval (-(a : ℂ)))
+      (fun t => sub_ne_zero.mpr (hm t)) =
+      loopDeg (γ - ContinuousMap.const unitInterval (-(a : ℂ) / Complex.I))
+        (fun t => sub_ne_zero.mpr (hm' t)) := by
+    simpa only [hrotm] using hmdeg
+  refine ⟨a, ha, hae, hp', hm', ?_⟩
+  omega
+
 /-- Two equal positive winding jumps cannot have both their sides matched in
 reverse within complementary components of the same loop. -/
 theorem not_crossed_component_matching_of_winding_jumps
