@@ -45,7 +45,7 @@ theorem exists_closing_path_of_injective_path
         by_contra ht
         exact hq t ht hzp
       left
-      simpa only [ht, Path.target]
+      simp only [ht, Path.target]
     · obtain ⟨t, rfl⟩ := hzw
       exact ((hw t) hzp).elim
     · obtain ⟨t, rfl⟩ := hzr
@@ -53,7 +53,7 @@ theorem exists_closing_path_of_injective_path
         by_contra ht
         exact hr t ht hzp
       right
-      simpa only [ht, Path.target]
+      simp only [ht, Path.target]
   · rintro (rfl | rfl)
     · exact ⟨p.source_mem_range, s.source_mem_range⟩
     · exact ⟨p.target_mem_range, s.target_mem_range⟩
