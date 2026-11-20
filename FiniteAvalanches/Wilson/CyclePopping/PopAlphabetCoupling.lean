@@ -12,6 +12,7 @@ noncomputable section
 
 variable {V : Type*} [DecidableEq V] {A B : V → Type*}
 
+omit [DecidableEq V] in
 /-- Matching successors away from the roots give the same legal cycles. -/
 theorem isCycle_iff_of_matching_successors (R : Set V)
     (headA : (v : V) → A v → V) (headB : (v : V) → B v → V)
@@ -51,6 +52,7 @@ theorem pop_run_iff_of_matching_successors (R : Set V)
   · exact Relation.ReflTransGen.mono
       (fun _ _ hs => (pop_step_iff_of_matching_successors R headA headB σ τ _ _ hstack).mpr hs) k l h
 
+omit [DecidableEq V] in
 /-- Matching successors away from the roots give the same terminal cursors. -/
 theorem terminal_iff_of_matching_successors (R : Set V)
     (headA : (v : V) → A v → V) (headB : (v : V) → B v → V)
