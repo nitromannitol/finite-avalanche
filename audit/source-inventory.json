@@ -3962,6 +3962,12 @@
       "bytes": 4206
     },
     {
+      "path": "FiniteAvalanches/Support/Plane/RetainedTailFamily.lean",
+      "sha256": "9e8b45efe3f49a626e5d8b55078009a3927c0e3a138541aca1277a3b42875bc6",
+      "code_sha256": "51ba263f8eba58136b8e3c243e50062d5ffc7c5c24708af5b0c9a7b05619ae3c",
+      "bytes": 2259
+    },
+    {
       "path": "FiniteAvalanches/Support/Plane/RetainedTailReparam.lean",
       "sha256": "4bb48a159b10c299cd84a5ba6abbe8db09d655e6fe8010264d371bfce62962a4",
       "code_sha256": "544483e6c5e50f12c989fff9354a7ab6fc689ff7da9a1b794ee56110b2f378b2",
@@ -6886,6 +6892,7 @@
     "FiniteAvalanches.Support.Plane.PolygonalPathStar",
     "FiniteAvalanches.Support.Plane.ReachabilityPath",
     "FiniteAvalanches.Support.Plane.ReachabilityTrace",
+    "FiniteAvalanches.Support.Plane.RetainedTailFamily",
     "FiniteAvalanches.Support.Plane.RetainedTailReparam",
     "FiniteAvalanches.Support.Plane.SimplePathDuality",
     "FiniteAvalanches.Support.Plane.StarSplicing",
