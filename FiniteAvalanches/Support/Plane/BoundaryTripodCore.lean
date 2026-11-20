@@ -33,9 +33,10 @@ theorem exists_tripod_of_path_first_hit {X : Type*} [TopologicalSpace X] [T2Spac
       Function.Injective u ∧ Function.Injective v ∧ Function.Injective w ∧
       range u ⊆ range p ∧ range v ⊆ range p ∧ range w ⊆ range q ∧
       range u ∩ range v = {r} ∧ range u ∩ range w = {r} ∧
-      range v ∩ range w = {r} ∧ range p = range u ∪ range v := by
-  obtain ⟨r, hr, z, hz, hzsub, hzmeet⟩ :=
-    exists_initial_path_first_hit q hq (isCompact_range p.continuous).isClosed hc hd
+      range v ∩ range w = {r} ∧ range p = range u ∪ range v ∧
+      ∃ T : unitInterval, T ≠ 0 ∧ range (q.subpath 0 T) = range w := by
+  obtain ⟨r, hr, z, hz, hzsub, hzmeet, T, hT, hTz⟩ :=
+    exists_initial_path_first_hit_with_subpath q hq (isCompact_range p.continuous).isClosed hc hd
   obtain ⟨t, rfl⟩ := hr
   have ht0 : t ≠ 0 := by
     intro ht
@@ -86,12 +87,13 @@ theorem exists_tripod_of_path_first_hit {X : Type*} [TopologicalSpace X] [T2Spac
       rw [← hwmeet]
       exact ⟨hx.2, hvsub hx.1⟩
     · exact singleton_subset_iff.mpr ⟨v.source_mem_range, w.source_mem_range⟩
-  refine ⟨p t, u, v, w, hu, hv, hw, husub, hvsub, hwsub, huv, huw, hvw, ?_⟩
-  apply subset_antisymm
-  · rintro x ⟨s, rfl⟩
-    rcases le_total s t with h | h
-    · exact Or.inl (hurange.symm ▸ ⟨s, ⟨bot_le, h⟩, rfl⟩)
-    · exact Or.inr (hvrange.symm ▸ ⟨s, ⟨h, le_top⟩, rfl⟩)
-  · exact union_subset husub hvsub
+  refine ⟨p t, u, v, w, hu, hv, hw, husub, hvsub, hwsub, huv, huw, hvw, ?_, T, hT, ?_⟩
+  · apply subset_antisymm
+    · rintro x ⟨s, rfl⟩
+      rcases le_total s t with h | h
+      · exact Or.inl (hurange.symm ▸ ⟨s, ⟨bot_le, h⟩, rfl⟩)
+      · exact Or.inr (hvrange.symm ▸ ⟨s, ⟨h, le_top⟩, rfl⟩)
+    · exact union_subset husub hvsub
+  · simpa only [w, Path.symm_range] using hTz
 
 end FiniteAvalanches.Electrical.StatementGeometry
