@@ -3686,6 +3686,12 @@
       "bytes": 1708
     },
     {
+      "path": "FiniteAvalanches/Support/Plane/BoundaryIncidenceCount.lean",
+      "sha256": "5b03d348b26ddc11ade5bb7de84f809499389c27673a7d92f9518fd48e035be9",
+      "code_sha256": "cc40a7791d91318674f3cc43c32f507c1555e76795a3420836bd8f5be4f6495e",
+      "bytes": 1339
+    },
+    {
       "path": "FiniteAvalanches/Support/Plane/BoundaryPairArms.lean",
       "sha256": "a5524dbf920dd32bb5030031c2d832108990e0eb6cc858868ee7d0c6c5614b55",
       "code_sha256": "39988358dc246743376355115717bf481190e75ffdd4cb5277187ced567c6960",
@@ -3714,6 +3720,12 @@
       "sha256": "28b1574df2ddd10496d649f3c81ab3962123861e2c42b08389404ac69a9d477f",
       "code_sha256": "80572c4d207320edb3d6c19a0c758660e88b450d29b20f9ad1aa1ef56d39b484",
       "bytes": 6493
+    },
+    {
+      "path": "FiniteAvalanches/Support/Plane/BridgeFaceBalance.lean",
+      "sha256": "9033275edfce410a2fd43f64d370e80fd360f08e4f3f09d3d3a9e052dd0b285d",
+      "code_sha256": "59a82553c0bcd9abeb60aaa392eb0061d5f9f91bfb8edea7970ae7ae8c10ae13",
+      "bytes": 3866
     },
     {
       "path": "FiniteAvalanches/Support/Plane/ChartConstruction.lean",
