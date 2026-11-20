@@ -3711,9 +3711,9 @@
     },
     {
       "path": "FiniteAvalanches/Support/Plane/BoundaryDartPermutation.lean",
-      "sha256": "6f18f1fb319d024e91a994b182aa801e4cd77a6d8828f910183f11dffcdfeff3",
-      "code_sha256": "ecc101186e98863edb4fa91d109f81d935af12e9d67e9ca5debf1437efadd633",
-      "bytes": 2551
+      "sha256": "3727ad3ace759885940e31807d28971af97514a9ca05eeb2da0b691d2decd524",
+      "code_sha256": "acf729db8d16e2fca920e8d010bd805e6fc18ed701144a0ba0a56d04b88d25e8",
+      "bytes": 4913
     },
     {
       "path": "FiniteAvalanches/Support/Plane/BoundaryGradientBasis.lean",
@@ -3759,9 +3759,9 @@
     },
     {
       "path": "FiniteAvalanches/Support/Plane/BridgeFaceBalance.lean",
-      "sha256": "9033275edfce410a2fd43f64d370e80fd360f08e4f3f09d3d3a9e052dd0b285d",
-      "code_sha256": "59a82553c0bcd9abeb60aaa392eb0061d5f9f91bfb8edea7970ae7ae8c10ae13",
-      "bytes": 3866
+      "sha256": "cebfabd954972ebee3c373f9bf6d90a5f05981e4696ba48de2c1a4a1e0fee773",
+      "code_sha256": "705e514267d98cae7a4336cbc75bf57a9463e4451eda17193b10447d1477a4f8",
+      "bytes": 15337
     },
     {
       "path": "FiniteAvalanches/Support/Plane/CantorDiffuse.lean",
@@ -3783,9 +3783,9 @@
     },
     {
       "path": "FiniteAvalanches/Support/Plane/ChartOrientation.lean",
-      "sha256": "8dd37740eb80ca0da6725c0462ed8d6d72efc0a1eaafebed1aee5ee7f23ac73a",
-      "code_sha256": "e1a9e19d90f78cfa5e28d4e7af3efc1b52421e1f918f017300f9907cfd845aed",
-      "bytes": 35497
+      "sha256": "b3cfbd8e6f26d1a77e3ecca24898572a2ab3e849e8bbc81e782f7bda71144788",
+      "code_sha256": "0ea10c0f98eee2bec59c820c059b0b19c0b9e3e3834529e5f3f8cfbd536a81a1",
+      "bytes": 52166
     },
     {
       "path": "FiniteAvalanches/Support/Plane/ChartedBoundaryStarExtension.lean",
@@ -4092,6 +4092,12 @@
       "sha256": "cde2c680326941cf271e69213edc08916434e7d49f56f56a7a9b0333f0e49d97",
       "code_sha256": "30f8781f2020eb655ecc35a33cd6dd6c28891fbc4075ee0e09a373aa03660285",
       "bytes": 5555
+    },
+    {
+      "path": "FiniteAvalanches/Support/Plane/IntervalNormalization.lean",
+      "sha256": "0923839e09730b21510b9ed57b4ee549cee821ff813e980dd9c1e294104915c6",
+      "code_sha256": "ba4fa17430b39e9dd287f98c257f8740824dc84ea3aa30ea8145b2d6a2d99116",
+      "bytes": 10711
     },
     {
       "path": "FiniteAvalanches/Support/Plane/JordanDrawingFaces.lean",
@@ -4407,9 +4413,9 @@
     },
     {
       "path": "FiniteAvalanches/Support/Plane/TwoPoleReduction.lean",
-      "sha256": "2fdfafb4e4448012a6b3c8b1d75c4f0f18a8538031d6301e5b3105754f3f765d",
-      "code_sha256": "1a5b1c3d12d520692cc70c1483b719a45d44b1ebe5b0328efcda6f68d93235ce",
-      "bytes": 2188
+      "sha256": "1a78b667e741d2317aac434c1c214b703dfd74f11411c9a7147d1dc2ec56866b",
+      "code_sha256": "fcc157883ad738d893fabc665c55f92d753691c8bba04b729be3677e645b502e",
+      "bytes": 3979
     },
     {
       "path": "FiniteAvalanches/Support/Plane/TwoPoleSeparation.lean",
@@ -7494,7 +7500,7 @@
     },
     {
       "path": "audit/trusted-inputs.json",
-      "sha256": "a18c96878068d2a00caf4981eee4663f9fd139c64a25fa9ff83180b5d9987874",
+      "sha256": "3751ed0d0a84f0e7ec9fd089fb3e5577bd736d349e591ca39fb936496db16a69",
       "bytes": 535972
     },
     {
