@@ -328,4 +328,60 @@ theorem IsLoopCancellation.separated_of_maximal
     ⟨lt_of_le_of_lt (le_max_right _ _) ht1, lt_of_lt_of_le ht2 (min_le_right _ _)⟩
   exact Set.disjoint_left.mp (hS.2 v hv w hw hne) htv htw
 
+/-- Equal path values at two points outside the interiors of a maximal loop
+cancellation are the endpoints of one cancelled loop. -/
+theorem IsLoopCancellation.eq_off_interiors_of_maximal
+    {X : Type*} [TopologicalSpace X] {x y : X} (p : Path x y)
+    {S : Set (unitInterval × unitInterval)} (hS : IsLoopCancellation p S)
+    (hmax : ∀ T, IsLoopCancellation p T → LoopFamilyRefines S T → LoopFamilyRefines T S)
+    {a b : unitInterval} (hab : a < b) (heq : p a = p b)
+    (ha : ∀ v ∈ S, a ∉ Ioo v.1 v.2) (hb : ∀ v ∈ S, b ∉ Ioo v.1 v.2) :
+    ∃ v ∈ S, v.1 = a ∧ v.2 = b := by
+  classical
+  let j : unitInterval × unitInterval := (a, b)
+  have hinside : ∀ v ∈ S, (Ioo a b ∩ Ioo v.1 v.2).Nonempty →
+      a ≤ v.1 ∧ v.2 ≤ b := by
+    intro v hv hoverlap
+    obtain ⟨t, htj, htv⟩ := hoverlap
+    constructor
+    · by_contra h
+      have hva : v.1 < a := lt_of_not_ge h
+      exact ha v hv ⟨hva, lt_trans htj.1 htv.2⟩
+    · by_contra h
+      have hbv : b < v.2 := lt_of_not_ge h
+      exact hb v hv ⟨lt_trans htv.1 htj.2, hbv⟩
+  let T : Set (unitInterval × unitInterval) :=
+    insert j {v ∈ S | Disjoint (Ioo a b) (Ioo v.1 v.2)}
+  have hT : IsLoopCancellation p T := by
+    constructor
+    · intro v hv
+      simp only [T, mem_insert_iff, mem_setOf_eq] at hv
+      rcases hv with rfl | ⟨hv, -⟩
+      · exact ⟨hab, heq⟩
+      · exact hS.1 v hv
+    · intro v hv w hw hvw
+      simp only [T, mem_insert_iff, mem_setOf_eq] at hv hw
+      rcases hv with rfl | ⟨hv, hdv⟩ <;> rcases hw with rfl | ⟨hw, hdw⟩
+      · exact (hvw rfl).elim
+      · exact hdw
+      · exact hdv.symm
+      · exact hS.2 v hv w hw hvw
+  have href : LoopFamilyRefines S T := by
+    intro v hv
+    by_cases hd : Disjoint (Ioo a b) (Ioo v.1 v.2)
+    · exact ⟨v, mem_insert_of_mem j ⟨hv, hd⟩, le_rfl, le_rfl⟩
+    · have hinter : (Ioo a b ∩ Ioo v.1 v.2).Nonempty := Set.not_disjoint_iff_nonempty_inter.mp hd
+      have hvj := hinside v hv hinter
+      exact ⟨j, mem_insert j _, hvj.1, hvj.2⟩
+  obtain ⟨v, hv, hv1, hv2⟩ := hmax T hT href j (mem_insert j _)
+  have hv1' : a ≤ v.1 := by
+    by_contra h
+    have hlt : v.1 < a := lt_of_not_ge h
+    exact ha v hv ⟨hlt, lt_of_lt_of_le hab hv2⟩
+  have hv2' : v.2 ≤ b := by
+    by_contra h
+    have hlt : b < v.2 := lt_of_not_ge h
+    exact hb v hv ⟨lt_of_le_of_lt hv1 hab, hlt⟩
+  exact ⟨v, hv, le_antisymm hv1 hv1', le_antisymm hv2' hv2⟩
+
 end FiniteAvalanches.Electrical.StatementGeometry
