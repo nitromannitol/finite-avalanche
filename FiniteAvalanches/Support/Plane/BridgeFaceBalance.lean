@@ -168,6 +168,53 @@ theorem bridge_iff_chartFaces_eq {J : CopiedGraph V E} (D : Drawing J)
     rw [hface]
     exact .refl
 
+/-- If all but two crossing copies of a cut are bridges, the two chart
+faces of a nonbridge crossing are the two chart faces of the other copy,
+in one order or the other. -/
+theorem chartFaces_eq_pair_of_two_nonbridges_in_cut {J : CopiedGraph V E}
+    (D : Drawing J) (charts : ∀ e, EdgeChart D e) (A : Finset V) (e f : E)
+    (he : J.Crosses A e)
+    (hcycle : J.reaches (Finset.univ.erase e) (J.left e) (J.right e))
+    (hbridge : ∀ g, g ≠ e → g ≠ f → J.Crosses A g →
+      ¬ J.reaches (Finset.univ.erase g) (J.left g) (J.right g)) :
+    (negativeChartFace D e (charts e) = negativeChartFace D f (charts f) ∧
+      positiveChartFace D e (charts e) = positiveChartFace D f (charts f)) ∨
+    (negativeChartFace D e (charts e) = positiveChartFace D f (charts f) ∧
+      positiveChartFace D e (charts e) = negativeChartFace D f (charts f)) := by
+  classical
+  let K : CopiedGraph (Face D) E := ⟨fun g => negativeChartFace D g (charts g),
+    fun g => positiveChartFace D g (charts g)⟩
+  let S := (Finset.univ.filter fun g => J.Crosses A g).erase e
+  have hwalk : K.reaches S (K.left e) (K.right e) :=
+    dual_reaches_other_cut_edges D charts A e he
+  have hred {x y : Face D} (h : K.reaches S x y) : K.reaches {f} x y := by
+    induction h with
+    | refl => exact .refl
+    | @tail u w _ hstep ih =>
+      obtain ⟨g, hg, hends⟩ := hstep
+      by_cases hgf : g = f
+      · subst g
+        exact ih.tail ⟨f, Finset.mem_singleton_self f, hends⟩
+      · have hge : g ≠ e := (Finset.mem_erase.mp hg).1
+        have hcross : J.Crosses A g := (Finset.mem_filter.mp (Finset.mem_erase.mp hg).2).2
+        have hface : K.left g = K.right g := chartFaces_eq_of_bridge D charts g
+          (hbridge g hge hgf hcross)
+        have huw : u = w := by
+          rcases hends with ⟨hu, hw⟩ | ⟨hu, hw⟩
+          · exact hu.symm.trans (hface.trans hw)
+          · exact hu.symm.trans (hface.symm.trans hw)
+        simpa only [huw] using ih
+  have hne : K.left e ≠ K.right e := by
+    intro h
+    exact ((bridge_iff_chartFaces_eq D charts e).mpr h) hcycle
+  have hsingle : K.reaches (insert f ∅) (K.left e) (K.right e) := by
+    exact hred hwalk
+  rcases (CopiedGraph.TwoCopy.reaches_insert_iff K ∅ f (K.left e) (K.right e)).mp hsingle with
+      h | ⟨h₁, h₂⟩ | ⟨h₁, h₂⟩
+  · exact (hne (K.eq_of_reaches_empty h)).elim
+  · exact Or.inl ⟨K.eq_of_reaches_empty h₁, (K.eq_of_reaches_empty h₂).symm⟩
+  · exact Or.inr ⟨K.eq_of_reaches_empty h₁, (K.eq_of_reaches_empty h₂).symm⟩
+
 /-- At a vertex incident only to bridges, every face has zero boundary of the
 vertex-indicator gradient. -/
 theorem indicator_face_boundary_eq_zero_of_incident_bridges {J : CopiedGraph V E}
