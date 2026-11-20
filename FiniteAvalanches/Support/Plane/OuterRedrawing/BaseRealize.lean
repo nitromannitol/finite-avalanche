@@ -377,5 +377,78 @@ theorem exists_squareRealization_of_endsBelow (S : Set V) (T : Finset E) {p q : 
 
 end StraightPath
 
+/-- The reflection in the horizontal axis. -/
+def reflectY (z : ℝ × ℝ) : ℝ × ℝ := (z.1, -z.2)
+
+theorem reflectY_injective : Function.Injective reflectY := by
+  intro z w hzw
+  simp only [reflectY, Prod.mk.injEq, neg_inj] at hzw
+  exact Prod.ext hzw.1 hzw.2
+
+theorem continuous_reflectY : Continuous reflectY := by
+  unfold reflectY
+  fun_prop
+
+/-- The mirror image of a drawing in the horizontal axis. -/
+def Drawing.reflect (D : Drawing J) : Drawing J where
+  point v := reflectY (D.point v)
+  point_injective := reflectY_injective.comp D.point_injective
+  curve e t := reflectY (D.curve e t)
+  continuous e := continuous_reflectY.comp (D.continuous e)
+  injective e := reflectY_injective.comp_injOn (D.injective e)
+  start e := congrArg reflectY (D.start e)
+  finish e := congrArg reflectY (D.finish e)
+  avoids e t h0 h1 v hv := D.avoids e t h0 h1 v (reflectY_injective hv)
+  intersects e f hef s t hst := D.intersects e f hef s t (reflectY_injective hst)
+
+namespace StraightPath
+
+variable (h : StraightPath D m path copies)
+include h
+
+theorem reflect : StraightPath (Drawing.reflect D) m path copies where
+  pos := h.pos
+  injective := h.injective
+  ends := h.ends
+  point i := by
+    change reflectY (D.point (path i)) = _
+    rw [h.point]
+    simp [reflectY]
+  curve_snd i t := by
+    change -(D.curve (copies i) t).2 = 0
+    rw [h.curve_snd, neg_zero]
+  curve_fst i t := h.curve_fst i t
+
+/-- A stretch whose off-path edges leave its interior vertices from above has a
+square realization. -/
+theorem exists_squareRealization_of_endsAbove (S : Set V) (T : Finset E) {p q : ℕ}
+    (hpq : p < q) (hqm : q ≤ m) (habove : EndsAbove D path copies T p q) :
+    Nonempty (SquareRealization J S T path copies p q) := by
+  refine h.reflect.exists_squareRealization_of_endsBelow S T hpq hqm ?_
+  intro e he hne a hpa haq ham
+  obtain ⟨h1, h2⟩ := habove e he hne a hpa haq ham
+  refine ⟨fun hl => ?_, fun hr => ?_⟩
+  · obtain ⟨τ, hτ, hs⟩ := h1 hl
+    exact ⟨τ, hτ, fun t ht0 ht1 => neg_neg_of_pos (hs t ht0 ht1)⟩
+  · obtain ⟨τ, hτ, hs⟩ := h2 hr
+    exact ⟨τ, hτ, fun t ht0 ht1 => neg_neg_of_pos (hs t ht0 ht1)⟩
+
+/-- A stretch selection whose interior vertices carry no selected loop and do not
+separate the selection has a square realization. -/
+theorem exists_squareRealization_base {U : Set (ℝ × ℝ)} (hU : OuterFace D U)
+    (hfront : ∀ i t, D.curve (copies i) t ∈ closure U) (S : Set V) (T : Finset E) {p q : ℕ}
+    (hpq : p < q) (hqm : q ≤ m) (hcop : ∀ i : Fin m, p ≤ (i : ℕ) → (i : ℕ) < q → copies i ∈ T)
+    (hnoloop : ∀ a : ℕ, p < a → ∀ haq : a < q, ∀ e ∈ T,
+      ¬ (J.left e = path ⟨a, by omega⟩ ∧ J.right e = path ⟨a, by omega⟩))
+    (hconn : ∀ a : ℕ, ∀ hpa : p < a, ∀ haq : a < q, ∀ e ∈ T, ∀ x, (x = J.left e ∨ x = J.right e) →
+      x ≠ path ⟨a, by omega⟩ →
+        J.reaches (avoiding J T (path ⟨a, by omega⟩)) x (path ⟨a - 1, by omega⟩)) :
+    Nonempty (SquareRealization J S T path copies p q) := by
+  rcases h.ends_one_side hU hfront T hqm hcop hnoloop hconn with habove | hbelow
+  · exact h.exists_squareRealization_of_endsAbove S T hpq hqm habove
+  · exact h.exists_squareRealization_of_endsBelow S T hpq hqm hbelow
+
+end StraightPath
+
 end
 end FiniteAvalanches.Electrical.StatementGeometry.OuterRedrawing
