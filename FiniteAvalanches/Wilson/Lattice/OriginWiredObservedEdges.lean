@@ -85,5 +85,34 @@ theorem originSafe_terminalEdge_agree_of_queried (B : ℕ) (x : ℕ → Site 2)
   · rintro ⟨i, hi, he⟩
     exact ⟨i, (hcopy i he).mpr hi, he⟩
 
+/-- On the coupling event, terminal continuations agree simultaneously on
+every edge in a finite observation whose endpoints have been queried. -/
+theorem originWiredCouplingEvent_edges_agree (B : ℕ) (x : ℕ → Site 2)
+    (k : Cursor (FiniteWired.Vertex B)) (n : ℕ) (E : Finset LatticeEdge)
+    (hE : ∀ e ∈ E, ∀ z ∈ e.val, ∃ i < n, x i = z)
+    (σ : (p : FiniteWired.Vertex B × ℕ) → IncidentCopy (WiredTrees.graph B) p.1)
+    (hσ : σ ∈ originWiredCouplingEvent B x k n) :
+    ∃ t u,
+      ∃ ht : terminal (wiredOriginRoot B) (incidentCopyHead (WiredTrees.graph B))
+        (fun v i => σ (v, i)) t,
+      ∃ hu : terminal (wiredOriginAndSink B) (incidentCopyHead (WiredTrees.graph B))
+        (fun v i => σ (v, i)) u,
+      Relation.ReflTransGen (pop_step (wiredOriginRoot B)
+        (incidentCopyHead (WiredTrees.graph B)) (fun v i => σ (v, i))) k t ∧
+      Relation.ReflTransGen (pop_step (wiredOriginAndSink B)
+        (incidentCopyHead (WiredTrees.graph B)) (fun v i => σ (v, i))) k u ∧
+      ∀ e ∈ E,
+        (∃ i : FiniteWired.InteriorEdge B,
+          Sum.inl i ∈ incidentArrowCopies (WiredTrees.graph B) (wiredOriginRoot B)
+            ⟨fun v => σ (v, t v), ht⟩ ∧ interiorEdge i = e) ↔
+        (∃ i : FiniteWired.InteriorEdge B,
+          Sum.inl i ∈ incidentArrowCopies (WiredTrees.graph B) (wiredOriginAndSink B)
+            ⟨fun v => σ (v, u v), hu⟩ ∧ interiorEdge i = e) := by
+  obtain ⟨⟨hsafe, t, htRun, ht⟩, u, huRun, hu⟩ := hσ
+  refine ⟨t, u, ht, hu, htRun, huRun, ?_⟩
+  intro e he
+  exact originSafe_terminalEdge_agree_of_queried B x k t u n σ hsafe htRun ht huRun hu e
+    (hE e he)
+
 end
 end FiniteAvalanches.Wilson.Lattice
