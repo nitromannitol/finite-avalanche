@@ -118,5 +118,24 @@ noncomputable def orientedChartOfIdentityNearPoint (f : Plane ≃ₜ Plane) (z :
       rw [T.apply_symm_apply, T.apply_symm_apply]
   }
 
+
+/-- A plane homeomorphism supported in a compact set is isotopic to the
+    identity, with a jointly continuous inverse isotopy. -/
+noncomputable def orientedChartOfCompactSupport (f : Plane ≃ₜ Plane)
+    (K : Set Plane) (hK : IsCompact K) (hf : ∀ x ∉ K, f x = x) : OrientedChart := by
+  have hne : K ≠ Set.univ := by
+    intro h
+    exact noncompact_univ Plane (h ▸ hK)
+  have hex : ∃ z, z ∉ K := by
+    by_contra h
+    apply hne
+    exact Set.eq_univ_iff_forall.mpr (by simpa only [not_exists, not_not] using h)
+  let z := Classical.choose hex
+  have hz : z ∉ K := Classical.choose_spec hex
+  have hloc : f =ᶠ[𝓝 z] id := by
+    filter_upwards [hK.isClosed.isOpen_compl.mem_nhds hz] with x hx
+    exact hf x hx
+  exact orientedChartOfIdentityNearPoint f z hloc
+
 end
 end FiniteAvalanches.Electrical.StatementGeometry
