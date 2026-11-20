@@ -575,6 +575,47 @@ theorem Source.OrientedChart.exists_winding_jump_complexMapLoop_horizontal
       chart.loopDeg_complexMapLoop_sub_const γ hclosed (-(a : ℂ) / Complex.I) hm]
     exact hd
 
+/-- A recentered chart image has the same winding degree about the recentered
+image of any point avoided by the original loop. -/
+theorem Source.OrientedChart.loopDeg_mapLoop_sub_const
+    (chart : Source.OrientedChart) (q z : ℂ) (γ : C(unitInterval, ℂ))
+    (hclosed : γ 0 = γ 1) (hz : ∀ t, γ t ≠ z) :
+    loopDeg (chart.mapLoop q γ - ContinuousMap.const unitInterval
+        (chart.complexMap (q + z) - chart.complexMap q))
+      (fun t => by
+        apply sub_ne_zero.mpr
+        intro he
+        apply hz t
+        rw [chart.mapLoop_apply] at he
+        change chart.complexMap (q + γ t) - chart.complexMap q =
+          chart.complexMap (q + z) - chart.complexMap q at he
+        have h : chart.complexMap (q + γ t) = chart.complexMap (q + z) := by
+          linear_combination he
+        exact add_left_cancel (chart.complexMap.injective h)) =
+      loopDeg (γ - ContinuousMap.const unitInterval z) (fun t => sub_ne_zero.mpr (hz t)) := by
+  let δ := ContinuousMap.const unitInterval q + γ
+  have hc : δ 0 = δ 1 := by change q + γ 0 = q + γ 1; rw [hclosed]
+  have hn : ∀ t, δ t ≠ q + z := by
+    intro t he
+    exact hz t (add_left_cancel he)
+  have h := chart.loopDeg_complexMapLoop_sub_const δ hc (q + z) hn
+  have he : chart.complexMapLoop δ - ContinuousMap.const unitInterval (chart.complexMap (q + z)) =
+      chart.mapLoop q γ - ContinuousMap.const unitInterval
+        (chart.complexMap (q + z) - chart.complexMap q) := by
+    ext t
+    change chart.complexMap (q + γ t) - chart.complexMap (q + z) = _
+    rw [ContinuousMap.sub_apply, ContinuousMap.const_apply, chart.mapLoop_apply]
+    change chart.complexMap (q + γ t) - chart.complexMap (q + z) =
+      (chart.complexMap (q + γ t) - chart.complexMap q) -
+        (chart.complexMap (q + z) - chart.complexMap q)
+    ring
+  have he' : δ - ContinuousMap.const unitInterval (q + z) =
+      γ - ContinuousMap.const unitInterval z := by
+    ext t
+    change q + γ t - (q + z) = γ t - z
+    ring
+  simpa only [he, he'] using h
+
 /-- Two equal positive winding jumps cannot have both their sides matched in
 reverse within complementary components of the same loop. -/
 theorem not_crossed_component_matching_of_winding_jumps
