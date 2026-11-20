@@ -1,4 +1,5 @@
 import FiniteAvalanches.Support.Plane.CrossingAccess
+import FiniteAvalanches.Support.Plane.PolygonalPathStar
 
 /-!
 # Stars and transverse boundary access
@@ -27,12 +28,14 @@ theorem exists_transverse_access_and_disjoint_star
     (chart : ι → (ℝ × ℝ) ≃ₜ (ℝ × ℝ)) (c : ι → ℝ)
     (hvertical : ∀ i ∈ s, ∀ z ∈ range (p i), (chart i z).1 = c i) :
     ∃ b : ι → ℝ × ℝ, ∃ w : ∀ i, Path (p i (t i)) (b i),
-    ∃ a : ∀ i, Path (b i) r,
+    ∃ (vs : ι → List (ℝ × ℝ)) (a : ∀ i, Path (b i) r),
       (∀ i ∈ s, b i ≠ p i (t i) ∧ Function.Injective (w i) ∧
         range (w i) ⊆ U \ ((S ∪ {r}) ∪ ⋃ j ∈ s.erase i, range (p j)) ∧
         range (w i) ∩ range (p i) = {p i (t i)}) ∧
       (∀ i ∈ s, ∀ j ∈ s, i ≠ j → Disjoint (range (w i)) (range (w j))) ∧
+      (∀ i ∈ s, LatticeProb.Topology.IsSimplePolygonalChain (vs i)) ∧
       (∀ i ∈ s, Function.Injective (a i)) ∧
+      (∀ i ∈ s, range (a i) = LatticeProb.Topology.polygonalChain (vs i)) ∧
       (∀ i ∈ s, range (a i) ⊆ (U \ (⋃ j ∈ s, range (p j))) \ S) ∧
       (∀ i ∈ s, ∀ j ∈ s, i ≠ j → range (a i) ∩ range (a j) = {r}) := by
   have hobs : ∀ i ∈ s, Disjoint (range (p i)) (S ∪ {r}) := by
@@ -69,9 +72,10 @@ theorem exists_transverse_access_and_disjoint_star
     simpa only [heq] using (w j).target_mem_range
   have hc : IsCompact (⋃ i ∈ s, range (p i)) :=
     s.isCompact_biUnion (fun i _ => isCompact_range (p i).continuous)
-  obtain ⟨a, ha, hasub, hasep⟩ := exists_disjoint_path_star (hU.sdiff hc.isClosed)
+  obtain ⟨vs, a, hvs, ha, hatrace, hasub, hasep⟩ :=
+    exists_disjoint_polygonal_path_star (hU.sdiff hc.isClosed)
     (isPreconnected_sdiff_finset_paths_of_disjoint_inside hU hconn s p hp hd hinter)
     s hS hr hb hbr hbinj
-  exact ⟨b, w, a, hw, hww, ha, hasub, hasep⟩
+  exact ⟨b, w, vs, a, hw, hww, hvs, ha, hatrace, hasub, hasep⟩
 
 end FiniteAvalanches.Electrical.StatementGeometry
