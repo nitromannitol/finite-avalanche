@@ -2,6 +2,7 @@ import FiniteAvalanches.Electrical.Geometry.BSST
 import FiniteAvalanches.External.TwoPoleTopology
 import FiniteAvalanches.Support.Plane.GeneralGeometricDual
 import FiniteAvalanches.Support.Plane.UnchartedFaces
+import FiniteAvalanches.Support.Plane.TraceClosedName
 
 /-! Classical geometric duality for finite connected plane multigraph drawings. -/
 set_option autoImplicit false
