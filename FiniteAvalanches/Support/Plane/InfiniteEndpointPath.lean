@@ -179,4 +179,34 @@ theorem exists_endpointPathClock_stage {t : ℝ} (ht0 : 0 ≤ t) (ht1 : t < 1) :
     rw [hstep'] at hmul
     linarith
 
+/-- Each endpoint of a simple plane arc can be reached by a path whose other
+points avoid the arc. -/
+theorem exists_path_to_arc_endpoint
+    {x y : ℝ × ℝ} (p : Path x y) (hp : Function.Injective p) :
+    ∃ a : ℝ × ℝ, ∃ q : Path a x, ∀ t : unitInterval, t ≠ 1 → q t ∉ range p := by
+  let r : ℕ → ℝ := fun n => (1 / 2 : ℝ) ^ n
+  have hr : ∀ n, 0 < r n := fun n => pow_pos (by norm_num) n
+  have hrmono : Antitone r := fun _ _ h =>
+    pow_le_pow_of_le_one (by norm_num) (by norm_num) h
+  obtain ⟨z, hz, _, hpaths⟩ := exists_endpoint_paths_in_nested_balls p hp r hr hrmono
+  choose q hq using hpaths
+  have hqball : ∀ n, range (q n) ⊆ ball x ((1 / 2 : ℝ) ^ n) :=
+    fun n => (hq n).trans sdiff_subset
+  let Q : Path (z 0) x := {
+    toFun := fun t => endpointPathSeries z q t.val
+    continuous_toFun := (continuous_endpointPathSeries z q hqball).comp continuous_subtype_val
+    source' := endpointPathSeries_zero z q
+    target' := endpointPathSeries_one z q hqball }
+  refine ⟨z 0, Q, ?_⟩
+  intro t ht
+  have ht1 : (t : ℝ) < 1 := lt_of_le_of_ne t.property.2
+    (fun heq => ht (Subtype.ext heq))
+  obtain ⟨n, hn0, hn1, hprev, hnext⟩ := exists_endpointPathClock_stage t.property.1 ht1
+  have hstage := endpointPathSeries_eq_of_clock_bounds z q n t.val hprev hnext
+  have hmem : (q n).extend (endpointPathClock n t.val) ∈ range (q n) :=
+    (q n).extend_range ▸ mem_range_self _
+  change endpointPathSeries z q t.val ∉ range p
+  rw [hstage]
+  exact (hq n hmem).2
+
 end FiniteAvalanches.Electrical.StatementGeometry
