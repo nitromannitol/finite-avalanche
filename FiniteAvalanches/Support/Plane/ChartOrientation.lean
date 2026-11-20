@@ -813,9 +813,9 @@ private theorem circleLoop_re_neg_at_midpoint (t : unitInterval) (ht : (t : ℝ)
     Real.cos_pi]
   norm_num
 
-/-- A loop crossing the origin through opposite half-planes has winding
-difference one across the crossing when its remaining part stays outside a
-small circle. -/
+/-- A loop moving through opposite half-planes near the origin has winding
+difference one between two symmetric points when its remaining part stays
+outside a small circle. -/
 theorem loopDeg_sub_const_sub_eq_one_of_local_crossing
     (γ : C(unitInterval, ℂ)) (hc : γ 0 = γ 1) {a : ℝ} (ha : 0 < a)
     (hp : ∀ t, γ t ≠ (a : ℂ)) (hm : ∀ t, γ t ≠ -(a : ℂ))
