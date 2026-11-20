@@ -516,6 +516,130 @@ theorem ust_joinedIn_compl_le : ∃ C c : ℝ, 0 ≤ C ∧ 0 < c ∧ ∃ k₀ r�
   refine (finiteLaw_not_joinedIn_le x y hxy k r N (by omega) (by omega) hN).trans ?_
   exact add_le_add (ha x k r N hk hr hrk hN) (hb x y k r N hxy hr8 (by omega) hN)
 
+/-! ### The choice `r ≈ k ^ (2/3)` -/
+
+theorem cube_root_spec (a : ℝ) (ha : 0 ≤ a) :
+    0 ≤ a ^ ((1 : ℝ) / 3) ∧ (a ^ ((1 : ℝ) / 3)) ^ 3 = a := by
+  refine ⟨Real.rpow_nonneg ha _, ?_⟩
+  rw [show (1 : ℝ) / 3 = ((3 : ℕ) : ℝ)⁻¹ by norm_num]
+  exact Real.rpow_inv_natCast_pow ha (by norm_num)
+
+theorem le_of_cube_le {a b : ℝ} (hb : 0 ≤ b) (h : a ^ 3 ≤ b ^ 3) : a ≤ b :=
+  le_of_pow_le_pow_left₀ (by norm_num) hb h
+
+/-- The bound for natural radii, with `r = ⌊k ^ (2/3)⌋`. -/
+theorem ust_path_tail_nat : ∃ C : ℝ, 0 ≤ C ∧ ∃ K₁ : ℕ, ∀ x y : Site 2, (lattice 2).Adj x y →
+    ∀ K : ℕ, K₁ ≤ K →
+      (squareLatticeUST : Measure EdgeField).real (treePathLeavesEuclidean x y K) ≤
+        C / (K : ℝ) ^ ((1 : ℝ) / 3) := by
+  obtain ⟨C₀, c, hC₀, hc, k₀, r₀, h⟩ := ust_joinedIn_compl_le
+  refine ⟨C₀ + 4 * c, by positivity, max k₀ (max (64 ^ 3) ((r₀ + 1) ^ 3)),
+    fun x y hxy K hK => ?_⟩
+  have hk₀ : k₀ ≤ K := le_of_max_le_left hK
+  have h64 : 64 ^ 3 ≤ K := le_of_max_le_left (le_of_max_le_right hK)
+  have hr₀ : (r₀ + 1) ^ 3 ≤ K := le_of_max_le_right (le_of_max_le_right hK)
+  obtain ⟨ht0, ht3⟩ := cube_root_spec (K : ℝ) (Nat.cast_nonneg K)
+  set t := (K : ℝ) ^ ((1 : ℝ) / 3) with ht
+  have htm : ∀ m : ℕ, m ^ 3 ≤ K → (m : ℝ) ≤ t := by
+    intro m hm
+    apply le_of_cube_le ht0
+    rw [ht3]
+    exact_mod_cast hm
+  have ht64 : (64 : ℝ) ≤ t := by exact_mod_cast htm 64 h64
+  have htr₀ : (r₀ : ℝ) + 1 ≤ t := by exact_mod_cast htm (r₀ + 1) hr₀
+  set r := ⌊t ^ 2⌋₊ with hr
+  have hr_le : (r : ℝ) ≤ t ^ 2 := Nat.floor_le (by positivity)
+  have hr_gt : t ^ 2 < r + 1 := Nat.lt_floor_add_one _
+  have hr8 : 8 ≤ r := Nat.le_floor (by norm_num; nlinarith)
+  have hrr₀ : r₀ ≤ r := Nat.le_floor (by nlinarith)
+  have hrK : 64 * r ≤ K := by
+    have : (64 : ℝ) * r ≤ K := by
+      rw [← ht3]
+      nlinarith
+    exact_mod_cast this
+  have hKpos : (0 : ℝ) < K := by rw [← ht3]; positivity
+  have htpos : 0 < t := by linarith
+  have hrpos : (0 : ℝ) < r := by exact_mod_cast (by omega : 0 < r)
+  have hmain := h x y hxy K r hk₀ hrr₀ hr8 hrK
+  have hsum : ENNReal.ofReal (C₀ * ((r : ℝ) / K)) + ENNReal.ofReal (c * Real.sqrt (8 / r)) =
+      ENNReal.ofReal (C₀ * ((r : ℝ) / K) + c * Real.sqrt (8 / r)) :=
+    (ENNReal.ofReal_add (by positivity) (by positivity)).symm
+  rw [hsum] at hmain
+  have hreal := ENNReal.toReal_le_of_le_ofReal (by positivity) hmain
+  refine hreal.trans ?_
+  have h1 : (r : ℝ) / K ≤ 1 / t := by
+    rw [div_le_div_iff₀ hKpos htpos, ← ht3]
+    nlinarith
+  have h2 : Real.sqrt (8 / r) ≤ 4 / t := by
+    rw [Real.sqrt_le_iff]
+    refine ⟨by positivity, ?_⟩
+    rw [div_pow, div_le_div_iff₀ hrpos (by positivity)]
+    nlinarith
+  calc C₀ * ((r : ℝ) / K) + c * Real.sqrt (8 / r) ≤ C₀ * (1 / t) + c * (4 / t) := by
+        gcongr
+    _ = (C₀ + 4 * c) / t := by ring
+
+/-- **Barlow and Masson (2011), Lemma 2.6, upper bound.** The path between adjacent sites in the
+uniform spanning tree of `ℤ²` leaves the closed Euclidean ball of radius `k ≥ 1` about one of
+them with probability at most `C k ^ (-1/3)`. -/
+theorem adjacent_ust_path_euclidean_tail_le :
+    ∃ C : ℝ, 0 < C ∧ ∀ x y : Site 2, (lattice 2).Adj x y →
+      ∀ k : ℝ, 1 ≤ k →
+        (squareLatticeUST : Measure EdgeField).real (treePathLeavesEuclidean x y k) ≤
+          C * k ^ (-(1 / 3 : ℝ)) := by
+  obtain ⟨C₁, hC₁, K₁, h⟩ := ust_path_tail_nat
+  refine ⟨2 * C₁ + K₁ + 1, by positivity, fun x y hxy k hk => ?_⟩
+  have hk0 : 0 ≤ k := by linarith
+  obtain ⟨hs0, hs3⟩ := cube_root_spec k hk0
+  rw [Real.rpow_neg hk0]
+  set s := k ^ ((1 : ℝ) / 3) with hs
+  have hs1 : 1 ≤ s := by
+    apply le_of_cube_le hs0
+    rw [hs3, one_pow]
+    exact hk
+  have hspos : 0 < s := by linarith
+  set K := ⌊k⌋₊ with hKdef
+  have hK1 : 1 ≤ K := Nat.le_floor (by simpa using hk)
+  have hKk : (K : ℝ) ≤ k := Nat.floor_le hk0
+  have hkK : k < K + 1 := Nat.lt_floor_add_one k
+  have hsub : treePathLeavesEuclidean x y k ⊆ treePathLeavesEuclidean x y K := by
+    rintro ω ⟨hω, z, hz, hout⟩
+    refine ⟨hω, z, hz, fun hin => hout ?_⟩
+    simp only [euclideanBall, Set.mem_setOf_eq] at hin ⊢
+    linarith
+  have hmono : (squareLatticeUST : Measure EdgeField).real (treePathLeavesEuclidean x y k) ≤
+      (squareLatticeUST : Measure EdgeField).real (treePathLeavesEuclidean x y K) :=
+    measureReal_mono hsub
+  have hle1 : (squareLatticeUST : Measure EdgeField).real (treePathLeavesEuclidean x y k) ≤ 1 :=
+    measureReal_le_one
+  rw [← div_eq_mul_inv]
+  by_cases hKK : K₁ ≤ K
+  · refine hmono.trans ((h x y hxy K hKK).trans ?_)
+    obtain ⟨ht0, ht3⟩ := cube_root_spec (K : ℝ) (Nat.cast_nonneg K)
+    set t := (K : ℝ) ^ ((1 : ℝ) / 3) with ht
+    have hts : s / 2 ≤ t := by
+      apply le_of_cube_le ht0
+      rw [ht3, div_pow, hs3]
+      have : (1 : ℝ) ≤ K := by exact_mod_cast hK1
+      linarith
+    have htpos : 0 < t := by linarith
+    calc C₁ / t ≤ C₁ / (s / 2) := div_le_div_of_nonneg_left hC₁ (by positivity) hts
+      _ = 2 * C₁ / s := by field_simp
+      _ ≤ (2 * C₁ + K₁ + 1) / s := by
+          apply div_le_div_of_nonneg_right _ hspos.le
+          have : (0 : ℝ) ≤ K₁ := Nat.cast_nonneg _
+          linarith
+  · have hsK : s ≤ K₁ + 1 := by
+      apply le_of_cube_le (by positivity)
+      rw [hs3]
+      have hKK' : (K : ℝ) + 1 ≤ K₁ := by exact_mod_cast (by omega : K + 1 ≤ K₁)
+      have h1 : (1 : ℝ) ≤ (K₁ : ℝ) + 1 := by linarith [Nat.cast_nonneg (α := ℝ) K₁]
+      have h3 : ((K₁ : ℝ) + 1) ≤ ((K₁ : ℝ) + 1) ^ 3 := le_self_pow₀ h1 (by norm_num)
+      linarith
+    refine hle1.trans ?_
+    rw [le_div_iff₀ hspos]
+    linarith
+
 end
 
 end FiniteAvalanches.Walk.BarlowMasson
