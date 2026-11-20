@@ -4095,9 +4095,9 @@
     },
     {
       "path": "FiniteAvalanches/Support/Plane/IntervalNormalization.lean",
-      "sha256": "0923839e09730b21510b9ed57b4ee549cee821ff813e980dd9c1e294104915c6",
-      "code_sha256": "ba4fa17430b39e9dd287f98c257f8740824dc84ea3aa30ea8145b2d6a2d99116",
-      "bytes": 10711
+      "sha256": "344105596393898db891bbab9875f4ac6a4d5a894c02cc1c1b1e6b6b610f48e5",
+      "code_sha256": "2e0f4ae9cb043e215b49cd9ca760603c32e358efaf9a4c5be472217473e0918c",
+      "bytes": 13564
     },
     {
       "path": "FiniteAvalanches/Support/Plane/JordanDrawingFaces.lean",
