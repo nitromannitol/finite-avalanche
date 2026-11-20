@@ -371,6 +371,60 @@ theorem rayParity_support_finite (D : Finset (Sym2 (Site 2)))
   · exact hx0'
   · exact hx1.2
 
+/-- Sites of odd ray parity lie in any centered box containing the vertices of `D`. -/
+theorem rayParity_support_bounded (D : Finset (Sym2 (Site 2)))
+    (hlat : ∀ d ∈ D, ∃ z : Site 2, ∃ i : Fin 2, d = s(z, z + unit i))
+    (heven : ∀ v : Site 2, ∑ d ∈ D, (if v ∈ d then 1 else 0 : ZMod 2) = 0) (M : ℤ)
+    (hbound : ∀ d ∈ D, ∀ v ∈ d, |v 0| ≤ M ∧ |v 1| ≤ M) (x : Site 2)
+    (hx : rayParity D x ≠ 0) : |x 0| ≤ M ∧ |x 1| ≤ M := by
+  have hray : ∀ x, rayParity D x ≠ 0 → ∃ d ∈ D, ∃ z ∈ d, z 1 = x 1 ∧ x 0 ≤ z 0 := by
+    intro x hx
+    by_contra hno
+    push Not at hno
+    apply hx
+    refine Finset.sum_eq_zero fun d hd => if_neg ?_
+    rintro ⟨z, h1, h0, rfl⟩
+    exact (hno _ hd z (Sym2.mem_mk_right _ _) h1).not_ge h0
+  have hzero_high : ∀ x : Site 2, M < |x 1| → rayParity D x = 0 := by
+    intro x hx
+    by_contra hne
+    obtain ⟨d, hd, z, hz, h1, -⟩ := hray x hne
+    have := (hbound d hd z hz).2
+    rw [h1] at this
+    omega
+  have hleft : ∀ n : ℕ, ∀ x : Site 2, x 0 < -M → M < x 1 + n → rayParity D x = 0 := by
+    intro n
+    induction n with
+    | zero =>
+      intro x _ hx1
+      exact hzero_high x (lt_of_lt_of_le (by simpa using hx1) (le_abs_self _))
+    | succ n ih =>
+      intro x hx0 hx1
+      have hnot : s(x - unit 0, x) ∉ D := by
+        intro hd
+        have := (hbound _ hd x (Sym2.mem_mk_right _ _)).1
+        rw [abs_le] at this
+        omega
+      have hup := rayParity_add_up D hlat heven x
+      rw [if_neg hnot, add_zero] at hup
+      have heq : rayParity D x = rayParity D (x + unit 1) := by
+        generalize rayParity D x = t at hup ⊢
+        generalize rayParity D (x + unit 1) = t' at hup ⊢
+        revert t t'
+        decide
+      rw [heq]
+      exact ih _ (by simpa using hx0) (by simp; push_cast at hx1; omega)
+  obtain ⟨d, hd, z, hz, h1, h0⟩ := hray x hx
+  have hzb := hbound d hd z hz
+  have hx1 : |x 1| ≤ M := by rw [← h1]; exact hzb.2
+  refine ⟨abs_le.mpr ⟨?_, le_trans h0 (abs_le.mp hzb.1).2⟩, hx1⟩
+  by_contra hlt
+  push Not at hlt
+  refine hx (hleft (M - x 1 + 1).toNat x hlt ?_)
+  rw [abs_le] at hx1
+  rw [Int.toNat_of_nonneg (by omega)]
+  omega
+
 end
 
 end FiniteAvalanches.Trees.Lattice
