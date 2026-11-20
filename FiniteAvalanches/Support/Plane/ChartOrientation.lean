@@ -353,6 +353,27 @@ theorem loopDeg_inv (γ : C(unitInterval, ℂ)) (hγ : ∀ t, γ t ≠ 0)
   push_cast
   linear_combination -he
 
+/-- The degree of a quotient of nonvanishing closed loops is the difference
+of their degrees. -/
+theorem loopDeg_div (γ δ : C(unitInterval, ℂ))
+    (hγ : ∀ t, γ t ≠ 0) (hδ : ∀ t, δ t ≠ 0)
+    (hγc : γ 0 = γ 1) (hδc : δ 0 = δ 1) :
+    loopDeg ⟨fun t => γ t / δ t, γ.continuous.div₀ δ.continuous hδ⟩
+      (fun t => div_ne_zero (hγ t) (hδ t)) = loopDeg γ hγ - loopDeg δ hδ := by
+  let η : C(unitInterval, ℂ) := ⟨fun t => (δ t)⁻¹, δ.continuous.inv₀ hδ⟩
+  have hη : ∀ t, η t ≠ 0 := fun t => inv_ne_zero (hδ t)
+  have hηc : η 0 = η 1 := by
+    change (δ 0)⁻¹ = (δ 1)⁻¹
+    rw [hδc]
+  have he := loopDeg_mul γ η hγ hη hγc hηc
+  have hi : loopDeg η hη = -loopDeg δ hδ := loopDeg_inv δ hδ hδc
+  have hmap : (⟨fun t => γ t / δ t, γ.continuous.div₀ δ.continuous hδ⟩ :
+      C(unitInterval, ℂ)) = γ * η := by
+    ext t
+    change γ t / δ t = γ t * (δ t)⁻¹
+    exact div_eq_mul_inv _ _
+  simpa only [hmap, hi, sub_eq_add_neg] using he
+
 /-- Complex conjugation reverses the degree of a loop. -/
 theorem loopDeg_conj (γ : C(unitInterval, ℂ)) (hγ : ∀ t, γ t ≠ 0)
     (hc : γ 0 = γ 1) :
@@ -596,6 +617,42 @@ theorem loopDeg_add_const_of_norm_lt (q : ℂ) (γ : C(unitInterval, ℂ))
       simpa only [ContinuousMap.add_apply, ContinuousMap.const_apply, add_sub_cancel_left]
         using hsmall t)
   simpa only [loopDeg_const] using heq
+
+/-- If the quotient of the offsets from two points follows the coordinate
+signs of a positive circle, the winding degree increases by one between the
+points. -/
+theorem loopDeg_sub_const_sub_eq_one_of_quotient_sign
+    (γ : C(unitInterval, ℂ)) (hc : γ 0 = γ 1) (a b : ℂ)
+    (ha : ∀ t, γ t ≠ a) (hb : ∀ t, γ t ≠ b) {r : ℝ} (hr : r ≠ 0)
+    (hsign : ∀ t, let z := (γ t - a) / (γ t - b)
+      (0 < z.im ∧ 0 < (circleLoop r t).im) ∨
+      (z.im < 0 ∧ (circleLoop r t).im < 0) ∨
+      (0 < z.re ∧ 0 < (circleLoop r t).re) ∨
+      (z.re < 0 ∧ (circleLoop r t).re < 0)) :
+    loopDeg (γ - ContinuousMap.const unitInterval a)
+        (fun t => sub_ne_zero.mpr (ha t)) -
+      loopDeg (γ - ContinuousMap.const unitInterval b)
+        (fun t => sub_ne_zero.mpr (hb t)) = 1 := by
+  let α := γ - ContinuousMap.const unitInterval a
+  let β := γ - ContinuousMap.const unitInterval b
+  have hα : ∀ t, α t ≠ 0 := fun t => sub_ne_zero.mpr (ha t)
+  have hβ : ∀ t, β t ≠ 0 := fun t => sub_ne_zero.mpr (hb t)
+  have hαc : α 0 = α 1 := by change γ 0 - a = γ 1 - a; rw [hc]
+  have hβc : β 0 = β 1 := by change γ 0 - b = γ 1 - b; rw [hc]
+  let δ : C(unitInterval, ℂ) := ⟨fun t => α t / β t, α.continuous.div₀ β.continuous hβ⟩
+  have hδ : ∀ t, δ t ≠ 0 := fun t => div_ne_zero (hα t) (hβ t)
+  have hδc : δ 0 = δ 1 := by change α 0 / β 0 = α 1 / β 1; rw [hαc, hβc]
+  have hcircle : circleLoop r 0 = circleLoop r 1 := by
+    simpa [circleLoop] using (periodic_circleMap 0 r 0).symm
+  have hsign' : ∀ t, (0 < (δ t).im ∧ 0 < (circleLoop r t).im) ∨
+      ((δ t).im < 0 ∧ (circleLoop r t).im < 0) ∨
+      (0 < (δ t).re ∧ 0 < (circleLoop r t).re) ∨
+      ((δ t).re < 0 ∧ (circleLoop r t).re < 0) := hsign
+  have hdeg := loopDeg_eq_of_coordinate_sign δ (circleLoop r) hδ
+    (circleLoop_ne_zero hr) hδc hcircle hsign'
+  rw [loopDeg_circle hr] at hdeg
+  have hdiv := loopDeg_div α β hα hβ hαc hβc
+  exact hdiv.symm.trans hdeg
 
 /-- A closed loop has winding degree zero about every point in an unbounded
 component of its complement. -/
