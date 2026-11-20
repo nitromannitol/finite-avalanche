@@ -780,6 +780,51 @@ theorem loopDeg_sub_const_sub_eq_one_of_symmetric_crossing
   · have hn : (γ t).re ^ 2 + (γ t).im ^ 2 - a ^ 2 < 0 := by linarith
     exact Or.inr (Or.inr (Or.inr ⟨by rw [hcoord.1]; exact div_neg_of_neg_of_pos hn hden, h.2⟩))
 
+private theorem circleLoop_re_pos_near_endpoints (t : unitInterval)
+    (ht : (t : ℝ) < 1 / 4 ∨ 3 / 4 < (t : ℝ)) :
+    0 < (circleLoop 1 t).re := by
+  change 0 < (circleMap 0 1 (2 * Real.pi * (t : ℝ))).re
+  rw [circleMap_zero_re, one_mul]
+  rcases ht with ht | ht
+  · apply Real.cos_pos_of_mem_Ioo
+    constructor <;> nlinarith [Real.pi_pos, t.2.1]
+  · rw [← Real.cos_two_pi_sub]
+    apply Real.cos_pos_of_mem_Ioo
+    constructor <;> nlinarith [Real.pi_pos, t.2.2]
+
+private theorem circleLoop_re_neg_at_midpoint (t : unitInterval) (ht : (t : ℝ) = 1 / 2) :
+    (circleLoop 1 t).re < 0 := by
+  change (circleMap 0 1 (2 * Real.pi * (t : ℝ))).re < 0
+  rw [circleMap_zero_re, one_mul, ht, show 2 * Real.pi * (1 / 2 : ℝ) = Real.pi by ring,
+    Real.cos_pi]
+  norm_num
+
+/-- A loop crossing the origin through opposite half-planes has winding
+difference one across the crossing when its remaining part stays outside a
+small circle. -/
+theorem loopDeg_sub_const_sub_eq_one_of_local_crossing
+    (γ : C(unitInterval, ℂ)) (hc : γ 0 = γ 1) {a : ℝ} (ha : 0 < a)
+    (hp : ∀ t, γ t ≠ (a : ℂ)) (hm : ∀ t, γ t ≠ -(a : ℂ))
+    (hfar : ∀ t : unitInterval, (t : ℝ) < 1 / 4 ∨ 3 / 4 < (t : ℝ) →
+      a ^ 2 < (γ t).re ^ 2 + (γ t).im ^ 2)
+    (hpos : ∀ t : unitInterval, 1 / 4 ≤ (t : ℝ) → (t : ℝ) < 1 / 2 → 0 < (γ t).im)
+    (hneg : ∀ t : unitInterval, 1 / 2 < (t : ℝ) → (t : ℝ) ≤ 3 / 4 → (γ t).im < 0)
+    (hmid : ∀ t : unitInterval, (t : ℝ) = 1 / 2 → (γ t).re ^ 2 + (γ t).im ^ 2 < a ^ 2) :
+    loopDeg (γ - ContinuousMap.const unitInterval (a : ℂ))
+        (fun t => sub_ne_zero.mpr (hp t)) -
+      loopDeg (γ - ContinuousMap.const unitInterval (-(a : ℂ)))
+        (fun t => sub_ne_zero.mpr (hm t)) = 1 := by
+  apply loopDeg_sub_const_sub_eq_one_of_symmetric_crossing γ hc ha hp hm (r := 1) (by norm_num)
+  intro t
+  by_cases hfar' : (t : ℝ) < 1 / 4 ∨ 3 / 4 < (t : ℝ)
+  · exact Or.inr (Or.inr (Or.inl ⟨hfar t hfar', circleLoop_re_pos_near_endpoints t hfar'⟩))
+  · have hlo : 1 / 4 ≤ (t : ℝ) := not_lt.mp (fun h => hfar' (Or.inl h))
+    have hhi : (t : ℝ) ≤ 3 / 4 := not_lt.mp (fun h => hfar' (Or.inr h))
+    rcases lt_trichotomy (t : ℝ) (1 / 2) with h | h | h
+    · exact Or.inl ⟨hpos t hlo h, circleLoop_im_pos (by norm_num) t (by linarith) h⟩
+    · exact Or.inr (Or.inr (Or.inr ⟨hmid t h, circleLoop_re_neg_at_midpoint t h⟩))
+    · exact Or.inr (Or.inl ⟨hneg t h hhi, circleLoop_im_neg (by norm_num) t h (by linarith)⟩)
+
 /-- A closed loop has winding degree zero about every point in an unbounded
 component of its complement. -/
 theorem loopDeg_sub_const_eq_zero_of_unbounded_component
