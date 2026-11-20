@@ -54,4 +54,54 @@ theorem exists_intervalUpperAt {X : Type*} [TopologicalSpace X] [T2Space X]
     obtain ⟨v, hvT, hsv⟩ := hcover s hs.1 hs.2
     exact ⟨v, hvT.1, hvT.2, hsv⟩
 
+/-- A member of a laminar family meeting a covered upper interval is contained
+in that interval. -/
+theorem IsIntervalUpperAt.contains_of_overlap
+    {S : Set (unitInterval × unitInterval)} (hlam : IsLaminarIntervalFamily S)
+    {t : unitInterval} {w v : unitInterval × unitInterval}
+    (hw : IsIntervalUpperAt S t w) (hv : v ∈ S)
+    (hoverlap : (Ioo w.1 w.2 ∩ Ioo v.1 v.2).Nonempty) :
+    w.1 ≤ v.1 ∧ v.2 ≤ w.2 := by
+  obtain ⟨s, hsw, hsv⟩ := hoverlap
+  obtain ⟨u, hu, htu, hsu⟩ := hw.2.2 s hsw
+  rcases hlam v hv u hu ⟨s, hsv, hsu⟩ with hvu | huv
+  · have htv : t ∈ Ioo v.1 v.2 :=
+      ⟨lt_of_le_of_lt hvu.1 htu.1, lt_of_lt_of_le htu.2 hvu.2⟩
+    exact hw.2.1 v hv htv
+  · have huupper := hw.2.1 u hu htu
+    exact ⟨huupper.1.trans huv.1, huv.2.trans huupper.2⟩
+
+/-- Two covered upper intervals of a laminar family that meet are equal. -/
+theorem IsIntervalUpperAt.eq_of_overlap
+    {S : Set (unitInterval × unitInterval)} (hlam : IsLaminarIntervalFamily S)
+    {t u : unitInterval} {v w : unitInterval × unitInterval}
+    (hv : IsIntervalUpperAt S t v) (hw : IsIntervalUpperAt S u w)
+    (hoverlap : (Ioo v.1 v.2 ∩ Ioo w.1 w.2).Nonempty) : v = w := by
+  obtain ⟨s, hsv, hsw⟩ := hoverlap
+  obtain ⟨v', hv'S, htv', hsv'⟩ := hv.2.2 s hsv
+  have hv'sub := hw.contains_of_overlap hlam hv'S ⟨s, hsw, hsv'⟩
+  have htw : t ∈ Ioo w.1 w.2 :=
+    ⟨lt_of_le_of_lt hv'sub.1 htv'.1, lt_of_lt_of_le htv'.2 hv'sub.2⟩
+  obtain ⟨w', hw'S, huw', hsw'⟩ := hw.2.2 s hsw
+  have hw'sub := hv.contains_of_overlap hlam hw'S ⟨s, hsv, hsw'⟩
+  have huv : u ∈ Ioo v.1 v.2 :=
+    ⟨lt_of_le_of_lt hw'sub.1 huw'.1, lt_of_lt_of_le huw'.2 hw'sub.2⟩
+  have hsubvw : Ioo v.1 v.2 ⊆ Ioo w.1 w.2 := by
+    intro z hz
+    obtain ⟨k, hkS, htk, hzk⟩ := hv.2.2 z hz
+    have hk := hw.contains_of_overlap hlam hkS ⟨t, htw, htk⟩
+    exact ⟨lt_of_le_of_lt hk.1 hzk.1, lt_of_lt_of_le hzk.2 hk.2⟩
+  have hsubwv : Ioo w.1 w.2 ⊆ Ioo v.1 v.2 := by
+    intro z hz
+    obtain ⟨k, hkS, huk, hzk⟩ := hw.2.2 z hz
+    have hk := hv.contains_of_overlap hlam hkS ⟨u, huv, huk⟩
+    exact ⟨lt_of_le_of_lt hk.1 hzk.1, lt_of_lt_of_le hzk.2 hk.2⟩
+  have hvne : v.1 < v.2 := lt_trans hv.1.1 hv.1.2
+  have hwne : w.1 < w.2 := lt_trans hw.1.1 hw.1.2
+  have hvw := (Ioo_subset_Ioo_iff hvne).mp hsubvw
+  have hwv := (Ioo_subset_Ioo_iff hwne).mp hsubwv
+  apply Prod.ext
+  · exact le_antisymm hwv.1 hvw.1
+  · exact le_antisymm hvw.2 hwv.2
+
 end FiniteAvalanches.Electrical.StatementGeometry
