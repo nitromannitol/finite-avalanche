@@ -48,9 +48,74 @@ declaration.
 ## Results from the literature
 
 The registry [`audit/trusted-inputs.json`](audit/trusted-inputs.json) and the README list the 25
-registered results from the literature. Theorem 1.1 uses 8 of them as axioms; 14 are proved in
-Lean, each with the statement text of the axiom it replaces. Where the Lean proof of a registered
-result takes a different route from the cited source, the route is recorded here.
+registered results from the literature. Theorem 1.1 assumes none of them: 22 are proved in Lean,
+each with the statement text of the axiom it replaces, and the remaining three are axioms that
+Theorem 1.1 does not use. Where the Lean proof of a registered result takes a different route from
+the cited source, the route is recorded here.
+
+- **The infinite-volume sandpile law** (`SandpileLimit.exists_infiniteVolumeLaw`; Athreya–Járai
+  2004, Theorem 1 and Remark 1(iii), with the 2006 correction; Járai–Werning 2014, Theorem 3).
+  Locality of the height events comes from the held burning of Lemma 2.1 and a factorization of
+  the finite laws into inner and outer parts. The wired spanning trees converge along every
+  exhaustion, by nested projection domination between boxes. Pasts are finite because the
+  limiting tree has one end, and dual paths bound them uniformly. Translation invariance follows
+  from the independence of the exhaustion
+  ([`InfiniteVolumeLaw.lean`](FiniteAvalanches/Sandpile/Limit/InfiniteVolumeLaw.lean)).
+- **One tree with one end** (`square_lattice_wired_ust_one_tree_one_end`; BLPS Theorem 12.4,
+  Lyons–Peres Theorem 10.36). The primal and dual limits are trees. For a present edge, the dual
+  tree path between the ends of its dual edge closes a dual trail; the sites whose rays cross the
+  trail an odd number of times form a finite set that only this edge leaves. Hence every finite
+  deletion leaves exactly one infinite component
+  ([`WiredLimitOneEnd.lean`](FiniteAvalanches/Wilson/Lattice/WiredLimitOneEnd.lean)).
+- **The tail of the path between adjacent sites**
+  (`BarlowMasson2011.adjacent_ust_path_euclidean_tail`; Barlow–Masson 2011, Lemmas 2.4 and 2.6).
+  The tree law is the limit of the laws of the wired boxes, and in each box Wilson's algorithm
+  runs from roots on the exterior of the box. Lemma 2.4 follows the decomposition of Barlow and
+  Masson by the prefix of the loop-erased path and the last visit. Its ratio bound uses a cone
+  estimate from the exactly harmonic quadratic `Re z + Re z² / 2` and optional stopping, explicit
+  two-sided bounds on annuli from the potential kernel, and an inward Beurling estimate from the
+  first-entrance decomposition and the symmetry of the Green function. The exponent `1/3`
+  balances the reentry bound of Lemma 2.4 against the Beurling estimate
+  ([`AdjacentPath.lean`](FiniteAvalanches/Walk/BarlowMasson/AdjacentPath.lean)).
+- **The Beurling estimate** (`lawler_limic_beurling_srw_Z2`; Lawler–Limic 2004, Theorem 1, for the
+  simple random walk) follows Sections 2 to 5 of Lawler and Limic. Lemma 2 uses that the walk
+  exits the disk of radius `r` at distance less than `r + 1`. Lemma 3 (11) is the minimum
+  principle with the potential kernel; Lemma 6 is proved for the segment `ℤ ∩ [-n, n)`. Lemma 10
+  combines the product of Lemma 9, the exact strip value `1/(2n)` from gambler's ruin
+  (Lawler–Limic 2010, 5.1.1) and a comparison of half-axes with factor 4. Lemma 11 (a) combines
+  (8), Lemmas 3, 7 in `C_{4n}` and 8, and the Markov property at the exit of `C_n`; Lemma 11 (b) is
+  proved for `|Im z| ≤ n` with the Green function of a half-plane and a renewal argument.
+  Proposition 12 (a) reflects the walk after its last visit to the imaginary axis and swaps the
+  coordinates; (b) uses reversal, 11 (a), 7 and 8; (22) uses the half-plane kernel; (c) bounds
+  the first visit to the axis at `-k` by `O((n + k)^{-2})` and then applies (b); (d) is as
+  printed; (e) is proved for `1 ≤ j ≤ n`, the range that Lemma 14 uses, through the first visit
+  to `ℤ`. Lemma 13 and (29) compare affine functions of the potential kernel with the maximum
+  principle, Lemma 14 solves `q ≤ K / log n + (1 - c) q`, and Section 5 gives the lower bound
+  `c / log n` with inner radius `n` and distance in `[2n, 2n + 1)`
+  ([`Estimate.lean`](FiniteAvalanches/Walk/Beurling/Estimate.lean),
+  [`Position.lean`](FiniteAvalanches/Walk/Beurling/Position.lean)).
+- **The faces of a two-pole plane network** (`finite_plane_two_pole_topology`; Mohar–Thomassen,
+  pp. 87–91; Lyons–Peres, Proposition 9.4). The boundary telescoping is proved with the winding
+  numbers of the fundamental cycles of a spanning tree: the winding number jumps across an edge by
+  its signed passage at the edge chart, and the dual coboundaries are combinations of fundamental
+  cycles. The orientation enters only through the oriented edge charts
+  ([`FaceBoundaryLaw.lean`](FiniteAvalanches/Support/Plane/FaceBoundaryLaw.lean)).
+- **The geometric dual** (`finite_plane_geometric_dual`; Mohar–Thomassen, Theorem 3.2.4 and
+  Proposition 3.4.1). In each face, a simple arc through the starts of all crossing stubs is
+  straightened and normalized to a square; the arms of the dual vertex are radial segments
+  followed by the stubs after their last exit from the square. The construction uses neither
+  2-connectivity nor facial walks
+  ([`GeneralGeometricDual.lean`](FiniteAvalanches/Support/Plane/GeneralGeometricDual.lean)).
+- **Extension and straightening of plane arcs** (`parametrized_plane_arc_straightening`;
+  Mohar–Thomassen, Theorem 2.2.6). The image of a round disk is normalized to a round disk by
+  splitting along a crosscut, applying the parametrized Jordan–Schönflies theorem to each part and
+  gluing; the isotopy then comes from the local agreement at one point by conjugation with
+  dilations ([`OrientedArcStraightening.lean`](FiniteAvalanches/Support/Plane/OrientedArcStraightening.lean)).
+- **Redrawing a path of the outer face on a disk** (`outer_face_simple_path_disk_redrawing`). The
+  path is straightened by the arc straightening above, and the drawing is built in a square normal
+  form by induction on the number of edges; the Jordan curve theorem and the parametrized
+  Jordan–Schönflies theorem give the one-side lemma and the base case
+  ([`Assembly.lean`](FiniteAvalanches/Support/Plane/OuterRedrawing/Assembly.lean)).
 
 - **Weak convergence of the wired spanning trees** (`square_lattice_wired_ust_weak_limit`) is
   derived from Wilson's algorithm on the wired boxes: explorations rooted at the origin and at the
@@ -71,8 +136,8 @@ result takes a different route from the cited source, the route is recorded here
   ([`ResistanceComplement.lean`](FiniteAvalanches/Electrical/Trees/ResistanceComplement.lean),
   [`PairingRelabel.lean`](FiniteAvalanches/Electrical/Trees/PairingRelabel.lean)).
 - **Plane topology.** The face star of a vertex, bonds as dual cycles, connectedness of the dual,
-  complementary spanning trees and edge-chart incidence are proved from the Jordan–Schönflies
-  theorem, in modules copied from Álvaro Begué's formalization
+  complementary spanning trees and edge-chart incidence, and through them the four plane-graph
+  results above, are proved from the Jordan–Schönflies theorem, in modules copied from Álvaro Begué's formalization
   ([`FiniteAvalanches/Support/Schoenflies/`](FiniteAvalanches/Support/Schoenflies/)). These proofs
   also use six planar-separation modules copied from Leonardo Bonanno's lean-formalizations at
   commit `31e7483`: the degree of a loop, Eilenberg's criterion, Janiszewski's theorem and the

@@ -36,5 +36,11 @@ header naming its source repository, module path and commit, and the changes mad
   `FiniteAvalanches/Support/Plane/LocalFaceIncidence.lean`,
   `FiniteAvalanches/Wilson/LoopErasureComposition.lean` and
   `FiniteAvalanches/Wilson/CyclePopping/{Basic,Erasure,Trace}.lean`.
+- **[Lattice-Probability](https://github.com/nitromannitol/Lattice-Probability/tree/99cfc20cb60d38c947523641e991a84350e77309)**,
+  commit `99cfc20cb60d38c947523641e991a84350e77309`, distributed under the Apache License 2.0:
+  `FiniteAvalanches/Walk/SiteTranslation.lean` (from `LatticeProb/Lattice/Translation.lean`),
+  `FiniteAvalanches/Walk/IidBlocks.lean` (from `LatticeProb/Prob/IidBlocks.lean`) and
+  `FiniteAvalanches/Walk/EuclidNormCoord.lean` (the lemma `abs_coord_le_euclidNorm` from
+  `LatticeProb/Walk/KilledGreenPlanarLower.lean`).
 
 Other dependencies and verification tools are fetched from the source repositories and revisions recorded in `lake-manifest.json` and `audit/comparator-tool-pins.json`. No third-party paper or book PDF is included.

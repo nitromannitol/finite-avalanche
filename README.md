@@ -8,8 +8,9 @@ A machine-checked **Lean 4** formalization of the paper
 
 The formalized text is the arXiv v2 source (`main.tex`, SHA-256
 `d2a875c154db9ff913ec6b25cf38e8da134ca977f6a24fd9c036cd8873b1082a`). All 17 numbered
-statements of the paper are stated and proved in Lean, the main theorem among them. The proofs
-use 8 standard results from the literature as named Lean axioms (see
+statements of the paper are stated and proved in Lean, the main theorem among them. No result from
+the literature is assumed: the results the paper cites are proved in Lean as well, and Theorem 1.1
+depends only on the axioms `propext`, `Classical.choice` and `Quot.sound` (see
 [Standing assumptions and scope](#standing-assumptions-and-scope)).
 
 The development is built on [mathlib](https://github.com/leanprover-community/mathlib4) and the
@@ -75,43 +76,33 @@ and records how the Lean statements read the paper.
 
 ## Standing assumptions and scope
 
-1. **Results from the literature.** Eight results enter as named Lean axioms in
-   [`FiniteAvalanches/External/`](FiniteAvalanches/External/). The axiom report of Theorem 1.1
-   consists of these 8 axioms and `propext`, `Classical.choice` and `Quot.sound`. The registry
-   [`audit/trusted-inputs.json`](audit/trusted-inputs.json) records their exact Lean statements,
-   hashes and available source references. The four plane-graph inputs have no citation in their
-   module docstrings.
+1. **Results from the literature.** No result from the literature is assumed. The results that
+   the proofs cite are stated in [`FiniteAvalanches/External/`](FiniteAvalanches/External/) and
+   proved there; the axiom report of Theorem 1.1 consists of `propext`, `Classical.choice` and
+   `Quot.sound` only. The registry [`audit/trusted-inputs.json`](audit/trusted-inputs.json)
+   records the exact Lean statement of each cited result, its hashes, its source references and
+   the module that proves it. Each statement text is identical to that of the axiom it replaced.
 
-   *Uniform spanning trees, sandpiles and random walk (4).*
-
-   | Result | Lean axiom |
-   | --- | --- |
-   | Existence of the infinite-volume sandpile law on `ℤ²` (Athreya–Járai 2004, with the 2006 correction; Járai–Werning 2014) | `SandpileLimit.exists_infiniteVolumeLaw` |
-   | The wired uniform spanning tree of `ℤ²` is one tree with one end (BLPS Theorem 12.4; Lyons–Peres Theorems 10.30, 10.36, 10.41) | `square_lattice_wired_ust_one_tree_one_end` |
-   | The tail of the tree path between adjacent sites (Barlow–Masson 2011, Lemma 2.6) | `BarlowMasson2011.adjacent_ust_path_euclidean_tail` |
-   | The Beurling estimate for simple random walk on `ℤ²` (Lawler–Limic 2004, Theorem 1) | `lawler_limic_beurling_srw_Z2` |
-
-   *Topology of finite plane graphs (4).* Available references include Mohar–Thomassen,
-   *Graphs on Surfaces*, Diestel, *Graph Theory*, and Hatcher, *Algebraic Topology*. The
-   inputs are the faces of a two-pole plane network
-   (`finite_plane_two_pole_topology`), extension and straightening of plane arcs
-   (`parametrized_plane_arc_straightening`), redrawing a path of the outer face on the boundary of
-   a disk (`outer_face_simple_path_disk_redrawing`), and the geometric dual
-   (`finite_plane_geometric_dual`).
-
-   *Proved results (14).* Fourteen further registered results are Lean theorems whose statement text
-   is identical to that of the axioms they replace; each depends only on `propext`,
+   *Proved results from the literature (22).* Each depends only on `propext`,
    `Classical.choice` and `Quot.sound`.
 
    | Result | Lean theorem | Proof |
    | --- | --- | --- |
+   | Existence of the infinite-volume sandpile law on `ℤ²` (Athreya–Járai 2004, with the 2006 correction; Járai–Werning 2014) | `SandpileLimit.exists_infiniteVolumeLaw` | held burning and one-ended spanning trees |
+   | Weak convergence of the wired uniform spanning trees of the boxes (Pemantle; Häggström; BLPS; Lyons–Peres §10.1; Járai 2012) | `square_lattice_wired_ust_weak_limit` | Wilson's algorithm on the wired boxes |
+   | The wired uniform spanning tree of `ℤ²` is one tree with one end (BLPS Theorem 12.4; Lyons–Peres Theorems 10.30, 10.36, 10.41) | `square_lattice_wired_ust_one_tree_one_end` | dual cycles and ray-crossing parity |
+   | Planar duality of the uniform spanning tree (BLPS Theorem 12.2; Lyons–Peres §10.3) | `square_lattice_ust_dual_law` | finite tree complementation and weak limits |
+   | Wilson's algorithm with two root sets (Lyons–Peres Theorem 4.1 and §4.2) | `wilson_two_color_law_existsUnique` | cycle popping |
+   | The tail of the tree path between adjacent sites (Barlow–Masson 2011, Lemma 2.6) | `BarlowMasson2011.adjacent_ust_path_euclidean_tail` | Wilson's algorithm in wired boxes, reentry of loop-erased walk and the Beurling estimate |
+   | The Beurling estimate for simple random walk on `ℤ²` (Lawler–Limic 2004, Theorem 1) | `lawler_limic_beurling_srw_Z2` | the argument of Lawler–Limic, Sections 2 to 5 |
+   | Pairing groves and response-matrix minors (Kenyon–Wilson 2009, Theorems 8.1 and B.3) | `kenyonWilson_pairingGroves_resistanceMinor` | all-minors matrix-tree theorem |
    | The all-minors matrix-tree theorem (Chaiken 1982) | `allMinors_matrixTree` | Lattice-Probability |
    | Nested projection domination (Lyons 2003, Theorem 6.2) | `lyons_nestedProjectionDomination` | Lattice-Probability |
    | Disk alternation (Thomassen 1992, Lemmas 2.1 and 2.13) | `disk_alternation_impossible` | Lattice-Probability |
-   | Weak convergence of the wired uniform spanning trees of the boxes (Pemantle; Häggström; BLPS; Lyons–Peres §10.1; Járai 2012) | `square_lattice_wired_ust_weak_limit` | Wilson's algorithm on the wired boxes |
-   | Planar duality of the uniform spanning tree (BLPS Theorem 12.2; Lyons–Peres §10.3) | `square_lattice_ust_dual_law` | finite tree complementation and weak limits |
-   | Wilson's algorithm with two root sets (Lyons–Peres Theorem 4.1 and §4.2) | `wilson_two_color_law_existsUnique` | cycle popping |
-   | Pairing groves and response-matrix minors (Kenyon–Wilson 2009, Theorems 8.1 and B.3) | `kenyonWilson_pairingGroves_resistanceMinor` | all-minors matrix-tree theorem |
+   | The faces of a two-pole plane network | `finite_plane_two_pole_topology` | winding numbers of fundamental cycles |
+   | Extension and straightening of plane arcs | `parametrized_plane_arc_straightening` | Jordan–Schönflies theorem and a dilation isotopy |
+   | Redrawing a path of the outer face on the boundary of a disk | `outer_face_simple_path_disk_redrawing` | a square normal form and induction on the edges |
+   | The geometric dual | `finite_plane_geometric_dual` | arcs through the crossing sides of each face |
    | The face star of a vertex | `plane_vertex_face_star` | Jordan–Schönflies theorem |
    | Bonds as dual cycles | `finite_plane_dual_bond_cycle` | Jordan–Schönflies theorem |
    | Connectedness of the dual | `finite_plane_dual_connected` | Jordan–Schönflies theorem |
@@ -119,15 +110,18 @@ and records how the Lean statements read the paper.
    | The faces on both sides of an edge | `plane_edge_chart_incidence` | Jordan–Schönflies theorem |
    | Transport of faces under inversion of the punctured plane | `plane_punctured_face_transport`, `plane_punctured_chart_face_transport` | proved in this repository |
 
-   The Jordan–Schönflies modules under `FiniteAvalanches/Support/Schoenflies/` are copied from
-   Álvaro Begué's formalization. The plane-topology proofs, and the chart-face transport, also use
-   six planar-separation modules (the degree of a loop, Eilenberg's criterion and Janiszewski's
-   theorem) copied from Leonardo Bonanno's lean-formalizations; see
-   [Copied code](#copied-code).
+   Available references for the plane-graph results include Mohar–Thomassen, *Graphs on
+   Surfaces*, Diestel, *Graph Theory*, and Hatcher, *Algebraic Topology*. The Jordan–Schönflies
+   modules under `FiniteAvalanches/Support/Schoenflies/` are copied from Álvaro Begué's
+   formalization. The plane-topology proofs, and the chart-face transport, also use six
+   planar-separation modules (the degree of a loop, Eilenberg's criterion and Janiszewski's
+   theorem) copied from Leonardo Bonanno's lean-formalizations; see [Copied code](#copied-code).
    [`CORRESPONDENCE.md`](CORRESPONDENCE.md) records where a proof takes a different route from the
-   cited source. The registry contains three further axioms that Theorem 1.1 does not use: Wilson's
-   algorithm on a finite network, ray-seeded Wilson sampling on `ℤ²` (van Engelenburg–Hutchcroft)
-   and the square tiling of Brooks, Smith, Stone and Tutte.
+   cited source.
+
+   The registry also keeps three axioms that Theorem 1.1 does not use: Wilson's algorithm on a
+   finite network, ray-seeded Wilson sampling on `ℤ²` (van Engelenburg–Hutchcroft) and the square
+   tiling of Brooks, Smith, Stone and Tutte.
 2. **The model.** Sandpiles are integer fields on `ℤ²`; the stationary law is a probability
    measure on all of `ℤ² → ℤ`, and Theorem 1.1 quantifies over every integer field, not only the
    stable ones. Toppling sequences are finite lists of legal topplings.
@@ -147,18 +141,18 @@ and records how the Lean statements read the paper.
   contains one intentional statement-level `sorry`, which the solution proves.
 - **Exact axiom boundary.** [`PublicVerification/Axioms.lean`](PublicVerification/Axioms.lean)
   prints 69 axiom reports, and [`scripts/check_public_axioms.py`](scripts/check_public_axioms.py)
-  checks each of them: Theorem 1.1 uses exactly the 8 axioms above and the three standard
-  axioms, the 14 proved results use only the standard axioms, and every other report lists only
-  standard and registered axioms. The review-gated check requires a current source review.
+  checks each of them: Theorem 1.1 uses exactly the three standard axioms, the 22 proved results
+  from the literature use only the standard axioms, and every other report lists only standard
+  and registered axioms. The review-gated check requires a current source review.
 - **Warning-free build.** The continuous-integration build compiles every module with warnings
   treated as errors.
 - **Independent check of the statement.** The challenge in
   [`FiniteAvalanchesAudit/MainOrigin/`](FiniteAvalanchesAudit/MainOrigin/) imports mathlib alone
   and rebuilds Theorem 1.1 from recorded kernel data. The
   [leanprover/comparator](https://github.com/leanprover/comparator) check, with the Lean and
-  nanoda kernels, passed in continuous integration for the earlier 19-input source. The pair
-  recaptured for the current 8-input source has been independently reviewed; its comparator check
-  runs in continuous integration.
+  nanoda kernels, passed in continuous integration for the earlier sources with 19 and with 8
+  literature inputs. The pair recaptured for the current source, whose permitted axioms are the
+  three standard ones, awaits independent review before its comparator check can run.
 - **Pinned toolchain and dependencies.** Lean `v4.32.0`, mathlib
   `81a5d257c8e410db227a6665ed08f64fea08e997` and Lattice-Probability
   `68722ce2d464119e90b373829d2761624b1f6a75`, recorded in [`lake-manifest.json`](lake-manifest.json).
@@ -253,6 +247,7 @@ commit and the changes made; [`THIRD_PARTY_NOTICES.md`](THIRD_PARTY_NOTICES.md) 
 | Álvaro Begué, [schoenflies-lean](https://github.com/alonamaloh/schoenflies-lean) (Apache License 2.0, text in [`FiniteAvalanches/Support/Schoenflies/LICENSE`](FiniteAvalanches/Support/Schoenflies/LICENSE)) | `05a43d29cde026618777db3d4e4316204ccca237` | the 128 modules under `FiniteAvalanches/Support/Schoenflies/` |
 | Leonardo Bonanno, [lean-formalizations](https://github.com/leobon12/lean-formalizations) (no licence stated upstream) | `31e748330ee154d5f41537c4b01f71b8a5510c2d` | `FiniteAvalanches/Support/Plane/`: `Disconnect`, `PlanarCore`, `TopoDegree`, `TopoEilenberg`, `TopoJaniszewski`, `TopoSep` |
 | [Lattice-Probability](https://github.com/nitromannitol/Lattice-Probability) (Apache License 2.0) | `0b6994229ccf31047ae7b654ecbec59496594700` | `FiniteAvalanches/Support/Plane/`: `FinitePointComplement`, `LocalFaceIncidence`; `FiniteAvalanches/Wilson/`: `LoopErasureComposition`, `CyclePopping/Basic`, `CyclePopping/Erasure`, `CyclePopping/Trace` |
+| [Lattice-Probability](https://github.com/nitromannitol/Lattice-Probability) (Apache License 2.0) | `99cfc20cb60d38c947523641e991a84350e77309` | `FiniteAvalanches/Walk/`: `SiteTranslation`, `IidBlocks`, `EuclidNormCoord` (one lemma) |
 
 ## Authors and citation
 
