@@ -89,7 +89,7 @@
       "path": "CurrentSource/CurrentSplitAssembly.lean",
       "sha256": "05cdc33c9426a8bad4b4c0856db184679890257e24c8557f439878a6f6445ccb",
       "code_sha256": "4255cb92bb98d5d9568470d92de1d2a3f435d76f511ca8ac4ad49df18f216a7e",
-      "bytes": 13609
+      "bytes": 13685
     },
     {
       "path": "CurrentSource/FullIntegerLaw.lean",
@@ -209,7 +209,7 @@
       "path": "CurrentSource/SplitWeightedEnergy.lean",
       "sha256": "3feab7cd7bedbb2074e8dfd016e8bc888c7d47b193cf17e0fd12b8ab609dde60",
       "code_sha256": "899aead2f738cf8a62a3968d678278cd99fb24051049a93990299c5112fd8946",
-      "bytes": 3431
+      "bytes": 3449
     },
     {
       "path": "CurrentSource/TerminalCornerPlacement.lean",
@@ -227,7 +227,7 @@
       "path": "CurrentSource/WholeMinimumTrial.lean",
       "sha256": "d65ba810ebbf0fbf558a29f09e5d06bba0d06b1231590c48b49b99056edc4db5",
       "code_sha256": "493cc7b151671dd926ca0127b389da11e0e41a863e3d0dac2caa8a8b8e729c26",
-      "bytes": 13845
+      "bytes": 13921
     },
     {
       "path": "DualCurrentIntegration.lean",
@@ -335,13 +335,13 @@
       "path": "FiniteAvalanches/Electrical/Geometry/ActualSourceDiskDrawingConsumer.lean",
       "sha256": "e0ab661f042767888cbb28b8f0c6b35d0ceb00aa79e03396987f62b0dbcc69de",
       "code_sha256": "0e4e5831c9905d18e3f9439d17fc76c3193967d4ef60d902d784eafa78c2ca7b",
-      "bytes": 7190
+      "bytes": 7203
     },
     {
       "path": "FiniteAvalanches/Electrical/Geometry/ActualSourceOuterFaceConsumer.lean",
       "sha256": "dd9e3627c181c050f3d7ab6233af987831428668a358aa8f74bd00d1fed0e7de",
       "code_sha256": "2b9483fc61eaa07b9ede5997087a0098d339dbf70a1f73c17c256189d4a41b39",
-      "bytes": 11008
+      "bytes": 11021
     },
     {
       "path": "FiniteAvalanches/Electrical/Geometry/Angular.lean",
@@ -539,7 +539,7 @@
       "path": "FiniteAvalanches/Electrical/Geometry/FiniteLatticeDrawing.lean",
       "sha256": "0181048afe68f03160121abb174652a08ee45f6603e5540579e9ec82e1beb779",
       "code_sha256": "adf8187262e3d10f023d7428a6b32e5944138701d2f9108a302b8dd5c7413d07",
-      "bytes": 4352
+      "bytes": 4409
     },
     {
       "path": "FiniteAvalanches/Electrical/Geometry/FullFaceInversion.lean",
@@ -725,49 +725,49 @@
       "path": "FiniteAvalanches/Electrical/Geometry/SourceDualFaceMerger.lean",
       "sha256": "8c63f989a270cdabce59b65f9937783d151869300e1378028ac8160a492435fa",
       "code_sha256": "e69c74497b4a43517644b6fb266195a74648a877440faf299f1ef36f3ce7494c",
-      "bytes": 15710
+      "bytes": 15723
     },
     {
       "path": "FiniteAvalanches/Electrical/Geometry/SourceDualPath.lean",
       "sha256": "7d971ce8f5a772f17e1689ba2d0f414a77a0f1f7e9626a8de04b2ad63640322f",
       "code_sha256": "56709dec77a908950c43a0dbea5ab53f4c344f451c3a561ae1791f12cfe5ab5f",
-      "bytes": 8089
+      "bytes": 8102
     },
     {
       "path": "FiniteAvalanches/Electrical/Geometry/SourceFacePlacementApplication.lean",
       "sha256": "93184e6b36835a7679cdc315d34e698cfd346207dd67cd34f593349baa34db3d",
       "code_sha256": "137d08a5938a40b2934e70fd4e22c06c0b8b2f47fa9a8090d68e73c484154cd2",
-      "bytes": 12037
+      "bytes": 12050
     },
     {
       "path": "FiniteAvalanches/Electrical/Geometry/SourceHDual.lean",
       "sha256": "63acaa05c79a39a0ac2f1250b9a890018dd42aea69a76b371a51f7d7171d339b",
       "code_sha256": "da2fd343f01a35bef1a68c49b92e05f9992102a3c50c232f511ae2c92a2a3838",
-      "bytes": 7430
+      "bytes": 7501
     },
     {
       "path": "FiniteAvalanches/Electrical/Geometry/SourceMarkedFace.lean",
       "sha256": "77071d6ab6c89224ec2942492ace90ea26d113f104564e4b1b26f381097c932b",
       "code_sha256": "fcb587d0ec3b18b7dd2802715ab7f6fc7e5ba7b8386c47e823569eb7eeabb8ac",
-      "bytes": 7369
+      "bytes": 7382
     },
     {
       "path": "FiniteAvalanches/Electrical/Geometry/SourceOuterFacePath.lean",
       "sha256": "fc143db930a02a7cf70dd3b63fa3b347f8012663de3a46a37f4169e0ce887781",
       "code_sha256": "9cea6eb0a6c5077162030f01652f79c7595b25429157608d9dd87f1e0c307da3",
-      "bytes": 12489
+      "bytes": 12502
     },
     {
       "path": "FiniteAvalanches/Electrical/Geometry/SourcePrimalDrawing.lean",
       "sha256": "c26711d9a4eb3e378c424aa54cbb0fe38ee00c9c82a010d37fcf64f1ef8ca549",
       "code_sha256": "e9b89863354559aa80420b12b5f09b64f314e8b7b0d8c0daafd49a65db3b6e6d",
-      "bytes": 10446
+      "bytes": 10519
     },
     {
       "path": "FiniteAvalanches/Electrical/Geometry/SourceRetainedPathBoundary.lean",
       "sha256": "fb4174eaf7f6c0e9cd7d3381621fc9dfc754a827b79aa237595c05031242e2d4",
       "code_sha256": "1d715a4310ecc96e44682fe66981a3a48d25cbc8c22da7f199d92cc42a027eb0",
-      "bytes": 9645
+      "bytes": 9658
     },
     {
       "path": "FiniteAvalanches/Electrical/Geometry/SourceVoltage.lean",
@@ -804,6 +804,12 @@
       "sha256": "fabb1d959e0a70c46add0666ebe449ed8cfbaa045e511872b58e6f2c09e53963",
       "code_sha256": "e99183d8727f64253204d4582e035bdf2b96251df5eea460f3bec9913b4fca5b",
       "bytes": 2417
+    },
+    {
+      "path": "FiniteAvalanches/Electrical/Green/GroundChange.lean",
+      "sha256": "b936e66f5c4a3b99f86207beaecd7b880c215808976a0604cca24219751d9798",
+      "code_sha256": "9a521eef1319c840342f0ce06cabfe40c3b8a4554c99b210e7655a7599dd5469",
+      "bytes": 2844
     },
     {
       "path": "FiniteAvalanches/Electrical/Green/Grounded.lean",
@@ -923,7 +929,7 @@
       "path": "FiniteAvalanches/Electrical/PairContact/ActualSourceTreeTwoContact.lean",
       "sha256": "699b3721df3c853037e06523f23cfeabbbd52901808ee57b628fda8424529de3",
       "code_sha256": "14a19e213edcdf47281c103b5a8688dd3e52d30a3dbc4d5e1d940680d1d0b9a0",
-      "bytes": 6036
+      "bytes": 6049
     },
     {
       "path": "FiniteAvalanches/Electrical/PairContact/Combinatorics.lean",
@@ -1316,10 +1322,16 @@
       "bytes": 6002
     },
     {
+      "path": "FiniteAvalanches/Electrical/Ratio/GreenInverseExtension.lean",
+      "sha256": "cbd8a2981329a2069f46fd5858bb8d23f05e8dd2b023ae464c27f000f7303546",
+      "code_sha256": "def217b46e8295935bb5fe5d7702c56fdf487ff33eeb6960594eaef1f104b51b",
+      "bytes": 1927
+    },
+    {
       "path": "FiniteAvalanches/Electrical/Ratio/OriginalDiagonal.lean",
       "sha256": "d7d1958a85f389687c86ca22497fa3df6bc9a79ca862f525db5fc05bcf02cc65",
       "code_sha256": "fe3fb5745296464afb3e056fbdf1b80d230c695288312c6f9f57202f52a1cdb0",
-      "bytes": 4838
+      "bytes": 4909
     },
     {
       "path": "FiniteAvalanches/Electrical/Reference/BoundaryCardinality.lean",
@@ -1331,7 +1343,7 @@
       "path": "FiniteAvalanches/Electrical/Reference/BoundaryMeans.lean",
       "sha256": "680f06b56f7c85c4c1501930a5da86a0de37f02e53bf239778715b19d2ba684a",
       "code_sha256": "7a80415eb58fb1a060f9ba5e4f1d5a3339ea49adfe4ee641754021058c77faa6",
-      "bytes": 4457
+      "bytes": 4533
     },
     {
       "path": "FiniteAvalanches/Electrical/Reference/BoundarySum.lean",
@@ -1439,7 +1451,7 @@
       "path": "FiniteAvalanches/Electrical/Reference/ReferenceMomentOfSplit.lean",
       "sha256": "7baeaa94171b69d240d4c2e8f16a8be2a5bad7c9fb196cb4318900a1fef8caf9",
       "code_sha256": "683e75981d8247f07f5604e4703ec66802632d519869d45ee1aa0c520113d513",
-      "bytes": 8747
+      "bytes": 8818
     },
     {
       "path": "FiniteAvalanches/Electrical/Reference/SplitVarianceAssembly.lean",
@@ -1469,7 +1481,7 @@
       "path": "FiniteAvalanches/Electrical/Source/ArcVariance.lean",
       "sha256": "45a7f5f1ae366c84a8375f235ee5cd9053831983112cd912e761961c27db645c",
       "code_sha256": "397671a041b715ce9317c487ba5c20f3d96dbb664364a68b46a746ce58304e58",
-      "bytes": 9336
+      "bytes": 9407
     },
     {
       "path": "FiniteAvalanches/Electrical/Source/BoundaryExpectation.lean",
@@ -1535,7 +1547,7 @@
       "path": "FiniteAvalanches/Electrical/SplitStep/OriginalAssembly22.lean",
       "sha256": "2913a1f08ae7b2ba0ca21bd359f274ba2f492b5acc1ef2e31c99b0dbfc227d32",
       "code_sha256": "87f14038391a1d5112e3f9d38d24c382b71356d1d6183c03a87dfd278b8e34b7",
-      "bytes": 13167
+      "bytes": 13243
     },
     {
       "path": "FiniteAvalanches/Electrical/SplitStep/OriginalBoundaryDrawing.lean",
@@ -1583,19 +1595,19 @@
       "path": "FiniteAvalanches/Electrical/SplitStep/OriginalGreenAssembly22.lean",
       "sha256": "aa0de298af8471d43496d0ce8436fcf766a7553f6e24d02741f2b6677cc71360",
       "code_sha256": "4cb812e28e6b95ccdec254f5dc3ceb242184114680911cf8afbd7d9605529ff0",
-      "bytes": 11143
+      "bytes": 11219
     },
     {
       "path": "FiniteAvalanches/Electrical/SplitStep/OriginalMarkedAuxiliary.lean",
       "sha256": "cd3a5303de38118be33b3022d1831bb74fdf3c739eaaa55e58fb84b5aa843a36",
       "code_sha256": "5d4c4d10f53939906e0fbe41131452f57381575aab4d44a613196add956e699e",
-      "bytes": 10444
+      "bytes": 10520
     },
     {
       "path": "FiniteAvalanches/Electrical/SplitStep/OriginalMarkedCharts.lean",
       "sha256": "179ba9abc243cfffed6c20c28f5426907c4178bd73e9c833481a70f1ef1434e8",
       "code_sha256": "412e87a0b1490df932d5678a09b2e2c5d2aa674225a3b8f5f6f177f0c01ec5dd",
-      "bytes": 3583
+      "bytes": 3659
     },
     {
       "path": "FiniteAvalanches/Electrical/SplitStep/OriginalMarkedCopy.lean",
@@ -1607,7 +1619,7 @@
       "path": "FiniteAvalanches/Electrical/SplitStep/OriginalMarkedInversion.lean",
       "sha256": "a1edbc22fda29a0a5108eb04f2339302ab837ff973496ae7611c4bb39dd49864",
       "code_sha256": "b004839011a5ea7139349e1ea8841e87f325fe4f7914324d6247073024e039aa",
-      "bytes": 6369
+      "bytes": 6445
     },
     {
       "path": "FiniteAvalanches/Electrical/SplitStep/OriginalMarkedOuterFace.lean",
@@ -1625,13 +1637,13 @@
       "path": "FiniteAvalanches/Electrical/SplitStep/OriginalPhysicalCarrier.lean",
       "sha256": "bc443d5777eea98ec61d5338ed5b058d24679d5efc9a4f35a28aca24779d39ba",
       "code_sha256": "43de149134e14aa0ca68b85a34e2618db1948705bb7f738e640fcb0a9f1003fa",
-      "bytes": 4309
+      "bytes": 4385
     },
     {
       "path": "FiniteAvalanches/Electrical/SplitStep/OriginalPhysicalCopy.lean",
       "sha256": "9ee460bb7b9114427c5a541bf7f839067671debeadcaf9b0b5775a9b8ab173f5",
       "code_sha256": "9153e761b0bcf9ad8e6ec7c827aa112f07e98ab0b3f041029c742394dbf064ce",
-      "bytes": 7182
+      "bytes": 7258
     },
     {
       "path": "FiniteAvalanches/Electrical/SplitStep/OriginalPhysicalGeometry.lean",
@@ -1691,7 +1703,7 @@
       "path": "FiniteAvalanches/Electrical/SplitStep/ReversedChart.lean",
       "sha256": "f472e89404998a71a4346c27677a0d12d446930f8481b9a28e86bee238270db6",
       "code_sha256": "3c780a50c836531b626d2eeb5b7f6bf72a3eb1031cc7465961f1ce99048e55eb",
-      "bytes": 6075
+      "bytes": 6151
     },
     {
       "path": "FiniteAvalanches/Electrical/SplitStep/SignedAngularOscillation.lean",
@@ -1814,10 +1826,34 @@
       "bytes": 7485
     },
     {
+      "path": "FiniteAvalanches/Electrical/Trees/OrderedPairingMinor.lean",
+      "sha256": "80d1582a5c6adaf302785162b4fbeecfa632ceb83d71d911f927e9cc6f7ffd48",
+      "code_sha256": "e4837120d5fd0bba538280049cb004c8160141624a897a1c0b85cda2b2739bb2",
+      "bytes": 4166
+    },
+    {
+      "path": "FiniteAvalanches/Electrical/Trees/PairingForestBridge.lean",
+      "sha256": "582810bc66d9b61ff19f425941beee2f2f3848469ed61541914ca247a0ab7174",
+      "code_sha256": "6e7864c39de6b2426e18097be7854b1e4abedfc5701de6a19899e5ae4c202806",
+      "bytes": 1567
+    },
+    {
       "path": "FiniteAvalanches/Electrical/Trees/PairingGroves.lean",
       "sha256": "0c17974f5f2cd0f01d8d44da030510de4716105c9e64ee57d0464c051aabc6d1",
       "code_sha256": "3d21649d377b332083546221e28b7d331e9343d50c22543b1789b5ea78f96c7c",
       "bytes": 815
+    },
+    {
+      "path": "FiniteAvalanches/Electrical/Trees/PairingReindex.lean",
+      "sha256": "e33b0372c04b7b487cb60f0c6a19a697ac6a803425ce7d3062823ba433a84169",
+      "code_sha256": "7e66996f7522e88b2991980ab649d9977aa76ddd5ff339a05d913940d6243d63",
+      "bytes": 5090
+    },
+    {
+      "path": "FiniteAvalanches/Electrical/Trees/PairingRelabel.lean",
+      "sha256": "859521d07eb0083fa18b04707ee60654e1926356ee95a1035d279add6bfebf7d",
+      "code_sha256": "bacd426646454313da7fe2e28ab53406658d69f209e880e40a9570d180da9f50",
+      "bytes": 3326
     },
     {
       "path": "FiniteAvalanches/Electrical/Trees/PathCurrent.lean",
@@ -1848,6 +1884,24 @@
       "sha256": "e3ec9175638e4a6edf0667569c92322e85e1f91d27d45fc0ebcb7a0a6fad2865",
       "code_sha256": "fae9dbcb25eb9f78e6d306a437bfd9904897226940e686fb9ceeb9a3498a60f5",
       "bytes": 6208
+    },
+    {
+      "path": "FiniteAvalanches/Electrical/Trees/ResistanceComplement.lean",
+      "sha256": "61c33500c871965bcd2651504b78da9b6534a411458ec2ddca16762f8e3ebdcf",
+      "code_sha256": "70fa8a8a3a089fb1c0fa531039fd9f461513b43a7c1ba8125ed5b8ab93165f9b",
+      "bytes": 4849
+    },
+    {
+      "path": "FiniteAvalanches/Electrical/Trees/ResistanceGround.lean",
+      "sha256": "19eaf39cb78a24de177689b3d3ae6bf9cfe05bdc647f83970193a8b6a6cda10a",
+      "code_sha256": "85e39c31d8b7a90301eb0d08ad7a23e900aac8b4173c6a653da0acca86521c70",
+      "bytes": 1285
+    },
+    {
+      "path": "FiniteAvalanches/Electrical/Trees/ResistanceMinor.lean",
+      "sha256": "6ce8ead360e0ee34c85b1dd658ad049360109e744bdc6909fc0933864ba73923",
+      "code_sha256": "fb9fb19d9020af17a34225b16cb080b8baf028b209b426f649f333ece0164d91",
+      "bytes": 1395
     },
     {
       "path": "FiniteAvalanches/Electrical/Trees/RootedForestExchange.lean",
@@ -1901,7 +1955,7 @@
       "path": "FiniteAvalanches/External/AllMinorsMatrixTree.lean",
       "sha256": "a39f5013b8b6bc9f6d4f7a2bb3b5d98b8403b6cc97b33d97d2feaebed47ea54c",
       "code_sha256": "e61bfe02bac72230482cbbb41d46dee618f4b9928451506f56b89d3891c6ea43",
-      "bytes": 2097
+      "bytes": 3072
     },
     {
       "path": "FiniteAvalanches/External/ArcStraightening.lean",
@@ -1929,15 +1983,15 @@
     },
     {
       "path": "FiniteAvalanches/External/ColoredWilson.lean",
-      "sha256": "bd86d002bb0e00957bcfb648cac16ee50e831d4a7626f432ffc4eb8ce1efac18",
-      "code_sha256": "5623948ae51f8f5fda8cfc74f4e25fa5299e55c1f7a062b39a9ada5446328417",
-      "bytes": 1193
+      "sha256": "7314392f3663bb23222f6c630ce48aad0059dfbda4bb50395f3ffb1805957a9d",
+      "code_sha256": "210f98dde3ad994127525cf33873b8a66159287b14b36f82bf363d265c8e09d9",
+      "bytes": 1128
     },
     {
       "path": "FiniteAvalanches/External/DiskAlternation.lean",
       "sha256": "af01af5b8112493000ca44e4d8e3d66a8515b9d860c89eb5c43b978a4468ee86",
       "code_sha256": "fdc8e4fb9a0d3d8226df817fb11737d4c6be64ce440e1611e494422fe04c7777",
-      "bytes": 1614
+      "bytes": 1833
     },
     {
       "path": "FiniteAvalanches/External/GeometricDual.lean",
@@ -1947,9 +2001,9 @@
     },
     {
       "path": "FiniteAvalanches/External/KenyonWilsonPairingGroves.lean",
-      "sha256": "b8654ad0cd1480ac52d604d86755286da987e751751e3ba37801e13e8a7e2d3a",
-      "code_sha256": "8a3e9be6192b5a063a313049d99fa0741cf2fac7e9c0351eafde79ebdf798aa8",
-      "bytes": 1760
+      "sha256": "17b7436138ca9e9e8a5d00bfd134d111ef6ad71da176624d9f935ab81d06515a",
+      "code_sha256": "15282db629f0b11a5fbdf2fb2fc6e079d084e78fbae2f81ee5905abc9c08fdc7",
+      "bytes": 3139
     },
     {
       "path": "FiniteAvalanches/External/KilledWiredVoltage.lean",
@@ -1973,7 +2027,7 @@
       "path": "FiniteAvalanches/External/LyonsProjectionDomination.lean",
       "sha256": "893e874b78c549d869025fb447986d903af1c3ff1370ca0b9da8a182120ecfa2",
       "code_sha256": "3b659b243112276c7bdbfa9d3a4cff41b7821bafe860c28ecbf1e8b96cf527ee",
-      "bytes": 1730
+      "bytes": 2003
     },
     {
       "path": "FiniteAvalanches/External/OuterFaceRedrawing.lean",
@@ -1983,45 +2037,45 @@
     },
     {
       "path": "FiniteAvalanches/External/PlaneDualBondCycle.lean",
-      "sha256": "0a47f284574f325cd99eb86a9d2bc8f94ae31ac9dab3bc3a0a54510f139d9699",
-      "code_sha256": "6c7ab3261127379873df8be5f8c20f77936669c220031423300034ec5e40ed68",
-      "bytes": 2021
+      "sha256": "77424304ded4c753c0c0a0ab412769fb0b0b9187ca4947b1ed37286ef6dfec57",
+      "code_sha256": "871920ced7bc14617ab2a21f0f02824748b1012caf9e7647f4987338ccff4f14",
+      "bytes": 2528
     },
     {
       "path": "FiniteAvalanches/External/PlaneDualConnected.lean",
-      "sha256": "780d15ed7c264cfdfcc4a803867898122013e06f8996cbae316bac8b704897c8",
-      "code_sha256": "86987003f5c7dd71c3e2bf9a169d2a90cb71ae558e21d3a7b07c7a1d02b1ab6d",
-      "bytes": 856
+      "sha256": "ef3751a5e71fc108d7c6c9e132f3b78e6db97ba727992fd60e1a73554e956028",
+      "code_sha256": "daf3baa2e349731e25e4317938155692ab43bc92e6f8ebf3232a299ea9a94b76",
+      "bytes": 1234
     },
     {
       "path": "FiniteAvalanches/External/PlaneEdgeChartIncidence.lean",
-      "sha256": "1e8d4b087f902d1f76a532dff8383df47a949d13acc4ceb64d1bd5dd250ac38c",
-      "code_sha256": "b7fbdf0ff4dc7252f236fa7c325db187b0caa68d86b985cddd21da46f77c3fb3",
-      "bytes": 698
+      "sha256": "6834b46f776818621ce2142c8cd7670fa8e951e80b275a3bcb5878843a0c98b7",
+      "code_sha256": "13537f42a32a1d003401c48bd3c9892c33381a19ad8ad1cd938cc98aba4d1213",
+      "bytes": 1065
     },
     {
       "path": "FiniteAvalanches/External/PlanePuncturedChartFaceTransport.lean",
-      "sha256": "41af63b35eeb45f6f661a7cfb372e6cd98e45f86bd9a30406612caebd0110af2",
-      "code_sha256": "1885fe02f5ddb5658f3db8ceb8bcd5a85a0bd725acf31387ee2359e30b266fc5",
-      "bytes": 1551
+      "sha256": "56782650ff71c88d8c7a328c39caa0c8788a1e79a6504d1c55da9985cde3ba05",
+      "code_sha256": "2c5eadbaf844e67d8079c0e97316366a2d4a1a05b8e84fdc8ebcd151a5a2f49e",
+      "bytes": 1801
     },
     {
       "path": "FiniteAvalanches/External/PlanePuncturedFaceTransport.lean",
-      "sha256": "45721bb1dc88134e33ac12a501fe2e51024e4bc82d38a36d3f7451c240b4bc8a",
-      "code_sha256": "0309ce244a0184bc13889b3caacf42a24a6c44d09e718993b5d821468a9c3c74",
-      "bytes": 2491
+      "sha256": "d50f115691aa6b6cf05cc6d05d361c4d8cc4aeea30ed77b3768599e772e7aab9",
+      "code_sha256": "a3aa71f37a8bece992553cbee805d2052061f923705a14e6da186e92305c2422",
+      "bytes": 2646
     },
     {
       "path": "FiniteAvalanches/External/PlaneTreeComplement.lean",
-      "sha256": "7dc8760a826d0e2841dcfae6f16e2a6c2116a0f983562a89cb04217125f6500b",
-      "code_sha256": "4ab2a91ddab4e3ca78b8008b01b9a65172cf57877d6b7a5fd162eea80d71a5ed",
-      "bytes": 1886
+      "sha256": "fab7990207abc55cf5727722b36a61613cf134145bf833e1cd683c5b8b871c4f",
+      "code_sha256": "470bc39f4e50ee03f3cc5a586f176a757ba9682ef821e07e07a9eec02b2e2826",
+      "bytes": 2486
     },
     {
       "path": "FiniteAvalanches/External/PlaneVertexFaceStar.lean",
-      "sha256": "c8dda3cc8310cc3d6683ee5e54a52f700cb3548483b42c14c6b8c0bb57635f84",
-      "code_sha256": "3174d5970ce7506669ff4c220137cb89dcdff2c891e7b30e5c805adff23aa89b",
-      "bytes": 1034
+      "sha256": "5f1cbdaa6c69ab238dd58c6b3a633476e222baee48b5ffcdfcbb902686eb0f75",
+      "code_sha256": "a392cefcdf6cf494e74bcf27dd87fd747906180a84441866b0bf92de38839544",
+      "bytes": 1689
     },
     {
       "path": "FiniteAvalanches/External/PolyaSquareLattice.lean",
@@ -2073,9 +2127,9 @@
     },
     {
       "path": "FiniteAvalanches/External/WiredUstDualLaw.lean",
-      "sha256": "0944eb2264be49430afa35a5a6f1de66e40147b22522352f9ce4a9c0f9367789",
-      "code_sha256": "027163d3838d46827df092a73aa1c07eaa998a16a7dd1e2dd8ae9521c1e0cba5",
-      "bytes": 693
+      "sha256": "cb794677ad7ece8598ace5e76363ee664057149c441e46030f4fbef3c0187ea2",
+      "code_sha256": "ae4009e72bbcb846f2af5b2df561bf9c21c0bca51c7990edcae74559d04492f6",
+      "bytes": 732
     },
     {
       "path": "FiniteAvalanches/External/WiredUstOneEnd.lean",
@@ -2085,9 +2139,9 @@
     },
     {
       "path": "FiniteAvalanches/External/WiredUstWeakLimit.lean",
-      "sha256": "45d75e63a00aefead3a48680818f20cc7df6b7bb3673c84d21002f6d9ad32027",
-      "code_sha256": "4484786c0aa2bd470b88b024bc07aaa5ac0ea9f7f6fdfb7b24e10176bc058a15",
-      "bytes": 616
+      "sha256": "cc396f32eb1d5088a89031cb58b4ed4c5ea0ba4f2a87c9ce3d635fda07dd51e6",
+      "code_sha256": "ad7a702d16a20f0b90c53fcf9fa0fc10ecbc7df7d94dead1e6db9ee0db8c5106",
+      "bytes": 702
     },
     {
       "path": "FiniteAvalanches/MeasureTheory/FinitePartitionAveraging.lean",
@@ -3626,6 +3680,1776 @@
       "bytes": 2653
     },
     {
+      "path": "FiniteAvalanches/Support/Plane/AnnulusCoordinates.lean",
+      "sha256": "38acdef574e2304a7be18809fcc5285ab3bbea8b2c93ef2dea93b5c2d9c0bec2",
+      "code_sha256": "165f48a4124e37a21f3521bc2fcbbcf9532cb542e3efc234c31766face5ed657",
+      "bytes": 5416
+    },
+    {
+      "path": "FiniteAvalanches/Support/Plane/AnnulusRotation.lean",
+      "sha256": "934de418df017f5186257dc4d52277ecc7f5ecaec77bcbf1d768b88891a6a7ed",
+      "code_sha256": "adf463a711092df9edd4446630c56544c90eeb3b346e6d1b8811450535cc22d5",
+      "bytes": 4459
+    },
+    {
+      "path": "FiniteAvalanches/Support/Plane/ArcClosingPath.lean",
+      "sha256": "31cc48456539c772cc43b41c4862f0f84f984a38ec620b5220cad0d3db716473",
+      "code_sha256": "2cc325639be1179d8afe6a85e7a8103b106d4c8054c6524cdac0c57c5a03dc86",
+      "bytes": 2429
+    },
+    {
+      "path": "FiniteAvalanches/Support/Plane/ArcComponentPreservation.lean",
+      "sha256": "2ce7579fd7b8178ca6d2ac49f306eb69596df729df0eba043da4fb7ef5705272",
+      "code_sha256": "f42dd97f45e995191ab52a73f0107cdb15045f40165ccc53e59e5070d9433106",
+      "bytes": 3038
+    },
+    {
+      "path": "FiniteAvalanches/Support/Plane/ArcEndpointAccess.lean",
+      "sha256": "e40a899da839dca93bb1730c481d9430f5b44787530d44745ebbfceb29965183",
+      "code_sha256": "6e4fb9496700612005228665f134a21081814c94d7d13453210f60fa8c471426",
+      "bytes": 11233
+    },
+    {
+      "path": "FiniteAvalanches/Support/Plane/ArcEndpointConnector.lean",
+      "sha256": "92b1e6c4bca9ae1126fe00bd77013ce070e6a2c16571e3c20c9d37bc1f20016e",
+      "code_sha256": "96da8254a444b2425fee3faaa40eb074d7685f8a8e034a64fd7bb71d2dc86d6f",
+      "bytes": 4231
+    },
+    {
+      "path": "FiniteAvalanches/Support/Plane/ArcLocalStraightening.lean",
+      "sha256": "9c21254a85afb1bf023e87c8511cc5bbc3cd27f2da03dc574f3da406f62a4035",
+      "code_sha256": "8cff372ee6bed9aa8ff68b2ff2f2e61a19de4d1d90cf7d0ae4d3eaf649dcdbd9",
+      "bytes": 3554
+    },
+    {
+      "path": "FiniteAvalanches/Support/Plane/ArcOrientedReduction.lean",
+      "sha256": "018f44311e2e5e96228f73fa5d38f090870122071ec93d259a1cb91b061c8607",
+      "code_sha256": "8a396157a81441e496e6b61def93672cfaf4cc65390c6cbc35f7bc092642bfb3",
+      "bytes": 3448
+    },
+    {
+      "path": "FiniteAvalanches/Support/Plane/ArcRemoval.lean",
+      "sha256": "deae3962989684586505936ab48e978997770ac7d1032758d1ae4096cb71834b",
+      "code_sha256": "845964df2547af3dc056cfe8d0b280c647d52a93519b042427fd18fb83c98f04",
+      "bytes": 9963
+    },
+    {
+      "path": "FiniteAvalanches/Support/Plane/ArcStraightHomeomorph.lean",
+      "sha256": "8a599ac3df444110432c0cab39361273d2347cf2f1a9d07f06856c08012a2072",
+      "code_sha256": "8df060645e1dd5e4c798fa095f1e5c7bfcb8e6daae947ed9bed223bb47518e46",
+      "bytes": 2898
+    },
+    {
+      "path": "FiniteAvalanches/Support/Plane/BondDualCycle.lean",
+      "sha256": "638f1831f4714354ae85cefa570ecc4bcd4da59c3e2d2f5d9974b2c42535086b",
+      "code_sha256": "fbf071993c1c5535403d07bc2c72bd8a5b4cbf6f7ad640829dd76b7d1bc6d744",
+      "bytes": 5695
+    },
+    {
+      "path": "FiniteAvalanches/Support/Plane/BondDualMinimality.lean",
+      "sha256": "143874b0839591751f0661a70d61d2638b01433b9bfc47478ef71ffba4a9ce28",
+      "code_sha256": "0a2e44a0cbda6c7d5606fafd82c94541bf5c74d706cc2c30a39c5e7ab2674bad",
+      "bytes": 4695
+    },
+    {
+      "path": "FiniteAvalanches/Support/Plane/BondDualReachability.lean",
+      "sha256": "9f29a8e7715effcea626ec7cfc8fe34f54ce8babd52ab9b2a7af63e7d7d6bdd5",
+      "code_sha256": "9937fc1f31e1f2bc25cc412c959c182e26769601d6c10c4034cbcbe70807803c",
+      "bytes": 3013
+    },
+    {
+      "path": "FiniteAvalanches/Support/Plane/BoundaryArcJoin.lean",
+      "sha256": "f32a70c4fa5412e0d4e30ba50692e90f33d6b776bdc153fc8bd03837808666d4",
+      "code_sha256": "ff04a17aea717730bb1ed1bfdf2c26bdb470c3d7dbb49988e60021d2c3142180",
+      "bytes": 4906
+    },
+    {
+      "path": "FiniteAvalanches/Support/Plane/BoundaryArcJoinTails.lean",
+      "sha256": "cd607f36fe2b70f9e469c57e030e4c70bbe906930a2c81775c3421f90cafec64",
+      "code_sha256": "03ba0712e131a0df310903ae1d039bcab409f684893d68a613fc01c5dacd0ed9",
+      "bytes": 4999
+    },
+    {
+      "path": "FiniteAvalanches/Support/Plane/BoundaryDartPermutation.lean",
+      "sha256": "3727ad3ace759885940e31807d28971af97514a9ca05eeb2da0b691d2decd524",
+      "code_sha256": "acf729db8d16e2fca920e8d010bd805e6fc18ed701144a0ba0a56d04b88d25e8",
+      "bytes": 4913
+    },
+    {
+      "path": "FiniteAvalanches/Support/Plane/BoundaryFirstArm.lean",
+      "sha256": "71e22b66ecbbf33332e459267785709d49a9f9490773f05843f29b96a6aec3f0",
+      "code_sha256": "15b473e841fe3835de7a854c8b2d2e9b4f1efe67b26c07fd84152f28f42a4a26",
+      "bytes": 4755
+    },
+    {
+      "path": "FiniteAvalanches/Support/Plane/BoundaryFirstComplement.lean",
+      "sha256": "7e1241bb0fc4d0fc8f538c651323eefacdd6d26430ceb7324741f40856ce00a5",
+      "code_sha256": "7e3fc7c8dbcfce2a849a6ce6674b0072ce77b3699b65c7e5d703ba718f5b5249",
+      "bytes": 5647
+    },
+    {
+      "path": "FiniteAvalanches/Support/Plane/BoundaryGradientBasis.lean",
+      "sha256": "9cc41302918269c66f494a62191a64b67b83054c20c8b018cb75fda810726ef2",
+      "code_sha256": "1cb333e5d57c962b2bde34764fee722d51138fd9cfff353d31cac5c7d1323a48",
+      "bytes": 1708
+    },
+    {
+      "path": "FiniteAvalanches/Support/Plane/BoundaryIncidenceCount.lean",
+      "sha256": "5b03d348b26ddc11ade5bb7de84f809499389c27673a7d92f9518fd48e035be9",
+      "code_sha256": "cc40a7791d91318674f3cc43c32f507c1555e76795a3420836bd8f5be4f6495e",
+      "bytes": 1339
+    },
+    {
+      "path": "FiniteAvalanches/Support/Plane/BoundaryPairArms.lean",
+      "sha256": "a5524dbf920dd32bb5030031c2d832108990e0eb6cc858868ee7d0c6c5614b55",
+      "code_sha256": "39988358dc246743376355115717bf481190e75ffdd4cb5277187ced567c6960",
+      "bytes": 3303
+    },
+    {
+      "path": "FiniteAvalanches/Support/Plane/BoundaryPairFamily.lean",
+      "sha256": "a5eb19189065eb869f8b94033b74a7f70321eaa78013cdae1eaa6e3fdfaa634f",
+      "code_sha256": "68ddd73eef2015442f8d8d81f5dd6ec4ba6779ef57dea67d6b2a45714cc80c15",
+      "bytes": 3509
+    },
+    {
+      "path": "FiniteAvalanches/Support/Plane/BoundaryProtectedAccess.lean",
+      "sha256": "2c0cbbdf050fe68790b4fbdb34ca87a62b31fc9d956c0bd085c4b98caea36442",
+      "code_sha256": "0465cd40707eb94c5f94a61d1d7ab86adecc420a6c3173c94987fd4f652512ed",
+      "bytes": 4992
+    },
+    {
+      "path": "FiniteAvalanches/Support/Plane/BoundaryProtectedFamily.lean",
+      "sha256": "0d3254497b578bb1e0e807e7e9943a9b0dadb06bce285b2d548b77b7b01a0d56",
+      "code_sha256": "20412b06944b725fd4c17c6ccd7181a4b5645ca249f3c5004b63837b689f868e",
+      "bytes": 5235
+    },
+    {
+      "path": "FiniteAvalanches/Support/Plane/BoundaryProtectedStub.lean",
+      "sha256": "d5ccd3bfaa7e021986a287de18e73d10ae345deafacd2abf947cc9429d9f3f2e",
+      "code_sha256": "b23f3da81504d034ac3dac222843abbb1b2a5cff8b9f8292e05c608c3aed3e26",
+      "bytes": 3287
+    },
+    {
+      "path": "FiniteAvalanches/Support/Plane/BoundaryRootTails.lean",
+      "sha256": "fe79078bfe356f27e7e6429e253b984b3f7ffc8709882b6f7cb9a3692fceda0e",
+      "code_sha256": "2e8887ff1a5b834f40483b8725b1404accb291c225525a03c116350ee2f480c3",
+      "bytes": 5280
+    },
+    {
+      "path": "FiniteAvalanches/Support/Plane/BoundarySecondArm.lean",
+      "sha256": "d9dde03093c19fc66cadaa8e7ecb7e1094528eadaa23ffe52011608e0265b1f7",
+      "code_sha256": "712bd3ee96cc51dae676f36645f6d93dc14d48c0fc7458d0a748bb6fadfaf104",
+      "bytes": 6035
+    },
+    {
+      "path": "FiniteAvalanches/Support/Plane/BoundarySecondConnector.lean",
+      "sha256": "2d6a2be5de6daec5201aab3c2e47a2566f4cc9bf0611166223578a7786c0d810",
+      "code_sha256": "3f27ea6129edae3d640d5ced2bad6ee1c3c8b6f6b8e07986f78b6741691edb20",
+      "bytes": 6889
+    },
+    {
+      "path": "FiniteAvalanches/Support/Plane/BoundarySmallFamily.lean",
+      "sha256": "c954062d173d19fb8af821f161389e4d41e55d7130207144f414e7e9c686adaf",
+      "code_sha256": "896f7443f5a435157fd0f1f4ee9d31fe8c060d35c2bed44755d5bc5a3fde6840",
+      "bytes": 4054
+    },
+    {
+      "path": "FiniteAvalanches/Support/Plane/BoundaryStarExtension.lean",
+      "sha256": "f35f40a5965a77b6a9ac3804aa0c7ab092adb709fde15b4fd8a0241b12b2b77d",
+      "code_sha256": "557a4610639ee7a322af1259595829fba7adf1346b864a4ab0012d5d292c5d48",
+      "bytes": 2266
+    },
+    {
+      "path": "FiniteAvalanches/Support/Plane/BoundaryStubSupply.lean",
+      "sha256": "319c9b94c3efd932a98cd2b0c68034f96217aa57253d013c47eb12f119ebbf87",
+      "code_sha256": "41ea508f89eb50c70d9fc8b83c0aaf2156e80d1143fd5811ecf50068172a14ee",
+      "bytes": 2511
+    },
+    {
+      "path": "FiniteAvalanches/Support/Plane/BoundaryThreeArms.lean",
+      "sha256": "b9c8baebda35810bc6b1f1bd3832e197ee4589d16b183feabdbb56efa6d4489e",
+      "code_sha256": "c5155d3352f42713947302dc90f84baf4cbfdca8f59a3afe5b8c0966e19f631f",
+      "bytes": 7333
+    },
+    {
+      "path": "FiniteAvalanches/Support/Plane/BoundaryThreeCases.lean",
+      "sha256": "3d4c3d7e341e3678ba9b211bb34b822cc37f13f2696083d5b64918034cbd31ba",
+      "code_sha256": "59d1fe543190f7cb433879680ea5e35f88c1c64f3b37bcd2ab537a38bd348283",
+      "bytes": 6228
+    },
+    {
+      "path": "FiniteAvalanches/Support/Plane/BoundaryThreeProtected.lean",
+      "sha256": "4b0bc97566fe16ac9a270e87ae904fb72264a0b0600d824a1f2a2b7771f6488a",
+      "code_sha256": "b007c30910fb232352c1e2e50c6b79ceca1182a20b8e71e232023e4fdac5f3f4",
+      "bytes": 6648
+    },
+    {
+      "path": "FiniteAvalanches/Support/Plane/BoundaryThreeShared.lean",
+      "sha256": "c5bd81b1e71206e0ddda9162983025feb82e34d2035ee3a6b1c97a6dee7c6433",
+      "code_sha256": "a55a32f0e6a89bbf93e1f7c792e96bb506fe4f2c7e11b80d7dcedb3f67088c02",
+      "bytes": 6798
+    },
+    {
+      "path": "FiniteAvalanches/Support/Plane/BoundaryTripleFamily.lean",
+      "sha256": "232caf92946f9423d307d91932eb5eea8190809295e82aae940dc109d98bfeff",
+      "code_sha256": "2d3d8fcf8acf82a83fab8c1b5108a4b605d4994bac2aac92ed67657a85164304",
+      "bytes": 4525
+    },
+    {
+      "path": "FiniteAvalanches/Support/Plane/BoundaryTripleSmall.lean",
+      "sha256": "3a49d1b0d94f5e9b1fb5379a845c1495084e0d8086653d5fee3c1b05fff9d7be",
+      "code_sha256": "e25c784710673b1e4428a7f4871a41df0b92657e4dc84d683a9deb811c4a1c86",
+      "bytes": 2183
+    },
+    {
+      "path": "FiniteAvalanches/Support/Plane/BoundaryTripodCore.lean",
+      "sha256": "ff4e4958a00ccbf514a7684abafc6e40777fb2541b22cf606547f6a4508b9458",
+      "code_sha256": "bf4976f5eace1ca0c0f4e775f5114634fb20c47efb3a5b12816f647214f4bbcc",
+      "bytes": 4599
+    },
+    {
+      "path": "FiniteAvalanches/Support/Plane/BoundaryTripodTails.lean",
+      "sha256": "fbc9f097675123a34fd45ab34fd42cdeca4f78404c6f5c87a06b914a9b85f21d",
+      "code_sha256": "5154e96dfad0deee9eccc49efeff60b218043dbcbac980408a07c6cec1535d8d",
+      "bytes": 4964
+    },
+    {
+      "path": "FiniteAvalanches/Support/Plane/BoundaryTwoArmsProtected.lean",
+      "sha256": "1f5996da9e3bd3a050631fe6a01e421b47f61cff9e0e50f70b2062d160b2e463",
+      "code_sha256": "1294633cf2cadc84c4bf0cc36b29e53cb98dd51ffe1cb3eb92ff836ea8c50029",
+      "bytes": 3620
+    },
+    {
+      "path": "FiniteAvalanches/Support/Plane/BoundaryTwoStar.lean",
+      "sha256": "28b1574df2ddd10496d649f3c81ab3962123861e2c42b08389404ac69a9d477f",
+      "code_sha256": "80572c4d207320edb3d6c19a0c758660e88b450d29b20f9ad1aa1ef56d39b484",
+      "bytes": 6493
+    },
+    {
+      "path": "FiniteAvalanches/Support/Plane/BridgeFaceBalance.lean",
+      "sha256": "cebfabd954972ebee3c373f9bf6d90a5f05981e4696ba48de2c1a4a1e0fee773",
+      "code_sha256": "705e514267d98cae7a4336cbc75bf57a9463e4451eda17193b10447d1477a4f8",
+      "bytes": 15337
+    },
+    {
+      "path": "FiniteAvalanches/Support/Plane/CantorDiffuse.lean",
+      "sha256": "7998f8e2307ae8e2e890636eb2c55f687219c1330a71ab0c5c0782be04a60ccf",
+      "code_sha256": "adc99674ca846c7ed1822add0563a7369a5b62fa4de21ea9695fde3ce9a11d06",
+      "bytes": 7309
+    },
+    {
+      "path": "FiniteAvalanches/Support/Plane/ChartConstruction.lean",
+      "sha256": "1d26be8d14b6b02b9daaa260db585a5594fb2c466eb27a4a83e5f9f3decb3385",
+      "code_sha256": "415c1086d6c12fff553cf23c974f5e6c458b8b3e93c2c89db1a3e895ab3c1bd0",
+      "bytes": 19350
+    },
+    {
+      "path": "FiniteAvalanches/Support/Plane/ChartFaceTransport.lean",
+      "sha256": "fc0c5a0c1363c5692135f1622dd652d8890769aced690d25c8e9850de6d13010",
+      "code_sha256": "dc6a66c93b428d475c0c964b03feadff23d73c11e6c40acd82f384f1f7b69683",
+      "bytes": 26053
+    },
+    {
+      "path": "FiniteAvalanches/Support/Plane/ChartOrientation.lean",
+      "sha256": "b3cfbd8e6f26d1a77e3ecca24898572a2ab3e849e8bbc81e782f7bda71144788",
+      "code_sha256": "0ea10c0f98eee2bec59c820c059b0b19c0b9e3e3834529e5f3f8cfbd536a81a1",
+      "bytes": 52166
+    },
+    {
+      "path": "FiniteAvalanches/Support/Plane/ChartedBoundaryStarExtension.lean",
+      "sha256": "77259f134e1987ffd97717a1e30ce3f0b5113c78f5bafaa09e06abbaf395b04d",
+      "code_sha256": "9022591f936c72892892a510f83f7cffa7a49516eb67540edec7fc1d28244421",
+      "bytes": 4129
+    },
+    {
+      "path": "FiniteAvalanches/Support/Plane/CircleAnnulusExtension.lean",
+      "sha256": "5c081519d6186c7623a5680d4f5e90de2e57d155ff705eecc7ec95a7a368c353",
+      "code_sha256": "fd68231b16df4e76a8df88da32d778a3274079a5abc6d68aea8736ef716b1f60",
+      "bytes": 3105
+    },
+    {
+      "path": "FiniteAvalanches/Support/Plane/CircleCut.lean",
+      "sha256": "3c868c750fb13020d6cde5ff193be9b6429880dd0aa4be8bc0089f91b7aec470",
+      "code_sha256": "b7e0eb5b132f018944b69dbd00ae3819c2c1566671d834a29b773b069a32cd2a",
+      "bytes": 3762
+    },
+    {
+      "path": "FiniteAvalanches/Support/Plane/CircleCylinder.lean",
+      "sha256": "705473fb1524bc8970c97c384ac9b60f141370e09ba86245bc03f1d2de9a7740",
+      "code_sha256": "06f790f683b5f1960dae8cbee2bfac08d35050973de2e1af2e6df81288520320",
+      "bytes": 1861
+    },
+    {
+      "path": "FiniteAvalanches/Support/Plane/CircleIntervalIsotopy.lean",
+      "sha256": "669f92bb2ef57e84cff17abb732e141d4db244fa05e9853a739060ccc0613d98",
+      "code_sha256": "e3560bae15310127c04c7adb0ad074602f82e224a1c204f093ed9cde743c9363",
+      "bytes": 3521
+    },
+    {
+      "path": "FiniteAvalanches/Support/Plane/CircleIsotopy.lean",
+      "sha256": "bcd096ff6fdefe8c074a8f5cf6870005a47f0201faa246412ac7df876fb75d6a",
+      "code_sha256": "f8dbad174c77ca03f1c41000c98698655850f56411f4936273857fbb7134a614",
+      "bytes": 2937
+    },
+    {
+      "path": "FiniteAvalanches/Support/Plane/CircleQuotient.lean",
+      "sha256": "ac20641cc1d25d412c00def85ec7ef524f838cb72dae5ebbfe2682d69948e070",
+      "code_sha256": "e324dd69b8fe1bfdb614cb7049855c473e8a2d73184c68fca92590740300a250",
+      "bytes": 4322
+    },
+    {
+      "path": "FiniteAvalanches/Support/Plane/CircleReflection.lean",
+      "sha256": "5cec0dc1d30a4caaf85d69b082e2b2c25e368edb0c26c7b04d4665129d6e5088",
+      "code_sha256": "5a5dd7e5753a7c5357f32f47cd06624a843efb4d3bce521c5aac8a01d33e9f83",
+      "bytes": 3363
+    },
+    {
+      "path": "FiniteAvalanches/Support/Plane/CommonEndpointTripod.lean",
+      "sha256": "acda3c816006f95f9d87936d484fe23750c04ada99a406c16c97fbb70b525334",
+      "code_sha256": "b86687e11dbaa077af2a17994ba76526bd6f7397232d07588fe6c75473b08b2e",
+      "bytes": 4287
+    },
+    {
+      "path": "FiniteAvalanches/Support/Plane/CompactAvoidance.lean",
+      "sha256": "3e53d9d63c4e238961ec112524eaa0497725212f4a3643b12012e55a50a87770",
+      "code_sha256": "41e693a3c52fff7bac8471816d36ae0776f2c5c71333ad4e14e8f32719fc8eae",
+      "bytes": 32564
+    },
+    {
+      "path": "FiniteAvalanches/Support/Plane/ComplexOrientedChart.lean",
+      "sha256": "afa5ee720993e9ed86a8f2453b5767aeb5e6ec4a9e1c75777ab66ce6edda6464",
+      "code_sha256": "389cb1b21e06ae38e8d0d6ad127886e0c84ff58ae51efae879df2d1fe0a9099c",
+      "bytes": 5008
+    },
+    {
+      "path": "FiniteAvalanches/Support/Plane/ConjugateChart.lean",
+      "sha256": "c6214f7913e806d2f9d2f6d85f99c28ed67bced529aa09b416a8e694d6236ed8",
+      "code_sha256": "bae3dbcfbe6030b79bf488aaec784ae6ea799db9c7a45580664048d9893600a9",
+      "bytes": 2795
+    },
+    {
+      "path": "FiniteAvalanches/Support/Plane/CopiedSimplePath.lean",
+      "sha256": "71d6f7aabced29502769b0de8d54e62ddf9edcf130acbec779a0f0b4c3f9460d",
+      "code_sha256": "9554c387e37988007ea52605bcdfbd44c3417b3886d1907d6174712680f9e624",
+      "bytes": 2355
+    },
+    {
+      "path": "FiniteAvalanches/Support/Plane/CopiedTreeCardinality.lean",
+      "sha256": "8acf7e3b7187d0c708d51589bde68592240b44cfe460ec77fe74ab5a228b11b2",
+      "code_sha256": "c4346c79915ffb55e27c2b178985cab23fe9c70abaf870396192339d02f66fa1",
+      "bytes": 1248
+    },
+    {
+      "path": "FiniteAvalanches/Support/Plane/CrossingAccess.lean",
+      "sha256": "5653727b7be9a1fbbdb67cc8b763d6982299b24eed9d9d3b3b7aaba70227c654",
+      "code_sha256": "135b4ee50f3865bd6dd988332d8c8c217077109f44de6a30dbc66a341ea76661",
+      "bytes": 19373
+    },
+    {
+      "path": "FiniteAvalanches/Support/Plane/CrossingArms.lean",
+      "sha256": "27c971185a0aabd8c2fa109ac791bd1993ed70c0239d860cd4c69aa804dde811",
+      "code_sha256": "adec5601e9daea7466a1ad03ed77682253ce275b92616ffc1834998147c9ca2d",
+      "bytes": 3700
+    },
+    {
+      "path": "FiniteAvalanches/Support/Plane/CrossingArmsSeparation.lean",
+      "sha256": "3862b7dfc7e7422d39384d66128513024655573df37b3a2388062f78214e23da",
+      "code_sha256": "dbaf0e740de7f677caac186bbe987f9ca519c7698f82bd59802abea773ad4756",
+      "bytes": 5404
+    },
+    {
+      "path": "FiniteAvalanches/Support/Plane/CrossingBoundaryAccess.lean",
+      "sha256": "86a3a2b1fa7c647819daee00da88f143f0459cd535507eb5ea276ecfc59aaaf2",
+      "code_sha256": "0eb7ae98b833f1298ebad58a157982ca638172fc81c7861713c3b3630a8ba9df",
+      "bytes": 8271
+    },
+    {
+      "path": "FiniteAvalanches/Support/Plane/CrossingDrawing.lean",
+      "sha256": "fe53458ae74596cbbfc01d1c92af9965d7cf5f1110c38deee4f28580f183ab82",
+      "code_sha256": "c4b1e65a1e77d2c072ff00268ab42563c9551054a7f653b03716f07e4a03079c",
+      "bytes": 5872
+    },
+    {
+      "path": "FiniteAvalanches/Support/Plane/CrossingMultiplicity.lean",
+      "sha256": "5c2331243873a612aca02b70d52ce8df4bee3b62a6f8be91e21c85cf8709e0fc",
+      "code_sha256": "ac23acbb813e8e59c29b2687513de8a3c605288a660c40387f5c0a1abe6147ad",
+      "bytes": 1581
+    },
+    {
+      "path": "FiniteAvalanches/Support/Plane/CrossingStarAssembly.lean",
+      "sha256": "5b2c24784b1ef0cf169a21c07890f091218e4b2eb92d536dcc9e8eed689bc36f",
+      "code_sha256": "60589910e3fa67cb91e55c7ada5da00d554499ae305e3a6a47a27d9402e68ef4",
+      "bytes": 3511
+    },
+    {
+      "path": "FiniteAvalanches/Support/Plane/CrossingStubAssembly.lean",
+      "sha256": "6920fb904a9a78099f509329785273b5ce9220a19472a629c502bde2070e9826",
+      "code_sha256": "7ab3217ec58d5e4e77b8e99b3fb82a0131898e50034f1d8a8633f7e311a5f156",
+      "bytes": 3606
+    },
+    {
+      "path": "FiniteAvalanches/Support/Plane/CrossingStubSeparation.lean",
+      "sha256": "7b9ff514883fa749775efb6b27058be14d779ae36ca27f9cc44a045654e037a4",
+      "code_sha256": "d2c0f9cd46ead00df02c5e5e84f19783701296edf237b7621da0ca83262df600",
+      "bytes": 2636
+    },
+    {
+      "path": "FiniteAvalanches/Support/Plane/CrossingStubs.lean",
+      "sha256": "c4ad1bdcc732217bd06f506932b1a489cadf21fde8f90c3360343dff038336c6",
+      "code_sha256": "354cbb0635cd503eb0d13eb2474876a092368ae32678bd3eeac0eae307e2bb53",
+      "bytes": 4344
+    },
+    {
+      "path": "FiniteAvalanches/Support/Plane/CrossingTailChart.lean",
+      "sha256": "ff8bc06f2b1011270a78f328e178c02c526f4b02e44e12c270340f8b2399a8ca",
+      "code_sha256": "31b2224bf3dbc1d08153cfd646aaebe2269c8a4a3c1d2116f5836ed265144c6b",
+      "bytes": 2540
+    },
+    {
+      "path": "FiniteAvalanches/Support/Plane/DeletedDualConnectivity.lean",
+      "sha256": "ba1fa331da298018974adff3ce6b2848ac90b53822ce962f54fd885a9a40663d",
+      "code_sha256": "e201943844aa02bef1970f2f0131b0168c06f8e41455c8337470a0eadb7cd5af",
+      "bytes": 7436
+    },
+    {
+      "path": "FiniteAvalanches/Support/Plane/DeletedEdgeFaces.lean",
+      "sha256": "2fa0e0eba8f4ef75cebbca85ff3f5fa4d23708e8ed8be923f18d8aed1d762cf2",
+      "code_sha256": "08cabe3c59ce83f694d007b81be8971d0cd7cc4038cd29d2059bc7e84464c6d0",
+      "bytes": 8680
+    },
+    {
+      "path": "FiniteAvalanches/Support/Plane/DiffuseCDF.lean",
+      "sha256": "142f44cd83e29d64e5e1dd061f81c0ebd6657c39f4535f6936152d3f621fc9c6",
+      "code_sha256": "2b7f0dd8ee74d9ed91230b3686e0b23504cf25745b7a27f84de3c9e814bfbbd3",
+      "bytes": 4912
+    },
+    {
+      "path": "FiniteAvalanches/Support/Plane/DilationIsotopy.lean",
+      "sha256": "ad51f5700705739c4a7e8ae901351b1571a4b2d043f0a8330949b47fc12c2ea7",
+      "code_sha256": "2f910fe48280d4d9a4d5d26e71a8ef041aa5281149bfc90426832c9a7a6574f8",
+      "bytes": 7576
+    },
+    {
+      "path": "FiniteAvalanches/Support/Plane/Disconnect.lean",
+      "sha256": "f60e2b87649dc234e94204f80db717f820406632cd4dfe292d41d89682fd527b",
+      "code_sha256": "b7f1f21b08b0494c809e4cc68744a2a5dc6b46ac40b01e573d19985feeddf7c7",
+      "bytes": 529
+    },
+    {
+      "path": "FiniteAvalanches/Support/Plane/DiskBoundaryCoordinates.lean",
+      "sha256": "b2a7ca58bf5d973c05fb3ba0f4d95232c549a7fe7dbe9df24c2ca5c1e7a396e6",
+      "code_sha256": "b682e83c2bfd943b950d33a687b68326b65c528ba90a616d5e837fdd900001cd",
+      "bytes": 7477
+    },
+    {
+      "path": "FiniteAvalanches/Support/Plane/DiskBoundaryImage.lean",
+      "sha256": "83539920ef41c3a24bdfc615f0ea3ef87e79911ebab183fd38a4028e731f629b",
+      "code_sha256": "7b99aef3ec20279536cbd0afe61093d0529e9c2d5e0f1a34dd51a0cd5974e6ed",
+      "bytes": 6270
+    },
+    {
+      "path": "FiniteAvalanches/Support/Plane/DiskReflection.lean",
+      "sha256": "9d6b7416e8862848467b8273e326e9b68a5176d48834c150048fd2a85416dae2",
+      "code_sha256": "40edb57d8ab3d8a1fbfa6f817c7991a46f65ed224f663a160e34b89e6586e993",
+      "bytes": 4466
+    },
+    {
+      "path": "FiniteAvalanches/Support/Plane/DualAssembly.lean",
+      "sha256": "115b77cc87743e3ec3067cae0d3af1d8a71286188853fc136ffaf05cbee394d0",
+      "code_sha256": "24fd71651e80f52c784879b62c83880ff270558e632307ca6e4c96b02ffb2510",
+      "bytes": 9741
+    },
+    {
+      "path": "FiniteAvalanches/Support/Plane/DualConnected.lean",
+      "sha256": "e376c442cd94498e1972b66656bd66ef6104d419ffb0e9b1c27e704a35ed163d",
+      "code_sha256": "10beea7cd8563c61e6351767d72d1f62518c87ce81068bf50ea9a48c59051aee",
+      "bytes": 2844
+    },
+    {
+      "path": "FiniteAvalanches/Support/Plane/DualConnectedIncidence.lean",
+      "sha256": "3dc178616da82f605d34ee8cb78bdc825a0a7e6491585a330d54fa542868c300",
+      "code_sha256": "3f406a21a113fe9c7bf2b63dcecc352fbba256bcf16ffde6d3a18a0ad037b9f1",
+      "bytes": 7458
+    },
+    {
+      "path": "FiniteAvalanches/Support/Plane/DualDrawingFromArms.lean",
+      "sha256": "0966fbffd618ae249c4a66dd3341d43836910dd35946e78c362ceb5496632278",
+      "code_sha256": "09eb02c15b3f367df54164ff0fd44b736e32e05ca44ab8432c08d81f0d7153a3",
+      "bytes": 5390
+    },
+    {
+      "path": "FiniteAvalanches/Support/Plane/DualDrawingFromPaths.lean",
+      "sha256": "076c7523cacca008ff894729554c02a29a4cacd1a63de3937b7140b7908ddb33",
+      "code_sha256": "6b3543650f95589c20f8c831dc68329f99957375cc5b03c1f496918a7fb842ee",
+      "bytes": 3795
+    },
+    {
+      "path": "FiniteAvalanches/Support/Plane/DualFaceCoverage.lean",
+      "sha256": "a30fae8c1590461d5987a89066fe6892e8fa556c217a380c367b14009f0727e9",
+      "code_sha256": "1dd8f9d19fe72b9d2830f5ef252a9a692713240dd7bcbf23542007f9fbd7c602",
+      "bytes": 2074
+    },
+    {
+      "path": "FiniteAvalanches/Support/Plane/DualVertexInjective.lean",
+      "sha256": "0a20981c7406e5a4249171cdf74b092d85f2ee83414923604a0ac3fa01d99592",
+      "code_sha256": "c20d2c6333f0293774173c0d3d52c7eb7ec3091e164f5c89de9e947f514e00f2",
+      "bytes": 4307
+    },
+    {
+      "path": "FiniteAvalanches/Support/Plane/EdgeComponentIncidence.lean",
+      "sha256": "0a732a3214691bf283a8f3c00481f698f79a03fbe3ab6d469b01822575ac25ba",
+      "code_sha256": "3eaa04ae1da4a1bdf3f939c7edf9c02d503b7148bbd41883446803a7ce4444aa",
+      "bytes": 3838
+    },
+    {
+      "path": "FiniteAvalanches/Support/Plane/EdgeFaceIncidence.lean",
+      "sha256": "56ad22393f738bf71a76dbb725979aa28793587cac87d0d45e7c6dc371481904",
+      "code_sha256": "41b155d73d64988351e7c7cf5f6e352d160146ffc04e2bf274395d2faa238240",
+      "bytes": 3841
+    },
+    {
+      "path": "FiniteAvalanches/Support/Plane/EdgeNoPathFaces.lean",
+      "sha256": "a2907e5dfa5f8ca19f36ccce25e16a82b235365f2f1e156b2142837b969de7d4",
+      "code_sha256": "b362b5e79f76fe68572258a24e7fd209a022d8c8851f4f0d234bf1c6bcd64cd3",
+      "bytes": 6603
+    },
+    {
+      "path": "FiniteAvalanches/Support/Plane/EdgePathDualityReduction.lean",
+      "sha256": "6c1098bd3afffaaf18c06b478a99172d3e8bdf2bc685dd664f1dd36b5e1fab72",
+      "code_sha256": "29b0204b6df7fff5b213608d6363c3c1e79ef4c34428a7ad251942cca888b16f",
+      "bytes": 3876
+    },
+    {
+      "path": "FiniteAvalanches/Support/Plane/EndpointLocalConnectivity.lean",
+      "sha256": "518ba4d7221b948aa683cc424221b41c25c60a8ae973636492fe7a224ef0d902",
+      "code_sha256": "eb2dd11397a9058254e764853a696f670a08bd9bea7bc57170f33512e65f134e",
+      "bytes": 13836
+    },
+    {
+      "path": "FiniteAvalanches/Support/Plane/FiniteFaceFrontier.lean",
+      "sha256": "38fd3226ec38a382ea5e2a9f57360ffdded5d0ccf48958f7ab4f081a1c023e1d",
+      "code_sha256": "c61f3edcecf44f5e8dd9574c07d6cdf67b073eb0a69494fb3220c8d747a25dde",
+      "bytes": 3001
+    },
+    {
+      "path": "FiniteAvalanches/Support/Plane/FinitePointComplement.lean",
+      "sha256": "7c63ae36c27b89f0638714e2f3f3a8e372068bf598a38b3832935988b05f8de8",
+      "code_sha256": "e508749730f58bebe46ead17948c1cfeeec3974bc42fa3fb391fc86da22871a3",
+      "bytes": 1255
+    },
+    {
+      "path": "FiniteAvalanches/Support/Plane/GeometricDual.lean",
+      "sha256": "f68f6c2618d2d49c40960157eb7909ae66227a34afa85abca14082058841ac56",
+      "code_sha256": "53bebc5b8bb7e95bb377bd8945dbcac1859260f17dc2c1fdb11633e3748d1e45",
+      "bytes": 75569
+    },
+    {
+      "path": "FiniteAvalanches/Support/Plane/HalfOpenLocalStraightening.lean",
+      "sha256": "3489b6be678764353ca984d9d43ae8bf4c0c90c27a95c55428720dc2231bfb2e",
+      "code_sha256": "b0bf73e6f902d7926a5f55a2d8c44552827e013d13048901d9fef72636c44107",
+      "bytes": 4765
+    },
+    {
+      "path": "FiniteAvalanches/Support/Plane/HomeomorphPasting.lean",
+      "sha256": "0bc47b8e5b4619de2363e7d6cece380ce0678ad79aa8d47a98fe3e4d8c561334",
+      "code_sha256": "ab1f123e9b5ba4ac1980b172e712ca4752b75754ea60ccbc007b3148a2c5d262",
+      "bytes": 4358
+    },
+    {
+      "path": "FiniteAvalanches/Support/Plane/InfiniteEndpointPath.lean",
+      "sha256": "c47be274e1e5e323e259f9f82a67268255ed711f949be08da26d2e6c60c8f49b",
+      "code_sha256": "6e14e238c6b80db7527f0bdf59b2dbf85f015629d21957425969dfb02124ae7a",
+      "bytes": 9220
+    },
+    {
+      "path": "FiniteAvalanches/Support/Plane/IntervalExtension.lean",
+      "sha256": "2c8c6fdc44c7ebce3280af0876f22a9f39048534e5c41e64cc41eecddcd291c7",
+      "code_sha256": "f2dcad4c57603e0f5d7a1c1c657f5b927585b2fd7caa1934c8cc70960d7cf49d",
+      "bytes": 4115
+    },
+    {
+      "path": "FiniteAvalanches/Support/Plane/IntervalIsotopy.lean",
+      "sha256": "cde2c680326941cf271e69213edc08916434e7d49f56f56a7a9b0333f0e49d97",
+      "code_sha256": "30f8781f2020eb655ecc35a33cd6dd6c28891fbc4075ee0e09a373aa03660285",
+      "bytes": 5555
+    },
+    {
+      "path": "FiniteAvalanches/Support/Plane/IntervalNormalization.lean",
+      "sha256": "c72afddae159e0bc1c302f6913195aa03d65f9a00f051f7ed9762aa84b23a793",
+      "code_sha256": "e905b8b5da68d67d4689a214806b4f396a9211fbd2b2de0bc25c27710f0c2d26",
+      "bytes": 33508
+    },
+    {
+      "path": "FiniteAvalanches/Support/Plane/JordanDrawingFaces.lean",
+      "sha256": "0cec5f98608d081d64777b01f49f3ec540d069257e47b4706e1203edaa8d5919",
+      "code_sha256": "e1fc4e7a312653789e7787b74a77fae98ae3b0a5696d68893c2fca7d4f431791",
+      "bytes": 7270
+    },
+    {
+      "path": "FiniteAvalanches/Support/Plane/JordanLoopExtension.lean",
+      "sha256": "41ab8b0572918db24f34875ce8b3162a5b76d45bb538105ef8f3bb5632e20351",
+      "code_sha256": "22419de017203fe77dd36a3e62c7368f7ee603dfc296f2f67963c8b691b7d35f",
+      "bytes": 2275
+    },
+    {
+      "path": "FiniteAvalanches/Support/Plane/LocalArcEndpointAccess.lean",
+      "sha256": "2825d415dcfde4b5ea367e98f7705a6b4f4e3dd459290875dce28f909a2cc680",
+      "code_sha256": "055daab6b84951f53db9253efb2a69d9cc303bdc3e8a6a58635cb7bf284c193c",
+      "bytes": 2563
+    },
+    {
+      "path": "FiniteAvalanches/Support/Plane/LocalFaceIncidence.lean",
+      "sha256": "bc0d9d7a1249f4ff642e7a3cb8a659ffe30d4c2a77f14e06e874574f29abd413",
+      "code_sha256": "1615e7a28e4cff72bea0d64570348ec483e28713792f525f2f3d7f560b5766d4",
+      "bytes": 6991
+    },
+    {
+      "path": "FiniteAvalanches/Support/Plane/LocalVertexIncidence.lean",
+      "sha256": "166892d54b5767ea451055ad175cfc340386f0c0329d6070d51ac5f1110bbc22",
+      "code_sha256": "bdd8ab92a83af32326c28e485360c62e89b5e4c6dd149550840bd4cfd6a651cf",
+      "bytes": 2814
+    },
+    {
+      "path": "FiniteAvalanches/Support/Plane/LoopCancellation.lean",
+      "sha256": "f5d83aa50f65dcac286d7f625ef5f6ea08a1f905df63557f16f02fec41954971",
+      "code_sha256": "67e5193e876807bf7095998b602db180413a66d00e65cc4c87ad10e59f7af3b6",
+      "bytes": 18259
+    },
+    {
+      "path": "FiniteAvalanches/Support/Plane/LoopEdgeJordan.lean",
+      "sha256": "3ae15b8bf9be08c776d74b2e23019f6c0a39d3d360f6c8da3ef2b8bf79c02e15",
+      "code_sha256": "1c94f7cfb7f4f53454df2e1e2c4b6aa6823b1aa17adda0107a55d1d2aec42b10",
+      "bytes": 2447
+    },
+    {
+      "path": "FiniteAvalanches/Support/Plane/LoopPathReduction.lean",
+      "sha256": "0984c13984f43d6bceb31ad3d3a8abfc984d74cfd39156a85756671107d7af81",
+      "code_sha256": "5b252058303cf6c92dbf1d9ef10d5aca0e478add2cd1b2e13f633993536d7e6f",
+      "bytes": 5021
+    },
+    {
+      "path": "FiniteAvalanches/Support/Plane/LoopPaths.lean",
+      "sha256": "aba56ff62c7220d972ba3abc91c879f78f046d1a4aba16fd4e1afb39d78f64a9",
+      "code_sha256": "35569fc22a8743be712105f8de7619931450c03623b76d4721bf6e8cfff412d9",
+      "bytes": 13636
+    },
+    {
+      "path": "FiniteAvalanches/Support/Plane/LoopResidual.lean",
+      "sha256": "94902db92eecb2cfb49d2dc91975f0839acc886fd9d668a78ea8952ead0f2079",
+      "code_sha256": "bb8616ac3505505bcd39a660e66b4d42dd0b2e6a63ec18ae8ac623d71abd6fd7",
+      "bytes": 8757
+    },
+    {
+      "path": "FiniteAvalanches/Support/Plane/NestedLoops.lean",
+      "sha256": "cb2beee606fcffd548a07b93bac77b6585a5978a031df5f6df965f56f9074d14",
+      "code_sha256": "96f2080415c835db110adcb36799807ac1ad09e6dc0a26e535531d1c1cd31aa2",
+      "bytes": 5861
+    },
+    {
+      "path": "FiniteAvalanches/Support/Plane/OrientedDiskPasting.lean",
+      "sha256": "269499a86a6bde8c3bcb3b6b073560372240175497ade69b0ba7d5226ea20f30",
+      "code_sha256": "314b79ccdd2d4cc0fe38265dac82e7dee27424d560328def390a0eccbfc4c995",
+      "bytes": 3484
+    },
+    {
+      "path": "FiniteAvalanches/Support/Plane/ParametrizedBoundaryAccess.lean",
+      "sha256": "bcd71355d0fc31429c7293ce357b07d687ad8c4017b53ef8e0d7e6b49a661fd3",
+      "code_sha256": "9a13b146ee719f67f9f93a5bd2d2976355852bf9651269e6900671396882fac4",
+      "bytes": 5138
+    },
+    {
+      "path": "FiniteAvalanches/Support/Plane/ParametrizedBoundaryBridge.lean",
+      "sha256": "72f12d27c89e231ad8921842f32235509f526a4317e8e768684c3781ca695686",
+      "code_sha256": "f53b7a002c306da7a963db0a7fd317667337bf288e24806b928a93782b1bff78",
+      "bytes": 7976
+    },
+    {
+      "path": "FiniteAvalanches/Support/Plane/ParametrizedBoundaryTwoStar.lean",
+      "sha256": "3cce489de273934e150167830603ea9ffe97b1be24b50a539ec495e62467399f",
+      "code_sha256": "f0878075e5d57863b5423f6516c0c89d2c4836691872fbee6679d7defb14296b",
+      "bytes": 2895
+    },
+    {
+      "path": "FiniteAvalanches/Support/Plane/PathArcExtraction.lean",
+      "sha256": "eb7f1915f9c60e20b6215b87c6a6720ef02b16ee7ce3c066e4409fefc27f5eef",
+      "code_sha256": "2454170a70ee633087b8d684c6517e2b877837a95bc4572f7cc193b74e5b4171",
+      "bytes": 2812
+    },
+    {
+      "path": "FiniteAvalanches/Support/Plane/PathEdgeIncidence.lean",
+      "sha256": "dc6a1b002193a03e19c6512b9adb3abdb1c9bcf59f9fc4ff060475e9d022c241",
+      "code_sha256": "10b485c7b752b3a26d94c3c231c59c21dfb4cd9ef229e542d942d6ead5308bc7",
+      "bytes": 1959
+    },
+    {
+      "path": "FiniteAvalanches/Support/Plane/PathQuotient.lean",
+      "sha256": "1263784dbfea17adfae3e06dc8e052009585bf6078766fc2f5dc9e26d0ae86fb",
+      "code_sha256": "f7d7ddd00ddbe9dd9bddbb1b4412f2816cb6125a3ea53d2d0c853df436957fb2",
+      "bytes": 2969
+    },
+    {
+      "path": "FiniteAvalanches/Support/Plane/PerfectLocalCantor.lean",
+      "sha256": "e5b5513211cad3e8c22e9b8e91e975f91d661fd204988cea624d072b1cde1538",
+      "code_sha256": "2434108b855e2829dad35f9b528d86bef82af66291f4c16adb474cd650795ef9",
+      "bytes": 1553
+    },
+    {
+      "path": "FiniteAvalanches/Support/Plane/PlanarCore.lean",
+      "sha256": "9158dc57c3f6389f676fd72a2c4a5191adc821965e9322d007667b629d06d16e",
+      "code_sha256": "83981a1ad82338afd67e5b6d6906db61c38d65f02195af437aeb090f53dd1ec2",
+      "bytes": 8709
+    },
+    {
+      "path": "FiniteAvalanches/Support/Plane/PlaneArcStraightening.lean",
+      "sha256": "cca30069ca2f2a60264ebf8d83833895101d060087255eb892004df8a642d0f7",
+      "code_sha256": "0b6f8db156c79fdba2372bb0fd25f1aaf523aab2450b20bea760c1a7a42d2c8e",
+      "bytes": 2640
+    },
+    {
+      "path": "FiniteAvalanches/Support/Plane/PlaneCircleIsotopy.lean",
+      "sha256": "c8b675be98c4aa554441f4a5463c1be2d163c4398957a220f3fd7358bf1dd373",
+      "code_sha256": "de0842f28708cb05b5b9cd11ce2b04db5f4cdd97438c2f7c4d1fc067f848bf3b",
+      "bytes": 7031
+    },
+    {
+      "path": "FiniteAvalanches/Support/Plane/PolarDualConnected.lean",
+      "sha256": "8669ce7e88b93bfe3fe6bb3113ff7469b050017b7125d62af7d9c862dc33ed61",
+      "code_sha256": "407d46227f17a2fafc87d71c87528604fc321f02178790faa2ca52317ddd0059",
+      "bytes": 3222
+    },
+    {
+      "path": "FiniteAvalanches/Support/Plane/PolygonalPathStar.lean",
+      "sha256": "417f803d607e46d98550fb7d737baee6a78aed8fd61459ea7a397d993ceda095",
+      "code_sha256": "648e4b842a4de1cc481c85ee41d1f691b08279152706755bebaad377165febae",
+      "bytes": 2121
+    },
+    {
+      "path": "FiniteAvalanches/Support/Plane/PuncturedExtension.lean",
+      "sha256": "7ef034e69a8d7dab04a079383cf75c3c5a04e2b3f18943b68294d5ecf69730a7",
+      "code_sha256": "9d5eed87c80ac41e7566368a3ead589f2464dd7a999022cb389ccc6f4d0cfc11",
+      "bytes": 3840
+    },
+    {
+      "path": "FiniteAvalanches/Support/Plane/PuncturedTransport.lean",
+      "sha256": "47607564e261597b8aa8bb5b85f6a247c2e75158b7a47e415a7c4a6abe3655c5",
+      "code_sha256": "bb6dbde37da1618cb3ae1b8b99ae61846ea4ec5c2d32401af97edb32935e8ca3",
+      "bytes": 43914
+    },
+    {
+      "path": "FiniteAvalanches/Support/Plane/RadialCircleIsotopy.lean",
+      "sha256": "9e6e2e86b5701d7053a3b6702d1bafbb29c9df00694a5ad0eee41dba022f38ca",
+      "code_sha256": "a17ef60a42c398113092de86feab6c8d887390ff218f2d2b9c0123ed258db2ec",
+      "bytes": 6250
+    },
+    {
+      "path": "FiniteAvalanches/Support/Plane/ReachabilityPath.lean",
+      "sha256": "29169ba9be0c6bb21fa1159ee8a4e558049e5ba37acf5433893ef59daacc4894",
+      "code_sha256": "82fde09d73b3e5baae9fb29b202888d59b0529d373f686554bcf336fcf24e452",
+      "bytes": 1676
+    },
+    {
+      "path": "FiniteAvalanches/Support/Plane/ReachabilityTrace.lean",
+      "sha256": "87cc21bfd77e4a6b1e6b83f0eb11cc5314c3ee8d4abc26b2bc2b8d959e6e5ac0",
+      "code_sha256": "e964dcc437d9554cce23a32bfc0e43113bb495598a43a6c21e38bcd45f1bf97c",
+      "bytes": 4206
+    },
+    {
+      "path": "FiniteAvalanches/Support/Plane/RetainedTailFamily.lean",
+      "sha256": "9e8b45efe3f49a626e5d8b55078009a3927c0e3a138541aca1277a3b42875bc6",
+      "code_sha256": "51ba263f8eba58136b8e3c243e50062d5ffc7c5c24708af5b0c9a7b05619ae3c",
+      "bytes": 2259
+    },
+    {
+      "path": "FiniteAvalanches/Support/Plane/RetainedTailReparam.lean",
+      "sha256": "4bb48a159b10c299cd84a5ba6abbe8db09d655e6fe8010264d371bfce62962a4",
+      "code_sha256": "544483e6c5e50f12c989fff9354a7ab6fc689ff7da9a1b794ee56110b2f378b2",
+      "bytes": 5004
+    },
+    {
+      "path": "FiniteAvalanches/Support/Plane/RootStubSupply.lean",
+      "sha256": "e75683b5c25226a7e2298dcf36321469a3a59b57b1074475b38d564b9e255304",
+      "code_sha256": "6c9383e6c62900984eda4e51d8afa7c3e30c733e1be99d6d24d3a144c0017273",
+      "bytes": 2455
+    },
+    {
+      "path": "FiniteAvalanches/Support/Plane/SelectedDrawing.lean",
+      "sha256": "5732cd1e58acc0facb757031ff66c2e9338ea531fa8e2d1a783713e13be72fdb",
+      "code_sha256": "3cdef6bfb54223656101927345613008ef469f5da0a7d7286b7d9cd3a69dda00",
+      "bytes": 5480
+    },
+    {
+      "path": "FiniteAvalanches/Support/Plane/SelectedGraph.lean",
+      "sha256": "0d11341767a14d0ff15733381f350bd20b3005a93620595793acfd8d8173a4d5",
+      "code_sha256": "e44bda3e7607c39683339ec3934172db47da8799cc8f0bab15ca258ee49d6ae3",
+      "bytes": 2050
+    },
+    {
+      "path": "FiniteAvalanches/Support/Plane/SelectedSimplePath.lean",
+      "sha256": "e89098a84460d93ceb8f06d96ccddf0cbcd185e82f25774cf5bdde9c933fd719",
+      "code_sha256": "e4cc94ad34987ea938b7e9d2a87f915ec15e66034105cd43a850a5ede0dae56a",
+      "bytes": 3422
+    },
+    {
+      "path": "FiniteAvalanches/Support/Plane/SimplePathDuality.lean",
+      "sha256": "da749ec82029d8801d8f4b1a26c622e2ccc1c1a69f0ab5c15c454cab4d2201f5",
+      "code_sha256": "f5b23a5317d8c4183911f9895b9f3ffa830f49fe7a3277c84bca047400b7eced",
+      "bytes": 4278
+    },
+    {
+      "path": "FiniteAvalanches/Support/Plane/SmallFaceCrossingArms.lean",
+      "sha256": "b9e8155c87e043eb2f60be6c7f0d78092e28c3e0dd5850bd18215e46fbdcce95",
+      "code_sha256": "2dae66ca40bb19784b3917d6b14d60f4e5ad04d104337334e582f513e0976166",
+      "bytes": 4191
+    },
+    {
+      "path": "FiniteAvalanches/Support/Plane/SmallFaceGeometricDual.lean",
+      "sha256": "5c4dc355d9a1bb33d22bf2aaad6da860ad4fe6ce576123999440b57b8021b96d",
+      "code_sha256": "50cb0d72550909cd7ccd1650d39e69b5ac72016668e0fe802c016951d7df68b5",
+      "bytes": 7176
+    },
+    {
+      "path": "FiniteAvalanches/Support/Plane/StableOrientation.lean",
+      "sha256": "268ed9a6950dc111778f76553fefb0136694b48530fd2fbe8e43e052dbd8866f",
+      "code_sha256": "83272d21306a2945d727a493cce351fcfbc7e766561d5a1db5eca79d34f4233e",
+      "bytes": 3375
+    },
+    {
+      "path": "FiniteAvalanches/Support/Plane/StarSplicing.lean",
+      "sha256": "b414381448c0665146c238fd79c30618c42f040edfaf7fa7540cbe9938668731",
+      "code_sha256": "db90620a430e617fb31d163c7f6a6f6ab82f051b13be70a7fcf645c883d08f3c",
+      "bytes": 3763
+    },
+    {
+      "path": "FiniteAvalanches/Support/Plane/StraightModel.lean",
+      "sha256": "b96d7405b955afbb9ad5d2354e95d0e5cdae673bdf001878c9f2012c1db66a01",
+      "code_sha256": "447dece68ca64c9257934619bdd22dcb7a5a1c4139943bbf1156f9c1f405ec85",
+      "bytes": 2687
+    },
+    {
+      "path": "FiniteAvalanches/Support/Plane/SubarcCompletion.lean",
+      "sha256": "5e17f3fbbfcea6a7d676e1215ec993b1783232e8307a45ffaf0c89617a6e7504",
+      "code_sha256": "0e611bb2fc129a3ec9539b2c44724f5ee474a2deaddea8bdeeaed97148cec280",
+      "bytes": 4491
+    },
+    {
+      "path": "FiniteAvalanches/Support/Plane/TerminalReparam.lean",
+      "sha256": "7aebf09cddcd537a1f740fd770f31eccc9235626fc80038974667b4e8f9524df",
+      "code_sha256": "6b0d2a373149db116a3044f6c29e461aea71ca28914a9062a5f10107cc50ff10",
+      "bytes": 5002
+    },
+    {
+      "path": "FiniteAvalanches/Support/Plane/TerminalSpeedTail.lean",
+      "sha256": "29521f2d417e898b509810a512d1ac2b56810d4fe73fa2feb1626825343ad672",
+      "code_sha256": "df00fcab0f78422e7aa5da4e9c1bd56d732f771027257c390974c7d66f157394",
+      "bytes": 1261
+    },
+    {
+      "path": "FiniteAvalanches/Support/Plane/TerminalTailSeparation.lean",
+      "sha256": "5970a09360a469d1bda0d45171c0af3e29c68b412b51bcd25a3a8a0f14404064",
+      "code_sha256": "0ca85539403a9a47600e5fd313dabd15ce45c46f8ced162b1feba5df241b48a8",
+      "bytes": 2373
+    },
+    {
+      "path": "FiniteAvalanches/Support/Plane/TerminalTailTransfer.lean",
+      "sha256": "4cfdc61713531b6c98daa838e503b5a9bcb9d1d58eed4e7cb1e3f73811fc8f78",
+      "code_sha256": "c5c6468445d0a608a58137c388b119c4538db8a7021e3c770205fdddea5ff104",
+      "bytes": 2090
+    },
+    {
+      "path": "FiniteAvalanches/Support/Plane/ThreeCompactSeparation.lean",
+      "sha256": "fa354ed8ae9c9936e1d127d17025d23bd204eaf7517b38de2c9a83bcf8754954",
+      "code_sha256": "3daa2a13376d27e5a27386f32fcaa24d867b008203b1f30bd731015f664d60f6",
+      "bytes": 2408
+    },
+    {
+      "path": "FiniteAvalanches/Support/Plane/TopoDegree.lean",
+      "sha256": "6f089aa05be25b0ede406fbc44461b3b39d18e2edffa16844287b56ed50315f9",
+      "code_sha256": "50332139178e32f6fd839bda7c7d7f9f1f91fcbfe3b93fb3cb066d8b0e631002",
+      "bytes": 12637
+    },
+    {
+      "path": "FiniteAvalanches/Support/Plane/TopoEilenberg.lean",
+      "sha256": "31ff16cd0ff8da6ef52c6862dc99182e215a1ea4d5e9e2e9b6d89b4a30ff6dd0",
+      "code_sha256": "d3c47cae9527041f287f9c063226847b31948c1b4330965d70e61e553e169d29",
+      "bytes": 13130
+    },
+    {
+      "path": "FiniteAvalanches/Support/Plane/TopoJaniszewski.lean",
+      "sha256": "39e7c668fc02f76a2fd14631e85a8ebbd1c021a6547cb204cadeb336de1eb1e8",
+      "code_sha256": "231cad5f433fc53dc4f0e0b8ac94b8fe64ccc8bf2488c539dee50daf45cefe00",
+      "bytes": 3271
+    },
+    {
+      "path": "FiniteAvalanches/Support/Plane/TopoSep.lean",
+      "sha256": "8ab8a958df8aa011977efae8ba6b1691d347022f7627f80b8c2e9af27c1c7398",
+      "code_sha256": "798e3fa2e27ecfc1ba452e0ba63cc7fc5602c722b689b59db4229a12028a5ce2",
+      "bytes": 10377
+    },
+    {
+      "path": "FiniteAvalanches/Support/Plane/TransverseClosedAvoidance.lean",
+      "sha256": "b26731d1ba7bf43b1a57ccd233501b7a74b8706831a6eb87030aac885b07c7fe",
+      "code_sha256": "0f4b9fc09493ca8a305c29e7d8b94274e20972c13624ace7f6812faa82328252",
+      "bytes": 2831
+    },
+    {
+      "path": "FiniteAvalanches/Support/Plane/TransverseStar.lean",
+      "sha256": "650d1528178ed6bad478b7a8d8564cf0b06fdbc628fc5ca98b0e86ef2196ee3b",
+      "code_sha256": "b3cfffeb36f543fc092fe1a7c97d7bc8c93c7a748a5a5c87371fe49d666d4866",
+      "bytes": 4090
+    },
+    {
+      "path": "FiniteAvalanches/Support/Plane/TreeComplement.lean",
+      "sha256": "86f738f840243cb57489072d7f3ee955e48614357ae7af68a91add5debc3fc3e",
+      "code_sha256": "17bbb4fe44e711be6b8ad5d2e727d8179d86f3fa1963f4d32ae1f42375217b18",
+      "bytes": 6150
+    },
+    {
+      "path": "FiniteAvalanches/Support/Plane/TreeComplementReduction.lean",
+      "sha256": "328cb70f4248bdd70d90e3d44763c96b4546a55fbe815a1e021781d57c765943",
+      "code_sha256": "b55eb042c891ba22083ca52a57ad29976666cbf6d4fc90c0ccbe0d1547bba82a",
+      "bytes": 2708
+    },
+    {
+      "path": "FiniteAvalanches/Support/Plane/TreePaths.lean",
+      "sha256": "a3b0d22cc75633965983a303c96eeaa326b12dd2f4f40333c71262b9c5f29aca",
+      "code_sha256": "7a650622728fe7e7794d876e12d8e88561b354f529752ebfa253ff56aecde566",
+      "bytes": 105402
+    },
+    {
+      "path": "FiniteAvalanches/Support/Plane/TripleFaceCrossingArms.lean",
+      "sha256": "84301446313e57a7d5b3fa8e548a7263dd63107d58e6c3d8b1afb831a5635d14",
+      "code_sha256": "a3d7609cfad960b5f658994b94f24f3c6d6942faeac28f761bd3e619914bf5b3",
+      "bytes": 4361
+    },
+    {
+      "path": "FiniteAvalanches/Support/Plane/TripleFaceGeometricDual.lean",
+      "sha256": "0b94b17d0bea02a6fccf7a4b22c05c9e51e38a1f0a9aea3da6d0724b1bd40465",
+      "code_sha256": "5bee519220f98b33efc1594098e06be721e85aaf37a569a7a1a365363efddacf",
+      "bytes": 7185
+    },
+    {
+      "path": "FiniteAvalanches/Support/Plane/TwoArcJordan.lean",
+      "sha256": "35ace87a0c899869924badad4ee6f745d86b63338852f9aab373f0c385e8c46c",
+      "code_sha256": "e09565cda24af7f76679c6313fb48093cc0bc4aa6ea49a5def0371b1f5b6cf67",
+      "bytes": 2090
+    },
+    {
+      "path": "FiniteAvalanches/Support/Plane/TwoArcReroot.lean",
+      "sha256": "8506a44ac68cdc333db2972f8f57029f900aa35e21cf7ce1be27cc1f9226c1be",
+      "code_sha256": "f4cc35e3e1c3d9f00413a291aee7200ceebbf07ecf08f93cb338141c80562f6c",
+      "bytes": 5382
+    },
+    {
+      "path": "FiniteAvalanches/Support/Plane/TwoArcRerootTails.lean",
+      "sha256": "821857f7c25e2c4a5e795f0355d9b8c2ee7c20d2917f113f45498db233e56276",
+      "code_sha256": "62a69e67504f6752d4af9c74e50666cbd97601179ff42a7952d8b0f47ebf05bf",
+      "bytes": 4135
+    },
+    {
+      "path": "FiniteAvalanches/Support/Plane/TwoPoleReduction.lean",
+      "sha256": "1a78b667e741d2317aac434c1c214b703dfd74f11411c9a7147d1dc2ec56866b",
+      "code_sha256": "fcc157883ad738d893fabc665c55f92d753691c8bba04b729be3677e645b502e",
+      "bytes": 3979
+    },
+    {
+      "path": "FiniteAvalanches/Support/Plane/TwoPoleSeparation.lean",
+      "sha256": "6ff4e3b74dec4d7b2efadc5123cb5312b496b3e644339580fa0af599238e0e8b",
+      "code_sha256": "de714aec8b7e8cd31a1fb0da8d64999610fefc0b1bd8e8381bbf815f4b7deb4b",
+      "bytes": 2167
+    },
+    {
+      "path": "FiniteAvalanches/Support/Plane/TwoPoleTreeComplement.lean",
+      "sha256": "cff3b4979169e955177de84592fa8bd61acbd96e834e11b076f04ab917cda710",
+      "code_sha256": "d056f000d132920e6a877692be774d3d9ea934a4ce3ce73af70dc67e288fb0ab",
+      "bytes": 2507
+    },
+    {
+      "path": "FiniteAvalanches/Support/Plane/UnchartedFaces.lean",
+      "sha256": "5c82a5a1b1a02f13b3077bb94cfed7eec37faead5077ee7da7edf18a6b3594fe",
+      "code_sha256": "0ef6d876dc01a0f596aa62082d08658e180667388bd4cd2c481c54d35a2b7c19",
+      "bytes": 6034
+    },
+    {
+      "path": "FiniteAvalanches/Support/Plane/VertexFaceConnectivity.lean",
+      "sha256": "37a802e159fe52031c9ec3b46253990bccc1e959d0fd127939f4dbfe7277c531",
+      "code_sha256": "79b08a4f1b4532ae11dfb09372969bee7c449f8524f239431d7597143e0c8001",
+      "bytes": 6444
+    },
+    {
+      "path": "FiniteAvalanches/Support/Plane/VertexFaceIncidence.lean",
+      "sha256": "54d1cbb3ac200495eb64276e12e086626f29dbda1b0975134675ddef9f78c69e",
+      "code_sha256": "5b7f7ff7c4ef89c9bfa32eaa3e73bd1ecc2c4520bfc2e402a5c94ea8d56926b6",
+      "bytes": 3516
+    },
+    {
+      "path": "FiniteAvalanches/Support/Schoenflies/Accessible.lean",
+      "sha256": "4341110792abde1f29c5dd568d9a5a2513e25b7088d1d036714a0e12e23e7120",
+      "code_sha256": "ef6bedf6177dd820e38b8dfae738a28cca6d1a98876d9721712073b6af8b6680",
+      "bytes": 8033
+    },
+    {
+      "path": "FiniteAvalanches/Support/Schoenflies/AccessibleJoin.lean",
+      "sha256": "05a106331a1c75d4efbc0d3047afe27244992b90453b793f194616dc37ac5532",
+      "code_sha256": "e26858217051683c1d57a20dd2ad5b5b68f9e7d4eb01ae77a6e72e6528c5fd37",
+      "bytes": 12867
+    },
+    {
+      "path": "FiniteAvalanches/Support/Schoenflies/AlternatingCrosscuts.lean",
+      "sha256": "91f6e93c0364fafb4f0c398779643032f223bde6e1fff1be322a799b1bb7d7a9",
+      "code_sha256": "77503fa0ed6c7683229e7d9119728da01d8a8d2d45dbcb75dd02af9089b329da",
+      "bytes": 6382
+    },
+    {
+      "path": "FiniteAvalanches/Support/Schoenflies/ArcCollars.lean",
+      "sha256": "01c799a72477ed6edea7b65cd346ef0aea0bbb983b8e70b49f62aba1e36a1691",
+      "code_sha256": "592ad956046053830441307987e3542c3d5fd98b6112cbb7bf9200304714dea4",
+      "bytes": 74100
+    },
+    {
+      "path": "FiniteAvalanches/Support/Schoenflies/ArcComplement.lean",
+      "sha256": "2de60ee4bfd56335e2e17054268fd81a3d7b15084bb431583b7bc546a689e1e3",
+      "code_sha256": "f03b204a28d9cfe5c697212a0b7d0ba22157ebcc640e5d9c0288b61596080204",
+      "bytes": 29041
+    },
+    {
+      "path": "FiniteAvalanches/Support/Schoenflies/ArcComplementPrep.lean",
+      "sha256": "2105ab57696cb46642b3a8b7ae7bb9278b3862ca1d59b2015aaeb083cfcdc785",
+      "code_sha256": "c29cb1f94ddbb6c89f8d7d245d6de4131f1d90bac0f99aa2b827843cc68de020",
+      "bytes": 41006
+    },
+    {
+      "path": "FiniteAvalanches/Support/Schoenflies/ArcMonotone.lean",
+      "sha256": "ca0dfc8c00b1a80c9f81076d8b1baf4b84d1a5119bb7b49f0f2c6b72ed7ded36",
+      "code_sha256": "ab55978c50b50146713843979ffb44e23c05633ef3c7df53debd44cc45b719e5",
+      "bytes": 8590
+    },
+    {
+      "path": "FiniteAvalanches/Support/Schoenflies/BoundaryAnchors.lean",
+      "sha256": "54fcb9c2557ce80f722707b6834f2673eb2b1425c429ede19465f41eb39eedbe",
+      "code_sha256": "a1657bf1fdde58984d76c7329996ddd28edc6f34b82663f54fc9600f1e130844",
+      "bytes": 40455
+    },
+    {
+      "path": "FiniteAvalanches/Support/Schoenflies/BoundaryContinuity.lean",
+      "sha256": "a45620078c07ebcc59a9a516e5d44163c4287487aa34915bd3c9980c1adcc6d3",
+      "code_sha256": "92933c46f0bbe286e01fe08b2f86e273a28aa0ed136087676a613766f7246490",
+      "bytes": 23251
+    },
+    {
+      "path": "FiniteAvalanches/Support/Schoenflies/BoundaryContinuity2.lean",
+      "sha256": "154c7a52de45a8067076311d52c20469510603b80ded031d44063ebe3699f26b",
+      "code_sha256": "fca8ba833d3218ad35bb0b3e46d72c5c42dd3dd3a9252c69cd404d5f9246fe0c",
+      "bytes": 26005
+    },
+    {
+      "path": "FiniteAvalanches/Support/Schoenflies/BoundaryCycles.lean",
+      "sha256": "36d5ee504063864cd4f2988eb5d3c771c033e17be6414f76507c5059ecfca231",
+      "code_sha256": "1b1ca0a404c56f30600d98234384fa627f72a0ca2f0ab68db80f64636ac63564",
+      "bytes": 7915
+    },
+    {
+      "path": "FiniteAvalanches/Support/Schoenflies/BoundaryCyclesGenerated.lean",
+      "sha256": "15f45db87f9ea4575d3154d6f79a8f07bce079e62ba4fc55a2cecfc82e20ee95",
+      "code_sha256": "e502481b53cfe677f3321443dab6179cb5180d83f5354d866d54f9c17f14bfb0",
+      "bytes": 31032
+    },
+    {
+      "path": "FiniteAvalanches/Support/Schoenflies/Bounded.lean",
+      "sha256": "d4edbb81a334c3c8202a3eb3a0adf142c9df5b1a608346b7fc2b5d7a76473a38",
+      "code_sha256": "678344e099c15cb245166002ca06a18aaefb1d47e78ebeb941997038f09ddae9",
+      "bytes": 2094
+    },
+    {
+      "path": "FiniteAvalanches/Support/Schoenflies/CellulationInvariants.lean",
+      "sha256": "7fe3ffa283599354a580803b6002cdcb26931e4477c5eefa0c7321844921aa84",
+      "code_sha256": "d52171e94dd6891662235a58f093a2681f750887630bfe9b94533a381d5a2869",
+      "bytes": 28452
+    },
+    {
+      "path": "FiniteAvalanches/Support/Schoenflies/CombinatorialInvariance.lean",
+      "sha256": "e83e8db6936b38178dc741ea3a96885508756e6f1d6f05649ea5055c0fcea8fa",
+      "code_sha256": "4403be5314c659d10dc5065483d36afdeea2098bab912f541a1a2a5b2e7640a8",
+      "bytes": 13716
+    },
+    {
+      "path": "FiniteAvalanches/Support/Schoenflies/CommonSubdivision.lean",
+      "sha256": "9dc11a1f80b44606059cd18d6668c257672bcd7aa50495b3fe45d03a244e7cfd",
+      "code_sha256": "1679b222da57a9f2b510fd157e105717acf66477eb1742394d0a41ad10763d25",
+      "bytes": 69278
+    },
+    {
+      "path": "FiniteAvalanches/Support/Schoenflies/Concatenate.lean",
+      "sha256": "803b2bf87dfb5d94d2689fc398d8af503b806cddfcf82862c712a8266cdf9def",
+      "code_sha256": "ad5ebba814b81ff64f2f6f36690018bdb2e3ced94024c7bcf3d0317d691ce852",
+      "bytes": 9491
+    },
+    {
+      "path": "FiniteAvalanches/Support/Schoenflies/CrosscutAtMostTwo.lean",
+      "sha256": "10b3f7f84b465e0fe547d1c7df9ecd83b7e1b6c2d754b8c0f46574d6e103b420",
+      "code_sha256": "dfa3321d006b2a7025d80a45b0bf88f8d0c7bda47088c32efee8e0e1771b4465",
+      "bytes": 21769
+    },
+    {
+      "path": "FiniteAvalanches/Support/Schoenflies/CrosscutCells.lean",
+      "sha256": "8e2c6730d7efc19373d9cac81a31fe13cc5c38382d9987e42ab6b6619c2558c6",
+      "code_sha256": "a61d05f53b17bca28dcb23ff07656eb1410e56d336582964a9539fa9fe289e16",
+      "bytes": 13898
+    },
+    {
+      "path": "FiniteAvalanches/Support/Schoenflies/CrosscutEncloses.lean",
+      "sha256": "c0b322b31ea9868c6e8499eb6e6af9c776b5cc2053a3df51a67a05c89693ea96",
+      "code_sha256": "9d347688f71057db18df84b4e6b7ecd34e1178c0dc59d2c69141029fd224b2e9",
+      "bytes": 19009
+    },
+    {
+      "path": "FiniteAvalanches/Support/Schoenflies/CrosscutExists.lean",
+      "sha256": "40ac82ae64fbb1877f811ed496a561e546bfd31f53ad7d07451ead261a6b83a3",
+      "code_sha256": "784edc374c1d64ac8eb099b829277400385a92c6382efba321af82031aa6e2d9",
+      "bytes": 18305
+    },
+    {
+      "path": "FiniteAvalanches/Support/Schoenflies/Curve.lean",
+      "sha256": "9e7467e24ab851eeb66c51c2dd2f889c10b3746f1293a7227cb352eb53dfe93f",
+      "code_sha256": "d6eb587e1618c32fd2635657608a0da5c946f09500b9dd0031478fee9be521aa",
+      "bytes": 3884
+    },
+    {
+      "path": "FiniteAvalanches/Support/Schoenflies/Direction.lean",
+      "sha256": "abf2c78839f66a0597fc9b8f5a0aa99bfa5b9c8991e054740abe2b9228570472",
+      "code_sha256": "b5125b80c17e38f76aef775e590864955635ac4e826572f335f6e0768d2783f1",
+      "bytes": 12918
+    },
+    {
+      "path": "FiniteAvalanches/Support/Schoenflies/Endgame.lean",
+      "sha256": "3f813c55b540b952ca5a301db55b3163fffe5bd44612b48fb51d9fa239e80b22",
+      "code_sha256": "f31ef1d482c2fa0019f83f8a9f2aa8ca715eb2bcfb70c2e747d6f759657109bf",
+      "bytes": 15183
+    },
+    {
+      "path": "FiniteAvalanches/Support/Schoenflies/FaceCycles.lean",
+      "sha256": "91df9bb4ccb242ccc782d7c2c38443c91b7efb857f883888a50805440506c58e",
+      "code_sha256": "95f2e205c6ffc96dd64bd07bf2574f2b229e2686866798fb6e7c1c5ecfbd2374",
+      "bytes": 18027
+    },
+    {
+      "path": "FiniteAvalanches/Support/Schoenflies/FaceCyclesLand.lean",
+      "sha256": "44c31eac9fbab11c7bbeed1659fa1aa4de7d51c78f6b8581e6045d7e499cb9ed",
+      "code_sha256": "5bc1ec565f51e0f7b514f0b23f2b6da1745d3638f94b30c105f2e9ff5e80843d",
+      "bytes": 17109
+    },
+    {
+      "path": "FiniteAvalanches/Support/Schoenflies/FaceCyclesProof.lean",
+      "sha256": "7b76033e5932373057e057f05f10767e6a02c80a6560a6b72546e4d103c64714",
+      "code_sha256": "7861cf6073398466ac35842dd42c5c2c2c583295dc6eda9b827d343a0fd0c042",
+      "bytes": 34677
+    },
+    {
+      "path": "FiniteAvalanches/Support/Schoenflies/FiniteTransfer.lean",
+      "sha256": "4e1ebb782045a28a3effbd77a3f9b4e269b7fdc774f733ac2ffbee264a38006b",
+      "code_sha256": "a86da9e8e4c2294c068d966a26d1eaadbded53ccdf9f045d786768b689380988",
+      "bytes": 61141
+    },
+    {
+      "path": "FiniteAvalanches/Support/Schoenflies/FiniteTransferTarget.lean",
+      "sha256": "bb088407a45db7b7c67e95dfa046900ee66a7e5fdfd952dc70f16815631c312d",
+      "code_sha256": "d0ab8434e3dbcd7aba20bce8165326925075423ec99ceb44c9d74ac2082b2f80",
+      "bytes": 80810
+    },
+    {
+      "path": "FiniteAvalanches/Support/Schoenflies/FiniteTransferTargetMesh.lean",
+      "sha256": "aa59448c5df0cdb5000a6eabb629c4f4e24c81842a4d2ba0666f5bf8147107e7",
+      "code_sha256": "34b6678142c02d99beca99d4d109133cd484d6f2f373127f82fda488d0a8f886",
+      "bytes": 20014
+    },
+    {
+      "path": "FiniteAvalanches/Support/Schoenflies/FreshAccess.lean",
+      "sha256": "37e962ef7248f1521335770ed0a5ff95bc8ebdc8911e1124a3eee5d4f1190f51",
+      "code_sha256": "4739fa73ce45bd84d07c55f23cede13ca498b8466bf814fa8fd9c1d45d46c64e",
+      "bytes": 7339
+    },
+    {
+      "path": "FiniteAvalanches/Support/Schoenflies/FreshDenseSelection.lean",
+      "sha256": "159cac8174a13e87d78a579b107caa1304cc420ff74eac52062e2bc1e8527a94",
+      "code_sha256": "934b41d2ad7da26024ab18726d627bca0b7609608ed60b7149afc4828f6f4da1",
+      "bytes": 22551
+    },
+    {
+      "path": "FiniteAvalanches/Support/Schoenflies/GeneralCrosscut.lean",
+      "sha256": "4cfdadf997c225afeef0b58501c868f8ebcad413b8f700a77c8c6609e831373d",
+      "code_sha256": "cd1ebd95268608f926a3169407d5429430f1c529fd3da1ec9b68061e86958e5e",
+      "bytes": 18116
+    },
+    {
+      "path": "FiniteAvalanches/Support/Schoenflies/GeneratedStructure.lean",
+      "sha256": "ae9ac9701f62a63e84a65726c13cb356207b46b82eab4d66111db14e4a75a550",
+      "code_sha256": "d993d29ef7f234f54d33222398364a526e59c4e9d6679fa685c3778bc72d49db",
+      "bytes": 69578
+    },
+    {
+      "path": "FiniteAvalanches/Support/Schoenflies/Graph/Component.lean",
+      "sha256": "55c9cb502b30bc4eaf7d8c53cf790320cf41edc8a75b9c85cfd49d420e56c432",
+      "code_sha256": "29b77f41b930f0ad94662035ca43b5fac654d139d1b1044223ded45ab869f3e2",
+      "bytes": 11094
+    },
+    {
+      "path": "FiniteAvalanches/Support/Schoenflies/Graph/Cycle.lean",
+      "sha256": "b1e84999bf5e1f32400416cdb402d4235a84547322689ced42ff099a216c45c9",
+      "code_sha256": "6e7a4c8072ae594a430cd87c87ce86752bd801b02a2e36228206d05232aa29cb",
+      "bytes": 7464
+    },
+    {
+      "path": "FiniteAvalanches/Support/Schoenflies/Graph/CycleJordan.lean",
+      "sha256": "b331cc68cb39b5cf304eb8c521fbd27338647c8f7eec3956a1223275c632c0a8",
+      "code_sha256": "c7e4b050703564759eb300df119491e27510d024518987c2b8bc8fe2c3dc0654",
+      "bytes": 6044
+    },
+    {
+      "path": "FiniteAvalanches/Support/Schoenflies/Graph/Degree.lean",
+      "sha256": "fdb360b5bce04c7676c141e7f9532d1394ccfab093de9818230519c08ad7ddcf",
+      "code_sha256": "2f8bc64bc094cbed50a5f4b43fe0cfe27bfbfecfb6477305b7b5a8bc9e2e2dd9",
+      "bytes": 10926
+    },
+    {
+      "path": "FiniteAvalanches/Support/Schoenflies/Graph/Drawing.lean",
+      "sha256": "afa1ab88608eaddd3c785f40762b61fee1a8a18f2dd6a9c1047ddf7e17736098",
+      "code_sha256": "14d08bbb7fc426db14a196d5aab9432c4d07d920b36b95db54b8cc4ea84a0f63",
+      "bytes": 5066
+    },
+    {
+      "path": "FiniteAvalanches/Support/Schoenflies/Graph/Ear.lean",
+      "sha256": "2cd20f37c75784f49e649c4161e8cfe842d0d956328410a4b2bc288613c7f99a",
+      "code_sha256": "457568f9d72c67219c4360441ed81ad560ec5cd1d5e5d072a845bf85611e5eee",
+      "bytes": 10419
+    },
+    {
+      "path": "FiniteAvalanches/Support/Schoenflies/Graph/K33.lean",
+      "sha256": "4105ff7254c2e24c951f19573ea79209353f9b40b814619715367892a96f9ca9",
+      "code_sha256": "00fd01b5035ebc5dbe880864f4d8aeecf14860953c39f29ea79f8849b7896383",
+      "bytes": 19815
+    },
+    {
+      "path": "FiniteAvalanches/Support/Schoenflies/Graph/K33Closed.lean",
+      "sha256": "6846e761bbfa137a0e71508b0a22660f9fe3a35c374bda8ad63ef768ac7ed375",
+      "code_sha256": "a5b63a81ef48d89201b3bc89be7acd142bbe0e83694582a7f3dde9cbbc7696a6",
+      "bytes": 32534
+    },
+    {
+      "path": "FiniteAvalanches/Support/Schoenflies/Graph/K33Land.lean",
+      "sha256": "c71ba4f2be2f23bbcf752fe6572656eae8cbad29c9321a8b7694b7dd360703c4",
+      "code_sha256": "6a72f8211687027cc98303794579574a2a2b3e012361ffc42e1b796e296f07a4",
+      "bytes": 35201
+    },
+    {
+      "path": "FiniteAvalanches/Support/Schoenflies/Graph/K33Planar.lean",
+      "sha256": "c7c6eeb8e8b1dedb29f338215dd7e9653484b27248f9b6c7e84120f0d422f244",
+      "code_sha256": "f654064061b8ae02a7985ee7be1899284e62b40a4861b0ce3db694ebebc9fbc8",
+      "bytes": 16531
+    },
+    {
+      "path": "FiniteAvalanches/Support/Schoenflies/Graph/OuterFace.lean",
+      "sha256": "705b39ead47529ebb538418a7074f5fdffe9afbffae5764db4f2485686ce214b",
+      "code_sha256": "0bc931428c69b70e2fc0099f14be17d7c9d3e6a61017a4683d14f34e0541603d",
+      "bytes": 5215
+    },
+    {
+      "path": "FiniteAvalanches/Support/Schoenflies/Graph/PathGraph.lean",
+      "sha256": "18804df8e5d9b35dfdb2c20c007e9e4a2ce39b88767a1026580caea733d5ada0",
+      "code_sha256": "2ddd928d4d583b150171a4e6807c69bdc3f63eb1928696683efe52eb5e51c36c",
+      "bytes": 9033
+    },
+    {
+      "path": "FiniteAvalanches/Support/Schoenflies/Graph/Redrawing.lean",
+      "sha256": "b0a054b837a410a0cef84ee2aec5591b358207024ca86a840eac35f427b39ba3",
+      "code_sha256": "e633afb0757f03e5e6fcb5d3b4657dc869f59832349285d4a426ea5abc194e17",
+      "bytes": 25274
+    },
+    {
+      "path": "FiniteAvalanches/Support/Schoenflies/Graph/Relabel.lean",
+      "sha256": "98435fe9fb266ef73692b104d8c881a6bd0b7a030116ffeb41d75f213b044b64",
+      "code_sha256": "f1881d8404cec6eb95eed7d7ba61cd71d17ff869028c91496856e8100a3d2a63",
+      "bytes": 8821
+    },
+    {
+      "path": "FiniteAvalanches/Support/Schoenflies/Graph/RelativeEar.lean",
+      "sha256": "3b7361178925356eeca8a5ca9b1d0262251f18358510ef42764bb7a1aa8213b2",
+      "code_sha256": "93cc5f6eafcd415978417059ed17ec3d5a45f6957c93498b82b7c495a8041895",
+      "bytes": 6535
+    },
+    {
+      "path": "FiniteAvalanches/Support/Schoenflies/Graph/Tree.lean",
+      "sha256": "d82aedee673ec20dd627c9ca9a5a49ead8d164f061130890e6f019518163b1ad",
+      "code_sha256": "3c8c1575020b79c7f4c8f9d62fdbe4f09cdc6b2a126cca8741110d0b2940600c",
+      "bytes": 12559
+    },
+    {
+      "path": "FiniteAvalanches/Support/Schoenflies/Graph/TwoConnected.lean",
+      "sha256": "cddbdc7384c453e8f4e9531c61ebfc0e0129d7b2ce4f6a7a1b2f1d6954d1409e",
+      "code_sha256": "5dfa7397fb533f1d0f5a9294f6dba251a03d89c9136956fb2625eee4627a7cf7",
+      "bytes": 9927
+    },
+    {
+      "path": "FiniteAvalanches/Support/Schoenflies/Graph/TwoPaths.lean",
+      "sha256": "1e97c861b1f03253e1d0f6f402f3ac138c9ce5c3eecce10b3a5705eb60393f92",
+      "code_sha256": "16f624b78bc15ba7c662a7251c65ffd0621fc224c50cd655a5f40f8269a974f0",
+      "bytes": 3328
+    },
+    {
+      "path": "FiniteAvalanches/Support/Schoenflies/Graph/VertexSquares.lean",
+      "sha256": "46c38d92e59fa79341c0828453e1c795752013664289638d243cc27d12e52a4c",
+      "code_sha256": "e4215f029a44543d212086ee5333e0770fdfdbd3ab3bdb6150ab39ab9edc0499",
+      "bytes": 14683
+    },
+    {
+      "path": "FiniteAvalanches/Support/Schoenflies/Graph/Walk.lean",
+      "sha256": "311f9e8636be531d1f558eb208eaca50e1f88dddeb7e1c257d92519480d8557c",
+      "code_sha256": "11cf8ff8dd0ac23a04825e49b2de44b3b1aac4a170904fcfd012a5b54a47a557",
+      "bytes": 15877
+    },
+    {
+      "path": "FiniteAvalanches/Support/Schoenflies/GridAttach.lean",
+      "sha256": "76860358ba9f698039ac4c9aab3e6deec356fa5dac8a002d3ab9922f230caf9b",
+      "code_sha256": "8477ad21a90063000bc1f8cfff68342b71e7d0e9c622c51264c8a643e92cbb4e",
+      "bytes": 21129
+    },
+    {
+      "path": "FiniteAvalanches/Support/Schoenflies/InitialGenerated.lean",
+      "sha256": "cdae83c90da7f64948dec31602564df386db191298b29db0d9640f69f137b9ac",
+      "code_sha256": "8f48250fbd94f049fb058cb0ac2bc6972d30fec207e6a4461dd7cf7c4b38bf24",
+      "bytes": 30362
+    },
+    {
+      "path": "FiniteAvalanches/Support/Schoenflies/InitialOuterCycle.lean",
+      "sha256": "04b8efa82a6f5db5f5742d409031292be68ecb022c9be2cfa17b0f40ec10fb48",
+      "code_sha256": "51a78340b9fd084dc1f16a3655de2345fbddcbbfcc3dbd512145934046ca84e4",
+      "bytes": 2317
+    },
+    {
+      "path": "FiniteAvalanches/Support/Schoenflies/InitialPair.lean",
+      "sha256": "07e2b6ead04c0cb71a8de5a136d95978f7f0ff55cfcc943d41033c5fb388444e",
+      "code_sha256": "6cc62574f2cdc89b8c20baab0840afbb1076b6513bd10755791a0f227bf529c5",
+      "bytes": 68418
+    },
+    {
+      "path": "FiniteAvalanches/Support/Schoenflies/InitialPairFixed.lean",
+      "sha256": "d9d66c1968ec70bb876efc517b88c0538980d0cf59538a6bd3c6ea94fc75a694",
+      "code_sha256": "84757b1f3fb6b0f163d7182969a0de25abb737895cc424fb6743785a9b5e7954",
+      "bytes": 26411
+    },
+    {
+      "path": "FiniteAvalanches/Support/Schoenflies/InteriorHomeomorphism.lean",
+      "sha256": "ec21c2399237b7517eef5bb111fdd8ae0d8127e8f4c8a2ecdbbf49a0c907d916",
+      "code_sha256": "dd1e0d11f17eaddd9ed8162834fc8b24db6fa056ced1b725427fab96be95d24e",
+      "bytes": 4283
+    },
+    {
+      "path": "FiniteAvalanches/Support/Schoenflies/Inversion.lean",
+      "sha256": "2e128d5ea137965b5f6a54b9db5e4e7aa541cdf01975932ca8d689d70fc9f654",
+      "code_sha256": "97adcb93dda2d1bed55c25cdef8908653bf01373a925586bd0fd084340a06f75",
+      "bytes": 21752
+    },
+    {
+      "path": "FiniteAvalanches/Support/Schoenflies/Jordan.lean",
+      "sha256": "50d8a25a89015fb6fb1b58b74d980f0a71c223fcc448d5e934fcbee903760f83",
+      "code_sha256": "db2f7aff038a56ed67311d2f47632b970872ec613098f92cb30dba63afdca281",
+      "bytes": 35270
+    },
+    {
+      "path": "FiniteAvalanches/Support/Schoenflies/JordanClosed.lean",
+      "sha256": "505b3beb504c8ce0081f636b78b78c08470ab2dc208ea05746420c70c5dd462d",
+      "code_sha256": "70463086afebf6ccba9669ae1866004d82eecb0bd2a1969eb1905b9757bd0add",
+      "bytes": 2037
+    },
+    {
+      "path": "FiniteAvalanches/Support/Schoenflies/JordanSchoenflies.lean",
+      "sha256": "ee9539dfa242de589afe60a35619a8bd2c3e1ef03126bae738a5eb9e6ee0852c",
+      "code_sha256": "f2453e622ad70c117fe686e508fdf04ccadc5202c75960085fd5468600dc931e",
+      "bytes": 1811
+    },
+    {
+      "path": "FiniteAvalanches/Support/Schoenflies/JordanSeparates.lean",
+      "sha256": "37f4b6751c31cbc8fe38bfbeff71bff034138bd5ecd147578b85fd190b699389",
+      "code_sha256": "b9b2f6c5448706dfe35600207b59e1a011cb7641f4c6a0e192f96bc2a30281de",
+      "bytes": 26316
+    },
+    {
+      "path": "FiniteAvalanches/Support/Schoenflies/LimitMap.lean",
+      "sha256": "26d2b27ed27f32f95e33c62ab381237770d101d74e7789e597251e61a0e9dc31",
+      "code_sha256": "9fa22e2e427b9b8ed69db5c9f9498c4aeffdc0b163c4e489dd6f524f56351c8f",
+      "bytes": 31242
+    },
+    {
+      "path": "FiniteAvalanches/Support/Schoenflies/Line.lean",
+      "sha256": "9a0ba6f098c74b6cd6ea91dd9b3a55d97a7a8496ce968b4637674fae7a8b6162",
+      "code_sha256": "8f38fac38bc43729a159421f6b56526e2ca86fc163382d75005019ff3cd5a2da",
+      "bytes": 11470
+    },
+    {
+      "path": "FiniteAvalanches/Support/Schoenflies/LocalGrid.lean",
+      "sha256": "6395609f728f49b62ec2895ddd8d645e2b816edb19fdec571bb29b7eb8951e6c",
+      "code_sha256": "532e26fd1e15096b444c9224a9790ba819de3d5b37cfe38501fd879d9477064c",
+      "bytes": 23584
+    },
+    {
+      "path": "FiniteAvalanches/Support/Schoenflies/LocallyPolygonal.lean",
+      "sha256": "b488b80e5a1210f2af58fc45cebd5dba7cd923143ae60f4ec5d60d40ba81b23f",
+      "code_sha256": "5a9980072accf2c2c83af63cf6c39249e4bb831442083fe1b7fe5090c47edf00",
+      "bytes": 12746
+    },
+    {
+      "path": "FiniteAvalanches/Support/Schoenflies/MatchedArc.lean",
+      "sha256": "4aa3c004d5847079b3a2d8aacc0bb0cc62a1e5e418c25ec5792ba4f3816fdfcb",
+      "code_sha256": "a5198e6ba66318f780de494f5d8b5f414c70fc7864553507abbfa155efd7f95e",
+      "bytes": 10185
+    },
+    {
+      "path": "FiniteAvalanches/Support/Schoenflies/MatchedSplit.lean",
+      "sha256": "d951d6b023c2812cf8267262e42892675f53ec06bb579cd78a17ff7f8575282f",
+      "code_sha256": "e59abc69071a53938823558706afc364b0a2de38f150661ac7e575d89ddbda7e",
+      "bytes": 14843
+    },
+    {
+      "path": "FiniteAvalanches/Support/Schoenflies/ModelCurve.lean",
+      "sha256": "48437e9d50b30e12a8bfd1a87ab53c93b996bdf5ea02cb5b7427d40046b3f7d4",
+      "code_sha256": "007b42158641d7e1a440e8587153bd9f574854f25f50e34cecd3a0e750dcc54c",
+      "bytes": 14895
+    },
+    {
+      "path": "FiniteAvalanches/Support/Schoenflies/OuterChain.lean",
+      "sha256": "6d119de2831b5a5e1923b2a2914fe44bb4000043bd35848ccfef3b808d08e180",
+      "code_sha256": "4bacda02ef239caba4108c21b7e75f08b349fc404d3fb8f76f03ff2c45d45834",
+      "bytes": 24673
+    },
+    {
+      "path": "FiniteAvalanches/Support/Schoenflies/OuterChainClosed.lean",
+      "sha256": "4cfc3a5db0df4989ccc404887c0c414fe1d29dbcd0483b395a7b106b239f8f7b",
+      "code_sha256": "556139404b41fe2d9458a69196608783c700998b171188568cd9ccfbef155208",
+      "bytes": 975
+    },
+    {
+      "path": "FiniteAvalanches/Support/Schoenflies/Overlay.lean",
+      "sha256": "e9176d90aab712b000440d817a282e86cd2ba445c339c581d19a357b57919401",
+      "code_sha256": "884ccb8c1ab41c3242807200a4e8a383f487db6418dc2ea9199785beaa47dfdc",
+      "bytes": 10374
+    },
+    {
+      "path": "FiniteAvalanches/Support/Schoenflies/OverlayExtension.lean",
+      "sha256": "efb23fada9b617044bb4de3a938defec203e7e010d644582afafeee94f4b18aa",
+      "code_sha256": "2386500df6c9bc13fda1f74d8f9568ab9ec735426cfa005917985f18bc1cb58f",
+      "bytes": 8950
+    },
+    {
+      "path": "FiniteAvalanches/Support/Schoenflies/OverlayGraph.lean",
+      "sha256": "236d2da037721428c7bbf704fb8d31af86d937cac284237038833cd53d064eb7",
+      "code_sha256": "ffc31d7414d90968f0d535cbdb8e99f9a9b554badbdab74afa9fce6e20b15be5",
+      "bytes": 13125
+    },
+    {
+      "path": "FiniteAvalanches/Support/Schoenflies/Parity.lean",
+      "sha256": "6b161d350f7543a35202255ddfef97fea84647fe379fe4dbcb0e9993ed4c82fe",
+      "code_sha256": "fcf5ce70a8d63cc9a1bcd396a02fcae1617c4cb825918a935b968a2fbf92902a",
+      "bytes": 39823
+    },
+    {
+      "path": "FiniteAvalanches/Support/Schoenflies/ParitySplitting.lean",
+      "sha256": "f48a726a307a44082a8e6274cfdf4a95b7152e33bb20824ebe86d46973b78c9d",
+      "code_sha256": "4883f03790fac7a07713ad48eb02a3553f1783475d006dc8ad4f31a955951532",
+      "bytes": 17430
+    },
+    {
+      "path": "FiniteAvalanches/Support/Schoenflies/Plane.lean",
+      "sha256": "d9ac3f818304ca1dbb6c347bf706d9fb421e9a5f01b4a801cda9b132ea2a709b",
+      "code_sha256": "cda583f6fc50555fe27f282870bbfd2510cfd880c2859fbb113a6f86c7bf3470",
+      "bytes": 7220
+    },
+    {
+      "path": "FiniteAvalanches/Support/Schoenflies/PolyArcRealize.lean",
+      "sha256": "16eb8727368a54ef314c79de82265b5ce396c1717cd5518c1c1b5145fea91d7b",
+      "code_sha256": "86d2cda2a3070a1db3ee7a41154fad3a3a043ed00282a5608cad5fab20792b4f",
+      "bytes": 28262
+    },
+    {
+      "path": "FiniteAvalanches/Support/Schoenflies/PolyLocal.lean",
+      "sha256": "357c4de7f01a0437c27725fd7474cfa177979c0a126ffbc36666d8be88c87ad6",
+      "code_sha256": "9f7436c618935c9f4dd37da8b92c1a0926b0cec25ff5d8564041d66bfc6597bd",
+      "bytes": 12947
+    },
+    {
+      "path": "FiniteAvalanches/Support/Schoenflies/PolyPath.lean",
+      "sha256": "59c7b4e5372c9f53597835913c948383e29537f56a3654a1c65532a20a45167f",
+      "code_sha256": "6fa6f66f1d2c03723873ae2b0d12249da22972fde082508aaf3175f2562b8d8b",
+      "bytes": 5791
+    },
+    {
+      "path": "FiniteAvalanches/Support/Schoenflies/PolygonBridge.lean",
+      "sha256": "d4ad6dcb9dfee3d79ab4181f9de0e89007f76bcd66edc4eb32bbe05c4a2d8675",
+      "code_sha256": "9c19f1aa82c7ba0e5e2b8093aa729a765d23ba774653850984beddc23a2af752",
+      "bytes": 17906
+    },
+    {
+      "path": "FiniteAvalanches/Support/Schoenflies/Polygonal.lean",
+      "sha256": "c652365e11b50d74e8777c7e91ec2d04e034b4d4b66d57178da57af204944a50",
+      "code_sha256": "f7b0d117ddb3dd81ab2800529a7239a0d738444dbc4152cc968a55e24b6cc8e9",
+      "bytes": 6916
+    },
+    {
+      "path": "FiniteAvalanches/Support/Schoenflies/PolygonalCarrier.lean",
+      "sha256": "106cd393bc2d8c81ad181123187afe4b88fb4ee2189f6ad81997c0f41ea0d4ca",
+      "code_sha256": "3fc162e52dd778c10d5c1effeaa4e47409ffc235b4bbe1be86a3b855a150f488",
+      "bytes": 6525
+    },
+    {
+      "path": "FiniteAvalanches/Support/Schoenflies/PolygonalCrosscut.lean",
+      "sha256": "1722956975e6c9c6a4107ad3d1238cf7202233f6bc17cbdf559c73ba24f2583e",
+      "code_sha256": "4e60f6374a3efedc39da56916e96cade23e5d3da15ab21a188572058d842bbe3",
+      "bytes": 22133
+    },
+    {
+      "path": "FiniteAvalanches/Support/Schoenflies/PolygonalJordan.lean",
+      "sha256": "edfba147a921deb36ae34852444a06e2307a5ddf47c210b08b0954dd1e8d1b14",
+      "code_sha256": "f2cb2c19284df75b87b619b238acb11789ee1de879a04230b30cafab7f9e12fd",
+      "bytes": 24872
+    },
+    {
+      "path": "FiniteAvalanches/Support/Schoenflies/PrePolygonArc.lean",
+      "sha256": "672380e116087a9bcd7c114714115e5deec5cae85a0264248ee0e854dc3f0806",
+      "code_sha256": "74dd614b193cfb5921c146bf425a63bf59d4d393c3b219d01b70d22b3480a1d6",
+      "bytes": 36291
+    },
+    {
+      "path": "FiniteAvalanches/Support/Schoenflies/PrePolygonSep.lean",
+      "sha256": "a569d57612103ec8b0052682f674d4ee9acc26686729a3b34516994e1f326502",
+      "code_sha256": "872cd1c5a4851c662db27c6ebe06a4f513d6e239ccab9641567872da6ecd7976",
+      "bytes": 15422
+    },
+    {
+      "path": "FiniteAvalanches/Support/Schoenflies/QuantitativeForwardStages.lean",
+      "sha256": "9c67d16e04f8c93681a10a6fc958a2a0aeceee641ff855da295ba7bd12c3062e",
+      "code_sha256": "ed9fea10624ab206f981bf71bbecec1570436360768c13a1cf1aefdbb0a4970b",
+      "bytes": 11326
+    },
+    {
+      "path": "FiniteAvalanches/Support/Schoenflies/QuantitativeRecursion.lean",
+      "sha256": "03c2b04a5bf7b4319ef7825a0db228df5dd57af07fe15749ebbd1653d5859b79",
+      "code_sha256": "ecb4eb379ab2d9c0ce679a680be794f3bf4b6a0027ca92ababca4b4e86c219e1",
+      "bytes": 10355
+    },
+    {
+      "path": "FiniteAvalanches/Support/Schoenflies/QuantitativeStages.lean",
+      "sha256": "24485ec0bc0fa2b3885f2b05e04b8335ae25ea901e4ed1fc7d2746ffd31146e4",
+      "code_sha256": "9e1bd50d35e6fc65626af724dbd517585214d5f2c79687794049090060e13f30",
+      "bytes": 3549
+    },
+    {
+      "path": "FiniteAvalanches/Support/Schoenflies/Realization.lean",
+      "sha256": "f997a33c446a45436b2bd19dfec148e9021ce2be7282cad2b57ea0a4bca172a9",
+      "code_sha256": "ff89cf394aaf1ce1135724572ef05660e70e8137d73d838ab43a0183cb615699",
+      "bytes": 62639
+    },
+    {
+      "path": "FiniteAvalanches/Support/Schoenflies/RealizeSplit.lean",
+      "sha256": "c798de0463611987bb34501c097cfca4a3b16da4609abb1fa4154e4cf695f3ca",
+      "code_sha256": "d5b775a524e90f598fbfa9af586cc3608ffa353f796e29489543075442fce909",
+      "bytes": 39528
+    },
+    {
+      "path": "FiniteAvalanches/Support/Schoenflies/RealizeSubdiv.lean",
+      "sha256": "2b77b0e40b5959c82aa8bdb64cfcfebeaf4b371a25e27b2279a98adc4d34464a",
+      "code_sha256": "1386d82f02da75b6eae9025db0f9782859d2c332ade1fe07dcdef555bcc0a18d",
+      "bytes": 40352
+    },
+    {
+      "path": "FiniteAvalanches/Support/Schoenflies/RealizeSubdivHomeo.lean",
+      "sha256": "046381220a0d007a2965f6ea31572870812d18898c4629af476c99be973a573e",
+      "code_sha256": "86d9a0169b78c0f0f4af3aa85a75eda74a7ed1199cce02eb7e072ac3b3c4710a",
+      "bytes": 5694
+    },
+    {
+      "path": "FiniteAvalanches/Support/Schoenflies/RefinementStars.lean",
+      "sha256": "d3c27f890039140b14b81163a521e03b62adb3bc192b641363c6a0bb3b754992",
+      "code_sha256": "e019e95a4f2cb53650540b072e7afb3d055f5cf5cfc585ed0ef417d96445eeab",
+      "bytes": 22989
+    },
+    {
+      "path": "FiniteAvalanches/Support/Schoenflies/SegmentCut.lean",
+      "sha256": "f5021cd740bcc06738465c71a646fff5821ea15f9237101793558ab21128e793",
+      "code_sha256": "d9e70941daa34a08396c6c4b6c34887413aaa06a5c87c2da2a029a02cb6d13a1",
+      "bytes": 3261
+    },
+    {
+      "path": "FiniteAvalanches/Support/Schoenflies/SegmentMeet.lean",
+      "sha256": "e71c65b64f0ca05ce453d293083ff457cbde30ab46f84c6815115f1f9e8ec675",
+      "code_sha256": "db87aeb2ea1857f26781f7d4c02aeac53714f090e7eaaf85807b4cffe85566c1",
+      "bytes": 2094
+    },
+    {
+      "path": "FiniteAvalanches/Support/Schoenflies/SegmentOrder.lean",
+      "sha256": "3117c8a9d17ef727f48082bb04b97908676151509989c413bf659ca55e1a2b1e",
+      "code_sha256": "da17baed20ce07dd09776949195a067a6ef0ac3481a1819d5a0c363491a292f2",
+      "bytes": 12093
+    },
+    {
+      "path": "FiniteAvalanches/Support/Schoenflies/SimpleArc.lean",
+      "sha256": "a9c729adb4ca54b1ec181204e147d0b5b795a923aab66c3049a836f4179d44b0",
+      "code_sha256": "0d621c209394871d19320def438ebd1c268fb2999db7fe6fa9a74dd3a8b74384",
+      "bytes": 17442
+    },
+    {
+      "path": "FiniteAvalanches/Support/Schoenflies/SkeletonAccess.lean",
+      "sha256": "3d1cb659c89142fefd99373efe18b363302d92ca61647c890936d7af43c66073",
+      "code_sha256": "8455341ee6d7fd06c018e717a2018c4b839c7b33025c8596236928a61fcba0ed",
+      "bytes": 29304
+    },
+    {
+      "path": "FiniteAvalanches/Support/Schoenflies/SkeletonLocal.lean",
+      "sha256": "d8d8d598f10d725735a4fb0871ec0286eeda43a6f182d1c939e033800977fff1",
+      "code_sha256": "5151a863261d6b187638607ebfea83f369165644e74095a1b0a0adb02180f75b",
+      "bytes": 23600
+    },
+    {
+      "path": "FiniteAvalanches/Support/Schoenflies/SkeletonSectors.lean",
+      "sha256": "126e89aa89c79e126f08de6da90c62ebbe69270db3f1b5fbee252dce3da63b05",
+      "code_sha256": "e7f246b8f0557a32c2e2621d4abe74ab4e23ba13a0d9a9e327905f99787aa098",
+      "bytes": 43037
+    },
+    {
+      "path": "FiniteAvalanches/Support/Schoenflies/SourceAttachment.lean",
+      "sha256": "46d7684e4db7d9d33e3c2bcdceb11e5a7660e98e5203f29528d9279fcd402ada",
+      "code_sha256": "317490d10f01c5cd7163adb50d5a6f9bc635ce318149389b5627d885999e3c43",
+      "bytes": 66735
+    },
+    {
+      "path": "FiniteAvalanches/Support/Schoenflies/SourceJoining.lean",
+      "sha256": "e2e457702aba03b59ec6126f0ff75a7251e7ffdfedddaaab1f8fd3f221b059b3",
+      "code_sha256": "5c568f24a93e003f953fdc1216537fe82196fbf14f7558bd51a7ced3c0a92b4b",
+      "bytes": 59575
+    },
+    {
+      "path": "FiniteAvalanches/Support/Schoenflies/SourceOverlay.lean",
+      "sha256": "be936ef4c31766f14b0eff4ff4add04afd2abcdb614092a7955c00ff70b952a0",
+      "code_sha256": "f32e0d472b86d283b8cda99920071542414f3a903a8fe384c3b77e487d0ccd32",
+      "bytes": 49084
+    },
+    {
+      "path": "FiniteAvalanches/Support/Schoenflies/Square.lean",
+      "sha256": "2abc094a537bf29e72cf76cc6b004854a4954b85ee6cd368e0356e2a9c219a5c",
+      "code_sha256": "de18d59474038246f5a8d11db6f465afac4b71a851e1fb8b8d8d59b81060909b",
+      "bytes": 9644
+    },
+    {
+      "path": "FiniteAvalanches/Support/Schoenflies/SquareCycle.lean",
+      "sha256": "3f061db977fb8650b16d6761031994c0d500673f62dbeae87cf6ba704e3f0a9c",
+      "code_sha256": "9c017afc36e325af28641bd2ccdb80714a11836469dbad411e1f319fde5b53bd",
+      "bytes": 40585
+    },
+    {
+      "path": "FiniteAvalanches/Support/Schoenflies/SquareMesh.lean",
+      "sha256": "3827c681296769a171bbf7b32a832ae06174d4bdb47caa24df0026fc49c7f095",
+      "code_sha256": "d167aa5d7025287f87cac6d74a7d976129f37dca696def0491c56356a4b3dc2b",
+      "bytes": 48045
+    },
+    {
+      "path": "FiniteAvalanches/Support/Schoenflies/SquareMeshClosed.lean",
+      "sha256": "357d6fac18a002f0bc7676bc51ac3e4385b9b52d886cc7117d8e3f4375ced069",
+      "code_sha256": "10580cb49952ec538eac648b3f72c388abb0ed22d7429609581731f7a13b9c36",
+      "bytes": 51493
+    },
+    {
+      "path": "FiniteAvalanches/Support/Schoenflies/SquareMeshConnected.lean",
+      "sha256": "64ee13437ddd525384ae14c7e6c3ed894fda9c74cb5624bbfe0f47db9e26d1d4",
+      "code_sha256": "da5de9e50a24e7122401ae0915fc7a21c016f44d7c3662667f420df0810ab991",
+      "bytes": 45868
+    },
+    {
+      "path": "FiniteAvalanches/Support/Schoenflies/SquareMeshFixed.lean",
+      "sha256": "56a49b0fc1159239005cc4dbdfeb989e146c9ba37b4698c718caf830bb145ff9",
+      "code_sha256": "5b53e1d982227519369d06f7dacb885a45c687c6fdaf07ad63b6a774075d6204",
+      "bytes": 40326
+    },
+    {
+      "path": "FiniteAvalanches/Support/Schoenflies/SquareMover.lean",
+      "sha256": "1facd9e4f120a76c015b0088e56795c819b77dc6713f6241cda43a5f81905490",
+      "code_sha256": "c94b86ad9db3727e32873940fe6433a9ddb9fd584c9077f0899f88440d164225",
+      "bytes": 22198
+    },
+    {
+      "path": "FiniteAvalanches/Support/Schoenflies/StageTower.lean",
+      "sha256": "cfc8146f781900e1aadc7efcc49bd55024ffbf70da1e9c5c870553535bab8e0f",
+      "code_sha256": "2d0738d835c9714f5cf818f816c30efad6cf4f947aad7231ae5b717adce4db84",
+      "bytes": 4492
+    },
+    {
+      "path": "FiniteAvalanches/Support/Schoenflies/StageTransition.lean",
+      "sha256": "eb2fecc44f4b0f7e2c7e58082d27d4444c9d15a02592b7cd22f3196c138bab13",
+      "code_sha256": "396145e23db0a156a1aede61cbf73c607b99d2e54575fb78f4fc3a218c88bd46",
+      "bytes": 3321
+    },
+    {
+      "path": "FiniteAvalanches/Support/Schoenflies/Strip.lean",
+      "sha256": "efbde351cce1141dd9a37d55164b880097acd2e1bc948d2eb1e7aca706d58774",
+      "code_sha256": "e7ad828b95172219809aad264dbcdf3216e1e8f91d5d22cbd28094a165a01b54",
+      "bytes": 35353
+    },
+    {
+      "path": "FiniteAvalanches/Support/Schoenflies/StripConnected.lean",
+      "sha256": "461dc79e498e2ad6ed7c39c885d84fb3068b5f7f99130aa4e169de4f24b6975f",
+      "code_sha256": "898b27a9f84cd0f287fe665220ac0e6ef7322207cbd6a6b9dce38afca341641c",
+      "bytes": 16548
+    },
+    {
+      "path": "FiniteAvalanches/Support/Schoenflies/StripConstants.lean",
+      "sha256": "ac35447dd078e1a6b6348923b9f2b00d60ab41e83b78b5677651843ec51f1a95",
+      "code_sha256": "762f75c5535b103335531ec6965efa68c8378a8aaca1cda45a4d3b0df6064e8b",
+      "bytes": 10283
+    },
+    {
+      "path": "FiniteAvalanches/Support/Schoenflies/StripLocal.lean",
+      "sha256": "080469f4d4a509ccfab45febd3ea9057fb7513e1a40fc789f2ec0405c3374761",
+      "code_sha256": "dfb4731040a7e5c82d38f25e3d0232f1f8750bb64460af4f7e28da2af6c93c0f",
+      "bytes": 18149
+    },
+    {
+      "path": "FiniteAvalanches/Support/Schoenflies/Subarc.lean",
+      "sha256": "e74459993219c34eff370a1a6bd1ea460b4135db6350941ce4bb1bca3cfddf3e",
+      "code_sha256": "21b4645a1899951fc9fc599bb138c792c33ad898d96d960714261d3c9ed738b3",
+      "bytes": 9560
+    },
+    {
+      "path": "FiniteAvalanches/Support/Schoenflies/Subdivide.lean",
+      "sha256": "8a8074f8dfcc83dd9014f4c832dabde454be8b7aad164e7e49231c8e25dd7fcc",
+      "code_sha256": "f2d1eaf702dafec0029808d4cc8bd8d1fab0e276fee85483a9aa5d440eae3a23",
+      "bytes": 6598
+    },
+    {
+      "path": "FiniteAvalanches/Support/Schoenflies/TargetOverlay.lean",
+      "sha256": "49ebc8885b5c181e9ddf2d8e3e74af80902984f3282d42b6f7908710eaff759c",
+      "code_sha256": "fd35fca46a650909ef8c50ee0c0efb84c42b54bea82027c5346250454a05a35e",
+      "bytes": 64675
+    },
+    {
+      "path": "FiniteAvalanches/Support/Schoenflies/Topology.lean",
+      "sha256": "6ad35d448b33f736718c9e1fc9a54f6c738eb01cdfd845d5475cca8120e3b700",
+      "code_sha256": "52f0506502855abb315914cb2c287f36832549c2a6965240ed05f59839cd49aa",
+      "bytes": 1907
+    },
+    {
+      "path": "FiniteAvalanches/Support/Schoenflies/TwoArcs.lean",
+      "sha256": "84b6e5a7dc0c228860caa7acb95d696d6a7111e07364c583de642c4cc15ffb2f",
+      "code_sha256": "76a59f0871ae622ce0828b47d05202f36f1f46df4d127bfc25d34528c64c37e4",
+      "bytes": 9192
+    },
+    {
+      "path": "FiniteAvalanches/Support/Schoenflies/UniformBound.lean",
+      "sha256": "f92c0080645c0564d555251bcaceaa012ecd6aedc4a5e3565fb88d99d6056b3f",
+      "code_sha256": "821660dca2a3725988738788ff2865248bdf0da1bb44321fa5b17b2edaf2171b",
+      "bytes": 1503
+    },
+    {
+      "path": "FiniteAvalanches/Support/Schoenflies/Windows.lean",
+      "sha256": "1046917118b98a9b3e8c381252bef869f48c376017003541cbbbb0a0c6f6a302",
+      "code_sha256": "39644bc39bc865724da48e4ab4b0ef08eed47f8f95d91d1041af1fad230bb0b4",
+      "bytes": 7548
+    },
+    {
       "path": "FiniteAvalanches/Trees/AmbientContactCount.lean",
       "sha256": "ff287b4c3676a2e0fc8d5116a3fb356b9ef12f532f2cf272a7be26677fbff70a",
       "code_sha256": "d052b7f1563d797d58c05644c336a77fc21d9390e3bdea8f66e2642465bcff31",
@@ -4304,6 +6128,300 @@
       "bytes": 6598
     },
     {
+      "path": "FiniteAvalanches/Wilson/CyclePopping/AlmostSureTermination.lean",
+      "sha256": "5121ac7304a3a9d9e9e7ac566ace7913105397c43e7210e421d44b361cb89731",
+      "code_sha256": "253084d8e1c9ea562bf3e36f8678cb3d3e256e88651e7a34f73baff338922c1d",
+      "bytes": 5253
+    },
+    {
+      "path": "FiniteAvalanches/Wilson/CyclePopping/AvoidAlphabetCoupling.lean",
+      "sha256": "1395137f944e12303ff50c4153b59a65709bd11cd594731cbe06cb93dd4e947e",
+      "code_sha256": "308e05438ec76bea4527afab54ff3e302cbc1284b3706cd4a8ad2af7b58ea1c9",
+      "bytes": 1794
+    },
+    {
+      "path": "FiniteAvalanches/Wilson/CyclePopping/AvoidExtraAppend.lean",
+      "sha256": "751b1d1606ca97c00a47144984692070390c619344c590de78dd46b6c39d8a6b",
+      "code_sha256": "40df2727ab2b7643ef96b9c6ebe0e9d241be29d41ba9aeb3fa45117c2886afc3",
+      "bytes": 1737
+    },
+    {
+      "path": "FiniteAvalanches/Wilson/CyclePopping/AvoidExtraRoots.lean",
+      "sha256": "1e3628c28bb9fdab0ef4ebf564d58c0068db03df309e503f84066d5efb67142e",
+      "code_sha256": "937572f3e30500a612819c64fb567d79c40b9cf201ce833a5b211092f734db3c",
+      "bytes": 2909
+    },
+    {
+      "path": "FiniteAvalanches/Wilson/CyclePopping/Basic.lean",
+      "sha256": "46de236b27cb44fbfd0b3fb1357f4369333cee7da9c668c292070762d3c64a03",
+      "code_sha256": "7811bef62f644aa5bebc719706adc43136fcdda19370450d81cfd6829d1cc748",
+      "bytes": 12387
+    },
+    {
+      "path": "FiniteAvalanches/Wilson/CyclePopping/Erasure.lean",
+      "sha256": "939d09cb38be15291220c6aeaf9880568e9b76e053c074bb2ef3a872691e216b",
+      "code_sha256": "2e8ab19cc7cee9b9e088ddba2e45b56fb72cd0f3c2582c7f9f5f22eb1a5a4598",
+      "bytes": 8957
+    },
+    {
+      "path": "FiniteAvalanches/Wilson/CyclePopping/ErasureDepartures.lean",
+      "sha256": "469e62200f582e2509d04d4a719bbf32641ea48362c5adca76fe24f787f163a6",
+      "code_sha256": "f6c8b426926c762ce0d70adf0aee26b8acca1ab2d8cb4b4a9fdf53f248fc0858",
+      "bytes": 2254
+    },
+    {
+      "path": "FiniteAvalanches/Wilson/CyclePopping/ErasureNaturality.lean",
+      "sha256": "d913080ac36f3d90186b1865f8938cdeeb0606ed88df1999e173da05914667d0",
+      "code_sha256": "c053427ae2c5cbc77022444dd1b88fcd4d53b054c26ae46de68035ab4be7eae1",
+      "bytes": 5036
+    },
+    {
+      "path": "FiniteAvalanches/Wilson/CyclePopping/FiniteObservation.lean",
+      "sha256": "6d8cd13f705fac3b42e8c87ce942251aa59f8ae852f8a61f857da6b087568cce",
+      "code_sha256": "13a0c98ba70e8b86f675cb025715d33ff48c735508250844b3d416cec216aeea",
+      "bytes": 2524
+    },
+    {
+      "path": "FiniteAvalanches/Wilson/CyclePopping/ForestRank.lean",
+      "sha256": "840a068d6e194e1bbb908bed098acf00c2121eb77f1882fb4e9f0e0f20248977",
+      "code_sha256": "da37c48e4e0804cda339268c039b37aa43deeb06dee0385f6e7472bf6d38709f",
+      "bytes": 3218
+    },
+    {
+      "path": "FiniteAvalanches/Wilson/CyclePopping/IncidentArrows.lean",
+      "sha256": "605218946abde917a238462070da0eb572544e5b6d7a620cab1116d0ad1747f7",
+      "code_sha256": "dcf6d521b734ad9e0b98601234d7dab60a7e48152aaef36b3fbf20f3047d3ff0",
+      "bytes": 4399
+    },
+    {
+      "path": "FiniteAvalanches/Wilson/CyclePopping/IncidentForestEquiv.lean",
+      "sha256": "63614adc0e45d3af7b9ae691303df9bdfa467a6861ea09e9225dd687f930cda2",
+      "code_sha256": "2ca6bf4864a84cca671ac4068781620ac4d18e532f5e4346d853194da00bc8fd",
+      "bytes": 5489
+    },
+    {
+      "path": "FiniteAvalanches/Wilson/CyclePopping/IncidentForestLaw.lean",
+      "sha256": "bdc3426202a7b04f297782a2c23e9cd89844951ef519ad9c0a45874e29347cd2",
+      "code_sha256": "13d67d81a0b66deb8d2806cdbbfdaa00ebfe559c5b8a25e99f1402ce15897064",
+      "bytes": 7649
+    },
+    {
+      "path": "FiniteAvalanches/Wilson/CyclePopping/InstructionTrace.lean",
+      "sha256": "ab9f03fc7e01c3c47e7d764c4035a8a5d92c7e4b7d6341198d16b771fafdd48a",
+      "code_sha256": "a5eb326014284b22e9421171bccfe16d304b56b42618e2943eb9ba3a14b70008",
+      "bytes": 5376
+    },
+    {
+      "path": "FiniteAvalanches/Wilson/CyclePopping/NestedAlphabetCoupling.lean",
+      "sha256": "c597fdaf9e7d631d1e6afe79bf54f81f5b1f391a52dfcea7dc3de836adb21292",
+      "code_sha256": "28cba7824a90246454f36e4388101ef12405b5eb9116d0046e4036d114cb396e",
+      "bytes": 3719
+    },
+    {
+      "path": "FiniteAvalanches/Wilson/CyclePopping/NestedRootTerminalCopies.lean",
+      "sha256": "60ba85ea24e23cbbbcd47c32cce431211d5361ea293f9442bb8508d17633cb7f",
+      "code_sha256": "a93ee6b02618e4c818611c0997054f5038ab217bf2586e0129ede4d181183b74",
+      "bytes": 2146
+    },
+    {
+      "path": "FiniteAvalanches/Wilson/CyclePopping/PopAlphabetCoupling.lean",
+      "sha256": "5f3760250735e9b39fb9031e860e9e8af53326dc838a9545ee4c8cc542b4c330",
+      "code_sha256": "0a53a0ee2a9fc9f797d34fa8fe4546abe3db97e1a00a3dd47e28cd6a1583ac2a",
+      "bytes": 2939
+    },
+    {
+      "path": "FiniteAvalanches/Wilson/CyclePopping/ProtectedPaths.lean",
+      "sha256": "a3ac9d7cabd9accec204a3e1398ec8e125d9a32f0f5c06e5306a8699c738b8da",
+      "code_sha256": "1dc655de6a0b09248df827add70d424edfc0de4b23afddbbd1847c119f370a04",
+      "bytes": 5032
+    },
+    {
+      "path": "FiniteAvalanches/Wilson/CyclePopping/RawStackStep.lean",
+      "sha256": "2ad9a99ed98a2f97496ebab060b0dffedf342b1a17db9e8ca97c9907245caaf3",
+      "code_sha256": "13ea9d96978c457431133ada11f831480b0126ac3bd989e884fbf070063fb1ed",
+      "bytes": 4868
+    },
+    {
+      "path": "FiniteAvalanches/Wilson/CyclePopping/ReadingLocality.lean",
+      "sha256": "4a3b0bf6ea5cce2a921c6c8803e8b34c5f219420b6024cdfd77ccc985a09f97e",
+      "code_sha256": "7126991a5452bf36f351e875b95b2a707190a486d42e403623ba9a93ae37d1c6",
+      "bytes": 2527
+    },
+    {
+      "path": "FiniteAvalanches/Wilson/CyclePopping/ReadingRoots.lean",
+      "sha256": "1fdf8f00ec04cfc2d84d0bfb4550e9ac166ed2a8048d9cb1f63d5d43d8213451",
+      "code_sha256": "145f3c6388415b2a72ae59341f0d035db7232f14df0b22e90302651da11948d6",
+      "bytes": 3877
+    },
+    {
+      "path": "FiniteAvalanches/Wilson/CyclePopping/RootDescendants.lean",
+      "sha256": "2dc3361a3a38e91384faf06212e5d1e4b6faab419ff35b197adad8407ce41a54",
+      "code_sha256": "844b445c04a968b3a762cf0a6e8ee06a23817251746f36d0706be805adf1d832",
+      "bytes": 2445
+    },
+    {
+      "path": "FiniteAvalanches/Wilson/CyclePopping/RootDescent.lean",
+      "sha256": "2cfd26b78aef5a44f16b96fe7e39be02ff9ad0e7bb0a6a16467681cf8c10c994",
+      "code_sha256": "a50db61dabf38578d31abccd59e843b92ba207f7752d561eaa94e01c96799b80",
+      "bytes": 3007
+    },
+    {
+      "path": "FiniteAvalanches/Wilson/CyclePopping/RootOrbits.lean",
+      "sha256": "177801c20d4511f1b580ee512f81ff1f022c54bea9860cacf7743d2a74d659e6",
+      "code_sha256": "773173961fc8bbf9281a49c542701323bd5d0510f81e27b7166173a2068e74c0",
+      "bytes": 4540
+    },
+    {
+      "path": "FiniteAvalanches/Wilson/CyclePopping/RootSetCoupling.lean",
+      "sha256": "d277da31fc0836b97ef149d0da125150d35f804c308f301cd057f2ddacb86fab",
+      "code_sha256": "5eeec9ffd1f78cf3316d3f64cc1300b25a8eb17639debb80ca5d8c1154c05271",
+      "bytes": 4817
+    },
+    {
+      "path": "FiniteAvalanches/Wilson/CyclePopping/RootedComponents.lean",
+      "sha256": "7c6314346213756d2ac69a6fdfe313eb9abc74d1b8c1cc48f13d4861c7bf05bd",
+      "code_sha256": "9858c6fbe2abe5bfa2d6372c1391edd85bfffe103ac23bfa76d256fdd10a44b7",
+      "bytes": 1916
+    },
+    {
+      "path": "FiniteAvalanches/Wilson/CyclePopping/RootwardForest.lean",
+      "sha256": "0fc9fe7d01f580d96df562cdf259b3dd45595659e800e07c2835118f694a9233",
+      "code_sha256": "26d17790cf80fe70d0200887eb08d7a28b6f61af6cfdf0bbc58cd4b1e712f392",
+      "bytes": 3951
+    },
+    {
+      "path": "FiniteAvalanches/Wilson/CyclePopping/RootwardUniqueness.lean",
+      "sha256": "ddb3824803b62c4ea654455a864816cc50866cd6c0a35e22703d229ecc58d616",
+      "code_sha256": "87281eccad1917b4c16e8e67a9366201ec36994b4f9d43ba32706f547c88551d",
+      "bytes": 2890
+    },
+    {
+      "path": "FiniteAvalanches/Wilson/CyclePopping/SelectedPath.lean",
+      "sha256": "4dd9f36b672f83873e0e81b32e443e862b8d2b13775d9c7a73504228bc70c709",
+      "code_sha256": "0cfd952c21a7318dde281f3dc11cbbdd2f1363b57f96d369f83169abcaaa22dc",
+      "bytes": 3631
+    },
+    {
+      "path": "FiniteAvalanches/Wilson/CyclePopping/SingletonRootTrees.lean",
+      "sha256": "baed42aad166c797b0c0de4d491876927676d8efafef33c09a962670c0d13ffd",
+      "code_sha256": "b4f9c400b55b1ff78f6330aeb97c05c4e0c733a5d817f182a6e1881cd13739ed",
+      "bytes": 2897
+    },
+    {
+      "path": "FiniteAvalanches/Wilson/CyclePopping/StackAlphabetCoupling.lean",
+      "sha256": "cd7deab31f8385a43fa6d21f2ce39a2cbc031fe9e8b974a45b38addb0a78f71f",
+      "code_sha256": "a24f42ff4109c5c8b6ab050b04379c7525fa5a6e94638c42d36cb87608670457",
+      "bytes": 3596
+    },
+    {
+      "path": "FiniteAvalanches/Wilson/CyclePopping/StackExploration.lean",
+      "sha256": "0d87a3ee4f1f54bd061954e9c82148d7a63d767f05a957e412d7d07ffd774990",
+      "code_sha256": "3ff410289f73db90d1e4df12415213e7bc1ad3c484e5e7aaa79fe68c54b126f3",
+      "bytes": 7087
+    },
+    {
+      "path": "FiniteAvalanches/Wilson/CyclePopping/StackProbability.lean",
+      "sha256": "cbc3198fe32dec12e59a8de764e2eade44010b863be2c47a4a6afa2ba6a8d0be",
+      "code_sha256": "e86008fda23380998054632dd67a3cea0232475009e9fcd44a3de4c41a7be627",
+      "bytes": 5028
+    },
+    {
+      "path": "FiniteAvalanches/Wilson/CyclePopping/StackReading.lean",
+      "sha256": "6a9abc939a73c9b50a2324a9a5c291ac2037dba920df4518f5866755bb53a9b6",
+      "code_sha256": "8e6529d4f98ee3eb255da234530a726d933178d36a0cc8fca25610180f3eb571",
+      "bytes": 6205
+    },
+    {
+      "path": "FiniteAvalanches/Wilson/CyclePopping/StackSplice.lean",
+      "sha256": "135844680ab905309533e787f04b53a5e760de14c5a99f2f8fdcb837a08ecd51",
+      "code_sha256": "37c3d3bae16b3274933595aa3401ff30416795486760617cf628758dc6fa1514",
+      "bytes": 2271
+    },
+    {
+      "path": "FiniteAvalanches/Wilson/CyclePopping/Terminal.lean",
+      "sha256": "ce35d6df2767b6730e253977424d5ea8336a10d09983f062e35617a8d03cc5a3",
+      "code_sha256": "7ff353edf4e7c54efd40efea82a9a8212f08d6fc68e5d5b67552e7196c60aca8",
+      "bytes": 2723
+    },
+    {
+      "path": "FiniteAvalanches/Wilson/CyclePopping/TerminalNormalization.lean",
+      "sha256": "19127478fd0464a5fe17d9a52d1bdc15ffb5043f819de30a7a65e31dc8e6d475",
+      "code_sha256": "60629baffbc625ecf427b22ced3d95ad04780748081f435ca01f0661a5bac004",
+      "bytes": 7229
+    },
+    {
+      "path": "FiniteAvalanches/Wilson/CyclePopping/TerminalPrefixCopies.lean",
+      "sha256": "a0411ab431a249675fe0b71314090058733bb88fd0ae3dfee397fbe7486685eb",
+      "code_sha256": "ed096ffc2c9d46c9fbb0645138ba0f394b6ed4b871dfa457f560018fbb61fd1f",
+      "bytes": 2532
+    },
+    {
+      "path": "FiniteAvalanches/Wilson/CyclePopping/TerminalProbability.lean",
+      "sha256": "b0fa5e1751627f18df823dad963de8ae8dab34ca163192213b7b0b2a79f91706",
+      "code_sha256": "765ebe9e618fcd0658cd33609d7d2d25807fd04a0a4c550392e647af55321fab",
+      "bytes": 4459
+    },
+    {
+      "path": "FiniteAvalanches/Wilson/CyclePopping/TerminalTrace.lean",
+      "sha256": "605a2c506ee810abc4f2de2696141309a78b09912f6307e1291731767b3f833e",
+      "code_sha256": "c3d50bf201704bf56678eaae5d7c98f91038d8e659e8a6d49d1752a24ea2e700",
+      "bytes": 3448
+    },
+    {
+      "path": "FiniteAvalanches/Wilson/CyclePopping/Trace.lean",
+      "sha256": "b0fc60a90d04d450b421cfb67cb30a970b1f20bb45b33e2384512fd4eab417d6",
+      "code_sha256": "8ca2a9c057589da50ecda63bd056d7d29642398faef20997a6585fa9af96bc9b",
+      "bytes": 8843
+    },
+    {
+      "path": "FiniteAvalanches/Wilson/CyclePopping/TraceAlphabetCoupling.lean",
+      "sha256": "629eabb8e81bd2ab3892f13fe668405163492b615d1c6b9ecedd9d3088a17977",
+      "code_sha256": "91d54ca8e960ecef409096876dacd2e18e5b7c31b648ae6949000730ac88682b",
+      "bytes": 5783
+    },
+    {
+      "path": "FiniteAvalanches/Wilson/CyclePopping/TraceReading.lean",
+      "sha256": "7041b5d22f9f03cd0df9dd866d2adca84178e5736681ca0dc1568c415ffd8815",
+      "code_sha256": "a31cebfaff49dcaca9c701815096ba888619f858bfe845e1aeda023fd06cee5b",
+      "bytes": 2855
+    },
+    {
+      "path": "FiniteAvalanches/Wilson/CyclePopping/TraceRoots.lean",
+      "sha256": "9159aa039a2ec03e79d1067c0a29f65a05dd7f94b1ca63d43ad4f6a156ada9a4",
+      "code_sha256": "9ba543f8074a0a0dc43d1adac89414ad716235e4ba20ef41588d1b178faecdd5",
+      "bytes": 1958
+    },
+    {
+      "path": "FiniteAvalanches/Wilson/CyclePopping/TraceTermination.lean",
+      "sha256": "18d580b87b9c36d35b6aa15f87613597e1bdc084414840c27ea8fc3550011bd6",
+      "code_sha256": "110e2eb63629ac3a6e65a68afe12cde1569656aa6f5e274df43109ed721942f0",
+      "bytes": 3483
+    },
+    {
+      "path": "FiniteAvalanches/Wilson/CyclePopping/UniformTerminalLaw.lean",
+      "sha256": "1fbe718bea7294b260e206cc6b550ed3c0299e242bf16c32388e29bde1a9decd",
+      "code_sha256": "72148c703cb2306ecdf6ccd6c10582a42ec7fc05c83114dc0e6c0c09b9b89534",
+      "bytes": 2506
+    },
+    {
+      "path": "FiniteAvalanches/Wilson/CyclePopping/VariableStackLaw.lean",
+      "sha256": "6b71e54e2a3bd42d0d457fa3b7d4a317fcf5c60ecf3ea949e23323dbefa907bc",
+      "code_sha256": "18833ff65a24f43fdf38e172a2458505aef172fc75e626d08b16d3c3c9ac9607",
+      "bytes": 3506
+    },
+    {
+      "path": "FiniteAvalanches/Wilson/CyclePopping/WordErasureNaturality.lean",
+      "sha256": "f4ee0382ef36583c0fb099898c6b263a48a7055234d87b62c907c65c2e53a9fa",
+      "code_sha256": "eb4cf79364f304576b5607f073123a6d8bde5e17ff8e4cca74f05a3421161cbf",
+      "bytes": 4223
+    },
+    {
+      "path": "FiniteAvalanches/Wilson/CyclePopping/WordTrace.lean",
+      "sha256": "40d8dc4eb90012ed34d739a11869357f775fdc8b9674f3639469b19357b928f1",
+      "code_sha256": "01acb13c9c828b43e5a576acf539b77e77332d997858c17d1133951b0af3b8df",
+      "bytes": 2832
+    },
+    {
       "path": "FiniteAvalanches/Wilson/FreshRows.lean",
       "sha256": "cd38c6d0488183b99770578b0cedddd1616ad8a6a4a605c17e6f87bbf2b60297",
       "code_sha256": "471a9095a1c3703ee6436ab409034994bdcc9afeaf8f4d617112cdf5a654213c",
@@ -4338,6 +6456,42 @@
       "sha256": "47eac2b3d6eeaf8a176a883f6be42afb1fc38fd231e534e4192b23553e8fdef9",
       "code_sha256": "9617e51b5d54cc31d8647815663b57fe5877c4ab6892c73bf4d0d235c0783770",
       "bytes": 5457
+    },
+    {
+      "path": "FiniteAvalanches/Wilson/Lattice/BoundedHistoryFirstHit.lean",
+      "sha256": "5875084bff511bf6307d5f65bc4654b8c437a70bb59e94c823302d69396db60b",
+      "code_sha256": "b2938a4c7deab4b80e7c1c94f25f7a2a6ccad1784dc43aaf1340ce3901a64d94",
+      "bytes": 1533
+    },
+    {
+      "path": "FiniteAvalanches/Wilson/Lattice/BoundedStackHit.lean",
+      "sha256": "becc643327337344ce41f23eafda0f4da1d803bb825fbb3c6fadee522744854b",
+      "code_sha256": "5a1898b3698e794423ce00b3f530a9e2d88d494ea64d2b3b1fb104569e8d07fa",
+      "bytes": 5100
+    },
+    {
+      "path": "FiniteAvalanches/Wilson/Lattice/BranchHistoryEvents.lean",
+      "sha256": "dd380b3180a73997feed67c978a8d70bf633661134a3eb9db62e190ceee68d79",
+      "code_sha256": "3b76e300395c1c7f6d1aed232bd8cf015d5e27caea54eff8f583c81450a995bc",
+      "bytes": 4661
+    },
+    {
+      "path": "FiniteAvalanches/Wilson/Lattice/BranchHistoryExploration.lean",
+      "sha256": "66ec70f0817b2c4459ab2de43e86baef534d8cee6d0607f09814a4829ef4b723",
+      "code_sha256": "86599ca14a8c93eaf0c633a110beaab71c1e96dfd8a816a763d56d355fe3bec3",
+      "bytes": 3603
+    },
+    {
+      "path": "FiniteAvalanches/Wilson/Lattice/BranchHistoryLaw.lean",
+      "sha256": "f0969a57446eb3b54b2108666673e6b0e8f3260d6dab4d1de6a42eacb1ede2bd",
+      "code_sha256": "0cc2deb22047b29c0cbbdff3b455e22f3dbe9b5c8cd899ce4035b5b1191b5dac",
+      "bytes": 2922
+    },
+    {
+      "path": "FiniteAvalanches/Wilson/Lattice/BranchHorizon.lean",
+      "sha256": "60b9a1098693693bae77be83858f59a99bcdb493f1eb6cdd299c7db46cb1f2e7",
+      "code_sha256": "68682663157e41a9cd8094b75df22111422555e3538c0eb54e028c21c961d9e5",
+      "bytes": 8250
     },
     {
       "path": "FiniteAvalanches/Wilson/Lattice/CofiniteReciprocalGeometry.lean",
@@ -4496,6 +6650,24 @@
       "bytes": 1981
     },
     {
+      "path": "FiniteAvalanches/Wilson/Lattice/DistantOriginForestLaw.lean",
+      "sha256": "9cf3720a9ad5c4e0b222c0a887287a3d64c01fe229ee65677c67dd74fc9017b0",
+      "code_sha256": "2a5d723235e16730145f7bdef0d86bca226e4897e12dcb05a7babeeae85da212",
+      "bytes": 4304
+    },
+    {
+      "path": "FiniteAvalanches/Wilson/Lattice/DistantOriginRootPair.lean",
+      "sha256": "c8c00cd8df17263a2089a0232bf3d317e3744a391ddc3cb77c098b10e95a27b2",
+      "code_sha256": "f63fddff4360e0b73a9135def09d58d9c82db3aa49d18f4d9509f5fbc4895a4c",
+      "bytes": 2693
+    },
+    {
+      "path": "FiniteAvalanches/Wilson/Lattice/DistantOriginWiredConvergence.lean",
+      "sha256": "afefea48e559eac0ff1fe40d60f4c7ace9f0160ab0eef4edb7f867a00034463f",
+      "code_sha256": "123918728f900a7cc6ac2220958be94980ec80a1b8d34296518be39f270441a9",
+      "bytes": 6000
+    },
+    {
       "path": "FiniteAvalanches/Wilson/Lattice/DistinctStartContainment.lean",
       "sha256": "9a12c5b6b864e586fe59d832ba9e51b798b927ef1f12fc1084a24299a4f4ff38",
       "code_sha256": "026c398377fbdd495fac3b6e5fa1f463f8427f5fb127178d31d5734ae45ebaa4",
@@ -4506,6 +6678,18 @@
       "sha256": "70225cf773bf14a83fee1298b70d527b650d9c92c982823359898ceb2b32bc4d",
       "code_sha256": "72ec53e25f32e443af3b001e311c64f4374dea1a990789dae6cd55eb053e3767",
       "bytes": 3198
+    },
+    {
+      "path": "FiniteAvalanches/Wilson/Lattice/DualCylinder.lean",
+      "sha256": "461dd70b4afd58e8d5fa220930250f1e925a16e636509f304cf4468f0e8eeebc",
+      "code_sha256": "d84772af10ab689cdd364f5504125084674a41d07b05ff163f9fbde8d0695b00",
+      "bytes": 6256
+    },
+    {
+      "path": "FiniteAvalanches/Wilson/Lattice/ErasureAgreement.lean",
+      "sha256": "33f8b3f966d557580582efe5d61208f6debd2450aa833cf64c28ada65d7c8f37",
+      "code_sha256": "7bb2955a755df12973639114319340facd592b51c27e7491f2d18e69000b4b4a",
+      "bytes": 4543
     },
     {
       "path": "FiniteAvalanches/Wilson/Lattice/FiniteBoxColors.lean",
@@ -4520,6 +6704,30 @@
       "bytes": 4204
     },
     {
+      "path": "FiniteAvalanches/Wilson/Lattice/FiniteBranchHistories.lean",
+      "sha256": "3ffce27dddadc2e471e6d15d357a8737de69d876bc01d64f8d82997285386270",
+      "code_sha256": "3d92f000e2e72567b9912e8872760e45bcd0db7e80e6d19832316dec97b70c4a",
+      "bytes": 4379
+    },
+    {
+      "path": "FiniteAvalanches/Wilson/Lattice/FiniteCutParityLocal.lean",
+      "sha256": "86f423827ea9bfd2908c3d690faa2a9cd32376596b88f0b63d126060de6f753e",
+      "code_sha256": "38a608a834af02611bf0eca4a37a62f9291e81fe954e5a0beb37fa9b950853a7",
+      "bytes": 4958
+    },
+    {
+      "path": "FiniteAvalanches/Wilson/Lattice/FiniteDualCutParity.lean",
+      "sha256": "227c6be19861008a4b1039616c24b5323b45fb2279d60cbff2a36392e6796dc5",
+      "code_sha256": "b787ef26d3e6d6ab5adf3a4475245f9373d891256d31dc0eb56454eb526e12fb",
+      "bytes": 5169
+    },
+    {
+      "path": "FiniteAvalanches/Wilson/Lattice/FiniteDualLawTransfer.lean",
+      "sha256": "dc52ee747d07de051928dffb61bd0832adc5d5daebae2dd2372ec0a68ce7bb59",
+      "code_sha256": "9e18c696b49f478cb771c46dd0760430e24af750426e72d7e4f1f38a53b496b0",
+      "bytes": 2318
+    },
+    {
       "path": "FiniteAvalanches/Wilson/Lattice/FiniteExitRay.lean",
       "sha256": "bdd614bc40b5087938606a84c8b9405148504deaf919da0fc9ddb539b1152f60",
       "code_sha256": "c816e3018139112803e4fc2642ecaf108788993e0c2f3c4c1dc286f786b4db35",
@@ -4530,6 +6738,18 @@
       "sha256": "d45feb72945c5046c046c3e6a9c0f4d1f5578b9d352016d8a8647be058f3e142",
       "code_sha256": "7abe3c6a91be6af54fa57c746db7970ec10bd9cfb273e48dccf30ef8d2c7fbd5",
       "bytes": 6761
+    },
+    {
+      "path": "FiniteAvalanches/Wilson/Lattice/FiniteUstCylinderConvergence.lean",
+      "sha256": "dbdde2d050d3c90c50bc5b713b052dfe9feb7ba712c6dbf592bed94610762a93",
+      "code_sha256": "618af3ab0ece0336e6521c8ef30707710927fbdad85a18f5af9a15ffcf037885",
+      "bytes": 3817
+    },
+    {
+      "path": "FiniteAvalanches/Wilson/Lattice/FiniteUstWeakLimit.lean",
+      "sha256": "d0b981c51a35b88597cf988dfcb37fa16810c1dea04b4fad4464909e5b311fc0",
+      "code_sha256": "a64546a7bd09f50186f140b0ac523d48ff42bcda2eec81a51cc8605ff783f464",
+      "bytes": 3434
     },
     {
       "path": "FiniteAvalanches/Wilson/Lattice/FixedBoxColorLaw.lean",
@@ -4550,16 +6770,268 @@
       "bytes": 5148
     },
     {
+      "path": "FiniteAvalanches/Wilson/Lattice/FreeBoundaryHistoryEvent.lean",
+      "sha256": "762ba1f15817d50d6a4caed0ad10b8c73d6908ce78971ee9c8dd6dfcb23bcaa6",
+      "code_sha256": "786ff020be56f348f524cb18b996f9254ead0fbf7c1a356cca59ec28b6a62f9d",
+      "bytes": 4388
+    },
+    {
+      "path": "FiniteAvalanches/Wilson/Lattice/FreeBoundaryRowLimit.lean",
+      "sha256": "5e0ef02999c2e3912489a3dfb59aa21b31cc24b9554bc28c29277562e550e609",
+      "code_sha256": "6690d20c0769f222a7952fa98f97ee9c47d39cdc9202f2bd1bdb766f8f672401",
+      "bytes": 6604
+    },
+    {
+      "path": "FiniteAvalanches/Wilson/Lattice/FreeBoxGraph.lean",
+      "sha256": "afcc1674cadf0c2491e2d089be94b391b320e1e801a0f95e49cd3a5ad89ecf74",
+      "code_sha256": "d56c7794c4bdd7426f592b9da405626baa053d5155819b025855987b35509d75",
+      "bytes": 7005
+    },
+    {
+      "path": "FiniteAvalanches/Wilson/Lattice/FreeBoxLaw.lean",
+      "sha256": "37e3c30e21533c4b94cff352d8c42cf257278a9d5db7a3ff4d0d22152ffb7392",
+      "code_sha256": "6e228fb3b3ca2bfc9d17edc30a32bb790e03155e10eb54d13006f55a4a91c6c5",
+      "bytes": 3702
+    },
+    {
+      "path": "FiniteAvalanches/Wilson/Lattice/FreeBranchCoupling.lean",
+      "sha256": "6331e161fbe7e74af8ad00ce362d9ac2371a01658c68e933396968b2daa0be11",
+      "code_sha256": "feb01e71ff95ec24ba37cbc55f0a427415808cd5a385b2f3a05f6070b12074e5",
+      "bytes": 9294
+    },
+    {
+      "path": "FiniteAvalanches/Wilson/Lattice/FreeCompletedHistoryLaw.lean",
+      "sha256": "08cb87723dd5560eefdf60d5aba837942b3b9ab109c2f73e7859335453ec2b6f",
+      "code_sha256": "c7a4946b5c89ce324da5bba9f817168479c160faebb277e6f83f7d5e0eb9176d",
+      "bytes": 6543
+    },
+    {
+      "path": "FiniteAvalanches/Wilson/Lattice/FreeCouplingEvent.lean",
+      "sha256": "56c9bd4d4d92018fd65eed69ebccde752269bd764c9270f0b5a6f25cde10f518",
+      "code_sha256": "bc529be4baeb153131f2a4314326be0659d76972b6b3a97ef223127d295c0364",
+      "bytes": 4592
+    },
+    {
+      "path": "FiniteAvalanches/Wilson/Lattice/FreeCylinderConvergence.lean",
+      "sha256": "c78ff8c37165898d921179b66fc80077dcdbb1bf186b2a01cc07f1c108d118cd",
+      "code_sha256": "8e3dfa043f3d7dbda94aba11672aea9d04db83a369f2c8899a1f85bb16e10b75",
+      "bytes": 4870
+    },
+    {
+      "path": "FiniteAvalanches/Wilson/Lattice/FreeFiniteLaw.lean",
+      "sha256": "7e6802c8ac0e0bfb0f9507583d20c228efaa8ea366b80c6dfb712da8dbe67e1d",
+      "code_sha256": "49a5d57723ace18c4a937bb8e1ac1bd955440675f2f39917ccf22be127ecf977",
+      "bytes": 2569
+    },
+    {
+      "path": "FiniteAvalanches/Wilson/Lattice/FreeHistoryEdges.lean",
+      "sha256": "77b79abdbde32d165073fe3363eeed4b64a57d7d62a427b6afbc4d3e001ac734",
+      "code_sha256": "296af873790849259de73ff5829a215ec3b8695d64c580b56acba5d44fac4630",
+      "bytes": 3953
+    },
+    {
+      "path": "FiniteAvalanches/Wilson/Lattice/FreeHistoryRelabel.lean",
+      "sha256": "7458076a8b0d149f5a68513ce321fc86aa39212ec54cbf7b82ab2ab284988119",
+      "code_sha256": "249abc395e4deb7341779ec6e3ea6467732c30a73fd03b1bbd606ba6b62684ed",
+      "bytes": 4580
+    },
+    {
+      "path": "FiniteAvalanches/Wilson/Lattice/FreeInteriorCopies.lean",
+      "sha256": "b3d61ef8302f682af915a539e27c0ead4fd5478a0b6af42a2ab23c5069d3640a",
+      "code_sha256": "4b519faceeab48fe8f54728d3304668943d7e4aab272640eff14c6163875b586",
+      "bytes": 7743
+    },
+    {
+      "path": "FiniteAvalanches/Wilson/Lattice/FreeObservationEvent.lean",
+      "sha256": "fee7c22959740c5637217d33a1a6ed282c4717fd16cf8b2abf3b524e60d9b528",
+      "code_sha256": "0e834de2c438aaf30a17f731f47ae031699a7c57dceb2aa32fe68950b1e41bb4",
+      "bytes": 5210
+    },
+    {
+      "path": "FiniteAvalanches/Wilson/Lattice/FreeObservationProbability.lean",
+      "sha256": "ef8ebfa5847e6c79021f631e6d004b71d6d0a0b3161f7408fb77466d245d2a5d",
+      "code_sha256": "745a59497c4f5aed11101533676bb631c8dd2b4a452e2028771a681877631bfb",
+      "bytes": 5356
+    },
+    {
+      "path": "FiniteAvalanches/Wilson/Lattice/FreeObservedEdges.lean",
+      "sha256": "1dd2edb8e74524c3ba8e9dbdfb8e813079c5bea3441b898223dd75724b170461",
+      "code_sha256": "37e052f136535ec7779a7d01e620c60d064902012588a001a6c9d6e1e5643e1a",
+      "bytes": 3856
+    },
+    {
+      "path": "FiniteAvalanches/Wilson/Lattice/FreeOriginAvoidBoundary.lean",
+      "sha256": "3b0c071ba20a1793db3f258505f5cd588315f4dd7a92e151452e0e1c657b24df",
+      "code_sha256": "614aded63b9aa1dbec8eccd4e5b484241db1645adb092f3e44f992c37d54a4b4",
+      "bytes": 5327
+    },
+    {
+      "path": "FiniteAvalanches/Wilson/Lattice/FreeOriginHistory.lean",
+      "sha256": "92974dc2c8c303eb62a61b92fda02b302fb902fe33c9eb6eaa7835cdec0758ba",
+      "code_sha256": "e3c0af3ecbae1805c38fd9c6c3a71c96f3f4dbbdb0e1b120e687f5c06d2845c4",
+      "bytes": 4330
+    },
+    {
+      "path": "FiniteAvalanches/Wilson/Lattice/FreeOriginTermination.lean",
+      "sha256": "533e479f7360d0bf24525d0bf6df7d0f3cc4ac133be3e2c2966c21f3aff9036d",
+      "code_sha256": "be1adf3dbc949e4203d0b5eb8ba149a6a6baa83b593b1d4521db80a19d7f1514",
+      "bytes": 5107
+    },
+    {
+      "path": "FiniteAvalanches/Wilson/Lattice/FreeSafeHistoryLaw.lean",
+      "sha256": "450014e0d811d7d82a123594fcdb32a97191d575a297700507675b0a59e40796",
+      "code_sha256": "c4963bee0cc8e13ae3bb57524e547133eb2afff55bf8bc351a80c74186e6e706",
+      "bytes": 5856
+    },
+    {
+      "path": "FiniteAvalanches/Wilson/Lattice/FreeSafeIncidentLaw.lean",
+      "sha256": "766c9aa43f79f8f6e5c19ceb212500126265a5f9d8ebd7fd011ab664faf59c9a",
+      "code_sha256": "51e53f1ca2788ef2babef443cb28f05f3d5ef3dc944ed4ffeaed6c7d388be6b3",
+      "bytes": 10064
+    },
+    {
+      "path": "FiniteAvalanches/Wilson/Lattice/FreeSafeTerminalPrefix.lean",
+      "sha256": "824c9c9b0d7da5293eb2aaea919e55da7b5d2228f5d75c713f22e70c8d678b4f",
+      "code_sha256": "cfcc6695b995522f2d116f58c2ac2eebd24c8be614aeecfa930658af22b1839b",
+      "bytes": 4293
+    },
+    {
+      "path": "FiniteAvalanches/Wilson/Lattice/FreeStoppedExploration.lean",
+      "sha256": "6c1a12b57006544027b1c2be17c3dfe7091498bd0e16b4549e5d054331ab9038",
+      "code_sha256": "71a0618d0c5ddb0558cd3ec4819e39affb75b204abe7c829d58e93e977e64b7c",
+      "bytes": 8184
+    },
+    {
+      "path": "FiniteAvalanches/Wilson/Lattice/FreeTerminalCoupling.lean",
+      "sha256": "1e177b5b050571f74378952bd4bdb42d9583c09b4be278546e21b7c4c4146eb6",
+      "code_sha256": "e15457bc0969c8b37d955f6283b116efbdd2d3ce571577b44bdbe33aededacd1",
+      "bytes": 4254
+    },
+    {
+      "path": "FiniteAvalanches/Wilson/Lattice/FreeTerminalHistory.lean",
+      "sha256": "ce7fc5c87183440d5785f471c47e1935568f0a2cd3bba1ca14e39b5a68ce0f58",
+      "code_sha256": "b29d1b9652825548399119ada9b9d5092bf55061899ad7f5acd24134bc96ada7",
+      "bytes": 3998
+    },
+    {
+      "path": "FiniteAvalanches/Wilson/Lattice/FreeTerminalHistoryEdges.lean",
+      "sha256": "b4a89dd0aa0d4ba65f1cfd4c7a77a4d570d46d87b3b7f0c7b4f3d82a404cc9ce",
+      "code_sha256": "bd85caa2dfcb21408c2ba1057ff62add47b995490771ef995fcbaafd678ca659",
+      "bytes": 4858
+    },
+    {
+      "path": "FiniteAvalanches/Wilson/Lattice/FreeWeakLimit.lean",
+      "sha256": "f7e4f3e8636343b2ae36d3cd7166ff0801ff9fe31f908a7c9e44cc739af0400f",
+      "code_sha256": "e070b51569507a652eaf051f9375c3c54ff548dc715081fe7ddd0a0a49fb6eb1",
+      "bytes": 1184
+    },
+    {
+      "path": "FiniteAvalanches/Wilson/Lattice/FreeWordCoupling.lean",
+      "sha256": "f988a13b6b22514c1c384dbc663bc075fd49f078fef28ad5d666029cb684c8e1",
+      "code_sha256": "da4726359587621ca709f01a3576fed7ddfd4cd284f0b6d7111a03789551563a",
+      "bytes": 3478
+    },
+    {
       "path": "FiniteAvalanches/Wilson/Lattice/GlobalPrefixContraction.lean",
       "sha256": "975b5490de1398a1651ace4d3e745b43925f77745fc00b20da42b2ddcc0a4a0f",
       "code_sha256": "c02e27aa574a88670806c97014178b947968a52e291ec9c7d543a15440f21fd4",
       "bytes": 3180
     },
     {
+      "path": "FiniteAvalanches/Wilson/Lattice/HistoryArrows.lean",
+      "sha256": "926bb57437b193fb8f20212efe808bedb36b38130dfd088e6d1124b28db8bf04",
+      "code_sha256": "0d4ffde43ef65e2f5e4e23fc8f16569795c4a19a2f977b778b0a5fb31c893b23",
+      "bytes": 7245
+    },
+    {
+      "path": "FiniteAvalanches/Wilson/Lattice/HistoryAvoidsRoots.lean",
+      "sha256": "7dfec0eb490e40631b385369a8ba93650f388a79059fba42d2104b1af8d159dc",
+      "code_sha256": "ef8fc2b9b1c41159c958540b823acde92b1f8c16cabf3aa05d15eca847417ad9",
+      "bytes": 2618
+    },
+    {
+      "path": "FiniteAvalanches/Wilson/Lattice/HistoryColorPropagation.lean",
+      "sha256": "a7bc420406323c9bb5ec33f114e89f72bdb930637b69e1e8b7fb17ef52bf5b2a",
+      "code_sha256": "122a4873272726fe7d413c7fddd884e66a57fabed56e8f14eb79d0e6a2d49fb7",
+      "bytes": 3613
+    },
+    {
+      "path": "FiniteAvalanches/Wilson/Lattice/HistoryColorRelabel.lean",
+      "sha256": "8a8e3e6d6aeb20b28ce1f101d7cbc58c7344611b29154816bad1c61e808d6864",
+      "code_sha256": "03096b038be148fcac895b48d0cd072b2232adebdf99b644f5498c2c838292a1",
+      "bytes": 3199
+    },
+    {
+      "path": "FiniteAvalanches/Wilson/Lattice/HistoryEdgeRelabel.lean",
+      "sha256": "b2e47e2e9626a9cb90c21f5f37531b211d3ba25120fc40558d846602516df5b0",
+      "code_sha256": "05e9dccf0c577cdff66492196041b8d986b7c7ea78e7a8a79487f48bd137f764",
+      "bytes": 2211
+    },
+    {
+      "path": "FiniteAvalanches/Wilson/Lattice/HistoryErasedCursor.lean",
+      "sha256": "27ecf359d4248a3d4581859869ab1975de9641ac7f364a4e28814f540ee17550",
+      "code_sha256": "d32b6660e142478a901e86c975a204a63f9bd1059e277c7657134261ac2860c9",
+      "bytes": 6479
+    },
+    {
+      "path": "FiniteAvalanches/Wilson/Lattice/HistoryFirstHit.lean",
+      "sha256": "09a2b4160fb73444340a6b3687071f9398511f3aaa9959f2dfdd3b977cc3cc6e",
+      "code_sha256": "a883cd9e0c177de2ee173c5a01f33b24223dff183a9c3732b6c0c979644661d4",
+      "bytes": 4670
+    },
+    {
+      "path": "FiniteAvalanches/Wilson/Lattice/HistoryFirstHitTrace.lean",
+      "sha256": "66537d9b496dab67caf31feec1dcedb88a1fbbb12ce1e7ed10d77090db8ffb8b",
+      "code_sha256": "58e0e65171a7630b97034b12962f91a96f2e3e714d793c33eebe779c92122ddc",
+      "bytes": 2634
+    },
+    {
+      "path": "FiniteAvalanches/Wilson/Lattice/HistoryListEdges.lean",
+      "sha256": "f123ef63624f7772b38c20aed8b3282b408c9761a662619f466d5a698f7a3243",
+      "code_sha256": "9cb07909c235631f14b364c6db6f2fb29eef6d3593bea5311d7f48f558c1bf21",
+      "bytes": 7341
+    },
+    {
+      "path": "FiniteAvalanches/Wilson/Lattice/HistoryRootCursor.lean",
+      "sha256": "5a761e5bfbace3049bbb683fdbe39a350612d8e9b950ae8b748fac0ffede48c6",
+      "code_sha256": "85a43a2b7632ffe69b7016a82b6024519b196e78bc3d617dd7007fefd7d02545",
+      "bytes": 2651
+    },
+    {
+      "path": "FiniteAvalanches/Wilson/Lattice/HistoryRootward.lean",
+      "sha256": "c4736880129663fc034e9c5dbddd39d83ec263ae54b52daa6aa9b62b30345248",
+      "code_sha256": "ac7aab8a00802cbbdec68a2dbeb4f8134c17af3d9b71f2f456cf801645ef0153",
+      "bytes": 5037
+    },
+    {
+      "path": "FiniteAvalanches/Wilson/Lattice/HistoryRootwardEdges.lean",
+      "sha256": "1bcc0646c648531dbc7bd14ac68da44e160b8b38d06eee83b2f3a58d627c4d7f",
+      "code_sha256": "4561dacfba22460d42977aad9ac4e10d3092b3f503a144082972fbcb43fa9e3b",
+      "bytes": 4790
+    },
+    {
+      "path": "FiniteAvalanches/Wilson/Lattice/HistorySamplerState.lean",
+      "sha256": "155eeda7ccb4b912967b79ee6345879039ee9ded0e2fed4557ac3b9012de8a8b",
+      "code_sha256": "1fb89ad23494768f0e1f2210c68929e1ff9d5e4b2c082b32dbf3fb14da6b8ee8",
+      "bytes": 3983
+    },
+    {
+      "path": "FiniteAvalanches/Wilson/Lattice/HistorySelected.lean",
+      "sha256": "dd39081f9d2e13e21e09b3b644c17d254439ae0dec5d268b28b14585428102a3",
+      "code_sha256": "98e4f85171651495d771608ab8982c2a84bcd10be72644114343d463b6005154",
+      "bytes": 6832
+    },
+    {
       "path": "FiniteAvalanches/Wilson/Lattice/HittingTimes.lean",
       "sha256": "a2cb75985213b9cbeca338c30cf8cada6265163e28796d36b9203dd8f7c77b96",
       "code_sha256": "fe55fe4aa91526908bfdeed63823d5284c09581256a98d8102be76fbab3ad31d",
       "bytes": 2179
+    },
+    {
+      "path": "FiniteAvalanches/Wilson/Lattice/IncidentHistoryEdges.lean",
+      "sha256": "94cbbc6a187e53ae2895f4fefab4283a06859445f1e8e30cc91750d8d591b4c9",
+      "code_sha256": "b530231071a6f948b7857fb496badc660bc808e290111589625fbedbfa446073",
+      "bytes": 2529
     },
     {
       "path": "FiniteAvalanches/Wilson/Lattice/InverseContactContraction.lean",
@@ -4574,22 +7046,40 @@
       "bytes": 17143
     },
     {
+      "path": "FiniteAvalanches/Wilson/Lattice/JointEventAgreement.lean",
+      "sha256": "2fb4987bdab5c7bc25e338d517d7f27ea429482b84209967b2359406bce9b3c9",
+      "code_sha256": "1710a8d0d54f38112885a530149369a372a6390e72511e1b626fd4b51a596207",
+      "bytes": 930
+    },
+    {
       "path": "FiniteAvalanches/Wilson/Lattice/KnownContinuation.lean",
       "sha256": "ccf5089e91c53703b6e602904d968a682bb9b6f654c561a8e9c66da522a29e5d",
       "code_sha256": "a3f2cfdb2592f490ed57dea7abe35e08dc528f0b6f50a39306272fb045802487",
       "bytes": 7876
     },
     {
+      "path": "FiniteAvalanches/Wilson/Lattice/LatticeBranchHorizon.lean",
+      "sha256": "642fa82e3c30315024f5d2e882290e850aba7fbba9fd4e54032375fec1f9159a",
+      "code_sha256": "b5199b4c63d9fe1ed48b4d15f3681c7d1597bf529ec880e06042b8a6f6b5e11a",
+      "bytes": 7942
+    },
+    {
       "path": "FiniteAvalanches/Wilson/Lattice/Law.lean",
-      "sha256": "69845c27c18777ba8eba4331b77697373bdd219f14ea9a2053bebd87df58c7aa",
-      "code_sha256": "7b932d3b5964eb1205eafd5c7c93ac6f467a633baaaa840b5ee62b75fd0548ed",
-      "bytes": 4258
+      "sha256": "53d767d80466f9cc7c23425dff9ff64f52f2a0dae9d248cf0f5a40724dd73151",
+      "code_sha256": "01be12bc6bc7e74f5ea3f99e00c8513d320b886ad99a85c9029897c90a4a1fd6",
+      "bytes": 4072
+    },
+    {
+      "path": "FiniteAvalanches/Wilson/Lattice/LawUniqueness.lean",
+      "sha256": "1f131ad1fc37dccf89b11f8e80b4a5c186bce4dbec2cc0a8365aec900edaab43",
+      "code_sha256": "b4337a8bd482c6e24d72b1c5fb4d4db123e4d608aeff377f62af72b7c0195354",
+      "bytes": 4442
     },
     {
       "path": "FiniteAvalanches/Wilson/Lattice/LocalComparison/AnnulusCopies.lean",
-      "sha256": "98ee2825dfe86bb86ad5bd7310c86ac61fff3768649ad6ae979cf9e50b17b8ee",
-      "code_sha256": "7e239e32e259a98fb760ad3cec99339076b28be16fc78c38317d1ae09ecf70ef",
-      "bytes": 6450
+      "sha256": "567e7f39b3b3c3ccc8d5f3c622fc832bc0cb904288d8b4806023d50c6169344a",
+      "code_sha256": "e428f668f01b3d4b2bcd07710d92529d61aa3e219a7646d5ea7be74f25d1e99b",
+      "bytes": 6462
     },
     {
       "path": "FiniteAvalanches/Wilson/Lattice/LocalComparison/AnnulusHitting.lean",
@@ -4904,10 +7394,112 @@
       "bytes": 2763
     },
     {
+      "path": "FiniteAvalanches/Wilson/Lattice/OriginBranchAvoidsSink.lean",
+      "sha256": "2d33e9e53ba69a1f531a118384b60beb87381e8c4b2b40b3fb8ce7b38d6d9dfa",
+      "code_sha256": "1723c95fcfd85948bd49c28e8411bedd3832aecb22a35ace9b92d76feb79aef0",
+      "bytes": 5560
+    },
+    {
+      "path": "FiniteAvalanches/Wilson/Lattice/OriginRootCoupling.lean",
+      "sha256": "f3bc8b5b5e08a2db6c1af743df634bc1730562d64b8881a02f124162ef3f8e2e",
+      "code_sha256": "c4d6f24622d0c76acc5530e43eb7852d5d73fb7a456702e0f8d5813621298973",
+      "bytes": 4207
+    },
+    {
+      "path": "FiniteAvalanches/Wilson/Lattice/OriginSafeHistoryLaw.lean",
+      "sha256": "9726ed39e9843b666a3e638420a25f028d7c10615947ac82b38a335ec30786af",
+      "code_sha256": "8f8ef7afd19b34154b689032cc30a7469ec2c92e4ac749505023fa4568b92c73",
+      "bytes": 5582
+    },
+    {
+      "path": "FiniteAvalanches/Wilson/Lattice/OriginSafeIncidentLaw.lean",
+      "sha256": "af1a77b1bf28b5cce22979850cd1d221c6da375d99d28e6cda00c1439d5fcc97",
+      "code_sha256": "1152f85d6a38c1300f24cd4f0440f58ed3dc0b29fe286428dbd9a6ca2b7ed437",
+      "bytes": 7351
+    },
+    {
+      "path": "FiniteAvalanches/Wilson/Lattice/OriginSafeTerminalPrefix.lean",
+      "sha256": "784ef96a89065f1725c5706b36eff988058879b81f2db423a3c06a536312fc98",
+      "code_sha256": "4892480fa8b93c43b2e9804ac23445a9c5a0f6618914291fc39d0cbf4a4ff2c3",
+      "bytes": 3784
+    },
+    {
+      "path": "FiniteAvalanches/Wilson/Lattice/OriginSamplerLimit.lean",
+      "sha256": "3b035eda6f6a1631d71ac0de2e254ce95eb8f98245b9db1637c8cfa6c6617ab8",
+      "code_sha256": "a294d24a8995caf8e9c876603205df1a5720f22924245c4e0f3e4b17c5a5b76c",
+      "bytes": 5232
+    },
+    {
+      "path": "FiniteAvalanches/Wilson/Lattice/OriginSamplerMarginals.lean",
+      "sha256": "09e433baa1f9527a06b7a83ac36356fe6813415947a84a5e42567ba64eebd4a0",
+      "code_sha256": "1df94413bb64d400425eb2b10c735d689bca5cf8085e377cd5d519a15c12b3cf",
+      "bytes": 4322
+    },
+    {
+      "path": "FiniteAvalanches/Wilson/Lattice/OriginSamplerRootPath.lean",
+      "sha256": "f4a8d11de276c0fc6d5aa1de6b3045b034706017211d05cf7f84e93f44210bc0",
+      "code_sha256": "8034e48ce529838e0640433de4e23daf156914aa34ddb5a018069ae1c3d2c024",
+      "bytes": 3519
+    },
+    {
+      "path": "FiniteAvalanches/Wilson/Lattice/OriginTerminalGoodEvent.lean",
+      "sha256": "cda9620f0d78424763d8c42f7149d257247603741d3169f98aa1161fd602b021",
+      "code_sha256": "5bc876110a08b7cf7d8eef39154ac2e83b296d51e4ad305dc75f9620e50ec811",
+      "bytes": 5349
+    },
+    {
+      "path": "FiniteAvalanches/Wilson/Lattice/OriginWiredCouplingEvent.lean",
+      "sha256": "66a50dbf748d848bf60c99eba3d6f67ee1b377fe78b545ad9470de700e215ea1",
+      "code_sha256": "1576b244e36a4d1f2b389d2ec82f507962cc47a20fa72fcfd273eb97ccc5db92",
+      "bytes": 4153
+    },
+    {
+      "path": "FiniteAvalanches/Wilson/Lattice/OriginWiredFiniteLaw.lean",
+      "sha256": "f3874dc262d55dfcb2f2ff190030323d8a565d13557efa0e20bbbf8a83da385b",
+      "code_sha256": "15a27998d329564ef6951e6b121d1dcdfdb67e7e75d6c0f28c0c6a6b65a4d89e",
+      "bytes": 2516
+    },
+    {
+      "path": "FiniteAvalanches/Wilson/Lattice/OriginWiredObservationEvent.lean",
+      "sha256": "d8c132e003d771096262d15cc5767ce7689a569229165799da05a1dc1767068d",
+      "code_sha256": "308dba1e17f1a8902e51c50050fff8807854a33ecd71b50bd177306b7924b8b3",
+      "bytes": 4869
+    },
+    {
+      "path": "FiniteAvalanches/Wilson/Lattice/OriginWiredObservationProbability.lean",
+      "sha256": "9c3a7fe5f891ed3c8ff7bf800a0c7294fa012d9abdc3f3a77486f0f1d03c2b9a",
+      "code_sha256": "790ee4885f24a5babe434020fc166bc708c3a9b467621bec5801f1decaaa4cd0",
+      "bytes": 4680
+    },
+    {
+      "path": "FiniteAvalanches/Wilson/Lattice/OriginWiredObservedEdges.lean",
+      "sha256": "f85e6283b230df56dec5b166c227f5dce4a96a763db57e9d0f4f9e8a07ea9744",
+      "code_sha256": "1ba9952d2f9120c29b8d3c7b2e9429f05b3f6bcf8cef9d11fce2007778806a6a",
+      "bytes": 6067
+    },
+    {
+      "path": "FiniteAvalanches/Wilson/Lattice/OriginWiredTerminalCoupling.lean",
+      "sha256": "5ec8d7d806f179ba5cd0407b1b4a6a58214a2b2c3a8100dbcc13414bac767d81",
+      "code_sha256": "17db964fffb45973f38f781860d94b78e56875fe4215dbdbf08ec4b0c70e2bea",
+      "bytes": 4091
+    },
+    {
       "path": "FiniteAvalanches/Wilson/Lattice/Paths.lean",
       "sha256": "11b79a18c4249e266a3f5f25c2b4ad16511f263e54a9d23cb4947c25c1333ae5",
       "code_sha256": "271156843244c9fd96c9eb8f8d80e91dc643d40dc7a9d0724f4f5c6f98116ef4",
       "bytes": 2171
+    },
+    {
+      "path": "FiniteAvalanches/Wilson/Lattice/PositiveCylinder.lean",
+      "sha256": "05402915e2218a3f32a5b928784f6ef1a62c1292ba37cd16097da4df835692b2",
+      "code_sha256": "0b6c9e3d84edb7f3bd0013c1517c1731f4e571a48902cfc69a9147223bb31705",
+      "bytes": 4186
+    },
+    {
+      "path": "FiniteAvalanches/Wilson/Lattice/PrefixMeasure.lean",
+      "sha256": "53858087e8a5b4e7a3dc8c329bcbee8440ca8fc622c3b6bff082cfbab0c51e1e",
+      "code_sha256": "7cefb3c63c8d014875aad3404640b3cd3e68048e52d4da03aa9fdaf710fc9bb2",
+      "bytes": 3126
     },
     {
       "path": "FiniteAvalanches/Wilson/Lattice/PrependRay.lean",
@@ -4926,6 +7518,12 @@
       "sha256": "550de42f9454add0ae7a7d504ffd14fd037878b638cc74d0207e27ef51e6ed50",
       "code_sha256": "8fb8d24e9d4ff61df2779787ebdf0b2b867e4f9cc1cd78e6684d0391bffc5a6b",
       "bytes": 10407
+    },
+    {
+      "path": "FiniteAvalanches/Wilson/Lattice/RandomStackHistory.lean",
+      "sha256": "b5726530b82c0d33247fd697f75496d6e2c14fec2c885cc92486be7cf8eda155",
+      "code_sha256": "d903394b46dc82feb1732a57bf997a1ba15d150f1c338d8eeb3ea004533ba0dd",
+      "bytes": 2746
     },
     {
       "path": "FiniteAvalanches/Wilson/Lattice/RaySeeded.lean",
@@ -5030,10 +7628,64 @@
       "bytes": 6830
     },
     {
+      "path": "FiniteAvalanches/Wilson/Lattice/RootEdgeExhaustion.lean",
+      "sha256": "a8db00b689b60f174e70f5381dc47348c4820804152c92bd651939373481942c",
+      "code_sha256": "4d2f7733181066c05ca2811e4d21507619371dfa5117fc5e8014c59f68324837",
+      "bytes": 2606
+    },
+    {
+      "path": "FiniteAvalanches/Wilson/Lattice/RootObservation.lean",
+      "sha256": "2e85169381be542bce68f7291dbfdd63b88d016a9a044fb6ac35d0169a10f84c",
+      "code_sha256": "5a366cf21e88301f83648da1bdc6482a6e0bba87148c92c7e5b4fc7de459fd07",
+      "bytes": 3539
+    },
+    {
+      "path": "FiniteAvalanches/Wilson/Lattice/RowBranchHistory.lean",
+      "sha256": "e2ddbc4149ab51c377e62651ec48af662767dd3c325f3412603ada264172ee29",
+      "code_sha256": "bf56a0fd2d0b5e472439d9f8cf34fc9e021af646931c9830478a935febbfb77e",
+      "bytes": 4125
+    },
+    {
+      "path": "FiniteAvalanches/Wilson/Lattice/RowBranchHistoryLaw.lean",
+      "sha256": "aa5bd4522a0ad4ca08058214572d617b42d25b74aa617a1dde62d94b3715661d",
+      "code_sha256": "82e442e4a8c4056032a4e90ccc36532742cf2a25fbdd7b8ba3f1695407f95f6b",
+      "bytes": 5899
+    },
+    {
+      "path": "FiniteAvalanches/Wilson/Lattice/RowBranchHorizon.lean",
+      "sha256": "8194a03b81c72a1e34e7bcd882dfe10df9142b3640b7a0811f918ff6afee3285",
+      "code_sha256": "4580589dafe08473699461b6e037a303fd8fdeb1ab63be7cff6a932af981e95f",
+      "bytes": 11752
+    },
+    {
+      "path": "FiniteAvalanches/Wilson/Lattice/RowRootLocality.lean",
+      "sha256": "d7dd70f3c19a16d0079459c04087a2f2bbcf0a45ee8895c01d2fd501a0259ede",
+      "code_sha256": "d99a907cda86fb73672bcbc8a2edaa976d914ef75446a939c7aaf4e8e30db20d",
+      "bytes": 4945
+    },
+    {
+      "path": "FiniteAvalanches/Wilson/Lattice/RowSamplerBridge.lean",
+      "sha256": "a65ddc6f85765a67cd62252e6abbd1c179d6e1f7ea0369a9e997207010aae4ca",
+      "code_sha256": "dd27b4adf4af032800772a49ffe613274caad39e3c9d4fab9118708c7245a77d",
+      "bytes": 9901
+    },
+    {
+      "path": "FiniteAvalanches/Wilson/Lattice/RowWiredForestLaw.lean",
+      "sha256": "20930dda7a022a5523c042cecd52cf091114ab30eac4719733ef15e94a7bf62b",
+      "code_sha256": "da776f8afa9b83742b78d712e4dd795f4108cdad3b38ff56aea0aff95a15b40f",
+      "bytes": 5057
+    },
+    {
       "path": "FiniteAvalanches/Wilson/Lattice/Sampler.lean",
       "sha256": "55e3634cf6550af8967d6dd59cb766a902b4733a4846c36ef85e15adf06dba1f",
       "code_sha256": "4c902639076d81429813dc799b3f6514ec214baf11b02ab963181be8da3e050a",
       "bytes": 6815
+    },
+    {
+      "path": "FiniteAvalanches/Wilson/Lattice/SamplerColorPropagation.lean",
+      "sha256": "99fd9016ac7014203f3faa37ace7ec581922e6cf63349f74973f351f6ab043bd",
+      "code_sha256": "526a54f57b4be1f5f923413146970779f94eb3a515e850bb01002677452c55bd",
+      "bytes": 6127
     },
     {
       "path": "FiniteAvalanches/Wilson/Lattice/SamplerEvents.lean",
@@ -5042,10 +7694,76 @@
       "bytes": 5514
     },
     {
+      "path": "FiniteAvalanches/Wilson/Lattice/SamplerFiniteObservation.lean",
+      "sha256": "e137fb7d664a7bee27d6ae1357884697cae8038376638dd939259405d0223583",
+      "code_sha256": "203a7c1f2e9b86a465d91e2b0c3ebc39f22072140892166b45e9f16e40af15c3",
+      "bytes": 4847
+    },
+    {
+      "path": "FiniteAvalanches/Wilson/Lattice/SamplerFirstRootPath.lean",
+      "sha256": "3756f96fda4c3d3d57b1ffea8287357d196f374f72e04f06045222a99b386218",
+      "code_sha256": "e5037ec7d9cfdef0d86a96e6519ea544e654c7f35ad63e9efa185c4822cb0cf8",
+      "bytes": 3595
+    },
+    {
+      "path": "FiniteAvalanches/Wilson/Lattice/SamplerRootExhaustion.lean",
+      "sha256": "ff9f6e1686cb9c5c0f6de2ee77b34dd25db851c2228c676949e2ed0f60a3e80c",
+      "code_sha256": "94700d5d73dc203ac3bdb739744a7f41f56583efc820f5971450fd0cecda912c",
+      "bytes": 4666
+    },
+    {
+      "path": "FiniteAvalanches/Wilson/Lattice/SamplerRootPath.lean",
+      "sha256": "088e4f39dd479c7b06b44e03e086321b78ddd9680d6ea7a1c6fb12a87555bff7",
+      "code_sha256": "7e340550a11317883361094d6a4b342c6d9a7759f1b0addbd5583f0e3ed7e287",
+      "bytes": 3313
+    },
+    {
+      "path": "FiniteAvalanches/Wilson/Lattice/SamplerTermination.lean",
+      "sha256": "a7da10389c3c1a7b28a3108847b4e53c0dce773a9a3662edc85da0bccbe472fe",
+      "code_sha256": "e9cf308dc0d6109da78310fe1b4d6407b2e1949c5d7e7cf285f679c100edc3f8",
+      "bytes": 3900
+    },
+    {
       "path": "FiniteAvalanches/Wilson/Lattice/SimpleWalk.lean",
       "sha256": "dcc86542d830844b1356f921f7073c4e7ffa19d17f8fdfd896a0af3ca88d2e61",
       "code_sha256": "56cd4e6d303a0f3e2a159eb5879553b19015e40f6a461f7c114ff6998a479ee6",
       "bytes": 3603
+    },
+    {
+      "path": "FiniteAvalanches/Wilson/Lattice/StackHistoryComposition.lean",
+      "sha256": "dfbb9aa4acba8c289331e934f882f4f8b5d9a250a1efac0958a90b6e17099b87",
+      "code_sha256": "501e576a7b730a653c028751cbba2eb1cefcda4300fc8e4ec2ed4a441674af76",
+      "bytes": 3905
+    },
+    {
+      "path": "FiniteAvalanches/Wilson/Lattice/StackLaw.lean",
+      "sha256": "84c5179e29631d9d067f6e53a33da1aa010bf7a7951480514b74e8281e1492d0",
+      "code_sha256": "a8c9b80463a66cf2de48df5e7c5cade515f6d462ca7543fa39d3b210e4050970",
+      "bytes": 2430
+    },
+    {
+      "path": "FiniteAvalanches/Wilson/Lattice/StackPrefixIndependence.lean",
+      "sha256": "45513800ba148acd1254ae4034dd26917eaeea2de164fe0768bfe4fa1ad93c3b",
+      "code_sha256": "a17984e91b7e00d9389cbed384776306237c20e591d46f1a642d32dab2d03965",
+      "bytes": 6741
+    },
+    {
+      "path": "FiniteAvalanches/Wilson/Lattice/StackReadingLaw.lean",
+      "sha256": "5f1d88d277a26c188b320315027186d08d55cacb3c7a97ea1e2accc2c81e6497",
+      "code_sha256": "33fe249eadd9d4acefbbe3f5ac55b47ad08b119cbc70a3510859cfa5000c9c5f",
+      "bytes": 8548
+    },
+    {
+      "path": "FiniteAvalanches/Wilson/Lattice/StackSamplerStep.lean",
+      "sha256": "af05e7a56f03518a5b43f7397456e049e4b928ee21f44c935d36a0b39d9b7b32",
+      "code_sha256": "b8bad272619d086ad1f8d9fba500485add65334e53e9fd7c60ea6920a5ad7a61",
+      "bytes": 1748
+    },
+    {
+      "path": "FiniteAvalanches/Wilson/Lattice/StackWalkLaw.lean",
+      "sha256": "dddea2fbbb9a51a6296120a9112bfd109532529757745921cb747960a3c37536",
+      "code_sha256": "065c4f8850c215321edd9d04fd941759a9328ba7486754dfd5d09e2223222596",
+      "bytes": 2753
     },
     {
       "path": "FiniteAvalanches/Wilson/Lattice/StoppedHistoryContainment.lean",
@@ -5054,10 +7772,40 @@
       "bytes": 5336
     },
     {
+      "path": "FiniteAvalanches/Wilson/Lattice/StoppedHistoryEvents.lean",
+      "sha256": "998b8822eb33e815bdb8aa9d50214142c846b49abfa742428ab7e0a7080f3455",
+      "code_sha256": "d9f789fe725043e8c506692b297f5c55e2728f6f2eb5a89ce1dcd4e45a5c4012",
+      "bytes": 4124
+    },
+    {
       "path": "FiniteAvalanches/Wilson/Lattice/StoppedHistoryLocalization.lean",
       "sha256": "4049629590ebc68451673da2c26b580cb72f8b0f4927384234a89586b24a5e2f",
       "code_sha256": "595ffa6814cc892f8cb5b5ced4a64682aafc42370a37e80438431ad146cd606d",
       "bytes": 4989
+    },
+    {
+      "path": "FiniteAvalanches/Wilson/Lattice/StoppedStackReading.lean",
+      "sha256": "f2b39c5d3bca510736f401019d99fe5a935e092eecb6b62e5bec1bbafcebb762",
+      "code_sha256": "b246d2d13e23a7607efb79801908c175fd58efedfef7730f03b4ed59a3bd6d2f",
+      "bytes": 4600
+    },
+    {
+      "path": "FiniteAvalanches/Wilson/Lattice/StoppedStackTrace.lean",
+      "sha256": "e3c55e945f5122d903697e86cf11aa15a92670c96610b392570032615c8b357b",
+      "code_sha256": "4463d2d83fe6e2a8dd8ede985e96e2bf43c6974f99ca052427669f25d93235d4",
+      "bytes": 4134
+    },
+    {
+      "path": "FiniteAvalanches/Wilson/Lattice/StoppingStackHistory.lean",
+      "sha256": "ae0c0116c1ea841a82550ba7bde42aa93da18841d350ba5776204b983d6bae2c",
+      "code_sha256": "3e301aebbc3fbc47ad4e0ee2683ffc995187cfb259ea97414d165b3184ffb238",
+      "bytes": 4281
+    },
+    {
+      "path": "FiniteAvalanches/Wilson/Lattice/TerminalHistoryRealization.lean",
+      "sha256": "895cd065e342047fc92f6be5791f8ed821ca76916dfcc33f0a8231767d97acd3",
+      "code_sha256": "8a3d42779b29e1252362bedccbcae6abfa2d92d1ca6817a8fc5ac8c661562a1a",
+      "bytes": 1974
     },
     {
       "path": "FiniteAvalanches/Wilson/Lattice/TranslationColorLaw.lean",
@@ -5096,10 +7844,340 @@
       "bytes": 6295
     },
     {
+      "path": "FiniteAvalanches/Wilson/Lattice/WiredActiveStackCoupling.lean",
+      "sha256": "80df5ca34cf3fc1e6b7db82f75c042f9fd8d899e8c50e5cfb75346c083de8d7d",
+      "code_sha256": "51e34fd321ee4d0d4247587aed666d415d9f8fead36dd42bfddcc87a20a411b9",
+      "bytes": 3410
+    },
+    {
+      "path": "FiniteAvalanches/Wilson/Lattice/WiredActiveStackLaw.lean",
+      "sha256": "8bd72f61a8585ab6fc72dd1c7de240fda688ed3b3c0bb92ee4160873d5e6feaa",
+      "code_sha256": "06d5e6fa406372d1737bdd67255fb4c3e4dae4a4a881a508bdd1fbaebeb11e85",
+      "bytes": 4281
+    },
+    {
+      "path": "FiniteAvalanches/Wilson/Lattice/WiredAcyclicLimit.lean",
+      "sha256": "0fc6b56265f4fc93227eb70bf3a532ebcab397fb2be16bc172f78ebcf25af866",
+      "code_sha256": "4f371ecfb4a1931465f37fdf422c8325d81d52896dc6e25b485e3aa7054b7a5b",
+      "bytes": 3954
+    },
+    {
+      "path": "FiniteAvalanches/Wilson/Lattice/WiredArrowComponents.lean",
+      "sha256": "bbb7be249eeff8770c0e46feff2d6603b7ce45a0dc5a93f4d26b811eeac8a81c",
+      "code_sha256": "ecd5281b16f38e06acaa72f8ba38fbe9a804fd2d15dcc986849f358520f06b24",
+      "bytes": 3545
+    },
+    {
+      "path": "FiniteAvalanches/Wilson/Lattice/WiredArrowEquiv.lean",
+      "sha256": "42f4ddbad2c01b5827efe5de716c1feff3465dc9d6fa225ea3316073bae80c7b",
+      "code_sha256": "f9d46de25c05c2d25e640efab9288518d97f63986e571c5ea1f76580895f0c9d",
+      "bytes": 2752
+    },
+    {
+      "path": "FiniteAvalanches/Wilson/Lattice/WiredArrowForest.lean",
+      "sha256": "682ef37cedde5fa961994b6e28ecba8af76029902a6c1a7980c78557fa8aa0d1",
+      "code_sha256": "9a8f39b60c5894247916a46c5b42e12e79f15ae58bac9f004f146fa84e3da425",
+      "bytes": 2713
+    },
+    {
+      "path": "FiniteAvalanches/Wilson/Lattice/WiredArrowUniqueness.lean",
+      "sha256": "0d0fe221c61d03ec7bfa17cf86226596989431d6c0a9656ae1021b62a60df278",
+      "code_sha256": "95eac9c6d446476fcdd7ade62e8fb22cec1bde16dda22afdbf0d19bf1b475eef",
+      "bytes": 3031
+    },
+    {
       "path": "FiniteAvalanches/Wilson/Lattice/WiredBoxCopies.lean",
       "sha256": "4b232458e57d67b15f13272c9d048c856da5fca996c636b1118fbb7e53247f7c",
       "code_sha256": "02daea9e40ad763eeb550f2da97929555d4fb5bca1a9fad7b84324eba6c4cef7",
       "bytes": 6046
+    },
+    {
+      "path": "FiniteAvalanches/Wilson/Lattice/WiredBranchCoupling.lean",
+      "sha256": "1b3a9e20d72ad401963a0f21a57e6f75d9c3110c504b022d9c0703600831565b",
+      "code_sha256": "0d29bfc03083f7eb9fcb9209cfc51be85b741aac365c43de6857d2e78c91f15a",
+      "bytes": 9026
+    },
+    {
+      "path": "FiniteAvalanches/Wilson/Lattice/WiredBranchHorizon.lean",
+      "sha256": "ad691143587b18e1567dcc6359a8b6b5986236ab58eeec4e0c9b5ebdc604585e",
+      "code_sha256": "52de92e2da1657f9115d858145e4398b791a236511f2b4eb92461719888d6035",
+      "bytes": 1247
+    },
+    {
+      "path": "FiniteAvalanches/Wilson/Lattice/WiredConflictingColors.lean",
+      "sha256": "3cace3105936db7530270a6052feddffb3095a3ef10b6494c5911a8337f94d28",
+      "code_sha256": "d58959ab4d6f8dd94190706bf458edbba2e1b3db6aede7f8aca974e3045562fb",
+      "bytes": 5008
+    },
+    {
+      "path": "FiniteAvalanches/Wilson/Lattice/WiredCyclePoppingLaw.lean",
+      "sha256": "8c604127454f60d5521a399269f585edc554bd025f2481aa998c5426fb3425cd",
+      "code_sha256": "236fa7c37d8d2f12e3f776cc65b1b71e5b4198ee186d924122db007f856fb32c",
+      "bytes": 7540
+    },
+    {
+      "path": "FiniteAvalanches/Wilson/Lattice/WiredCylinderLaw.lean",
+      "sha256": "703468188f06c1eefa35f7e706d9458d087c4a9ec206e0dad4b1d5ca327d27d9",
+      "code_sha256": "ba94e6368610be806b7c9296bf7d10957a36a44a10f19fbececf22de5ea12c1a",
+      "bytes": 3341
+    },
+    {
+      "path": "FiniteAvalanches/Wilson/Lattice/WiredCylinderLimit.lean",
+      "sha256": "74ff1c3b426fb7b4a3a98be779b3f1699af1b148cdd9cef97f41eba581532862",
+      "code_sha256": "a19f07119951e94db1c0432311367c6cbff9b94ae08467269d22973ab1acf32b",
+      "bytes": 2585
+    },
+    {
+      "path": "FiniteAvalanches/Wilson/Lattice/WiredCylinderRootColors.lean",
+      "sha256": "043bc0bd89bd64b2ccfb85a4851a91ffd02342d81ead13f734f2189d8c513315",
+      "code_sha256": "cd6838b26137cfec76a7efe631fb5c26d9057e7802950bdacd2b0a3d0504147f",
+      "bytes": 4552
+    },
+    {
+      "path": "FiniteAvalanches/Wilson/Lattice/WiredDualCopies.lean",
+      "sha256": "20f0aa468c0404d911e340b872833a774627e2e4544d3901d09b2c9a1e5b3ec2",
+      "code_sha256": "14258642e50649d4bbb55cefbea87d37a7fb50569c761b4c7afcc1afdbb88825",
+      "bytes": 1676
+    },
+    {
+      "path": "FiniteAvalanches/Wilson/Lattice/WiredDualFaceAvoidBoundary.lean",
+      "sha256": "2d3d489ff50359da144bd0a599be3c08dc7400678d81ab4a91448ef8be04e1cf",
+      "code_sha256": "c45a68019681c1b7452645486f3610a93507a60d49f22cb1eda177bd74529a35",
+      "bytes": 7560
+    },
+    {
+      "path": "FiniteAvalanches/Wilson/Lattice/WiredDualFaceBoundaryHistoryEvent.lean",
+      "sha256": "7b1d8d9cc3444d93ba949d75c5894f077e3a2aff76658cc8c15de675438face3",
+      "code_sha256": "7a7c5411e8580f1786f72329626874f27d73e8358e9ce28cbb968beb68726007",
+      "bytes": 5010
+    },
+    {
+      "path": "FiniteAvalanches/Wilson/Lattice/WiredDualFaceBoundaryRowLimit.lean",
+      "sha256": "30f60e6a48af3efc28ea9d6b1da755d7a56379a45cf87578b15e4f5ea2f4fd77",
+      "code_sha256": "d3a39a5d65efa5f6d0cbbacea0dc166214bafeef9d245703e38acec4e0013d09",
+      "bytes": 9236
+    },
+    {
+      "path": "FiniteAvalanches/Wilson/Lattice/WiredDualFaceBoundaryTermination.lean",
+      "sha256": "3283ac719e8f08b2c9394f48ff9aaa50cd6e9ccfdfd872b47bd9e95d097dfc01",
+      "code_sha256": "d870435e18202faf22498449833983734b976b1db28ee64a65e1d41774945857",
+      "bytes": 2301
+    },
+    {
+      "path": "FiniteAvalanches/Wilson/Lattice/WiredDualFaceBox.lean",
+      "sha256": "0989ba0f54e7c73b291a2249c9fe9555222b883b95e8df9c16d3e64b731c76d8",
+      "code_sha256": "e151fb1d0fdec60e4ed4044596cf9e5dc40ae615c90fe2ff537ad8fd3ec5d2bf",
+      "bytes": 4294
+    },
+    {
+      "path": "FiniteAvalanches/Wilson/Lattice/WiredDualFaceBranchCoupling.lean",
+      "sha256": "04f5b09edcefb8b9f9acd01c4fdebc63c612ab2532f7bd5b4be1ca2ce5b995d9",
+      "code_sha256": "95d3502161b3d4b2b1c53433f203014c4defe43df6c81663898506fa25b1cbf6",
+      "bytes": 9714
+    },
+    {
+      "path": "FiniteAvalanches/Wilson/Lattice/WiredDualFaceCompletedHistoryLaw.lean",
+      "sha256": "e4d2c6e39931525113d1c14d62780d25fc0f994a8e9e50f9c9c0ca59386d677e",
+      "code_sha256": "07719e350469b47799364ad199493a8a01f86f2b7b28eee3d45dda3b446caebd",
+      "bytes": 7709
+    },
+    {
+      "path": "FiniteAvalanches/Wilson/Lattice/WiredDualFaceConnected.lean",
+      "sha256": "bb336db69a844a2a50f9a0f86b697487a3663e4a965fd9a76839b180df13e59a",
+      "code_sha256": "a7a7ea9c982a836d05520531cb6f75b6a09127c0113055a82089b00c285204cd",
+      "bytes": 4170
+    },
+    {
+      "path": "FiniteAvalanches/Wilson/Lattice/WiredDualFaceCorners.lean",
+      "sha256": "f3d87fd4b36bd225abddfe829638d0d8737c90eee849e0a6f78011eb416e281e",
+      "code_sha256": "88538126fe246852735fe816cae964228b3e2b5e9b2bfa86a472b42a1ab24726",
+      "bytes": 5081
+    },
+    {
+      "path": "FiniteAvalanches/Wilson/Lattice/WiredDualFaceCouplingEvent.lean",
+      "sha256": "d3ebe55f23279ed41d94d0b4eb556ab1bd40d6b3ec324ddd2e9a26875d3e3202",
+      "code_sha256": "73e3d20350f50c03010e3c34ea2a430509455524861775e630327235e757ded7",
+      "bytes": 4962
+    },
+    {
+      "path": "FiniteAvalanches/Wilson/Lattice/WiredDualFaceCutParity.lean",
+      "sha256": "58ed7caa5d520b1a1867e9c35f5186d1af32c3f36e224623281e78234d099e7a",
+      "code_sha256": "2b664c6f910a6bd24e67bf8d8ef95b37325fb2a8ebfcb10c727e13884e071ec7",
+      "bytes": 6247
+    },
+    {
+      "path": "FiniteAvalanches/Wilson/Lattice/WiredDualFaceCylinderConvergence.lean",
+      "sha256": "81446e8b79d8e6e817b079599a477fe708cfed41da2bd61ebe515d25736cc36d",
+      "code_sha256": "2361dd7dd93397520290c624bcead237d0b68c595a5c8f26e21bb0316d3668f1",
+      "bytes": 5257
+    },
+    {
+      "path": "FiniteAvalanches/Wilson/Lattice/WiredDualFaceEdges.lean",
+      "sha256": "52452eace5a361635cb5b97fc05db07653b465a3198a54cc9144615ea5630605",
+      "code_sha256": "9c7bd7f2f4244a3f85d4bbdfd6bbda1685318e62f3b71f994597ec1e796d9377",
+      "bytes": 3044
+    },
+    {
+      "path": "FiniteAvalanches/Wilson/Lattice/WiredDualFaceEuler.lean",
+      "sha256": "88675ab4cee45f2b29f44a32469a25f22f4f97eb5c3ad9383d56eeb0056ba1f4",
+      "code_sha256": "a582ed2b87fab353899236b2a98066cc07a1809e67db6ccff87f508fc2589431",
+      "bytes": 6387
+    },
+    {
+      "path": "FiniteAvalanches/Wilson/Lattice/WiredDualFaceFiniteLaw.lean",
+      "sha256": "fcf203e9c31d0be22c41fbaa4e07c3d0c84cf43005bdc80b394baf7491095f97",
+      "code_sha256": "822d4b59707decb45379fd6693fd52d52ab7697a8d031df9e7ce2ced666a6f68",
+      "bytes": 3085
+    },
+    {
+      "path": "FiniteAvalanches/Wilson/Lattice/WiredDualFaceGraph.lean",
+      "sha256": "3b7045046c637e7d945d951c58e5bf6e1f4a250f5a4b047f8b9e6d5a33705b18",
+      "code_sha256": "58870debe2b27ef890f0345bf4fe0fc2d710ca5f9311373113726f93ebcdcc4a",
+      "bytes": 5705
+    },
+    {
+      "path": "FiniteAvalanches/Wilson/Lattice/WiredDualFaceHistoryEdges.lean",
+      "sha256": "6546716362fd14a67734da6f33ee3b97a1f21e6f792083339bf62b40b51152df",
+      "code_sha256": "2a31165761c6b2880a5fadddc10671dcb8ddee77e88750f0fa885fb11b691d6e",
+      "bytes": 3666
+    },
+    {
+      "path": "FiniteAvalanches/Wilson/Lattice/WiredDualFaceHistoryLimit.lean",
+      "sha256": "d655fd928fe7a38947819902701fd625f7e0f5fd38548ff0f525700dd2d60d7e",
+      "code_sha256": "18d281d3600cea2fe80045616fc39d60f31d2823a0a832d51ac24b763daf53d3",
+      "bytes": 4721
+    },
+    {
+      "path": "FiniteAvalanches/Wilson/Lattice/WiredDualFaceHistoryRelabel.lean",
+      "sha256": "2f222259efb7aeae13ad887f00ed815216a38019d288eec30656b6a032f8e7c4",
+      "code_sha256": "ebcb9000cf260a7513f12c872947e43a029e0976f19d7efa3427415ec62be067",
+      "bytes": 6526
+    },
+    {
+      "path": "FiniteAvalanches/Wilson/Lattice/WiredDualFaceIncident.lean",
+      "sha256": "9db793ebf4ddad07a3b56697c90de3be53cd8c30bf70690acb192fda6bd8ba16",
+      "code_sha256": "fa1040e30374bfa5f237bf0f2e784bdb79386d4d84fb0b9bf8d50b75090da71b",
+      "bytes": 6992
+    },
+    {
+      "path": "FiniteAvalanches/Wilson/Lattice/WiredDualFaceInnerBox.lean",
+      "sha256": "1ecdc346e6225416b7b3a07c546ffe1929e459db1d0aa4e1c509a964725e6758",
+      "code_sha256": "c9fc722f9e2cedf6a200a271fa38ddea385a81eeb75d00a28b4ab8120aca88e9",
+      "bytes": 4092
+    },
+    {
+      "path": "FiniteAvalanches/Wilson/Lattice/WiredDualFaceLaw.lean",
+      "sha256": "821f3ee9194d55e9ed5cfc9ada6db0d2b50a80e1b18955f3718ec40a133cff62",
+      "code_sha256": "c658553a1948dc56e2b7346efdebc9ffd363a76bbad16c83d733b48c653efd4c",
+      "bytes": 3317
+    },
+    {
+      "path": "FiniteAvalanches/Wilson/Lattice/WiredDualFaceLimit.lean",
+      "sha256": "9c90fc0b8edbcfec2ee2980af61f78761184fff538dd3f29a30034e3dc43b140",
+      "code_sha256": "25324f76a9ef6be550852e21d7853378b270996d298b6237513e263afee7471e",
+      "bytes": 1666
+    },
+    {
+      "path": "FiniteAvalanches/Wilson/Lattice/WiredDualFaceObservationEvent.lean",
+      "sha256": "9d332c92f9c2fdfa7e0f39465b7e79896414ee241d24c4aa5a50c05778ab3d6b",
+      "code_sha256": "f171c1fe1049ec47af1fddbfaab28a7c0e0c8700b42cc6df816f005d736f5ecd",
+      "bytes": 5464
+    },
+    {
+      "path": "FiniteAvalanches/Wilson/Lattice/WiredDualFaceObservationProbability.lean",
+      "sha256": "6f0f60df516b286f1a40c9a5fb11036f9a91f29d5322359e6506f0fca588b4f2",
+      "code_sha256": "0499e3009a922fe9990f1a383f5c38a5d740edb2766db5f6b771b096f53e8ade",
+      "bytes": 5939
+    },
+    {
+      "path": "FiniteAvalanches/Wilson/Lattice/WiredDualFaceObservations.lean",
+      "sha256": "61ba2dac45ab2777f666ba0288e50ee504998273635a828ec9eb110cc9409e16",
+      "code_sha256": "2f92dea5418985c9134d5883743d7895e7cad52461d0b90a5304b822f8f6f6d0",
+      "bytes": 2346
+    },
+    {
+      "path": "FiniteAvalanches/Wilson/Lattice/WiredDualFaceObservedEdges.lean",
+      "sha256": "6d03ba3df6b5629c4b41badd3c27c8bb9b0a2eea367c6c7e03379f2fa25804b0",
+      "code_sha256": "8748602c8ad1fef50f2a40c2b72357d4996ad263ea9705ccf18091942fbc9f95",
+      "bytes": 4802
+    },
+    {
+      "path": "FiniteAvalanches/Wilson/Lattice/WiredDualFaceSafeIncident.lean",
+      "sha256": "234bc1545207277cac5a521b02cb02c34b2860c8bd795b0cabfa1f1db8004052",
+      "code_sha256": "6f27bd7864e4df653ec03869c9c1477267ccea0839fb470994b58fd26a79f392",
+      "bytes": 10301
+    },
+    {
+      "path": "FiniteAvalanches/Wilson/Lattice/WiredDualFaceSafeRow.lean",
+      "sha256": "687158a6d684dc154af8b4e596a2ec239ebbde10ff3996bc77a75b9272f2482f",
+      "code_sha256": "d3e51357775772e3b32654b29c08a80d60336e6cb9d6d32f07522a5a03e73946",
+      "bytes": 6336
+    },
+    {
+      "path": "FiniteAvalanches/Wilson/Lattice/WiredDualFaceSafeTerminal.lean",
+      "sha256": "5341cfbed166492418276c4e18fc50157cee209d844ce223ecc7df349454e381",
+      "code_sha256": "6920858fc5899c36d08304f97728f143decf707264008dd7dcfe8c7b6cc8a235",
+      "bytes": 8729
+    },
+    {
+      "path": "FiniteAvalanches/Wilson/Lattice/WiredDualFaceSelectedGraph.lean",
+      "sha256": "b702d1f883873814e312e740f1b2688c6e3a95e75a45202bf46c31ec198a8959",
+      "code_sha256": "2f648c1e0b4ed82eb54bd56533043c7afaa086ba9cfc147546cc19427f45fca9",
+      "bytes": 5800
+    },
+    {
+      "path": "FiniteAvalanches/Wilson/Lattice/WiredDualFaceStacks.lean",
+      "sha256": "e3b548e7f68119fcf9963fdeb803ec12feebe13697792c7b1effba9622100da9",
+      "code_sha256": "363751a1a8a3f41089a2eb80f7d06fca756440d19d9f15de7906248bc43fae49",
+      "bytes": 6146
+    },
+    {
+      "path": "FiniteAvalanches/Wilson/Lattice/WiredDualFaceStoppedExploration.lean",
+      "sha256": "e48a0c61bc5fdd577096feb959ec20650b53ce3c48d78337f81ceb2bcc1c32a3",
+      "code_sha256": "91400ba60decc25ebddf866142f4893b3360d81b7abb702f8115956e7074e6d5",
+      "bytes": 9903
+    },
+    {
+      "path": "FiniteAvalanches/Wilson/Lattice/WiredDualFaceTerminalHistory.lean",
+      "sha256": "df8755b15567f197b793a0de0aa4acab16008104d95bce6579b2d3753bd188ae",
+      "code_sha256": "d1c13f0b1c8a319572222e8e5e410368690491d532f48f743f85a97f262e90f8",
+      "bytes": 4062
+    },
+    {
+      "path": "FiniteAvalanches/Wilson/Lattice/WiredDualFaceTerminalHistoryEdges.lean",
+      "sha256": "259f6787af49ca1b5539d724e2686f540c2cb68bdfa030a5389c5d86c961c458",
+      "code_sha256": "1f9ef9742632f4e01878c8430fff84bdf9e1b355153e9a4f5f676a038e7527fc",
+      "bytes": 5708
+    },
+    {
+      "path": "FiniteAvalanches/Wilson/Lattice/WiredDualFaceWeakLimit.lean",
+      "sha256": "c2f56075c5e677c8e8ddd0165a69646864db5edd53a5ef27cd33775d21eb8bbe",
+      "code_sha256": "fb02d5f822418310bd2b90d17fec1486eb0f99e6185871eb357132a2f30210b2",
+      "bytes": 1840
+    },
+    {
+      "path": "FiniteAvalanches/Wilson/Lattice/WiredDualFaceWilsonLaw.lean",
+      "sha256": "b7ddf4039dc798a692327709c613f90424c31131f5ff093f64fbbe7483dc32ed",
+      "code_sha256": "24fb6dde59af329efadd03c06f782df0ca5ed66862c6e63379aa50ff723ef5fd",
+      "bytes": 2866
+    },
+    {
+      "path": "FiniteAvalanches/Wilson/Lattice/WiredDualFaceWordCoupling.lean",
+      "sha256": "00de773e98c5bea68b73be3a0554679e7bbeb1318ed57b4e426e686a19d3aeb6",
+      "code_sha256": "8f369132336aa23f7e6a364e7076c2aea444bf2f832d5a60fac006626faf2302",
+      "bytes": 4302
+    },
+    {
+      "path": "FiniteAvalanches/Wilson/Lattice/WiredEdgeColorConsistency.lean",
+      "sha256": "2e4b8483067bd8b4e2435de9ff51df9240591fdda45312fa88d9635fd4890a7d",
+      "code_sha256": "7ae1ef20abda2cce01f0d48b56ffbc57154ac4c167ce7767b617fb0fa4de37d1",
+      "bytes": 2213
+    },
+    {
+      "path": "FiniteAvalanches/Wilson/Lattice/WiredFiniteAcyclic.lean",
+      "sha256": "f63ea7dd6ab76b1f4186d7f26570b7a4e6fb2cef36f68dc5cca2fc950ffd1e69",
+      "code_sha256": "ad8ca4c54771e97875de57076dea60abc72f87948ee3d5c4cd0a4329d2549016",
+      "bytes": 3834
     },
     {
       "path": "FiniteAvalanches/Wilson/Lattice/WiredForestLaw.lean",
@@ -5108,10 +8186,208 @@
       "bytes": 6710
     },
     {
+      "path": "FiniteAvalanches/Wilson/Lattice/WiredForestOrientation.lean",
+      "sha256": "f14138d2640701487098af39a6fde185b4744fa42f55ab8f3da89545fc1d096a",
+      "code_sha256": "391199758ae02792b5510fbfbb0bcaf89fe74dfe9921d2ea2b4dada2089fb570",
+      "bytes": 3996
+    },
+    {
+      "path": "FiniteAvalanches/Wilson/Lattice/WiredHistoryColors.lean",
+      "sha256": "368685c8a22db5c39c4cc2da8791e7fcc433d607b9d73e810adf106b4d2b24e9",
+      "code_sha256": "e220bca64d847bca240c2244a4e448ee7f6e2e25f828f3a20b0abbd5b7e5e8c2",
+      "bytes": 5178
+    },
+    {
+      "path": "FiniteAvalanches/Wilson/Lattice/WiredHistoryEdges.lean",
+      "sha256": "43ca7057fb816163b5848a8c9d5d35d777524dc6f4ee46bda0b03db3c0a11aaa",
+      "code_sha256": "bf5840c9b489c9e349992a56ca77d17b996ee0cae9c063830466d52f4ad6484a",
+      "bytes": 6297
+    },
+    {
+      "path": "FiniteAvalanches/Wilson/Lattice/WiredHistoryInteriorEdges.lean",
+      "sha256": "b03d9603e833d83b8b4abb40208ef6aaa6f9508b9f1900a90a38e167fcfcb62e",
+      "code_sha256": "ab415ad7bf292d0a3ac50fe146daa35adcb7c7979239930c257ba00d9e61db83",
+      "bytes": 4244
+    },
+    {
+      "path": "FiniteAvalanches/Wilson/Lattice/WiredJointCylinders.lean",
+      "sha256": "c9dd7f7d58fc4b1dc60c38e4ec02a52a02e60b28353d2d151418289089c8ae53",
+      "code_sha256": "abb755bea00009a8b905fa3a37822d2973db5a452fd9587a971282ad86c7eae5",
+      "bytes": 2895
+    },
+    {
+      "path": "FiniteAvalanches/Wilson/Lattice/WiredLawReduction.lean",
+      "sha256": "679e644e79741f1d479fc476522b9e27c97766fea8007f6c4a8a5c072a022fc9",
+      "code_sha256": "b67c3014b5023b66fe55ff42ce16aef67be2e09246f7704047f2bce857786a35",
+      "bytes": 3096
+    },
+    {
+      "path": "FiniteAvalanches/Wilson/Lattice/WiredLimitAcyclic.lean",
+      "sha256": "6af23a3f02a31cbc1d70e6b60b89fa489da31f0ae35391ec15ea464f1f3cbfea",
+      "code_sha256": "bdeccbd00b32fd7c248d773f9f1e9e744e1c492c641aa11d7349c04d49a38c63",
+      "bytes": 4125
+    },
+    {
+      "path": "FiniteAvalanches/Wilson/Lattice/WiredLimitConnected.lean",
+      "sha256": "a92b4968cb7593f9892f5ec9c65271dd31285b19d1147c7ced6b1c2917a4069e",
+      "code_sha256": "100eec972cca15a03da2c52d8222d0affd9acfa4bc548a15a2c777b05aad5917",
+      "bytes": 8978
+    },
+    {
+      "path": "FiniteAvalanches/Wilson/Lattice/WiredLimitDualDetourBox.lean",
+      "sha256": "7c4cd0d6280179ca624d671b8c98e438c8c216bb276311a734f887421ad200c8",
+      "code_sha256": "f8d5cc6d92afde0f26c5ff6d63e48923b824c7f8cac5da6a0a434cc5d3a4b59d",
+      "bytes": 2518
+    },
+    {
+      "path": "FiniteAvalanches/Wilson/Lattice/WiredLimitDualDetours.lean",
+      "sha256": "a6da965759c4049392daf6e8cf3e556bda3574d656f00228315eed9fca38f88c",
+      "code_sha256": "119bb09fbd2b5a62661fec40d5708fe5cd45aa70eb55bcfdb121957d97eb3f5c",
+      "bytes": 2281
+    },
+    {
+      "path": "FiniteAvalanches/Wilson/Lattice/WiredLimitDualTree.lean",
+      "sha256": "0a7641b732fdab88be29f8ccebd6847ad83006c1e2abffa6d41e7b13d1077c9d",
+      "code_sha256": "46a0cb71633c940b2d14808679fb7658d0c097aa2d9b1539662a3e00f0cdd883",
+      "bytes": 1224
+    },
+    {
+      "path": "FiniteAvalanches/Wilson/Lattice/WiredLimitInfiniteComponents.lean",
+      "sha256": "4436a048162cbda515e94cb7e5b7dccf37c5f147a9b054b79e67925375ed5be5",
+      "code_sha256": "1f3f09150d05e56fd93f3237f7ace3d04f6c70c0bd590a064400f349553d4a59",
+      "bytes": 1435
+    },
+    {
+      "path": "FiniteAvalanches/Wilson/Lattice/WiredObservationConvergence.lean",
+      "sha256": "06bf6aacba35f81781af7060c2d2f2b110bdb2b037665c49670fcda59b3c3e50",
+      "code_sha256": "a8e7156f2ce498daf82b1e87d071f1398092ab43b0b444891c3304258e88cfca",
+      "bytes": 3492
+    },
+    {
+      "path": "FiniteAvalanches/Wilson/Lattice/WiredObservationCoupling.lean",
+      "sha256": "55167b9afc5cda104f8035c9b94fccda2cf0cdf9d09d3836f08410fe97b1d101",
+      "code_sha256": "d9175c0f6ad74d698839e666ddb0954d71a3edcab4f9c80142f9b0a6b7eaec3b",
+      "bytes": 8218
+    },
+    {
+      "path": "FiniteAvalanches/Wilson/Lattice/WiredObservationGeometry.lean",
+      "sha256": "4276a7f67a6552df023fe8d069e1600292695230244c342c23b35681540a5602",
+      "code_sha256": "f7989a2b116a1cbbc83b8a1f2ad3fe878ecfa830e16468701ca90c534fbdc8bf",
+      "bytes": 2341
+    },
+    {
+      "path": "FiniteAvalanches/Wilson/Lattice/WiredObservationLaw.lean",
+      "sha256": "ea73b0210fac7f1f9f93fc3cb0fda27d43ef35acc21059c2a4d991a2a79d7c26",
+      "code_sha256": "01f03a61b77e2d15aea67557c1eb77a39977335b56c1b0f5daa7403d94d4297c",
+      "bytes": 8540
+    },
+    {
+      "path": "FiniteAvalanches/Wilson/Lattice/WiredObservationSampler.lean",
+      "sha256": "66af42271c861d102f8ad967fe5bbc4be51cb230d6fe3eb632150148232630d3",
+      "code_sha256": "3bd14a49d6ea6aff3f5489c9a2f5957356ade1c4048ba4075fe133330158ad62",
+      "bytes": 6047
+    },
+    {
+      "path": "FiniteAvalanches/Wilson/Lattice/WiredOriginalCopies.lean",
+      "sha256": "54e961941014897df75053e9a53770f3b97ddf2e3a4672c39f8385160c8d616d",
+      "code_sha256": "326f9e25013e168377167cbdc5693a08b572c577a2300b43044b9568282c378f",
+      "bytes": 6478
+    },
+    {
+      "path": "FiniteAvalanches/Wilson/Lattice/WiredPrefixForestLaw.lean",
+      "sha256": "1d433355d1b37eb3440950d3b7486dd6593327c3533237c58c9b202f9fe0dd5e",
+      "code_sha256": "624bb1c7d701de272d4f92f6f2f89636cb7f4162f05aef869dbd36cd4cdb982b",
+      "bytes": 6506
+    },
+    {
+      "path": "FiniteAvalanches/Wilson/Lattice/WiredRootSeparation.lean",
+      "sha256": "739f1e62b51c36ae47d40b606b6d82e5731cc57bb23852fa31cf73ad30d5ed29",
+      "code_sha256": "1564432c88b9c4124b0d9c5d033c2384f1b79e823e5f56b3c89ae743d954e108",
+      "bytes": 3317
+    },
+    {
+      "path": "FiniteAvalanches/Wilson/Lattice/WiredRootSeparationLimit.lean",
+      "sha256": "d32fb363a2abb04293d6335c2a659cd2acf4f92c5313c955178fdcbef44758f5",
+      "code_sha256": "47a0a259160d7ae646695fb3b21c1bbf5632b804ae89dcae74a66ed865340cfe",
+      "bytes": 5700
+    },
+    {
+      "path": "FiniteAvalanches/Wilson/Lattice/WiredRootedColorReduction.lean",
+      "sha256": "ebb3b7de885878b6a4fd0baa2409312d14f3d14331da8cbef1fd02ac3e378185",
+      "code_sha256": "ba4e10252d42c25c59fe987611e697d4e27f2836ceb978a32999868c0eead44c",
+      "bytes": 2975
+    },
+    {
+      "path": "FiniteAvalanches/Wilson/Lattice/WiredRootedSupport.lean",
+      "sha256": "ad211a6cee0f0743abec47ee6b0a01000a21694f52d2f5620bc940ddd133716a",
+      "code_sha256": "2109338cdf5a705530497e131c231fe5398b80d5fcac9c3af0abdfabdbe823d2",
+      "bytes": 3701
+    },
+    {
+      "path": "FiniteAvalanches/Wilson/Lattice/WiredRowRealization.lean",
+      "sha256": "12d315599db085262bc570d3cec963f6484839e27765d88bbe41d054e002476e",
+      "code_sha256": "d61fd7c4b0a40e9c1dbb2caba7ea8f96e5b53d298110eecbd899c31a6ff6ee36",
+      "bytes": 3930
+    },
+    {
+      "path": "FiniteAvalanches/Wilson/Lattice/WiredSamplerColors.lean",
+      "sha256": "1a7d33eb70a8364cec6d736b40e289f97de8320ea6a980fdc1c46d65287247b2",
+      "code_sha256": "11029ea012fff4917edb33268da8a1273ac3855e3b24625ad2291c011f355682",
+      "bytes": 10384
+    },
+    {
+      "path": "FiniteAvalanches/Wilson/Lattice/WiredSamplerEdges.lean",
+      "sha256": "8b3121d20657857de74b7916d9eb5845710cc8aab2499151c0ca8f195a2edfae",
+      "code_sha256": "d37f59714cc84d1857d12dff9f7dcca5591298bce776abbaa6804dac4e3c87e9",
+      "bytes": 5304
+    },
+    {
+      "path": "FiniteAvalanches/Wilson/Lattice/WiredSingleRootCyclePopping.lean",
+      "sha256": "a4ec949a09daa644831e294da0398da315c8a30a14668d7b88834f63cdf69e05",
+      "code_sha256": "dc64372b4f3318c5092cc8db6d67217c31a38153426af94b3af1eb2b9f805338",
+      "bytes": 2825
+    },
+    {
+      "path": "FiniteAvalanches/Wilson/Lattice/WiredStack.lean",
+      "sha256": "24870a2a0be3c7ff4525d2ca4971ca220ba0141d7195c7689f3828988c7bf925",
+      "code_sha256": "d00520624cea3fa909fa62c9a042e5bd723efdcba7e5df521445b4f61eb45b04",
+      "bytes": 4401
+    },
+    {
+      "path": "FiniteAvalanches/Wilson/Lattice/WiredStackCopies.lean",
+      "sha256": "8ecf455265b3afb91f605e3dc9f598be9d612f599616d992d7cb1668c6051406",
+      "code_sha256": "a577f2219468732c7fdfa6e0d12043aa25394f8fc4972700e1b15ae3b9f55f97",
+      "bytes": 3255
+    },
+    {
+      "path": "FiniteAvalanches/Wilson/Lattice/WiredStackExplorationLaw.lean",
+      "sha256": "0b8b04f7e629e5fcbe6d41a59b4bf8956008700fda7182ef80889b0824ba70e8",
+      "code_sha256": "97b6e2396bc423025b0550dd490f120649928063aa3d477b12ea6dfd926a9324",
+      "bytes": 4636
+    },
+    {
+      "path": "FiniteAvalanches/Wilson/Lattice/WiredStackExploreCoupling.lean",
+      "sha256": "432b72f8ebff3e186c4d53dbab5fb48b50fbe579c0d272333ce1d5c399cb2f6a",
+      "code_sha256": "f2ba98962f2eb21a42c507f8321e3c29ec1141f81dab4e85b107dbc5c0023931",
+      "bytes": 4105
+    },
+    {
+      "path": "FiniteAvalanches/Wilson/Lattice/WiredWordCoupling.lean",
+      "sha256": "60d389ad57584cc2c34cca5f1287e5782a023638a3cd046d2f8410ba34fc9474",
+      "code_sha256": "2c52df08e9a03d9cee12c6c31834b387a2d190f57d16c1217787da5dee3282a2",
+      "bytes": 4299
+    },
+    {
       "path": "FiniteAvalanches/Wilson/LoopErasure.lean",
       "sha256": "966f4502bf694c620a16b08b62debf2dd908833e38b9029327404803865eba43",
       "code_sha256": "0f9ecaa07b6750a0e4228f0810ce0fa923d54be51207ff1c072a79da0e719cc9",
       "bytes": 3880
+    },
+    {
+      "path": "FiniteAvalanches/Wilson/LoopErasureComposition.lean",
+      "sha256": "70af56f26c7e9684cdc3cc597fdc20523ef24481141c89613ff7807d7f365968",
+      "code_sha256": "764c9dab1901b4592f6f8888e0ee8e9853ab6bf527f8258c29dad473e6bafa69",
+      "bytes": 8275
     },
     {
       "path": "FiniteAvalanches/Wilson/Markov.lean",
@@ -5189,13 +8465,13 @@
       "path": "FiniteAvalanchesCurrent/ArcMomentExpectations.lean",
       "sha256": "6ba682bb31a9010794074fd520963aa5bbd7ec0b5bae6df3efc0bae70ec68081",
       "code_sha256": "d1f1b2d4e334429dca0a2a2c365e0c75ab3ef9f0114d7c0fc4b89ceb06486108",
-      "bytes": 6153
+      "bytes": 6224
     },
     {
       "path": "FiniteAvalanchesCurrent/ArcMomentV7.lean",
       "sha256": "68010ccc79a7e089b3e25e2126670a2f3f1082ff79df9908ac092734dde7b474",
       "code_sha256": "c2dbfee458868687cd10284a508cfba95ab2c7dc2aecf49af56f035c1f32f288",
-      "bytes": 5919
+      "bytes": 5990
     },
     {
       "path": "FiniteAvalanchesCurrent/BoundaryMeanApplication.lean",
@@ -5261,13 +8537,13 @@
       "path": "FiniteAvalanchesCurrent/SplitEstimateExpectations.lean",
       "sha256": "d728d86bfb1a3e29193abfc6e1d1aff03e98fb2abba92fabdc37b5432a35acf5",
       "code_sha256": "b8fff8e8ad3c117b755d374311f1ead1f5f0b09167d03a77d49d1774e027af8f",
-      "bytes": 5549
+      "bytes": 5625
     },
     {
       "path": "FiniteAvalanchesCurrent/SplitEstimateV1.lean",
       "sha256": "e488ca5b1dfeb7b0e3e9863bce41d29e1315982f7899ced527d8d0b50cf76c1c",
       "code_sha256": "57478ca5673e6bb1492ce758ca3dbf4395899bff79920bcf792cf39b4280ddc9",
-      "bytes": 4690
+      "bytes": 4766
     },
     {
       "path": "FiniteAvalanchesCurrentRegisteredPastSelectedMain.lean",
@@ -5370,23 +8646,12 @@
   "main_external_inputs": [
     "FiniteAvalanches.External.BarlowMasson2011.adjacent_ust_path_euclidean_tail",
     "FiniteAvalanches.External.SandpileLimit.exists_infiniteVolumeLaw",
-    "FiniteAvalanches.External.finite_plane_dual_bond_cycle",
-    "FiniteAvalanches.External.finite_plane_dual_connected",
     "FiniteAvalanches.External.finite_plane_geometric_dual",
-    "FiniteAvalanches.External.finite_plane_tree_complement",
     "FiniteAvalanches.External.finite_plane_two_pole_topology",
-    "FiniteAvalanches.External.kenyonWilson_pairingGroves_resistanceMinor",
     "FiniteAvalanches.External.lawler_limic_beurling_srw_Z2",
     "FiniteAvalanches.External.outer_face_simple_path_disk_redrawing",
     "FiniteAvalanches.External.parametrized_plane_arc_straightening",
-    "FiniteAvalanches.External.plane_edge_chart_incidence",
-    "FiniteAvalanches.External.plane_punctured_chart_face_transport",
-    "FiniteAvalanches.External.plane_punctured_face_transport",
-    "FiniteAvalanches.External.plane_vertex_face_star",
-    "FiniteAvalanches.External.square_lattice_ust_dual_law",
-    "FiniteAvalanches.External.square_lattice_wired_ust_one_tree_one_end",
-    "FiniteAvalanches.External.square_lattice_wired_ust_weak_limit",
-    "FiniteAvalanches.External.wilson_two_color_law_existsUnique"
+    "FiniteAvalanches.External.square_lattice_wired_ust_one_tree_one_end"
   ],
   "registered_external_inputs": [
     "FiniteAvalanches.External.BarlowMasson2011.adjacent_ust_path_euclidean_tail",
@@ -5497,7 +8762,18 @@
     "FiniteAvalanches.WiredHitting.wired_srw_firstHit_voltage",
     "FiniteAvalanches.External.allMinors_matrixTree",
     "FiniteAvalanches.External.lyons_nestedProjectionDomination",
-    "FiniteAvalanches.External.disk_alternation_impossible"
+    "FiniteAvalanches.External.disk_alternation_impossible",
+    "FiniteAvalanches.External.square_lattice_wired_ust_weak_limit",
+    "FiniteAvalanches.External.square_lattice_ust_dual_law",
+    "FiniteAvalanches.External.wilson_two_color_law_existsUnique",
+    "FiniteAvalanches.External.kenyonWilson_pairingGroves_resistanceMinor",
+    "FiniteAvalanches.External.plane_vertex_face_star",
+    "FiniteAvalanches.External.finite_plane_dual_bond_cycle",
+    "FiniteAvalanches.External.plane_punctured_face_transport",
+    "FiniteAvalanches.External.plane_edge_chart_incidence",
+    "FiniteAvalanches.External.finite_plane_dual_connected",
+    "FiniteAvalanches.External.finite_plane_tree_complement",
+    "FiniteAvalanches.External.plane_punctured_chart_face_transport"
   ],
   "production_import_roots": [
     "Checks.AdditiveApplications",
@@ -5705,13 +8981,13 @@
   "verification_files": [
     {
       "path": ".github/workflows/build.yml",
-      "sha256": "f220f8cf5abd91c5a81bc9b2404398d783b91e91d5fbd2ddf4459d59da9e5807",
-      "bytes": 2067
+      "sha256": "814c9c97dfdb2d1e330111e11ca5a27509e2899c44b98d0360d9b9f3f957f101",
+      "bytes": 2066
     },
     {
       "path": ".github/workflows/comparator.yml",
-      "sha256": "298fb4eb605a01548d4d8af1604844b96a88d8b800411a9f837842770842defe",
-      "bytes": 2573
+      "sha256": "5f1c251dd24bebf5a9113c7385e6e1ca25ed38d655998ae7e0231ca9fd7c7f5d",
+      "bytes": 2572
     },
     {
       "path": "audit/comparator-tool-pins.json",
@@ -5725,8 +9001,8 @@
     },
     {
       "path": "audit/trusted-inputs.json",
-      "sha256": "e1dafac70e927d92e7f24865405bc1bcd4ec6f80ac39ecef0348d7a031c2d3d0",
-      "bytes": 288454
+      "sha256": "0f41903955b89e8108dd5c301545b54dfe6af45f66c607e88f9ad069514767dd",
+      "bytes": 537752
     },
     {
       "path": "lake-manifest.json",
@@ -5765,13 +9041,13 @@
     },
     {
       "path": "scripts/check_public_axioms.py",
-      "sha256": "3211e433edc0b87f584558b3e5b21cda45b94e1d379b7e84b93b635836da67a1",
-      "bytes": 582
+      "sha256": "2e398ec6a3ac91e8e27cc15fad91e070d3c1874c2fdb378475b05fd938856451",
+      "bytes": 576
     },
     {
       "path": "scripts/check_public_inputs.py",
-      "sha256": "8fe622a4ebe8f2519f28dbdd4b58f21ecde8e3ac0dd1a3d4e3ff6e95d24c1ed1",
-      "bytes": 14239
+      "sha256": "ca16e3a7cd9c4fcea5e4a0e10fde50e96b04e5b0341955ad431fd1a263de13cc",
+      "bytes": 14016
     },
     {
       "path": "scripts/ci_build.sh",
@@ -5791,16 +9067,16 @@
     {
       "path": "scripts/lint_public.py",
       "sha256": "2851deee6ef115cad084a57d873760d37b6cca0f0260e5b5e35bad5ea2f6bb81",
-      "bytes": 2394
+      "bytes": 2409
     },
     {
       "path": "scripts/prepare_public_comparators.py",
-      "sha256": "5a3e5e9af71f6cfef3f8ee6931349cc63d2d90d63490092821889f27716abfc1",
-      "bytes": 9189
+      "sha256": "8bde4073a5534db418b88be06ad1b3b983713033ed1ae41447bd6b1715295231",
+      "bytes": 9187
     },
     {
       "path": "scripts/run_comparators.sh",
-      "sha256": "7fa12c580587c0b7130d4251eec4ef787387750cc005b70cfe282b2183b32281",
+      "sha256": "a8fa6093a5caba4d27fb50d593e007a9ee901c64f967edaad40b621fb4e6669a",
       "bytes": 6288
     }
   ]

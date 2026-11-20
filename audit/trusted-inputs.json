@@ -426,14 +426,14 @@
     },
     {
       "id": "external:wired-ust-limit:v1",
-      "state": "EXTERNAL_ASSUMPTION",
+      "state": "PROVED",
       "kind": "STANDARD",
       "declaration": {
         "path": "FiniteAvalanches/External/WiredUstWeakLimit.lean",
         "export": "FiniteAvalanches.External.square_lattice_wired_ust_weak_limit",
-        "sha256": "45d75e63a00aefead3a48680818f20cc7df6b7bb3673c84d21002f6d9ad32027",
-        "code_sha256": "4484786c0aa2bd470b88b024bc07aaa5ac0ea9f7f6fdfb7b24e10176bc058a15",
-        "complete_file": "import FiniteAvalanches.Trees.Lattice.WiredLaw\n\nset_option autoImplicit false\nnamespace FiniteAvalanches.External\nopen FiniteAvalanches.Trees.Lattice MeasureTheory LatticeProb\n\n/-- Pemantle (1991), Häggström (1998), BLPS (2001); Lyons–Peres §10.1, Járai (2012) Theorem 2:\nthe wired uniform spanning tree measures of the boxes `[-N,N]²` converge weakly.\nWiring removes loops and retains all multiple edges: LP p.26, BLPS p.16. -/\naxiom square_lattice_wired_ust_weak_limit :\n    ∃ ν : ProbabilityMeasure EdgeField,\n      Filter.Tendsto finiteProbability Filter.atTop (nhds ν)\n\nend FiniteAvalanches.External\n"
+        "sha256": "cc396f32eb1d5088a89031cb58b4ed4c5ea0ba4f2a87c9ce3d635fda07dd51e6",
+        "code_sha256": "ad7a702d16a20f0b90c53fcf9fa0fc10ecbc7df7d94dead1e6db9ee0db8c5106",
+        "complete_file": "import FiniteAvalanches.Wilson.Lattice.FiniteUstWeakLimit\n\nset_option autoImplicit false\nnamespace FiniteAvalanches.External\nopen FiniteAvalanches.Trees.Lattice MeasureTheory LatticeProb\n\n/-- Pemantle (1991), Häggström (1998), BLPS (2001); Lyons–Peres §10.1, Járai (2012) Theorem 2:\nthe wired uniform spanning tree measures of the boxes `[-N,N]²` converge weakly.\nWiring removes loops and retains all multiple edges: LP p.26, BLPS p.16. -/\ntheorem square_lattice_wired_ust_weak_limit :\n    ∃ ν : ProbabilityMeasure EdgeField,\n      Filter.Tendsto finiteProbability Filter.atTop (nhds ν) :=\n  FiniteAvalanches.Wilson.Lattice.finiteProbability_exists_weak_limit\n\nend FiniteAvalanches.External\n"
       },
       "sources": [
         {
@@ -569,7 +569,8 @@
         }
       ],
       "used_by_main": true,
-      "final_current_source_and_consumption_review": "PASS_AUDITED_EXTERNAL_ASSUMPTION"
+      "final_current_source_and_consumption_review": "STATEMENT_REVIEWED_AS_EXTERNAL_ASSUMPTION",
+      "proof_provider": "FiniteAvalanches/Wilson/Lattice/FiniteUstWeakLimit.lean"
     },
     {
       "id": "external:wired-ust-one-end:v1",
@@ -732,14 +733,14 @@
     },
     {
       "id": "external:wired-ust-dual:v1",
-      "state": "EXTERNAL_ASSUMPTION",
+      "state": "PROVED",
       "kind": "STANDARD",
       "declaration": {
         "path": "FiniteAvalanches/External/WiredUstDualLaw.lean",
         "export": "FiniteAvalanches.External.square_lattice_ust_dual_law",
-        "sha256": "0944eb2264be49430afa35a5a6f1de66e40147b22522352f9ce4a9c0f9367789",
-        "code_sha256": "027163d3838d46827df092a73aa1c07eaa998a16a7dd1e2dd8ae9521c1e0cba5",
-        "complete_file": "import FiniteAvalanches.Trees.Lattice.Dual\nimport FiniteAvalanches.Trees.Lattice.WiredLaw\n\nset_option autoImplicit false\nnamespace FiniteAvalanches.External\nopen FiniteAvalanches.Trees.Lattice MeasureTheory LatticeProb\n\n/-- Planar self-duality (BLPS Theorem 12.2 with Proposition 5.6; Lyons–Peres §10.3). The\nabsent edges of the lattice UST, transported to `ℤ²` by naming faces by their lower-left\ncorners, form a field with the same law. -/\naxiom square_lattice_ust_dual_law\n    (ν : ProbabilityMeasure EdgeField)\n    (hν : Filter.Tendsto finiteProbability Filter.atTop (nhds ν)) :\n    (ν : Measure EdgeField).map dualField = (ν : Measure EdgeField)\n\nend FiniteAvalanches.External\n"
+        "sha256": "cb794677ad7ece8598ace5e76363ee664057149c441e46030f4fbef3c0187ea2",
+        "code_sha256": "ae4009e72bbcb846f2af5b2df561bf9c21c0bca51c7990edcae74559d04492f6",
+        "complete_file": "import FiniteAvalanches.Wilson.Lattice.WiredDualFaceCutParity\n\nset_option autoImplicit false\nnamespace FiniteAvalanches.External\nopen FiniteAvalanches.Trees.Lattice MeasureTheory LatticeProb\n\n/-- Planar self-duality (BLPS Theorem 12.2 with Proposition 5.6; Lyons–Peres §10.3). The\nabsent edges of the lattice UST, transported to `ℤ²` by naming faces by their lower-left\ncorners, form a field with the same law. -/\ntheorem square_lattice_ust_dual_law\n    (ν : ProbabilityMeasure EdgeField)\n    (hν : Filter.Tendsto finiteProbability Filter.atTop (nhds ν)) :\n    (ν : Measure EdgeField).map dualField = (ν : Measure EdgeField) :=\n  FiniteAvalanches.Wilson.Lattice.wiredLimit_self_dual ν hν\n\nend FiniteAvalanches.External\n"
       },
       "sources": [
         {
@@ -880,18 +881,19 @@
         }
       ],
       "used_by_main": true,
-      "final_current_source_and_consumption_review": "PASS_AUDITED_EXTERNAL_ASSUMPTION"
+      "final_current_source_and_consumption_review": "STATEMENT_REVIEWED_AS_EXTERNAL_ASSUMPTION",
+      "proof_provider": "FiniteAvalanches/Wilson/Lattice/WiredDualFaceCutParity.lean"
     },
     {
       "id": "external:colored-wilson:v1",
-      "state": "EXTERNAL_ASSUMPTION",
+      "state": "PROVED",
       "kind": "STANDARD",
       "declaration": {
         "path": "FiniteAvalanches/External/ColoredWilson.lean",
         "export": "FiniteAvalanches.External.wilson_two_color_law_existsUnique",
-        "sha256": "bd86d002bb0e00957bcfb648cac16ee50e831d4a7626f432ffc4eb8ce1efac18",
-        "code_sha256": "5623948ae51f8f5fda8cfc74f4e25fa5299e55c1f7a062b39a9ada5446328417",
-        "complete_file": "import FiniteAvalanches.Wilson.Lattice.SamplerEvents\n\n/-! One independently audited derived standard-literature input. Finite Wilson plus planar recurrence/common-increment coupling\nidentifies the arbitrary-root recurrent law and the fixed-root wired weak limit.\nThis is not a paper contact, conditional-law, or changing-root continuity input. -/\nset_option autoImplicit false\nnamespace FiniteAvalanches.External\nopen FiniteAvalanches.Wilson.Lattice\n\n                                                                             \n                                                                               \n                                                                                   \n                                                                                \n                                                                                               \naxiom wilson_two_color_law_existsUnique (R : RootPair) :\n    (∃! ν : MeasureTheory.ProbabilityMeasure ForestField, IsWilsonLaw R ν) ∧\n    ∀ ν : MeasureTheory.ProbabilityMeasure ForestField, IsWilsonLaw R ν →\n      Filter.Tendsto (finiteForestProbability R) Filter.atTop (nhds ν)\n\nend FiniteAvalanches.External\n"
+        "sha256": "7314392f3663bb23222f6c630ce48aad0059dfbda4bb50395f3ffb1805957a9d",
+        "code_sha256": "210f98dde3ad994127525cf33873b8a66159287b14b36f82bf363d265c8e09d9",
+        "complete_file": "import FiniteAvalanches.Wilson.Lattice.WiredRootedSupport\n\n/-! Two-color Wilson forests on the recurrent square lattice. -/\nset_option autoImplicit false\nnamespace FiniteAvalanches.External\nopen FiniteAvalanches.Wilson.Lattice\n\n                                                                             \n                                                                               \n                                                                                   \n                                                                                \n                                                                                               \ntheorem wilson_two_color_law_existsUnique (R : RootPair) :\n    (∃! ν : MeasureTheory.ProbabilityMeasure ForestField, IsWilsonLaw R ν) ∧\n    ∀ ν : MeasureTheory.ProbabilityMeasure ForestField, IsWilsonLaw R ν →\n      Filter.Tendsto (finiteForestProbability R) Filter.atTop (nhds ν) := by\n  obtain ⟨ν, hν, _⟩ := existsUnique_wilsonCylinderLaw R\n  exact wilsonLaw_existsUnique_of_cylinder_rooted_support R ν hν (hν.ae_rooted R ν)\n\nend FiniteAvalanches.External\n"
       },
       "sources": [
         {
@@ -1116,7 +1118,8 @@
         }
       ],
       "used_by_main": true,
-      "final_current_source_and_consumption_review": "PASS_AUDITED_EXTERNAL_ASSUMPTION"
+      "final_current_source_and_consumption_review": "STATEMENT_REVIEWED_AS_EXTERNAL_ASSUMPTION",
+      "proof_provider": "FiniteAvalanches/Wilson/Lattice/WiredRootedSupport.lean"
     },
     {
       "id": "external:nested-projection-dpp:v1",
@@ -1268,8 +1271,8 @@
         },
         {
           "path": "FiniteAvalanches/External/WiredUstWeakLimit.lean",
-          "sha256": "45d75e63a00aefead3a48680818f20cc7df6b7bb3673c84d21002f6d9ad32027",
-          "code_sha256": "4484786c0aa2bd470b88b024bc07aaa5ac0ea9f7f6fdfb7b24e10176bc058a15"
+          "sha256": "cc396f32eb1d5088a89031cb58b4ed4c5ea0ba4f2a87c9ce3d635fda07dd51e6",
+          "code_sha256": "ad7a702d16a20f0b90c53fcf9fa0fc10ecbc7df7d94dead1e6db9ee0db8c5106"
         },
         {
           "path": "FiniteAvalanches/Model/FiniteWired.lean",
@@ -1906,14 +1909,14 @@
     },
     {
       "id": "external:kenyon-wilson-pairing-groves:v1",
-      "state": "EXTERNAL_ASSUMPTION",
+      "state": "PROVED",
       "kind": "STANDARD",
       "declaration": {
         "path": "FiniteAvalanches/External/KenyonWilsonPairingGroves.lean",
         "export": "FiniteAvalanches.External.kenyonWilson_pairingGroves_resistanceMinor",
-        "sha256": "b8654ad0cd1480ac52d604d86755286da987e751751e3ba37801e13e8a7e2d3a",
-        "code_sha256": "8a3e9be6192b5a063a313049d99fa0741cf2fac7e9c0351eafde79ebdf798aa8",
-        "complete_file": "import FiniteAvalanches.Electrical.Trees.PairingGroves\nimport Mathlib.LinearAlgebra.Matrix.Determinant.Basic\n\n/-!\nProposed standard external: Kenyon--Wilson (2009), arXiv:0811.1766v1,\nTheorem 8.1 with C = D = empty, composed with Appendix B, Theorem B.3.\nThe uncrossed-grove partition function cancels; the denominator below is the\nspanning-tree partition function. Unit conductances make partition functions\nliteral counts of subsets of the original copied-edge carrier.\n\nThis exact command requires independent native statement/definition review and\nparent registration. It is not the unproved-in-v1 tripartite formula (10), and\nit contains no planar cancellation or paper contact-probability conclusion.\n-/\nnamespace FiniteAvalanches.External\nopen FiniteAvalanches.Electrical FiniteAvalanches.Electrical.StatementGeometry\nopen scoped Classical BigOperators\n\n/-- General signed pairing-grove/tree ratio, KW2009 Theorems 8.1 and B.3.\nNo embedding or noncrossing assertion is included in this classical input. -/\naxiom kenyonWilson_pairingGroves_resistanceMinor\n    {V E : Type} [Fintype V] [Fintype E] (J : CopiedGraph V E)\n    (hc : (supportGraph J.left J.right).Preconnected) (ground : V)\n    {k : ℕ} (hk : 0 < k) (a b : Fin k → V)\n    (ha : Function.Injective a) (hb : Function.Injective b)\n    (hab : ∀ r s, a r ≠ b s) :\n    let G := groundedGreen J.left J.right ground hc\n    (∑ π : Equiv.Perm (Fin k),\n      (((Equiv.Perm.sign π : ℤˣ) : ℤ) : ℝ) *\n        (Nat.card (J.PairingGrove a b π) : ℝ)) /\n      (Nat.card J.SpanningTree : ℝ) =\n    ((Matrix.of fun r s : Fin k =>\n      (Polynomial.X : Polynomial ℝ) - Polynomial.C\n        ((G (a r) (a r) + G (b s) (b s) - 2*G (a r) (b s))/2)).det).coeff 1\n\nend FiniteAvalanches.External\n"
+        "sha256": "17b7436138ca9e9e8a5d00bfd134d111ef6ad71da176624d9f935ab81d06515a",
+        "code_sha256": "15282db629f0b11a5fbdf2fb2fc6e079d084e78fbae2f81ee5905abc9c08fdc7",
+        "complete_file": "import FiniteAvalanches.Electrical.Trees.PairingRelabel\nimport Mathlib.LinearAlgebra.Matrix.Determinant.Basic\n\n/-!\nProposed standard external: Kenyon--Wilson (2009), arXiv:0811.1766v1,\nTheorem 8.1 with C = D = empty, composed with Appendix B, Theorem B.3.\nThe uncrossed-grove partition function cancels; the denominator below is the\nspanning-tree partition function. Unit conductances make partition functions\nliteral counts of subsets of the original copied-edge carrier.\n\nThis exact command requires independent native statement/definition review and\nparent registration. It is not the unproved-in-v1 tripartite formula (10), and\nit contains no planar cancellation or paper contact-probability conclusion.\n-/\nnamespace FiniteAvalanches.External\nopen FiniteAvalanches.Electrical FiniteAvalanches.Electrical.StatementGeometry\nopen scoped Classical BigOperators\n\n/-- General signed pairing-grove/tree ratio, KW2009 Theorems 8.1 and B.3.\nNo embedding or noncrossing assertion is included in this classical input. -/\ntheorem kenyonWilson_pairingGroves_resistanceMinor\n    {V E : Type} [Fintype V] [Fintype E] (J : CopiedGraph V E)\n    (hc : (supportGraph J.left J.right).Preconnected) (ground : V)\n    {k : ℕ} (hk : 0 < k) (a b : Fin k → V)\n    (ha : Function.Injective a) (hb : Function.Injective b)\n    (hab : ∀ r s, a r ≠ b s) :\n    let G := groundedGreen J.left J.right ground hc\n    (∑ π : Equiv.Perm (Fin k),\n      (((Equiv.Perm.sign π : ℤˣ) : ℤ) : ℝ) *\n        (Nat.card (J.PairingGrove a b π) : ℝ)) /\n      (Nat.card J.SpanningTree : ℝ) =\n    ((Matrix.of fun r s : Fin k =>\n      (Polynomial.X : Polynomial ℝ) - Polynomial.C\n        ((G (a r) (a r) + G (b s) (b s) - 2*G (a r) (b s))/2)).det).coeff 1 := by\n  obtain ⟨n, rfl⟩ := Nat.exists_eq_succ_of_ne_zero (Nat.ne_of_gt hk)\n  have hle : n + 1 ≤ Fintype.card V := by\n    simpa only [Fintype.card_fin] using Fintype.card_le_of_injective a ha\n  let d := Fintype.card V - (n + 1)\n  have hcard : Fintype.card V = d + (n + 1) := by dsimp [d]; omega\n  let ρ : V ≃ Fin (d + (n + 1)) := Fintype.equivFinOfCardEq hcard\n  let K := J.relabel ρ\n  let hc' := J.relabel_preconnected ρ hc\n  have h := FiniteAvalanches.Electrical.pairingGroves_eq_resistanceDet_fin K hc' (ρ ground)\n    (ρ ∘ a) (ρ ∘ b) (ρ.injective.comp ha) (ρ.injective.comp hb)\n  have hgrove (π : Equiv.Perm (Fin (n + 1))) :\n      Nat.card (K.PairingGrove (ρ ∘ a) (ρ ∘ b) π) = Nat.card (J.PairingGrove a b π) :=\n    (Nat.card_congr (J.pairingGroveRelabelEquiv ρ a b ha π)).symm\n  have htree : Nat.card K.SpanningTree = Nat.card J.SpanningTree :=\n    (Nat.card_congr (J.treeVertexEquiv K ρ (fun _ => rfl) (fun _ => rfl))).symm\n  have hgreen (x y : V) : groundedGreen K.left K.right (ρ ground) hc' (ρ x) (ρ y) =\n      groundedGreen J.left J.right ground hc x y :=\n    J.groundedGreen_relabel ρ ground hc hc' x y\n  simp only [Function.comp_apply, hgrove, htree, hgreen] at h\n  have hne : (Nat.card J.SpanningTree : ℝ) ≠ 0 :=\n    ne_of_gt (FiniteAvalanches.Electrical.Ratio.copied_tree_count_pos J ground hc)\n  exact (div_eq_iff hne).2 h\n\nend FiniteAvalanches.External\n"
       },
       "sources": [
         {
@@ -2138,7 +2141,8 @@
         }
       ],
       "used_by_main": true,
-      "final_current_source_and_consumption_review": "PASS_AUDITED_EXTERNAL_ASSUMPTION"
+      "final_current_source_and_consumption_review": "STATEMENT_REVIEWED_AS_EXTERNAL_ASSUMPTION",
+      "proof_provider": "FiniteAvalanches/Electrical/Trees/PairingRelabel.lean"
     },
     {
       "id": "external:recurrent-ray-seeded-wilson:v1",
@@ -2243,8 +2247,8 @@
         },
         {
           "path": "FiniteAvalanches/External/WiredUstWeakLimit.lean",
-          "sha256": "45d75e63a00aefead3a48680818f20cc7df6b7bb3673c84d21002f6d9ad32027",
-          "code_sha256": "4484786c0aa2bd470b88b024bc07aaa5ac0ea9f7f6fdfb7b24e10176bc058a15"
+          "sha256": "cc396f32eb1d5088a89031cb58b4ed4c5ea0ba4f2a87c9ce3d635fda07dd51e6",
+          "code_sha256": "ad7a702d16a20f0b90c53fcf9fa0fc10ecbc7df7d94dead1e6db9ee0db8c5106"
         },
         {
           "path": "FiniteAvalanches/External/WiredUstOneEnd.lean",
@@ -2629,8 +2633,8 @@
         },
         {
           "path": "FiniteAvalanches/Support/Plane/GeometricDual.lean",
-          "sha256": "fa48ff04d4ef16d7fad8e76440f18c9a52830e43c6aac9ba197f9f93f238edc7",
-          "code_sha256": "eab58b5d8420c6fa5c93442240c5e003e7785f52a7118e18670921e5e47ace1f",
+          "sha256": "f68f6c2618d2d49c40960157eb7909ae66227a34afa85abca14082058841ac56",
+          "code_sha256": "53bebc5b8bb7e95bb377bd8945dbcac1859260f17dc2c1fdb11633e3748d1e45",
           "bytes": 57086
         },
         {
@@ -4519,8 +4523,8 @@
         },
         {
           "path": "FiniteAvalanches/Support/Plane/GeometricDual.lean",
-          "sha256": "fa48ff04d4ef16d7fad8e76440f18c9a52830e43c6aac9ba197f9f93f238edc7",
-          "code_sha256": "eab58b5d8420c6fa5c93442240c5e003e7785f52a7118e18670921e5e47ace1f",
+          "sha256": "f68f6c2618d2d49c40960157eb7909ae66227a34afa85abca14082058841ac56",
+          "code_sha256": "53bebc5b8bb7e95bb377bd8945dbcac1859260f17dc2c1fdb11633e3748d1e45",
           "bytes": 57086
         },
         {
@@ -8524,8 +8528,8 @@
         },
         {
           "path": "FiniteAvalanches/Support/Plane/GeometricDual.lean",
-          "sha256": "fa48ff04d4ef16d7fad8e76440f18c9a52830e43c6aac9ba197f9f93f238edc7",
-          "code_sha256": "eab58b5d8420c6fa5c93442240c5e003e7785f52a7118e18670921e5e47ace1f",
+          "sha256": "f68f6c2618d2d49c40960157eb7909ae66227a34afa85abca14082058841ac56",
+          "code_sha256": "53bebc5b8bb7e95bb377bd8945dbcac1859260f17dc2c1fdb11633e3748d1e45",
           "bytes": 57086
         },
         {
