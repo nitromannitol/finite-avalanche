@@ -146,5 +146,94 @@ theorem loopDeg_sub_const_sub_eq_one_of_crossing_interval
   rw [← hdp', ← hdm']
   exact hresult
 
+/-- A closed loop crossing the origin once, with opposite local half-plane
+orientations, has a unit winding jump across sufficiently close real points. -/
+theorem exists_winding_jump_of_local_crossing
+    (γ : C(unitInterval, ℂ)) (hclosed : γ 0 = γ 1)
+    {u v w : ℝ} (hu : 0 < u) (huv : u < v) (hvw : v < w) (hw : w < 1)
+    (hzero : ∀ t : unitInterval, γ t = 0 ↔ (t : ℝ) = v)
+    (hpos : ∀ t : unitInterval, u ≤ (t : ℝ) → (t : ℝ) < v → 0 < (γ t).im)
+    (hneg : ∀ t : unitInterval, v < (t : ℝ) → (t : ℝ) ≤ w → (γ t).im < 0) :
+    ∃ (a : ℝ) (_ : 0 < a) (hp : ∀ t, γ t ≠ (a : ℂ))
+        (hm : ∀ t, γ t ≠ -(a : ℂ)),
+      loopDeg (γ - ContinuousMap.const unitInterval (a : ℂ))
+          (fun t => sub_ne_zero.mpr (hp t)) -
+        loopDeg (γ - ContinuousMap.const unitInterval (-(a : ℂ)))
+          (fun t => sub_ne_zero.mpr (hm t)) = 1 := by
+  let S : Set unitInterval := {t | (t : ℝ) ≤ u ∨ w ≤ (t : ℝ)}
+  have hSclosed : IsClosed S :=
+    (isClosed_le continuous_subtype_val continuous_const).union
+      (isClosed_le continuous_const continuous_subtype_val)
+  have hScompact : IsCompact S := isCompact_univ.of_isClosed_subset hSclosed (Set.subset_univ _)
+  have hSnonempty : S.Nonempty := ⟨0, Or.inl (by simpa using le_of_lt hu)⟩
+  obtain ⟨t₀, ht₀, hmin⟩ := hScompact.exists_isMinOn hSnonempty
+    (γ.continuous.norm.continuousOn)
+  have h₀ : γ t₀ ≠ 0 := by
+    intro he
+    have hv := (hzero t₀).mp he
+    rcases ht₀ with ht | ht <;> linarith
+  have hr : 0 < ‖γ t₀‖ := norm_pos_iff.mpr h₀
+  let a : ℝ := ‖γ t₀‖ / 2
+  have ha : 0 < a := by dsimp [a]; positivity
+  have hfar : ∀ t : unitInterval, (t : ℝ) ≤ u ∨ w ≤ (t : ℝ) →
+      a ^ 2 < (γ t).re ^ 2 + (γ t).im ^ 2 := by
+    intro t ht
+    have hbound : ‖γ t₀‖ ≤ ‖γ t‖ := hmin ht
+    have hn : 0 ≤ ‖γ t‖ := norm_nonneg _
+    have hsq : ‖γ t‖ ^ 2 = (γ t).re ^ 2 + (γ t).im ^ 2 := by
+      rw [Complex.sq_norm, Complex.normSq_apply]
+      ring
+    dsimp [a]
+    nlinarith
+  have hp : ∀ t, γ t ≠ (a : ℂ) := by
+    intro t he
+    by_cases hlo : (t : ℝ) ≤ u
+    · have h := hfar t (Or.inl hlo)
+      rw [he] at h
+      simp at h
+    by_cases hhi : w ≤ (t : ℝ)
+    · have h := hfar t (Or.inr hhi)
+      rw [he] at h
+      simp at h
+    rcases lt_trichotomy (t : ℝ) v with ht | ht | ht
+    · have h := hpos t (le_of_not_ge hlo) ht
+      rw [he] at h
+      simp at h
+    · have h := (hzero t).mpr ht
+      rw [he] at h
+      have : a = 0 := by exact_mod_cast h
+      linarith
+    · have h := hneg t ht (le_of_not_ge hhi)
+      rw [he] at h
+      simp at h
+  have hm : ∀ t, γ t ≠ -(a : ℂ) := by
+    intro t he
+    by_cases hlo : (t : ℝ) ≤ u
+    · have h := hfar t (Or.inl hlo)
+      rw [he] at h
+      simp at h
+    by_cases hhi : w ≤ (t : ℝ)
+    · have h := hfar t (Or.inr hhi)
+      rw [he] at h
+      simp at h
+    rcases lt_trichotomy (t : ℝ) v with ht | ht | ht
+    · have h := hpos t (le_of_not_ge hlo) ht
+      rw [he] at h
+      simp at h
+    · have h := (hzero t).mpr ht
+      rw [he] at h
+      have : a = 0 := by exact_mod_cast (neg_eq_zero.mp h)
+      linarith
+    · have h := hneg t ht (le_of_not_ge hhi)
+      rw [he] at h
+      simp at h
+  refine ⟨a, ha, hp, hm, ?_⟩
+  apply loopDeg_sub_const_sub_eq_one_of_crossing_interval γ hclosed ha hp hm hu huv hvw hw
+    (fun t ht => hfar t (ht.imp le_of_lt le_of_lt)) hpos hneg
+  intro t ht
+  have h := (hzero t).mpr ht
+  rw [h]
+  simpa using sq_pos_of_pos ha
+
 end
 end FiniteAvalanches.Electrical
