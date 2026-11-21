@@ -48,10 +48,12 @@ declaration.
 ## Results from the literature
 
 The registry [`audit/trusted-inputs.json`](audit/trusted-inputs.json) and the README list the 25
-registered results from the literature. Theorem 1.1 assumes none of them: 22 are proved in Lean,
-each with the statement text of the axiom it replaces, and the remaining three are axioms that
-Theorem 1.1 does not use. Where the Lean proof of a registered result takes a different route from
-the cited source, the route is recorded here.
+registered results from the literature. Theorem 1.1 assumes none of them: 24 are proved in Lean,
+each with the statement text of the axiom it replaces (22 used by the proofs of the numbered
+statements and two that these proofs do not use), and the remaining one, the square tiling of
+Brooks, Smith, Stone and Tutte (`bsst_square_tiling`), is an axiom that no numbered statement uses.
+Where the Lean proof of a registered result takes a different route from the cited source, the
+route is recorded here.
 
 - **The infinite-volume sandpile law** (`SandpileLimit.exists_infiniteVolumeLaw`; Athreya–Járai
   2004, Theorem 1 and Remark 1(iii), with the 2006 correction; Járai–Werning 2014, Theorem 3).
@@ -129,6 +131,49 @@ the cited source, the route is recorded here.
   cycle popping on the finite networks, with the cylinder law constructed and shown unique on
   the recurrent lattice
   ([`WiredRootedSupport.lean`](FiniteAvalanches/Wilson/Lattice/WiredRootedSupport.lean)).
+- **Wilson's algorithm on a finite network** (`wilson_classical_tree_probability`; Lyons–Peres
+  2016, Theorem 4.1, pp. 96–100) is proved by cycle popping, as in Lyons and Peres, for the
+  protocol that reads stacks of independent uniform incident copies at the vertices. The book
+  passes from this stack protocol to the protocol of the statement, in which every walk uses a
+  fresh row of independent uniform copies, by a remark. The Lean proof shows instead that the two
+  protocols have the same law of complete outputs, by splitting both along the word of copies
+  read by the first walk: the event of reading a given word is a cylinder of mass
+  `∏ 1/deg` in both, and the stack entries that the first walk reads are disjoint from those used
+  later, which gives the independence of the first walk from the rest
+  ([`Law.lean`](FiniteAvalanches/Wilson/StackRows/Law.lean)). The uniform law of the terminal tree
+  comes from the cycle-popping count of
+  [`IncidentForestLaw.lean`](FiniteAvalanches/Wilson/CyclePopping/IncidentForestLaw.lean) and
+  [`SingletonRootTrees.lean`](FiniteAvalanches/Wilson/CyclePopping/SingletonRootTrees.lean), and
+  the loop erasure of the stack trace is carried to the copies by a prefunctor injective on
+  vertices ([`Terminal.lean`](FiniteAvalanches/Wilson/StackRows/Terminal.lean),
+  [`Classical.lean`](FiniteAvalanches/Wilson/StackRows/Classical.lean)). The hypothesis that the
+  order has no repetitions is not used.
+- **Ray-seeded Wilson sampling on `ℤ²`** (`square_lattice_ray_seeded_wilson`; van
+  Engelenburg–Hutchcroft, arXiv:2301.03875v1, §2.5, Lemma 10). The first step is that of the
+  source: Wilson's algorithm rooted at a distant site `z_n`, with the walk from `o` first. The
+  source passes to the limit `z_n → ∞` through a Doob transform of the walk from `o` (Lemma 11,
+  transient by Lemma 5) and does not write out the limit of the loop erasure and of the later
+  walks. The Lean proof takes this limit inside the one-ended uniform spanning tree instead: the
+  tree path from `o` to `z_n` follows the ray from `o` once `z_n` leaves the finite pasts of a
+  ball ([`RayPathAgreement.lean`](FiniteAvalanches/Trees/Lattice/RayPathAgreement.lean)), and with
+  the same rows the later walks stopped on this path eventually reveal the same finite edge
+  pattern as the walks stopped on the ray, so bounded convergence applies
+  ([`RaySeededConvergence.lean`](FiniteAvalanches/Wilson/Lattice/RaySeededConvergence.lean),
+  [`RaySeededLimit.lean`](FiniteAvalanches/Wilson/Lattice/RaySeededLimit.lean)). Lemmas 5 and 11
+  and the Doob transform are not used: in the statement the seed ray has the law of the ray of the
+  uniform spanning tree. Wilson's algorithm rooted at an arbitrary site is obtained from the
+  marginals rooted at the origin by the translation invariance of the wired uniform spanning
+  tree, proved by a translation bijection of rooted forests
+  ([`SiteRootTranslation.lean`](FiniteAvalanches/Wilson/Lattice/SiteRootTranslation.lean),
+  [`RootSampler.lean`](FiniteAvalanches/Wilson/Lattice/RootSampler.lean)). That the first branch
+  is the tree path from `o` to `z_n` and the later walks are stopped on it is proved as the
+  factorization `UST(p ⊆ T, A) = UST(p ⊆ T) · P(the walks stopped on p reveal A)`, by comparison
+  and summation over the lattice paths `p` from `o` to `z_n`
+  ([`FirstBranch.lean`](FiniteAvalanches/Wilson/Lattice/FirstBranch.lean)). The joint law is
+  determined on ray-prefix and finite edge cylinders, a π-system, and its measurability comes from
+  the local constancy of finite runs
+  ([`RaySeededMeasurability.lean`](FiniteAvalanches/Wilson/Lattice/RaySeededMeasurability.lean),
+  [`RaySeededProof.lean`](FiniteAvalanches/Wilson/Lattice/RaySeededProof.lean)).
 - **Pairing groves and response-matrix minors** (`kenyonWilson_pairingGroves_resistanceMinor`):
   Kenyon and Wilson derive the formula from their grove partition functions (Theorems 8.1 and
   B.3). The Lean proof instead uses the all-minors matrix-tree theorem and complementary minors of

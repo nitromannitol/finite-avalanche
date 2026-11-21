@@ -10,9 +10,10 @@ The formalized text is the arXiv v2 source (`main.tex`, SHA-256
 `d2a875c154db9ff913ec6b25cf38e8da134ca977f6a24fd9c036cd8873b1082a`). All 17 numbered
 statements of the paper are stated and proved in Lean, the main theorem among them. No result from
 the literature is assumed by Theorem 1.1 or the other numbered statements: the 22 registered results
-their proofs use are proved in Lean, and each of the 17 statements depends only on the axioms
-`propext`, `Classical.choice` and `Quot.sound`. The repository still declares three further
-literature results as axioms that none of the numbered statements uses (see
+their proofs use are proved in Lean, as are two further registered results, and each of the 17
+statements depends only on the axioms `propext`, `Classical.choice` and `Quot.sound`. The
+repository still declares one literature result as an axiom, the square tiling of Brooks, Smith,
+Stone and Tutte, which none of the numbered statements uses (see
 [Standing assumptions and scope](#standing-assumptions-and-scope)).
 
 The development is built on [mathlib](https://github.com/leanprover-community/mathlib4) and the
@@ -85,8 +86,9 @@ and records how the Lean statements read the paper.
    records the exact Lean statement of each cited result, its hashes, its source references and
    the module that proves it. Each statement text is identical to that of the axiom it replaced.
 
-   *Proved results from the literature (22).* Each depends only on `propext`,
-   `Classical.choice` and `Quot.sound`.
+   *Proved results from the literature (24).* Each depends only on `propext`,
+   `Classical.choice` and `Quot.sound`. The first 22 are used by the proofs of the numbered
+   statements; the last two are not.
 
    | Result | Lean theorem | Proof |
    | --- | --- | --- |
@@ -111,6 +113,8 @@ and records how the Lean statements read the paper.
    | Complementary spanning trees | `finite_plane_tree_complement` | Jordan–Schönflies theorem |
    | The faces on both sides of an edge | `plane_edge_chart_incidence` | Jordan–Schönflies theorem |
    | Transport of faces under inversion of the punctured plane | `plane_punctured_face_transport`, `plane_punctured_chart_face_transport` | proved in this repository |
+   | Wilson's algorithm on a finite network (Lyons–Peres Theorem 4.1) | `wilson_classical_tree_probability` | cycle popping, and the same law for stacks of copies and for a fresh row per walk |
+   | Ray-seeded Wilson sampling on `ℤ²` (van Engelenburg–Hutchcroft 2023, Lemma 10) | `square_lattice_ray_seeded_wilson` | Wilson's algorithm rooted at a distant site, with the limit taken in the one-ended tree |
 
    Available references for the plane-graph results include Mohar–Thomassen, *Graphs on
    Surfaces*, Diestel, *Graph Theory*, and Hatcher, *Algebraic Topology*. The Jordan–Schönflies
@@ -121,11 +125,12 @@ and records how the Lean statements read the paper.
    [`CORRESPONDENCE.md`](CORRESPONDENCE.md) records where a proof takes a different route from the
    cited source.
 
-   The repository still declares three literature results as axioms, registered in the same
-   registry, that none of the 17 numbered statements uses: Wilson's algorithm on a finite network,
-   ray-seeded Wilson sampling on `ℤ²` (van Engelenburg–Hutchcroft) and the square tiling of
-   Brooks, Smith, Stone and Tutte. The square-tiling axiom is still referenced by four auxiliary
-   modules outside the proof of every numbered statement.
+   The repository still declares one literature result as an axiom, registered in the same
+   registry: the square tiling of Brooks, Smith, Stone and Tutte (`bsst_square_tiling`, in
+   [`FiniteAvalanches/External/BSST.lean`](FiniteAvalanches/External/BSST.lean)). None of the 17
+   numbered statements uses it. It is referenced by four auxiliary modules of
+   `FiniteAvalanches/Electrical/Geometry/` outside the proof of every numbered statement:
+   `SourceChartApplication`, `PhysicalTilingStream`, `PolarStream` and `PhysicalFaceStar`.
 2. **The model.** Sandpiles are integer fields on `ℤ²`; the stationary law is a probability
    measure on all of `ℤ² → ℤ`, and Theorem 1.1 quantifies over every integer field, not only the
    stable ones. Toppling sequences are finite lists of legal topplings.
@@ -145,7 +150,7 @@ and records how the Lean statements read the paper.
   contains one intentional statement-level `sorry`, which the solution proves.
 - **Exact axiom boundary.** [`PublicVerification/Axioms.lean`](PublicVerification/Axioms.lean)
   prints 69 axiom reports, and [`scripts/check_public_axioms.py`](scripts/check_public_axioms.py)
-  checks each of them: Theorem 1.1 uses exactly the three standard axioms, the 22 proved results
+  checks each of them: Theorem 1.1 uses exactly the three standard axioms, the 24 proved results
   from the literature use only the standard axioms, and every other report lists only standard
   and registered axioms. The review-gated check requires a current source review.
 - **Warning-free build.** The continuous-integration build compiles every module with warnings
@@ -155,9 +160,10 @@ and records how the Lean statements read the paper.
   and rebuilds Theorem 1.1 from recorded kernel data. The
   [leanprover/comparator](https://github.com/leanprover/comparator) check, with the Lean and
   nanoda kernels, passed in continuous integration for the earlier sources with 19 and with 8
-  literature inputs. The pair recaptured for the current source, whose permitted axioms are the
-  three standard ones, has been independently reviewed; its comparator check runs in continuous
-  integration.
+  literature inputs and for the previous source without literature inputs, whose pair permits
+  exactly the three standard axioms. The current source leaves this pair unchanged: a fresh
+  capture of Theorem 1.1 reproduces it exactly. The pair awaits independent review for the
+  current source before its comparator check can run.
 - **Pinned toolchain and dependencies.** Lean `v4.32.0`, mathlib
   `81a5d257c8e410db227a6665ed08f64fea08e997` and Lattice-Probability
   `68722ce2d464119e90b373829d2761624b1f6a75`, recorded in [`lake-manifest.json`](lake-manifest.json).
@@ -170,7 +176,7 @@ and records how the Lean statements read the paper.
 
 ## Size
 
-About 250,100 lines of Lean in 1,536 files, of which about 197,200 lines are code once comments
+About 254,300 lines of Lean in 1,553 files, of which about 200,700 lines are code once comments
 and blank lines are removed, on top of mathlib and Lattice-Probability. The comparator surface under
 `FiniteAvalanchesAudit/` and the axiom query `PublicVerification/` are not counted.
 

@@ -8,12 +8,14 @@ project:
     surely, and the radius of the avalanche has a logarithmic tail (Theorem
     1.1). All 17 numbered statements of the paper are formalized, and none of
     them assumes a result from the literature: the 22 cited results that their
-    proofs use are proved in Lean, and Theorem 1.1 depends only on propext,
-    Classical.choice and Quot.sound. Three further literature results, used by
-    none of the numbered statements, remain declared as axioms. The comparator pair FiniteAvalanchesAudit/MainOrigin/ passed the
-    comparator check for the earlier sources with 19 and 8 literature inputs; the
-    pair recaptured for the current source has been independently reviewed, and
-    its comparator check runs in continuous integration.
+    proofs use are proved in Lean, as are two further registered results, and
+    Theorem 1.1 depends only on propext, Classical.choice and Quot.sound. One
+    further literature result, the square tiling of Brooks, Smith, Stone and
+    Tutte, used by none of the numbered statements, remains declared as an
+    axiom. The comparator pair FiniteAvalanchesAudit/MainOrigin/ passed the
+    comparator check for the earlier sources with 19 and 8 literature inputs and
+    for the previous source without literature inputs; the current source leaves
+    the pair unchanged, and its review for the current source is pending.
   authors:
     - "Ahmed Bou-Rabee"
   license: "Apache-2.0"
@@ -70,9 +72,12 @@ status:
     Wilson's algorithm, the Beurling estimate, pairing groves, the
     infinite-volume sandpile law and the topology of finite plane graphs), stated
     in FiniteAvalanches/External/ and registered with their sources in
-    audit/trusted-inputs.json. SCOPE BOUNDARY: no result from the literature is
-    assumed by Theorem 1.1; the registry holds three further axioms that Theorem
-    1.1 does not use. Not formalized:
+    audit/trusted-inputs.json, and two further registered results that the
+    proofs do not use (Wilson's theorem on a finite network and ray-seeded
+    Wilson sampling on Z^2). SCOPE BOUNDARY: no result from the literature is
+    assumed by Theorem 1.1; the registry holds one further axiom, the square
+    tiling of Brooks, Smith, Stone and Tutte, that Theorem 1.1 does not use. Not
+    formalized:
     the finite-volume radius bound mentioned in the overview, the figures and
     the survey of related work.
   sorry_count: 0
@@ -101,24 +106,25 @@ fidelity:
     declaration sharing the constant epsilon; electrical networks keep every
     copy of a parallel edge, and the voltage is defined for distinct terminals.
     No external result is assumed by the numbered statements. The 22 cited
-    results that their proofs use are proved with the statements of the axioms
-    they replace; three further literature results, used by none of the
-    numbered statements, remain declared as axioms; their source
+    results that their proofs use, and two further registered results, are
+    proved with the statements of the axioms they replace; one further
+    literature result, used by none of the numbered statements, remains
+    declared as an axiom; their source
     references are recorded in audit/trusted-inputs.json, and CORRESPONDENCE.md
     records where a proof takes a different route from the cited source.
 
 review:
-  status: "agent-reviewed"
+  status: "review-pending"
   reviewers:
     - "Ahmed Bou-Rabee"
   notes: >-
     Correctness of every proof is guaranteed by the Lean kernel and Mathlib;
     Theorem 1.1 depends only on propext, Classical.choice and Quot.sound, and
-    the registry keeps three axioms that it does not use (no sorry, no other
-    axiom). The statements, the registered results and the recaptured
-    comparator pair were independently reviewed for the current source
-    inventory, as for the earlier ones; the comparator run on the current pair
-    is made in continuous integration.
+    the registry keeps one axiom that it does not use (no sorry, no other
+    axiom). The statements, the registered results and the comparator pair
+    were independently reviewed for the earlier source inventories; the
+    current source, which proves two further registered results and leaves the
+    pair unchanged, awaits review.
 
 alignment:
   namespace: "FiniteAvalanches"
