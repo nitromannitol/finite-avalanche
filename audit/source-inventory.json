@@ -2103,9 +2103,9 @@
     },
     {
       "path": "FiniteAvalanches/External/RecurrentRayWilson.lean",
-      "sha256": "5f055d38fdbae7d12c1dd0e273dc6299a360a705a07712c4de15bb32a039bcf5",
-      "code_sha256": "51f42e5d3cc73f3cc83c91c65bbac4ce22b43958295852dfee2c7af42cc8c017",
-      "bytes": 1462
+      "sha256": "0607776e6801c802f2ed0d4b1bed311e8f7452f0d761229418161f26d937cbe6",
+      "code_sha256": "b58779fdc47b5cf6077580adb3511fd310e6d46d4141fc63d36e4c821a8c17f3",
+      "bytes": 1562
     },
     {
       "path": "FiniteAvalanches/External/SandpileLimit.lean",
@@ -2121,9 +2121,9 @@
     },
     {
       "path": "FiniteAvalanches/External/Wilson.lean",
-      "sha256": "3e4187a97d844128ee7527c4aa45e02e703c62619a550d92e07d41b35e4caf43",
-      "code_sha256": "f35b8dace6c6cf87fc86f44ad0401543bee72b5139ef26e3a89a99af1185700d",
-      "bytes": 1266
+      "sha256": "ca3fac150b34eb208fd32243f3592cd9876d65e3f07bff17ab3f7571363f4fcf",
+      "code_sha256": "7fe6af4c428200bc376eaaa2bc5140c60a19ecfd8d35bfbce5df510aed204cc9",
+      "bytes": 1438
     },
     {
       "path": "FiniteAvalanches/External/WiredUstDualLaw.lean",
@@ -6176,6 +6176,12 @@
       "bytes": 3283
     },
     {
+      "path": "FiniteAvalanches/Trees/Lattice/RayPathAgreement.lean",
+      "sha256": "1e381d6bcb85f3ccfcf837f75694dd7d539e096ddb0ca75a3bf13c2532162cc9",
+      "code_sha256": "967cbfc2849abe75e378265b000624b0e708cd54ab9a4c22633126e2fd1e1102",
+      "bytes": 5190
+    },
+    {
       "path": "FiniteAvalanches/Trees/Lattice/ReciprocalCertificate.lean",
       "sha256": "73697275f4de209a00aba78c0c99600b9f6b606a2a7ff7d9873c425ca03920bb",
       "code_sha256": "04ae654736e7ad9acea886ea84456fe22994f4eea5c8cbeddf0a0913a4b648f4",
@@ -7304,6 +7310,12 @@
       "bytes": 3434
     },
     {
+      "path": "FiniteAvalanches/Wilson/Lattice/FirstBranch.lean",
+      "sha256": "59ba8a0964f9863947c2bab59562fdcfac71a6504eda929427264d5350653bf5",
+      "code_sha256": "646960b886b7e61a3ed3f417aad7b91e786d5b05e31a017926875c8d91aeb465",
+      "bytes": 24481
+    },
+    {
       "path": "FiniteAvalanches/Wilson/Lattice/FixedBoxColorLaw.lean",
       "sha256": "9bf69e4f8f365229e206373f60ed6880e19a1b6b97ce4f98831ec2ba60613125",
       "code_sha256": "59b2091e45526a5085c937dc51b308f9d26c4b53a9bcbaf0d2f42f072dbcf66e",
@@ -8084,6 +8096,30 @@
       "bytes": 5656
     },
     {
+      "path": "FiniteAvalanches/Wilson/Lattice/RaySeededConvergence.lean",
+      "sha256": "15711dd8230ea375fb4b7d4452f96d7b4f21d70b6e48e86b82abd1ffaac68b43",
+      "code_sha256": "95448517fc01214d0442f96f4200658971bcc8eb5d9b74de727d7bba68ad90ff",
+      "bytes": 12665
+    },
+    {
+      "path": "FiniteAvalanches/Wilson/Lattice/RaySeededLimit.lean",
+      "sha256": "933d0ba4cc65f4967e8ad7c671df20d6d40f5d2f77438edbecaf1fd21f79584b",
+      "code_sha256": "59c70c53967d86f1e571e206cac05f0aac71c1babbd830b568288d81c238af17",
+      "bytes": 11508
+    },
+    {
+      "path": "FiniteAvalanches/Wilson/Lattice/RaySeededMeasurability.lean",
+      "sha256": "2540e6e6b31d9ae5c3f7dccaaa725d3d58d987e3b542cd4e74ac418dcc742d9a",
+      "code_sha256": "1f10e1774d81044c19dfbd903ba55aab9eac22b03c94bc137fc9c408d8e7ad47",
+      "bytes": 12583
+    },
+    {
+      "path": "FiniteAvalanches/Wilson/Lattice/RaySeededProof.lean",
+      "sha256": "10c5fd5201b328abc6d849dee3e455cf1788daa5c87b07618a70197c39d277e1",
+      "code_sha256": "7990abc1ca626da858e192f937315cd4c53c828177154e6b530df21b80a5999b",
+      "bytes": 17600
+    },
+    {
       "path": "FiniteAvalanches/Wilson/Lattice/ReciprocalContactMonotonicity.lean",
       "sha256": "ec029b134d5e4295cf0049716f21e76e6008afb68c69942ba5954c83de2a544a",
       "code_sha256": "41322192267d4164f4aeeb694b23f25f4dd587d1f0eec0b568c0dad94502b8ab",
@@ -8192,6 +8228,12 @@
       "bytes": 3539
     },
     {
+      "path": "FiniteAvalanches/Wilson/Lattice/RootSampler.lean",
+      "sha256": "a20b9d1c9273f22eb6ada6a5f4b12aa45b135937f1b96bc06cfbc14033643c33",
+      "code_sha256": "24d1c65737c7ff7fa580fd37b0853c5818ffe25a23a92aff2e996ea069558f00",
+      "bytes": 10312
+    },
+    {
       "path": "FiniteAvalanches/Wilson/Lattice/RowBranchHistory.lean",
       "sha256": "e2ddbc4149ab51c377e62651ec48af662767dd3c325f3412603ada264172ee29",
       "code_sha256": "bf56a0fd2d0b5e472439d9f8cf34fc9e021af646931c9830478a935febbfb77e",
@@ -8258,6 +8300,12 @@
       "bytes": 3595
     },
     {
+      "path": "FiniteAvalanches/Wilson/Lattice/SamplerPrefix.lean",
+      "sha256": "7655fbe3feab1d63ae0824436320243fdd629d37dbf1bde5fa7c02187915b2b6",
+      "code_sha256": "19910edbad731b342df3b758ec18f297a772d053790384d25efedbe275ee9ede",
+      "bytes": 13583
+    },
+    {
       "path": "FiniteAvalanches/Wilson/Lattice/SamplerRootExhaustion.lean",
       "sha256": "ff9f6e1686cb9c5c0f6de2ee77b34dd25db851c2228c676949e2ed0f60a3e80c",
       "code_sha256": "94700d5d73dc203ac3bdb739744a7f41f56583efc820f5971450fd0cecda912c",
@@ -8304,6 +8352,12 @@
       "sha256": "44c11c707167eb51605b2a57411c53c6950312a9982999a2624feb781fd1d394",
       "code_sha256": "29a5bfbdf5a170affff5dc0c06bef071ae67f71aa9cd7d164ba48210f0aa5e7f",
       "bytes": 7943
+    },
+    {
+      "path": "FiniteAvalanches/Wilson/Lattice/SiteRootTranslation.lean",
+      "sha256": "e465c8b5cc38b2928c68b8d03b749431c8612ade61c8d72bdf21420849d97aae",
+      "code_sha256": "d5532e31b557c0458e60923c5806fce523c2516a03dbc6a44dd9e0e25af3d78a",
+      "bytes": 19103
     },
     {
       "path": "FiniteAvalanches/Wilson/Lattice/StackHistoryComposition.lean",
@@ -9032,6 +9086,54 @@
       "bytes": 5407
     },
     {
+      "path": "FiniteAvalanches/Wilson/StackRows/Classical.lean",
+      "sha256": "6cd0b7673c1ed81b8655238b04a627ccd33cc910bd23f3b935ab0ebf7c4a776b",
+      "code_sha256": "f2383ab0b7751c59f94e12531a3ae23ebf68813a3696e8a54f33cc64b45bcfec",
+      "bytes": 5733
+    },
+    {
+      "path": "FiniteAvalanches/Wilson/StackRows/Driver.lean",
+      "sha256": "f6d56fb276a67bcb643de009197a7547bed0623a21350c266f34f2b1e4486b98",
+      "code_sha256": "0d2ad59cdb5c934d4b366c3ec91991e61c09665fe19dfa403cd7fbfea9bd6282",
+      "bytes": 10235
+    },
+    {
+      "path": "FiniteAvalanches/Wilson/StackRows/Law.lean",
+      "sha256": "5b077b5b36e29efadbea21235258b94db337ac5c3430ecb267eb4e1b6672b129",
+      "code_sha256": "98067a7ee686cc1b3c19b371c7473fc6c08f3d58616123ea59de5881db983b77",
+      "bytes": 10826
+    },
+    {
+      "path": "FiniteAvalanches/Wilson/StackRows/ProductEvents.lean",
+      "sha256": "af1602077e93e58be616565c59f4571e901243f2757684282c75b2f7881a4ce1",
+      "code_sha256": "233ebdbdbe064d23a7b447cdb14ff5f40e5e427c7822c99c816aa15192d44ef7",
+      "bytes": 5121
+    },
+    {
+      "path": "FiniteAvalanches/Wilson/StackRows/Run.lean",
+      "sha256": "4f9f756d79b1f73a992a8b3775344ae0c1d06c1d964fdf4de937c982815f52c4",
+      "code_sha256": "7e4b3ea8a6f2a99d87d6f5afed8054b4f5c7e524684b195a194ed34ae18c7621",
+      "bytes": 20189
+    },
+    {
+      "path": "FiniteAvalanches/Wilson/StackRows/Terminal.lean",
+      "sha256": "1ccb71666f22c48b3b407b791d4fa115630e6dd29e6138b4b3a5e13ae4928e2e",
+      "code_sha256": "373676f8b7d417112c38025354c1298a83a2b09d05a0732161e79bbe72bf2fd9",
+      "bytes": 9228
+    },
+    {
+      "path": "FiniteAvalanches/Wilson/StackRows/Tree.lean",
+      "sha256": "4dcfc9974f8ce15947638646c82a4f9cce3d73bd2c858a2624b8e9ea72dbee9d",
+      "code_sha256": "00feaf640a54354444e5395b73fe41b5ef96534b28c07c203fc0b5546e9dde92",
+      "bytes": 9519
+    },
+    {
+      "path": "FiniteAvalanches/Wilson/StackRows/Words.lean",
+      "sha256": "95a57db423ae3e0fb7852154f78a103c7dce3fa1c53e7b6045e0d9d4e78d8a34",
+      "code_sha256": "636c4aa14b1954befb6ebeceeb3f6208d4ddbe49019e7bd08d88e0d9beac0962",
+      "bytes": 12785
+    },
+    {
       "path": "FiniteAvalanches/Wilson/StoppedLaw.lean",
       "sha256": "aee482c28b2ca7a1c0603d8bbc86330ddeb6854da31168f67471c884b6eab2b9",
       "code_sha256": "4c153800f43d588a63fcec43a3ad401777a1c08fa5618549a55be8e2ef1d529d",
@@ -9354,7 +9456,9 @@
     "FiniteAvalanches.External.finite_plane_two_pole_topology",
     "FiniteAvalanches.External.parametrized_plane_arc_straightening",
     "FiniteAvalanches.External.outer_face_simple_path_disk_redrawing",
-    "FiniteAvalanches.External.finite_plane_geometric_dual"
+    "FiniteAvalanches.External.finite_plane_geometric_dual",
+    "FiniteAvalanches.External.wilson_classical_tree_probability",
+    "FiniteAvalanches.External.square_lattice_ray_seeded_wilson"
   ],
   "production_import_roots": [
     "Checks.AdditiveApplications",
@@ -9582,8 +9686,8 @@
     },
     {
       "path": "audit/trusted-inputs.json",
-      "sha256": "7b7681bdbe249880353c17f8483dfbf7b4c8b91157240cf2130119f934245159",
-      "bytes": 540979
+      "sha256": "b187ee12df0e41d7c449685cacc2eb03c123dc87348a6df8f9565dfd6c0db642",
+      "bytes": 541409
     },
     {
       "path": "lake-manifest.json",
@@ -9627,8 +9731,8 @@
     },
     {
       "path": "scripts/check_public_inputs.py",
-      "sha256": "d6e0a51e1bae26c3dc61c3c01a5fc901e9cf1c2ef83fb63c1c5b1bbfc2f339b5",
-      "bytes": 14022
+      "sha256": "3c555cf607aa1cc0168bb3a0b680ac7e7487a2b70d3402cea2c8f51eac30c929",
+      "bytes": 14019
     },
     {
       "path": "scripts/ci_build.sh",
