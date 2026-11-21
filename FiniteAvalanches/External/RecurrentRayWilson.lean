@@ -1,4 +1,5 @@
 import FiniteAvalanches.Wilson.Lattice.RaySeeded
+import FiniteAvalanches.Wilson.Lattice.RaySeededProof
 
 set_option autoImplicit false
 open LatticeProb MeasureTheory
@@ -15,7 +16,7 @@ The seed has its actual UST-ray marginal independently of ordinary Wilson rows.
 The one joint witness retains the literal seed-edge/branch-edge completion and
 has the actual full seed/tree law. No manuscript conditional-contact identity,
 finite marked set, moment estimate or numerical conclusion is trusted. -/
-axiom square_lattice_ray_seeded_wilson :
+theorem square_lattice_ray_seeded_wilson :
 ∀ (o : Site 2) (order : ℕ → Site 2), Function.Surjective order →
   ∃ ν : ProbabilityMeasure ((SimpleRay × Rows) × EdgeField),
     (ν : Measure ((SimpleRay × Rows) × EdgeField)).map Prod.fst =
@@ -23,6 +24,7 @@ axiom square_lattice_ray_seeded_wilson :
     (∀ᵐ p ∂(ν : Measure ((SimpleRay × Rows) × EdgeField)),
       Completes p.1.1 order p.1.2 p.2) ∧
     (ν : Measure ((SimpleRay × Rows) × EdgeField)).map (fun p => (p.1.1, p.2)) =
-      endedUST.map (fun T => (seed o T, T.val))
+      endedUST.map (fun T => (seed o T, T.val)) :=
+  square_lattice_ray_seeded_wilson_proof
 
 end FiniteAvalanches.External
