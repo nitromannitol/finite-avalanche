@@ -143,7 +143,7 @@ def inspect_contents(root, dependencies=False):
         else:
             proved.add(name)
         ids.add(e['id'])
-    require(len(assumptions) == 3 and len(proved) == 22, 'Expected 3 assumptions and 22 proved results')
+    require(len(assumptions) == 1 and len(proved) == 24, 'Expected 1 assumption and 24 proved results')
     require(names == set(inventory['registered_external_inputs']), 'Registered identity set differs')
     require(len(used) == 0 and used == set(inventory['main_external_inputs']), 'Expected no Main inputs')
     # Count actual declarations, not strings in doc comments or registry summaries.
@@ -157,7 +157,7 @@ def inspect_contents(root, dependencies=False):
     require(all(e['export'] in queries and e['declaration_path'] in paths for e in statements['statements']), 'Statement omitted from replay')
     require(MAIN in queries and names <= set(queries), 'Main or external declaration omitted from replay')
     primitive_only = set(inventory['primitive_only_exports'])
-    require(len(primitive_only) == 29 and primitive_only <= set(queries) and not primitive_only & assumptions and proved <= primitive_only,
+    require(len(primitive_only) == 31 and primitive_only <= set(queries) and not primitive_only & assumptions and proved <= primitive_only,
             'Proved replacements/providers/consumers must be separate from assumptions')
     manifest = read_json(regular(root, 'lake-manifest.json'))
     packages = {p['name'].strip('«»'): p['rev'] for p in manifest['packages']}
@@ -244,6 +244,6 @@ if __name__ == '__main__':
         if not args.static:
             require_reviewed(args.root)
         print('STATIC INVENTORY ONLY' if args.static else 'REVIEWED SOURCE INVENTORY')
-        print('25 registered results; 3 assumptions, none used by Main, and 22 proved results. No build/comparator result asserted.')
+        print('25 registered results; 1 assumption, not used by Main, and 24 proved results. No build/comparator result asserted.')
     except (ValueError, KeyError, TypeError, OSError, StopIteration, subprocess.CalledProcessError) as error:
         raise SystemExit('Invalid current release disclosure: ' + str(error)) from error
