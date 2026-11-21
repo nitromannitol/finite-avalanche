@@ -1,15 +1,15 @@
 {
   "schema_version": 1,
-  "status": "REVIEWED_CURRENT_PAIR",
+  "status": "PENDING_CURRENT_SOURCE_REVIEW",
   "target_export": "FiniteAvalanchesCurrent.RegisteredPast.Main.finite_avalanches_origin",
-  "independent": true,
+  "independent": false,
   "producer_role": "finite-wilson",
   "reviewer_role": "independent-pair-review",
-  "whole_integer_carrier": true,
-  "joint_constants_before_all_real_scales": true,
-  "source_characterizations_checked": true,
-  "exact_type_and_bodies_checked": true,
-  "source_inventory_sha256": "aa619434711affeb0ae68ae5b440ecfb7cdea6e3d8d6eb36a9cd62a4fd69f5c5",
+  "whole_integer_carrier": false,
+  "joint_constants_before_all_real_scales": false,
+  "source_characterizations_checked": false,
+  "exact_type_and_bodies_checked": false,
+  "source_inventory_sha256": "9935c7dca836e694a40de1790ac12fc317a4830378349f1ac0d7f8931b164e46",
   "bindings": [
     {
       "path": "FiniteAvalanchesAudit/MainOrigin/Challenge.lean",
@@ -61,13 +61,21 @@
   "independent_comments_only_projection_review_sha256": "d5e0627b4a1ecad635f15267d293bd96d9de6626ee5577e6fadeb5ef66a27df9",
   "previous_pair_actual_replay": {
     "status": "PASS_CI_COMPARATOR_LEAN_NANODA_AND_BOTH_FULL_ENVIRONMENT_QUERIES",
-    "commit": "12a1d8adde060746b29323348fab6edb1d877647",
+    "commit": "ee38e05b7462158a6b014b9f8160101d7861f60b",
     "workflow": ".github/workflows/comparator.yml",
-    "run_id": 44771184802,
-    "completed_at": "2026-11-20T16:56:01Z",
-    "inventory_sha256": "dd318a3495fa60b56eef122f4d416f0f6fea48d763234d1a87a44f5437dbbffa"
+    "run_id": 44823871043,
+    "completed_at": "2026-11-20T22:47:13Z",
+    "inventory_sha256": "aa619434711affeb0ae68ae5b440ecfb7cdea6e3d8d6eb36a9cd62a4fd69f5c5"
   },
   "earlier_pair_actual_replays": [
+    {
+      "status": "PASS_CI_COMPARATOR_LEAN_NANODA_AND_BOTH_FULL_ENVIRONMENT_QUERIES",
+      "commit": "12a1d8adde060746b29323348fab6edb1d877647",
+      "workflow": ".github/workflows/comparator.yml",
+      "run_id": 44771184802,
+      "completed_at": "2026-11-20T16:56:01Z",
+      "inventory_sha256": "dd318a3495fa60b56eef122f4d416f0f6fea48d763234d1a87a44f5437dbbffa"
+    },
     {
       "status": "PASS_CI_COMPARATOR_LEAN_NANODA_AND_BOTH_FULL_ENVIRONMENT_QUERIES",
       "commit": "2a17c769c1aa197c39c03cd012e90ba25491246c",
@@ -86,12 +94,19 @@
   ],
   "previous_pair_review": {
     "status": "REVIEWED_CURRENT_PAIR",
-    "source_inventory_sha256": "dd318a3495fa60b56eef122f4d416f0f6fea48d763234d1a87a44f5437dbbffa",
-    "main_inputs": 8,
-    "pair_review_sha256": "8cb8300929df0dc86c8977d8ec42960f2ec69589393795b1097fb9c07bf3dd6f",
-    "source_review_sha256": "2d266970868a6bba47d7f8d12d5907c6394e4046742c6bb20524810fe593bcb4"
+    "source_inventory_sha256": "aa619434711affeb0ae68ae5b440ecfb7cdea6e3d8d6eb36a9cd62a4fd69f5c5",
+    "main_inputs": 0,
+    "pair_review_sha256": "cc0c4600764db2eba1ae49498f42413b70d47fc4bdfa3ae95863fba21002c739",
+    "source_review_sha256": "aefe9e13ee64f52828b8faf6221d6cc7bf45389e8b2b38d73eded5dcca96b98e"
   },
   "earlier_pair_reviews": [
+    {
+      "status": "REVIEWED_CURRENT_PAIR",
+      "source_inventory_sha256": "dd318a3495fa60b56eef122f4d416f0f6fea48d763234d1a87a44f5437dbbffa",
+      "main_inputs": 8,
+      "pair_review_sha256": "8cb8300929df0dc86c8977d8ec42960f2ec69589393795b1097fb9c07bf3dd6f",
+      "source_review_sha256": "2d266970868a6bba47d7f8d12d5907c6394e4046742c6bb20524810fe593bcb4"
+    },
     {
       "status": "REVIEWED_CURRENT_PAIR",
       "source_inventory_sha256": "4ba2a5364873b74ba373ad0900809ee56088391f1e77e81dc89c0114f12f5651",
@@ -104,7 +119,5 @@
       "status_only_metadata_transport_review_sha256": "d57476de54846efaf9498aa5a74526bc3fd8de232357d6cca9c8fc7ba42fa76c"
     }
   ],
-  "current_pair_actual_replay_status": "PENDING_CI_COMPARATOR_RUN",
-  "current_pair_review_sha256": "cc0c4600764db2eba1ae49498f42413b70d47fc4bdfa3ae95863fba21002c739",
-  "current_source_review_sha256": "aefe9e13ee64f52828b8faf6221d6cc7bf45389e8b2b38d73eded5dcca96b98e"
+  "current_pair_actual_replay_status": "PENDING_CI_COMPARATOR_RUN"
 }

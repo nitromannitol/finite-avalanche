@@ -1,63 +1,90 @@
 {
   "schema_version": 1,
-  "status": "REVIEWED_SOURCE_ELIGIBLE",
+  "status": "PENDING_CURRENT_SOURCE_REVIEW",
   "manuscript_revision": "2ff7e75e9b6d626dc6c6243fa3d25fd179b34cf2",
   "manuscript_sha256": "d2a875c154db9ff913ec6b25cf38e8da134ca977f6a24fd9c036cd8873b1082a",
-  "candidate_source_inventory_sha256": "aa619434711affeb0ae68ae5b440ecfb7cdea6e3d8d6eb36a9cd62a4fd69f5c5",
+  "candidate_source_inventory_sha256": "9935c7dca836e694a40de1790ac12fc317a4830378349f1ac0d7f8931b164e46",
   "final_statement_and_proof_review": {
-    "verdict": "PASS",
-    "independent": true,
-    "reviewer": "independent-statement-review",
-    "evidence_sha256": "aefe9e13ee64f52828b8faf6221d6cc7bf45389e8b2b38d73eded5dcca96b98e",
+    "verdict": "PENDING",
+    "independent": false,
+    "reviewer": "",
+    "evidence_sha256": "",
     "statement_count": 17,
     "complete_proof_block_count": 16,
     "scope": "Exact current statements, expanded binders, source meanings, characterization and consumed proof routes"
   },
   "final_source_meaning_and_input_review": {
-    "verdict": "PASS",
-    "independent": true,
-    "reviewer": "independent-input-review",
-    "evidence_sha256": "aefe9e13ee64f52828b8faf6221d6cc7bf45389e8b2b38d73eded5dcca96b98e",
+    "verdict": "PENDING",
+    "independent": false,
+    "reviewer": "",
+    "evidence_sha256": "",
     "registered_inputs": 25,
     "main_inputs": 0,
     "scope": "Actual current definitions, standard assumption applicability and all current consumers"
   },
   "projection_independent_review": {
-    "verdict": "PASS",
-    "independent": true,
-    "reviewer": "independent-projection-review",
-    "evidence_sha256": "cc0c4600764db2eba1ae49498f42413b70d47fc4bdfa3ae95863fba21002c739",
+    "verdict": "PENDING",
+    "independent": false,
+    "reviewer": "",
+    "evidence_sha256": "",
     "scope": "Exact current source projection, new exports, verification scripts and inventory"
   },
   "runtime_results_are_separate": true,
   "previous_review": {
     "status": "REVIEWED_SOURCE_ELIGIBLE",
-    "candidate_source_inventory_sha256": "dd318a3495fa60b56eef122f4d416f0f6fea48d763234d1a87a44f5437dbbffa",
-    "main_inputs": 8,
+    "candidate_source_inventory_sha256": "aa619434711affeb0ae68ae5b440ecfb7cdea6e3d8d6eb36a9cd62a4fd69f5c5",
+    "main_inputs": 0,
     "final_statement_and_proof_review": {
       "verdict": "PASS",
       "reviewer": "independent-statement-review",
-      "evidence_sha256": "2d266970868a6bba47d7f8d12d5907c6394e4046742c6bb20524810fe593bcb4"
+      "evidence_sha256": "aefe9e13ee64f52828b8faf6221d6cc7bf45389e8b2b38d73eded5dcca96b98e"
     },
     "final_source_meaning_and_input_review": {
       "verdict": "PASS",
       "reviewer": "independent-input-review",
-      "evidence_sha256": "2d266970868a6bba47d7f8d12d5907c6394e4046742c6bb20524810fe593bcb4"
+      "evidence_sha256": "aefe9e13ee64f52828b8faf6221d6cc7bf45389e8b2b38d73eded5dcca96b98e"
     },
     "projection_independent_review": {
       "verdict": "PASS",
       "reviewer": "independent-projection-review",
-      "evidence_sha256": "8cb8300929df0dc86c8977d8ec42960f2ec69589393795b1097fb9c07bf3dd6f"
+      "evidence_sha256": "cc0c4600764db2eba1ae49498f42413b70d47fc4bdfa3ae95863fba21002c739"
     },
     "ci_build_run": {
       "status": "PASS",
-      "commit": "12a1d8adde060746b29323348fab6edb1d877647",
+      "commit": "ee38e05b7462158a6b014b9f8160101d7861f60b",
       "workflow": ".github/workflows/build.yml",
-      "run_id": 44771184908,
-      "completed_at": "2026-11-20T16:53:57Z"
+      "run_id": 44823871223,
+      "completed_at": "2026-11-20T22:37:24Z"
     }
   },
   "earlier_reviews": [
+    {
+      "status": "REVIEWED_SOURCE_ELIGIBLE",
+      "candidate_source_inventory_sha256": "dd318a3495fa60b56eef122f4d416f0f6fea48d763234d1a87a44f5437dbbffa",
+      "main_inputs": 8,
+      "final_statement_and_proof_review": {
+        "verdict": "PASS",
+        "reviewer": "independent-statement-review",
+        "evidence_sha256": "2d266970868a6bba47d7f8d12d5907c6394e4046742c6bb20524810fe593bcb4"
+      },
+      "final_source_meaning_and_input_review": {
+        "verdict": "PASS",
+        "reviewer": "independent-input-review",
+        "evidence_sha256": "2d266970868a6bba47d7f8d12d5907c6394e4046742c6bb20524810fe593bcb4"
+      },
+      "projection_independent_review": {
+        "verdict": "PASS",
+        "reviewer": "independent-projection-review",
+        "evidence_sha256": "8cb8300929df0dc86c8977d8ec42960f2ec69589393795b1097fb9c07bf3dd6f"
+      },
+      "ci_build_run": {
+        "status": "PASS",
+        "commit": "12a1d8adde060746b29323348fab6edb1d877647",
+        "workflow": ".github/workflows/build.yml",
+        "run_id": 44771184908,
+        "completed_at": "2026-11-20T16:53:57Z"
+      }
+    },
     {
       "status": "REVIEWED_SOURCE_ELIGIBLE",
       "candidate_source_inventory_sha256": "4ba2a5364873b74ba373ad0900809ee56088391f1e77e81dc89c0114f12f5651",
