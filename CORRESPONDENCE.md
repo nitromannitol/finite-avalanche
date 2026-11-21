@@ -145,8 +145,10 @@ route is recorded here.
   [`IncidentForestLaw.lean`](FiniteAvalanches/Wilson/CyclePopping/IncidentForestLaw.lean) and
   [`SingletonRootTrees.lean`](FiniteAvalanches/Wilson/CyclePopping/SingletonRootTrees.lean), and
   the loop erasure of the stack trace is carried to the copies by a prefunctor injective on
-  vertices ([`Terminal.lean`](FiniteAvalanches/Wilson/StackRows/Terminal.lean),
-  [`Classical.lean`](FiniteAvalanches/Wilson/StackRows/Classical.lean)). The hypothesis that the
+  vertices ([`Terminal.lean`](FiniteAvalanches/Wilson/StackRows/Terminal.lean)). The labels of
+  the recorded history affect neither success nor the edges, so the law is computed with the
+  copies themselves as labels
+  ([`Classical.lean`](FiniteAvalanches/Wilson/StackRows/Classical.lean)). The hypothesis that the
   order has no repetitions is not used.
 - **Ray-seeded Wilson sampling on `ℤ²`** (`square_lattice_ray_seeded_wilson`; van
   Engelenburg–Hutchcroft, arXiv:2301.03875v1, §2.5, Lemma 10). The first step is that of the
