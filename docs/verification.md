@@ -37,6 +37,7 @@ exactly `propext`, `Classical.choice` and `Quot.sound`.
 The pairs for the earlier sources with 19 and 8 literature inputs, and the pair for the previous
 source without literature inputs, passed the comparator workflow in continuous integration. The
 current source leaves that pair unchanged: the capture above, run on the current source,
-reproduces the six files exactly. The release review and the comparator review in
-`audit/release-eligibility.json` and `audit/comparator-review.json` are pending for the current
-source, and the review-gated checks cannot pass until they are recorded.
+reproduces the six files exactly. The independent release review and comparator review of the
+current source and pair are recorded in `audit/release-eligibility.json` and
+`audit/comparator-review.json`, bound to the current source inventory; the comparator run of the
+current pair is made by the workflow.

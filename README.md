@@ -162,8 +162,8 @@ and records how the Lean statements read the paper.
   nanoda kernels, passed in continuous integration for the earlier sources with 19 and with 8
   literature inputs and for the previous source without literature inputs, whose pair permits
   exactly the three standard axioms. The current source leaves this pair unchanged: a fresh
-  capture of Theorem 1.1 reproduces it exactly. The pair awaits independent review for the
-  current source before its comparator check can run.
+  capture of Theorem 1.1 reproduces it exactly. The pair has been independently reviewed for the
+  current source; its comparator check runs in continuous integration.
 - **Pinned toolchain and dependencies.** Lean `v4.32.0`, mathlib
   `81a5d257c8e410db227a6665ed08f64fea08e997` and Lattice-Probability
   `68722ce2d464119e90b373829d2761624b1f6a75`, recorded in [`lake-manifest.json`](lake-manifest.json).
